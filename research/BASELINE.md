@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v8。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v9。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -12,9 +12,9 @@
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、§4.1 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。語長保存の周期同型を使うため二重次数を保持できる。隣の Lemma 3.5 の degree 1 生成条件や、三次元 quadric 分類の仮定と混同しない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
-| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) の別経路と限界は下記。 |
+| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定の直接依存であり、適用順序は下記。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
-| Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求しない。graded Ore網羅定理では指定Hilbert級数からGK dimension 4を確認して適用する。 |
+| Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求せず、出典を [ATV2, 3.9] と明記する。graded Ore網羅定理と重み2生成元族による整域判定で、noetherian性とGK dimension 4を先に確認して適用する。 |
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
 | Priddy, *Koszul resolutions*, Trans. AMS 152 (1970), 39–60 | [一次PDF](https://math.mit.edu/~hrm/palestine/priddy-koszul-resolutions.pdf), Thm.5.3, p.51 | PBW基底から語長Koszul性。重み次数について線型であるとの主張ではない。 |
 | Lu–Palmieri–Wu–Zhang, *Koszul equivalences in A-infinity-algebras*, NYJM 14 (2008), 325–378 | [出版版](https://nyjm.albany.edu/j/2008/14-16.pdf), Corollary D, p.327; 証明§9.3, p.372 | connected graded AS-regular性とFrobenius Extの対応。Definition9.1は有限GK成長を含めないので、本文では成長をPBW基底から独立に示す。 |
@@ -57,11 +57,32 @@ Ore手法と一般正則性は既知である。これらの具体式と既存�
 重み次数2の正規元商が一般に大域次元を下げる、と主張しているのではない。
 語長二次表示と語長保存の1周期同型によって、z が通常次数1となる grading を確保している。
 
-Rogalski–Zhang **Lemma 1.3(c)** も一次資料で確認した。
-同論文の連結・次数1生成の設定で、正則な斉次正規元 f を持ち、商 D/(f) が AS 正則次元3なら、
-D の strongly noetherian、Auslander regular、Cohen–Macaulay 性を得る。
-これは z の商が AS 正則次元3と確認された後の別経路であり、
-商の整域性を先取りする根拠にはしない。本稿の Ore 構造証明はこの補強を必要としない。
+## 重み2生成元族の正則性による整域判定
+
+`idx:prop:z-regular-criterion` は、Q の語長二次表示を一つ選んだとき、
+重み2・語長1の全生成元 z_i が左右正則であることと、A が Z-domain であることの同値を示す。
+7周期により z_0,...,z_6 の七つへ還元できる。ただし各生成元の左右乗法の単射性は
+**全ての合成可能な次数成分**について要求され、有限次数の計算だけで判定できるとの主張ではない。
+
+逆向きの依存順序は次の通りである。
+
+1. z_i の正則性だけから重み3・5の関係射影が単射となる。AS対合と七行 Euler 式に加え、左乗法による h_i(u) >= u h_{i+2}(u) と 2 の mod 7 での生成性を用いて標準型を強制する。
+2. z_i での約分だけによって正規元族と2周期を構成し、7周期と組み合わせて1周期の graded 代数 D を復元する。この段階で D の整域性はまだ使わない。
+3. 正則正規元 z に Rogalski–Zhang **Lemma 1.1** を語長 grading で適用し、Rees の補題から AS-Gorenstein 性を移して D/(z) が AS 正則次元3であることを得る。**Corollary 1.2 の声明は親代数の domain 性を仮定するので、これをそのまま逆向きの根拠にはしない。** 必要なのは Lemma 1.1 と、Corollary 1.2 の証明でも使われる正則正規元に対する Rees の補題である。
+4. Rogalski–Zhang **Lemma 1.3(c)** により D が strongly noetherian、Auslander regular、Cohen–Macaulay となる。ここでは noetherian 性を次の段階に使用する。
+5. 標準語長 Hilbert 級数 (1-u)^(-4) から GK dimension 4 を確認し、Lu–Palmieri–Wu–Zhang **Lemma 1.3** により D が domain となる。これを associated Z-algebra へ移す。
+
+Rogalski–Zhang Lemma 1.3(c) の条件は、同論文の連結・次数1生成の設定で、
+正則な斉次正規元 f を持ち、D/(f) が AS 正則次元3であること。
+この判定では語長 grading を使うためその設定を満たす。
+D/(z) の整域性、重み2関係の二因子階数、Ore 表示を途中で先取りしない。
+
+LPWZ の [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf) の
+Lemma 1.3（PDF p.6）を直接確認した。noetherian・connected graded・AS正則・
+global dimension 4・GK dimension 4 から domain を結論し、次数1生成を要求しないと明記している。
+同箇所が根拠として挙げるのは **Artin–Tate–Van den Bergh, Theorem 3.9**、
+*Modules over regular algebras of dimension 3*, Invent. Math. 106 (1991), no.2, 335–388（LPWZの書誌 [ATV2]）である。
+今回直接確認したのは LPWZ におけるこの声明と出典表示であり、ATV2 原典の当該証明は直接再確認していない。
 
 Sierra **Theorem 1.2 = Corollary 4.4** は、associated Z-algebra の添字保持同型と
 Zhang twist の同一視を与え、degree 1 生成を要求しないことを本文で再確認した。
@@ -80,7 +101,9 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 任意 n の語長二次 graded 定理でも、現在は noetherian 性と指定 Hilbert 級数を仮定している。
 
 未解決なのは、Q 全体の整域性、非整域対象の存在と分類、全 indexed 同型・成分・特殊化である。
-最小周期7、非標準 Hilbert 級数、非定数の射影階数が現れるとすれば非整域部分に限られる。
+整域性の次の具体的課題は、七つの z_i の左右正則性である。
+最小語長の零化元を仮定し、最小解消・AS対合・関係射影と syzygy から排除できるかを調べる。
+最小周期7、非標準 Hilbert 級数、非定数の射影階数が現れるとすれば、ある z_i の左右正則性が破れる部分に限られる。
 対角族、二同型類の基準族、射影階数分岐も、既存の重み付き/Ore 族との完全な同定は未了である。
 
 ## 一般の最小生成元次数 (1^n,2,3)

@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 8,
+  "version": 9,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
@@ -14,7 +14,8 @@
     "general_weights": "For n>=1: connected locally finite left/right noetherian AS-regular graded C-algebras with minimal generator degrees (1^n,2,3), global dimension n+2, and H(t)=1/((1-t)^n(1-t^2)(1-t^3)).",
     "general_weights_quadratic": "Within the stated general-n noetherian graded Hilbert class, word-quadratic algebras are word-Koszul with relation counts (binom(n,2),n,n,1); domain objects admit the exhaustive canonical two-step Ore classification and explicit graded-isomorphism orbits. The stronger indexed domain theorem removing noetherian, Hilbert and period assumptions is established only for n=2. General non-word-quadratic exhaustion is not proved for n>=3.",
     "indexed_domain_locus": "All Z-domains in Q have standard relation counts and Hilbert series, admit a word-preserving period-one structure, and are associated Z-algebras of B[z;sigma][w;tau,D] over a quantum or Jordan plane. Hilbert series, noetherianity and period one are conclusions, not additional assumptions. Noetherianity follows from the Ore presentation; full bare indexed-isomorphism orbits remain unclassified.",
-    "non_domain_boundary": "Any nonstandard object, object of least period seven, or object with nonconstant rho_i in Q has zero divisors. The existence of such objects and automatic domainness of all Q remain open."
+    "non_domain_boundary": "Any nonstandard object, object of least period seven, or object with nonconstant rho_i in Q has zero divisors. The existence of such objects and automatic domainness of all Q remain open.",
+    "domain_regularity_criterion": "For a chosen word-homogeneous quadratic presentation of any A in Q, A is a Z-domain if and only if the jump-2, word-length-one generators z_i are left and right regular for i=0,...,6. Each regularity condition concerns multiplication in every degree. Seven-periodicity reduces the indices, not the degrees, so this is not a finite-degree computational test."
   },
   "claims": [
     {
@@ -243,13 +244,32 @@
       "novelty": "not_finally_verified",
       "external_peer_review": false,
       "formalized": false
+    },
+    {
+      "id": "DOMAIN-Z-REGULARITY",
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "proof": "papers/nc-p1123.tex#idx:prop:z-regular-criterion",
+      "scope": "For all Q and a chosen word-quadratic presentation, Z-domainness is equivalent to two-sided regularity of the jump-2, word-length-one generators z_0,...,z_6 in all degrees. The proof first obtains standard ranks and periods two and one using z-regularity alone; it then derives noetherianity from the AS3 normal quotient and only subsequently derives domainness. This is a finite-index reduction, not a finite-degree test.",
+      "depends_on": [
+        "GENERAL-KOSZUL",
+        "AS-INDEX-7",
+        "PERIOD-7"
+      ],
+      "external_inputs": [
+        "Rogalski-Zhang Lemma 1.1 and the Rees-lemma argument: quotient by a regular normal word-degree-one element is AS3",
+        "Rogalski-Zhang Lemma 1.3(c): an AS3 normal regular quotient implies noetherianity",
+        "Lu-Palmieri-Wu-Zhang Lemma 1.3: noetherian connected AS4 of GK-dimension 4 is a domain"
+      ],
+      "novelty": "not_finally_verified; external implication theorems are known results",
+      "external_peer_review": false,
+      "formalized": false
     }
   ],
   "open_problems": [
     {
       "id": "DOMAIN-AUTOMATIC",
       "priority": 1,
-      "problem": "Determine whether every object of Q is a Z-domain. Analyze kernels of the weight-3 and weight-5 relation projections, their induced annihilators, and compatibility with AS duality and exact Koszul resolutions. If domainness fails, describe the zero-divisor branches without assuming standard Hilbert data."
+      "problem": "Determine whether every object of Q is a Z-domain by the equivalent condition that the seven jump-2, word-length-one generators z_0,...,z_6 of a chosen word-quadratic presentation have zero left and right annihilators in every degree. Begin with kernels of the weight-3 and weight-5 relation projections, then control possible higher-degree annihilators using AS duality and exact Koszul resolutions. Finite-degree injectivity checks alone do not settle the question."
     },
     {
       "id": "TYPE-EXHAUST",
@@ -294,7 +314,7 @@
   ],
   "resume_point": {
     "task_id": "DOMAIN-AUTOMATIC",
-    "next_action": "Keep the original four-dimensional indexed target Q. Start with the weight-3 and weight-5 relation projections: a nonzero kernel yields a concrete product vz, zv, wz or zw equal to zero. Follow these annihilators through the minimal Koszul resolution and Frobenius pairings to decide whether AS regularity excludes them. In parallel, use the established domain Ore structure to determine bare indexed-isomorphism orbits, beginning with the diagonal normalization and exceptional GL2 loci.",
+    "next_action": "Keep the original four-dimensional indexed target Q. Fix a word-homogeneous quadratic presentation and its seven jump-2, word-length-one generators z_0,...,z_6. Determine whether their left and right multiplication maps are injective in every degree; DOMAIN-Z-REGULARITY proves this equivalent to domainness of the entire Z-algebra. Begin with kernels of the weight-3 and weight-5 relation projections, which yield vz, zv, wz or zw equal to zero, and follow possible higher-degree annihilators through the minimal Koszul resolution and Frobenius pairings. In parallel, analyze bare indexed-isomorphism orbits of the established domain Ore locus, beginning with diagonal normalization and exceptional GL2 loci.",
     "read": [
       "research/plan_ja.tex",
       "papers/nc-p1123.tex",
@@ -302,8 +322,8 @@
       "research/indexed_z_algebra.tex",
       "research/BASELINE.md"
     ],
-    "obstacle": "The domain locus is structurally exhausted without noetherian, Hilbert or periodicity assumptions. Automatic domainness of all Q, Q=H for zero-divisor objects, and the complete bare indexed-isomorphism quotient remain unresolved. Nonstandard, least-period-seven and nonconstant-rho objects necessarily have zero divisors.",
-    "do_not_repeat": "The n=2 domain proof is complete in papers/nc-p1123.tex: standard relation counts via seven Euler identities; normal jump-2 family on the full algebra; period one from periods two and seven; AS3 quotient syzygy; two-step Ore form and noetherianity. Do not assume the quotient is a domain before its skew-polynomial presentation is proved. The arbitrary-n theorem retains its stated noetherian, domain and Hilbert hypotheses. General n>=3 nonquadratic work is a secondary problem, not the current resume point."
+    "obstacle": "The domain locus is structurally exhausted without noetherian, Hilbert or periodicity assumptions. Domainness is equivalent to regularity of seven z_i, but regularity must hold in all degrees and is not implied by a finite truncation. Automatic regularity, Q=H for zero-divisor objects, and the complete bare indexed-isomorphism quotient remain unresolved. Nonstandard, least-period-seven and nonconstant-rho objects necessarily have zero divisors.",
+    "do_not_repeat": "The n=2 domain structure theorem and the seven-index regularity criterion are complete in papers/nc-p1123.tex. In the latter, z-regularity alone gives standard ranks and periods two and one; the AS3 normal quotient gives noetherianity by known theory before AS4/GK4 domainness is applied. Do not presuppose domainness or invoke the domain Ore theorem to establish the criterion. The arbitrary-n theorem retains its stated noetherian, domain and Hilbert hypotheses. General n>=3 nonquadratic work is secondary."
   },
   "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex"

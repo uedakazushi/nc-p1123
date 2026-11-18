@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 8,
+  "version": 9,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -41,15 +41,17 @@
       "DOMAIN-STANDARD",
       "DOMAIN-PERIOD-ONE",
       "DOMAIN-ORE",
-      "DOMAIN-BOUNDARY"
+      "DOMAIN-BOUNDARY",
+      "DOMAIN-Z-REGULARITY"
     ],
-    "logical_review": "Independent AI-assisted readings of the entire new indexed-domain section and its direct dependencies completed. Three parallel mathematical reviews covered the general-Q Koszul/AS-index/seven-period argument, domain relation-count forcing, normal-family two-periodicity, one-period descent, and the AS3 top-syzygy argument. The final integrated proof was read independently and its notation and choice of period structure were corrected. This is not formalization or external peer review.",
+    "logical_review": "Independent AI-assisted readings of the entire new indexed-domain section and its direct dependencies completed. Three parallel mathematical reviews covered the general-Q Koszul/AS-index/seven-period argument, domain relation-count forcing, normal-family two-periodicity, one-period descent, and the AS3 top-syzygy argument. The final integrated proof was read independently and its notation and choice of period structure were corrected. This is not formalization or external peer review. The subsequent equivalence of Z-domainness with the two-sided regularity of the jump-2 generator family was independently audited; the noetherian-to-domain dependency was checked against the cited primary papers.",
     "new_reviewed_claims": [
       "INDEXED-NORMAL-Z",
       "DOMAIN-STANDARD",
       "DOMAIN-PERIOD-ONE",
       "DOMAIN-ORE",
-      "DOMAIN-BOUNDARY"
+      "DOMAIN-BOUNDARY",
+      "DOMAIN-Z-REGULARITY"
     ],
     "reviewed_dependencies": [
       "GENERAL-KOSZUL",
@@ -67,13 +69,17 @@
       "Word-preserving descent to an AS-regular graded domain",
       "Rogalski-Zhang normal quotient theorem applied in word degree one, with no noetherian hypothesis",
       "AS3 top-syzygy projections and relation preservation without assuming the quotient is a domain",
-      "PBW spanning and Hilbert comparison, Ore compatibility equations, reverse construction and noetherianity as a consequence"
+      "PBW spanning and Hilbert comparison, Ore compatibility equations, reverse construction and noetherianity as a consequence",
+      "Replacing jump-one injections by regular jump-two generators in the seven-row Hilbert comparison",
+      "Z-domainness equivalent to full-degree left/right regularity of seven selected z_i; no finite-degree decision claim",
+      "No circular domain assumption in the route normal regular quotient AS3 -> noetherian -> AS4/GK4 domain"
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
       "Van den Bergh, arXiv:0807.3753v3, Lemma 3.4",
       "Rogalski-Zhang, arXiv:1101.1998v2, Lemma 1.1, Corollary 1.2; Lemma 1.3(c) as an alternative route",
-      "Sierra, arXiv:math/0608791v3, Theorem 1.2 = Corollary 4.4"
+      "Sierra, arXiv:math/0608791v3, Theorem 1.2 = Corollary 4.4",
+      "Lu-Palmieri-Wu-Zhang, author PDF hiext.pdf, Lemma 1.3 (noetherian connected AS4 with GK dimension 4 is a domain; attributed there to ATV2, 3.9)"
     ],
     "formalized": false,
     "peer_reviewed": false,
@@ -109,7 +115,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "Initial run lacked lualatex.fmt. A local format was successfully generated for diagnosis, but an actual retry stopped on missing luaotfload-main.lua and ltjsarticle.cls. LuaTeX-ja, luatexja-preset and HaranoAji font files were also absent. No system settings or project sources were changed for this diagnosis.",
+    "diagnosis": "Initial run lacked lualatex.fmt. A local format was successfully generated for diagnosis, but an actual retry stopped on missing luaotfload-main.lua and ltjsarticle.cls. LuaTeX-ja, luatexja-preset and HaranoAji font files were also absent. No system settings or project sources were changed for this diagnosis. Compilation of the final revised sources was not repeated because these missing dependencies remain unresolved.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -120,25 +126,26 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "3275b0fb820b30fabbc8b2007f1daf4e36f0d8ae7847e56a78c705750b972dcf",
+        "source_sha256": "0d345bcb96aabeea2322caadc8651d47235db9a49808bc24d40b9bd626c587b9",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "016a765baf37821f6b3ff6d2dda7e5ad79007b7b55351970c60d0de145517c35",
+        "source_sha256": "0c3709e1e90bad784209e03165ae78b31ffd02b318f495220178088bbaa36ae3",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "8ad778573a70259ab8d528442a8dc6805c92efa0f9318f39c6f722936bd3c820",
+        "source_sha256": "cff6c9fb5d7b7633dba72d0d985fe10cd03cb5284de26ed781f320fc87ed57d2",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "3ba3bc646ac4e87750a0beb2417e2d2648c65d6902ffc1fe71f52f54eea7e0d9",
+        "source_sha256": "9936c5b3f941b350f36b2aee9cd6a6dd2758580fab242465987c9e47d523ea1d",
         "current_pdf_verified": false
       }
-    ]
+    ],
+    "final_sources_compiled": false
   },
   "storage": {
     "canonical_repository": "uedakazushi/nc-p1123",

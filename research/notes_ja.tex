@@ -8,7 +8,7 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第8版}
+\date{2026年11月19日\quad 第9版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
@@ -100,11 +100,37 @@ $VVw$と$wVV$へ射影すると、重み4関係の$Vw,wV$への両射影が同�
 （\texttt{idx:lem:three-generator}）。
 任意次元の定理で使うnoetherian有限生成加群の議論は、この三生成元商では不要である。
 
+\paragraph{整域性を七窓の正則元へ還元する判定。}
+選んだ語長斉次二次表示の重み2・語長1の生成元を$z_i$とすると、
+主論文\texttt{idx:prop:z-regular-criterion}により
+\[
+ A\text{ が}\mathbb Z\text{-整域}
+ \quad\Longleftrightarrow\quad
+ z_0,\ldots,z_6\text{ が全て左右正則}
+\]
+である。7周期同型はこの一次元の生成元空間を非零スカラー倍で移すので、
+七つの添字での正則性から全ての$z_i$の正則性が従う。
+ただし各$z_i$について、\emph{全次数}での左右乗法の単射性を要求する。
+有限個の添字に帰着したのであって、低次だけの有限計算による判定ではない。
+
+証明では全代数の整域性を先に使わない。
+関係射影の単射性には$z_i$の左右正則性だけで足り、行Hilbert級数も
+$h_i(u)\geq u h_{i+2}(u)$を法7で反復して比較できる。
+これにより標準型、正規元族、1周期化を順に得る。
+graded代表$C$の語長1元$z$は正規正則であり、
+Rogalski--ZhangのLemma~1.1とRees lemmaで$C/(z)$がAS正則次元3となる。
+同論文Lemma~1.3(c)からnoetherian性を得た\emph{後で}、
+Lu--Palmieri--Wu--ZhangのLemma~1.3をAS次元4・GK次元4の$C$へ適用し、整域性を得る。
+これらの正規商・noetherian性・整域性の含意は既知理論であり、
+本対象を七つの正則元の問題へ帰着する議論と区別する。
+適用箇所と書誌情報は主論文と\path{research/BASELINE.md}に置く。
+
 \paragraph{残る対象。}
 非標準型、最小周期7、非定数の$\rho_i$を持つ対象には、必ず零因子がある
 （\texttt{idx:cor:domain-boundary}）。
 ただし$\mathcal Q$の全対象が整域であること、$\mathcal Q=\mathcal H$、
 裸の添字保持同型による全軌道分類は未証明である。
+整域性の自動性では、七窓の$z_i$の左右消去子が零となるかを全次数で追う。
 上記の証明は今回複数エージェントで論理監査したが、第三者査読、形式化、
 文献上の新規性の最終確認とは区別する。
 

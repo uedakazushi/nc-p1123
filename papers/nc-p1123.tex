@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・次数付き同型と$\mathbb Z$-整域の1周期性}
 \author{}
-\date{2026年11月19日\quad 統合版 v3}
+\date{2026年11月19日\quad 統合版 v4}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -54,11 +54,12 @@ AS添字は$n+5$で、最小解消の内部次数は4本の対角線上にある
 七つの行のEuler等式で関係数の不足を排除し、
 正規元族による2周期とAS双対性による7周期を結合して1周期を得る。
 三次元商の最高syzygyにより第2段の交換写像の可逆性を証明する。
+また整域性は、重み2の生成元族の左右正則性と同値であり、7周期で七つの添字に還元できる。
 整域性を外した全対象と、Zhang twistを含む全添字保持同型の軌道分類は未完成である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v3\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v4\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -2412,8 +2413,9 @@ $\prod_{a\in\{1,1,2,3\}}(1-ut^a)$である。
 
 \subsection{正規元族と1周期性}
 \begin{lemma}\label{idx:lem:normal-family}
-$A$を語長二次の$\mathbb Z$-整域とし、primitive jumpsを$(1,1,2,3)$、
+$A$をprimitive jumps $(1,1,2,3)$の語長二次$\mathbb Z$-代数とし、
 重み3と5の関係次元をそれぞれ2と1とする。
+選んだ語長斉次表示の生成元$z_i$が全て左右正則であると仮定する。
 可逆線型写像$\sigma_i:V_{i+2}\to V_i$と$c_i\in k^\times$が存在して
 \begin{equation}\label{idx:eq:normal-family}
 z_i v=\sigma_i(v)z_{i+1},\qquad
@@ -2422,7 +2424,7 @@ w_i z_{i+3}=c_i z_i w_{i+2}
 となる。さらに、語長を保つ同型$A(2)\simeq A$が存在する。
 \end{lemma}
 \begin{proof}
-重み3と5の関係の両射影は、前の証明と同じ整域性の議論により単射である。
+重み3と5の関係の両射影は、$z_i$の左右正則性により単射である。
 次元が等しいので同型となり、\eqref{idx:eq:normal-family}を得る。
 
 生成元上の写像
@@ -2605,16 +2607,70 @@ $\check D$の表現可能加群に対応するのは$D$の次数移動なので�
 その付随$\mathbb Z$-代数は定義\ref{idx:def:target}を満たす。
 \end{proof}
 
+\begin{proposition}[重み2生成元族による整域性の判定]\label{idx:prop:z-regular-criterion}
+$A\in\mathcal Q$の語長斉次二次表示を一つ固定する。
+次の条件は同値である。
+\begin{enumerate}
+\item $A$は$\mathbb Z$-整域である。
+\item 全ての$z_i$は左右正則である。
+\item $z_0,\ldots,z_6$は左右正則である。
+\end{enumerate}
+ここで$z_i$の左右正則性とは、全ての$j,h$に対して
+\[
+A_{i+2,j}\longrightarrow A_{ij},\quad a\longmapsto z_i a,
+\qquad
+A_{h,i}\longrightarrow A_{h,i+2},\quad b\longmapsto b z_i
+\]
+が単射となることをいう。
+従って第3条件も全次数の条件であり、有限次数の計算による判定を主張していない。
+\end{proposition}
+\begin{proof}
+第1条件から第2条件は明らかである。
+語長を保つ7周期同型は各jump 2・語長1の一次元空間を対応させるので、
+第2条件と第3条件は同値である。
+
+第2条件を仮定する。定理\ref{idx:thm:domain-standard}の関係数上界は、
+重み3と5の射影の核を$z_i$の左右正則性で排除するだけで同じように得られる。
+行Hilbert級数の比較にはjump 1元の代わりに$z_i$を使い、
+$h_i(u)\ge u h_{i+2}(u)$を得る。
+$2$は$\mathbb Z/7\mathbb Z$を生成するため、高々6回の反復で
+$h_j(u)\ge u^6H(u)/7$が全ての$j$について成立する。
+同じEuler欠損式\eqref{idx:eq:deficit}から全ての$\delta_d(i)$が零となる。
+従って標準関係数と\eqref{idx:eq:standard-hilbert}が得られる。
+
+補題\ref{idx:lem:normal-family}から全代数の2周期性を得る。
+7周期性と合わせて語長保存1周期を構成し、
+定理\ref{idx:thm:domain-period-one}の復元手続で$A\simeq\check D$とする。
+この復元による二次性・Koszul性・AS双対性の移行には整域性は不要である。
+従って$D$は語長についてAS正則次元4で、
+$H_D(u)=(1-u)^{-4}$である。ただし、まだ$D$を整域とはしない。
+1周期同型は$z_i$を非零スカラー倍で対応させるので、
+$D$の$z$は左右正則であり、交換式から正規でもある。
+
+正則正規な語長1元$z$に対して
+\cite[Lemma 1.1]{RZ}とRees lemmaを適用すると、$D/(z)$は三次元AS正則となる。
+この適用には$D$の整域性を要しない。
+\cite[Corollary 1.2の証明]{RZ}にある商のAS双対性の移行は、
+正則性が既に分かっている正規元について成立する。
+さらに\cite[Lemma 1.3(c)]{RZ}から$D$は左右noetherianとなる。
+そのGK次元は4なので、\cite[Lemma 1.3]{LPWZ}により$D$は整域である。
+従って$A\simeq\check D$も$\mathbb Z$-整域となる。
+この論証では、整域性を得る前に重み2関係の階数2やOre表示を使っていない。
+\end{proof}
+
 \begin{corollary}\label{idx:cor:domain-boundary}
 $\mathcal Q$で、標準Hilbert級数を持たない対象、
 最小正周期が7である対象、または$\rho_i$が非定数である対象は、
 いずれも$\mathbb Z$-整域ではない。
+従って、選んだ語長斉次表示で$z_0,\ldots,z_6$の少なくとも一つは
+左または右の非零消去子を持つ。
 \end{corollary}
 \begin{proof}
 整域なら定理\ref{idx:thm:domain-standard}と
 定理\ref{idx:thm:domain-period-one}により標準型かつ1周期である。
 $\rho_i$は命題\ref{diag:prop:rho}の添字保持同型不変量なので、
 $A\simeq A(1)$なら$\rho_i=\rho_{i+1}$となる。
+最後の主張は命題\ref{idx:prop:z-regular-criterion}による。
 \end{proof}
 \begin{remark}
 定理\ref{idx:thm:domain-ore}は整域部分の構造表示を尽くすが、
@@ -2633,7 +2689,8 @@ $\check D\simeq\check D'$であることは$D,D'$がZhang twistで結ばれる�
 裸の添字保持同型による全分類には次が残る。
 \begin{enumerate}
 \item 広い対象$\mathcal Q$の全てが$\mathbb Z$-整域であるか。
-非整域が存在するなら、関係射影の核と零因子を持つ枝を被覆する。
+命題\ref{idx:prop:z-regular-criterion}により、七つの$z_i$の左右正則性へ還元できる。
+その全次数の消去子をAS双対性と最小解消で追い、非整域の枝を排除または構成する。
 \item 整域性を外しても標準Hilbert級数と関係数が強制されるか。
 定理\ref{idx:thm:domain-standard}はこの問題の整域部分を解決する。
 \item 最小周期7または非定数の$\rho_i$を持つ対象が非整域部分に存在するか。
