@@ -1,0 +1,1123 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[haranoaji]{luatexja-preset}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\renewcommand{\proofname}{証明}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\gldim}{\operatorname{gldim}}
+\newcommand{\GKdim}{\operatorname{GKdim}}
+\newcommand{\Gclass}{\mathcal G}
+\newcommand{\Bclass}{\mathcal B}
+\title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
+\large 数値拘束・正規元・Ore表示と次数付き同型}
+\author{}
+\date{2026年11月18日\quad 第1版}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+次数1の最小生成元が$n$個、次数2と3の最小生成元が各1個である
+連結次数付きAS正則代数を考える。
+左右noetherian性、大域次元$n+2$、重み付き多項式Hilbert級数を仮定すると、
+AS添字は$n+5$で、最小解消の内部次数は4本の対角線上にある。
+さらに語長二次なら、任意の$n$について語長Koszul性を導ける。
+語長二次かつ整域である場合には、次数1部分が生成する$n$次元AS正則代数からの
+2段階のOre表示が全対象を尽くすことを証明する。
+正規元で割った商の二変数Hilbert級数とnoetherian性を用いて
+交換関係の射影の核を排除することが、任意次元での証明の要点である。
+一般の斉次Ore部分族についても、有限係数条件と全次数付き同型を記述する。
+最小生成元の次数だけを固定した場合には、大域次元が無界となる明示族があり、
+上記の追加仮定を次数列だけから導くことはできない。
+\end{abstract}
+\vfill
+\begin{center}
+原稿作成日時：2026-11-18 14:48:58 JST（Asia/Tokyo）\\
+組版ファイル：\texttt{\jobname.pdf}
+\end{center}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\section{対象と数値的な拘束}\label{sec:scope-numerical}
+基礎体を$k=\mathbb C$とする。全ての代数、テンソル積、線型写像は$k$上で考える。
+$n\geq1$とし、$1^n$は次数1が$n$回現れることを表す。
+連結局所有限な次数付き代数$A=\bigoplus_{j\geq0}A_j$について
+$A_0=k$、$A_+=\bigoplus_{j>0}A_j$とし、
+最小生成元空間を
+\[
+Q(A)=A_+/A_+^2
+\]
+と書く。shiftの規約は$M(s)_j=M_{j+s}$である。
+
+AS正則次元$d$とは、左右の大域次元が$d$で、有限GK次元を持ち、
+ある$\ell$について左右のAS--Gorenstein条件
+\[
+\Ext_A^i(k_A,A)=
+\begin{cases}0&i\ne d,\\ {}_Ak(\ell)&i=d,\end{cases}
+\qquad
+\Ext_{A^{\mathrm{op}}}^i({}_Ak,A)=
+\begin{cases}0&i\ne d,\\ k_A(\ell)&i=d\end{cases}
+\]
+を満たすことをいう。$\ell$をAS添字と呼ぶ。
+最小生成元の次数が$(1^n,2,3)$であるとは
+\[
+\dim Q(A)_1=n,\qquad \dim Q(A)_2=\dim Q(A)_3=1
+\]
+で、それ以外の成分が零であることをいう。
+この条件は、大域次元が$n+2$であるという条件を含まない。
+第\ref{sec:examples}節では、同じ最小生成元次数で大域次元が無界となる例を与える。
+
+\begin{definition}\label{def:general-class}
+$\Gclass_n$は次を満たす代数を、重み付き次数を保つ同型で考えたクラスとする。
+\begin{enumerate}
+\item $A$は連結局所有限、左右noetherianであり、AS正則次元は$n+2$である。
+\item 最小生成元の次数は$(1^n,2,3)$である。
+\item Hilbert級数は
+\begin{equation}\label{eq:general-target-hilbert}
+H_A(t)=\frac1{(1-t)^n(1-t^2)(1-t^3)}
+\end{equation}
+である。
+\end{enumerate}
+$\Gclass_n^{\mathrm{qd}}$は、さらに整域であり、最小生成元のある斉次持上げについて
+語長二次の表示を持つ対象の部分クラスとする。
+語長とは、重み1、2、3のどの生成元も長さ1として数える次数である。
+\end{definition}
+
+本稿の網羅定理は$\Gclass_n^{\mathrm{qd}}$に対するものである。
+任意の$n$について
+\[
+A=B[z;\sigma][w;\tau,D],\qquad
+B=k\langle A_1\rangle,\quad |z|=2,\quad |w|=3
+\]
+という表示を導き、$B$のAS正則性も証明する。
+この表示の必要十分な係数条件と同型判定は
+第\ref{sec:quadratic-chart}節にある。
+語長二次性を仮定しない場合は、第\ref{sec:general-ore-data}節で
+指定したOre部分族の完全な同型判定を与える。
+$n=2$については、先行原稿\cite[定理1.2]{G1123}が
+$\Gclass_2$全体をその部分族で尽くす。
+$n\geq3$で語長二次性を除いた網羅性、および最小生成元次数だけから
+定義\ref{def:general-class}の追加仮定を導くことは、本稿の結論に含まれない。
+
+\begin{lemma}[双対性と再次数付け]\label{lem:duality-regrading}
+左右noetherianな連結次数付きAS正則代数について、
+$\beta_{i,j}=\dim_k\Tor_i^A(k,k)_j$と置く。
+大域次元を$d$、AS添字を$\ell$とすると、
+\begin{equation}\label{eq:betti-duality}
+\beta_{i,j}=\beta_{d-i,\ell-j},\qquad
+H_A(t)^{-1}=\sum_{i,j}(-1)^i\beta_{i,j}t^j.
+\end{equation}
+したがって
+\begin{equation}\label{eq:hilbert-reciprocity}
+H_A(t^{-1})=(-1)^dt^\ell H_A(t).
+\end{equation}
+第二の正次数付けと両立する場合には、最小解消を二重次数付きに選べる。
+最後の自由項の二重shiftを$(N,\ell)$とすれば、
+二つの内部次数$(a,b)$は双対性の下で$(N-a,\ell-b)$に移る。
+\end{lemma}
+
+\begin{proof}
+noetherian性により、$k_A$の最小自由解消の各項は有限生成である。
+これに$\Hom_A(-,A)$を適用し、AS--Gorenstein条件によって最後の
+コホモロジーを除く正確性を用いると、shiftを補正した左$k$の最小自由解消を得る。
+これが\cite[Lemma 1.1]{LPWZ}の適用形である。
+左右のBetti数はともに平衡的な$\Tor^A(k,k)$で計算されるので、
+第1式が従う。最小解消のHilbert級数の交代和が第2式を与え、
+両者から\eqref{eq:hilbert-reciprocity}を得る。
+
+二重次数を持つ場合には、各核の生成元を斉次成分に分けて選ぶ。
+有限生成自由加群から$A$への非次数付き準同型は、内部次数付き準同型の有限和である。
+従って非次数付き$\Hom$複体は、内部次数付き$\Hom$複体の直和となる。
+元のAS条件で得られる1次元のExtは一つの二重次数に集中し、
+上の双対解消も二重次数を保つ。特に、正次数付けを取り替えたときにも
+AS--Gorenstein条件が成立する。
+本稿で用いる重み次数と語長次数は各生成元上で1以上3以下の比を持つので、
+局所有限性と有限GK成長も保たれる。
+\end{proof}
+
+\begin{proposition}\label{prop:four-strands}
+$A\in\Gclass_n$、$d=n+2$とする。このとき
+\[
+\ell=n+5,\qquad
+\Tor_i^A(k,k)_j=0\quad\text{if }j<i\text{ or }j>i+3.
+\]
+従って最小関係式の重みは$2,3,4,5$のいずれかであり、
+重み2の最小関係式は$\binom n2$本である。
+\end{proposition}
+
+\begin{proof}
+\eqref{eq:general-target-hilbert}の相反式と
+\eqref{eq:hilbert-reciprocity}を比較すると$\ell=n+5$となる。
+最小解消の微分の係数は全て$A_+$にあるので、第$i$項の生成次数は$i$以上である。
+双対な第$d-i$項の生成次数も$d-i$以上であるから
+$j\leq\ell-(d-i)=i+3$を得る。
+重み2の自由語は$V\otimes V$の$n^2$個と次数2の生成元1個である。
+ここで$V=A_1$であり、Hilbert級数から
+$\dim A_2=\binom{n+1}{2}+1$となる。
+その差は$\binom n2$であり、重み2より低い関係式がないので
+全て最小関係式である。
+\end{proof}
+
+数値的拘束だけでは、一般の関係数を全て復元できない。
+例えば$n=3$とし、重み$j$の最小関係数を$r_j$と書くと、
+双対性およびEuler式は
+\[
+r_2=3,\qquad r_3-r_5=2
+\]
+を与えるが、$r_4$はこの比較からは定まらない。
+実際、
+\[
+(1-t)^3(1-t^2)(1-t^3)
+=1-3t+2t^2+t^3-t^5-2t^6+3t^7-t^8
+\]
+であり、ホモロジー次数2と3の重み4の項が相殺される。
+次節では語長二次性から、これより強い構造を導く。
+
+\section{語長二次の場合の構造}
+\label{sec:quadratic-general-structure}
+
+以下では、重み付き次数とは別に、すべての最小生成元に次数 $1$ を
+与える語長次数を用いる。関係式が語長 $2$ に斉次である、という仮定は、
+この第二の次数が代数上に定義されることを含む。
+$V$ を重み $1$ の生成元空間、$z,w$ をそれぞれ重み $2,3$ の
+生成元とし、$\dim_kV=n$ とする。
+語長 $a$、重み $b$ の成分の差次数を $e=b-a$ と書く。
+このとき $V,z,w$ の差次数はそれぞれ $0,1,2$ である。
+関係空間を重みで分解すると
+\begin{align}
+ R_2&\subset V\otimes V,&
+ R_3&\subset (V\otimes kz)\oplus(kz\otimes V),\label{eq:general-relation-spaces-a}\\
+ R_4&\subset(V\otimes kw)\oplus k(z\otimes z)
+                    \oplus(kw\otimes V),&
+ R_5&\subset k(z\otimes w)\oplus k(w\otimes z),\label{eq:general-relation-spaces-b}\\
+ R_6&\subset k(w\otimes w).&&\label{eq:general-relation-spaces-c}
+\end{align}
+テンソル記号は関係式を代数内で読むとき省略する。
+
+\begin{lemma}\label{lem:unit-circle-hilbert}
+$D$ を次数 $1$ の有限個の元で生成される連結次数付き代数とし、その Hilbert 級数が
+$H_D(u)=p(u)^{-1}$ であるとする。
+$D$ が有限 GK 次元を持ち、$p(0)=1$、$\deg p=s$、
+$p$ の最高次係数の絶対値が $1$、$u$ の係数が $-s$ であれば、
+$p(u)=(1-u)^s$ である。
+\end{lemma}
+
+\begin{proof}
+$s=0$ は直ちに従うので $s>0$ とする。
+有限 GK 次元より $H_D$ は $|u|<1$ で収束するため、
+$p$ の根 $\alpha_1,\ldots,\alpha_s$ は $|\alpha_j|\geq1$ を満たす。
+定数項と最高次係数より $\prod_j|\alpha_j|=1$ なので、
+すべて $|\alpha_j|=1$ である。
+$p(u)=\prod_j(1-u/\alpha_j)$ の一次係数を比較すると
+$\sum_j\alpha_j^{-1}=s$ となる。
+各項の実部が $1$ 以下であり、実部の和が $s$ であるから、
+すべての $\alpha_j$ が $1$ に等しい。
+\end{proof}
+
+\begin{proposition}\label{prop:quadratic-general-structure}
+$A$ を左右 noetherian な連結次数付き AS 正則代数とし、
+次を仮定する。
+\begin{enumerate}
+ \item $\operatorname{gldim}A=n+2$ であり、
+ \[
+ H_A(t)=\frac{1}{(1-t)^n(1-t^2)(1-t^3)}.
+ \]
+ \item $V\oplus kz\oplus kw$ が重み $(1^n,2,3)$ の最小生成元空間で、
+ $A=T(V\oplus kz\oplus kw)/(R)$ は語長二次の表示である。
+\end{enumerate}
+このとき $A$ は語長次数について Koszul であり、その語長 Hilbert 級数は
+$(1-u)^{-n-2}$ である。
+
+$B=k\langle V\rangle\subset A$ と置くと、
+\[
+ B\cong T(V)/(R_2),\qquad
+ H_B(u)=(1-u)^{-n},\qquad
+ \operatorname{gldim}B=n,
+\]
+であり、$B$ は左右 noetherian な Koszul 代数である。
+関係空間の次元は
+\begin{equation}\label{eq:general-quadratic-relation-numbers}
+ (\dim R_2,\dim R_3,\dim R_4,\dim R_5,\dim R_6)
+ =\left(\binom n2,n,n,1,0\right).
+\end{equation}
+さらに $A$ が整域であると仮定すると、$B$ も整域であり、
+ある $\sigma\in\operatorname{Aut}_{\mathrm{gr}}(B)$ と $c\in k^\times$ により
+\begin{equation}\label{eq:general-z-normal}
+ zv=\sigma(v)z\quad(v\in V),\qquad wz=c zw
+\end{equation}
+と書ける。特に $z$ は $A$ の正則な正規元である。
+$Q=A/(z)$ は左右 noetherian な AS 正則代数で、
+\begin{equation}\label{eq:general-normal-quotient}
+ \operatorname{gldim}Q=n+1,\qquad
+ H_Q(t)=\frac{1}{(1-t)^n(1-t^3)}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+最小解消の双対性と Ext 代数の Frobenius 性
+\cite[Lemma~1.1, Theorem~1.9]{LPWZ} を、語長と重みの二重次数に適用する。
+まず差次数から Koszul 性を導き、次に差次数 $0$ の部分で $B$ を調べる。
+
+$d=n+2$ とし、重み次数に関する AS添字を $\ell$ とする。
+命題\ref{prop:four-strands}より $\ell=n+5=d+3$ である。
+同じ最小解消を二重次数付きで選び、その最後の自由項の語長 shift を
+$N$ とする。語長次数に関する最小性より $N\geq d$ である。
+
+以下、$E=\operatorname{Ext}_A^*(k,k)$ の内部次数は、
+対応する $\operatorname{Tor}^A_i(k,k)$ の次数を正に記録する。
+したがって $E^i_{a,e}$ は語長 $a$、重み $a+e$ の Tor 成分の双対である。
+この表示で Yoneda 積は $i,a,e$ をそれぞれ加法的に保つ。
+正規化 bar 複体を用いると、そのすべての因子の差次数が非負なので、
+$e<0$ ならば $E^i_{a,e}=0$ である。
+最上部は $E^d_{N,\ell-N}\cong k$ であり、Frobenius 性は
+\begin{equation}\label{eq:general-bigraded-frobenius}
+ E^i_{a,e}\otimes
+ E^{d-i}_{N-a,\ell-N-e}\longrightarrow E^d_{N,\ell-N}
+\end{equation}
+が完全対であることを与える。
+
+命題\ref{prop:four-strands}より最小関係式の重みは5以下なので、$R_6=0$ である。
+もし $R_5=0$ ならば、$A/(V)$ は
+$k\langle z,w\rangle$ または $k\langle z,w\rangle/(z^2)$ となる。
+前者は指数的に増大し、後者でも語 $w$ と $zw$ の異なる連接は
+相異なる基底語を与えるので指数的に増大する。
+どちらも $A$ の有限 GK 次元に反する。従って $R_5\neq0$ であり、
+$E^2_{2,3}=R_5^*\neq0$ である。
+\eqref{eq:general-bigraded-frobenius} と差次数の非負性から
+$\ell-N\geq3$ を得る。$\ell=d+3$ および $N\geq d$ と合わせると
+$N=d$ となる。
+第 $i$ Tor の語長は最小性により $i$ 以上であり、双対性により
+$N-(d-i)=i$ 以下である。従って $A$ は語長次数について Koszul である。
+
+語長 Hilbert 級数の逆数 $p_A(u)$ は Koszul 分解の交代和である。
+その次数は $d$、定数項は $1$、最高次係数は $(-1)^d$、一次係数は
+$-\dim(V\oplus kz\oplus kw)=-d$ である。
+語長と重みは各語上で $a\leq b\leq3a$ を満たすので、
+語長次数についても $A$ の増大は多項式的である。
+補題~\ref{lem:unit-circle-hilbert} より
+$H_A^{\mathrm{word}}(u)=(1-u)^{-d}$ となる。
+
+差次数 $0$ の生成元は $V$ だけであり、差次数が正の関係式から
+差次数 $0$ の関係式は生じない。従って
+$B=T(V)/(R_2)$ が $A$ の差次数 $0$ 部分として埋め込まれる。
+$z,w$ を $0$ に送る写像は $A$ から $B$ への全射であるから、
+$B$ は左右 noetherian である。
+また bar 複体の差次数 $0$ 部分は $B$ の bar 複体そのものであるから
+\begin{equation}\label{eq:general-bar-zero-excess}
+ \operatorname{Tor}^B_i(k,k)^*
+ \cong \bigoplus_a E^i_{a,0}=E^i_{i,0}.
+\end{equation}
+特に $B$ は Koszul である。
+
+$s=\dim R_5>0$ と置く。
+最上部の差次数が $3$ であることと
+\eqref{eq:general-bigraded-frobenius} より
+\[
+ \dim E^i_{i,0}=\dim E^{d-i}_{d-i,3}.
+\]
+$E^0$ および $E^1$ の差次数 $3$ 部分は零であるから、
+左辺は $i>n$ で零である。$i=n$ では右辺は $s$ となる。
+従って \eqref{eq:general-bar-zero-excess} より
+$\operatorname{gldim}B=n$ かつ
+$\dim\operatorname{Tor}^B_n(k,k)=s$ である。
+$B^!=T(V^*)/(R_2^\perp)$を$B$の二次双対とする。
+$R_2^\perp\subset V^*\otimes V^*$は$R_2$を消す二次テンソルの空間である。
+大域次元の上界は、Koszul代数の二側Koszul解消
+$B\otimes_k(B_i^!)^*\otimes_k B$ が長さ$n$で終わることから得られる。
+任意の左または右加群とのテンソル積により長さ$n$以下の自由解消が得られ、
+$\Tor^B_n(k,k)\ne0$が下界を与える。
+$B$ は $A$ の部分代数なので有限 GK 次元を持つ。
+その Koszul 分解の交代和 $p_B(u)$ は次数 $n$、最高次係数 $(-1)^ns$ を持つ。
+有限GK次元により$H_B(u)=p_B(u)^{-1}$ が $|u|<1$ で収束するため、
+$p_B$ のすべての根の絶対値は $1$ 以上である。
+その絶対値の積は定数項と最高次係数の比 $1/s$ なので、
+$s\leq1$ を得る。従って $s=1$ である。
+一次係数は $-\dim B_1=-n$ なので、
+補題~\ref{lem:unit-circle-hilbert} を再び用いて
+$H_B(u)=(1-u)^{-n}$ を得る。
+
+重み $2$ の次元を比較すると
+$\dim R_2=n^2-\binom{n+1}{2}=\binom n2$ である。
+重み $3$ では語長を分けて
+\[
+ \dim A_3=\dim B_3+2n+1-\dim R_3
+          =\binom{n+2}{3}+2n+1-\dim R_3
+\]
+となる。仮定した重み Hilbert 級数の同じ係数は
+$\binom{n+2}{3}+n+1$ なので $\dim R_3=n$ である。
+語長 Hilbert 級数 $(1-u)^{-n-2}$ と Koszul 性から、
+全二次関係式の数は $\binom{n+2}{2}$ である。
+既に求めた $R_2,R_3,R_5,R_6$ の次元を差し引くと
+$\dim R_4=n$ となり、\eqref{eq:general-quadratic-relation-numbers} を得る。
+
+ここから $A$ が整域であると仮定する。$B\subset A$ も整域である。
+$R_5\subset kzw\oplus kwz$ は一次元であり、$zw,wz$ はともに零でないので、
+$R_5=k(wz-czw)$、$c\in k^\times$、と書ける。
+$R_3$ の $Vz$ および $zV$ への射影はともに単射である。
+実際、いずれかの核にある非零関係式は $zv=0$ または $vz=0$ を
+非零の $v\in V$ について与え、整域性に反する。
+両射影は同じ $n$ 次元の空間の間の同型であるから、
+$zv=\sigma(v)z$ と一意的に書け、$\sigma:V\to V$ は可逆である。
+$r\in R_2$ に対し
+$0=zr=\sigma^{\otimes2}(r)z$ である。
+整域性と $B\hookrightarrow A$ から
+$\sigma^{\otimes2}(R_2)\subset R_2$ を得る。
+両辺の次元が等しいためこれは等号であり、$\sigma$ は $B$ の
+次数付き自己同型を誘導する。
+これと $wz=c zw$ により $zA=Az$ である。
+
+$z$ は語長次数について次数 $1$ の正則正規元である。
+従って \cite[Lemma~1.1, Corollary~1.2]{RZ} を語長次数に適用すると
+$Q=A/(z)$ は AS 正則であり、その大域次元は $n+1$ である。
+商は重み次数も持つ。重み次数における右 $A$ 加群の完全列
+$0\to A(-2)\xrightarrow{\,a\mapsto za\,}A\to Q\to0$
+から \eqref{eq:general-normal-quotient} の Hilbert 級数を得る。
+商$Q$の語長次数と重み次数に補題\ref{lem:duality-regrading}を適用すると、
+重み次数についてもAS--Gorenstein条件が成立する。
+\end{proof}
+
+\begin{theorem}\label{thm:quadratic-all-ones}
+命題~\ref{prop:quadratic-general-structure} の仮定を満たす
+整域 $A$ を考える。このとき標準的な部分代数
+\[
+ B=k\langle A_1\rangle,\qquad C=k\langle A_1,A_2\rangle
+\]
+はそれぞれ AS 正則次元 $n,n+1$ を持ち、
+\begin{equation}\label{eq:quadratic-all-ones-ore}
+ A=B[z;\sigma][w;\tau,D],\qquad C=B[z;\sigma]
+\end{equation}
+と表される。ここで $B=T(V)/(R_2)$ は二次の AS 正則代数で
+$H_B(t)=(1-t)^{-n}$ である。
+ある $\mu\in\operatorname{Aut}_{\mathrm{gr}}(B)$、$c\in k^\times$、
+$L\in V^*$ に対し、関係式は
+\begin{equation}\label{eq:quadratic-all-ones-normal-form}
+ zv=\sigma(v)z,\qquad
+ wv=\mu(v)w+L(v)z^2\quad(v\in V),\qquad wz=c zw
+\end{equation}
+であり、係数は
+\begin{equation}\label{eq:quadratic-all-ones-conditions}
+ \mu\sigma=\sigma\mu,\qquad
+ L\sigma=cL,\qquad
+ (\mu\otimes L+L\otimes\sigma^2)(R_2)=0
+\end{equation}
+を満たす。最後の式では両テンソル写像の値域を $V$ とする。
+$\tau$ と $D$ は
+\[
+ \tau|_B=\mu,\quad\tau(z)=cz,\qquad
+ D(v)=L(v)z^2\quad(v\in V),\quad D(z)=0
+\]
+によって定まる。$D$ は次数 $3$ の $\tau$-導分であり、
+規約は $D(ab)=\tau(a)D(b)+D(a)b$ である。
+
+\end{theorem}
+
+\begin{proof}
+まず $Q=A/(z)$ の二重次数付き Hilbert 級数を求める。
+その差次数 $2$ の部分が有限生成 $B$ 加群であることを noetherian 性から導き、
+その Hilbert 級数を使って $w$ の両側の交換関係を決定する。
+
+命題~\ref{prop:quadratic-general-structure} により $z$ は正則正規元で、
+$Q=A/(z)$ は左右 noetherian、AS 正則次元 $n+1$、かつ
+$H_Q(t)=((1-t)^n(1-t^3))^{-1}$ である。
+$z$ の語長次数が $1$ なので、語長 Hilbert 級数は
+$H_Q^{\mathrm{word}}(u)=(1-u)^{-n-1}$ である。
+その語長 AS添字は Hilbert 級数の相反関係から $n+1$ であり、
+最小解消の最小性と双対性から $Q$ は語長次数について Koszul である。
+重み AS添字は同じ相反関係から $n+3$ である。
+
+$Q$ の関係式は $V$ 内の関係式と $Vw\oplus wV$ 内の関係式からなる。
+イデアル$(z)$は正の差次数の元からなるので$B\cap(z)=0$であり、
+$B$は$Q$にも埋め込まれる。
+従って $w$ の出現回数 $j$ も次数を定め、重みは語長 $a$ と
+$a+2j$ の関係にある。$F=\operatorname{Ext}_Q^*(k,k)$ についても
+内部次数を対応する Tor の正の次数で記録する。
+最上部 $F^{n+1}$ の語長は $n+1$、重みは $n+3$ なので、
+その $w$ 次数は $1$ である。Frobenius 性と bar 複体の非負次数性から、
+$F$ の $w$ 次数は $0$ または $1$ に限られる。
+$w$ 次数 $0$ の bar 複体は $B$ の bar 複体であるから
+\[
+ \dim F^i_{j=0}=\dim\operatorname{Tor}^B_i(k,k)=\binom ni.
+\]
+最後の等号は $B$ の Koszul 性と $H_B(u)=(1-u)^{-n}$ による。
+Frobenius 対により
+$\dim F^i_{j=1}=\binom n{i-1}$ である。
+語長を変数 $u$、$w$ 次数を変数 $v$ で記録した最小解消の交代和は、
+従って
+\[
+ H_Q(u,v)^{-1}
+ =\sum_i(-1)^iu^i\left(\binom ni+v\binom n{i-1}\right)
+ =(1-u)^n(1-uv).
+\]
+$M=Q_{j=1}=BwB$ と置くと、語長 Hilbert 級数は
+\begin{equation}\label{eq:one-heavy-component-hilbert}
+ H_M(u)=\frac{u}{(1-u)^n}=uH_B(u).
+\end{equation}
+
+正の $w$ 次数の元がなす左イデアル
+$I=\bigoplus_{j\geq1}Q_{j}$ は $Q$ の左 noetherian 性により有限生成である。
+生成元を語長と $w$ 次数について斉次に取ると、$w$ 次数 $1$ の部分には
+$w$ 次数 $1$ の生成元と $Q_{j=0}=B$ だけが寄与する。
+従って $M$ は有限生成左 $B$ 加群である。
+各生成元を $\sum a_iwb_i$ と展開し、有限個の $b_i$ を集めれば
+\begin{equation}\label{eq:one-heavy-finite-left-generation}
+ M=\sum_{i=1}^s Bwb_i
+\end{equation}
+と書ける。ここで $b_i$ は $B$ の語長斉次元とする。
+
+非零の斉次元 $a\in B$ に対して $aw=0$ と仮定する。
+$w\neq0$ なので $r=\deg a>0$ である。
+各 $wb_i$ は $a$ に左から殺されるので、
+\eqref{eq:one-heavy-finite-left-generation} は次数付き左 $B$ 加群の全射
+\[
+ \bigoplus_{i=1}^s(B/Ba)(-1-\deg b_i)\longrightarrow M
+\]
+を与える。$B$ は整域であるから、右乗法 $b\mapsto ba$ は単射であり、
+$H_{B/Ba}(u)=(1-u^r)H_B(u)$ である。
+従って $0<u<1$ に対し
+\[
+ uH_B(u)=H_M(u)
+ \leq (1-u^r)H_B(u)\sum_{i=1}^s u^{1+\deg b_i}.
+\]
+$H_B(u)$ で割って $u\to1^-$ とすると $1\leq0$ となり矛盾する。
+従って左 $B$ 加群の写像 $B(-1)\to M$、$b\mapsto bw$、は単射である。
+その Hilbert 級数は \eqref{eq:one-heavy-component-hilbert} と一致するため、
+この写像は同型である。
+同じ議論を右 noetherian 性と右 $B$ 加群に適用すると、
+$b\mapsto wb$ も $B(-1)$ から $M$ への同型である。
+従って
+\[
+ M=Bw=wB.
+\]
+
+これにより $b\in B$ に対して
+$wb=\mu(b)w$ を満たす $\mu(b)\in B$ が一意的に定まる。
+$w(bb')=(wb)b'$ と $B\to Bw$ の単射性から $\mu$ は代数準同型であり、
+$Bw=wB$ と両乗法写像の単射性から可逆である。
+従って $\mu\in\operatorname{Aut}_{\mathrm{gr}}(B)$ である。
+$Q$ は $B$ と $w$ で生成されるので、乗法は
+$B[w;\mu]\to Q$ という全射を与える。
+両辺の二重次数付き Hilbert 級数は
+$((1-u)^n(1-uv))^{-1}$ に等しいため、これは同型である。
+$B$ が整域で $\mu$ が自己同型なので、この Ore 拡大では非零の元の積の
+$w$ 最高次係数は零でない。従って $Q$ は整域であり、
+$w$ はその正則正規元である。
+$Q/(w)=B$ であり、$w$ の語長次数は $1$ なので、
+\cite[Lemma~1.1, Corollary~1.2]{RZ} を適用して
+$B$ が AS 正則次元 $n$ であることを得る。
+
+$R_4$ を $z=0$ で写した空間を
+$\overline R_4\subset Vw\oplus wV$ と書く。
+この写像の核にある関係式は $z^2$ の定数倍であるため、
+$A$ の整域性より核は零である。従って
+$\dim\overline R_4=\dim R_4=n$ である。
+$Q=B[w;\mu]$ の関係式 $wv-\mu(v)w$ を $R_4$ に持ち上げると、一意的に
+\[
+ wv=\mu(v)w+L(v)z^2\qquad(v\in V)
+\]
+と書ける。ここで $L:V\to k$ は線形写像である。
+
+関係式 \eqref{eq:quadratic-all-ones-normal-form} を用いると、
+任意の語は $b_0z^iw^j$（$b_0\in B$、$i,j\geq0$）の線形結合に書ける。
+具体的には $wv$ の置換で $z^2$ の項を選ぶと $w$ の個数が減り、
+それ以外の置換では $w$ を右へ動かす。
+その後 $zv=\sigma(v)z$ で $z$ を右へ動かすので、この手順は有限回で終わる。
+従って乗法写像
+\begin{equation}\label{eq:quadratic-ordered-basis-map}
+ B\otimes_k k[z]\otimes_k k[w]\longrightarrow A,
+ \qquad b_0\otimes z^i\otimes w^j\longmapsto b_0z^iw^j
+\end{equation}
+は重み次数付き全射である。
+左辺の Hilbert 級数は
+$H_B(t)/((1-t^2)(1-t^3))=H_A(t)$ なので、
+各有限次元斉次成分でこの全射は同型となる。
+従って \eqref{eq:quadratic-ordered-basis-map} はベクトル空間同型である。
+特に $C=B[z;\sigma]$ が $A$ に埋め込まれ、
+$A=\bigoplus_{j\geq0}Cw^j$ である。
+$C$ は整域であり、その正則正規元 $z$ は語長次数 $1$、
+$C/(z)=B$ である。\cite[Lemma~1.1, Corollary~1.2]{RZ} により、
+$C$ も AS 正則で、その大域次元は $n+1$ である。
+
+この直和分解に従って $wa$ の $w$ 係数と定数係数を取ると、
+$a\in C$ に対する写像 $\tau,D:C\to C$ が一意的に定義される。
+生成元に関する上の関係式から $wa$ は常に $Cw+C$ に属する。
+$w(ab)=(wa)b$ の両係数を比較すれば、$\tau$ は代数準同型であり、
+$D(ab)=\tau(a)D(b)+D(a)b$ であることを得る。
+
+$wzv$ を $w(zv)$ と $(wz)v$ の順に展開すると
+\[
+ c\mu\sigma(v)zw+L\sigma(v)z^3
+ =c\sigma\mu(v)zw+cL(v)z^3.
+\]
+\eqref{eq:quadratic-ordered-basis-map} の一意性により
+$\mu\sigma=\sigma\mu$ および $L\sigma=cL$ となる。
+従って $\tau|_B=\mu,\tau(z)=cz$ は $C$ の自己同型であり、
+逆写像は $\mu^{-1}$ と $z\mapsto c^{-1}z$ で与えられる。
+また $r=\sum_j a_j\otimes b_j\in R_2$ に対して
+\[
+ D(r)=\sum_j\bigl(\mu(a_j)L(b_j)+L(a_j)\sigma^2(b_j)\bigr)z^2=0
+\]
+である。ここでも \eqref{eq:quadratic-ordered-basis-map} を用いて
+\eqref{eq:quadratic-all-ones-conditions} の最後の式を得る。
+これで $A=C[w;\tau,D]$ が証明された。
+
+最後に、$B$ は重み次数 $1$ の成分が生成する部分代数であり、
+$A_2=B_2\oplus kz$ であるから
+$C=k\langle A_1,A_2\rangle$ である。
+従って得られた $B,C$ は表示で選んだ基底によらない標準的な部分代数である。
+
+\end{proof}
+
+\section{任意の$n$における斉次Oreデータ}\label{sec:general-ore-data}
+\subsection{基礎代数と逆構成}
+\begin{definition}\label{def:base-class}
+$\Bclass_n$は、次数1で生成される連結局所有限な左右noetherian AS正則代数$B$で
+\[
+\gldim B=n,\qquad H_B(t)=(1-t)^{-n}
+\]
+を満たすもののクラスとする。整域である部分を$\Bclass_n^{\mathrm d}$と書く。
+\end{definition}
+
+$B\in\Bclass_n$のAS添字は、補題\ref{lem:duality-regrading}により$n$である。
+最小解消の第$i$項の次数は$i$以上であり、双対性により$i$以下である。
+従って$B$はKoszulで、
+\[
+B=T(V)/(R),\qquad \dim V=n,\quad
+R\subset V\otimes V,\quad \dim R=\binom n2
+\]
+と書ける。$\Aut_{\mathrm{gr}}B$は
+$\phi^{\otimes2}(R)=R$を満たす$\phi\in\GL(V)$の群である。
+
+Ore拡大の規約は
+\[
+C=B[z;\sigma,\delta],\qquad
+zb=\sigma(b)z+\delta(b),\qquad
+\delta(ab)=\sigma(a)\delta(b)+\delta(a)b
+\]
+とする。左$B$加群として$C=\bigoplus_{j\geq0}Bz^j$である。
+$|z|=2$なので$\sigma$の次数は0、$\delta$の次数は2である。
+
+\begin{proposition}\label{prop:ore-construction}
+$B\in\Bclass_n$、
+$\sigma\in\Aut_{\mathrm{gr}}B$、
+次数2の$\sigma$-導分$\delta$を取り、$C=B[z;\sigma,\delta]$とする。
+さらに$\tau\in\Aut_{\mathrm{gr}}C$と次数3の$\tau$-導分$D$を取ると、
+\[
+A=C[w;\tau,D],\qquad |w|=3
+\]
+は$\Gclass_n$に属する。$B$が整域なら$C,A$も整域である。
+この表示で
+\begin{equation}\label{eq:general-canonical-flag}
+B=k\langle A_1\rangle,\qquad C=k\langle A_1,A_2\rangle
+\end{equation}
+となる。
+\end{proposition}
+
+\begin{proof}
+自己同型による斉次Ore拡大は左右noetherian性を保つ。
+正則性については、連結次数付きAS正則性とtwisted Calabi--Yau性の対応、および
+自己同型によるOre拡大がその次元を1増加させる定理
+\cite[\S1.2, Lemma 1.3, Theorem 3.3]{LWW}を2回適用する。
+同文献の非次数付きExtから次数付きAS条件への移行は、
+補題\ref{lem:duality-regrading}の有限自由解消による直和分解で行える。
+正次数成分は1次元の次数付きExtに零として作用するので、
+そこで得られる加群は$k$のshiftである。
+
+左$B$加群基底$\{z^iw^j\}_{i,j\geq0}$から
+\[
+H_A(t)=\frac{H_B(t)}{(1-t^2)(1-t^3)}
+\]
+となり、有限GK次元も確認できる。各関係式に最小生成元の線型項がないので、
+$Q(A)=V\oplus kz\oplus kw$である。
+より具体的には、Ore基底から
+$A_1=V$、$A_2=B_2\oplus kz$、
+$A_3=B_3\oplus Vz\oplus kw$となる。
+この分解は最小性と\eqref{eq:general-canonical-flag}を与える。
+整域性は、Ore変数の最高次数の係数が、非零係数とその自己同型像の積になることから従う。
+\end{proof}
+
+\subsection{有限個の必要十分条件}
+$B=T(V)/(R)\in\Bclass_n$を固定する。
+$f:V\to B_3$を線型写像とし、$\pi:T(V)\to B$を標準全射とする。
+線型写像$\delta:T(V)\to B$を$\delta|_V=f$および
+\[
+\delta(ab)=\sigma(\pi(a))\delta(b)+\delta(a)\pi(b)
+\]
+によって一意に定める。
+$\delta$が$B$へ降りる必要十分条件は
+\begin{equation}\label{eq:general-delta}
+\sum_j\bigl(\sigma(u_j)f(v_j)+f(u_j)v_j\bigr)=0
+\quad\text{in }B_4,\qquad
+r=\sum_j u_j\otimes v_j\in R
+\end{equation}
+である。$R$の一つの基底について調べればよい。
+
+$C=B[z;\sigma,\delta]$の任意の次数付き自己同型は、一意に
+\[
+\tau|_B=\mu,\qquad \tau(z)=cz+p,\qquad
+\mu\in\Aut_{\mathrm{gr}}B,\quad c\in k^\times,\quad p\in B_2
+\]
+と書ける。この候補が自己同型となる必要十分条件は
+\begin{align}
+\mu\sigma&=\sigma\mu,\label{eq:general-tau-commute}\\
+c\,\delta(\mu(v))+p\mu(v)-\mu(\sigma(v))p-\mu(\delta(v))&=0
+\quad(v\in V).\label{eq:general-tau-constant}
+\end{align}
+実際、$\tau$を$zv-\sigma(v)z-\delta(v)$に適用し、
+左$B$加群基底に沿って$z$の係数と定数項を比較すると、この2式を得る。
+これらが成立すれば準同型が定まり、その像は$B$と$z$を含む。
+従って全射であり、各次数成分が有限次元なので自己同型である。
+逆に、$B=k\langle C_1\rangle$、$C_2=B_2\oplus kz$より、
+どの自己同型もこの形を持つ。
+
+$F:V\to C_4$および$h\in C_5$を取り、
+$D|_V=F$、$D(z)=h$と指定する。
+標準全射$\pi_C:T(V\oplus kz)\to C$を用い、
+$D:T(V\oplus kz)\to C$を
+$D(ab)=\tau(\pi_C(a))D(b)+D(a)\pi_C(b)$によって一意に延長する。
+$D$が次数3の$\tau$-導分として$C$へ降りる必要十分条件は
+\begin{align}
+\sum_j\bigl(\mu(u_j)F(v_j)+F(u_j)v_j\bigr)&=0
+\quad\text{in }C_5
+&&\left(\sum_j u_j\otimes v_j\in R\right),\label{eq:general-D-base}\\
+(cz+p)F(v)+hv-\mu(\sigma(v))h-F(\sigma(v))z-D(\delta(v))&=0
+\quad\text{in }C_6
+&& (v\in V).\label{eq:general-D-mixed}
+\end{align}
+最後の$D(\delta(v))$は、$f(v)\in B_3$を$V$の語で表し、
+$F$と$\mu$によるLeibniz則で計算する。
+\eqref{eq:general-D-base}が成立しているので、この計算は代表元に依存しない。
+
+\begin{theorem}[斉次Ore部分族の係数表示]\label{thm:general-coefficients}
+$B\in\Bclass_n$を固定したとき、命題\ref{prop:ore-construction}の全ての代数は
+\[
+\sigma,\mu\in\Aut_{\mathrm{gr}}B,\quad c\in k^\times,\quad
+f\in\Hom(V,B_3),\quad p\in B_2,\quad
+F\in\Hom(V,C_4),\quad h\in C_5
+\]
+で、\eqref{eq:general-delta}および
+\eqref{eq:general-tau-commute}--\eqref{eq:general-D-mixed}を満たすものから得られる。
+これらの式は必要十分である。
+\end{theorem}
+
+\begin{proof}
+テンソル代数から商代数への歪導分候補は、指定した生成元上の値とLeibniz則から一意に決まる。
+関係イデアルの生成元の像が零であれば、自己同型およびLeibniz則から
+イデアル全体の像も零になる。
+$B$の関係生成元は$R$、$C$の関係生成元は$R$と
+$zv-\sigma(v)z-\delta(v)$であるため、表示した検査で十分である。
+自己同型の可逆性は上で確認した。Ore拡大の存在と命題
+\ref{prop:ore-construction}により全ての許容データが対象を与える。
+逆に任意のOreデータから各生成元上の値を取ると、同じ計算により全式が必要となる。
+\end{proof}
+
+式は有限次元空間内の等式であり、基底を選べば有限個の係数方程式となる。
+例えば
+\[
+C_4=B_4\oplus B_2z\oplus kz^2,\qquad
+C_5=B_5\oplus B_3z\oplus Vz^2.
+\]
+基礎代数$B$自体を動かす場合には、$\Bclass_n$の同型分類もデータの一部となる。
+この点は第\ref{subsec:base-embedding}節の埋込みによって避けられない。
+
+\subsection{全ての次数付き同型}
+プライムを付けた記号で別の許容データ
+$A'=B'[z';\sigma',\delta'][w';\tau',D']$を表す。
+
+\begin{theorem}[三角形同型]\label{thm:general-isomorphisms}
+命題\ref{prop:ore-construction}で得られた代数の間の全ての次数付き同型は
+\begin{equation}\label{eq:general-triangular}
+\Phi|_B=\phi,\qquad
+\Phi(z)=\alpha z'+a,\qquad
+\Phi(w)=\beta w'+b
+\end{equation}
+という形を持つ。ここで
+\[
+\phi:B\xrightarrow{\sim}B'\text{ は次数付き同型},\quad
+\alpha,\beta\in k^\times,\quad a\in B'_2,\quad b\in C'_3.
+\]
+$\psi:C\to C'$を最初の2つの式で定める候補とする。
+\eqref{eq:general-triangular}が同型となる必要十分条件は
+\begin{align}
+\sigma'\phi&=\phi\sigma,\label{eq:general-iso-sigma}\\
+\phi(\delta(v))&=\alpha\delta'(\phi(v))
+                 +a\phi(v)-\phi(\sigma(v))a
+&& (v\in V),\label{eq:general-iso-delta}\\
+\tau'\psi&=\psi\tau,\label{eq:general-iso-tau}\\
+\psi(D(u))&=\beta D'(\psi(u))+b\psi(u)-\psi(\tau(u))b
+&& (u\in V\cup\{z\}).\label{eq:general-iso-D}
+\end{align}
+第3式は$V$の基底と$z$について調べればよい。
+従って、許容データをこの同値関係で割った集合と、
+命題\ref{prop:ore-construction}のOre部分族の次数付き同型類との間に全単射がある。
+\end{theorem}
+
+\begin{proof}
+\eqref{eq:general-canonical-flag}は内在的なので、任意の同型は$B,C$を
+それぞれ$B',C'$へ写す。最小生成元の次数2、3の成分が各1次元であることから
+\eqref{eq:general-triangular}が従う。
+$zv-\sigma(v)z-\delta(v)$の像を$z'$の次数で分けると
+\eqref{eq:general-iso-sigma}、\eqref{eq:general-iso-delta}を得る。
+これらが成立すれば$\psi$は準同型となり、その像は$B'$と$z'$を含む。
+従って$\psi$は全射であり、同じHilbert級数を持つ局所有限代数の間の写像なので同型である。
+
+次に$wu-\tau(u)w-D(u)$の像を$w'$の次数で分ける。
+その係数は、それぞれ\eqref{eq:general-iso-tau}と\eqref{eq:general-iso-D}である。
+従って全式は必要であり、成立すれば$A\to A'$の準同型を与える。
+その像は$\psi(C)=C'$と$w'$を含むため全射である。
+再び各次数成分の次元を比較すれば単射でもある。
+両方向の構成は生成元上の写像そのものであるから、データから代数へ、
+代数の同型から三角形データへという対応は互いに逆である。
+\end{proof}
+
+\section{語長二次部分の完全なチャート}\label{sec:quadratic-chart}
+\begin{theorem}\label{thm:general-quadratic-classification}
+$\Gclass_n^{\mathrm{qd}}$は、次のデータと関係式によって全て得られる。
+\[
+B=T(V)/(R)\in\Bclass_n^{\mathrm d},\qquad
+\sigma,\mu\in\Aut_{\mathrm{gr}}B,\qquad
+c\in k^\times,\qquad L\in V^*,
+\]
+\begin{align}
+zv&=\sigma(v)z,&
+wv&=\mu(v)w+L(v)z^2\quad(v\in V),&
+wz&=c zw,\label{eq:general-quadratic-chart}\\
+\mu\sigma&=\sigma\mu,&
+L\sigma&=cL,&
+(\mu\otimes L+L\otimes\sigma^2)(R)&=0.\label{eq:general-quadratic-compatibility}
+\end{align}
+最後の2つのテンソル写像の値域は$V$であり、
+$R$上で和が零であることを要求する。
+\end{theorem}
+
+\begin{proof}
+網羅性は定理\ref{thm:quadratic-all-ones}で証明した。
+逆にこのデータに対して
+$C=B[z;\sigma]$、
+$\tau|_B=\mu$、$\tau(z)=cz$、
+$D(v)=L(v)z^2$、$D(z)=0$と置く。
+第\ref{sec:general-ore-data}節の式に
+$\delta=0$、$p=0$、$F(v)=L(v)z^2$、$h=0$を代入すると、
+自己同型条件は$\mu\sigma=\sigma\mu$となる。
+また
+\[
+D(r)=\sum_j\bigl(\mu(u_j)L(v_j)+L(u_j)\sigma^2(v_j)\bigr)z^2
+\quad\left(r=\sum_j u_j\otimes v_j\in R\right),
+\]
+\[
+D(zv-\sigma(v)z)=\bigl(cL(v)-L(\sigma(v))\bigr)z^3
+\]
+なので、導分条件は残りの2式と同値である。
+命題\ref{prop:ore-construction}により$A=C[w;\tau,D]\in\Gclass_n$は整域となる。
+表示された全ての関係式は語長2に斉次なので、$A\in\Gclass_n^{\mathrm{qd}}$である。
+\end{proof}
+
+\begin{proposition}[同型の存在判定]\label{prop:general-quadratic-isomorphisms}
+定理\ref{thm:general-quadratic-classification}の2つのデータが
+次数付き同型な代数を与えることは、
+次数付き同型$\phi:B\to B'$と$\alpha,\beta\in k^\times$が存在して
+\begin{equation}\label{eq:general-linear-iso}
+\sigma'\phi=\phi\sigma,\qquad
+\mu'\phi=\phi\mu,\qquad
+c'=c,\qquad
+\beta L'\phi=\alpha^2 L
+\end{equation}
+となることと同値である。
+全ての同型写像そのものは定理\ref{thm:general-isomorphisms}で与えられる。
+\end{proposition}
+
+\begin{proof}
+$I=A_+$とする。語長斉次表示では
+$I^j=\bigoplus_{a\geq j}A^{\mathrm{word}}_a$なので、
+$I$進付随次数代数は語長次数を付けた$A$と同一視できる。
+重み保存同型は$I$の各冪を保ち、付随次数に重みと語長の両方を保つ同型を誘導する。
+この同型の語長1部分は
+$v\mapsto\phi(v)$、$z\mapsto\alpha z'$、$w\mapsto\beta w'$である。
+関係式\eqref{eq:general-quadratic-chart}の像を比較すれば
+\eqref{eq:general-linear-iso}が必要となる。
+逆にこれらの式が成立すれば、同じ線型写像が関係式を保ち、
+逆行列と逆スカラーによる写像が逆準同型を与える。
+\end{proof}
+
+\subsection{double Ore表示を持つ場合}\label{subsec:double-ore}
+語長二次性を外した場合にも、既にdouble Ore表示が分かっている対象については
+最小性から三角化が従う。
+
+\begin{proposition}\label{prop:double-triangular}
+$B$を$B_1$で生成される連結次数付き代数とし、
+$A$を$B$上の斉次double Ore extensionとする。
+付加変数を$z,w$、次数を$2,3$とし、$w$の像が$Q(A)$で非零と仮定する。
+このとき$A$は自己同型による$B[z][w]$の順の段階的Ore拡大である。
+\end{proposition}
+
+\begin{proof}
+double Ore extensionの定義では、$A$は左$B$加群基底$\{z^iw^j\}$と
+右$B$加群基底$\{w^jz^i\}$を持ち、
+\[
+\binom{zb}{wb}=
+\Sigma(b)\binom zw+\Delta(b),\qquad
+\Sigma:B\longrightarrow M_2(B)
+\]
+という代数準同型$\Sigma$を伴う。
+内部の関係は
+$wz=p_{12}zw+p_{11}z^2+\eta_1z+\eta_2w+\eta_0$で、
+$p_{12}\in k^\times$、$p_{11}\in k$、$\eta_i\in B$である。
+ここでは左右の混合包含が等号であるgenuine double extensionの定義を用いる
+\cite[Definition 1.1]{CLM}。
+
+$v\in B_1$に対し$\Sigma_{12}(v)\in k$である。
+関係
+$zv=\Sigma_{11}(v)z+\Sigma_{12}(v)w+\Delta_1(v)$を
+$Q(A)$へ写すと、$B_3\subset A_+^2$であるため
+$\Sigma_{12}(v)[w]=0$となる。
+最小性より$\Sigma_{12}(v)=0$である。
+$B$は$B_1$で生成され、$\Sigma$は代数準同型なので$\Sigma_{12}=0$が全$B$で成り立つ。
+\cite[Theorem 2.2(a),(b)]{CLM}によって所期の順の段階的Ore表示が得られ、
+両段の自己同型は可逆である。次数の比較から$p_{11}=0$も従う。
+\end{proof}
+
+一般のOreチャートには$D(v)=L(v)z^2$という項があり、
+$wB\subset Bw+Bz+B$を要求するdouble Ore表示には入らない場合がある。
+従って命題\ref{prop:double-triangular}はdouble Ore部分族に対する結果である。
+
+\section{次数列だけでは決まらないもの}\label{sec:examples}
+\subsection{大域次元が無界となる明示族}
+\begin{theorem}\label{thm:unbounded-dimension}
+任意の$n\geq1$、$m\geq0$に対し、最小生成元次数が$(1^n,2,3)$である
+左右noetherian AS正則整域$A_{n,m}$で
+\begin{align}
+\gldim A_{n,m}&=n+m+2,\label{eq:filiform-dimension}\\
+H_{A_{n,m}}(t)&=
+\frac1{(1-t)^n(1-t^2)(1-t^3)\prod_{j=1}^m(1-t^{2j+1})},\label{eq:filiform-hilbert}\\
+\ell(A_{n,m})&=n+5+m(m+2)\label{eq:filiform-index}
+\end{align}
+を満たすものがある。
+$m\geq1$なら、標準的部分代数
+$B=k\langle(A_{n,m})_1\rangle$、
+$C=k\langle(A_{n,m})_1,(A_{n,m})_2\rangle$
+の間に、次数2の変数1個によるOre表示$C=B[\zeta;\sigma,\Delta]$は存在しない。
+\end{theorem}
+
+\begin{proof}
+重み付き可換多項式環
+\[
+S_m=k[x,t_1,\ldots,t_m],\qquad |x|=1,\quad |t_j|=2j+1
+\]
+を取る。$m\geq1$では次数2の導分を
+\[
+\delta_m(x)=t_1,\qquad
+\delta_m(t_j)=t_{j+1}\ (j<m),\qquad
+\delta_m(t_m)=0
+\]
+で定める。$m=0$では$S_0=k[x]$、$\delta_0=0$とする。
+\[
+R_m=S_m[z;\mathrm{id},\delta_m],\quad |z|=2,\qquad
+A_{n,m}=R_m[u_1,\ldots,u_{n-1},w],
+\quad |u_i|=1,\ |w|=3
+\]
+と置く。後で付加した$u_i,w$は全て中心変数である。
+
+Ore関係から$t_j=(\operatorname{ad}z)^j(x)$となるため、
+$x,u_1,\ldots,u_{n-1},z,w$が$A_{n,m}$を生成する。
+全ての$t_j$は$A_{n,m,+}^2$に属する。
+一方、$t_j$を0に送り、他の生成元を同じ重みの独立な可換変数に送る写像は
+\[
+A_{n,m}\longrightarrow k[X,U_1,\ldots,U_{n-1},Z,W]
+\]
+という次数付き全射を与える。
+右辺の最小生成元空間での独立性から、左辺でも
+$x,u_i,z,w$の類が独立である。従って最小生成元次数はちょうど$(1^n,2,3)$である。
+
+可換多項式環から自己同型によるOre拡大を繰り返しているので、
+\cite[\S1.2, \S1.3, Theorem 3.3]{LWW}と
+命題\ref{prop:ore-construction}の証明により左右noetherian AS正則整域となる。
+最初の$m+1$変数に$z$と$n$個の中心変数を加えるので、
+大域次元は$n+m+2$である。
+順序単項式
+\[
+x^a t_1^{b_1}\cdots t_m^{b_m}z^c
+u_1^{e_1}\cdots u_{n-1}^{e_{n-1}}w^f
+\quad(a,b_j,c,e_i,f\geq0)
+\]
+が基底であり、\eqref{eq:filiform-hilbert}が従う。
+従って有限GK次元も確認できる。
+このHilbert級数の相反式と補題\ref{lem:duality-regrading}から、
+AS添字は分母の全重みの和$n+5+\sum_{j=1}^m(2j+1)$となる。
+
+構成から$B=k[x,u_1,\ldots,u_{n-1}]$、$C=R_m[u_1,\ldots,u_{n-1}]$である。
+$m\geq1$なら上の基底により
+\[
+C_3=B_3\oplus B_1z\oplus kt_1,\qquad
+\dim C_3=\binom{n+2}{3}+n+1.
+\]
+これに対し、次数2の変数1個によるOre拡大の次数3成分は
+$B_3\oplus B_1\zeta$で、その次元は$\binom{n+2}{3}+n$である。
+従ってどの生成元の持上げを選んでも、所期のOre表示は存在しない。
+\end{proof}
+
+$m=1$の例では、中心元$t_1=[z,x]$を消去すると
+$R_1=k\langle x,z\rangle/([x,[z,x]],[z,[z,x]])$
+という表示を得る。逆にこの表示から$t_1=[z,x]$を導入すれば、
+$[x,t_1]=[z,t_1]=0$と$zx=xz+t_1$が元のOre表示を与える。
+次数3の独立な最小生成元は別に付加した$w$である。
+
+\subsection{基礎代数の分類が含まれること}\label{subsec:base-embedding}
+\begin{proposition}\label{prop:base-classification-embedding}
+$B\mapsto B[z,w]$、$|z|=2$、$|w|=3$という構成は、
+$\Bclass_n$の次数付き同型類の集合から$\Gclass_n$の次数付き同型類の集合への単射を与える。
+$\Bclass_n^{\mathrm d}$は$\Gclass_n^{\mathrm{qd}}$へ写る。
+\end{proposition}
+
+\begin{proof}
+命題\ref{prop:ore-construction}において両自己同型を恒等、
+両導分を零とすれば所期の対象が得られる。
+$B$は二次表示を持つので、中心変数の付加後も語長二次である。
+逆に、次数付き同型$B[z,w]\cong B'[z',w']$は
+次数1部分が生成する標準的部分代数を保つため$B\cong B'$を誘導する。
+従ってこの構成は同型類上単射である。
+\end{proof}
+
+この単射により、$\Gclass_n$の次数付き同型分類は$\Bclass_n$の次数付き同型分類を含む。
+定理\ref{thm:general-quadratic-classification}と
+命題\ref{prop:general-quadratic-isomorphisms}は、
+任意の$B\in\Bclass_n^{\mathrm d}$を許したデータの軌道による分類を与える。
+基礎代数を多項式環や量子平面からの反復Ore拡大だけに限定することはできない。
+次の例は、その違いを最小生成元に関する直接の計算で示す。
+
+\begin{proposition}\label{prop:sklyanin-base}
+次数1の3生成元を持つ代数
+\[
+S=k\langle x,y,u\rangle/
+(yu+2uy+x^2,\ ux+2xu+y^2,\ xy+2yx+u^2)
+\]
+を取り、$A=S[z,w]$、$|z|=2$、$|w|=3$とする。
+このとき$A\in\Gclass_3^{\mathrm{qd}}$であるが、
+$S$は$k$から3個の次数1の変数を付加する段階的Ore拡大ではない。
+また$A$は、その5個の斉次最小生成元を任意の順に付加する
+$k$からの段階的Ore拡大ではない。
+\end{proposition}
+
+\begin{proof}
+$S$はパラメータ$(p,q,\rho)=(1,2,1)$の3次元Sklyanin代数である。
+全パラメータは非零で、$p^3,q^3,\rho^3$は全て等しくはない。
+\cite[Theorem 1.1, Corollary 6.1]{IS}より$S$はKoszul、
+Hilbert級数は$(1-t)^{-3}$で、3-Calabi--Yauである。
+連結次数付きの場合の対応\cite[Lemma 1.3, \S1.2]{LWW}からAS正則次元3となる。
+次数1生成の3次元AS正則代数が左右noetherianな整域であるという結果
+\cite[Theorem 6.2(i)]{Lev}を適用すると$S\in\Bclass_3^{\mathrm d}$である。
+従って命題\ref{prop:base-classification-embedding}より$A\in\Gclass_3^{\mathrm{qd}}$となる。
+
+$V=kx\oplus ky\oplus ku$、$R\subset V\otimes V$を上の関係空間とする。
+任意の2次元部分空間$U\subset V$について
+\begin{equation}\label{eq:sklyanin-no-plane-relation}
+R\cap(U\otimes U)=0
+\end{equation}
+を示す。関係式の線型結合の行列は
+\[
+M(r,s,t)=
+\begin{pmatrix}
+r&t&2s\\
+2t&s&r\\
+s&2r&t
+\end{pmatrix}.
+\]
+非零の関係が$U\otimes U$に属すると仮定し、$U$を消す非零の共変ベクトルを
+座標列$v$で表すと、$Mv=M^{\mathsf T}v=0$である。
+ところが
+\[
+M-M^{\mathsf T}=
+\begin{pmatrix}0&-t&s\\t&0&-r\\-s&r&0\end{pmatrix}
+\]
+は階数2で、その核は$k(r,s,t)^{\mathsf T}$である。
+従って
+\[
+r^2+3st=s^2+3rt=t^2+3rs=0.
+\]
+いずれかの座標が零なら3つとも零となる。
+全て非零なら3式を掛けることにより
+$(rst)^2=-27(rst)^2$となり、標数0に反する。
+これで\eqref{eq:sklyanin-no-plane-relation}が証明された。
+
+$S$が次数1の3変数を順に付加したOre拡大であれば、
+最初の2変数が張る$U$の中に非零の二次関係が存在する。
+これは\eqref{eq:sklyanin-no-plane-relation}に反する。
+
+$A$についても、仮に5個の斉次最小生成元によるOre順序があるなら、
+その順序で最初に現れる2個の次数1の変数を$a,b$とする。
+$b$を付加する直前の代数の次数1部分は$ka$である。
+したがってそのOre関係は
+\[
+ba=q\,ab+\lambda a^2+\eta\zeta
+\]
+という形である。ここで$\zeta$は、それ以前に付加されている場合の
+次数2の変数であり、付加されていなければ最後の項はない。
+次数3の変数はこの関係には現れない。
+最小生成元空間へ写すと$\eta[\zeta]=0$なので、最小性より$\eta=0$である。
+従って$a,b\in S_1$の間に非零の二次関係が生じ、再び
+\eqref{eq:sklyanin-no-plane-relation}に反する。
+\end{proof}
+
+この例の標準的な2段階の表示は$S[z][w]$であり、
+定理\ref{thm:general-quadratic-classification}では
+$\sigma=\mu=\mathrm{id}$、$c=1$、$L=0$に対応する。
+
+\begingroup
+\small
+\begin{thebibliography}{9}
+\bibitem{G1123}
+\emph{最小生成元次数$(1,1,2,3)$の四次元AS正則代数：
+noetherian・所定Hilbert級数の下でのOre表示と次数付き同型},
+本リポジトリ内原稿、2026年11月18日、第1版。
+\path{papers/graded_ore_classification.tex}.
+\bibitem{LPWZ}
+D.-M.~Lu, J.~H.~Palmieri, Q.-S.~Wu and J.~J.~Zhang,
+\emph{Regular algebras of dimension 4 and their $A_\infty$-Ext-algebras},
+Duke Math. J. \textbf{137} (2007), 537--584.
+\href{https://doi.org/10.1215/S0012-7094-07-13734-7}{doi:10.1215/S0012-7094-07-13734-7}.
+\url{https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf}.
+\bibitem{LWW}
+L.~Liu, S.~Wang and Q.~Wu,
+\emph{Twisted Calabi--Yau property of Ore extensions},
+J. Noncommut. Geom. \textbf{8} (2014), 587--609.
+\href{https://doi.org/10.4171/JNCG/165}{doi:10.4171/JNCG/165}.
+\url{https://ems.press/content/serial-article-files/30578}.
+\bibitem{RZ}
+D.~Rogalski and J.~J.~Zhang,
+\emph{Regular algebras of dimension 4 with 3 generators},
+arXiv:1101.1998v2 (2011).
+\url{https://arxiv.org/pdf/1101.1998}.
+\bibitem{CLM}
+P.~A.~A.~B.~Carvalho, S.~A.~Lopes and J.~Matczuk,
+\emph{Double Ore Extensions versus Iterated Ore Extensions},
+arXiv:0909.3238v1 (2009).
+\url{https://arxiv.org/pdf/0909.3238}.
+\bibitem{IS}
+N.~Iyudu and S.~Shkarin,
+\emph{Three dimensional Sklyanin algebras and Gr\"obner bases},
+J. Algebra \textbf{470} (2017), 379--419;
+arXiv:1601.00564v2 (2016).
+\url{https://arxiv.org/html/1601.00564v2}.
+\bibitem{Lev}
+T.~Levasseur,
+\emph{Some properties of non-commutative regular graded rings},
+Glasgow Math. J. \textbf{34} (1992), 277--300.
+\href{https://doi.org/10.1017/S0017089500008843}{doi:10.1017/S0017089500008843}.
+\end{thebibliography}
+\endgroup
+\end{document}

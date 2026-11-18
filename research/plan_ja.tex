@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月18日\quad 第3版}
+\date{2026年11月18日\quad 第4版}
 \begin{document}
 \maketitle
 
@@ -43,6 +43,21 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 外部文献の適用範囲は\path{research/BASELINE.md}に置く。
 
 \section{主要な到達点と適用範囲}
+\paragraph{一般の最小生成元次数$(1^n,2,3)$。}
+並行して、次数1の最小生成元を$n$個とするgraded代数を調べる。
+\path{papers/general_weights.tex}では、左右noetherian、AS次元$n+2$、
+$H_A(t)=((1-t)^n(1-t^2)(1-t^3))^{-1}$の下で、
+AS添字$n+5$と$\operatorname{Tor}_i$の内部次数$i,\ldots,i+3$を導く。
+語長二次なら、整域性なしでも語長Koszul性と
+重み$2,3,4,5$の関係数$\binom n2,n,n,1$が従う。
+さらに整域なら、全$n$で$B[z;\sigma][w;\tau,D]$という表示が網羅的で、
+$B=k\langle A_1\rangle$はAS正則次元$n$、Hilbert級数$(1-t)^{-n}$となる。
+商$A/(z)$の二変数Hilbert級数と左右noetherian性による有限生成加群の議論が
+任意次元での網羅性を与える。
+一般の斉次Oreデータの有限係数条件、全graded同型、二次部分の同型存在判定も同稿にある。
+最小生成元次数のみでは、AS次元が$n+m+2$となる明示族があり、次元は無界である。
+この例は次元$n+2$を固定した対象の反例ではない。
+
 \paragraph{追加仮定付きgraded部分のOre分類。}
 複素数体上の連結・局所有限・左右noetherianな四次元AS正則graded代数について、
 最小生成元次数$(1,1,2,3)$と所期のHilbert級数を仮定すると、
@@ -95,6 +110,15 @@ H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt
 初期の具体的族は全て1周期であり、非1周期例を得たとはしない。
 
 \section{未解決の核心と次の具体的操作}
+\paragraph{一般次数列：語長二次性を外した網羅性。}
+現在の一般化では、語長二次・整域・左右noetherian・指定Hilbert級数という仮定の下で、
+全$n$の標準Ore表示が得られた。次は$n=3$、次元5で任意の重み付き斉次関係を許す。
+最小関係数は$r_2=3$, $r_3-r_5=2$を満たすが、Euler式だけでは$r_4$を決定できない。
+augmentation filtrationの初期関係を計算し、付随次数代数が二次AS正則になる条件を調べる。
+この正則性を仮定なしに移すことはせず、二次部分の定理を適用できる範囲を先に確定する。
+同時に、指定Hilbert級数や整域性を生成元の次数だけから導けるかを別の問題として保持する。
+主目標の四次元$\mathbb Z$-代数についての未解決事項は次の通りである。
+
 \paragraph{P1：標準七窓の不変分岐と正則性。}
 複素数体上のnoetherianなgraded部分では、所期のHilbert級数の下で
 非対角の場合を含むOre表示が得られた。対角skew Ore表示の内部の四分岐も確定している。
@@ -140,6 +164,10 @@ degree 1 del Pezzoの反標準環・重み6の超曲面、$E_8$量子化との�
 この条件を失うRees代数は比較対象としてノートへ置き、本対象の例としない。
 
 \section{公表原稿と再現可能性}
+一般の次数列についての構造定理、有限係数条件、同型軌道および反例族は
+\path{papers/general_weights.tex}に置く。任意$n$の網羅定理のために独立した証明を要するので、
+四次元の原稿とは分ける。元の四次元$\mathbb Z$-代数の対象・仮定は変更しない。
+
 段階的Ore表示による仮定付きgraded分類の証明は
 \path{papers/graded_ore_classification.tex}に置く。
 対角部分の表示空間の成分分解は\path{papers/weighted_ore_strata.tex}に置く。

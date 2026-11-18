@@ -1,8 +1,9 @@
 # nc-p1123 — 非可換重み付き射影空間 P(1,1,2,3) の分類
 
-**2026-11-18 / v3。完全分類は未完成。正本は GitHub main。**
+**2026-11-18 / v4。完全分類は未完成。正本は GitHub main。**
 
 [研究方針](research/plan_ja.tex) → [主論文](nc-p1123.tex) → [研究ノート](research/notes_ja.tex) の順に読む。
+一般の次数列 `(1^n,2,3)` については [一般重みの構造定理と Ore 分類](papers/general_weights.tex) を参照する。
 独立した原稿として [次数付き代数の Ore 分類](papers/graded_ore_classification.tex) と
 [対角 Ore 表示空間の成分](papers/weighted_ore_strata.tex) を置く。
 次の具体的課題と証明位置は [STATE](research/STATE.json)、一次文献の適用範囲は
@@ -38,6 +39,24 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 
 ## 初期成果とその射程
 
+**一般の次数列 `(1^n,2,3)`**：左右 noetherian、AS 次元 `n+2`、
+Hilbert 級数 `1/((1-t)^n(1-t^2)(1-t^3))` を仮定した graded 代数について、
+AS 添字 `n+5` と最小解消の内部次数 `i ≤ j ≤ i+3` を証明した。
+語長二次なら、整域性を仮定せず語長 Koszul 性と関係数
+`(binom(n,2),n,n,1)`（重み `2,3,4,5`）が従う。
+さらに domain なら、任意の `n` について
+`B[z;σ][w;τ,D]` が全対象を尽くし、`B=k<A_1>` は AS 正則次元 `n`、
+`H_B(t)=(1-t)^(-n)` となる。必要十分条件は
+`μσ=σμ`, `Lσ=cL`, `(μ⊗L+L⊗σ²)(R)=0`。
+全 graded 同型と語長二次部分の同型存在判定も記述する。
+証明は [general_weights.tex](papers/general_weights.tex)。
+
+最小生成元次数だけを固定すると、同じ次数列で AS 次元が `n+m+2` となる
+noetherian domain の族が存在し、大域次元は無界である。
+一般 `n≥3` の任意の斉次関係について、語長二次性を除いた Ore 網羅性は未証明である。
+基礎代数 `B` を一般の AS 正則代数から選ぶ必要も残る。
+この一般化は graded 代数についての結果であり、上記の四次元 Z-代数の分類対象は変更しない。
+
 **次数付き代数の Ore 分類**：複素数体上の連結・局所有限・左右 noetherian な4次元AS正則代数で、
 最小生成元次数が `(1,1,2,3)`、Hilbert級数が `1/((1-t)^2(1-t^2)(1-t^3))` であるものは、
 量子平面または Jordan 平面からの段階的 Ore 拡大 `B[z;σ,δ][w;τ,D]` で尽くされる。
@@ -58,6 +77,8 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 
 | 内容 | 得られたこと | 残ること |
 | --- | --- | --- |
+| 一般 `(1^n,2,3)` の語長二次 graded 部分 | 左右 noetherian・domain・AS 次元 `n+2`・指定 Hilbert 級数の下で全 `n` の Ore 表示と同型軌道を記述 | 語長二次性・指定 Hilbert 級数・domain/noetherian 仮定の除去 |
+| 最小生成元次数だけの指定 | 固定した次数列で大域次元が無界となり、標準部分代数の最初の Ore 段階も存在しない明示族 | 次元 `n+2` を固定した広い対象の分類 |
 | 同型の線型化 | 語長斉次な二次表示同士の同型の存在は、最小生成元空間の線型写像と二次関係の対応で判定できる | 非線型自己同型を含むmoduli stackの記述 |
 | 一般対象の構造 | AS双対性と多項式成長から語長Koszul性とAS添字7を導く。Hilbert条件Hと標準解消Sは同値 | 所期のHilbert級数が全Qで強制されるか |
 | 一般対象の周期 | Koszul双対のFrobenius traceから7周期同型を構成。最小正周期は1または7 | 最小周期7の対象の存在または排除 |
@@ -75,6 +96,12 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 **これらの数はモジュライ次元を与えない。**
 
 ## 最初に進める課題
+
+一般の次数列についての継続点は、まず `n=3`、AS 次元5、指定 Hilbert 級数の下で、
+語長二次性を仮定しない最小関係と augmentation filtration を調べることである。
+付随次数代数の AS 正則性・二次性は未証明なので仮定せず、
+一般の斉次 Ore チャートに還元できる範囲を特定する。
+大域次元が増える明示族を、次元 `n+2` を固定した場合への反例として用いない。
 
 複素数体上の noetherian・指定Hilbert級数の graded 部分には、非対角の場合を含むOre表示が得られた。
 次はその仮定の外の標準七窓（特に重み4射影階数の非定数パターン）と、裸のindexed同型の商を優先する。
@@ -114,18 +141,19 @@ latexmk -lualatex research/plan_ja.tex
 latexmk -lualatex research/notes_ja.tex
 latexmk -lualatex papers/weighted_ore_strata.tex
 latexmk -lualatex papers/graded_ore_classification.tex
+latexmk -lualatex papers/general_weights.tex
 ```
 
 PDFはルートに出力し、Synctexを有効にする。VS CodeのLaTeX Workshop設定を同梱。
 PDF・ZIP・コンパイル中間物は追跡しない。
 
-検証済みソースをcommitし、5本のPDFを再生成した後、現行一式を作る場合：
+検証済みソースをcommitし、6本のPDFを再生成した後、現行一式を作る場合：
 
 ```bash
 python3 scripts/build_bundle.py
 ```
 
-`output/nc-p1123-2026-11-18-v3.zip` に現行ソースと5本のPDFだけをまとめ、
+`output/nc-p1123-2026-11-18-v4.zip` に現行ソースと6本のPDFだけをまとめ、
 各ファイルのSHA-256とZIPの整合性を確認する。Git履歴・旧版・ログは含めない。
 このコマンドは生成と検証を行うだけで、外部への保存を実行しない。
 

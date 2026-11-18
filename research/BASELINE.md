@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-18 / v3。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-18 / v4。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全分類を与える文献は今回の初期調査では確認できなかった。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -13,7 +13,7 @@
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Lemma3.4、§4.1 | Z-代数、1周期とgraded由来、AS正則の定義。三次元のquadric分類を本対象へ直接適用しない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), §6、Thm.6.2 | AS双対性からFrobenius Ext圏。重み付きのHom–Tor議論と7移動は本文で書き直す。Thm.6.4のLoewy長の数え方に注意し、次元4は明示双対から直接導く。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
-| Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求しない。graded Ore網羅定理では指定Hilbert級数からGK dimension 4を確認して適用する。 |
+| Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求しない。graded Ore網羅定理では指定Hilbert級数からGK dimension 4を確認して適用する。 |
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
 | Priddy, *Koszul resolutions*, Trans. AMS 152 (1970), 39–60 | [一次PDF](https://math.mit.edu/~hrm/palestine/priddy-koszul-resolutions.pdf), Thm.5.3, p.51 | PBW基底から語長Koszul性。重み次数について線型であるとの主張ではない。 |
 | Lu–Palmieri–Wu–Zhang, *Koszul equivalences in A-infinity-algebras*, NYJM 14 (2008), 325–378 | [出版版](https://nyjm.albany.edu/j/2008/14-16.pdf), Corollary D, p.327; 証明§9.3, p.372 | connected graded AS-regular性とFrobenius Extの対応。Definition9.1は有限GK成長を含めないので、本文では成長をPBW基底から独立に示す。 |
@@ -52,3 +52,27 @@ Ore手法と一般正則性は既知である。これらの具体式と既存�
 ここで証明した具体的な非対角族、二同型類、射影階数分岐と既知の重み付き/Ore族との
 完全な同定は未了であり、新規定理としての独立性は未確認である。
 一般四次元AS正則代数のgraded分類と、本研究のindexed分類の差を継続して調べる。
+
+## 一般の最小生成元次数 (1^n,2,3)
+
+`papers/general_weights.tex` は、左右 noetherian、指定大域次元と Hilbert 級数を持つ
+語長二次の graded algebra について、全 n の Koszul 性・関係数を導き、
+domain を加えた部分の canonical Ore 表示を網羅する。
+商 A/(z) の domain 性を追加仮定する必要はなく、二変数 Hilbert 級数と
+noetherian 有限生成性による成長度の議論から導く。
+一般の高次元 AS-regular algebra が常に domain であるという主張は使用しない。
+基礎代数の AS 性は、その後の正則正規元の商から得る。
+
+| 文献 | 確認した一次資料と箇所 | 適用 |
+| --- | --- | --- |
+| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1（PDF p.3）、Corollary 1.2（PDF p.4） | 語長次数1の正則正規元による商が global dimension を1下げ、AS正則性を保つ。z,w は重み次数では2,3だが、適用する語長次数では1。各親代数のdomain性を先に確認する。 |
+| Carvalho–Lopes–Matczuk, *Double Ore Extensions versus Iterated Ore Extensions*, arXiv:0909.3238v1 (2009) | [本文](https://arxiv.org/pdf/0909.3238), Definition 1.1、Theorem 2.2(a),(b)（PDF pp.6–7） | genuine graded double extension において、最小次数2,3から Sigma_12=0 が従い、固定順の2段 automorphism Ore 表示を得る。一般の2段Ore族の全てがdouble Oreであるとはしない。 |
+| Iyudu–Shkarin, *Three dimensional Sklyanin algebras and Gröbner bases*, J. Algebra 470 (2017), 379–419; arXiv:1601.00564v2 | [本文](https://arxiv.org/html/1601.00564v2), Theorem 1.1、Theorem 1.2、Corollary 6.1 | S(1,2,1)のKoszul性・Hilbert級数・3-CY性。本文の直接の行列計算により、どの2次元一次部分空間内にも二次関係がないことを証明する。 |
+| Levasseur, *Some properties of non-commutative regular graded rings*, Glasgow Math. J. 34 (1992), 277–300; DOI 10.1017/S0017089500008843 | [出版社PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/244AE0A8E9C8AB6782515B504F1AC5C0/S0017089500008843a.pdf/some_properties_of_noncommutative_regular_graded_rings.pdf), Theorem 6.2(i), p.297 | 次数1生成のAS正則次元3の代数のnoetherian/domain性をSklyanin例に適用する。 |
+
+LPWZ Lemma 1.1 と Theorem 1.9 は最小解消の双対性とFrobenius Extを与える。
+原稿では二重次数の保持を説明し、差次数0のbar複体を明示する。
+LWW Theorem 3.3 は一般斉次Ore族と、固定最小次数で次元が無界となる族の逆構成に用いる。
+同論文の定義は有限GK次元を含まないため、成長は各Ore基底のHilbert級数から別に確認する。
+一般 n の語長二次網羅定理と、任意の斉次関係のOre部分族の記述は区別する。
+これらの結果と既存文献との完全な同定・新規性の確定は未了である。

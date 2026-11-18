@@ -14,7 +14,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PDFS = ("plan_ja.pdf", "nc-p1123.pdf", "notes_ja.pdf",
-        "weighted_ore_strata.pdf", "graded_ore_classification.pdf")
+        "weighted_ore_strata.pdf", "graded_ore_classification.pdf", "general_weights.pdf")
 
 
 def git(*args):

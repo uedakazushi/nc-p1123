@@ -1,13 +1,14 @@
 {
   "date": "2026-11-18",
-  "version": 3,
+  "version": 4,
   "generated": {
     "main_manuscript": true,
     "research_plan": true,
     "research_notes": true,
     "calculation_code": true,
     "exact_certificate": true,
-    "graded_ore_manuscript": true
+    "graded_ore_manuscript": true,
+    "general_weights_manuscript": true
   },
   "mathematics": {
     "proofs_written": [
@@ -27,9 +28,19 @@
       "GRADED-ORE",
       "GRADED-ORE-DATA",
       "GRADED-ORE-ISOM",
-      "QUADRATIC-GRADED-ORE"
+      "QUADRATIC-GRADED-ORE",
+      "GENERAL-FOUR-STRANDS",
+      "GENERAL-QUADRATIC-NUMERICS",
+      "GENERAL-QUADRATIC-ORE",
+      "GENERAL-ORE-DATA",
+      "GENERAL-ORE-ISOM",
+      "GENERAL-QUADRATIC-ISOM",
+      "GENERAL-DOUBLE-TRIANGULAR",
+      "GENERAL-UNBOUNDED-DIMENSION",
+      "GENERAL-BASE-EMBEDDING",
+      "GENERAL-SKLYANIN-BASE"
     ],
-    "logical_review": "The new graded Ore manuscript received a separate full mathematical reading and a separate reconstruction of its core exhaustion proof. Existing general Z-algebra claims were preserved and were not reaudited in this update. These are AI-assisted readings, not formalization or external peer review.",
+    "logical_review": "The general_weights manuscript received independent full mathematical and exposition readings, with a separate reconstruction of the general-n Ore exhaustion proof. Primary-source applications were checked. The earlier graded Ore review is retained below; the old indexed Z-algebra proofs were not reaudited in this update. These are AI-assisted readings, not formalization or external peer review.",
     "formalized": false,
     "peer_reviewed": false,
     "novelty_confirmed": false,
@@ -50,6 +61,31 @@
       ],
       "primary_sources": "LPWZ Lemmas 1.1 and 1.3; LWW Theorem 3.3, Lemma 1.3, sections 1.2 and 1.3, and the precise short-exact-sequence statement of Remark 2.2; Sierra Theorem 1.2.",
       "limitations": "No formal proof assistant, external peer review, novelty determination, or claim that this solves the full indexed classification."
+    },
+    "general_weights_review": {
+      "scope": "Connected locally finite left/right noetherian graded C-algebras with minimal generator degrees (1^n,2,3), global dimension n+2, and H(t)=1/((1-t)^n(1-t^2)(1-t^3)). Word-quadratic objects are word-Koszul with relation counts (binom(n,2),n,n,1), without assuming a domain. The domain part has an exhaustive canonical two-step Ore description and explicit graded-isomorphism orbits. General non-word-quadratic exhaustion is not proved for n>=3.",
+      "status": "independent_full_readings_completed",
+      "formalized": false,
+      "peer_reviewed": false,
+      "novelty_confirmed": false,
+      "checked": [
+        "AS duality, regrading, index and four-strand resolution bounds",
+        "Bigraded Frobenius Ext and the excess-zero bar subcomplex",
+        "Unit-circle Hilbert-polynomial arguments and the relation counts without domain assumptions",
+        "Application of the regular normal-element theorem in word degree one",
+        "Two-variable Hilbert series of A/(z), finite generation from both noetherian hypotheses, and the growth contradiction proving Bw=wB",
+        "Derivation of quotient domain and base AS-regularity after the freeness argument",
+        "PBW spanning, Hilbert comparison, and both directions of the general-n quadratic Ore classification",
+        "Finite coefficient equations for general homogeneous Ore data",
+        "Necessity and sufficiency of all triangular graded isomorphisms",
+        "Linear isomorphism-existence criterion for word-quadratic presentations",
+        "Double Ore triangularization with the genuine double-extension hypotheses",
+        "Unbounded-dimension family, exact minimal generators, Hilbert series and canonical-subalgebra obstruction",
+        "Injection of base isomorphism classes and the explicit Sklyanin plane calculation",
+        "Definitions, proof dependencies, bibliography, repetition and rendered-page layout"
+      ],
+      "primary_sources": "LPWZ Lemma 1.1 and Theorem 1.9; Rogalski-Zhang Lemma 1.1 and Corollary 1.2; LWW Lemma 1.3, Theorem 3.3 and sections 1.2-1.3; Carvalho-Lopes-Matczuk Definition 1.1 and Theorem 2.2(a),(b); Iyudu-Shkarin Theorem 1.1 and Corollary 6.1; Levasseur Theorem 6.2(i).",
+      "limitations": "The classification is exhaustive within the stated word-quadratic domain locus, relative to the AS-regular base class B_n. Neither a classification of all bases nor removal of the additional hypotheses is claimed. No formal proof assistant, external peer review or novelty determination."
     }
   },
   "exact_computation": {
@@ -82,7 +118,8 @@
         "rho projection matrix"
       ],
       "limitations": "Checks polynomial identities only; AS-regularity uses a separate Ore-extension theorem and PBW proof."
-    }
+    },
+    "general_weights": "The new general-n results have written analytic proofs; the existing exact-arithmetic regression scripts were rerun and passed. Finite computations are not used to assert general-n exhaustion."
   },
   "project_structure": {
     "status": "passed",
@@ -99,15 +136,16 @@
       "latexmk -lualatex research/plan_ja.tex",
       "latexmk -lualatex research/notes_ja.tex",
       "latexmk -lualatex papers/weighted_ore_strata.tex",
-      "latexmk -lualatex papers/graded_ore_classification.tex"
+      "latexmk -lualatex papers/graded_ore_classification.tex",
+      "latexmk -lualatex papers/general_weights.tex"
     ],
     "documents": [
       {
         "source": "nc-p1123.tex",
         "pdf": "nc-p1123.pdf",
         "pages": 12,
-        "source_sha256": "f4468d9d4c25cacd06004c37cfd51c66d337792ab445571d206ea96412a5d7b3",
-        "pdf_sha256": "8efe67e2c4cc287652ea8339cd6c8b80f2a714edee1ff7ac80afab123b4316fa",
+        "source_sha256": "ce9e5e5475eb6d21b434147b40b5a101d39593418cc1e139e6ca956baebcc98f",
+        "pdf_sha256": "e21e83e41410879e6448ad01d4b76bd00612c2afe57a48050a3f2c455a861dfb",
         "diagnostics": {
           "overfull": false,
           "underfull": false,
@@ -119,9 +157,9 @@
       {
         "source": "research/plan_ja.tex",
         "pdf": "plan_ja.pdf",
-        "pages": 4,
-        "source_sha256": "f212045469b2f70fd8502e55bc69aca7cc28ec48cc15c3fc46177c1d71e82b33",
-        "pdf_sha256": "97e8cb7b77a86d296954dbd676e48a34b6b615893e5a412afbbe91a599c0d2e7",
+        "pages": 5,
+        "source_sha256": "fbd8d9ee7ea1f323c5ea3e0d3f5eeccbdcbb052580ab2dc484e85df97959f083",
+        "pdf_sha256": "4c4c5e0ef040cd76e01265e487fe97c19d67e2c490fedef00892b84525879f65",
         "diagnostics": {
           "overfull": false,
           "underfull": false,
@@ -133,9 +171,9 @@
       {
         "source": "research/notes_ja.tex",
         "pdf": "notes_ja.pdf",
-        "pages": 4,
-        "source_sha256": "0dd47d59943d5ee8ab3a46f04987ab3bb4d8e5953f63eedf3db403183199c58f",
-        "pdf_sha256": "3c88aa5d56de7bcb00435b511e969783b8c4cd1d7fb78c42d414ddb97499c8cb",
+        "pages": 5,
+        "source_sha256": "358f1ca2a81e762efb573c39d5e51f53af1292be1f67464f6451cef66fbee58f",
+        "pdf_sha256": "f9e4439c379a588425963364707be5fc828d203869540017fe3064e9e26fb135",
         "diagnostics": {
           "overfull": false,
           "underfull": false,
@@ -171,17 +209,31 @@
           "undefined_reference": false,
           "duplicate_destination": false
         }
+      },
+      {
+        "source": "papers/general_weights.tex",
+        "pdf": "general_weights.pdf",
+        "pages": 16,
+        "source_sha256": "30dc6c9657366663587c3088afdcbac6574db22953534a99fb9df54ed4c64e2f",
+        "pdf_sha256": "6a2020c9c07ed5a741b327a010266b1da78cd0083f69fcb32c681b527bbe5a41",
+        "diagnostics": {
+          "overfull": false,
+          "underfull": false,
+          "missing_character": false,
+          "undefined_reference": false,
+          "duplicate_destination": false
+        }
       }
     ],
     "visual_review": true,
-    "visual_review_scope": "All 40 pages rendered with pdftoppm at 110 dpi and inspected as 2x2 page sheets. A separate agent inspected all 25 pages of the main manuscript, plan, notes and diagonal Ore paper; the primary agent inspected all 15 pages of the final graded Ore manuscript.",
+    "visual_review_scope": "Fresh v4 compilation and actual rendered-page inspection of all 38 changed pages: general_weights 16, nc-p1123 12, plan_ja 5, notes_ja 5. The 5-page weighted_ore_strata and 15-page graded_ore_classification sources and PDFs are unchanged; their earlier compile and visual-review records are retained and their hashes were reconfirmed. PDFs are internal build artifacts and are not tracked or delivered in this repository update.",
     "layout_and_reference_checks": "No overfull/underfull box, missing-character, unresolved reference/citation, or duplicate PDF destination diagnostic in the final logs. No clipping, overlap, missing glyph or broken table observed in the rendered pages.",
     "nonfatal_diagnostics": "Japanese-font scaling/feature messages and unavailable italic Japanese font shapes retain the upright form; math font substitutions up to 0.5pt; luatexja array-patch diagnostic. No resulting visual defect observed."
   },
   "persistence": {
     "canonical": "GitHub uedakazushi/nc-p1123 main",
     "push_mode": "fast-forward update of main through the connected GitHub app; force=false",
-    "remote_verification_method": "Compare local HEAD with git ls-remote origin refs/heads/main after pushing.",
+    "remote_verification_method": "Require the GitHub tree SHA to equal the reviewed local commit tree; update main with force=false and the expected parent SHA; fetch and compare the final local HEAD with git ls-remote origin refs/heads/main.",
     "tracked_pdf": false
   }
 }
