@@ -1,0 +1,340 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[haranoaji]{luatexja-preset}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\qgr}{\operatorname{qgr}}
+\title{重み$(1,1,2,3)$の非可換射影三空間における\\
+対角量子族とOre拡大の表示成分}
+\author{}
+\date{2026年11月18日\quad 公表用原稿（未完成）v2\\
+\small 完全な$\mathbb Z$-代数分類・新規性の最終確認は未了}
+\begin{document}
+\maketitle
+\begin{abstract}
+重み$(1,1,2,3)$の四生成元を持つ四次元quadratic Artin--Schelter正則代数の
+分類に向け、対角的な三生成元量子多項式環からの斉次Ore拡大を調べる。
+語長二次と重み付き次数を区別し、対角自己同型と語長二次の
+$\sigma$-導分を指定したOre表示が成立するための必要十分条件を
+四つの係数方程式として与える。この表示パラメータ空間の台集合は
+次元$6,5,5,4$の四つの既約成分の和である。
+各点が重み付きHilbert級数
+$((1-t)^2(1-t^2)(1-t^3))^{-1}$を持つKoszul AS正則代数を定めることを証明する。
+さらに重み4の二次関係の中間頂点別射影から、
+導分が非零の対象が対角量子多項式環に付随するどの
+添字保持$\mathbb Z$-代数とも同型でないことを証明する。
+対角量子族の六係数は対角Zhang twistの下で三係数へ正規化できる。
+これらの結果はOre表示の完全な分岐であり、全AS正則locusの分類や
+表示パラメータ空間の既約成分と同型類モジュライの成分の同定を主張しない。
+\end{abstract}
+
+\section{序論}
+通常の四次元quadratic AS正則代数の分類では全生成元を次数1に置くが、
+重み付き射影空間$\mathbb P(1,1,2,3)$の座標環では
+\[
+\deg x=\deg y=1,\qquad\deg z=2,\qquad\deg t=3
+\]
+という別の次数が自然である。$tx$と$z^2$はともに重み4、語長2なので、
+量子多項式の単なる交換係数の変化に還元されない二次変形が現れる。
+本稿のquadraticとは\emph{語長二次}を意味する。
+
+Auroux--Katzarkov--Orlov\cite[Proposition~2.6]{AKO}は任意の重みの
+対角量子多項式環がAS正則であることを示し、Gorenstein添字が
+重みの和に等しいことを述べている。これは本稿の既知の基準族である。
+Sierra\cite[Theorem~1.2]{Sierra}とZhang\cite{Zhang}のtwist理論により、
+同じgraded代数の分類と、その付随$\mathbb Z$-代数の添字保持同型による分類を
+区別する必要がある。$\mathbb Z$-代数は通常のgraded代数に
+由来しないこともあるが、本稿の具体的なOre族は全て1周期的である。
+
+Ore拡大のAS正則性は一般理論で知られている
+\cite[Theorem~3.3]{LWW}。本稿の主眼は、その一般定理自体ではなく、
+\emph{重みと語長を固定したときのOre導分の全表示、係数空間の分岐、
+および裸の添字保持同型を検出する不変量}にある。
+表示パラメータ空間の成分数は、同型類のモジュライの成分数ではない。
+また、ここで述べる個々の結果を含めた新規性の最終文献確認は未完了である。
+
+\section{対象と対角量子族}
+$k$は標数零の代数閉体とする。全てのテンソル代数と関係は
+語長と上記の重みを同時に保つものとする。
+正連結$\mathbb Z$-代数$C=(C_{ij})$では添字差$j-i$を重みとする。
+重み付きgraded代数$A$に付随する$\check A$は
+$\check A_{ij}=A_{j-i}$である。以下の同型は、特に断らない限り
+$\check A$の\emph{添字を保つ同型}であり、添字平行移動を割らない。
+
+\begin{definition}\label{def:quantum}
+$q,p,r\in k^\times$に対して
+\[
+B(q,p,r)=k\langle x,y,z\rangle/
+(yx-qxy,\ zx-pxz,\ zy-ryz)
+\]
+と置く。さらに$s,u,v\in k^\times$と$a,b\in k$を用い、
+\begin{equation}\label{eq:family}
+\begin{split}
+A(q,p,r;s,u,v;a,b)=k\langle x,y,z,t\rangle/(&yx-qxy,\ zx-pxz,\ zy-ryz,\\
+&tx-sxt-az^2,\ ty-uyt-bz^2,\ tz-vzt).
+\end{split}
+\end{equation}
+を考える。
+\end{definition}
+
+$B(q,p,r)$は三変数の量子多項式環であり、
+$x^iy^jz^h$が基底となる。$s,u,v$による対角写像
+\[\sigma(x)=sx,\qquad \sigma(y)=uy,\qquad \sigma(z)=vz\]
+は$B(q,p,r)$の重みを保つ自己同型である。
+語長二次かつ重み3の導分$\delta$を用いて$t$を付加するなら、
+$\delta(x),\delta(y)$は重み4、語長2で、$\delta(z)$は重み5、語長2でなければならない。
+$B$の語長2の重み4部分は$kz^2$、重み5部分は零だから、
+必ず$\delta(x)=az^2$, $\delta(y)=bz^2$, $\delta(z)=0$となる。
+従って次節の結果は、\emph{この量子基底と対角$\sigma$を固定した}
+斉次語長二次Ore拡大を尽くす。
+
+\section{Ore条件と四つの表示成分}
+\begin{theorem}[対角skew Oreチャートの必要十分条件]\label{thm:ore-condition}
+表示\eqref{eq:family}が
+$B(q,p,r)[t;\sigma,\delta]$という斉次Ore拡大になることは、
+次の四式と同値である。
+\begin{equation}\label{eq:conditions}
+\boxed{
+ a(v-p)=a(u-qr^2)=b(v-r)=b(p^2-qs)=0.
+}
+\end{equation}
+このとき任意のパラメータに対して順序単項式
+\[
+ x^iy^jz^ht^\ell\quad(i,j,h,\ell\geq0)
+\]
+は$A$の$k$-基底をなし、語長について二次Gr\"obner基底を持つ。
+従って$A$は語長Koszulであり、
+\begin{equation}\label{eq:hilbert}
+H_A(w)=\frac1{(1-w)^2(1-w^2)(1-w^3)}
+\end{equation}
+を満たす。さらに$A$は四次元AS正則で、AS添字は7である。
+\end{theorem}
+\begin{proof}
+$\delta$が$\sigma$-導分であるための必要十分条件は、
+$B$の三つの生成関係を零へ移すことである。
+$q,p,r$が非零なので、量子多項式環の順序単項式が独立であることを使う。
+\begin{align*}
+\delta(zx-pxz)&=a(v-p)z^3,\\
+\delta(zy-ryz)&=b(v-r)z^3,\\
+\delta(yx-qxy)&=a(u-qr^2)yz^2+b(p^2-qs)xz^2.
+\end{align*}
+これらが同時に零となることが\eqref{eq:conditions}である。
+条件が成り立つと$\delta$は関係イデアルを保つので
+$B$の$\sigma$-導分を定め、Ore拡大が存在する。
+その定義から左$B$-加群として$A=\bigoplus_{\ell\geq0}Bt^\ell$である。
+
+完全に独立したPBWの検査も記しておく。
+$x<y<z<t$の語長degree-lex順で六関係を向けると、
+包含曖昧性はなく、三重の重なりは$zyx,tyx,tzx,tzy$のみである。
+$zyx$の二通りの簡約結果は$qpr\,xyz$と一致し、残る三つの
+簡約差は順序単項式の係数として
+\begin{equation}\label{eq:ambiguities}
+\begin{array}{c|l}
+\text{語} & \text{左簡約}-\text{右簡約}\\ \hline
+ tyx & b(p^2-qs)xz^2+a(u-qr^2)yz^2\\
+ tzx & a(v-p)z^3\\
+ tzy & b(v-r)z^3
+\end{array}
+\end{equation}
+となる。従って\eqref{eq:conditions}は全曖昧性の消滅と同値であり、
+Diamond lemma\cite[Theorem~1.2]{Bergman}によって上記の基底を得る。
+全規則は語長2で、重み付き次数を保つ。二次Gr\"obner基底から
+語長Koszul性が従う\cite{Priddy}。
+基底の重み付き母関数は\eqref{eq:hilbert}である。
+
+最後に$B(q,p,r)$は既知の三次元AS正則量子多項式環であり、
+twisted Calabi--Yau性を持つ。$\sigma$は自己同型なので
+\cite[Theorem~3.3]{LWW}により$A$は次元4のtwisted Calabi--Yau代数となる。
+本例は正連結な重み付きgraded Ore拡大であり、
+$B$がnoetherianであることと$\sigma$の可逆性から$A$もnoetherianである。
+従って通常のconnected graded版の同値により四次元AS正則性を得る。
+語長Koszul解消のEuler多項式はPBWの二変数Hilbert級数
+$\prod_{w_i\in\{1,1,2,3\}}(1-h w^{w_i})^{-1}$の逆数であり、
+最上のExt次数4は重み$1+1+2+3=7$にある。
+よってAS添字は7である。
+\end{proof}
+
+\begin{theorem}[Ore表示パラメータ空間の成分]\label{thm:components}
+$T=(k^\times)^6$に$(q,p,r,s,u,v)$をこの順に取る。
+\eqref{eq:conditions}が定める$T\times\mathbb A^2_{a,b}$内の
+閉集合$X$の台集合は、次の\emph{ちょうど四つ}の既約成分の和である。
+\begin{center}
+\begin{tabular}{c|p{.59\linewidth}|c}
+\toprule
+成分 & 定義式 & 次元\\
+\midrule
+$X_0$ & $a=b=0$ & 6\\
+$X_a$ & $b=0,\quad v=p,\quad u=qr^2$ & 5\\
+$X_b$ & $a=0,\quad v=r,\quad s=p^2/q$ & 5\\
+$X_{ab}$ & $p=r=v,\quad u=qp^2,\quad s=p^2/q$ & 4\\
+\bottomrule
+\end{tabular}
+\end{center}
+ただしこれは\emph{表示パラメータ}の成分であり、
+同型類による商やASモジュライの既約成分の記述ではない。
+\end{theorem}
+\begin{proof}
+$a=b=0$なら制約はなく$X_0$を得る。
+$a\ne0$, $b=0$なら\eqref{eq:conditions}は$v=p$, $u=qr^2$に等しく、
+その開部分の閉包は$X_a$である。
+$a=0$, $b\ne0$について同様に$X_b$を得る。
+$a b\ne0$なら$v=p=r$, $u=qp^2$, $s=p^2/q$となり、
+この開部分の閉包は$X_{ab}$である。
+四つの場合が全点を尽くす。
+
+各集合は明示的な自由座標でそれぞれ
+$(k^\times)^6$, $(k^\times)^4\times\mathbb A^1$,
+$(k^\times)^4\times\mathbb A^1$,
+$(k^\times)^2\times\mathbb A^2$
+と同型で既約である。いずれも他の三つの和に含まれない：
+$X_a$と$X_b$では非零のそれぞれの導分係数を取り、
+$X_{ab}$では両係数を非零、$X_0$では制約を満たさない一般の六係数を取ればよい。
+従って列挙した四つがちょうど既約成分である。
+\end{proof}
+
+\begin{proposition}[表示の対称性と正規化]\label{prop:normalization}
+$x\leftrightarrow y$という重みを保つ交換は、
+\[
+(q,p,r,s,u,v;a,b)\longmapsto
+(q^{-1},r,p,u,s,v;b,a)
+\]
+という$X$上の対合を与える。特に$X_a$と$X_b$はこの交換で対応する。
+また、同じ$(q,p,r,s,u,v)$を固定したまま、非零の$a$および$b$を
+それぞれ1に正規化する重み保存graded同型が存在する。
+\end{proposition}
+\begin{proof}
+交換後の六関係へ代入すると表示が一致する。
+重みを保つスカラー変更$x'=\alpha x$, $y'=\beta y$,
+$z'=\zeta z$, $t'=\gamma t$は、六つの非零交換係数を変えずに
+\[
+(a,b)\longmapsto
+(\alpha\gamma a/\zeta^2,\ \beta\gamma b/\zeta^2)
+\]
+と作用する。$\alpha,\beta$を独立に選べば主張を得る。
+\end{proof}
+
+\section{添字保持同型の不変量と対角twist}
+\begin{proposition}[重み4関係の中間頂点不変量]\label{prop:rho}
+語長二次により表示される正連結$\ZZ$-代数$C$について、
+$I=C_+$、$V=I/I^2$、$R=\ker(V\otimes V\to I^2/I^3)$と置く。
+\[
+\rho_i(C)=\rk\left(R_{i,i+4}\longrightarrow
+V_{i,i+2}\otimes V_{i+2,i+4}\right)
+\]
+は添字保持同型の不変量である。
+$C=\check A$を\eqref{eq:family}のOre族から作った場合、
+\[
+\rho_i(C)=\begin{cases}0&(a,b)=(0,0),\\1&(a,b)\ne(0,0)
+\end{cases}
+\quad\text{(全ての$i$)}.
+\]
+従って$a,b$の少なくとも一方が非零であるOre族は、
+どの対角量子多項式環の付随$\ZZ$-代数とも同型でない。
+\end{proposition}
+\begin{proof}
+$I$進付随次数を取れば、語長1の$V$と語長2の関係核$R$は
+選んだ語長斉次表示によらず定まる。
+経路の中間頂点$i+1,i+2,i+3$は添字によって内在的に区別され、
+同型はその直和分解を保つ。従って射影階数は不変である。
+
+表示\eqref{eq:family}の重み4の二次関係の基底は
+$tx-sxt-az^2$, $ty-uyt-bz^2$である。
+これらを$kz^2=V_{i,i+2}\otimes V_{i+2,i+4}$へ射影すると
+$(-a,-b)$となる。対角量子族では$a=b=0$なので階数は0である。
+非零の導分係数では階数が1だから同型にはなれない。
+\end{proof}
+
+\begin{proposition}[対角Zhang twistの三つの不変量]\label{prop:twist}
+$X_0$の対角量子多項式環を
+$x_jx_i=q_{ij}x_ix_j$ ($i<j$, $w=(1,1,2,3)$) と書く。
+対角自己同型$\theta(x_i)=\lambda_i x_i$によるZhang twistは
+\[q'_{ij}=q_{ij}\frac{\lambda_i^{w_j}}{\lambda_j^{w_i}}\]
+と作用する。この\emph{対角twist作用}の軌道は
+\[
+\frac{q_{01}^2q_{12}}{q_{02}},\qquad
+\frac{q_{01}^3q_{13}}{q_{03}},\qquad
+\frac{q_{02}^3q_{23}}{q_{03}^2}
+\]
+で完全に決まる。従って各軌道は$q_{01}=q_{02}=q_{03}=1$と正規化できる。
+対角twistで結ばれた二つの代数の付随$\ZZ$-代数は添字保持同型である。
+\end{proposition}
+\begin{proof}
+$a*b=a\theta^{\deg a}(b)$という積で二つの順序を比較すれば
+変換式を得る。$\lambda_0=1$, $\lambda_j=q_{0j}$ ($1\leq j\leq3$) と置くと
+最初の三係数は1となり、残りが表示した三不変量に等しくなる。
+同じ三値を持つ二点は同じ正規形へ移る。
+さらに$\phi_{ij}(a)=\theta^i(a)$は積を保ち、付随$\ZZ$-代数の同型を与える
+\cite{Sierra}。
+\end{proof}
+\begin{remark}
+三つの値は指定した対角twistの完全不変量であるが、
+特殊値での同重み生成元の$\GL_2$変更などを含む全添字保持同型の
+完全不変量とは主張しない。$X_a,X_b,X_{ab}$の係数数から
+非対角モジュライ成分の次元を推定することもできない。
+\end{remark}
+
+\section{分類全体に向けた問題}
+本稿は\emph{斉次対角skew Oreという表示条件の内部}で
+必要十分な分岐を与えた。全分類には少なくとも次が残る。
+\begin{enumerate}
+\item 一般の標準七窓のうち、Ore表示を持たない正則な枝の被覆と同型判定。
+\item 語長二次・左右AS次元4・多項式増大だけから、所期の標準Hilbert級数と
+重み別の六つの二次関係数が強制されるか。
+\item 重み4の射影階数$\rho_i$が七窓内で非定数となる正則対象の存在と、
+そのような対象の最小周期7の判定。
+\item 対角量子族と非対角Ore族に残る同型の必要十分条件、
+例外パラメータ・退化・成分の交差。
+\end{enumerate}
+現在の全体分類用の定義と他の仮定付き結果は
+\url{https://github.com/uedakazushi/nc-p1123}の現行研究方針・主原稿に置く。
+それらの未完成の結果に本稿の定理の成立は依存しない。
+
+\paragraph{検算。}
+付属\path{computations/verify_skew_ore.py}は
+$\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
+全四つの三重重なりの差を計算し、\eqref{eq:conditions}を検算する。
+四既約成分の方程式の代入と次元も検査する。
+有限計算はDiamond lemmaと既知のOre正則性定理の代用ではなく、
+論文中の有限恒等式を独立に再現するためのものである。
+全分類、新規性の最終調査、形式化、第三者査読は未完了である。
+
+\begin{thebibliography}{99}
+\bibitem{AKO}
+D.~Auroux, L.~Katzarkov and D.~Orlov,
+\emph{Mirror symmetry for weighted projective planes and their noncommutative deformations},
+Ann. of Math. \textbf{167} (2008), 867--943.
+\href{https://doi.org/10.4007/annals.2008.167.867}{doi:10.4007/annals.2008.167.867}.
+\bibitem{LWW}
+L.~Liu, S.~Wang and Q.~Wu,
+\emph{Twisted Calabi--Yau property of Ore extensions},
+J. Noncommut. Geom. \textbf{8} (2014), 587--609.
+\href{https://doi.org/10.4171/JNCG/165}{doi:10.4171/JNCG/165}.
+\bibitem{Sierra}
+S.~J.~Sierra, \emph{G-algebras, twistings, and equivalences of graded categories},
+Algebr. Represent. Theory \textbf{14} (2011), 377--390.
+\href{https://doi.org/10.1007/s10468-009-9193-y}{doi:10.1007/s10468-009-9193-y}.
+\bibitem{Zhang}
+J.~J.~Zhang, \emph{Twisted graded algebras and equivalences of graded categories},
+Proc. London Math. Soc. \textbf{72} (1996), 281--311.
+\bibitem{Bergman}
+G.~M.~Bergman, \emph{The diamond lemma for ring theory},
+Adv. Math. \textbf{29} (1978), 178--218.
+\href{https://doi.org/10.1016/0001-8708(78)90010-5}{doi:10.1016/0001-8708(78)90010-5}.
+\bibitem{Priddy}
+S.~B.~Priddy, \emph{Koszul resolutions},
+Trans. Amer. Math. Soc. \textbf{152} (1970), 39--60.
+\end{thebibliography}
+\end{document}

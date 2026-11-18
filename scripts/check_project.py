@@ -11,6 +11,7 @@ REQUIRED = (
     "research/plan_ja.tex", "research/notes_ja.tex", "research/BASELINE.md",
     "research/STATE.json", "research/validation.json", "computations/weighted_baseline.py",
     "computations/baseline_certificate.json", "computations/README.md", "scripts/build_bundle.py",
+    "papers/weighted_ore_strata.tex", "papers/README.md", "computations/verify_skew_ore.py", "requirements-symbolic.txt",
 )
 
 
@@ -31,7 +32,7 @@ def check():
         errors.append("Initial project must not claim a complete classification")
 
     tex_labels = {}
-    for name in ("nc-p1123.tex", "research/plan_ja.tex", "research/notes_ja.tex"):
+    for name in ("nc-p1123.tex", "research/plan_ja.tex", "research/notes_ja.tex", "papers/weighted_ore_strata.tex"):
         content = (ROOT / name).read_text()
         labels = re.findall(r"\\label\{([^}]+)\}", content)
         if len(labels) != len(set(labels)):

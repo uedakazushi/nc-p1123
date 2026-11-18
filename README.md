@@ -1,8 +1,9 @@
 # nc-p1123 — 非可換重み付き射影空間 P(1,1,2,3) の分類
 
-**2026-11-18 / v1。研究開始版。完全分類は未完成。正本は GitHub main。**
+**2026-11-18 / v2。研究開始版。完全分類は未完成。正本は GitHub main。**
 
 [研究方針](research/plan_ja.tex) → [主論文](nc-p1123.tex) → [研究ノート](research/notes_ja.tex) の順に読む。
+公表用原稿は [papers/weighted_ore_strata.tex](papers/weighted_ore_strata.tex) に独立して置く。
 次の具体的課題と証明位置は [STATE](research/STATE.json)、一次文献の適用範囲は
 [BASELINE](research/BASELINE.md)、実際の検証状態は [validation](research/validation.json)。
 実行規則は [AGENTS.md](AGENTS.md)。
@@ -36,6 +37,14 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 
 ## 初期成果とその射程
 
+**新しい公表用原稿（v2）**：対角量子三生成元環からの全ての対角 skew Ore 二次拡大を分類した。Ore 条件は
+`a(v-p)=a(u-q*r^2)=b(v-r)=b(p^2-q*s)=0` の4式で必要十分であり、
+表示空間は次元 `6,5,5,4` の4既約成分の和となる（同型類モジュライの成分ではない）。
+全ファイバーの PBW/Koszul/AS 正則性と重み4射影階数による非対角族の分離を証明。
+詳細な証明は [公表用原稿](papers/weighted_ore_strata.tex)。
+計算検証は `python3 computations/verify_skew_ore.py`（SymPy 1.14.0）。
+
+
 主論文には次の証明を収める。新規性・第三者査読・形式化の完了は主張しない。
 
 | 内容 | 得られたこと | 残ること |
@@ -45,6 +54,7 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 | 一般対象の周期 | Koszul双対のFrobenius traceから7周期同型を構成。最小正周期は1または7 | 最小周期7の対象の存在または排除 |
 | 有限表示 | 標準型は固定階数の七窓、一般Qは有限個の階数表にわたる七窓の和へ還元 | 候補のAS/Koszul条件、明示的な全被覆 |
 | 対角量子族 | 既知の正則族。6交換係数を対角Zhang twistで3パラメータに正規化 | 残るGL2作用を含めた全indexed同型 |
+| 対角skew Oreチャート | 4式による必要十分条件、表示パラメータ空間の4成分、全ファイバーの正則性 | 全AS空間の被覆・成分同定・完全indexed同型 |
 | 非対角Ore族 | `[t,x]=a z^2, [t,y]=b z^2` は全パラメータで標準型。族内は零・非零の2同型類 | 全非対角対象の被覆 |
 | 最初の不変分岐 | 重み4関係の `zz` 成分への射影階数は同型不変。非零Ore族は全対角量子族と非同型 | 各階数パターン内の構造定理 |
 
@@ -54,6 +64,10 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 **これらの数はモジュライ次元を与えない。**
 
 ## 最初に進める課題
+
+完成した対角skew Oreチャートを**全体の被覆とは解釈しない**。
+次はその外の標準七窓（特に重み4射影階数の非定数パターン）を優先する。
+
 
 1. 重み4の `zz` 射影階数と、重み2・3の関係の階数を組み合わせ、全標準七窓を覆う不変な分岐を作る。
 2. 各枝で有限双対のFrobenius条件とKoszul複体の正確性を別々に扱う。
@@ -69,6 +83,8 @@ domain・noetherian・PBW・Calabi–Yau性は全対象に仮定しない。
 ```bash
 python3 computations/weighted_baseline.py
 python3 scripts/check_project.py
+python3 -m pip install -r requirements-symbolic.txt
+python3 computations/verify_skew_ore.py
 ```
 
 第1コマンドは重み24までのHilbert係数、二変数Euler恒等式、
@@ -90,13 +106,13 @@ latexmk -lualatex research/notes_ja.tex
 PDFはルートに出力し、Synctexを有効にする。VS CodeのLaTeX Workshop設定を同梱。
 PDF・ZIP・コンパイル中間物は追跡しない。
 
-検証済みソースをcommitし、3本のPDFを再生成した後、現行一式を作る場合：
+検証済みソースをcommitし、4本のPDFを再生成した後、現行一式を作る場合：
 
 ```bash
 python3 scripts/build_bundle.py
 ```
 
-`output/nc-p1123-2026-11-18-v1.zip` に現行ソースと3本のPDFだけをまとめ、
+`output/nc-p1123-2026-11-18-v2.zip` に現行ソースと4本のPDFだけをまとめ、
 各ファイルのSHA-256とZIPの整合性を確認する。Git履歴・旧版・ログは含めない。
 このコマンドは生成と検証を行うだけで、外部への保存を実行しない。
 
