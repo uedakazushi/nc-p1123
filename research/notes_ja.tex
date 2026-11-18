@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[haranoaji]{luatexja-preset}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{xurl}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\Ext}{\operatorname{Ext}}
+\title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
+\author{}
+\date{2026年11月18日\quad 第1版}
+\begin{document}
+\maketitle
+本ノートは現在有効な着想と障害を置く。作業日誌ではない。
+完成した初期命題の証明は主論文\path{nc-p1123.tex}にあり、ここでは重複しない。
+研究の目標と再開順序は\path{research/plan_ja.tex}を先に読む。
+
+\section{語長と重みを混同しないための基準}
+最小生成元を$x,y,z,t$、重みを$1,1,2,3$とする。
+語長1での$z$と語長2での$x^2$はともに重み2だが、
+$I/I^2$では前者だけが最小生成元である。
+語長斉次二次の仮定は、この持上げの選択のどれかで二次表示を持つという条件である。
+
+Hilbert級数の逆数
+\[
+1-2t+t^3+t^4-2t^6+t^7
+\]
+には重み2と5の項がない。標準型では重み2生成元と関係、
+重み5関係とsyzygyの寄与が相殺される。
+従って一変数のEuler多項式からBetti表を復元する方法は不十分である。
+二変数式$\prod(1-ut^{w_i})$を基本データにする。
+
+Lu--Palmieri--Wu--Zhangの二生成元・三次四次関係の四次元AS正則代数は、
+同じ一変数Hilbert級数を持つ比較例である。
+四生成元の所期のクラスに入ると誤判定しない。
+本文と一次文献の参照箇所は\path{research/BASELINE.md}に記載する。
+
+\section{有限表示で失いやすい情報}
+主論文\texttt{prop:linearization}により、同型の存在の判定は線型生成元変更に帰着する。
+しかし非線型自己同型は残る。例えば可換例で$z\mapsto z+x^2$、
+$t\mapsto t+xz$は重みを保つ自己同型である。
+線型群作用による幾何学的軌道の集合と、全自己同型を持つstackは別物である。
+
+標準Frobenius周期構造と任意の7周期構造も区別する。
+裸の同型類への有限還元は、前者のtrace選択独立性を用いる。
+単に七つの関係を周期延長して、その基底変更軌道を全分類と宣言してはいけない。
+また重み2、3の矢印の周期条件を落とさない。
+
+\paragraph{可換例での具体的注意。}
+可換多項式環の語長双対は四生成元の外積代数であり、通常のtop traceに対する
+Nakayama写像は語長1の全生成元を$-1$倍する。
+したがって、重み付きの厳密な添字7移動を最初からそのままFrobenius標準移動と同一視できない。
+全ての重みが奇数でないため、単なる添字の符号$(-1)^i$では全jumpの符号を同時には補正できない。
+標準移動を選び、その移動によって基底を延長して七窓を作るという本文の順序を守る。
+
+\section{最初の構造分岐と次の計算}
+語長2、重み4の経路空間は
+\[
+(V_i^{(1)}\otimes V_{i+1}^{(3)})\oplus
+(V_i^{(2)}\otimes V_{i+2}^{(2)})\oplus
+(V_i^{(3)}\otimes V_{i+3}^{(1)})
+\]
+であり、次元は$2+1+2=5$である。
+真ん中の直線への射影階数$\rho_i$は内在的で、
+既知対角族は0、非零の初期Ore族は1となる。
+この不変量は単なる選んだ式の係数ではなく、$I^2/I^3$の積の核から定義される。
+証明は本文\texttt{prop:rho}にある。
+
+標準7周期型では$\rho$は法7の二値列になる。
+添字保持同型を使うため、この列を巡回置換で割らない。
+非定数列の正則な実現があれば1周期性を排除できるが、現段階では実現可能性は未確認である。
+全ての二値列が許されるとも、零と一の定数列しか許されないとも主張しない。
+
+\paragraph{次の実装仕様。}
+始点$i\bmod7$、語長$p$、重み$d$で経路基底を分け、
+二次関係挿入行列の像を割ることで双対$E^p_{i,i+d}$を計算する。
+語長はまず0から5、重みは$p$から$3p$を全て含める。
+相補積の行列を作り、指定次元と完全対合を検査する。
+その後に元代数のKoszul微分を構成し、有限Frobenius条件から独立にホモロジーを計算する。
+巨大な一般消去の前に、対角族・非零Ore族の基底で両側の行列を回帰確認する。
+
+最小周期7の例の探索では、係数に周期7を入れたことだけを非1周期性の証明としない。
+可逆基底変更の列で定数化される可能性を必ず除く。
+
+\section{degree 1 del Pezzoと\texorpdfstring{$E_8$}{E8}への接続}
+可換degree 1 del Pezzoの反標準環は、重み$(1,1,2,3)$の生成元と重み6の一関係で記述される。
+この標準表示はV\'arilly-Alvarado--Zywina\cite[Proposition 2.3]{VAZ}で確認できる。
+同命題の証明はKoll\'arの書籍III.3.5を参照しており、その書籍本文は今回未確認である。
+正則な重み6元で割る可換基準のHilbert級数は
+\[
+\frac{1-t^6}{(1-t)^2(1-t^2)(1-t^3)}
+\]
+となる。重み付きの随伴公式でも$6-(1+1+2+3)=-1$が現れる。
+非可換版では正則normal元、中心性、反標準標識、ambientの存在と一意性を別々の問題にする。
+本原稿ではこれらの認識・一意性定理を証明していない。
+
+Etingof--Ginzburg\cite[\S3.5, 式(3.5.1)]{EG}の$E_8$側では、
+三変数$X,Y,Z$の重みが$(1,2,3)$で、potentialの重みは6である。
+パラメータを$\tau,c$と書けば、典型的な斉次potentialは
+\[
+\Phi=XYZ-\tau YXZ+c\left(\frac{X^6}{6}+\frac{Y^3}{3}+\frac{Z^2}{2}\right).
+\]
+その巡回微分は
+\[
+\partial_Z\Phi=XY-\tau YX+cZ.
+\]
+従って$c\ne0$なら$Z$は$X,Y$から表され、三つの最小生成元を保つとは限らない。
+この三変数代数にRees変数を追加して四変数の表示が現れても、
+四\emph{最小}生成元・語長二次という本研究の条件への適合を別に証明する必要がある。
+これは$E_8$との接続を否定するものではなく、ambientを同定する前に確かめるべき具体的な障害である。
+
+Rains\cite[Proposition 5.1, Conjecture 1]{Rains}のfiltered elliptic algebraは
+将来の幾何的認識問題の比較対象となる。
+v2では命題5.1、v1では対応する命題が4.1なので版を固定する。
+全filtered deformationを幾何的構成で尽くすという部分は予想であり、既知の全射性定理としない。
+本研究への適用、標識忘却、重み付きambientとの一致は未確認である。
+
+\section{計算の現状と限界}
+現行の証明書は\path{computations/baseline_certificate.json}にある。
+Python標準ライブラリだけで再生成でき、数値標本ではなく整数・有理数・形式単項式を使う。
+重み0から24のHilbert係数、対角twistの整数指数行列、二族の全ての重なりを検査する。
+これは一般対象のAS性、全分類、文献上の新規性、組版成功を証明するものではない。
+
+初期Ore族の二次双対は$\Lambda(X,Y,T)[Z;\sigma]/(Z^2-(aX+bY)T)$であり、
+そのtraceの完全性は本文に証明がある。
+今後の計算実装でも、有限次数の次元一致だけでこの構造的証明を置換しない。
+現行環境で実際に行えた生成・検算・組版・保存の範囲は
+\path{research/validation.json}で確認する。
+
+\begin{thebibliography}{9}
+\bibitem{VAZ}
+A.~V\'arilly-Alvarado and D.~Zywina,
+\emph{Arithmetic $E_8$ lattices with maximal Galois action},
+LMS Journal of Computation and Mathematics \textbf{12} (2009), 144--165.
+\url{https://pi.math.cornell.edu/~zywina/papers/E8lattice.pdf}.
+\bibitem{EG}
+P.~Etingof and V.~Ginzburg,
+\emph{Noncommutative del Pezzo surfaces and Calabi--Yau algebras},
+Journal of the European Mathematical Society \textbf{12} (2010), 1371--1416.
+\href{https://doi.org/10.4171/JEMS/235}{doi:10.4171/JEMS/235};
+\href{https://arxiv.org/abs/0709.3593}{arXiv:0709.3593}.
+\bibitem{Rains}
+E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
+\href{https://arxiv.org/abs/2107.13540v2}{arXiv:2107.13540v2} (2022).
+\end{thebibliography}
+\end{document}

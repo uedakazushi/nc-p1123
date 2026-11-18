@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-18",
+  "version": 1,
+  "generated": {"main_manuscript":true,"research_plan":true,"research_notes":true,"calculation_code":true,"exact_certificate":true},
+  "mathematics": {
+    "proofs_written":["ISO-LINEAR","STD-HILBERT","PERIOD-7","FINITE-7","QUANTUM-TWIST","ORE-2","RHO-SPLIT"],
+    "logical_review":"completed_for_initial_stated_propositions_by_independent_reading; not formal proof or external peer review",
+    "formalized":false,
+    "peer_reviewed":false,
+    "novelty_confirmed":false,
+    "complete_classification":false
+  },
+  "exact_computation": {
+    "command":"python3 computations/weighted_baseline.py",
+    "status":"passed",
+    "coverage":["bivariate Euler identity","Hilbert coefficients0..24 by independent counts","relation and presentation dimensions","all4 diagonal quantum overlaps","all4 two-parameter Ore overlaps","rho projection matrix","diagonal twist action rank and full invariant lattice","normalization identity"],
+    "not_covered":["general AS/Koszul locus","standard exhaustiveness","exact period7 existence","full indexed quantum isomorphisms"]
+  },
+  "project_structure":{"status":"passed","command":"python3 scripts/check_project.py","scope":"files, labels/citations/environments, claim and resume links only"},
+  "typesetting": {
+    "engine":"LuaLaTeX",
+    "status":"blocked_missing_dependencies",
+    "pdf_generated":false,
+    "visual_review":false,
+    "missing":["luaotfload-main.lua","ltjsarticle.cls","luatexja-preset.sty","HaranoAjiMincho-Regular.otf"],
+    "note":"Japanese smoke compilation failed in this runtime. Source inspection is not a successful typesetting check."
+  },
+  "persistence": {
+    "canonical":"GitHub uedakazushi/nc-p1123 main",
+    "verification":"Confirm final commit and remote SHA outside this self-referential versioned file; do not infer push success from file creation.",
+    "tracked_pdf":false
+  }
+}
