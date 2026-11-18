@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 5,
+  "version": 6,
   "generated": {
     "main_manuscript": true,
     "research_plan": true,
@@ -132,16 +132,16 @@
     "status": "passed",
     "pdf_generated": true,
     "commands": [
-      "latexmk -lualatex nc-p1123.tex",
+      "latexmk -lualatex papers/nc-p1123.tex",
       "latexmk -lualatex research/plan_ja.tex",
       "latexmk -lualatex research/notes_ja.tex",
-      "latexmk -lualatex nc-p1123.tex",
-      "latexmk -lualatex nc-p1123.tex",
-      "latexmk -lualatex nc-p1123.tex"
+      "latexmk -lualatex papers/nc-p1123.tex",
+      "latexmk -lualatex papers/nc-p1123.tex",
+      "latexmk -lualatex papers/nc-p1123.tex"
     ],
     "documents": [
       {
-        "source": "nc-p1123.tex",
+        "source": "papers/nc-p1123.tex",
         "pdf": "nc-p1123.pdf",
         "pages": 12,
         "source_sha256": "ce9e5e5475eb6d21b434147b40b5a101d39593418cc1e139e6ca956baebcc98f",
@@ -183,7 +183,7 @@
         }
       },
       {
-        "source": "nc-p1123.tex",
+        "source": "papers/nc-p1123.tex",
         "pdf": "weighted_ore_strata.pdf",
         "pages": 5,
         "source_sha256": "3aa69f17960955f2ed963d9a27a7c188960445c986955815ffff771ba6f9772a",
@@ -197,7 +197,7 @@
         }
       },
       {
-        "source": "nc-p1123.tex",
+        "source": "papers/nc-p1123.tex",
         "pdf": "graded_ore_classification.pdf",
         "pages": 15,
         "source_sha256": "2073ff881bd21c7e2ede7a2b6e3206b75e6e00bbbeafbfa6c45d3946fa508410",
@@ -211,7 +211,7 @@
         }
       },
       {
-        "source": "nc-p1123.tex",
+        "source": "papers/nc-p1123.tex",
         "pdf": "general_weights.pdf",
         "pages": 16,
         "source_sha256": "30dc6c9657366663587c3088afdcbac6574db22953534a99fb9df54ed4c64e2f",
@@ -242,6 +242,14 @@
     "lualatex_compilation_executed": false,
     "independent_proof_reverification_executed": false,
     "library_bundle_saved": false,
-    "summary": "Consolidated publications into nc-p1123.tex; retained indexed Z-algebra research in research/indexed_z_algebra.tex. Earlier validations relate to earlier standalone sources and should not be read as integrated LaTeX compilation."
+    "summary": "Consolidated publications into papers/nc-p1123.tex; retained indexed Z-algebra research in research/indexed_z_algebra.tex. Earlier validations relate to earlier standalone sources and should not be read as integrated LaTeX compilation."
+  },
+  "publication_path_move_2026_11_19": {
+    "old_path": "nc-p1123.tex",
+    "new_path": "papers/nc-p1123.tex",
+    "github_commit": "pending",
+    "latex_compilation_executed": false,
+    "static_reference_check_executed": false,
+    "library_bundle_saved": false
   }
 }

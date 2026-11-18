@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 5,
+  "version": 6,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
@@ -84,103 +84,103 @@
     {
       "id": "SKEW-ORE-COND",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:ore-condition",
+      "proof": "papers/nc-p1123.tex#thm:ore-condition",
       "scope": "Necessary and sufficient four equations within diagonal skew Ore ansatz; all fibres Koszul AS4"
     },
     {
       "id": "ORE-PARAM-COMP",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:components",
+      "proof": "papers/nc-p1123.tex#thm:components",
       "scope": "Four irreducible components of presentation parameter space, not of AS moduli"
     },
     {
       "id": "ORE-SWAP",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:normalization",
+      "proof": "papers/nc-p1123.tex#prop:normalization",
       "scope": "Swap x/y and scalar normalization of nonzero derivation coefficients"
     },
     {
       "id": "GRADED-ORE",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#spec:thm:ore-exhaustion",
+      "proof": "papers/nc-p1123.tex#spec:thm:ore-exhaustion",
       "scope": "Over C, connected locally finite left/right noetherian AS4, prescribed Hilbert series and minimal degrees (1,1,2,3): all and only iterated Ore extensions of a quantum or Jordan plane. No claim for all Q."
     },
     {
       "id": "GRADED-ORE-DATA",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#spec:thm:coefficient-data",
+      "proof": "papers/nc-p1123.tex#spec:thm:coefficient-data",
       "scope": "Finite necessary and sufficient coefficient equations for the graded Ore data; contains all special parameter values."
     },
     {
       "id": "GRADED-ORE-ISOM",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#spec:thm:graded-isomorphisms",
+      "proof": "papers/nc-p1123.tex#spec:thm:graded-isomorphisms",
       "scope": "All graded isomorphisms are the specified triangular changes satisfying explicit equations; not a classification of bare indexed isomorphisms."
     },
     {
       "id": "QUADRATIC-GRADED-ORE",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#spec:cor:quadratic-chart",
+      "proof": "papers/nc-p1123.tex#spec:cor:quadratic-chart",
       "scope": "Within the stated noetherian graded Hilbert locus over C: the full word-quadratic Ore chart, allowing non-diagonal automorphisms. Graded-isomorphism existence is characterized in prop:quadratic-isomorphisms; the displayed zero-correction conditions use generators adapted to a word-quadratic presentation."
     },
     {
       "id": "GENERAL-FOUR-STRANDS",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:four-strands",
+      "proof": "papers/nc-p1123.tex#prop:four-strands",
       "scope": "No word-quadratic or domain assumption: AS index n+5 and weighted Tor_i supported in i..i+3, under the stated noetherian global-dimension and Hilbert hypotheses."
     },
     {
       "id": "GENERAL-QUADRATIC-NUMERICS",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:quadratic-general-structure",
+      "proof": "papers/nc-p1123.tex#prop:quadratic-general-structure",
       "scope": "All n in the word-quadratic Hilbert locus, without a domain assumption: word-Koszul with word Hilbert series (1-u)^(-n-2), canonical B Koszul of global dimension n and H_B=(1-t)^(-n), relation counts (binom(n,2),n,n,1). B AS-Gorenstein is not claimed at this stage. Domain additionally gives a regular normal degree-2 generator."
     },
     {
       "id": "GENERAL-QUADRATIC-ORE",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:general-quadratic-classification",
+      "proof": "papers/nc-p1123.tex#thm:general-quadratic-classification",
       "scope": "All n: exhaustive two-step Ore data for left/right noetherian domains, AS dimension n+2, prescribed Hilbert series and word-quadratic minimal generators. The canonical base B is an n-dimensional AS-regular domain with ordinary polynomial Hilbert series. Proof of exhaustion in thm:quadratic-all-ones uses noetherian finite generation in A/(z), not an assumed domain property of that quotient."
     },
     {
       "id": "GENERAL-ORE-DATA",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:general-coefficients",
+      "proof": "papers/nc-p1123.tex#thm:general-coefficients",
       "scope": "Necessary and sufficient finite coefficient conditions over any base in B_n, including non-word-quadratic homogeneous relations. This is the specified Ore family, not an exhaustion of the general homogeneous locus."
     },
     {
       "id": "GENERAL-ORE-ISOM",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:general-isomorphisms",
+      "proof": "papers/nc-p1123.tex#thm:general-isomorphisms",
       "scope": "All graded isomorphisms in the general Ore family are triangular and satisfy the displayed conditions; no claim for bare indexed isomorphisms."
     },
     {
       "id": "GENERAL-QUADRATIC-ISOM",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:general-quadratic-isomorphisms",
+      "proof": "papers/nc-p1123.tex#prop:general-quadratic-isomorphisms",
       "scope": "Existence of a graded isomorphism between quadratic charts is equivalent to the stated linear orbit condition. Actual isomorphisms may be nonlinear."
     },
     {
       "id": "GENERAL-DOUBLE-TRIANGULAR",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:double-triangular",
+      "proof": "papers/nc-p1123.tex#prop:double-triangular",
       "scope": "A genuine graded double Ore extension over a degree-one-generated base with minimal weights 2 and 3 is an iterated automorphism Ore extension in that order."
     },
     {
       "id": "GENERAL-UNBOUNDED-DIMENSION",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:unbounded-dimension",
+      "proof": "papers/nc-p1123.tex#thm:unbounded-dimension",
       "scope": "Fixed minimal degrees (1^n,2,3) admit noetherian AS-regular domains of global dimension n+m+2 for all m>=0. For m>=1 the canonical first Ore step fails; these examples do not have the prescribed n+2-dimensional Hilbert profile."
     },
     {
       "id": "GENERAL-BASE-EMBEDDING",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:base-classification-embedding",
+      "proof": "papers/nc-p1123.tex#prop:base-classification-embedding",
       "scope": "B -> B[z,w] is injective on graded isomorphism classes of ordinary AS-regular polynomial-Hilbert bases; domain bases map into the quadratic domain locus."
     },
     {
       "id": "GENERAL-SKLYANIN-BASE",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:sklyanin-base",
+      "proof": "papers/nc-p1123.tex#prop:sklyanin-base",
       "scope": "Explicit Sklyanin S(1,2,1)[z2,w3] lies in the strong quadratic n=3 locus but is not an iterated graded Ore extension from k on its five minimal generators; its canonical two-step Ore flag over S exists."
     }
   ],
@@ -231,14 +231,13 @@
     "next_action": "Start with n=3, global dimension 5, minimal degrees (1,1,1,2,3), and the prescribed Hilbert series. The weighted relation counts obey r2=3 and r3-r5=2, while r4 cancels in the Euler identity. Analyze augmentation-filtration initial relations and the conditions under which gr(A) is quadratic AS-regular; do not assume that passage preserves regularity. Compare resulting filtered cases with the finite homogeneous Ore data. Preserve the original four-dimensional indexed target and its separate open problems.",
     "read": [
       "research/plan_ja.tex",
-      "nc-p1123.tex",
-      "nc-p1123.tex",
+      "papers/nc-p1123.tex",
       "research/notes_ja.tex",
       "research/BASELINE.md"
     ],
     "obstacle": "The all-n theorem requires word-quadratic relations, left/right noetherianity, a domain, global dimension n+2 and the prescribed Hilbert series. The general homogeneous exhaustion and inference of these hypotheses from minimal degrees remain unresolved. The original nonperiodic indexed classification is separate.",
     "do_not_repeat": "All-n word-quadratic Koszulity, standard relation numbers, canonical Ore exhaustion in the domain locus, finite homogeneous Ore coefficient equations, full triangular graded isomorphisms, quadratic linear-isomorphism existence, the unbounded-dimension counterfamily, and the Sklyanin base obstruction are written in general_weights.tex. The quotient A/(z) domain property is derived, not additionally assumed."
   },
-  "publication_manuscript": "nc-p1123.tex",
+  "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex"
 }

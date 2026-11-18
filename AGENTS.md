@@ -1,7 +1,7 @@
 # nc-p1123 研究指示
 
 2026-11-18 / v1。最初に `research/plan_ja.tex` を読む。
-主論文は `nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
+主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
 

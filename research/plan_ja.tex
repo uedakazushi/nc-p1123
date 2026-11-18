@@ -39,13 +39,13 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
 本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読み、
-graded代数の定理を\path{nc-p1123.tex}、Z代数の定理を\path{research/indexed_z_algebra.tex}、未収載の着想を\path{research/notes_ja.tex}で確認する。
+graded代数の定理を\path{papers/nc-p1123.tex}、Z代数の定理を\path{research/indexed_z_algebra.tex}、未収載の着想を\path{research/notes_ja.tex}で確認する。
 外部文献の適用範囲は\path{research/BASELINE.md}に置く。
 
 \section{主要な到達点と適用範囲}
 \paragraph{一般の最小生成元次数$(1^n,2,3)$。}
 並行して、次数1の最小生成元を$n$個とするgraded代数を調べる。
-\path{nc-p1123.tex}では、左右noetherian、AS次元$n+2$、
+\path{papers/nc-p1123.tex}では、左右noetherian、AS次元$n+2$、
 $H_A(t)=((1-t)^n(1-t^2)(1-t^3))^{-1}$の下で、
 AS添字$n+5$と$\operatorname{Tor}_i$の内部次数$i,\ldots,i+3$を導く。
 語長二次なら、整域性なしでも語長Koszul性と
@@ -64,7 +64,7 @@ $B=k\langle A_1\rangle$はAS正則次元$n$、Hilbert級数$(1-t)^{-n}$となる
 量子平面またはJordan平面からの段階的Ore拡大
 $B[z;\sigma,\delta][w;\tau,D]$で全対象を尽くせる。
 有限の係数条件、全graded同型を与える三角形変換、中心的な次数3最小生成元を持つ場合を
-\path{nc-p1123.tex}で証明する。
+\path{papers/nc-p1123.tex}で証明する。
 語長二次部分には非対角自己同型を許すチャートとgraded同型の存在判定がある。
 この定理は一般の非1周期対象や裸の添字保持同型の商を分類しない。
 
@@ -73,7 +73,7 @@ $B[z;\sigma,\delta][w;\tau,D]$で全対象を尽くせる。
 第四生成元を斉次Ore付加する語長二次の全表示を分類した。
 必要十分な四係数式と、表示パラメータ空間の次元$6,5,5,4$の四既約成分、
 全ファイバーの正則性、$zz$射影階数による対角族との非同型性を
-公表用原稿\path{nc-p1123.tex}で証明する。
+公表用原稿\path{papers/nc-p1123.tex}で証明する。
 この成分は表示空間の成分であり、全ASモジュライの成分ではない。
 既存の二パラメータOre族は、このチャートに含まれる。
 
@@ -145,7 +145,7 @@ AS添字7と語長Koszul性、H=Sは既に証明した。残るのは重み別�
 
 \paragraph{P3：対角族の同型。}
 graded部分の三角形同型と、語長二次部分の線型な同型存在判定は
-\path{nc-p1123.tex}にある。
+\path{papers/nc-p1123.tex}にある。
 残る課題は裸の添字保持同型による追加の同一視である。
 まず$q_{01}=q_{02}=q_{03}=1$へ正規化し、
 $q_{12},q_{13},q_{23}$に残る重み1の二生成元の交換・$\mathrm{GL}_2$作用を調べる。
@@ -165,15 +165,14 @@ degree 1 del Pezzoの反標準環・重み6の超曲面、$E_8$量子化との�
 
 \section{公表原稿と再現可能性}
 一般の次数列についての構造定理、有限係数条件、同型軌道および反例族は
-\path{nc-p1123.tex}に置く。任意$n$の網羅定理のために独立した証明を要するので、
-四次元の原稿とは分ける。元の四次元$\mathbb Z$-代数の対象・仮定は変更しない。
+\path{papers/nc-p1123.tex}に置く。任意$n$の網羅定理のために独立した証明を要するので、
+四次元の結果も同一公表論文に統合した。元の四次元$\mathbb Z$-代数の対象・仮定は変更しない。
 
 段階的Ore表示による仮定付きgraded分類の証明は
-\path{nc-p1123.tex}に置く。
-対角部分の表示空間の成分分解は\path{nc-p1123.tex}に置く。
+\path{papers/nc-p1123.tex}に置く。
+対角部分の表示空間の成分分解は\path{papers/nc-p1123.tex}に置く。
 これらと既存のOre結果の文献上の重複は一次資料で引き続き精査する。
-研究用の総合原稿は\path{nc-p1123.tex}一編に、定義、同型の線型化、7周期と有限表示、
-二つの基準族、不変分岐、仮定付きgraded分類の適用範囲を論理順に収める。
+未完成の一般$\mathbb Z$-代数分類については\path{research/indexed_z_algebra.tex}に、定義、同型の線型化、7周期と有限表示、二つの基準族、不変分岐を保持する。公表用graded論文は\path{papers/nc-p1123.tex}に一本化する。
 独立した新しい中心定理が得られるまでは論文を細分化しない。
 既知のAKO族や一般Ore手法は明示的に引用し、独自の分類成果と区別する。
 初期の命題の新規性の最終確認は未了であり、現段階を投稿可能な完成稿とはしない。
