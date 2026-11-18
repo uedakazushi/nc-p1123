@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 6,
+  "version": 7,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
@@ -182,6 +182,12 @@
       "status": "proved_in_manuscript",
       "proof": "papers/nc-p1123.tex#prop:sklyanin-base",
       "scope": "Explicit Sklyanin S(1,2,1)[z2,w3] lies in the strong quadratic n=3 locus but is not an iterated graded Ore extension from k on its five minimal generators; its canonical two-step Ore flag over S exists."
+    },
+    {
+      "id": "INDEXED-NORMAL-Z",
+      "status": "proved_by_direct_argument_in_research_note_not_independently_audited",
+      "proof": "research/notes_ja.tex#lem:indexed-normal-z",
+      "scope": "For Z-domains with homogeneous word-quadratic minimal relations of weights 2,3,4,5 in dimensions (1,2,2,1), the length-2 generator family is normal and generates an index-dependent first skew polynomial extension over the length-1 subalgebra. No assertion about the second Ore step or automatic AS hypotheses."
     }
   ],
   "open_problems": [

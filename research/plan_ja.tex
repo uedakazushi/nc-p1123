@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月19日\quad 第5版}
+\date{2026年11月19日\quad 第7版}
 \begin{document}
 \maketitle
 
@@ -108,6 +108,21 @@ Z代数研究原稿\texttt{thm:graded-ore-summary}は独立原稿の定理を要
 表示空間の次元98、線型生成元変更群の次元42は検算済みだが、
 差56はモジュライ次元ではない。Koszul条件、Frobenius標準化、安定化群を別に調べる。
 初期の具体的族は全て1周期であり、非1周期例を得たとはしない。
+
+\section{語長二次$\mathbb Z$-代数へのOre定理の拡張}
+標準関係次元$(1,2,2,1)$と$\mathbb Z$-整域性を仮定すると、
+重み3と5の関係の両射影が同型となり、長さ2の生成元族$z_i$は正規である。
+次数1生成部分$\mathcal B$の2頂点移動を与える歪同型が得られ、
+$\langle \mathcal B,z\rangle$は第1段歪多項式拡大と同型である
+（証明：\path{research/notes_ja.tex}、\texttt{lem:indexed-normal-z}）。
+この部分結果は1周期性もnoetherian性も仮定しない。
+
+第2段では$Q=\mathcal A/(z)$における長さ3の生成元族$w_i$の
+正規性と$Q\simeq\mathcal B[w]$に相当するPBW表示を、
+左右noetherian性・各行Hilbert級数・$w$次数1成分の加群構造から
+導けるか調べる。これは現時点で未証明であり、
+一般$\mathbb Z$-代数を2段Ore表示で尽くしたとは主張しない。
+完全な同型分類ではZhang twistによる同一視も必要である。
 
 \section{未解決の核心と次の具体的操作}
 \paragraph{一般次数列：語長二次性を外した網羅性。}

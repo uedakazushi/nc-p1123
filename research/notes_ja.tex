@@ -8,7 +8,7 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第5版}
+\date{2026年11月19日\quad 第7版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
@@ -49,6 +49,59 @@ $L=8$では重み6関係の三重重なりを避けるためjump 1関係に頻�
 残る数値問題はQ=Hであり、所期のHilbert級数を仮定すれば標準解消が従う（Z代数研究原稿\texttt{cor:hilbert-standard}）。
 一般七窓の候補に有限Frobenius条件しか課していない場合は、AS性がまだ分からないため
 Koszul性は依然として独立の検査である。
+
+\section{語長二次$\mathbb Z$-代数の正規元族：条件付き部分結果}
+\label{lem:indexed-normal-z}
+以下は一般のOre網羅定理とは区別する、関係空間の線型代数による直接の部分結果である。
+
+$A=T_{\mathbb Z}(V\oplus kz\oplus kw)/(R)$を重み$(1,1,2,3)$
+（次数1生成元2個）の、重みと語長の両方に斉次な二次表示とする。
+各始点$i$で最小関係空間の重み別次元が
+$(\dim R_{i,2},\dim R_{i,3},\dim R_{i,4},\dim R_{i,5})=(1,2,2,1)$
+であり、合成可能な非零斉次元の積は常に非零であると仮定する。
+$V_i$を長さ1の生成元空間、$z_i,w_i$を長さ2,3の持上げとする。
+
+\paragraph{結論と証明。}
+重み3の関係は
+$R_{i,3}\subset (V_i\otimes kz_{i+1})\oplus(kz_i\otimes V_{i+2})$
+にある。それぞれの射影の核に非零元があれば、非零の$v z$または$z v$が
+$A$で零になり、整域条件に反する。関係空間と両射影先の次元がともに2なので
+射影は同型であり、可逆な$\sigma_i:V_{i+2}\to V_i$に対し
+\[
+ z_i v=\sigma_i(v)z_{i+1}\qquad(v\in V_{i+2})
+\]
+を得る。重み5の一次元関係も同様に両係数が非零なので、$c_i\in k^\times$について
+\[
+ w_i z_{i+3}=c_i z_i w_{i+2}
+\]
+が成り立つ。重み2の関係$r\in R_{i+2,2}$に左から$z_i$を掛け、
+交換関係を2回使ってから右端の非零な$z_{i+2}$を消去すると、
+$\sigma_i,\sigma_{i+1}$が$r$を重み2の関係へ写す。逆側も同様なので、
+$\sigma$は次数1の生成部分$\mathcal B$とその2頂点移動の間の
+$\mathbb Z$-代数同型を誘導する。
+
+さらに$\epsilon=$重み$-$語長とおくと、$V,z,w$の$\epsilon$はそれぞれ
+$0,1,2$であり、$A$は非負の$\epsilon$次数を持つ。
+$\epsilon=0$部分は$\mathcal B=T_{\mathbb Z}(V)/(R_{i,2})$そのものである。
+正規化関係による形式的な第1段の歪多項式拡大から
+$\mathcal C=\langle V_i,z_i\mid i\in\mathbb Z\rangle\subset A$
+への全射は、標準形$b z^m$で$\epsilon=m$を持ち、
+異なる$m$は相殺せず、各非零$b z^m$も整域条件で非零だから単射である。
+したがって$\mathcal C$は$\mathcal B$の長さ2の正規元族による
+$\mathbb Z$-代数版の第1段歪多項式拡大である。
+ここまでは1周期性・noetherian性を必要としない。
+
+\paragraph{未解決の第2段。}
+$\mathcal A/(z)$で$w_i$が正規元族となり、
+$\mathcal A/(z)$が$\mathcal B$の長さ3の歪多項式拡大となるかは、
+上記の射影と整域条件だけでは確定していない。
+特に重み4の関係は$Vw,wV,z^2$を混合し、
+$\mathcal A$が$\mathbb Z$-整域であっても$\mathcal A/(z)$の
+整域性を自動的に主張してはならない。
+第2段の証明には正規商のHilbert関数、左右noetherian性、
+および$w$次数1成分の$\mathcal B$加群としての構造を調べる必要がある。
+標準Hilbert級数の強制性、全$\mathbb Z$-代数の網羅性、
+添字保持同型の軌道分類はこの部分結果には含まれない。
 
 \section{次数付きOre分類と七窓との境界}
 \path{papers/nc-p1123.tex}は、複素数体上の連結・局所有限・左右noetherianな

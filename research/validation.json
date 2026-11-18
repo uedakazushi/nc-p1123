@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 6,
+  "version": 7,
   "generated": {
     "main_manuscript": true,
     "research_plan": true,
@@ -250,6 +250,19 @@
     "github_commit": "pending",
     "latex_compilation_executed": false,
     "static_reference_check_executed": false,
+    "library_bundle_saved": false
+  },
+  "indexed_normal_family_analysis": {
+    "status": "direct_argument_recorded_in_research_note; not independently verified",
+    "assumptions": "word-quadratic homogeneous Z-domain; standard relation dimensions (1,2,2,1) at every index",
+    "result": "normal length-two family and first indexed skew-polynomial step",
+    "not_claimed": [
+      "second indexed Ore step",
+      "general noetherian Z-regular classification",
+      "index-preserving isomorphism orbits"
+    ],
+    "computation_executed": false,
+    "typesetting_executed": false,
     "library_bundle_saved": false
   }
 }
