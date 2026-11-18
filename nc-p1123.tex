@@ -24,7 +24,7 @@
 \newcommand{\NF}{\operatorname{NF}}
 \newcommand{\qgr}{\operatorname{qgr}}
 \title{非可換重み付き射影空間\texorpdfstring{$\mathbb P(1,1,2,3)$}{P(1,1,2,3)}の分類に向けて\\
-\large 標準Koszul型の七窓表示と二つの基準族}
+\large AS添字の強制・七窓表示・二つの基準族}
 \author{}
 \date{2026年11月18日\quad 研究原稿 v1\\
 \small 完全分類および新規性の最終確認は未完成}
@@ -33,9 +33,9 @@
 \begin{abstract}
 最小生成元の重みが$(1,1,2,3)$で、関係が語長二次かつ重み付き斉次である
 四次元AS正則$\ZZ$-代数の添字保持同型による分類を定式化する。
-広い対象と、重み付き多項式の解消を持つ標準Koszul型を区別する。
-標準型ではAS双対性とFrobenius traceから7周期性を示し、
-幾何学的同型類を有限七窓の関係データへ還元する。
+広い対象について、AS双対性と多項式増大から語長Koszul性とAS添字7を導く。
+Frobenius traceから7周期性を示し、幾何学的同型類を有限七窓の関係データへ還元する。
+所期のHilbert級数を持つことと、標準重み付き解消を持つことは同値である。
 最小正周期は1または7だが、最小周期7の例の存在は未決定である。
 
 既知の対角量子多項式族では、重み付きZhang twistによる6係数から3係数への
@@ -43,7 +43,7 @@
 全パラメータでの正則性と、族内の二つの添字保持同型類を直接証明する。
 重み4関係の$zz$成分への射影階数は同型不変であり、
 非零Ore族が全対角量子族の外にあることを示す。
-一般七窓の正則性判定、標準型による広い対象の被覆、全同型・成分分類は未解決である。
+一般七窓の正則性判定、標準Hilbert級数の強制性、全同型・成分分類は未解決である。
 \end{abstract}
 \tableofcontents
 
@@ -71,7 +71,8 @@ $\qgr$同値を分ける必要がある。
 AS双対性からExt圏がFrobeniusとなる一般原理は
 Mart\'inez-Villa--Solberg\cite[Theorem 6.2]{MVS}にある。
 本稿では必要な有限射影解消の議論を重み付き添字のまま記述し、
-7移動と有限表示を導く。一般的なKoszul--Frobenius原理そのものを新規結果とはしない。
+語長二次性と多項式増大によってAS添字を7に絞り、7移動と有限表示を導く。
+一般的なKoszul--Frobenius原理そのものを新規結果とはしない。
 Ore拡大の正則性にはLiu--Wang--Wu\cite[Theorem 3.3]{LWW}の一般理論も使えるが、
 本稿の具体的族では二次双対とtraceを明示し、仮定を直接確認する。
 
@@ -158,7 +159,8 @@ H(t)^{-1}=1-2t+t^3+t^4-2t^6+t^7.
 \]
 この一変数式では生成元と関係等の寄与が相殺される。
 これを逆に読んで最小解消を一意に復元することはできない。
-$\mathcal S=\mathcal H$や$\mathcal H=\mathcal Q$は本稿では証明していない。
+後の系\ref{cor:hilbert-standard}で$\mathcal S=\mathcal H$を示す。
+$\mathcal H=\mathcal Q$は本稿では証明していない。
 
 \section{同型の線型化}
 \begin{proposition}\label{prop:linearization}
@@ -181,38 +183,32 @@ $\gr_I A\simeq A$を得る。各添字成分では語長は重み以下であり
 従って線型群作用の商群oidを、非線型自己同型も持つ裸の代数のmoduli stackと同一視しない。
 \end{remark}
 
-\section{標準型の七周期と有限表示}
+\section{AS添字7の強制と七周期}
 \subsection{AS双対性からの完全対合}
 前向きの規約で$E_{ij}^p=\Ext_A^p(S_i,S_j)$とする。
-Koszul性により$E$は語長二次双対$A^!$と同一視でき、$E_{ij}^1=V_{ij}^*$である。
-標準解消により、各行の$E^p$の重み付き次元は
-\[
-1,\quad 2t+t^2+t^3,\quad t^2+2t^3+2t^4+t^5,
-\quad t^4+t^5+2t^6,\quad t^7
-\]
-であり、$p>4$では零である。
+この段階では$A\in\mathcal Q$とし、Koszul性や一定のAS添字を仮定しない。
 
 \begin{lemma}\label{lem:frobenius}
-標準型ではYoneda積
+$A\in\mathcal Q$についてYoneda積
 \[
-E_{ij}^p\otimes E_{j,i+7}^{4-p}\longrightarrow E_{i,i+7}^4\simeq k
+E_{ij}^p\otimes E_{j,\ell(i)}^{4-p}\longrightarrow E_{i,\ell(i)}^4\simeq k
 \]
 は完全対合である。
 \end{lemma}
 \begin{proof}
 有限生成右射影による解消$P_\bullet\to S_i$を取る。
-AS条件により$\Hom_A(P_\bullet,A)$は、次数4の$L_{i+7}$以外にコホモロジーを持たない。
+AS条件により$\Hom_A(P_\bullet,A)$は、次数4の$L_{\ell(i)}$以外にコホモロジーを持たない。
 有限生成射影性から、有限次元右加群$M$について複体の自然同型
 \[
 \Hom_A(P_\bullet,M)\simeq M\otimes_A\Hom_A(P_\bullet,A)
 \]
 がある。後者の第二因子を左射影解消として読むと
 \[
-\Ext_A^p(S_i,M)\simeq\Tor_{4-p}^A(M,L_{i+7}).
+\Ext_A^p(S_i,M)\simeq\Tor_{4-p}^A(M,L_{\ell(i)}).
 \]
-体上の双対$D=\Hom_k(-,k)$を取り、$DL_{i+7}=S_{i+7}$を用いれば
+体上の双対$D=\Hom_k(-,k)$を取り、$DL_{\ell(i)}=S_{\ell(i)}$を用いれば
 \[
-D\Ext_A^p(S_i,M)\simeq\Ext_A^{4-p}(M,S_{i+7})
+D\Ext_A^p(S_i,M)\simeq\Ext_A^{4-p}(M,S_{\ell(i)})
 \]
 を得る。この双対性は自然で、積に関してはYoneda合成に対応する。
 実際、$p=0$, $M=S_i$で恒等射に対応するtop Extの線型汎関数をtraceと取り、
@@ -220,39 +216,136 @@ D\Ext_A^p(S_i,M)\simeq\Ext_A^{4-p}(M,S_{i+7})
 $M=S_j$として主張を得る。一般的なExt圏のFrobenius性とも一致する\cite[Theorem 6.2]{MVS}。
 \end{proof}
 
-\subsection{周期同型とtraceの選択}
-$A(s)_{ij}=A_{i+s,j+s}$と置く。
-\begin{theorem}\label{thm:seven-period}
-標準型$A$には添字保持同型$A\simeq A(7)$が存在する。
-その最小正周期は1または7である。
-\end{theorem}
+\begin{proposition}[語長Koszul性と一定のAS添字]\label{prop:general-koszul}
+$A\in\mathcal Q$は語長Koszulであり、ある正整数$L$について$\ell(i)=i+L$となる。
+さらに$A\simeq A(L)$が成立する。ここで$A(s)_{ij}=A_{i+s,j+s}$である。
+\end{proposition}
 \begin{proof}
-非零trace $\lambda_i:E_{i,i+7}^4\to k$を各$i$で選ぶ。
+語長斉次二次表示を選び、Extに最小syzygyの語長次数を付ける。
+$E^1$は語長1、$E^2$は語長2に集中する。
+各単純加群の射影次元は4なので各行の$E^2$は非零である。
+一次元のtop Extの語長を$m_i$とすると、非零の$E^2_{ij}$とその完全対合相手との積から
+$m_i=2+2=4$を得る。$E^3$と$E^1$の完全対合も語長を加えるため、
+$E^3$は語長3に集中する。従って最小解消は語長線型、すなわちKoszulである。
+
+非零trace $\lambda_i:E_{i,\ell(i)}^4\to k$を選ぶ。
 補題\ref{lem:frobenius}を二度用いると、$a\in E_{ij}^p$に対し
 \begin{equation}\label{eq:nakayama}
 \lambda_i(ab)=\lambda_j\bigl(bN_{ij}(a)\bigr)
-\quad\bigl(b\in E_{j,i+7}^{4-p}\bigr)
+\quad\bigl(b\in E_{j,\ell(i)}^{4-p}\bigr)
 \end{equation}
-を満たす線型同型$N_{ij}:E_{ij}^p\to E_{i+7,j+7}^p$が一意に存在する。
-$a\in E_{ij}^p$, $c\in E_{j\ell}^q$, $b\in E_{\ell,i+7}^{4-p-q}$に対し
+を満たす線型同型$N_{ij}:E_{ij}^p\to E_{\ell(i),\ell(j)}^p$が一意に存在する。
+各行の$E^1$で次元2の成分はjump 1だけなので、
+$\dim E^1_{\ell(i),\ell(i+1)}=2$から$\ell(i+1)=\ell(i)+1$となる。
+従って$\ell(i)=i+L$である。top Extの語長は4、各生成元のjumpは正なので$L>0$である。
+
+$a\in E_{ij}^p$, $c\in E_{jh}^q$, $b\in E_{h,i+L}^{4-p-q}$に対し
 \[
 \lambda_i((ac)b)=\lambda_j((cb)N(a))
-=\lambda_\ell(bN(a)N(c))
+=\lambda_h(bN(a)N(c))
 \]
 なので、完全対合により$N(ac)=N(a)N(c)$である。
-従って$N:E\simeq E(7)$は二次代数の同型である。
+従って$N:E\simeq E(L)$は二次代数の同型である。
+Koszul性により$E=A^!$と同一視できる。
 全てのjump $1,2,3$の語長1部分で逆双対を取ると、
-直交関係を保存する写像から$\tau^\lambda:A\simeq A(7)$が得られる。
+直交関係を保存する写像から$A\simeq A(L)$が得られる。
+\end{proof}
 
+\begin{lemma}[二次元因子の区間]\label{lem:segment}
+各$U_0,\ldots,U_{n-1}$を二次元とし、隣接位置ごとの関係空間
+$D_j\subset U_j\otimes U_{j+1}$の次元を高々1とする。
+全テンソル積を関係挿入空間の和で割った空間の次元は2以上である。
+\end{lemma}
+\begin{proof}
+$U_0^*$で独立な二つの共変ベクトルを選ぶ。それぞれについて、
+既に選んだ非零$\alpha_j$に対し$(\alpha_j\otimes\alpha_{j+1})(D_j)=0$を満たす
+非零$\alpha_{j+1}$を帰納的に選ぶ。これは二次元空間で高々一本の線型条件だから可能である。
+得られた二つの分解可能テンソル汎関数は全関係挿入を消し、最初の因子が独立なので全体も独立である。
+\end{proof}
+
+\begin{theorem}[AS添字の強制]\label{thm:general-index}
+定義\ref{def:target}の全対象についてAS添字は$L=7$である。
+\end{theorem}
+\begin{proof}
+命題\ref{prop:general-koszul}により$E=A^!$は語長1で生成されるので、$E^3$の重みは3から9である。
+重み3と1の$E^1$の相補成分はそれぞれ$E^3$の重み$L-3$と$L-1$に非零で存在する。
+従って$6\leq L\leq10$である。
+
+$r_d(i)=\dim R_{i,i+d}=\dim E^2_{i,i+d}$と置く。
+$E^2$の重みは2から6で、完全対合から
+\begin{equation}\label{eq:relation-symmetry}
+r_d(i)=r_{L-d}(i+d)
+\end{equation}
+が成り立つ。$L\geq9$なら$r_2(i)=0$が全ての$i$で成立する。
+語長$n$・重み$n$の部分は全てjump 1の生成元からなり、
+重みが2より大きい二次関係はこの部分に入らない。
+従って$\dim A_{i,i+n}\geq2^n$となり、多項式増大に反する。
+
+$L=6$なら\eqref{eq:relation-symmetry}から$r_5=r_6=0$である。
+全てのjump 1生成元を零にし、さらに全ての$z_i z_{i+2}$を零にする商を取る。
+元の関係はこの商で全て消えるので、$zz$を禁止した$z,t$のモノミアル経路代数への全射を得る。
+重み8の二つのブロック$ztt,tzt$は、任意に連結しても$zz$を含まない。
+従って始点$i$から終点$i+8n$への独立な経路が$2^n$本あり、再び成長に反する。
+
+最後に$L=8$とする。重み6の二次経路空間は$tt$の一次元空間なので、
+\eqref{eq:relation-symmetry}から$r_2(i)=r_6(i+2)\leq1$である。
+完全対合による$E^3$の重みは$L-3,L-2,L-1=5,6,7$に限られる。
+もし$r_6(i)=r_6(i+3)=1$なら、非零テンソル
+$t_i\otimes t_{i+3}\otimes t_{i+6}$が$(R\otimes V)\cap(V\otimes R)$に入り、
+その双対である$E^3_{i,i+9}$が非零となって矛盾する。
+従って$r_6(i)+r_6(i+3)\leq1$、すなわち
+\[
+r_2(j)+r_2(j+3)\leq1
+\]
+である。よって連続する四つの関係位置には、必ず関係が零の位置がある。
+
+語長と重みが等しい部分を、その欠けた関係の位置で区切る。
+境界をまたぐ関係挿入はないので、商は区間ごとの商のテンソル積になる。
+他の重みの関係は「重みから語長を引いた差」が正なので、この部分に隠れた関係を作らない。
+語長$4m+1$では$4m$本の隣接辺のうち少なくとも$m$本の関係が零であり、
+補題\ref{lem:segment}により
+\[
+\dim A_{i,i+4m+1}\geq2^{m+1}
+\]
+となる。これも多項式増大に反する。残る可能性は$L=7$である。
+\end{proof}
+
+\begin{corollary}\label{cor:hilbert-standard}
+$\mathcal H=\mathcal S$である。すなわち$\mathcal Q$の対象が所期の重み付きHilbert級数を持つことと、
+標準重み付き最小解消を持つことは同値である。
+\end{corollary}
+\begin{proof}
+$\mathcal S\subseteq\mathcal H$は命題\ref{prop:hilbert}で示した。
+逆に$A\in\mathcal H$とすると、既にKoszul性と$L=7$が分かっているので、
+最小解消の第3項の重みは$4,5,6,6$、第4項は7となる。
+全行のHilbert級数が同じ$H(t)$であることをEuler等式に代入すれば
+\[
+\begin{aligned}
+\sum_d r_d(i)t^d
+&=H(t)^{-1}-1+(2t+t^2+t^3)+(t^4+t^5+2t^6)-t^7\\
+&=t^2+2t^3+2t^4+t^5.
+\end{aligned}
+\]
+従って関係数も標準型となる。Extの重み付き次元が始点によらなくなったため、
+対応する列の表も同じ型となり、左右の解消は定義\ref{def:standard}の型である。
+\end{proof}
+
+\subsection{七周期同型とtraceの選択}
+\begin{theorem}\label{thm:seven-period}
+定義\ref{def:target}の全対象$A$には添字保持同型$A\simeq A(7)$が存在し、
+最小正周期は1または7である。
+\end{theorem}
+\begin{proof}
+命題\ref{prop:general-koszul}と定理\ref{thm:general-index}から7周期同型を得る。
 $\Per(A)=\{s\in\ZZ:A\simeq A(s)\}$は、同型の平行移動・合成・逆により
 $\ZZ$の部分群である。$7\in\Per(A)$なので最小正元は7の正の約数、すなわち1または7である。
 \end{proof}
 この定理は最小周期7の対象の存在を主張しない。
-また標準型の仮定を外した$\mathcal Q$全体の7周期性は未証明である。
+多項式増大と語長斉次二次性はAS添字7の証明で用いた仮定であり、省略していない。
 
 \begin{proposition}[標準周期構造の選択独立性]\label{prop:trace-choice}
 二つのtrace族から得た$\tau^\lambda$と$\tau^{\lambda'}$は、添字保持自己同型によって共役である。
-裸の標準型代数が同型なら、任意のFrobenius標準7周期構造を付した組も同型となる。
+裸の$\mathcal Q$の対象が同型なら、任意のFrobenius標準7周期構造を付した組も同型となる。
 従って幾何学的同型類の集合では、標準周期構造の選択は余分な情報を加えない。
 \end{proposition}
 \begin{proof}
@@ -269,7 +362,8 @@ h^E(7)N^\lambda(h^E)^{-1}=N^{\lambda'}
 他のtraceの選択は上の共役で補正できる。
 \end{proof}
 
-\subsection{関係の七窓}
+\section{関係の七窓による有限表示}
+まず標準型$\mathcal S$の場合を記す。
 $V_i^{(a)}=V_{i,i+a}$とし、$a=1,2,3$、$i\bmod7$で生成元空間を固定する。
 \[
 W_{i,d}=\bigoplus_{a+b=d}V_i^{(a)}\otimes V_{i+a}^{(b)}
@@ -310,6 +404,14 @@ $\mathfrak X_7$を、$\mathfrak P_7(k)$のうち生成される$\ZZ$-代数が�
 裸の同型は命題\ref{prop:linearization}と命題\ref{prop:trace-choice}によって
 そのような同型へ補正できる。従って軌道は裸の同型類と一致する。
 \end{proof}
+
+一般の$\mathcal Q$についても、同じ議論は関係数を動かす有限和に適用できる。
+実際、$L=7$と\eqref{eq:relation-symmetry}より$r_6=0$、
+$0\leq r_2,r_5\leq2$、$0\leq r_3,r_4\leq4$であり、これらは7周期である。
+各許される階数表について$\prod_{i,d}\Gr(r_d(i),W_{i,d})$を取り、
+AS条件・成長条件・Frobenius標準周期条件を満たす点へ制限すれば、
+その有限和の$G_7(k)$軌道が一般対象の幾何学的同型類を与える。
+標準型の次元98の表示空間がこの有限和を尽くすかは未解決である。
 
 標準周期条件自体は有限対合行列で書ける。
 厳密7周期表示のもとで七つのtop空間のtraceを選び、厳密7移動によって全整数へ延長する。
@@ -462,13 +564,13 @@ connected graded代数のKoszul--Frobenius判定\cite[Corollary D]{LPWZKoszul}�
 V_{i,i+2}\otimes V_{i+2,i+4}\right)
 \]
 は添字保持同型不変である。右辺の射は二次経路空間の直和分解への射影である。
-特に$\rho_i\in\{0,1\}$であり、標準型では$\rho_{i+7}=\rho_i$である。
+特に$\rho_i\in\{0,1\}$であり、$\mathcal Q$の全対象で$\rho_{i+7}=\rho_i$である。
 \end{proposition}
 \begin{proof}
 語長付随次数において$R=\ker(V\otimes_{\ZZ}V\to I^2/I^3)$は内在的である。
 添字を保つ生成元変更は中間頂点$i+1,i+2,i+3$ごとの経路直和を保つので、射影階数も保つ。
 命題\ref{prop:linearization}により、これは非線型同型を許しても変わらない。
-値域の次元は1である。標準型では定理\ref{thm:seven-period}を適用する。
+値域の次元は1である。$\mathcal Q$の対象では定理\ref{thm:seven-period}を適用する。
 \end{proof}
 
 \begin{proof}[定理\ref{thm:ore}の同型分類の証明]

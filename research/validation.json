@@ -1,33 +1,97 @@
 {
   "date": "2026-11-18",
   "version": 1,
-  "generated": {"main_manuscript":true,"research_plan":true,"research_notes":true,"calculation_code":true,"exact_certificate":true},
+  "generated": {
+    "main_manuscript": true,
+    "research_plan": true,
+    "research_notes": true,
+    "calculation_code": true,
+    "exact_certificate": true
+  },
   "mathematics": {
-    "proofs_written":["ISO-LINEAR","STD-HILBERT","PERIOD-7","FINITE-7","QUANTUM-TWIST","ORE-2","RHO-SPLIT"],
-    "logical_review":"completed_for_initial_stated_propositions_by_independent_reading; not formal proof or external peer review",
-    "formalized":false,
-    "peer_reviewed":false,
-    "novelty_confirmed":false,
-    "complete_classification":false
+    "proofs_written": [
+      "ISO-LINEAR",
+      "STD-HILBERT",
+      "GENERAL-KOSZUL",
+      "AS-INDEX-7",
+      "HILBERT-STANDARD",
+      "PERIOD-7",
+      "FINITE-7",
+      "QUANTUM-TWIST",
+      "ORE-2",
+      "RHO-SPLIT"
+    ],
+    "logical_review": "Initial propositions and general AS-index reduction checked by independent mathematical readings; not formalization or external peer review",
+    "formalized": false,
+    "peer_reviewed": false,
+    "novelty_confirmed": false,
+    "complete_classification": false
   },
   "exact_computation": {
-    "command":"python3 computations/weighted_baseline.py",
-    "status":"passed",
-    "coverage":["bivariate Euler identity","Hilbert coefficients0..24 by independent counts","relation and presentation dimensions","all4 diagonal quantum overlaps","all4 two-parameter Ore overlaps","rho projection matrix","diagonal twist action rank and full invariant lattice","normalization identity"],
-    "not_covered":["general AS/Koszul locus","standard exhaustiveness","exact period7 existence","full indexed quantum isomorphisms"]
+    "command": "python3 computations/weighted_baseline.py",
+    "status": "passed",
+    "coverage": [
+      "bivariate Euler identity",
+      "Hilbert coefficients0..24 by independent counts",
+      "relation and presentation dimensions",
+      "all4 diagonal quantum overlaps",
+      "all4 two-parameter Ore overlaps",
+      "rho projection matrix",
+      "diagonal twist action rank and full invariant lattice",
+      "normalization identity"
+    ],
+    "not_covered": [
+      "general AS/Koszul locus",
+      "standard exhaustiveness",
+      "exact period7 existence",
+      "full indexed quantum isomorphisms"
+    ]
   },
-  "project_structure":{"status":"passed","command":"python3 scripts/check_project.py","scope":"files, labels/citations/environments, claim and resume links only"},
+  "project_structure": {
+    "status": "passed",
+    "command": "python3 scripts/check_project.py",
+    "scope": "files, labels/citations/environments, claim and resume links only"
+  },
   "typesetting": {
-    "engine":"LuaLaTeX",
-    "status":"blocked_missing_dependencies",
-    "pdf_generated":false,
-    "visual_review":false,
-    "missing":["luaotfload-main.lua","ltjsarticle.cls","luatexja-preset.sty","HaranoAjiMincho-Regular.otf"],
-    "note":"Japanese smoke compilation failed in this runtime. Source inspection is not a successful typesetting check."
+    "engine": "LuaHBTeX 1.24.0 (TeX Live 2026), LuaLaTeX with LuaTeX-ja and HaranoAji",
+    "status": "passed",
+    "pdf_generated": true,
+    "commands": [
+      "latexmk -lualatex nc-p1123.tex",
+      "latexmk -lualatex research/plan_ja.tex",
+      "latexmk -lualatex research/notes_ja.tex"
+    ],
+    "documents": [
+      {
+        "source": "nc-p1123.tex",
+        "pdf": "nc-p1123.pdf",
+        "pages": 11,
+        "source_sha256": "52887c949d56f3925116822e8a80e52a1b5fa3831ca79386d20a90d10c86956c",
+        "pdf_sha256": "39764c0b3501207315e68ffdb68e9a9bfb8d4c25c4f6a284f2706552e26476a1"
+      },
+      {
+        "source": "research/plan_ja.tex",
+        "pdf": "plan_ja.pdf",
+        "pages": 4,
+        "source_sha256": "7e371eba2bb0d8824c6f70231fe5a17ed3730a67cca1c4a632a5866d69a1daf3",
+        "pdf_sha256": "ab6acbbe3f935172f3d1e295437eaf7fdf82403c10b0b437839b6c09c00bc556"
+      },
+      {
+        "source": "research/notes_ja.tex",
+        "pdf": "notes_ja.pdf",
+        "pages": 3,
+        "source_sha256": "526e8f9108be4d8c5b5e9310a79b5473450d051fbc484d2d105b0535a4328ffe",
+        "pdf_sha256": "7cf03c628552954b4cdc3ee5f80e03fc9722dbbf9453eb7eac46c07c093ad845"
+      }
+    ],
+    "visual_review": true,
+    "visual_review_scope": "All 18 pages inspected as rendered page sheets; final notes page additionally inspected at full-page scale after bibliography layout adjustment.",
+    "layout_and_reference_checks": "No overfull/underfull box, unresolved reference/citation, or missing-character diagnostic in final logs.",
+    "nonfatal_diagnostics": "Japanese-font scaling and feature messages; math font substitution up to 0.5pt; luatexja array-patch diagnostic. No resulting layout defect observed in rendered documents."
   },
   "persistence": {
-    "canonical":"GitHub uedakazushi/nc-p1123 main",
-    "verification":"Confirm final commit and remote SHA outside this self-referential versioned file; do not infer push success from file creation.",
-    "tracked_pdf":false
+    "canonical": "GitHub uedakazushi/nc-p1123 main",
+    "verification": "Confirm final commit and remote SHA outside this self-referential versioned file; do not infer push success from file creation.",
+    "tracked_pdf": false
   }
 }

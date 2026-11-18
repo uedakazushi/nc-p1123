@@ -5,33 +5,116 @@
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
-    "broad_target": "Q: primitive jumps, quadratic presentation, two-sided AS4 and polynomial growth; no periodicity/domain/noetherian/PBW assumption",
+    "broad_target": "Q: primitive jumps, word-quadratic, two-sided AS4 and polynomial growth; word-Koszul, AS translation+7 and7-periodicity are now proved, not assumed",
     "weighted_hilbert_locus": "H: Q with H(t)=1/((1-t)^2(1-t^2)(1-t^3))",
     "initial_standard_locus": "S: word-Koszul, AS translation +7, shifts (0);(1,1,2,3);(2,3,3,4,4,5);(4,5,6,6);(7)",
-    "standard_exhaustiveness": "unproved"
+    "standard_exhaustiveness": "H=S proved; Q=H unproved"
   },
   "claims": [
-    {"id":"ISO-LINEAR", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#prop:linearization", "scope":"Isomorphism existence for word-homogeneous quadratic presentations, not full automorphism groupoids"},
-    {"id":"STD-HILBERT", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#prop:hilbert", "scope":"S only"},
-    {"id":"PERIOD-7", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#thm:seven-period", "scope":"S only; least period 1 or7, no exact-period7 example asserted"},
-    {"id":"FINITE-7", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#thm:finite-window", "scope":"Geometric isomorphism classes using Frobenius-standard period; AS locus not explicitly determined"},
-    {"id":"QUANTUM-AS", "status":"known_result", "proof":"research/BASELINE.md", "scope":"AKO Proposition2.6, weighted diagonal family"},
-    {"id":"QUANTUM-TWIST", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#prop:twist-normalization", "scope":"Complete for diagonal twist action only; not complete indexed classification"},
-    {"id":"ORE-2", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#thm:ore", "scope":"Specified (a,b) family only; two indexed classes; novelty unconfirmed"},
-    {"id":"RHO-SPLIT", "status":"proved_in_manuscript", "proof":"nc-p1123.tex#prop:rho", "scope":"Index-preserving isomorphism invariant; full loci unclassified"}
+    {
+      "id": "ISO-LINEAR",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#prop:linearization",
+      "scope": "Isomorphism existence for word-homogeneous quadratic presentations, not full automorphism groupoids"
+    },
+    {
+      "id": "STD-HILBERT",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#prop:hilbert",
+      "scope": "S only"
+    },
+    {
+      "id": "GENERAL-KOSZUL",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#prop:general-koszul",
+      "scope": "All Q; word-Koszul and constant AS translation"
+    },
+    {
+      "id": "AS-INDEX-7",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#thm:general-index",
+      "scope": "All Q; polynomial row growth rules out L6,8,9,10"
+    },
+    {
+      "id": "HILBERT-STANDARD",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#cor:hilbert-standard",
+      "scope": "H=S; does not prove Q=H"
+    },
+    {
+      "id": "PERIOD-7",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#thm:seven-period",
+      "scope": "All Q; least period1 or7, no exact-period7 example asserted"
+    },
+    {
+      "id": "FINITE-7",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#thm:finite-window",
+      "scope": "Geometric classes via Frobenius-standard period; fixed ranks for S, finite union of rank strata for Q; AS locus not determined"
+    },
+    {
+      "id": "QUANTUM-AS",
+      "status": "known_result",
+      "proof": "research/BASELINE.md",
+      "scope": "AKO Proposition2.6, weighted diagonal family"
+    },
+    {
+      "id": "QUANTUM-TWIST",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#prop:twist-normalization",
+      "scope": "Complete for diagonal twist action only; not complete indexed classification"
+    },
+    {
+      "id": "ORE-2",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#thm:ore",
+      "scope": "Specified (a,b) family only; two indexed classes; novelty unconfirmed"
+    },
+    {
+      "id": "RHO-SPLIT",
+      "status": "proved_in_manuscript",
+      "proof": "nc-p1123.tex#prop:rho",
+      "scope": "Index-preserving isomorphism invariant; full loci unclassified"
+    }
   ],
   "open_problems": [
-    {"id":"AS-LOCUS", "priority":1, "problem":"Determine structural branches and necessary/sufficient AS and Koszul conditions in seven-window data"},
-    {"id":"TYPE-EXHAUST", "priority":2, "problem":"Prove standard exhaustiveness or construct Q outside H / H outside S with the required primitive jumps"},
-    {"id":"QUANTUM-ISOM", "priority":3, "problem":"Complete index-preserving isomorphism classification after diagonal-twist normalization, including GL2 and special parameters"},
-    {"id":"EXACT-PERIOD-7", "priority":4, "problem":"Construct or exclude standard objects with least period7"},
-    {"id":"GLOBAL-MODULI", "priority":5, "problem":"Full coverage, irreducible components, specializations, stabilizers and relative descent"}
+    {
+      "id": "AS-LOCUS",
+      "priority": 1,
+      "problem": "Determine structural branches and necessary/sufficient AS and Koszul conditions in seven-window data"
+    },
+    {
+      "id": "TYPE-EXHAUST",
+      "priority": 2,
+      "problem": "Prove the standard weighted relation profile/Hilbert series for all Q, or construct Q outside H. Word-Koszul, AS index7 and H=S are already proved."
+    },
+    {
+      "id": "QUANTUM-ISOM",
+      "priority": 3,
+      "problem": "Complete index-preserving isomorphism classification after diagonal-twist normalization, including GL2 and special parameters"
+    },
+    {
+      "id": "EXACT-PERIOD-7",
+      "priority": 4,
+      "problem": "Construct or exclude standard objects with least period7"
+    },
+    {
+      "id": "GLOBAL-MODULI",
+      "priority": 5,
+      "problem": "Full coverage, irreducible components, specializations, stabilizers and relative descent"
+    }
   ],
   "resume_point": {
-    "task_id":"AS-LOCUS",
-    "next_action":"Implement word-length/weight separated path spaces for i modulo7 and lengths0..5; compute quadratic dual dimensions and product pairing matrices for the diagonal and Ore regression examples, then impose rho_i=0/1 branches. Keep Koszul exactness as a separate obligation.",
-    "read":["research/plan_ja.tex","nc-p1123.tex","research/notes_ja.tex","computations/weighted_baseline.py"],
-    "obstacle":"Finite Frobenius conditions do not by themselves establish Koszulity; feasibility of nonconstant rho patterns is unknown.",
-    "do_not_repeat":"Known diagonal regularity, the three diagonal-twist invariants, the explicit Ore dual and its two-class normalization are already proved."
+    "task_id": "AS-LOCUS",
+    "next_action": "Implement word-length/weight separated path spaces for i modulo7 and lengths0..5; compute quadratic dual dimensions and product pairing matrices for the diagonal and Ore regression examples, then impose rho_i=0/1 branches. Keep Koszul exactness as a separate obligation.",
+    "read": [
+      "research/plan_ja.tex",
+      "nc-p1123.tex",
+      "research/notes_ja.tex",
+      "computations/weighted_baseline.py"
+    ],
+    "obstacle": "Finite Frobenius conditions do not by themselves establish Koszulity; feasibility of nonconstant rho patterns is unknown.",
+    "do_not_repeat": "General word-Koszulity, AS index7, seven-periodicity and H=S are proved. The diagonal regularity/twist invariants and explicit Ore dual/two-class normalization are also proved."
   }
 }

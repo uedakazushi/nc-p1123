@@ -21,10 +21,11 @@ quadraticはその生成元に関する語長二次を意味する。
 広いAS正則対象$\mathcal Q$、所期の重み付き多項式Hilbert級数を持つ部分$\mathcal H$、
 初期解析の対象である標準Koszul型$\mathcal S$を区別する。
 \[
-\mathcal S\subseteq\mathcal H\subseteq\mathcal Q,\qquad
+\mathcal S=\mathcal H\subseteq\mathcal Q,\qquad
 H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 \]
-これらの包含が等号かは未解決である。
+全Qで語長Koszul性とAS添字7を証明し、HとSの同値も得た。
+残る全体被覆の問題はQ=H、すなわち所期のHilbert級数の強制性である。
 標準型では左右のAS双対性と語長線型の最小解消を要求し、そのシフトは
 \[
 (0),\quad(1,1,2,3),\quad(2,3,3,4,4,5),\quad(4,5,6,6),\quad(7)
@@ -51,9 +52,12 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 \endhead
 同型の線型化 & 語長斉次二次表示の同型の存在を$A_+$進付随次数で線型化する。
 \texttt{prop:linearization}。非線型自己同型群そのものの記述ではない。\\
-標準型の7周期 & AS双対性からYoneda積の完全対合を得て、Frobenius traceで7移動を構成。
+一般対象の構造 & 語長二次性からKoszul性、双対性と成長からAS添字7を強制。
+H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt{cor:hilbert-standard}。\\
+一般対象の7周期 & AS双対性からYoneda積の完全対合を得て、Frobenius traceで7移動を構成。
 最小正周期は1または7。\texttt{thm:seven-period}。最小周期7の実例は未構成。\\
-有限七窓 & 標準traceから来る周期構造は同型類上で選択によらず、有限表示へ還元できる。
+有限七窓 & 標準traceから来る周期構造は同型類上で選択によらず、
+標準型は固定階数、一般Qは有限個の階数表の和へ還元できる。
 \texttt{thm:finite-window}。AS/Koszul条件の有限な必要十分判定は未完成。\\
 対角族 & AKOの既知族を基準にし、6交換係数の対角twist商を3係数へ正規化。
 \texttt{prop:twist-normalization}。全indexed同型の完全不変量とは未同定。\\
@@ -83,8 +87,8 @@ AS条件を有限検査だけで置換する定理が得られるまでは、未
 初期の二族を正例とし、双対がFrobeniusでもKoszulでない候補を負例として探す。
 
 \paragraph{P2：広い対象の数値型。}
-語長と重みの二変数Hilbert級数、最小Betti表、ASの添字移動を同時に追い、
-$\mathcal H\setminus\mathcal S$または$\mathcal Q\setminus\mathcal H$の存在を調べる。
+AS添字7と語長Koszul性、H=Sは既に証明した。残るのは重み別の関係数とHilbert級数である。
+二変数Hilbert級数と最小Betti表を追い、$\mathcal Q\setminus\mathcal H$の存在を調べる。
 主論文の最小生成元条件を固定し、同じHilbert級数を持つ二生成元・三次四次関係の
 既知代数を誤って候補に混ぜない。標準型の全体被覆を黙って仮定しない。
 

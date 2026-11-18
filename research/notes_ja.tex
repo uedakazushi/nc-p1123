@@ -35,6 +35,21 @@ Lu--Palmieri--Wu--Zhangの二生成元・三次四次関係の四次元AS正則�
 四生成元の所期のクラスに入ると誤判定しない。
 本文と一次文献の参照箇所は\path{research/BASELINE.md}に記載する。
 
+\section{一般対象の数値型に関する還元}
+主論文\texttt{prop:general-koszul}で、語長二次のAS次元4という条件から語長Koszul性を示した。
+$E^2$と$E^2$の完全対合がtopの語長を4にし、$E^3$も語長3に集中する。
+最小生成元のjump 1成分だけが二次元なので、Nakayama対応は添字の一定平行移動になる。
+
+主論文\texttt{thm:general-index}は、その移動量を7に強制する。
+$L=6$では$zz=0$のモノミアル商、$L\geq9$では自由なjump 1部分が指数増大を生む。
+$L=8$では重み6関係の三重重なりを避けるためjump 1関係に頻繁な欠辺が生じ、
+二次元因子の区間補題によって再び指数増大となる。証明は本文にまとめ、ここには複製しない。
+
+従って広いQについて語長Koszul性やAS添字を再探索する必要はない。
+残る数値問題はQ=Hであり、所期のHilbert級数を仮定すれば標準解消が従う（本文\texttt{cor:hilbert-standard}）。
+一般七窓の候補に有限Frobenius条件しか課していない場合は、AS性がまだ分からないため
+Koszul性は依然として独立の検査である。
+
 \section{有限表示で失いやすい情報}
 主論文\texttt{prop:linearization}により、同型の存在の判定は線型生成元変更に帰着する。
 しかし非線型自己同型は残る。例えば可換例で$z\mapsto z+x^2$、
@@ -66,7 +81,7 @@ Nakayama写像は語長1の全生成元を$-1$倍する。
 この不変量は単なる選んだ式の係数ではなく、$I^2/I^3$の積の核から定義される。
 証明は本文\texttt{prop:rho}にある。
 
-標準7周期型では$\rho$は法7の二値列になる。
+一般対象Qの全てで7周期性が成立し、$\rho$は法7の二値列になる。
 添字保持同型を使うため、この列を巡回置換で割らない。
 非定数列の正則な実現があれば1周期性を排除できるが、現段階では実現可能性は未確認である。
 全ての二値列が許されるとも、零と一の定数列しか許されないとも主張しない。
@@ -127,6 +142,8 @@ Python標準ライブラリだけで再生成でき、数値標本ではなく�
 現行環境で実際に行えた生成・検算・組版・保存の範囲は
 \path{research/validation.json}で確認する。
 
+\begingroup
+\small
 \begin{thebibliography}{9}
 \bibitem{VAZ}
 A.~V\'arilly-Alvarado and D.~Zywina,
@@ -143,4 +160,5 @@ Journal of the European Mathematical Society \textbf{12} (2010), 1371--1416.
 E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
 \href{https://arxiv.org/abs/2107.13540v2}{arXiv:2107.13540v2} (2022).
 \end{thebibliography}
+\endgroup
 \end{document}

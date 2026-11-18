@@ -10,7 +10,7 @@ REQUIRED = (
     "AGENTS.md", "README.md", ".latexmkrc", ".vscode/settings.json", "nc-p1123.tex",
     "research/plan_ja.tex", "research/notes_ja.tex", "research/BASELINE.md",
     "research/STATE.json", "research/validation.json", "computations/weighted_baseline.py",
-    "computations/baseline_certificate.json", "computations/README.md",
+    "computations/baseline_certificate.json", "computations/README.md", "scripts/build_bundle.py",
 )
 
 
