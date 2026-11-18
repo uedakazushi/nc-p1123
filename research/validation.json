@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 10,
+  "version": 11,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -47,25 +47,24 @@
       "OUTER-RELATION-RANKS",
       "ORE-FULL-ISOM",
       "QUANTUM-ISOM",
-      "QUANTUM-QUOTIENT"
+      "QUANTUM-QUOTIENT",
+      "MIXED-RELATION-RANKS",
+      "TYPE-EXHAUST",
+      "R5-ORIENTATION-OBSTRUCTION"
     ],
-    "logical_review": "The current manuscript contains complete proofs of the broad-Q Koszul/index/seven-period results, the domain structure and z-regularity criterion, the pure-jump-one dichotomy and exclusion of its finite-width branch, the finite Ore indexed-isomorphism criterion, and the complete diagonal indexed quotient. Independent AI-assisted readings checked the new tensor-chain and monodromy arguments, the noncircular use of AS assumptions, the indexed matrix and scalar recurrences, both parity conditions for the derivation, and all exceptional diagonal parameters. These readings are neither formal verification nor external peer review.",
+    "logical_review": "The manuscript contains the broad-Q Koszul/index/seven-period proofs, analytic outer-rank theorem, computer-assisted mixed-rank theorem and Q=H=S corollary, domain structure and regularity criterion, finite Ore indexed-isomorphism criterion, and diagonal quotient. Independent AI-assisted readings checked the analytic reduction for the mixed ranks: the exact Koszul matrix, AS-dual index shift, cubic-syzygy bound, convergence, coefficientwise positivity, singularity identity and adjugate coefficient. A separate exact rational elimination reconstructed all 890 matrices directly from the Koszul Euler terms and independently reproduced the integer enumeration. Earlier retained claims have also received internal logical review. These checks are neither formal verification nor external peer review. The research-note obstruction for opposite one-sided R_5 relations was independently checked from the quotient relations and the equal-weight code words.",
     "new_reviewed_claims": [
-      "DEGREE-ONE-DICHOTOMY",
-      "OUTER-RELATION-RANKS",
-      "ORE-FULL-ISOM",
-      "QUANTUM-ISOM",
-      "QUANTUM-QUOTIENT"
+      "MIXED-RELATION-RANKS",
+      "TYPE-EXHAUST",
+      "R5-ORIENTATION-OBSTRUCTION"
     ],
     "reviewed_dependencies": [
       "GENERAL-KOSZUL",
       "AS-INDEX-7",
       "PERIOD-7",
-      "ISO-LINEAR",
-      "DOMAIN-ORE",
-      "QUANTUM-TWIST"
+      "OUTER-RELATION-RANKS"
     ],
-    "scope": "Over the standing algebraically closed field of characteristic zero: all Q for the outer relation dimensions r_2=r_5=1 and pure-jump-one Hilbert function n+1; all valid domain Ore data for the finite necessary-and-sufficient indexed-isomorphism criterion; all nonzero parameters of the diagonal quantum family for its involution quotient. The domain structure theorem still does not prove that every Q object is a domain. General n retains the existing hypotheses, except that the stated finite isomorphism criterion also applies within the specified quadratic Ore family.",
+    "scope": "Over the standing algebraically closed characteristic-zero field: all Q have relation dimensions (1,2,2,1,0), the standard word-linear resolutions and standard two-variable Hilbert series. Mixed-rank forcing uses an exact finite integer lemma after analytic necessary conditions. Domainness, mixed-projection nondegeneracy, period one and noetherianity are not inferred for all Q. The domain Ore theorems and finite indexed-isomorphism criterion retain their stated scope; general n retains its existing hypotheses.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -88,7 +87,15 @@
       "Distinction between a one-dimensional relation space and nondegeneracy of its defining tensor",
       "Augmentation-filtration linearization, vertex scalar gauge and finite matrix conditions for bare indexed-isomorphism existence",
       "Orientation of c/c_prime, P tensor P_1, and the two initial derivation conditions; explicit isomorphism in both directions",
-      "Diagonal involution, scalar-matrix exceptional locus, all root-of-unity parameters, fixed locus and dimension-three finite quotient"
+      "Diagonal involution, scalar-matrix exceptional locus, all root-of-unity parameters, fixed locus and dimension-three finite quotient",
+      "The weight-four cubic Koszul intersection gives r_3(i)+r_3(i+1)<=5 without a relation-projection injectivity hypothesis",
+      "The seven-periodic Hilbert matrix uses word length and excess, with P=(I-uvS^2)(I-uv^2S^3)(I-uS)^2+u^2(v Delta S^3+v^2 S^4 Delta)",
+      "Polynomial row growth gives convergence for 0<u<1 and 0<=v<=1; coefficientwise domination of the pure-jump-one part forces det P(1,v) identically zero",
+      "The adjugate of (I-S)^2 is 7 times the all-ones matrix, so the linear v coefficient is 7 sum(delta_i)",
+      "Exact enumeration of 890 mean-zero adjacent-bounded integer arrays leaves only delta=0 singular at u=v=1",
+      "With all ranks fixed, multiplication by the constant vector and (u,v)->(ut,t) yields the stated two-variable Hilbert series for every row",
+      "Current summaries and seven-window description use the proved equality Q=H=S and do not retain a hypothetical nonstandard numerical locus",
+      "Opposite one-sided R_5 relations at distances 2 and 4 create forbidden cubic syzygies; distance 3 gives a verified monomial quotient with two prefix-distinct weight-42 code words and exponential row growth. No full exclusion of one-sided degeneration is asserted."
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
@@ -98,7 +105,8 @@
       "Lu-Palmieri-Wu-Zhang, author PDF hiext.pdf, Lemma 1.3 (noetherian connected AS4 with GK dimension 4 is a domain; attributed there to ATV2, 3.9)",
       "Auroux-Katzarkov-Orlov, published PDF, Proposition 2.6, known weighted diagonal family",
       "Vitoria, arXiv:1001.4400v3, degree-one setting and Theorem 2.5 / Remark 2.6, for comparison only",
-      "Cooney-Grabowski, arXiv:1807.06383v4, Definition 1, Lemma 5 and Theorem 12, degree-one geometric-algebra scope, not directly applied"
+      "Cooney-Grabowski, arXiv:1807.06383v4, Definition 1, Lemma 5 and Theorem 12, degree-one geometric-algebra scope, not directly applied",
+      "Reyes-Rogalski, arXiv:1808.10538v1, Proposition 2.8; matrix-Hilbert growth comparison only, not a direct application proving the weighted four-dimensional theorem"
     ],
     "formalized": false,
     "peer_reviewed": false,
@@ -106,35 +114,60 @@
     "complete_classification": false,
     "not_claimed": [
       "Every object of Q is a Z-domain",
-      "Standard mixed relation dimensions r_3=r_4=2 or standard Hilbert series for all Q",
       "Nondegeneracy of the unique weight-two relation or nonvanishing of both coefficients of the unique weight-five relation for all Q",
       "Existence or nonexistence of exact period-seven objects in the non-domain locus",
       "Normal forms, components, specializations or full nonlinear automorphism groupoids of general Ore data",
       "Removal of the noetherian and Hilbert hypotheses in the general-n exhaustive structure theorem",
-      "Novelty confirmed by an exhaustive literature search"
+      "Novelty confirmed by an exhaustive literature search",
+      "Period one or noetherianity for every object of Q without a domain or regularity hypothesis"
     ]
   },
   "exact_computation": {
-    "new_results": "The new theorems have analytic proofs. Integer recurrence and monodromy calculations reproduce a numerical obstruction that the tensor-chain proof excludes; the computation does not certify an AS algebra.",
+    "new_results": "Computer-assisted proof of MIXED-RELATION-RANKS and TYPE-EXHAUST. Analytic AS/growth constraints reduce to an explicitly finite integer lemma; exhaustive exact computation proves that lemma. This does not certify AS-regularity of arbitrary relation data.",
     "new_mathematical_computation_executed": true,
     "commands_executed": [
-      "python3 computations/weighted_baseline.py --write",
-      "python3 computations/weighted_baseline.py"
+      "python3 computations/verify_mixed_ranks.py --write",
+      "python3 computations/verify_mixed_ranks.py"
     ],
-    "existing_reproduction_commands": [
+    "script": "computations/verify_mixed_ranks.py",
+    "certificate": "computations/mixed_ranks_certificate.json",
+    "certificate_schema": "nc-p1123-mixed-ranks-v1",
+    "arithmetic": "Integer Bareiss elimination with pivoting and exact-division checks; no floating point, random sampling or omitted cyclic representatives.",
+    "counts": {
+      "range_tuples": 78125,
+      "mean_zero_tuples": 8135,
+      "adjacent_bounded_tuples": 890,
+      "zero_determinants": 1,
+      "nonzero_determinants": 889
+    },
+    "unique_survivor": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "nonzero_absolute_determinant_range": [
+      98,
+      3010
+    ],
+    "certificate_comparison": "passed",
+    "independent_audit": {
+      "executed": true,
+      "matrix_construction": "Directly from all terms of the seven-row Koszul Euler polynomial, independently of the collapsed C_delta formula",
+      "arithmetic": "Fraction-based rational Gaussian elimination; no call to the canonical Bareiss routine",
+      "cases": 890,
+      "all_determinants_agree": true,
+      "survivors_agree": true
+    },
+    "retained_reproduction_commands": [
       "python3 computations/weighted_baseline.py",
       "python3 computations/verify_skew_ore.py"
     ],
-    "existing_scripts_modified": [
-      "computations/weighted_baseline.py"
-    ],
-    "existing_scripts_rerun_in_this_update": [
-      "computations/weighted_baseline.py"
-    ],
     "retained_certificate": "computations/baseline_certificate.json",
-    "certificate_schema": "nc-p1123-weighted-baseline-v2",
-    "certificate_comparison": "passed",
-    "not_rerun": "computations/verify_skew_ore.py is unchanged; no new dependence on its parameter calculations was introduced."
+    "unchanged_scripts_not_rerun": "weighted_baseline.py and verify_skew_ore.py were not modified for this mixed-rank update; the new theorem has no new dependence on their calculations."
   },
   "project_structure": {
     "status": "passed",
@@ -147,7 +180,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "The v10 research notes and indexed working manuscript were each attempted with latexmk/LuaLaTeX; both exited 12 before reading the TeX source because lualatex.fmt was unavailable. No TeX log or PDF was generated. A separate local-format diagnosis has also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. The final v5 main manuscript and final revised v10 sources have not been compiled or visually checked.",
+    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt exited 12 before reading TeX source because lualatex.fmt was unavailable. Local-format diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The final v6 main manuscript and v11 supporting sources have not been compiled or visually checked; the blocked attempt was not repeated for this update.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -158,47 +191,27 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "5317dbc6eae33e1b577c28c32d3d03632075fbc1fc99e27c060f5ae2813b92de",
+        "source_sha256": "2298fa715fdf5fef503d4fc56d153bd29cadefa58b4b0168af61745830934169",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "afb9953c887db13fcdbbd5c45cdcf1acdb2363fcac9d7632232fd88ebd23aa48",
+        "source_sha256": "992397ee83e15c0478246afcef212584511269c56fbc04562264cb922f9d5415",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "9d6faa7f644132afffdac20904ed615bb70d4779f25fe1338d795ba437a16b94",
+        "source_sha256": "4d6b7d3bacb647bd6770879b3c11d1853790f1b2e289c70c59509427d2c3fb54",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "4c61ac790fc0d971d74a89f8e5f45a5209b93a59daa3b8078e9f91958ff36282",
+        "source_sha256": "945430cf4010cc6ffe73e2c54b4ae68d9f215bbe2ba8f8cc44d0017370679627",
         "current_pdf_verified": false
       }
     ],
     "final_sources_compiled": false,
-    "current_update_attempted": true,
-    "current_update_attempts": [
-      {
-        "source": "research/notes_ja.tex",
-        "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=/workspace/scratch/2a7af9244576/audit-notes-v10 research/notes_ja.tex",
-        "exit_code": 12,
-        "source_read": false,
-        "pdf_generated": false,
-        "tex_log_generated": false,
-        "failure": "Missing lualatex.fmt"
-      },
-      {
-        "source": "research/indexed_z_algebra.tex",
-        "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=/workspace/scratch/2a7af9244576/audit-indexed-v10 research/indexed_z_algebra.tex",
-        "exit_code": 12,
-        "source_read": false,
-        "pdf_generated": false,
-        "tex_log_generated": false,
-        "failure": "Missing lualatex.fmt"
-      }
-    ]
+    "current_update_attempted": false
   },
   "storage": {
     "canonical_repository": "uedakazushi/nc-p1123",

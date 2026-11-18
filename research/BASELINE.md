@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v10。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v11。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -11,6 +11,7 @@
 | Auroux–Katzarkov–Orlov, *Mirror symmetry for weighted projective planes and their noncommutative deformations*, Ann. Math. 167 (2008), 867–943; DOI 10.4007/annals.2008.167.867; arXiv:math/0404281 | [出版版](https://annals.math.princeton.edu/wp-content/uploads/annals-v167-n3-p04.pdf), §2.2、Prop.2.3/Cor.2.4、Prop.2.6、Thm.2.12、Prop.2.18/Cor.2.19 | 任意重みの対角skew polynomial族。AS次元4、添字7と例外列7項は既知。qgrは可換基準でstackのcoh。非対角・非1周期の全分類ではない。 |
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
+| Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、§4.1 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。語長保存の周期同型を使うため二重次数を保持できる。隣の Lemma 3.5 の degree 1 生成条件や、三次元 quadric 分類の仮定と混同しない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
 | Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定の直接依存であり、適用順序は下記。 |
@@ -127,10 +128,18 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 これは有限次数のHilbert一致や、計算で残った数値表をAS対象と認定する議論ではない。
 この具体的な強制結果の新規性は未確定である。
 
-未解決なのは、Q 全体の整域性、重み3・4の関係数の標準性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化である。
+`idx:thm:mixed-relation-ranks` は、さらに全Qで r_3=r_4=2 を証明する。
+正係数の行列Hilbert級数を用いる解析的な必要条件の導出と、
+`computations/verify_mixed_ranks.py` による890整数列の網羅的な行列式検査を組み合わせる。
+`idx:cor:all-standard` の Q=H=S はこの計算補助部分を含む結果である。
+一方、整域部分の七行Euler式による標準型強制は計算非依存の別証明として保持する。
+必要な数値型をAS条件から絞ることと、候補のAS正則性を有限次数で認定することは異なる。
+新規性の最終確認、形式化、外部査読は未完了である。
+
+未解決なのは、Q 全体の整域性、混合関係射影の非退化性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化である。
 整域性の次の具体的課題は、七つの z_i の左右正則性である。
 最小語長の零化元を仮定し、最小解消・AS対合・関係射影と syzygy から排除できるかを調べる。
-最小周期7、非標準 Hilbert 級数、非定数の射影階数が現れるとすれば、ある z_i の左右正則性が破れる部分に限られる。
+最小周期7または非定数の射影階数が現れるとすれば、ある z_i の左右正則性が破れる部分に限られる。
 対角族の同型判定と二同型類の基準族・射影階数分岐についても、既存の重み付き/Ore 族との完全な先行結果照合は未了である。
 
 ## 一般の最小生成元次数 (1^n,2,3)

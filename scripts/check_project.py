@@ -11,6 +11,7 @@ REQUIRED = (
     "research/plan_ja.tex", "research/notes_ja.tex", "research/indexed_z_algebra.tex", "research/BASELINE.md",
     "research/STATE.json", "research/validation.json", "computations/weighted_baseline.py",
     "computations/baseline_certificate.json", "computations/README.md", "scripts/build_bundle.py",
+    "computations/verify_mixed_ranks.py", "computations/mixed_ranks_certificate.json",
     
      "computations/verify_skew_ore.py", "requirements-symbolic.txt",
 )
@@ -27,6 +28,7 @@ def check():
     validation = json.loads((ROOT / "research/validation.json").read_text())
     json.loads((ROOT / ".vscode/settings.json").read_text())
     json.loads((ROOT / "computations/baseline_certificate.json").read_text())
+    json.loads((ROOT / "computations/mixed_ranks_certificate.json").read_text())
     if (state["date"], state["version"]) != (validation["date"], validation["version"]):
         errors.append("State/validation version mismatch")
     if state["classification_complete"] or validation["mathematics"]["complete_classification"]:

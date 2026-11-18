@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月19日\quad 第10版}
+\date{2026年11月19日\quad 第11版}
 \begin{document}
 \maketitle
 
@@ -19,43 +19,67 @@ quadraticはその生成元に関する語長二次を意味する。
 可換基準の射影幾何は重み付き射影スタックである。
 
 広いAS正則対象$\mathcal Q$、所期の重み付き多項式Hilbert級数を持つ部分$\mathcal H$、
-初期解析の対象である標準Koszul型$\mathcal S$を区別する。
+標準Koszul解消を持つ部分$\mathcal S$を定義上は区別するが、
+解析的な制約と厳密な有限整数計算により、現在は三者の一致を証明している。
 \[
-\mathcal S=\mathcal H\subseteq\mathcal Q,\qquad
+\mathcal Q=\mathcal H=\mathcal S,\qquad
 H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 \]
-全Qで語長Koszul性とAS添字7を証明し、HとSの同値も得た。
-さらに$\mathbb Z$-整域部分では、標準Hilbert級数、1周期性、2段Ore表示を導き、
-左右noetherian性も結論として得た。これらを最初から仮定する必要はない。
+全Qで語長Koszul性、AS添字7、7周期性、標準関係数$(1,2,2,1)$とHilbert級数が従う。
+関係数の強制は、AS仮定から導いた有限候補の厳密排除を含む計算補助証明である。
+低次数のHilbert一致からAS正則性を認定したのではない。
+さらに$\mathbb Z$-整域部分では、1周期性、2段Ore表示、
+左右noetherian性を結論として得た。これらを最初から仮定する必要はない。
 整域性は、選んだ語長斉次表示の七窓の重み2生成元$z_0,\ldots,z_6$が
 全次数で左右正則であることと同値である。
-さらに整域性を使わず、全Qで$r_2(i)=r_5(i)=1$と、
-純jump 1部分$B$の$\dim B_{i,i+n}=n+1$を導いた。
-Hilbert漸化式から現れる有限幅の枝は、関係空間を消す積型共変ベクトルの構成により排除した。
-残る全体被覆の問題は、$z_i$の正則性の自動性、重み3・4の関係数の強制、
-および零因子を持つ対象でもQ=Hとなるかである。
+純jump 1部分$B$は全Qで$\dim B_{i,i+n}=n+1$を満たす。
+残る構造上の核心は、$z_i$の正則性の自動性、関係射影の退化の可否、
+および零因子や最小周期7を持つ対象の存在である。
 整域Ore部分の裸のindexed同型存在には有限行列による必要十分条件が得られ、
 対角三係数族の全同型類も二元群の商として確定した。一般軌道の標準形と幾何はなお課題である。
-標準型では左右のAS双対性と語長線型の最小解消を要求し、そのシフトは
+全Qの語長線型の最小解消のシフトは
 \[
 (0),\quad(1,1,2,3),\quad(2,3,3,4,4,5),\quad(4,5,6,6),\quad(7)
 \]
-とする。広い対象と整域部分の定義・構造定理は主論文\path{papers/nc-p1123.tex}の
+となる。広い対象と整域部分の定義・構造定理は主論文\path{papers/nc-p1123.tex}の
 \texttt{idx:def:target}以下、標準型と七窓の詳細は研究用Z代数原稿
 \path{research/indexed_z_algebra.tex}の\texttt{def:standard}以下を参照する。
 
 分類の達成基準は、対象の網羅的な構造分岐、各枝の正則性の必要十分条件、
 全特殊値を含む同型判定、周期層、成分と特殊化を証明することである。
-標準型だけを分類した場合はその範囲を明記し、広い対象の分類とは区別する。
+標準型の全対象被覆は完成したが、零因子を持つ枝の存在判定と一般軌道の幾何は未完である。
 \textbf{全分類は未完成である。}
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
 本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読み、
-graded代数とZ代数の整域部分の定理を\path{papers/nc-p1123.tex}、
+graded代数、全Qの標準性、Z代数の整域部分の定理を\path{papers/nc-p1123.tex}、
 一般七窓の研究資料を\path{research/indexed_z_algebra.tex}、未収載の着想を\path{research/notes_ja.tex}で確認する。
 外部文献の適用範囲は\path{research/BASELINE.md}に置く。
 
 \section{主要な到達点と適用範囲}
+\paragraph{全対象の標準Hilbert型と計算補助証明。}
+主論文\texttt{idx:thm:mixed-relation-ranks}は、整域性を仮定せずに
+$r_3(i)=r_4(i)=2$を証明する。
+外側の関係数$r_2=r_5=1$と合わせ、
+\texttt{idx:cor:all-standard}により$\mathcal Q=\mathcal H=\mathcal S$となる。
+証明の解析的部分では、語長と差次数を記録した七周期Hilbert行列の逆を$P(u,v)$とし、
+非負性と純jump 1部分の発散から$\det P(1,v)\equiv0$を得る。
+その一次係数から$\sum_i r_3(i)=14$が従い、
+三次Koszul syzygyの次元から$r_3(i)+r_3(i+1)\leq5$を得る。
+従って$\delta_i=r_3(i)-2$は
+\[
+\delta_i\in\{-2,-1,0,1,2\},\qquad
+\sum_i\delta_i=0,\qquad \delta_i+\delta_{i+1}\leq1
+\]
+を満たす890個の七配列に限られる。
+残る有限計算では必要条件$\det P(1,1)=0$を整数で厳密に評価し、
+生き残る配列が$\delta=0$だけであることを検証する。
+再現コードは\path{computations/verify_mixed_ranks.py}、
+証明書は\path{computations/mixed_ranks_certificate.json}である。
+独立の整数実装でも照合したが、証明支援系での形式化や第三者査読とは区別する。
+この有限排除は、既にAS正則であると仮定した対象の関係数を制限するものであり、
+一般候補のAS正則性を低次計算で判定するものではない。
+
 \paragraph{四次元$\mathbb Z$-代数の整域部分。}
 重み$(1,1,2,3)$の広い対象$\mathcal Q$で$\mathbb Z$-整域性だけを追加すると、
 標準関係数$(1,2,2,1)$と所期のHilbert級数が従う。
@@ -66,7 +90,7 @@ $C=B[z;\sigma][w;\tau,D]$、$B$は量子平面またはJordan平面である。
 正規商$C/(z)$の三次syzygyから第2段を導くため、noetherian性は仮定不要であり、
 Ore表示から左右noetherian性が従う。
 完全な証明は主論文\texttt{idx:thm:domain-standard}から\texttt{idx:thm:domain-ore}にある。
-この強化は$n=2$に関するもので、次段落の任意$n$の仮定を除去したとはしない。
+この強化は$n=2$に関するもので、後述の任意$n$の仮定を除去したとはしない。
 また主論文\texttt{idx:prop:z-regular-criterion}により、
 整域性の自動性は七つの$z_i$の左右消去子が全次数で零となるかに帰着する。
 有限添字への還元であり、有限次数の検査で整域性を判定できるとは主張しない。
@@ -90,7 +114,8 @@ r_2(i)=r_5(i)=1,\qquad \dim B_{i,i+n}=n+1
 が成り立つ（主論文\texttt{idx:thm:outer-relation-ranks}）。
 非負・多項式増大のEuler数値表があっても、対応する二次代数がそのHilbert係数を持つとは限らない。
 その障害は研究ノートに残し、有限幅の枝を未解決の対象としては扱わない。
-この定理だけでは$B$や$A$の整域性、混合関係数$r_3=r_4=2$を結論しない。
+$B$や$A$の整域性はこの定理だけでは従わない。
+混合関係数は前述の計算補助定理で別に強制する。
 
 \paragraph{整域Ore部分の裸のindexed同型の有限判定。}
 主論文\texttt{idx:thm:finite-isomorphism}は、全整域Oreデータの間の
@@ -167,7 +192,8 @@ $B[z;\sigma,\delta][w;\tau,D]$で全対象を尽くせる。
 同型の線型化 & 語長斉次二次表示の同型の存在を$A_+$進付随次数で線型化する。
 \texttt{prop:linearization}。非線型自己同型群そのものの記述ではない。\\
 一般対象の構造 & 語長二次性からKoszul性、双対性と成長からAS添字7を強制。
-H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt{cor:hilbert-standard}。\\
+関係数の計算補助証明によりQ=H=S。
+主論文\texttt{idx:thm:mixed-relation-ranks}, \texttt{idx:cor:all-standard}。\\
 一般対象の7周期 & AS双対性からYoneda積の完全対合を得て、Frobenius traceで7移動を構成。
 最小正周期は1または7。\texttt{thm:seven-period}。最小周期7なら零因子を持つ。実例は未構成。\\
 整域部分の標準型 & 整域性による関係射影の単射性と7行のEuler式から標準関係数を強制。
@@ -179,14 +205,17 @@ H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt
 全次数での左右正則性と$\mathbb Z$-整域性が同値。
 主論文\texttt{idx:prop:z-regular-criterion}。低次有限判定ではない。\\
 有限七窓 & 標準traceから来る周期構造は同型類上で選択によらず、
-標準型は固定階数、一般Qは有限個の階数表の和へ還元できる。
+全Qが標準関係数の固定階数七窓へ還元される。
 \texttt{thm:finite-window}。AS/Koszul条件の有限な必要十分判定は未完成。\\
 仮定付きgraded分類 & 複素数体、noetherian、指定Hilbert級数の下でOre表示が網羅的。
 Z代数研究原稿\texttt{thm:graded-ore-summary}は独立原稿の定理を要約する。
 全三角形graded同型と語長二次部分も同稿にある。\\
 重み2・5の関係数 & 整域性なしで$r_2(i)=r_5(i)=1$、純jump 1部分の次元は$n+1$。
 二分岐\texttt{idx:prop:degree-one-dichotomy}の有限幅側を積型共変ベクトルで排除する。
-主論文\texttt{idx:thm:outer-relation-ranks}。混合関係数の強制は未完。\\
+主論文\texttt{idx:thm:outer-relation-ranks}。\\
+重み3・4の関係数 & 七周期Hilbert行列の行列式、三次syzygyの制約、
+有限整数計算から全$r_3(i)=r_4(i)=2$。
+主論文\texttt{idx:thm:mixed-relation-ranks}。コードと証明書を同梱する。\\
 整域Oreの有限同型判定 & 裸のindexed同型存在を$P,\kappa$に関する四つの有限条件で特徴付ける。
 主論文\texttt{idx:thm:finite-isomorphism}。一般軌道幾何は未完成。\\
 対角族の完全同型 & 三係数$(a,b,c)$の一致または$(a^{-1},b^{-1},ca^3/b^2)$。
@@ -210,15 +239,17 @@ Z代数研究原稿\texttt{thm:graded-ore-summary}は独立原稿の定理を要
 従って一般Ore部分で次に必要なのは、同型条件の探索ではなく、
 既知の条件を用いた軌道標準形と安定化群・成分・特殊化の解析である。
 
-全Qの構造では、$z_0,\ldots,z_6$の全次数での左右正則性が整域性と同値である。
-非標準型、最小周期7、非定数の$\rho_i$はその正則性が破れる部分に限られる。
-純jump 1部分の二分岐の有限幅側は排除でき、全Qで$r_2=r_5=1$が確定した。
-従って数値型を決める次の対象は混合関係数$r_3,r_4$であり、
-これらの射影核、AS完全対合、七行のEuler式を組み合わせて調べる。
-純jump 1部分のHilbert級数が定まっただけで、全体の標準性や整域性が得られたとはしない。
+全Qの関係数とHilbert級数は標準型に確定したため、
+非標準数値型の探索は再開課題から外す。
+一方、標準数値型であることだけから整域性や1周期性は得られない。
+$z_0,\ldots,z_6$の全次数での左右正則性が整域性と同値であり、
+最小周期7、非定数の$\rho_i$はその正則性が破れる部分に限られる。
+従って関係空間の次元から、両射影の核、三次syzygy、
+高次の消去子を制御する問題へ進む。
 
-全Qの分類という元の目標は維持し、整域部分の有限同型判定や対角族の完成だけで
-全分類が終わったとはしない。複数AIエージェントによる独立監査は行ったが、
+全Qの分類という元の目標は維持し、標準型の全対象被覆、
+整域部分の有限同型判定、対角族の完成だけで全分類が終わったとはしない。
+解析的な証明の複数AIエージェントによる独立監査と、有限整数計算の独立照合は行ったが、
 形式化、第三者査読、文献上の新規性の最終確認は未完である。
 
 \section{未解決の核心と次の具体的操作}
@@ -237,18 +268,23 @@ AS条件に反することを示せれば対象を縮約でき、両立するな
 noetherian AS次元4・GK次元4からの整域性という既知理論を用いる。
 最後の整域性を先に仮定して正則元を作る循環に戻らない。
 
-\paragraph{P2：混合関係数と全体の数値型。}
-主論文\texttt{idx:thm:outer-relation-ranks}により全Qで$r_2=r_5=1$である。
-有限幅の純jump 1部分の実現探索は完了した排除をやり直すので、再開課題にはしない。
-次に$r_3(i)=2$を全$i$で強制できるかを調べる。双対性により、これが$r_4(i)=2$も与える。
+\paragraph{P2：標準関係空間の射影退化。}
+全Qで$(r_2,r_3,r_4,r_5)=(1,2,2,1)$が確定している。
+関係数と有限幅の純jump 1部分の排除を再び探索せず、関係射影の退化を調べる。
 $R_3\subseteq Vz\oplus zV$の両射影の核と像、
 $R_4\subseteq Vw\oplus wV\oplus zz$の射影階数を区別し、
 混合syzygyとFrobenius完全対合が許す組合せを絞る。
-一次元となった$R_5\subseteq zw\oplus wz$についても両係数の非消失はまだ仮定しない。
+一次元の$R_5\subseteq zw\oplus wz$についても両係数の非消失はまだ仮定しない。
+まずどちらかの係数が零の場合と、$R_3$のどちらかの射影階数が2未満の場合について、
+最初に生じる三次syzygyを計算し、所定のAS解消と両立するかを証明する。
+研究ノート\texttt{note:r5-orientation}では、$R_5(p)=k(zw)$と
+$R_5(m)=k(wz)$が共存するなら$m-p\notin\{2,3,4\}\pmod7$となることを証明した。
+差2、4は三次syzygy、差3はモノミアル商の指数増大で排除する。
+残る差1、5、6と、片方の向きだけの退化を次に調べる。
 
 全Qで語長Koszul性、AS添字7、7周期性は確定している。
 $r_d(i)=r_{7-d}(i+d)$と7行のEuler式を維持し、
-混合関係の階数と全次数のKoszul解消の正確性を追う。
+射影の核と全次数のKoszul解消の正確性を追う。
 元の四最小生成元条件を保ち、同じHilbert級数を持つ二生成元・三次四次関係の例を混同しない。
 
 \paragraph{P3：一般Ore部分の軌道標準形と幾何。}
@@ -292,7 +328,8 @@ augmentation filtrationの初期関係と付随次数代数のAS正則性を検�
 \path{papers/nc-p1123.tex}に置く。
 対角部分の表示空間の成分分解は\path{papers/nc-p1123.tex}に置く。
 これらと既存のOre結果の文献上の重複は一次資料で引き続き精査する。
-整域部分の$\mathbb Z$-代数構造定理、純jump 1部分の二分岐と重み2・5の関係数強制、
+全Qの標準型への帰着、整域部分の$\mathbb Z$-代数構造定理、
+純jump 1部分の二分岐と関係数強制の証明、
 裸のindexed同型の有限行列条件、対角族の完全な二元群商、
 および必要なAS双対性・周期性の証明も、\path{papers/nc-p1123.tex}に統合する。
 未完成の一般$\mathbb Z$-代数分類については\path{research/indexed_z_algebra.tex}に、同型の線型化、有限七窓、二つの基準族、不変分岐を保持する。
@@ -302,6 +339,12 @@ augmentation filtrationの初期関係と付随次数代数のAS正則性を検�
 
 \path{computations/weighted_baseline.py}は外部Python依存を持たず、
 Hilbert数値、全重なり、対角twistを形式的に検算する。
+\path{computations/verify_mixed_ranks.py}と
+\path{computations/mixed_ranks_certificate.json}は、
+全Qの混合関係数を強制する有限整数計算を再現する。
+リポジトリ直下で\texttt{python3 computations/verify\_mixed\_ranks.py}を実行すると、
+890候補の行列式を再計算し、保持した証明書との一致を検査する。
+この証明に必要なコードと証明書は、容易に再生成できる補助出力とは区別して保持する。
 \path{scripts/check_project.py}は構造だけを検査する。
 再現コマンドとLuaLaTeX設定はREADMEに集約する。
 文献PDF、大量の検索結果、キャッシュ、旧原稿、作業実況は一式へ収録しない。

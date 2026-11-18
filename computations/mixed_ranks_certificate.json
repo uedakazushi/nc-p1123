@@ -1,0 +1,74 @@
+{
+  "schema": "nc-p1123-mixed-ranks-v1",
+  "date": "2026-11-19",
+  "scope": "Exact exhaustive elimination of necessary rank conditions; not a construction or AS-regularity test for relation data.",
+  "period": 7,
+  "delta_definition": "delta_i = r_3(i)-2",
+  "delta_values": [
+    -2,
+    -1,
+    0,
+    1,
+    2
+  ],
+  "necessary_conditions": [
+    "sum_i delta_i = 0",
+    "delta_i + delta_(i+1) <= 1 for every i modulo 7",
+    "det(C) = 0"
+  ],
+  "matrix": {
+    "shift_convention": "S_ij = 1 iff j=i+1 modulo 7; D=diag(delta)",
+    "definition": "C=2I-2(S+S^-1)+S^3+S^4+D*S^3+S^4*D=P(1,1)",
+    "size": [
+      7,
+      7
+    ],
+    "symmetric": true
+  },
+  "determinant_method": "Fraction-free Bareiss elimination with row pivoting; every division checked exact; integer arithmetic only.",
+  "counts": {
+    "all_range_tuples": 78125,
+    "zero_mean_tuples": 8135,
+    "zero_mean_and_adjacent_bound_tuples": 890,
+    "determinants_computed": 890,
+    "zero_determinants": 1,
+    "nonzero_determinants": 889
+  },
+  "surviving_delta_tuples": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "surviving_r3_tuple": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "nonzero_determinant_statistics": {
+    "minimum_absolute_value": 98,
+    "maximum_absolute_value": 3010,
+    "negative_count": 889,
+    "positive_count": 0
+  },
+  "zero_tuple_sanity": {
+    "constant_vector_is_in_kernel": true,
+    "determinant": 0,
+    "principal_6_by_6_minor": 343,
+    "rank": 6
+  },
+  "candidate_determinant_digest": {
+    "algorithm": "SHA-256",
+    "format": "UTF-8 compact JSON lines [delta_0,...,delta_6,det(C)], lexicographic delta order, LF after each line.",
+    "value": "115495158b18b05a336874cca4b7d5e6faecd143f5cebe74df44eb6984639948"
+  }
+}
