@@ -1,18 +1,20 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 7,
+  "version": 8,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
-    "broad_target": "Q: primitive jumps, word-quadratic, two-sided AS4 and polynomial growth; word-Koszul, AS translation+7 and7-periodicity are now proved, not assumed",
+    "broad_target": "Q: primitive jumps (1,1,2,3), word-quadratic, two-sided AS4 and polynomial row/column growth; word-Koszul, AS translation +7 and 7-periodicity are proved, not assumed. Domain, noetherianity and period one are not imposed on all Q.",
     "weighted_hilbert_locus": "H: Q with H(t)=1/((1-t)^2(1-t^2)(1-t^3))",
     "initial_standard_locus": "S: word-Koszul, AS translation +7, shifts (0);(1,1,2,3);(2,3,3,4,4,5);(4,5,6,6);(7)",
-    "standard_exhaustiveness": "H=S proved; Q=H unproved",
+    "standard_exhaustiveness": "H=S; every Z-domain in Q belongs to H. Q=H without a domain assumption remains unproved.",
     "graded_ore_locus": "Over C: connected locally finite left/right noetherian AS4 graded algebras with minimal generator degrees (1,1,2,3) and H(t)=1/((1-t)^2(1-t^2)(1-t^3)), classified up to graded isomorphism; relations need not be word-quadratic",
     "quadratic_graded_ore_locus": "The word-quadratic part of the preceding graded locus admits a complete Ore chart allowing non-diagonal automorphisms. Its associated Z-algebras lie in H and are 1-periodic; bare indexed isomorphism is a coarser relation.",
     "general_weights": "For n>=1: connected locally finite left/right noetherian AS-regular graded C-algebras with minimal generator degrees (1^n,2,3), global dimension n+2, and H(t)=1/((1-t)^n(1-t^2)(1-t^3)).",
-    "general_weights_quadratic": "Within the preceding general-n class, word-quadratic algebras are word-Koszul with relation counts (binom(n,2),n,n,1); domain objects admit the exhaustive canonical two-step Ore classification and explicit graded-isomorphism orbits. General non-word-quadratic exhaustion is not proved for n>=3."
+    "general_weights_quadratic": "Within the stated general-n noetherian graded Hilbert class, word-quadratic algebras are word-Koszul with relation counts (binom(n,2),n,n,1); domain objects admit the exhaustive canonical two-step Ore classification and explicit graded-isomorphism orbits. The stronger indexed domain theorem removing noetherian, Hilbert and period assumptions is established only for n=2. General non-word-quadratic exhaustion is not proved for n>=3.",
+    "indexed_domain_locus": "All Z-domains in Q have standard relation counts and Hilbert series, admit a word-preserving period-one structure, and are associated Z-algebras of B[z;sigma][w;tau,D] over a quantum or Jordan plane. Hilbert series, noetherianity and period one are conclusions, not additional assumptions. Noetherianity follows from the Ore presentation; full bare indexed-isomorphism orbits remain unclassified.",
+    "non_domain_boundary": "Any nonstandard object, object of least period seven, or object with nonconstant rho_i in Q has zero divisors. The existence of such objects and automatic domainness of all Q remain open."
   },
   "claims": [
     {
@@ -30,13 +32,13 @@
     {
       "id": "GENERAL-KOSZUL",
       "status": "proved_in_manuscript",
-      "proof": "research/indexed_z_algebra.tex#prop:general-koszul",
+      "proof": "papers/nc-p1123.tex#idx:lem:duality-period",
       "scope": "All Q; word-Koszul and constant AS translation"
     },
     {
       "id": "AS-INDEX-7",
       "status": "proved_in_manuscript",
-      "proof": "research/indexed_z_algebra.tex#thm:general-index",
+      "proof": "papers/nc-p1123.tex#idx:thm:index-seven",
       "scope": "All Q; polynomial row growth rules out L6,8,9,10"
     },
     {
@@ -185,41 +187,94 @@
     },
     {
       "id": "INDEXED-NORMAL-Z",
-      "status": "proved_by_direct_argument_in_research_note_not_independently_audited",
-      "proof": "research/notes_ja.tex#lem:indexed-normal-z",
-      "scope": "For Z-domains with homogeneous word-quadratic minimal relations of weights 2,3,4,5 in dimensions (1,2,2,1), the length-2 generator family is normal and generates an index-dependent first skew polynomial extension over the length-1 subalgebra. No assertion about the second Ore step or automatic AS hypotheses."
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "proof": "papers/nc-p1123.tex#idx:lem:normal-family",
+      "scope": "For Z-domains in Q, the jump-2, word-length-one generator family is regular normal and induces an isomorphism of the full Z-algebra with its two-vertex translate. Standard relation dimensions are derived in DOMAIN-STANDARD rather than imposed."
+    },
+    {
+      "id": "DOMAIN-STANDARD",
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "proof": "papers/nc-p1123.tex#idx:thm:domain-standard",
+      "scope": "All Z-domains in Q, without a noetherian or Hilbert-series hypothesis: relation counts (1,2,2,1,0), standard Koszul resolutions and the prescribed two-variable Hilbert series. The proof sums seven Euler identities and uses domain injections to compare row series.",
+      "depends_on": [
+        "GENERAL-KOSZUL",
+        "AS-INDEX-7",
+        "PERIOD-7"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "DOMAIN-PERIOD-ONE",
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "proof": "papers/nc-p1123.tex#idx:thm:domain-period-one",
+      "scope": "All Z-domains in Q are period one and associated to a connected graded domain with a compatible word grading. Period two and period seven imply period one; commuting periodicity maps are not required.",
+      "depends_on": [
+        "DOMAIN-STANDARD",
+        "INDEXED-NORMAL-Z",
+        "PERIOD-7"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "DOMAIN-ORE",
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "proof": "papers/nc-p1123.tex#idx:thm:domain-ore",
+      "scope": "All Z-domains in Q are associated Z-algebras of two-step Ore extensions B[z;sigma][w;tau,D] over quantum or Jordan planes. Noetherianity, the standard Hilbert series and period one are conclusions. The AS3 quotient syzygy proves normality of w before quotient domainness is inferred. This strengthening is for n=2, not arbitrary n; it is a structural exhaustion, not the full quotient by bare indexed isomorphisms.",
+      "depends_on": [
+        "DOMAIN-PERIOD-ONE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "DOMAIN-BOUNDARY",
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "proof": "papers/nc-p1123.tex#idx:cor:domain-boundary",
+      "scope": "Every nonstandard object, least-period-seven object, or object with nonconstant rho_i in Q has zero divisors. No existence claim for these loci and no proof that all Q is a domain.",
+      "depends_on": [
+        "DOMAIN-STANDARD",
+        "DOMAIN-PERIOD-ONE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
     }
   ],
   "open_problems": [
     {
-      "id": "GENERAL-NONQUADRATIC",
+      "id": "DOMAIN-AUTOMATIC",
       "priority": 1,
-      "problem": "For n>=3 and fixed global dimension n+2 and prescribed Hilbert series, determine whether arbitrary weighted-homogeneous relations admit the canonical iterated Ore flag. First analyze n=3 augmentation initial relations without assuming the associated graded algebra remains quadratic or AS-regular."
-    },
-    {
-      "id": "GENERAL-HYPOTHESES",
-      "priority": 2,
-      "problem": "Within the natural fixed-dimension (1^n,2,3) problem, determine when the Hilbert, word-quadratic, domain or noetherian hypotheses follow, or construct counterexamples. The unbounded-dimension family alone does not answer this fixed-dimension question."
-    },
-    {
-      "id": "AS-LOCUS",
-      "priority": 1,
-      "problem": "Determine structural branches and necessary/sufficient AS and Koszul conditions in seven-window data"
+      "problem": "Determine whether every object of Q is a Z-domain. Analyze kernels of the weight-3 and weight-5 relation projections, their induced annihilators, and compatibility with AS duality and exact Koszul resolutions. If domainness fails, describe the zero-divisor branches without assuming standard Hilbert data."
     },
     {
       "id": "TYPE-EXHAUST",
       "priority": 2,
-      "problem": "Prove the standard weighted relation profile/Hilbert series for all Q, or construct Q outside H. Word-Koszul, AS index7 and H=S are already proved."
+      "problem": "Prove Q=H without a domain assumption or construct a nonstandard object with zero divisors. Every Z-domain in Q is already standard. Investigate whether relation-count bounds or comparison of seven row Hilbert series can be recovered from AS duality alone."
+    },
+    {
+      "id": "ORE-FULL-ISOM",
+      "priority": 2,
+      "problem": "Determine bare indexed-isomorphism orbits in the exhaustive n=2 domain Ore locus, including Zhang twists and vertexwise generator changes. The period-one graded representative is not canonical. Distinguish presentation components from moduli components."
     },
     {
       "id": "QUANTUM-ISOM",
-      "priority": 4,
+      "priority": 3,
       "problem": "Complete index-preserving isomorphism classification after diagonal-twist normalization, including GL2 and special parameters"
+    },
+    {
+      "id": "AS-LOCUS",
+      "priority": 4,
+      "problem": "Determine structural branches and necessary/sufficient AS and Koszul conditions for seven-window candidates with zero divisors. Finite Frobenius duality alone does not prove Koszulity or regularity."
     },
     {
       "id": "EXACT-PERIOD-7",
       "priority": 5,
-      "problem": "Construct or exclude standard objects with least period7"
+      "problem": "Construct or exclude objects of Q with least period seven; any such object has zero divisors. Domain Ore families cannot supply such examples."
     },
     {
       "id": "GLOBAL-MODULI",
@@ -227,22 +282,28 @@
       "problem": "Full coverage, irreducible components, specializations, stabilizers and relative descent"
     },
     {
-      "id": "ORE-FULL-ISOM",
-      "priority": 3,
-      "problem": "Determine exact indexed-isomorphism orbits within four Ore presentation strata; distinguish moduli components from presentation components"
+      "id": "GENERAL-NONQUADRATIC",
+      "priority": 7,
+      "problem": "For n>=3 and fixed global dimension n+2 and prescribed Hilbert series, determine whether arbitrary weighted-homogeneous relations admit the canonical iterated Ore flag. First analyze n=3 augmentation initial relations without assuming the associated graded algebra remains quadratic or AS-regular."
+    },
+    {
+      "id": "GENERAL-HYPOTHESES",
+      "priority": 8,
+      "problem": "Within the natural fixed-dimension (1^n,2,3) problem, determine when the Hilbert, word-quadratic, domain or noetherian hypotheses follow, or construct counterexamples. The unbounded-dimension family alone does not answer this fixed-dimension question."
     }
   ],
   "resume_point": {
-    "task_id": "GENERAL-NONQUADRATIC",
-    "next_action": "Start with n=3, global dimension 5, minimal degrees (1,1,1,2,3), and the prescribed Hilbert series. The weighted relation counts obey r2=3 and r3-r5=2, while r4 cancels in the Euler identity. Analyze augmentation-filtration initial relations and the conditions under which gr(A) is quadratic AS-regular; do not assume that passage preserves regularity. Compare resulting filtered cases with the finite homogeneous Ore data. Preserve the original four-dimensional indexed target and its separate open problems.",
+    "task_id": "DOMAIN-AUTOMATIC",
+    "next_action": "Keep the original four-dimensional indexed target Q. Start with the weight-3 and weight-5 relation projections: a nonzero kernel yields a concrete product vz, zv, wz or zw equal to zero. Follow these annihilators through the minimal Koszul resolution and Frobenius pairings to decide whether AS regularity excludes them. In parallel, use the established domain Ore structure to determine bare indexed-isomorphism orbits, beginning with the diagonal normalization and exceptional GL2 loci.",
     "read": [
       "research/plan_ja.tex",
       "papers/nc-p1123.tex",
       "research/notes_ja.tex",
+      "research/indexed_z_algebra.tex",
       "research/BASELINE.md"
     ],
-    "obstacle": "The all-n theorem requires word-quadratic relations, left/right noetherianity, a domain, global dimension n+2 and the prescribed Hilbert series. The general homogeneous exhaustion and inference of these hypotheses from minimal degrees remain unresolved. The original nonperiodic indexed classification is separate.",
-    "do_not_repeat": "All-n word-quadratic Koszulity, standard relation numbers, canonical Ore exhaustion in the domain locus, finite homogeneous Ore coefficient equations, full triangular graded isomorphisms, quadratic linear-isomorphism existence, the unbounded-dimension counterfamily, and the Sklyanin base obstruction are written in general_weights.tex. The quotient A/(z) domain property is derived, not additionally assumed."
+    "obstacle": "The domain locus is structurally exhausted without noetherian, Hilbert or periodicity assumptions. Automatic domainness of all Q, Q=H for zero-divisor objects, and the complete bare indexed-isomorphism quotient remain unresolved. Nonstandard, least-period-seven and nonconstant-rho objects necessarily have zero divisors.",
+    "do_not_repeat": "The n=2 domain proof is complete in papers/nc-p1123.tex: standard relation counts via seven Euler identities; normal jump-2 family on the full algebra; period one from periods two and seven; AS3 quotient syzygy; two-step Ore form and noetherianity. Do not assume the quotient is a domain before its skew-polynomial presentation is proved. The arbitrary-n theorem retains its stated noetherian, domain and Hilbert hypotheses. General n>=3 nonquadratic work is a secondary problem, not the current resume point."
   },
   "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex"

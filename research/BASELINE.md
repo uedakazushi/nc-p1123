@@ -1,7 +1,7 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-18 / v4。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
-指定対象の完全分類を与える文献は今回の初期調査では確認できなかった。
+2026-11-19 / v8。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
 ## 直接使う文献
@@ -10,8 +10,9 @@
 | --- | --- | --- |
 | Auroux–Katzarkov–Orlov, *Mirror symmetry for weighted projective planes and their noncommutative deformations*, Ann. Math. 167 (2008), 867–943; DOI 10.4007/annals.2008.167.867; arXiv:math/0404281 | [出版版](https://annals.math.princeton.edu/wp-content/uploads/annals-v167-n3-p04.pdf), §2.2、Prop.2.3/Cor.2.4、Prop.2.6、Thm.2.12、Prop.2.18/Cor.2.19 | 任意重みの対角skew polynomial族。AS次元4、添字7と例外列7項は既知。qgrは可換基準でstackのcoh。非対角・非1周期の全分類ではない。 |
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
-| Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Lemma3.4、§4.1 | Z-代数、1周期とgraded由来、AS正則の定義。三次元のquadric分類を本対象へ直接適用しない。 |
-| Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), §6、Thm.6.2 | AS双対性からFrobenius Ext圏。重み付きのHom–Tor議論と7移動は本文で書き直す。Thm.6.4のLoewy長の数え方に注意し、次元4は明示双対から直接導く。 |
+| Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、§4.1 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。語長保存の周期同型を使うため二重次数を保持できる。隣の Lemma 3.5 の degree 1 生成条件や、三次元 quadric 分類の仮定と混同しない。 |
+| Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
+| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) の別経路と限界は下記。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
 | Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求しない。graded Ore網羅定理では指定Hilbert級数からGK dimension 4を確認して適用する。 |
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
@@ -34,24 +35,53 @@
 非線型同型の線型化まで独立に記載した。
 初期結果の再現にnc-p3や他の私的研究原稿の取得は必要ない。
 
-## 対角skew Oreの追加検証（2026-11-18）
-新しい公表用短報 `papers/nc-p1123.tex` は、AKOの対角量子多項式環を基底とし、
+## 対角skew Ore表示
+統合公表論文 `papers/nc-p1123.tex` の対角節は、AKOの対角量子多項式環を基底とし、
 Liu--Wang--Wu Thm.3.3のtwisted CY保存を利用する。重みを保つ語長二次の
-対角skew Ore表示の全必要十分条件とパラメータ空間の4成分は短報で直接証明する。
+対角skew Ore表示の全必要十分条件とパラメータ空間の4成分は同節で直接証明する。
 Ore手法と一般正則性は既知である。これらの具体式と既存文献の構成の完全同定および新規性は未確認。
+
+## 整域 Z-代数の構造定理と直接依存
+
+公表論文 `papers/nc-p1123.tex` の `idx:def:target` は、各頂点の最小生成元 jump が
+(1,1,2,3) で語長二次の広い四次元 AS 正則対象 Q を定義する。
+その定義には noetherian、domain、標準 Hilbert 級数、1周期性を含めない。
+現在の構造定理は、Q のうち Z-domain である全対象について次を証明する。
+
+1. `idx:lem:duality-period` と `idx:thm:index-seven`：有限生成射影解消の AS 双対から、語長 Koszul 性、AS 添字7、語長を保つ7周期同型を導く。この部分は domain を使わない。
+2. `idx:thm:domain-standard`：domain による関係数の上界と七行の語長 Euler 式から、関係数 (1,2,2,1) と標準 Hilbert 級数を強制する。
+3. `idx:lem:normal-family` と `idx:thm:domain-period-one`：重み2の正規生成元族が2周期を与え、7周期との合成で1周期を得る。Van den Bergh Lemma 3.4 によって、語長二次の graded 代数 D を復元する。
+4. `idx:lem:three-generator` と `idx:thm:domain-ore`：Rogalski–Zhang の正則正規元商を **語長次数** に適用し、D/(z) を AS 次元3へ下げる。その商の syzygy と AS 対合から第2生成元の正規性を導き、量子平面または Jordan 平面からの2段 Ore 表示を得る。商の domain 性や noetherian 性を仮定していない。左右 noetherian 性は Ore 表示から従う。
+
+この四次元 Z-domain の定理は、任意 n の graded 定理で用いる noetherian 有限生成加群の議論とは別の証明である。
+重み次数2の正規元商が一般に大域次元を下げる、と主張しているのではない。
+語長二次表示と語長保存の1周期同型によって、z が通常次数1となる grading を確保している。
+
+Rogalski–Zhang **Lemma 1.3(c)** も一次資料で確認した。
+同論文の連結・次数1生成の設定で、正則な斉次正規元 f を持ち、商 D/(f) が AS 正則次元3なら、
+D の strongly noetherian、Auslander regular、Cohen–Macaulay 性を得る。
+これは z の商が AS 正則次元3と確認された後の別経路であり、
+商の整域性を先取りする根拠にはしない。本稿の Ore 構造証明はこの補強を必要としない。
+
+Sierra **Theorem 1.2 = Corollary 4.4** は、associated Z-algebra の添字保持同型と
+Zhang twist の同一視を与え、degree 1 生成を要求しないことを本文で再確認した。
+従って、1周期性と Ore 表示を得ても全 indexed 同型軌道の分類が自動的に終わるわけではない。
 
 ## 新規性と追加調査
 
-`papers/nc-p1123.tex` の段階的Ore表示の網羅性、全係数条件、全graded同型、
-語長二次部分への制限は同稿で証明する。網羅性は一般Ore正則性定理の結論ではない。
-外部依存は上表のdomain定理とOre拡大の正則性であり、その仮定を本文で確認する。
-対象は複素数体上の左右noetherianなgraded代数で、指定Hilbert級数と最小生成元条件を課す。
-この分類と既存の個別Ore分類との完全な文献上の同定、新規性の確定は未了である。
+整域部分の標準型・1周期性・Ore 構造は上記の各証明に依拠する。
+一般の Frobenius Ext 圏、周期からの graded 復元、正則正規元商、Ore 正則性保存は既知の結果である。
+本研究の具体的な組合せと、既存の重み付き AS 正則代数・正規拡大の分類との
+完全な文献照合、新規性の最終確認は未完了である。
 
-対角族の正則性、一般的なZhang twist、Koszul–Frobenius、Ore手法は既知。
-ここで証明した具体的な非対角族、二同型類、射影階数分岐と既知の重み付き/Ore族との
-完全な同定は未了であり、新規定理としての独立性は未確認である。
-一般四次元AS正則代数のgraded分類と、本研究のindexed分類の差を継続して調べる。
+語長二次性を外した四次元 graded 網羅定理は、左右 noetherian、指定 Hilbert 級数と
+最小生成元条件を仮定し、上表の LPWZ の domain 定理を使う。
+この仮定付き定理と、語長二次の Z-domain から Hilbert 級数・noetherian 性まで導く定理を区別する。
+任意 n の語長二次 graded 定理でも、現在は noetherian 性と指定 Hilbert 級数を仮定している。
+
+未解決なのは、Q 全体の整域性、非整域対象の存在と分類、全 indexed 同型・成分・特殊化である。
+最小周期7、非標準 Hilbert 級数、非定数の射影階数が現れるとすれば非整域部分に限られる。
+対角族、二同型類の基準族、射影階数分岐も、既存の重み付き/Ore 族との完全な同定は未了である。
 
 ## 一般の最小生成元次数 (1^n,2,3)
 
@@ -65,7 +95,6 @@ noetherian 有限生成性による成長度の議論から導く。
 
 | 文献 | 確認した一次資料と箇所 | 適用 |
 | --- | --- | --- |
-| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1（PDF p.3）、Corollary 1.2（PDF p.4） | 語長次数1の正則正規元による商が global dimension を1下げ、AS正則性を保つ。z,w は重み次数では2,3だが、適用する語長次数では1。各親代数のdomain性を先に確認する。 |
 | Carvalho–Lopes–Matczuk, *Double Ore Extensions versus Iterated Ore Extensions*, arXiv:0909.3238v1 (2009) | [本文](https://arxiv.org/pdf/0909.3238), Definition 1.1、Theorem 2.2(a),(b)（PDF pp.6–7） | genuine graded double extension において、最小次数2,3から Sigma_12=0 が従い、固定順の2段 automorphism Ore 表示を得る。一般の2段Ore族の全てがdouble Oreであるとはしない。 |
 | Iyudu–Shkarin, *Three dimensional Sklyanin algebras and Gröbner bases*, J. Algebra 470 (2017), 379–419; arXiv:1601.00564v2 | [本文](https://arxiv.org/html/1601.00564v2), Theorem 1.1、Theorem 1.2、Corollary 6.1 | S(1,2,1)のKoszul性・Hilbert級数・3-CY性。本文の直接の行列計算により、どの2次元一次部分空間内にも二次関係がないことを証明する。 |
 | Levasseur, *Some properties of non-commutative regular graded rings*, Glasgow Math. J. 34 (1992), 277–300; DOI 10.1017/S0017089500008843 | [出版社PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/244AE0A8E9C8AB6782515B504F1AC5C0/S0017089500008843a.pdf/some_properties_of_noncommutative_regular_graded_rings.pdf), Theorem 6.2(i), p.297 | 次数1生成のAS正則次元3の代数のnoetherian/domain性をSklyanin例に適用する。 |

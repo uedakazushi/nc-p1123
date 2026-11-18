@@ -27,9 +27,9 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\qgr}{\operatorname{qgr}}
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
-\large 数値拘束・正規元・Ore表示と次数付き同型}
+\large Ore表示・次数付き同型と$\mathbb Z$-整域の1周期性}
 \author{}
-\date{2026年11月19日\quad 統合版 v2}
+\date{2026年11月19日\quad 統合版 v3}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -48,10 +48,17 @@ AS添字は$n+5$で、最小解消の内部次数は4本の対角線上にある
 一般の斉次Ore部分族についても、有限係数条件と全次数付き同型を記述する。
 最小生成元の次数だけを固定した場合には、大域次元が無界となる明示族があり、
 上記の追加仮定を次数列だけから導くことはできない。さらに$n=2$の非語長二次のgraded分類および対角Ore部分族の表示成分と添字保持同型不変量を証明する。
+
+重み$(1,1,2,3)$の四次元語長二次AS正則$\mathbb Z$-代数については、
+整域性だけを追加すると、標準Hilbert級数・1周期性・二段Ore表示・左右noetherian性が全て従う。
+七つの行のEuler等式で関係数の不足を排除し、
+正規元族による2周期とAS双対性による7周期を結合して1周期を得る。
+三次元商の最高syzygyにより第2段の交換写像の可逆性を証明する。
+整域性を外した全対象と、Zhang twistを含む全添字保持同型の軌道分類は未完成である。
 \end{abstract}
 \vfill
 \begin{center}
-原稿作成日時：2026-11-18 14:48:58 JST（Asia/Tokyo）\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v3\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -1868,7 +1875,9 @@ $A$のglobal dimension 4は次数付き解消の長さの上界でもある。
 標準周期構造を忘れた添字保持同型ではさらにZhang twistが同一視される
 \cite[Theorem~1.2]{Sierra}。
 従って\eqref{spec:eq:quadratic-isomorphism}を、そのまま裸の$\check A$の同型判定には使わない。
-本稿は一般の7周期的対象やnoetherian性を仮定しない対象を分類していない。
+本節の非語長二次の定理は、一般の7周期的対象を分類するものではない。
+語長二次の$\mathbb Z$-整域については、
+第\ref{idx:sec:domain}節でnoetherian性と1周期性も結論として導く。
 また、一般の語長2次AS正則$\ZZ$-代数において所定のHilbert級数が
 強制されるかという全体被覆の問題も残る。
 
@@ -2162,21 +2171,479 @@ $a*b=a\theta^{\deg a}(b)$という積で二つの順序を比較すれば
 非対角モジュライ成分の次元を推定することもできない。
 \end{remark}
 
-\section{分類全体に向けた問題}
-本稿は\emph{斉次対角skew Oreという表示条件の内部}で
-必要十分な分岐を与えた。全分類には少なくとも次が残る。
+\section{重み$(1,1,2,3)$のAS正則$\mathbb Z$-整域}\label{idx:sec:domain}
+本節では、次数付き代数への帰着を仮定せずに$\mathbb Z$-代数を扱う。
+整域性を加えた場合には、標準Hilbert級数、1周期性、二段Ore表示、
+左右noetherian性を全て導く。従ってこれらは本節の追加仮定ではない。
+任意の$n$に対する前節までの定理とは仮定の範囲を区別する。
+
+\begin{definition}\label{idx:def:target}
+$\mathcal Q$を次の条件を満たす正連結・局所有限な$\mathbb Z$-代数$A$のクラスとする。
+積の規約は$A_{ij}A_{jk}\subset A_{ik}$であり、
+$A_{ii}=k$, $A_{ij}=0$ ($i>j$) とする。
 \begin{enumerate}
-\item 一般の標準七窓のうち、Ore表示を持たない正則な枝の被覆と同型判定。
-\item 語長二次・左右AS次元4・多項式増大だけから、所期の標準Hilbert級数と
-重み別の六つの二次関係数が強制されるか。
-\item 重み4の射影階数$\rho_i$が七窓内で非定数となる正則対象の存在と、
-そのような対象の最小周期7の判定。
-\item 対角量子族と非対角Ore族に残る同型の必要十分条件、
-例外パラメータ・退化・成分の交差。
+\item $I=A_+$、$W=I/I^2$と置くと、各$i$で
+$\dim W_{i,i+1}=2$, $\dim W_{i,i+2}=\dim W_{i,i+3}=1$で、
+それ以外の成分は零である。
+\item 添字を保つ語長斉次二次表示$A=T_{\mathbb Z}(W)/(R)$を持つ。
+\item 左右の大域次元は4で、全ての単純加群は有限生成射影による有限解消を持つ。
+各行・各列の累積次元は多項式的に増大する。
+\item $P_i=e_iA$, $S_i=P_i/P_iI$, $L_i=Ae_i/IAe_i$と置くと、
+ある全単射$\ell:\mathbb Z\to\mathbb Z$に対して
+$\Ext_A^p(S_i,A)=0$ ($p\ne4$), $\Ext_A^4(S_i,A)\simeq L_{\ell(i)}$である。
+左側にも対応するAS双対性を要求する。
 \end{enumerate}
-現在の全体分類用の定義と他の仮定付き結果は
-\url{https://github.com/uedakazushi/nc-p1123}の現行研究方針・主原稿に置く。
-それらの未完成の結果に本稿の定理の成立は依存しない。
+さらに、任意の合成可能な非零元$a\in A_{ij}$, $b\in A_{jk}$について
+$ab\ne0$となるとき、$A$を$\mathbb Z$-整域という。
+\end{definition}
+ここで添字差を重みと呼ぶ。語長斉次表示を選んだ後、
+jump 1の二次元空間を$V_i$、jump 2,3の生成元をそれぞれ$z_i,w_i$と書く。
+$z_i,w_i$の語長はいずれも1である。
+1周期性・noetherian性・所期のHilbert級数を定義に含めていない。
+
+$\mathbb Z$-代数の1周期性と次数付き代数からの復元は
+Van den Bergh \cite[Lemma 3.4]{VdB}による。
+AS双対性とExt圏のFrobenius性は
+Mart\'inez-Villa--Solberg \cite[Lemma 6.1(b), Theorem 6.2]{MVS}の一般原理である。
+以下では必要な有限解消の議論を明示する。
+本節の重みに固有の論証は、関係数の不足を成長と比較する
+定理\ref{idx:thm:domain-standard}と、2周期・7周期の結合、
+および三次元商の関係射影を決める補題\ref{idx:lem:three-generator}である。
+既知の一般原理と、これらの応用による構造定理を区別する。
+個別結果の文献上の新規性の最終確認は未完了である。
+
+\subsection{AS双対性からの完全対合}
+前向きの規約で$E_{ij}^p=\Ext_A^p(S_i,S_j)$とする。
+この段階では$A\in\mathcal Q$とし、Koszul性や一定のAS添字を仮定しない。
+
+\begin{lemma}\label{idx:lem:frobenius}
+$A\in\mathcal Q$についてYoneda積
+\[
+E_{ij}^p\otimes E_{j,\ell(i)}^{4-p}\longrightarrow E_{i,\ell(i)}^4\simeq k
+\]
+は完全対合である。
+\end{lemma}
+\begin{proof}
+有限生成右射影による解消$P_\bullet\to S_i$を取る。
+AS条件により$\Hom_A(P_\bullet,A)$は、次数4の$L_{\ell(i)}$以外にコホモロジーを持たない。
+有限生成射影性から、有限次元右加群$M$について複体の自然同型
+\[
+\Hom_A(P_\bullet,M)\simeq M\otimes_A\Hom_A(P_\bullet,A)
+\]
+がある。後者の第二因子を左射影解消として読むと
+\[
+\Ext_A^p(S_i,M)\simeq\Tor_{4-p}^A(M,L_{\ell(i)}).
+\]
+体上の双対$D=\Hom_k(-,k)$を取り、$DL_{\ell(i)}=S_{\ell(i)}$を用いれば
+\[
+D\Ext_A^p(S_i,M)\simeq\Ext_A^{4-p}(M,S_{\ell(i)})
+\]
+を得る。この双対性は自然で、積に関してはYoneda合成に対応する。
+実際、$p=0$, $M=S_i$で恒等射に対応するtop Extの線型汎関数をtraceと取り、
+拡大の連結に関する自然性で一般の$p$へ移せば、所要の積対合となる。
+$M=S_j$として主張を得る。一般的なExt圏のFrobenius性とも一致する\cite[Lemma 6.1(b), Theorem 6.2]{MVS}。
+\end{proof}
+
+\begin{proposition}[語長Koszul性と一定のAS添字]\label{idx:lem:duality-period}
+$A\in\mathcal Q$は語長Koszulであり、ある正整数$L$について$\ell(i)=i+L$となる。
+さらに$A\simeq A(L)$が成立する。ここで$A(s)_{ij}=A_{i+s,j+s}$である。
+\end{proposition}
+\begin{proof}
+語長斉次二次表示を選び、Extに最小syzygyの語長次数を付ける。
+$E^1$は語長1、$E^2$は語長2に集中する。
+各単純加群の射影次元は4なので各行の$E^2$は非零である。
+一次元のtop Extの語長を$m_i$とすると、非零の$E^2_{ij}$とその完全対合相手との積から
+$m_i=2+2=4$を得る。$E^3$と$E^1$の完全対合も語長を加えるため、
+$E^3$は語長3に集中する。従って最小解消は語長線型、すなわちKoszulである。
+
+非零trace $\lambda_i:E_{i,\ell(i)}^4\to k$を選ぶ。
+補題\ref{idx:lem:frobenius}を二度用いると、$a\in E_{ij}^p$に対し
+\begin{equation}\label{idx:eq:nakayama}
+\lambda_i(ab)=\lambda_j\bigl(bN_{ij}(a)\bigr)
+\quad\bigl(b\in E_{j,\ell(i)}^{4-p}\bigr)
+\end{equation}
+を満たす線型同型$N_{ij}:E_{ij}^p\to E_{\ell(i),\ell(j)}^p$が一意に存在する。
+各行の$E^1$で次元2の成分はjump 1だけなので、
+$\dim E^1_{\ell(i),\ell(i+1)}=2$から$\ell(i+1)=\ell(i)+1$となる。
+従って$\ell(i)=i+L$である。top Extの語長は4、各生成元のjumpは正なので$L>0$である。
+
+$a\in E_{ij}^p$, $c\in E_{jh}^q$, $b\in E_{h,i+L}^{4-p-q}$に対し
+\[
+\lambda_i((ac)b)=\lambda_j((cb)N(a))
+=\lambda_h(bN(a)N(c))
+\]
+なので、完全対合により$N(ac)=N(a)N(c)$である。
+従って$N:E\simeq E(L)$は二次代数の同型である。
+Koszul性により$E=A^!$と同一視できる。
+全てのjump $1,2,3$の語長1部分で逆双対を取ると、
+直交関係を保存する写像から$A\simeq A(L)$が得られる。
+\end{proof}
+
+\begin{lemma}[二次元因子の区間]\label{idx:lem:segment}
+各$U_0,\ldots,U_{n-1}$を二次元とし、隣接位置ごとの関係空間
+$D_j\subset U_j\otimes U_{j+1}$の次元を高々1とする。
+全テンソル積を関係挿入空間の和で割った空間の次元は2以上である。
+\end{lemma}
+\begin{proof}
+$U_0^*$で独立な二つの共変ベクトルを選ぶ。それぞれについて、
+既に選んだ非零$\alpha_j$に対し$(\alpha_j\otimes\alpha_{j+1})(D_j)=0$を満たす
+非零$\alpha_{j+1}$を帰納的に選ぶ。これは二次元空間で高々一本の線型条件だから可能である。
+得られた二つの分解可能テンソル汎関数は全関係挿入を消し、最初の因子が独立なので全体も独立である。
+\end{proof}
+
+\begin{theorem}[AS添字の強制]\label{idx:thm:index-seven}
+定義\ref{idx:def:target}の全対象についてAS添字は$L=7$である。
+\end{theorem}
+\begin{proof}
+命題\ref{idx:lem:duality-period}により$E=A^!$は語長1で生成されるので、$E^3$の重みは3から9である。
+重み3と1の$E^1$の相補成分はそれぞれ$E^3$の重み$L-3$と$L-1$に非零で存在する。
+従って$6\leq L\leq10$である。
+
+$r_d(i)=\dim R_{i,i+d}=\dim E^2_{i,i+d}$と置く。
+$E^2$の重みは2から6で、完全対合から
+\begin{equation}\label{idx:eq:relation-symmetry}
+r_d(i)=r_{L-d}(i+d)
+\end{equation}
+が成り立つ。$L\geq9$なら$r_2(i)=0$が全ての$i$で成立する。
+語長$n$・重み$n$の部分は全てjump 1の生成元からなり、
+重みが2より大きい二次関係はこの部分に入らない。
+従って$\dim A_{i,i+n}\geq2^n$となり、多項式増大に反する。
+
+$L=6$なら\eqref{idx:eq:relation-symmetry}から$r_5=r_6=0$である。
+全てのjump 1生成元を零にし、さらに全ての$z_i z_{i+2}$を零にする商を取る。
+元の関係はこの商で全て消えるので、$zz$を禁止した$z,w$のモノミアル経路代数への全射を得る。
+重み8の二つのブロック$zww,wzw$は、任意に連結しても$zz$を含まない。
+従って始点$i$から終点$i+8n$への独立な経路が$2^n$本あり、再び成長に反する。
+
+最後に$L=8$とする。重み6の二次経路空間は$ww$の一次元空間なので、
+\eqref{idx:eq:relation-symmetry}から$r_2(i)=r_6(i+2)\leq1$である。
+完全対合による$E^3$の重みは$L-3,L-2,L-1=5,6,7$に限られる。
+もし$r_6(i)=r_6(i+3)=1$なら、非零テンソル
+$w_i\otimes w_{i+3}\otimes w_{i+6}$が
+$(R\otimes_{\mathbb Z}W)\cap(W\otimes_{\mathbb Z}R)$に入り、
+その双対である$E^3_{i,i+9}$が非零となって矛盾する。
+従って$r_6(i)+r_6(i+3)\leq1$、すなわち
+\[
+r_2(j)+r_2(j+3)\leq1
+\]
+である。よって連続する四つの関係位置には、必ず関係が零の位置がある。
+
+語長と重みが等しい部分を、その欠けた関係の位置で区切る。
+境界をまたぐ関係挿入はないので、商は区間ごとの商のテンソル積になる。
+他の重みの関係は「重みから語長を引いた差」が正なので、この部分に隠れた関係を作らない。
+語長$4m+1$では$4m$本の隣接辺のうち少なくとも$m$本の関係が零であり、
+補題\ref{idx:lem:segment}により
+\[
+\dim A_{i,i+4m+1}\geq2^{m+1}
+\]
+となる。これも多項式増大に反する。残る可能性は$L=7$である。
+\end{proof}
+
+
+\subsection{整域性による標準関係数の強制}
+\begin{theorem}\label{idx:thm:domain-standard}
+$A\in\mathcal Q$を$\mathbb Z$-整域とする。
+全ての$i$について
+\[
+(r_2(i),r_3(i),r_4(i),r_5(i),r_6(i))=(1,2,2,1,0).
+\]
+各行の二変数Hilbert級数は
+\begin{equation}\label{idx:eq:standard-hilbert}
+H_i(u,t)=\sum_{q,d\ge0}\dim A^{(q)}_{i,i+d}\,u^qt^d
+=\frac1{(1-ut)^2(1-ut^2)(1-ut^3)}
+\end{equation}
+であり、最小解消の重みは
+$(0);(1,1,2,3);(2,3,3,4,4,5);(4,5,6,6);(7)$となる。
+\end{theorem}
+\begin{proof}
+重み3の関係空間は
+\[
+R_{i,i+3}\subset
+(V_i\otimes kz_{i+1})\oplus(kz_i\otimes V_{i+2})
+\]
+に含まれる。一方への射影が零の非零関係は$vz=0$または$zv=0$を与える。
+従って両射影は単射で$r_3(i)\le2$である。
+同様に重み5の二つの一次元経路への射影から$r_5(i)\le1$となる。
+AS添字7と完全対合
+$r_d(i)=r_{7-d}(i+d)$から$r_2(i)\le1$, $r_4(i)\le2$, $r_6(i)=0$を得る。
+$s_2=1,s_3=s_4=2,s_5=1$とし、
+$\delta_d(i)=s_d-r_d(i)\ge0$と置く。
+
+語長Hilbert級数を
+\[
+h_i(u)=\sum_{q\ge0}\left(\sum_j\dim A^{(q)}_{ij}\right)u^q
+\]
+とする。語長$q$の重みは$q$から$3q$までに入るので、
+行の多項式増大により$0<u<1$で有限である。
+命題\ref{idx:lem:duality-period}と定理\ref{idx:thm:index-seven}による
+語長保存7周期から$h_{i+7}=h_i$である。
+
+最小Koszul解消のEuler等式は
+\begin{align*}
+1={}&h_i-u(2h_{i+1}+h_{i+2}+h_{i+3})
++u^2\sum_{d=2}^5r_d(i)h_{i+d}\\
+&-u^3(h_{i+4}+h_{i+5}+2h_{i+6})+u^4h_{i+7}.
+\end{align*}
+$H(u)=\sum_{i=0}^6h_i(u)$と置き、七つの式を加えると
+\begin{equation}\label{idx:eq:deficit}
+7=(1-u)^4H(u)
+-u^2\sum_{i=0}^6\sum_{d=2}^5\delta_d(i)h_{i+d}(u).
+\end{equation}
+各$i$で非零の$x_i\in V_i$を選ぶと、左乗法による単射から
+$h_i(u)\ge u h_{i+1}(u)$となる。7周期性を使って高々6回反復すれば、
+全ての$i,j\bmod7$について
+\[
+h_j(u)\ge u^6h_i(u),\qquad h_j(u)\ge\frac{u^6}{7}H(u).
+\]
+もしある$\delta_d(i)$が正なら\eqref{idx:eq:deficit}より
+\[
+7\le\left((1-u)^4-\frac{u^8}{7}\right)H(u).
+\]
+$u<1$を1に十分近く取ると右辺が負となるので矛盾である。
+従って全ての$\delta_d(i)$は零である。
+
+得られた解消に重みを戻すとEuler多項式は
+$\prod_{a\in\{1,1,2,3\}}(1-ut^a)$である。
+行Hilbert級数を最初から等しいと仮定する必要はない。
+重み$d$の係数は正のjumpだけ先の行の、$d$より低い係数から決まり、
+定数項は全行で1である。重みに関する帰納法により全行が一致し、
+\eqref{idx:eq:standard-hilbert}を得る。
+\end{proof}
+
+\subsection{正規元族と1周期性}
+\begin{lemma}\label{idx:lem:normal-family}
+$A$を語長二次の$\mathbb Z$-整域とし、primitive jumpsを$(1,1,2,3)$、
+重み3と5の関係次元をそれぞれ2と1とする。
+可逆線型写像$\sigma_i:V_{i+2}\to V_i$と$c_i\in k^\times$が存在して
+\begin{equation}\label{idx:eq:normal-family}
+z_i v=\sigma_i(v)z_{i+1},\qquad
+w_i z_{i+3}=c_i z_i w_{i+2}
+\end{equation}
+となる。さらに、語長を保つ同型$A(2)\simeq A$が存在する。
+\end{lemma}
+\begin{proof}
+重み3と5の関係の両射影は、前の証明と同じ整域性の議論により単射である。
+次元が等しいので同型となり、\eqref{idx:eq:normal-family}を得る。
+
+生成元上の写像
+\[
+V_{i+2}\longrightarrow V_i:\sigma_i,\quad
+z_{i+2}\longmapsto z_i,\quad
+w_{i+2}\longmapsto c_i^{-1}w_i
+\]
+をテンソル代数の写像$\phi$へ延長する。
+$i+2$から$j+2$への任意の経路式$a$について、積に関する帰納法から
+\[
+z_i\bar a=\overline{\phi(a)}z_j
+\]
+を得る。$\bar a=0$なら右辺の$z_j$を消去できるので
+$\overline{\phi(a)}=0$であり、$\phi$は$A(2)\to A$へ降りる。
+逆に$\phi(\bar a)=0$なら左辺の$z_i$を消去して$\bar a=0$となる。
+従って単射であり、生成元上で全射なので同型である。
+各生成元を生成元へ移すので語長も保つ。
+\end{proof}
+
+\begin{theorem}\label{idx:thm:domain-period-one}
+$A\in\mathcal Q$が$\mathbb Z$-整域なら、語長を保つ1周期同型を持つ。
+従って、重み付き次数付きAS正則整域$D$で
+$A\simeq\check D$となるものが存在し、$D$は語長二次・語長Koszulである。
+$D$の大域次元は4、二変数Hilbert級数は\eqref{idx:eq:standard-hilbert}である。
+\end{theorem}
+\begin{proof}
+定理\ref{idx:thm:domain-standard}と補題\ref{idx:lem:normal-family}より2周期を得る。
+定理\ref{idx:thm:index-seven}より7周期もある。
+語長を保つ周期の集合は、同型の移動・合成・逆によって
+$\mathbb Z$の部分群になるので、$7-3\cdot2=1$から1周期を得る。
+周期同型同士の可換性は不要である。
+具体的に$F_6:A\to A(6)$と$F_7:A\to A(7)$を取れば
+$(F_6(1))^{-1}F_7:A\to A(1)$が所要の同型である。
+
+この同型を$F$と書く。$D_m=A_{0,m}$とし、
+$a\in D_m,b\in D_n$に対し$a*b=aF^m(b)$と定める。
+$F$が積を保つので結合的であり、
+$\check D_{ij}=D_{j-i}\to A_{ij}$, $a\mapsto F^i(a)$が同型となる。
+これは\cite[Lemma 3.4]{VdB}の構成である。
+
+$F$は語長を保つので$D$にも語長次数が入り、二次表示と線型解消が移る。
+右・左の次数付き加群圏の対応によりAS双対性も移る。
+重みを忘れて語長で次数付けても、有限個の斉次基底からなる同じ最小自由解消と、
+その双対複体の完全性は保たれる。
+長さ4のKoszul双加群解消から通常の大域次元も高々4であり、
+非零のtop Extから4である。
+非零斉次元の積は$\mathbb Z$-整域性によって零にならず、
+最高重み項を見ると$D$は通常の整域である。
+Hilbert級数は$A$の行Hilbert級数に等しい。
+\end{proof}
+
+\subsection{三次元商のsyzygyと第2段Ore拡大}
+次の補題は、商の整域性やnoetherian性を仮定せずに使う。
+\begin{lemma}\label{idx:lem:three-generator}
+$V$を重み1の二次元空間、$w$を重み3の生成元とし、
+全生成元の語長を1とする。
+$Q=T(V\oplus kw)/(kr\oplus S)$は語長について三次元AS正則であると仮定する。
+ここで$0\ne r\in V\otimes V$は階数2、
+$S\subset (V\otimes kw)\oplus(kw\otimes V)$は二次元である。
+このとき可逆線型写像$\mu:V\to V$が存在して
+\[
+S=\{w\otimes v-\mu(v)\otimes w:v\in V\},\quad
+(\mu\otimes\mu)(kr)=kr.
+\]
+従って$B=T(V)/(r)$と置くと$\mu\in\Aut_{\mathrm{gr}}B$、
+$Q=B[w;\mu]$である。
+\end{lemma}
+\begin{proof}
+AS完全対合と語長二次性からtop Extの語長は$1+2=3$であり、$Q$はKoszulである。
+$E^1$の重みは1,3、$E^2$の重みは2,4なので、完全対合のtop重みは5である。
+一次元の最高syzygy空間
+\[
+K_3=((V\oplus kw)\otimes(kr\oplus S))
+\cap((kr\oplus S)\otimes(V\oplus kw))
+\]
+の生成元$T$を取る。完全対合により、$V$の基底$v_1,v_2$に対して
+\begin{equation}\label{idx:eq:top-syzygy}
+T=\alpha w\otimes r+\sum_{a=1}^2v_a\otimes s_a
+=\beta r\otimes w+\sum_{a=1}^2t_a\otimes v_a
+\end{equation}
+と書ける。ここで$\alpha,\beta\ne0$、$(s_1,s_2)$と$(t_1,t_2)$はそれぞれ$S$の基底である。
+$V\otimes V\otimes kw$成分を比較すると
+\[
+\sum_a v_a\otimes\operatorname{pr}_{Vw}(s_a)=\beta r\otimes w.
+\]
+$r$の階数が2なので$S\to V\otimes kw$は同型である。
+$kw\otimes V\otimes V$成分も同様に$S\to kw\otimes V$が同型となる。
+従って所要の可逆線型写像$\mu$で$S$を書ける。
+
+$\mu$の関係保存は、まだ商$Q$で$w$を消去せずに証明する。
+$s(v)=w\otimes v-\mu(v)\otimes w$とし、
+\[
+T=\alpha w\otimes r+\sum_a a_a\otimes s(b_a)
+=\beta r\otimes w+\sum_b s(c_b)\otimes d_b
+\]
+と書く。$P=\sum_a a_a\otimes b_a$,
+$U=\sum_b c_b\otimes d_b$と置くと、
+$wVV,VwV,VVw$の三成分を順に比較して
+\[
+U=\alpha r,\qquad
+P=-(\mu\otimes1)U,\qquad
+-(1\otimes\mu)P=\beta r
+\]
+を得る。従って$(\mu\otimes\mu)r=(\beta/\alpha)r$である。
+これにより$\mu$は$B$の自己同型を誘導し、表示そのものが$B[w;\mu]$となる。
+\end{proof}
+
+\begin{theorem}[整域部分の網羅的なOre表示]\label{idx:thm:domain-ore}
+$A\in\mathcal Q$を$\mathbb Z$-整域とする。
+$A\simeq\check D$となる次数付き代数$D$を語長保存1周期から構成して、
+語長二次表示に適合する生成元について
+\[
+D=B[z;\sigma][w;\tau,\partial]
+\]
+と書ける。$B=k\langle V\rangle$は量子平面またはJordan平面で、
+$\dim V=2$, $\deg V=1$, $\deg z=2$, $\deg w=3$である。
+全ての生成元の語長は1である。
+データ$\sigma,\mu\in\Aut_{\mathrm{gr}}B$, $c\in k^\times$, $L\in V^*$は
+\begin{gather}
+zv=\sigma(v)z,\qquad
+wv=\mu(v)w+L(v)z^2,\qquad wz=czw,\label{idx:eq:ore}\\
+\mu\sigma=\sigma\mu,\qquad L\sigma=cL,\qquad
+(\mu\otimes L+L\otimes\sigma^2)(r)=0,\label{idx:eq:compatibility}\\
+\tau|_B=\mu,\quad\tau(z)=cz,\quad
+\partial(v)=L(v)z^2,\quad\partial(z)=0.\notag
+\end{gather}
+ここで$B=T(V)/(r)$である。
+逆に、これらの条件を満たすデータは$\mathcal Q$の$\mathbb Z$-整域を与える。
+特に$D$は左右noetherianであり、$A$の左右の表現可能加群もnoetherianである。
+\end{theorem}
+\begin{proof}
+定理\ref{idx:thm:domain-period-one}により、語長と重みを保って$D$へ帰着する。
+重みから語長を引いたexcessは$V,z,w$でそれぞれ0,1,2である。
+excess 0部分には$V$だけの関係しか入らないので、$B=T(V)/(r)$は$D$の部分代数である。
+$r$は二次元空間上の非零双一次形式であり、階数1なら二つの非零元の積が零になる。
+従って階数2で、二変数関係の標準形\eqref{spec:eq:plane}により
+$B$は量子平面またはJordan平面である。
+特に$B$はAS正則次元2で、Hilbert級数は$(1-ut)^{-2}$である。
+
+関係の両射影から$zv=\sigma(v)z$, $wz=czw$を得る。
+$zr=0$を交換して$z$を右消去すれば
+$(\sigma\otimes\sigma)(r)\in kr$であり、$\sigma$は$B$の自己同型となる。
+$C=\langle B,z\rangle$は$B[z;\sigma]$である。
+実際、$bz^a$が張り、異なる$a$はexcessが異なる。
+同じ$a$の線型関係は正則元$z^a$の消去により$B$の関係に帰着する。
+
+$z$は$D$全体の正則正規元で、語長では次数1である。
+Rogalski--Zhang \cite[Lemma 1.1, Corollary 1.2]{RZ}を
+\emph{語長次数}について適用すると、$Q=D/(z)$は三次元AS正則となる。
+この段階でnoetherian性は使わない。
+$Q$は$V,w$で生成され、重み2の関係$r$と重み4の関係空間$S$を持つ。
+$D$の重み4関係を$Vw\oplus wV$へ射影する核は$kz^2$に含まれるが、
+$z^2\ne0$なので核は零であり、$\dim S=2$である。
+従って補題\ref{idx:lem:three-generator}から$Q=B[w;\mu]$を得る。
+$Q$の整域性はこの結論の後に従うのであり、仮定していない。
+
+重み4の関係を持ち上げると\eqref{idx:eq:ore}を得る。
+これらを用いて$w$を右へ、次に$z$を右へ移動すれば、
+$bz^aw^j$ ($b\in B$, $a,j\ge0$) の形の元が$D$を張る。
+$wv$の補正項は$w$の個数を減らし、その他の移動は該当生成元の逆転数を減らすので、
+この並べ替えは停止する。
+その候補空間の二変数Hilbert級数は\eqref{idx:eq:standard-hilbert}に等しい。
+定理\ref{idx:thm:domain-standard}から、各二次数で全射は同型であり、
+順序付き表示は一意である。
+
+$w(zv)=(wz)v$の$Vzw$成分と$z^3$成分を比べると、
+$\mu\sigma=\sigma\mu$, $L\sigma=cL$を得る。
+また$wr=0$の$Vz^2$成分から
+$(\mu\otimes L+L\otimes\sigma^2)(r)=0$を得る。
+これらの式は$\tau$が$C$の自己同型、
+$\partial$が$C$上の$\tau$-導分となるための条件である。
+従って$C[w;\tau,\partial]\to D$が定まり、上の順序付き基底から同型である。
+自己同型型のOre拡大は左右noetherian性を保つので、$D$も左右noetherianである。
+$\check D$の表現可能加群に対応するのは$D$の次数移動なので、$A$にも主張が移る。
+
+逆向きには\eqref{idx:eq:compatibility}から二段Ore拡大が定まる。
+命題\ref{prop:ore-construction}と定理\ref{thm:general-quadratic-classification}の逆構成により、
+これは語長二次・語長KoszulのAS正則整域で、指定Hilbert級数を持つ。
+その付随$\mathbb Z$-代数は定義\ref{idx:def:target}を満たす。
+\end{proof}
+
+\begin{corollary}\label{idx:cor:domain-boundary}
+$\mathcal Q$で、標準Hilbert級数を持たない対象、
+最小正周期が7である対象、または$\rho_i$が非定数である対象は、
+いずれも$\mathbb Z$-整域ではない。
+\end{corollary}
+\begin{proof}
+整域なら定理\ref{idx:thm:domain-standard}と
+定理\ref{idx:thm:domain-period-one}により標準型かつ1周期である。
+$\rho_i$は命題\ref{diag:prop:rho}の添字保持同型不変量なので、
+$A\simeq A(1)$なら$\rho_i=\rho_{i+1}$となる。
+\end{proof}
+\begin{remark}
+定理\ref{idx:thm:domain-ore}は整域部分の構造表示を尽くすが、
+裸の添字保持同型によるOreデータの軌道を列挙したものではない。
+$\check D\simeq\check D'$であることは$D,D'$がZhang twistで結ばれることと同値である
+\cite[Theorem 1.2, Corollary 4.4]{Sierra}。
+従って前節までのgraded同型の判定だけでは、添字保持同型類を分離できない。
+また全$\mathcal Q$の整域性は未証明であり、
+非整域対象の存在・標準型からの逸脱・最小周期7は引き続き未解決である。
+\end{remark}
+
+
+\section{分類全体に向けた問題}
+語長二次の$\mathbb Z$-整域は定理\ref{idx:thm:domain-ore}で二段Ore表示へ帰着した。
+対角skew Ore表示の内部には必要十分な四分岐があるが、
+裸の添字保持同型による全分類には次が残る。
+\begin{enumerate}
+\item 広い対象$\mathcal Q$の全てが$\mathbb Z$-整域であるか。
+非整域が存在するなら、関係射影の核と零因子を持つ枝を被覆する。
+\item 整域性を外しても標準Hilbert級数と関係数が強制されるか。
+定理\ref{idx:thm:domain-standard}はこの問題の整域部分を解決する。
+\item 最小周期7または非定数の$\rho_i$を持つ対象が非整域部分に存在するか。
+\item 全Oreデータに対するZhang twistを含む添字保持同型の必要十分条件、
+例外パラメータ、退化、成分の交差を決定する。
+\end{enumerate}
+広い対象の定義と本稿の構造定理の証明は本稿内で完結する。
+有限七窓と未収載の着想は、現行研究資料
+\path{research/indexed_z_algebra.tex}と\path{research/notes_ja.tex}に整理する。
+未完成の分類に、本稿の証明済み構造定理は依存しない。
 
 \paragraph{検算。}
 付属\path{computations/verify_skew_ore.py}は
@@ -2190,6 +2657,18 @@ $\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
 \begingroup
 \small
 \begin{thebibliography}{9}
+\bibitem{VdB}
+M.~Van den Bergh, \emph{Non-commutative quadrics},
+arXiv:0807.3753v3 (2010).
+\url{https://arxiv.org/pdf/0807.3753}.
+使用箇所：第3節、Lemma 3.4（1周期$\mathbb Z$-代数からの復元）。
+\bibitem{MVS}
+R.~Mart\'inez-Villa and {\O}.~Solberg,
+\emph{Artin--Schelter regular algebras and categories},
+J. Pure Appl. Algebra \textbf{215} (2011), 546--565;
+arXiv:0902.1119.
+\url{https://arxiv.org/pdf/0902.1119}.
+使用箇所：Lemma 6.1(b), Theorem 6.2（Serre対合とExt圏のFrobenius性）。
 \bibitem{LPWZ}
 D.-M.~Lu, J.~H.~Palmieri, Q.-S.~Wu and J.~J.~Zhang,
 \emph{Regular algebras of dimension 4 and their $A_\infty$-Ext-algebras},
