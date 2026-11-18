@@ -1,14 +1,16 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-18",
-  "version": 2,
+  "version": 3,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
     "broad_target": "Q: primitive jumps, word-quadratic, two-sided AS4 and polynomial growth; word-Koszul, AS translation+7 and7-periodicity are now proved, not assumed",
     "weighted_hilbert_locus": "H: Q with H(t)=1/((1-t)^2(1-t^2)(1-t^3))",
     "initial_standard_locus": "S: word-Koszul, AS translation +7, shifts (0);(1,1,2,3);(2,3,3,4,4,5);(4,5,6,6);(7)",
-    "standard_exhaustiveness": "H=S proved; Q=H unproved"
+    "standard_exhaustiveness": "H=S proved; Q=H unproved",
+    "graded_ore_locus": "Over C: connected locally finite left/right noetherian AS4 graded algebras with minimal generator degrees (1,1,2,3) and H(t)=1/((1-t)^2(1-t^2)(1-t^3)), classified up to graded isomorphism; relations need not be word-quadratic",
+    "quadratic_graded_ore_locus": "The word-quadratic part of the preceding graded locus admits a complete Ore chart allowing non-diagonal automorphisms. Its associated Z-algebras lie in H and are 1-periodic; bare indexed isomorphism is a coarser relation."
   },
   "claims": [
     {
@@ -94,6 +96,30 @@
       "status": "proved_in_manuscript",
       "proof": "papers/weighted_ore_strata.tex#prop:normalization",
       "scope": "Swap x/y and scalar normalization of nonzero derivation coefficients"
+    },
+    {
+      "id": "GRADED-ORE",
+      "status": "proved_in_manuscript",
+      "proof": "papers/graded_ore_classification.tex#thm:ore-exhaustion",
+      "scope": "Over C, connected locally finite left/right noetherian AS4, prescribed Hilbert series and minimal degrees (1,1,2,3): all and only iterated Ore extensions of a quantum or Jordan plane. No claim for all Q."
+    },
+    {
+      "id": "GRADED-ORE-DATA",
+      "status": "proved_in_manuscript",
+      "proof": "papers/graded_ore_classification.tex#thm:coefficient-data",
+      "scope": "Finite necessary and sufficient coefficient equations for the graded Ore data; contains all special parameter values."
+    },
+    {
+      "id": "GRADED-ORE-ISOM",
+      "status": "proved_in_manuscript",
+      "proof": "papers/graded_ore_classification.tex#thm:graded-isomorphisms",
+      "scope": "All graded isomorphisms are the specified triangular changes satisfying explicit equations; not a classification of bare indexed isomorphisms."
+    },
+    {
+      "id": "QUADRATIC-GRADED-ORE",
+      "status": "proved_in_manuscript",
+      "proof": "papers/graded_ore_classification.tex#cor:quadratic-chart",
+      "scope": "Within the stated noetherian graded Hilbert locus over C: the full word-quadratic Ore chart, allowing non-diagonal automorphisms. Graded-isomorphism existence is characterized in prop:quadratic-isomorphisms; the displayed zero-correction conditions use generators adapted to a word-quadratic presentation."
     }
   ],
   "open_problems": [
@@ -130,15 +156,16 @@
   ],
   "resume_point": {
     "task_id": "AS-LOCUS",
-    "next_action": "Build the 7-window path/dual engine for word lengths 0..5; run against the diagonal skew Ore chart and nonzero rho=1 examples. Derive isomorphism-invariant structural branches outside the diagonal-Ore ansatz, especially nonconstant rho_i patterns. Keep Frobenius and Koszul tests separate.",
+    "next_action": "Build the 7-window path/dual engine for word lengths 0..5; run against the diagonal skew Ore chart and nonzero rho=1 examples. Use the non-diagonal quadratic graded Ore chart as a larger reference family. Derive invariant branches outside the hypotheses of the noetherian graded Hilbert locus, especially nonconstant rho_i patterns, and determine additional identifications under bare indexed isomorphism. Keep Frobenius and Koszul tests separate.",
     "read": [
       "research/plan_ja.tex",
+      "papers/graded_ore_classification.tex",
       "papers/weighted_ore_strata.tex",
       "nc-p1123.tex",
       "research/notes_ja.tex",
       "computations/verify_skew_ore.py"
     ],
-    "obstacle": "Full AS locus outside diagonal Ore chart, and existence of nonconstant rho_i patterns, are unresolved. Four presentation components are not moduli components.",
-    "do_not_repeat": "The exact diagonal skew Ore parameter equations, four presentation components, regularity and rho separation are now proved. Prior general Koszul/AS-index7 and H=S results remain available."
+    "obstacle": "The complete iterated Ore result assumes a graded algebra over C, left/right noetherianity and the prescribed Hilbert series. The general seven-window AS locus, nonconstant rho_i patterns and the full bare indexed quotient remain unresolved. Four diagonal presentation components are not moduli components.",
+    "do_not_repeat": "The noetherian graded Hilbert locus over C has a complete iterated Ore description, finite coefficient equations and all triangular graded isomorphisms; its word-quadratic part allows non-diagonal automorphisms. The exact diagonal skew Ore equations, four presentation components, regularity and rho separation are also proved. General Koszul/AS-index7 and H=S results remain available; Q=H is still open."
   }
 }

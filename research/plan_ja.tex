@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月18日\quad 第2版}
+\date{2026年11月18日\quad 第3版}
 \begin{document}
 \maketitle
 
@@ -35,7 +35,7 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 分類の達成基準は、対象の網羅的な構造分岐、各枝の正則性の必要十分条件、
 全特殊値を含む同型判定、周期層、成分と特殊化を証明することである。
 標準型だけを分類した場合はその範囲を明記し、広い対象の分類とは区別する。
-\textbf{現在は研究開始段階であり、全分類は未完成である。}
+\textbf{全分類は未完成である。}
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
 本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読み、
@@ -43,6 +43,16 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 外部文献の適用範囲は\path{research/BASELINE.md}に置く。
 
 \section{主要な到達点と適用範囲}
+\paragraph{追加仮定付きgraded部分のOre分類。}
+複素数体上の連結・局所有限・左右noetherianな四次元AS正則graded代数について、
+最小生成元次数$(1,1,2,3)$と所期のHilbert級数を仮定すると、
+量子平面またはJordan平面からの段階的Ore拡大
+$B[z;\sigma,\delta][w;\tau,D]$で全対象を尽くせる。
+有限の係数条件、全graded同型を与える三角形変換、中心的な次数3最小生成元を持つ場合を
+\path{papers/graded_ore_classification.tex}で証明する。
+語長二次部分には非対角自己同型を許すチャートとgraded同型の存在判定がある。
+この定理は一般の非1周期対象や裸の添字保持同型の商を分類しない。
+
 \paragraph{対角skew Ore表示の完全な分岐。}
 重み$(1,1,2,3)$で、三生成元の対角量子多項式環に対し対角自己同型で
 第四生成元を斉次Ore付加する語長二次の全表示を分類した。
@@ -52,11 +62,11 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 この成分は表示空間の成分であり、全ASモジュライの成分ではない。
 既存の二パラメータOre族は、このチャートに含まれる。
 
-主論文に証明を記載した事項を以下に整理する。
+主論文と独立原稿に証明を記載した事項を以下に整理する。
 証明の記載と今回の論理監査・計算・組版・査読・新規性は別の状態である。
 \begin{longtable}{p{.27\linewidth}p{.65\linewidth}}
 \toprule
-事項 & 内容と主論文の証明位置\\
+事項 & 内容と証明位置\\
 \midrule
 \endhead
 同型の線型化 & 語長斉次二次表示の同型の存在を$A_+$進付随次数で線型化する。
@@ -68,6 +78,9 @@ H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt
 有限七窓 & 標準traceから来る周期構造は同型類上で選択によらず、
 標準型は固定階数、一般Qは有限個の階数表の和へ還元できる。
 \texttt{thm:finite-window}。AS/Koszul条件の有限な必要十分判定は未完成。\\
+仮定付きgraded分類 & 複素数体、noetherian、指定Hilbert級数の下でOre表示が網羅的。
+主論文\texttt{thm:graded-ore-summary}は独立原稿の定理を要約する。
+全三角形graded同型と語長二次部分も同稿にある。\\
 対角族 & AKOの既知族を基準にし、6交換係数の対角twist商を3係数へ正規化。
 \texttt{prop:twist-normalization}。全indexed同型の完全不変量とは未同定。\\
 非対角族 & $[t,x]=az^2$, $[t,y]=bz^2$を持つOre族の全正則性をPBW・二次双対で証明。
@@ -83,8 +96,9 @@ H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt
 
 \section{未解決の核心と次の具体的操作}
 \paragraph{P1：標準七窓の不変分岐と正則性。}
-対角skew Ore表示の内部は既に四分岐で尽くしたので、そこを再探索せず、
-その外で$\rho_i$が非定数になり得るかという被覆の穴と
+複素数体上のnoetherianなgraded部分では、所期のHilbert級数の下で
+非対角の場合を含むOre表示が得られた。対角skew Ore表示の内部の四分岐も確定している。
+これらの適用範囲の外で$\rho_i$が非定数になり得るかという被覆の穴と、
 Koszul双対のFrobenius条件を次に調べる。
 
 各始点$i$の関係$R_{i,i+d}$を$d=2,3,4,5$ごとに分ける。
@@ -106,6 +120,9 @@ AS添字7と語長Koszul性、H=Sは既に証明した。残るのは重み別�
 既知代数を誤って候補に混ぜない。標準型の全体被覆を黙って仮定しない。
 
 \paragraph{P3：対角族の同型。}
+graded部分の三角形同型と、語長二次部分の線型な同型存在判定は
+\path{papers/graded_ore_classification.tex}にある。
+残る課題は裸の添字保持同型による追加の同一視である。
 まず$q_{01}=q_{02}=q_{03}=1$へ正規化し、
 $q_{12},q_{13},q_{23}$に残る重み1の二生成元の交換・$\mathrm{GL}_2$作用を調べる。
 一般パラメータでのモノミアル性を証明し、等しい固有値などの例外locusを別枝に残す。
@@ -123,10 +140,12 @@ degree 1 del Pezzoの反標準環・重み6の超曲面、$E_8$量子化との�
 この条件を失うRees代数は比較対象としてノートへ置き、本対象の例としない。
 
 \section{公表原稿と再現可能性}
-公表を目指す証明付きの最初の短報は\path{papers/weighted_ore_strata.tex}に置く。
-今後、これが他の既存のOre結果と文献上で重複するかを一次資料で精査する。
+段階的Ore表示による仮定付きgraded分類の証明は
+\path{papers/graded_ore_classification.tex}に置く。
+対角部分の表示空間の成分分解は\path{papers/weighted_ore_strata.tex}に置く。
+これらと既存のOre結果の文献上の重複は一次資料で引き続き精査する。
 研究用の総合原稿は\path{nc-p1123.tex}一編に、定義、同型の線型化、7周期と有限表示、
-二つの基準族、不変分岐を論理順に収める。
+二つの基準族、不変分岐、仮定付きgraded分類の適用範囲を論理順に収める。
 独立した新しい中心定理が得られるまでは論文を細分化しない。
 既知のAKO族や一般Ore手法は明示的に引用し、独自の分類成果と区別する。
 初期の命題の新規性の最終確認は未了であり、現段階を投稿可能な完成稿とはしない。

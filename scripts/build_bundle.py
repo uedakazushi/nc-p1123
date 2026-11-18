@@ -13,7 +13,8 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PDFS = ("plan_ja.pdf", "nc-p1123.pdf", "notes_ja.pdf", "weighted_ore_strata.pdf")
+PDFS = ("plan_ja.pdf", "nc-p1123.pdf", "notes_ja.pdf",
+        "weighted_ore_strata.pdf", "graded_ore_classification.pdf")
 
 
 def git(*args):

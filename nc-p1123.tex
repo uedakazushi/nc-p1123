@@ -26,7 +26,7 @@
 \title{非可換重み付き射影空間\texorpdfstring{$\mathbb P(1,1,2,3)$}{P(1,1,2,3)}の分類に向けて\\
 \large AS添字の強制・七窓表示・二つの基準族}
 \author{}
-\date{2026年11月18日\quad 研究原稿 v2\\
+\date{2026年11月18日\quad 研究原稿 v3\\
 \small 完全分類および新規性の最終確認は未完成}
 \begin{document}
 \maketitle
@@ -43,6 +43,8 @@ Frobenius traceから7周期性を示し、幾何学的同型類を有限七窓�
 全パラメータでの正則性と、族内の二つの添字保持同型類を直接証明する。
 重み4関係の$zz$成分への射影階数は同型不変であり、
 非零Ore族が全対角量子族の外にあることを示す。
+さらに複素数体上のnoetherianなgraded代数で、最小生成元次数とHilbert級数を指定した部分について、
+段階的Ore表示の網羅定理とgraded同型の記述を別稿から収録する。
 一般七窓の正則性判定、標準Hilbert級数の強制性、全同型・成分分類は未解決である。
 \end{abstract}
 \tableofcontents
@@ -83,7 +85,7 @@ Lu--Palmieri--Wu--Zhang\cite{LPWZ}の二つの次数1生成元を持つ四次元
 このため本稿ではHilbert級数だけで対象を定義しない。
 
 現在の原稿の寄与は、指定した分類問題の厳密な設定、重み付き七窓への還元、
-初期族の同型の分離と再現可能な計算である。
+初期族の同型の分離と再現可能な計算、追加仮定付きgraded部分のOre分類との接続である。
 これらの個別結果の完全な文献上の新規性確認、および全分類は未完成である。
 
 \section{分類対象と二つの次数}
@@ -600,8 +602,63 @@ $\rho_i=1$の全標準対象の分類ではない。
 全ファイバーの正則性と関係の$zz$射影階数による非同型性を含め、
 完全な証明は独立した公表用短報\path{papers/weighted_ore_strata.tex}に置く。
 これらは表示空間の成分であり、全モジュライの成分とは主張しない。
+\section{次数付き部分の段階的Ore分類}
+この節では基礎体を$\mathbb C$とし、重みを保つgraded同型を用いる。
+以下の定理の対象は、語長二次性を仮定しないgraded代数である。
+そのうち語長二次表示を持つものの付随$\ZZ$-代数が、
+$\mathcal H$の1周期的な部分を与える。
+
+\begin{theorem}[追加仮定付きgraded分類]\label{thm:graded-ore-summary}
+$A$を連結・局所有限・左右noetherianな四次元AS正則graded $\mathbb C$-代数とし、
+最小生成元次数を$(1,1,2,3)$、Hilbert級数を
+\[
+H_A(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}
+\]
+とする。このとき、次数1の二生成元$x,y$からなる量子平面またはJordan平面$B$と、
+次数2、3の最小生成元$z,w$を選び、
+\[
+A=B[z;\sigma,\delta][w;\tau,D]
+\]
+と表せる。ここで$\sigma$は$B$のgraded自己同型、$\delta$は次数2の$\sigma$-導分、
+$\tau$は$C=B[z;\sigma,\delta]$のgraded自己同型、$D$は次数3の$\tau$-導分である。
+逆に、これらのデータから作る全ての代数が上の仮定を満たす。
+\end{theorem}
+証明は\path{papers/graded_ore_classification.tex}の
+\texttt{thm:ore-exhaustion}にある。
+最小解消の双対性から関係の両側の係数階数を求め、
+指定Hilbert級数を用いて順序単項式の独立性を示す。
+正則性の逆向きには\cite[Theorem~3.3]{LWW}を適用し、成長条件をPBW基底で確認する。
+
+同稿の\texttt{thm:coefficient-data}は許容データを有限の係数条件で記述し、
+\texttt{thm:graded-isomorphisms}は全graded同型を
+\[
+u\longmapsto\varphi(u)\quad(u=x,y),\qquad
+z\longmapsto\alpha z'+a_2,\qquad
+w\longmapsto\beta w'+b_3
+\]
+とその必要十分条件で与える。
+ここで$\varphi:B\simeq B'$、$\alpha,\beta\in\mathbb C^\times$、
+$a_2\in B'_2$、$b_3\in C'_3$である。
+中心的な次数3最小生成元を選べる場合は$A=C[w]$となる
+（同稿\texttt{cor:central-generator}）。
+
+語長二次表示に適合する生成元を選ぶと、
+$\delta=0$、$\tau|_B=\mu$、$\tau(z)=cz$、
+$D(x),D(y)\in\mathbb C z^2$、$D(z)=0$となる。
+この部分の全必要十分条件とgraded同型の存在判定は、同稿の
+\texttt{cor:quadratic-chart}、\texttt{prop:quadratic-isomorphisms}にある。
+対角性を仮定しないため、可換平面・$q=-1$の量子平面・Jordan平面の
+非対角自己同型も含む。量子平面の上で両自己同型を対角に制限すると、前節の四係数式を回収する。
+
+定理\ref{thm:graded-ore-summary}のnoetherian性とHilbert条件は
+$\mathcal Q$全体に加えた仮定ではなく、この節の適用範囲である。
+また裸の添字保持同型ではZhang twistも同一視されるため、
+上のgraded同型条件だけから全indexed同型の商は得られない。
 \section{残る課題と検証の範囲}
 最優先は一般七窓の構造分岐と正則性判定である。
+複素数体上のnoetherianなgraded部分で所期のHilbert級数を持つものは、
+前節の非対角の場合を含むOre表示で尽くされる。
+この適用範囲の外の候補と、裸の添字保持同型による追加の同一視を調べる。
 各$\rho$パターンの中で重み2の関係の階数、重み3の二経路への射影を調べる。
 有限双対のFrobenius性とKoszul複体の正確性を独立に扱い、
 一般点だけでなく例外値まで含む被覆を求める。

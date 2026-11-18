@@ -1,12 +1,13 @@
 {
   "date": "2026-11-18",
-  "version": 2,
+  "version": 3,
   "generated": {
     "main_manuscript": true,
     "research_plan": true,
     "research_notes": true,
     "calculation_code": true,
-    "exact_certificate": true
+    "exact_certificate": true,
+    "graded_ore_manuscript": true
   },
   "mathematics": {
     "proofs_written": [
@@ -22,13 +23,34 @@
       "RHO-SPLIT",
       "SKEW-ORE-COND",
       "ORE-PARAM-COMP",
-      "ORE-SWAP"
+      "ORE-SWAP",
+      "GRADED-ORE",
+      "GRADED-ORE-DATA",
+      "GRADED-ORE-ISOM",
+      "QUADRATIC-GRADED-ORE"
     ],
-    "logical_review": "Initial propositions and general AS-index reduction checked by independent mathematical readings; not formalization or external peer review",
+    "logical_review": "The new graded Ore manuscript received a separate full mathematical reading and a separate reconstruction of its core exhaustion proof. Existing general Z-algebra claims were preserved and were not reaudited in this update. These are AI-assisted readings, not formalization or external peer review.",
     "formalized": false,
     "peer_reviewed": false,
     "novelty_confirmed": false,
-    "complete_classification": false
+    "complete_classification": false,
+    "graded_ore_review": {
+      "scope": "Connected locally finite left/right noetherian graded C-algebras, AS dimension 4, minimal degrees (1,1,2,3), and prescribed Hilbert series; graded isomorphisms.",
+      "status": "independent_full_reading_completed",
+      "checked": [
+        "AS duality and resolution shifts",
+        "plane embedding in a division ring",
+        "dual-resolution coefficient lemma and invariance under lifts",
+        "cubic projection ranks and first automorphism invertibility",
+        "Hilbert-series proof of PBW and final Ore structure",
+        "reverse construction and graded Ext from the cited ungraded theorem",
+        "finite coefficient equations",
+        "necessity and sufficiency of all triangular graded isomorphisms",
+        "word-quadratic specialization and linear isomorphism-existence test"
+      ],
+      "primary_sources": "LPWZ Lemmas 1.1 and 1.3; LWW Theorem 3.3, Lemma 1.3, sections 1.2 and 1.3, and the precise short-exact-sequence statement of Remark 2.2; Sierra Theorem 1.2.",
+      "limitations": "No formal proof assistant, external peer review, novelty determination, or claim that this solves the full indexed classification."
+    }
   },
   "exact_computation": {
     "command": "python3 computations/weighted_baseline.py",
@@ -69,53 +91,97 @@
   },
   "typesetting": {
     "engine": "LuaHBTeX 1.24.0 (TeX Live 2026), LuaLaTeX with LuaTeX-ja and HaranoAji",
+    "latexmk": "4.89",
     "status": "passed",
     "pdf_generated": true,
     "commands": [
       "latexmk -lualatex nc-p1123.tex",
       "latexmk -lualatex research/plan_ja.tex",
-      "latexmk -lualatex research/notes_ja.tex"
+      "latexmk -lualatex research/notes_ja.tex",
+      "latexmk -lualatex papers/weighted_ore_strata.tex",
+      "latexmk -lualatex papers/graded_ore_classification.tex"
     ],
     "documents": [
       {
         "source": "nc-p1123.tex",
         "pdf": "nc-p1123.pdf",
-        "pages": 11,
-        "source_sha256": "52887c949d56f3925116822e8a80e52a1b5fa3831ca79386d20a90d10c86956c",
-        "pdf_sha256": "39764c0b3501207315e68ffdb68e9a9bfb8d4c25c4f6a284f2706552e26476a1"
+        "pages": 12,
+        "source_sha256": "f4468d9d4c25cacd06004c37cfd51c66d337792ab445571d206ea96412a5d7b3",
+        "pdf_sha256": "8efe67e2c4cc287652ea8339cd6c8b80f2a714edee1ff7ac80afab123b4316fa",
+        "diagnostics": {
+          "overfull": false,
+          "underfull": false,
+          "missing_character": false,
+          "undefined_reference": false,
+          "duplicate_destination": false
+        }
       },
       {
         "source": "research/plan_ja.tex",
         "pdf": "plan_ja.pdf",
         "pages": 4,
-        "source_sha256": "7e371eba2bb0d8824c6f70231fe5a17ed3730a67cca1c4a632a5866d69a1daf3",
-        "pdf_sha256": "ab6acbbe3f935172f3d1e295437eaf7fdf82403c10b0b437839b6c09c00bc556"
+        "source_sha256": "f212045469b2f70fd8502e55bc69aca7cc28ec48cc15c3fc46177c1d71e82b33",
+        "pdf_sha256": "97e8cb7b77a86d296954dbd676e48a34b6b615893e5a412afbbe91a599c0d2e7",
+        "diagnostics": {
+          "overfull": false,
+          "underfull": false,
+          "missing_character": false,
+          "undefined_reference": false,
+          "duplicate_destination": false
+        }
       },
       {
         "source": "research/notes_ja.tex",
         "pdf": "notes_ja.pdf",
-        "pages": 3,
-        "source_sha256": "526e8f9108be4d8c5b5e9310a79b5473450d051fbc484d2d105b0535a4328ffe",
-        "pdf_sha256": "7cf03c628552954b4cdc3ee5f80e03fc9722dbbf9453eb7eac46c07c093ad845"
+        "pages": 4,
+        "source_sha256": "0dd47d59943d5ee8ab3a46f04987ab3bb4d8e5953f63eedf3db403183199c58f",
+        "pdf_sha256": "3c88aa5d56de7bcb00435b511e969783b8c4cd1d7fb78c42d414ddb97499c8cb",
+        "diagnostics": {
+          "overfull": false,
+          "underfull": false,
+          "missing_character": false,
+          "undefined_reference": false,
+          "duplicate_destination": false
+        }
+      },
+      {
+        "source": "papers/weighted_ore_strata.tex",
+        "pdf": "weighted_ore_strata.pdf",
+        "pages": 5,
+        "source_sha256": "3aa69f17960955f2ed963d9a27a7c188960445c986955815ffff771ba6f9772a",
+        "pdf_sha256": "9fc9e59cc18b3af55b5c8845c01946713b817e0e045ffcd1c3dbb725d90227de",
+        "diagnostics": {
+          "overfull": false,
+          "underfull": false,
+          "missing_character": false,
+          "undefined_reference": false,
+          "duplicate_destination": false
+        }
+      },
+      {
+        "source": "papers/graded_ore_classification.tex",
+        "pdf": "graded_ore_classification.pdf",
+        "pages": 15,
+        "source_sha256": "2073ff881bd21c7e2ede7a2b6e3206b75e6e00bbbeafbfa6c45d3946fa508410",
+        "pdf_sha256": "9d27b2ac4cb4eeec1935c6af8968f550487b9c616fc9bccede80a837fbe9f6fd",
+        "diagnostics": {
+          "overfull": false,
+          "underfull": false,
+          "missing_character": false,
+          "undefined_reference": false,
+          "duplicate_destination": false
+        }
       }
     ],
     "visual_review": true,
-    "visual_review_scope": "All 18 pages inspected as rendered page sheets; final notes page additionally inspected at full-page scale after bibliography layout adjustment.",
-    "layout_and_reference_checks": "No overfull/underfull box, unresolved reference/citation, or missing-character diagnostic in final logs.",
-    "nonfatal_diagnostics": "Japanese-font scaling and feature messages; math font substitution up to 0.5pt; luatexja array-patch diagnostic. No resulting layout defect observed in rendered documents.",
-    "new_paper": {
-      "file": "papers/weighted_ore_strata.tex",
-      "output": "weighted_ore_strata.pdf",
-      "pages": 5,
-      "engine": "LuaLaTeX",
-      "status": "passed",
-      "visual_review": "all 5 pages rendered and inspected",
-      "remark": "The three earlier documents are not recompiled in this turn; the new independent short paper was compiled and visually inspected."
-    }
+    "visual_review_scope": "All 40 pages rendered with pdftoppm at 110 dpi and inspected as 2x2 page sheets. A separate agent inspected all 25 pages of the main manuscript, plan, notes and diagonal Ore paper; the primary agent inspected all 15 pages of the final graded Ore manuscript.",
+    "layout_and_reference_checks": "No overfull/underfull box, missing-character, unresolved reference/citation, or duplicate PDF destination diagnostic in the final logs. No clipping, overlap, missing glyph or broken table observed in the rendered pages.",
+    "nonfatal_diagnostics": "Japanese-font scaling/feature messages and unavailable italic Japanese font shapes retain the upright form; math font substitutions up to 0.5pt; luatexja array-patch diagnostic. No resulting visual defect observed."
   },
   "persistence": {
     "canonical": "GitHub uedakazushi/nc-p1123 main",
-    "verification": "New GitHub main push requires separate remote SHA confirmation. Library saving is separate and not inferred.",
+    "push_mode": "fast-forward update of main through the connected GitHub app; force=false",
+    "remote_verification_method": "Compare local HEAD with git ls-remote origin refs/heads/main after pushing.",
     "tracked_pdf": false
   }
 }
