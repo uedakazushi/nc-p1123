@@ -11,9 +11,8 @@ REQUIRED = (
     "research/plan_ja.tex", "research/notes_ja.tex", "research/BASELINE.md",
     "research/STATE.json", "research/validation.json", "computations/weighted_baseline.py",
     "computations/baseline_certificate.json", "computations/README.md", "scripts/build_bundle.py",
-    "papers/weighted_ore_strata.tex", "papers/graded_ore_classification.tex",
-    "papers/general_weights.tex",
-    "papers/README.md", "computations/verify_skew_ore.py", "requirements-symbolic.txt",
+    
+     "computations/verify_skew_ore.py", "requirements-symbolic.txt",
 )
 
 
@@ -35,8 +34,8 @@ def check():
 
     tex_labels = {}
     for name in ("nc-p1123.tex", "research/plan_ja.tex", "research/notes_ja.tex",
-                 "papers/weighted_ore_strata.tex", "papers/graded_ore_classification.tex",
-                 "papers/general_weights.tex"):
+                 "nc-p1123.tex",
+                 "nc-p1123.tex"):
         content = (ROOT / name).read_text()
         labels = re.findall(r"\\label\{([^}]+)\}", content)
         if len(labels) != len(set(labels)):

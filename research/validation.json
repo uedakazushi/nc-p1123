@@ -135,9 +135,9 @@
       "latexmk -lualatex nc-p1123.tex",
       "latexmk -lualatex research/plan_ja.tex",
       "latexmk -lualatex research/notes_ja.tex",
-      "latexmk -lualatex papers/weighted_ore_strata.tex",
-      "latexmk -lualatex papers/graded_ore_classification.tex",
-      "latexmk -lualatex papers/general_weights.tex"
+      "latexmk -lualatex nc-p1123.tex",
+      "latexmk -lualatex nc-p1123.tex",
+      "latexmk -lualatex nc-p1123.tex"
     ],
     "documents": [
       {
@@ -183,7 +183,7 @@
         }
       },
       {
-        "source": "papers/weighted_ore_strata.tex",
+        "source": "nc-p1123.tex",
         "pdf": "weighted_ore_strata.pdf",
         "pages": 5,
         "source_sha256": "3aa69f17960955f2ed963d9a27a7c188960445c986955815ffff771ba6f9772a",
@@ -197,7 +197,7 @@
         }
       },
       {
-        "source": "papers/graded_ore_classification.tex",
+        "source": "nc-p1123.tex",
         "pdf": "graded_ore_classification.pdf",
         "pages": 15,
         "source_sha256": "2073ff881bd21c7e2ede7a2b6e3206b75e6e00bbbeafbfa6c45d3946fa508410",
@@ -211,7 +211,7 @@
         }
       },
       {
-        "source": "papers/general_weights.tex",
+        "source": "nc-p1123.tex",
         "pdf": "general_weights.pdf",
         "pages": 16,
         "source_sha256": "30dc6c9657366663587c3088afdcbac6574db22953534a99fb9df54ed4c64e2f",

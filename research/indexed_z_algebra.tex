@@ -1,0 +1,739 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage[haranoaji]{luatexja-preset}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{remark}[theorem]{注意}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\GG}{\mathbb G}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\Per}{\operatorname{Per}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\NF}{\operatorname{NF}}
+\newcommand{\qgr}{\operatorname{qgr}}
+\title{非可換重み付き射影空間\texorpdfstring{$\mathbb P(1,1,2,3)$}{P(1,1,2,3)}の分類に向けて\\
+\large AS添字の強制・七窓表示・二つの基準族}
+\author{}
+\date{2026年11月18日\quad 研究原稿 v4\\
+\small 完全分類および新規性の最終確認は未完成}
+\begin{document}
+\maketitle
+\begin{abstract}
+最小生成元の重みが$(1,1,2,3)$で、関係が語長二次かつ重み付き斉次である
+四次元AS正則$\ZZ$-代数の添字保持同型による分類を定式化する。
+広い対象について、AS双対性と多項式増大から語長Koszul性とAS添字7を導く。
+Frobenius traceから7周期性を示し、幾何学的同型類を有限七窓の関係データへ還元する。
+所期のHilbert級数を持つことと、標準重み付き解消を持つことは同値である。
+最小正周期は1または7だが、最小周期7の例の存在は未決定である。
+
+既知の対角量子多項式族では、重み付きZhang twistによる6係数から3係数への
+正規化を記述する。さらに$[t,x]=az^2$, $[t,y]=bz^2$を持つOre族について、
+全パラメータでの正則性と、族内の二つの添字保持同型類を直接証明する。
+重み4関係の$zz$成分への射影階数は同型不変であり、
+非零Ore族が全対角量子族の外にあることを示す。
+さらに複素数体上のnoetherianなgraded代数で、最小生成元次数とHilbert級数を指定した部分について、
+段階的Ore表示の網羅定理とgraded同型の記述を別稿から収録する。
+一般七窓の正則性判定、標準Hilbert級数の強制性、全同型・成分分類は未解決である。
+\end{abstract}
+\tableofcontents
+
+\section{問題の位置づけと先行研究}
+本稿では$k$を標数零の代数閉体とする。
+重み付き多項式環$k[x,y,z,t]$に
+$\deg(x,y,z,t)=(1,1,2,3)$を与えたものを可換基準とする。
+語長を別に数えると、$tx$と$z^2$はともに語長2、重み4である。
+この二つの次数を分けることが、通常の四次元二次AS正則代数との比較の出発点となる。
+
+Auroux--Katzarkov--Orlov\cite[\S2, Proposition 2.6]{AKO}は、任意の重みの
+対角量子多項式環を扱い、そのAS正則性とGorenstein parameterが重みの和となることを証明した。
+同論文Theorem 2.12の例外生成列は、今回の対角族では
+$\mathcal O,\ldots,\mathcal O(6)$の7項となる。
+また、可換重み付き環の$\qgr$は重み付き射影\emph{スタック}の連接層の圏に対応する
+\cite[Proposition 2.3, Corollary 2.4]{AKO}。
+本稿はこれらを既知の基準族とし、全対象が対角族で尽くされるとは仮定しない。
+
+$\ZZ$-代数の一般的な設定と1周期性はVan den Bergh\cite[\S3--4]{VdB}に従う。
+graded代数$B$に対応する$\check B$を考えると、Sierra\cite[Theorem 1.2]{Sierra}により
+Zhang twistは既に$\check B$の同型として同一視される。
+したがってgraded同型類、指定周期構造付きの同型類、裸の添字保持同型類、
+$\qgr$同値を分ける必要がある。
+
+AS双対性からExt圏がFrobeniusとなる一般原理は
+Mart\'inez-Villa--Solberg\cite[Theorem 6.2]{MVS}にある。
+本稿では必要な有限射影解消の議論を重み付き添字のまま記述し、
+語長二次性と多項式増大によってAS添字を7に絞り、7移動と有限表示を導く。
+一般的なKoszul--Frobenius原理そのものを新規結果とはしない。
+Ore拡大の正則性にはLiu--Wang--Wu\cite[Theorem 3.3]{LWW}の一般理論も使えるが、
+本稿の具体的族では二次双対とtraceを明示し、仮定を直接確認する。
+
+同じHilbert級数を持つ代数が同じ分類対象であるとは限らない。
+Lu--Palmieri--Wu--Zhang\cite{LPWZ}の二つの次数1生成元を持つ四次元正則代数では、
+関係次数が3と4で、解消のBetti型は$(1,2,2,2,1)$となる。
+そのHilbert級数は本稿の標準型と一致するが、最小生成元と語長二次性が異なる。
+このため本稿ではHilbert級数だけで対象を定義しない。
+
+現在の原稿の寄与は、指定した分類問題の厳密な設定、重み付き七窓への還元、
+初期族の同型の分離と再現可能な計算、追加仮定付きgraded部分のOre分類との接続である。
+これらの個別結果の完全な文献上の新規性確認、および全分類は未完成である。
+
+\section{分類対象と二つの次数}
+正連結で局所有限な$\ZZ$-代数$A$は
+\[
+A_{ii}=k,\qquad A_{ij}=0\quad(i>j),\qquad
+A_{ij}A_{j\ell}\subset A_{i\ell}
+\]
+を満たす。$I=A_+=\bigoplus_{i<j}A_{ij}$、$V=I/I^2$と置く。
+添字差$j-i$を重みと呼ぶ。$P_i=e_iA$、$S_i=P_i/P_iI$、
+$L_i=Ae_i/IAe_i$を、それぞれ右射影・右単純・左単純加群とする。
+
+\begin{definition}[広い対象]\label{def:target}
+$\mathcal Q$は次を満たす$A$の添字保持同型類の集合とする。
+\begin{enumerate}
+\item 各$i$で$\dim V_{i,i+1}=2$, $\dim V_{i,i+2}=\dim V_{i,i+3}=1$、
+それ以外の$V_{ij}$は零である。
+\item 添字を保つ語長斉次二次表示
+$A\simeq T_{\ZZ}(V)/(R)$, $R\subset V\otimes_{\ZZ}V$を持つ。
+ここで$V\to I$の持上げは表示の選択であり、分類に固定しない。
+\item 左右のglobal dimensionは4、各単純加群は有限生成射影による有限解消を持ち、
+行・列の累積次元は多項式的に増大する。
+\item ある添字の全単射$\ell:\ZZ\to\ZZ$について
+$\Ext_A^p(S_i,A)=0$ ($p\ne4$),
+$\Ext_A^4(S_i,A)\simeq L_{\ell(i)}$であり、左側にも対応するAS双対性がある。
+\end{enumerate}
+比較のため、各行Hilbert級数が
+$((1-t)^2(1-t^2)(1-t^3))^{-1}$となる部分を$\mathcal H\subseteq\mathcal Q$とする。
+\end{definition}
+添字を一括して移動した対象で割ることはしない。
+またdomain、noetherian、PBW、CY、1周期性を定義に追加しない。
+語長斉次表示を選ぶと$A$は語長$n$と重み$d$の二変数次数を持つ。
+重み付き斉次であっても語長の混じる関係は、本稿のquadratic条件には含めない。
+
+\begin{definition}[標準重み付きKoszul型]\label{def:standard}
+$\mathcal S$は$\mathcal Q$のうち、語長に関してKoszulであり、
+ASの添字移動が$\ell(i)=i+7$で、各右単純加群に次の最小解消があるものとする。
+\begin{equation}\label{eq:resolution}
+\begin{gathered}
+0\longrightarrow P_{i+7}\longrightarrow
+P_{i+4}\oplus P_{i+5}\oplus P_{i+6}^{\oplus2}\longrightarrow
+P_{i+2}\oplus P_{i+3}^{\oplus2}\oplus P_{i+4}^{\oplus2}\oplus P_{i+5}\\
+\longrightarrow P_{i+1}^{\oplus2}\oplus P_{i+2}\oplus P_{i+3}
+\longrightarrow P_i\longrightarrow S_i\longrightarrow0.
+\end{gathered}
+\end{equation}
+ホモロジー次数$p$の項の生成元は語長$p$に置く。
+左側にも対応する解消とAS双対性を要求する。
+\end{definition}
+
+\begin{proposition}[数値型]\label{prop:hilbert}
+$A\in\mathcal S$の各行の二変数Hilbert級数は
+\[
+H_i(u,t)=\frac{1}{(1-ut)^2(1-ut^2)(1-ut^3)}.
+\]
+従って$\mathcal S\subseteq\mathcal H$である。
+\end{proposition}
+\begin{proof}
+解消\eqref{eq:resolution}のEuler和の係数は、$w=(1,1,2,3)$について
+\[
+\prod_{r=0}^3(1-ut^{w_r})
+=1-u(2t+t^2+t^3)+u^2(t^2+2t^3+2t^4+t^5)
+-u^3(t^4+t^5+2t^6)+u^4t^7
+\]
+となる。まだ行が同じであると仮定してはいけない。
+Euler等式は$H_i$を正の重みだけ先に進んだ行$H_{i+d}$の低い係数から決める。
+定数項は全て1であるため、重みに関する帰納法により全行の係数は一致し、
+上の多項式を逆数に持つ。$u=1$とすれば主張を得る。
+\end{proof}
+特に
+\[
+H(t)^{-1}=1-2t+t^3+t^4-2t^6+t^7.
+\]
+この一変数式では生成元と関係等の寄与が相殺される。
+これを逆に読んで最小解消を一意に復元することはできない。
+後の系\ref{cor:hilbert-standard}で$\mathcal S=\mathcal H$を示す。
+$\mathcal H=\mathcal Q$は本稿では証明していない。
+
+\section{同型の線型化}
+\begin{proposition}\label{prop:linearization}
+$A=T_{\ZZ}(V)/(R)$と$B=T_{\ZZ}(W)/(R')$を、正の重みを持つ語長斉次二次表示とする。
+$A\simeq B$が添字保持同型として成立することと、各$V_{ij}\to W_{ij}$の線型同型が存在し、
+誘導される二次テンソル写像が$R$を$R'$へ移すことは同値である。
+\end{proposition}
+\begin{proof}
+添字保持同型は$A_+$とその全ての冪を保つ。
+語長斉次表示では$I^n=\bigoplus_{m\geq n}A^{(m)}$なので、選んだ表示から
+$\gr_I A\simeq A$を得る。各添字成分では語長は重み以下であり、この等式に完備化は不要である。
+同型に付随次数を取れば語長を保つ同型を得て、その語長1部分が所要の線型写像となる。
+語長2の積の核を取れば関係も対応する。
+逆はテンソル代数の普遍性と、関係イデアルが二次関係で生成されることによる。
+\end{proof}
+
+\begin{remark}
+この命題は同型の\emph{存在}についての主張であり、全ての同型が線型とは言っていない。
+例えば可換例では$z\mapsto z+x^2$が重みを保つ自己同型である。
+従って線型群作用の商群oidを、非線型自己同型も持つ裸の代数のmoduli stackと同一視しない。
+\end{remark}
+
+\section{AS添字7の強制と七周期}
+\subsection{AS双対性からの完全対合}
+前向きの規約で$E_{ij}^p=\Ext_A^p(S_i,S_j)$とする。
+この段階では$A\in\mathcal Q$とし、Koszul性や一定のAS添字を仮定しない。
+
+\begin{lemma}\label{lem:frobenius}
+$A\in\mathcal Q$についてYoneda積
+\[
+E_{ij}^p\otimes E_{j,\ell(i)}^{4-p}\longrightarrow E_{i,\ell(i)}^4\simeq k
+\]
+は完全対合である。
+\end{lemma}
+\begin{proof}
+有限生成右射影による解消$P_\bullet\to S_i$を取る。
+AS条件により$\Hom_A(P_\bullet,A)$は、次数4の$L_{\ell(i)}$以外にコホモロジーを持たない。
+有限生成射影性から、有限次元右加群$M$について複体の自然同型
+\[
+\Hom_A(P_\bullet,M)\simeq M\otimes_A\Hom_A(P_\bullet,A)
+\]
+がある。後者の第二因子を左射影解消として読むと
+\[
+\Ext_A^p(S_i,M)\simeq\Tor_{4-p}^A(M,L_{\ell(i)}).
+\]
+体上の双対$D=\Hom_k(-,k)$を取り、$DL_{\ell(i)}=S_{\ell(i)}$を用いれば
+\[
+D\Ext_A^p(S_i,M)\simeq\Ext_A^{4-p}(M,S_{\ell(i)})
+\]
+を得る。この双対性は自然で、積に関してはYoneda合成に対応する。
+実際、$p=0$, $M=S_i$で恒等射に対応するtop Extの線型汎関数をtraceと取り、
+拡大の連結に関する自然性で一般の$p$へ移せば、所要の積対合となる。
+$M=S_j$として主張を得る。一般的なExt圏のFrobenius性とも一致する\cite[Theorem 6.2]{MVS}。
+\end{proof}
+
+\begin{proposition}[語長Koszul性と一定のAS添字]\label{prop:general-koszul}
+$A\in\mathcal Q$は語長Koszulであり、ある正整数$L$について$\ell(i)=i+L$となる。
+さらに$A\simeq A(L)$が成立する。ここで$A(s)_{ij}=A_{i+s,j+s}$である。
+\end{proposition}
+\begin{proof}
+語長斉次二次表示を選び、Extに最小syzygyの語長次数を付ける。
+$E^1$は語長1、$E^2$は語長2に集中する。
+各単純加群の射影次元は4なので各行の$E^2$は非零である。
+一次元のtop Extの語長を$m_i$とすると、非零の$E^2_{ij}$とその完全対合相手との積から
+$m_i=2+2=4$を得る。$E^3$と$E^1$の完全対合も語長を加えるため、
+$E^3$は語長3に集中する。従って最小解消は語長線型、すなわちKoszulである。
+
+非零trace $\lambda_i:E_{i,\ell(i)}^4\to k$を選ぶ。
+補題\ref{lem:frobenius}を二度用いると、$a\in E_{ij}^p$に対し
+\begin{equation}\label{eq:nakayama}
+\lambda_i(ab)=\lambda_j\bigl(bN_{ij}(a)\bigr)
+\quad\bigl(b\in E_{j,\ell(i)}^{4-p}\bigr)
+\end{equation}
+を満たす線型同型$N_{ij}:E_{ij}^p\to E_{\ell(i),\ell(j)}^p$が一意に存在する。
+各行の$E^1$で次元2の成分はjump 1だけなので、
+$\dim E^1_{\ell(i),\ell(i+1)}=2$から$\ell(i+1)=\ell(i)+1$となる。
+従って$\ell(i)=i+L$である。top Extの語長は4、各生成元のjumpは正なので$L>0$である。
+
+$a\in E_{ij}^p$, $c\in E_{jh}^q$, $b\in E_{h,i+L}^{4-p-q}$に対し
+\[
+\lambda_i((ac)b)=\lambda_j((cb)N(a))
+=\lambda_h(bN(a)N(c))
+\]
+なので、完全対合により$N(ac)=N(a)N(c)$である。
+従って$N:E\simeq E(L)$は二次代数の同型である。
+Koszul性により$E=A^!$と同一視できる。
+全てのjump $1,2,3$の語長1部分で逆双対を取ると、
+直交関係を保存する写像から$A\simeq A(L)$が得られる。
+\end{proof}
+
+\begin{lemma}[二次元因子の区間]\label{lem:segment}
+各$U_0,\ldots,U_{n-1}$を二次元とし、隣接位置ごとの関係空間
+$D_j\subset U_j\otimes U_{j+1}$の次元を高々1とする。
+全テンソル積を関係挿入空間の和で割った空間の次元は2以上である。
+\end{lemma}
+\begin{proof}
+$U_0^*$で独立な二つの共変ベクトルを選ぶ。それぞれについて、
+既に選んだ非零$\alpha_j$に対し$(\alpha_j\otimes\alpha_{j+1})(D_j)=0$を満たす
+非零$\alpha_{j+1}$を帰納的に選ぶ。これは二次元空間で高々一本の線型条件だから可能である。
+得られた二つの分解可能テンソル汎関数は全関係挿入を消し、最初の因子が独立なので全体も独立である。
+\end{proof}
+
+\begin{theorem}[AS添字の強制]\label{thm:general-index}
+定義\ref{def:target}の全対象についてAS添字は$L=7$である。
+\end{theorem}
+\begin{proof}
+命題\ref{prop:general-koszul}により$E=A^!$は語長1で生成されるので、$E^3$の重みは3から9である。
+重み3と1の$E^1$の相補成分はそれぞれ$E^3$の重み$L-3$と$L-1$に非零で存在する。
+従って$6\leq L\leq10$である。
+
+$r_d(i)=\dim R_{i,i+d}=\dim E^2_{i,i+d}$と置く。
+$E^2$の重みは2から6で、完全対合から
+\begin{equation}\label{eq:relation-symmetry}
+r_d(i)=r_{L-d}(i+d)
+\end{equation}
+が成り立つ。$L\geq9$なら$r_2(i)=0$が全ての$i$で成立する。
+語長$n$・重み$n$の部分は全てjump 1の生成元からなり、
+重みが2より大きい二次関係はこの部分に入らない。
+従って$\dim A_{i,i+n}\geq2^n$となり、多項式増大に反する。
+
+$L=6$なら\eqref{eq:relation-symmetry}から$r_5=r_6=0$である。
+全てのjump 1生成元を零にし、さらに全ての$z_i z_{i+2}$を零にする商を取る。
+元の関係はこの商で全て消えるので、$zz$を禁止した$z,t$のモノミアル経路代数への全射を得る。
+重み8の二つのブロック$ztt,tzt$は、任意に連結しても$zz$を含まない。
+従って始点$i$から終点$i+8n$への独立な経路が$2^n$本あり、再び成長に反する。
+
+最後に$L=8$とする。重み6の二次経路空間は$tt$の一次元空間なので、
+\eqref{eq:relation-symmetry}から$r_2(i)=r_6(i+2)\leq1$である。
+完全対合による$E^3$の重みは$L-3,L-2,L-1=5,6,7$に限られる。
+もし$r_6(i)=r_6(i+3)=1$なら、非零テンソル
+$t_i\otimes t_{i+3}\otimes t_{i+6}$が$(R\otimes V)\cap(V\otimes R)$に入り、
+その双対である$E^3_{i,i+9}$が非零となって矛盾する。
+従って$r_6(i)+r_6(i+3)\leq1$、すなわち
+\[
+r_2(j)+r_2(j+3)\leq1
+\]
+である。よって連続する四つの関係位置には、必ず関係が零の位置がある。
+
+語長と重みが等しい部分を、その欠けた関係の位置で区切る。
+境界をまたぐ関係挿入はないので、商は区間ごとの商のテンソル積になる。
+他の重みの関係は「重みから語長を引いた差」が正なので、この部分に隠れた関係を作らない。
+語長$4m+1$では$4m$本の隣接辺のうち少なくとも$m$本の関係が零であり、
+補題\ref{lem:segment}により
+\[
+\dim A_{i,i+4m+1}\geq2^{m+1}
+\]
+となる。これも多項式増大に反する。残る可能性は$L=7$である。
+\end{proof}
+
+\begin{corollary}\label{cor:hilbert-standard}
+$\mathcal H=\mathcal S$である。すなわち$\mathcal Q$の対象が所期の重み付きHilbert級数を持つことと、
+標準重み付き最小解消を持つことは同値である。
+\end{corollary}
+\begin{proof}
+$\mathcal S\subseteq\mathcal H$は命題\ref{prop:hilbert}で示した。
+逆に$A\in\mathcal H$とすると、既にKoszul性と$L=7$が分かっているので、
+最小解消の第3項の重みは$4,5,6,6$、第4項は7となる。
+全行のHilbert級数が同じ$H(t)$であることをEuler等式に代入すれば
+\[
+\begin{aligned}
+\sum_d r_d(i)t^d
+&=H(t)^{-1}-1+(2t+t^2+t^3)+(t^4+t^5+2t^6)-t^7\\
+&=t^2+2t^3+2t^4+t^5.
+\end{aligned}
+\]
+従って関係数も標準型となる。Extの重み付き次元が始点によらなくなったため、
+対応する列の表も同じ型となり、左右の解消は定義\ref{def:standard}の型である。
+\end{proof}
+
+\subsection{七周期同型とtraceの選択}
+\begin{theorem}\label{thm:seven-period}
+定義\ref{def:target}の全対象$A$には添字保持同型$A\simeq A(7)$が存在し、
+最小正周期は1または7である。
+\end{theorem}
+\begin{proof}
+命題\ref{prop:general-koszul}と定理\ref{thm:general-index}から7周期同型を得る。
+$\Per(A)=\{s\in\ZZ:A\simeq A(s)\}$は、同型の平行移動・合成・逆により
+$\ZZ$の部分群である。$7\in\Per(A)$なので最小正元は7の正の約数、すなわち1または7である。
+\end{proof}
+この定理は最小周期7の対象の存在を主張しない。
+多項式増大と語長斉次二次性はAS添字7の証明で用いた仮定であり、省略していない。
+
+\begin{proposition}[標準周期構造の選択独立性]\label{prop:trace-choice}
+二つのtrace族から得た$\tau^\lambda$と$\tau^{\lambda'}$は、添字保持自己同型によって共役である。
+裸の$\mathcal Q$の対象が同型なら、任意のFrobenius標準7周期構造を付した組も同型となる。
+従って幾何学的同型類の集合では、標準周期構造の選択は余分な情報を加えない。
+\end{proposition}
+\begin{proof}
+$\lambda'_i=t_i\lambda_i$と書けば、\eqref{eq:nakayama}から
+$N^{\lambda'}_{ij}=(t_i/t_j)N^\lambda_{ij}$を得る。
+各剰余類$i\bmod7$で初期値を選び、$s_{i+7}/s_i=t_i$を正負両方向へ解く。
+$h^E_{ij}(a)=(s_i/s_j)a$は自己同型であり、
+\[
+h^E(7)N^\lambda(h^E)^{-1}=N^{\lambda'}
+\]
+が成り立つ。逆双対で$A$上の共役性を得る。
+裸の同型には命題\ref{prop:linearization}を適用し、線型化した同型の双対でtraceを移送する。
+\eqref{eq:nakayama}の一意性によって移送した周期構造は同型と両立し、
+他のtraceの選択は上の共役で補正できる。
+\end{proof}
+
+\section{関係の七窓による有限表示}
+まず標準型$\mathcal S$の場合を記す。
+$V_i^{(a)}=V_{i,i+a}$とし、$a=1,2,3$、$i\bmod7$で生成元空間を固定する。
+\[
+W_{i,d}=\bigoplus_{a+b=d}V_i^{(a)}\otimes V_{i+a}^{(b)}
+\]
+は、語長2・重み$d$の全経路空間である。
+\begin{center}
+\begin{tabular}{c|rrrrr}
+\toprule
+重み$d$ & 2 & 3 & 4 & 5 & 6\\
+\midrule
+$\dim W_{i,d}$ & 4 & 4 & 5 & 2 & 1\\
+$\dim R_{i,i+d}$ & 1 & 2 & 2 & 1 & 0\\
+関係Grassmannianの次元 & 3 & 4 & 6 & 1 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+従って七窓の表示空間と線型生成元変更群は
+\begin{align*}
+\mathfrak P_7&=\prod_{i=0}^{6}
+\left(\Gr(1,4)\times\Gr(2,4)\times\Gr(2,5)\times\Gr(1,2)\right),\\
+G_7&=\prod_{i=0}^{6}\left(\GL_2\times\GG_m^2\right),
+\qquad \dim\mathfrak P_7=98,\quad\dim G_7=42.
+\end{align*}
+各因子での作用は、$W_{i,d}$の経路ごとに
+$g_i^{(a)}\otimes g_{i+a}^{(b)}$を作用させるものである。
+
+\begin{theorem}[標準型の有限表示]\label{thm:finite-window}
+$\mathfrak X_7$を、$\mathfrak P_7(k)$のうち生成される$\ZZ$-代数が標準型であり、
+厳密な7移動があるtrace族から来る標準周期構造となる点の集合とする。
+標準型の裸の幾何学的同型類の集合は$\mathfrak X_7/G_7(k)$と全単射する。
+これは点集合についての主張であり、相対族の下降やmoduli stackの同定を含まない。
+\end{theorem}
+\begin{proof}
+標準周期同型を選び、始点$0,\ldots,6$で各jumpの生成元の基底を選ぶ。
+周期同型で全整数へ基底を延長すると関係データは厳密7周期となり、$\mathfrak X_7$の点を得る。
+逆に七窓の関係を整数頂点列上へ周期延長してテンソル代数を割れば対象を復元する。
+標準周期同型と可換する語長保存同型は七つの基底変更で決まる。
+裸の同型は命題\ref{prop:linearization}と命題\ref{prop:trace-choice}によって
+そのような同型へ補正できる。従って軌道は裸の同型類と一致する。
+\end{proof}
+
+一般の$\mathcal Q$についても、同じ議論は関係数を動かす有限和に適用できる。
+実際、$L=7$と\eqref{eq:relation-symmetry}より$r_6=0$、
+$0\leq r_2,r_5\leq2$、$0\leq r_3,r_4\leq4$であり、これらは7周期である。
+各許される階数表について$\prod_{i,d}\Gr(r_d(i),W_{i,d})$を取り、
+AS条件・成長条件・Frobenius標準周期条件を満たす点へ制限すれば、
+その有限和の$G_7(k)$軌道が一般対象の幾何学的同型類を与える。
+標準型の次元98の表示空間がこの有限和を尽くすかは未解決である。
+
+標準周期条件自体は有限対合行列で書ける。
+厳密7周期表示のもとで七つのtop空間のtraceを選び、厳密7移動によって全整数へ延長する。
+逆に標準周期が厳密移動と一致すれば、\eqref{eq:nakayama}をtop要素と恒等射に適用して
+$\lambda_{i+7}(N(a))=\lambda_i(a)$を得るため、この選び方で十分である。
+$u_\alpha\in E_{i,i+a}^1$、$v_\beta\in E_{i+a,i+7}^3$を基底とし、
+$u'_\gamma$を厳密7移動した基底とする。
+\[
+P_{i,a}=\bigl(\lambda_i(u_\alpha v_\beta)\bigr),\qquad
+Q_{i,a}=\bigl(\lambda_{i+a}(v_\beta u'_\gamma)\bigr).
+\]
+式\eqref{eq:nakayama}は$P_{i,a}^{\mathsf T}=Q_{i,a}N_{i,a}$となるため、
+標準周期条件は$P_{i,a}^{\mathsf T}=Q_{i,a}$である。
+\textbf{jump $a=1,2,3$を全て検査する。}
+jump 1だけの検査では重み2と3の生成元の移動を制御できない。
+
+\begin{remark}\label{rem:finite-not-koszul}
+語長$0,\ldots,5$における二次双対の次元表と相補積は有限線型代数で検査できる。
+語長5では重み15までを調べればよく、語長5の全ての積が零なら高い語長も零となる。
+しかしこの有限Frobenius検査だけでは元代数のKoszul複体の正確性は従わない。
+本稿は$\mathfrak X_7$の有限な必要十分方程式を完成させたとは主張しない。
+また$98-42=56$をモジュライ次元とはしない。
+\end{remark}
+
+\section{対角量子族と重み付きtwist}
+$w=(1,1,2,3)$、$q_{rs}\in k^*$ ($0\leq r<s\leq3$) として
+\[
+B(q)=k\langle x_0,x_1,x_2,x_3\rangle/
+(x_sx_r-q_{rs}x_rx_s)_{r<s}
+\]
+に重み$\deg x_r=w_r$を与える。
+これはAKO\cite[Proposition 2.6]{AKO}の既知の正則族である。
+全ての$k$-点で順序単項式$x_0^{n_0}\cdots x_3^{n_3}$を基底に持つ。
+三つの異なる添字$k>j>i$の重なりは、どちらの順で簡約しても
+$q_{ij}q_{ik}q_{jk}x_ix_jx_k$となる。
+二次双対は量子外積代数で、相補単項式の積係数は非零なのでFrobeniusである。
+従って$\check B(q)$は標準型に属する。
+
+\begin{proposition}[対角twistの正規化]\label{prop:twist-normalization}
+対角自己同型$\sigma(x_r)=\lambda_r x_r$による重み付きZhang twistを
+$a*b=a\sigma^{\deg a}(b)$で定義すると
+\[
+q'_{rs}=q_{rs}\frac{\lambda_r^{w_s}}{\lambda_s^{w_r}}.
+\]
+この作用の軌道は、次の三つのLaurent単項式で完全に記述される。
+\begin{equation}\label{eq:three-invariants}
+r_{12}=\frac{q_{01}^2q_{12}}{q_{02}},\qquad
+r_{13}=\frac{q_{01}^3q_{13}}{q_{03}},\qquad
+r_{23}=\frac{q_{02}^3q_{23}}{q_{03}^2}.
+\end{equation}
+特に各対角族の$\ZZ$-代数は、$q_{01}=q_{02}=q_{03}=1$で、
+残りの係数が$(r_{12},r_{13},r_{23})$であるものと同型である。
+\end{proposition}
+\begin{proof}
+$x_s*x_r=\lambda_r^{w_s}q_{rs}x_rx_s$と
+$x_r*x_s=\lambda_s^{w_r}x_rx_s$を比較すると変換式を得る。
+$\lambda_0=1$, $\lambda_j=q_{0j}$ ($j=1,2,3$) と選べば最初の三係数は1となり、
+残りは\eqref{eq:three-invariants}となる。
+変換式への代入でこれらが不変であることが分かり、同じ三係数を持つ二点は
+同じ正規化へ移るので軌道の完全不変量である。
+
+さらに$a\in B(q)_{j-i}$に対して
+$\phi_{ij}(a)=\sigma^i(a)$と置けば、
+$\sigma^i(a\sigma^{j-i}(b))=\sigma^i(a)\sigma^j(b)$より
+$\check{B(q)^\sigma}\simeq\check B(q)$を得る。
+従って正規化は添字保持同型も与える。
+\end{proof}
+
+\begin{remark}
+命題は\emph{指定した対角twist作用}の完全不変量を述べる。
+同重みの$x_0,x_1$の交換・一般線型変更や特殊値での同型をまだ除いていない。
+従って三係数の相異が全てのindexed同型に関する非同型を意味するとは限らない。
+6係数は同型類像の次元6を与えず、現段階では像の次元3も確定していない。
+\end{remark}
+
+\section{非対角Ore族と最初の不変分岐}
+\subsection{全パラメータでの正則性}
+\begin{theorem}\label{thm:ore}
+$a,b\in k$として
+\[
+A_{a,b}=k\langle x,y,z,t\rangle/
+\left(yx-xy,\ zx-xz,\ zy-yz,\ tx-xt-az^2,\ ty-yt-bz^2,\ tz-zt\right)
+\]
+に重み$(1,1,2,3)$を与える。この族の全てのファイバーは語長Koszulで、
+四次元AS正則、AS添字7であり、$\check A_{a,b}$は標準型に属する。
+族内の添字保持同型類は$\check A_{0,0}$と$\check A_{1,0}$のちょうど二つである。
+後者は、どの対角量子多項式$\ZZ$-代数とも同型でない。
+\end{theorem}
+\begin{proof}[正則性の証明]
+$k[x,y,z]$上の導分$\delta(x)=az^2$, $\delta(y)=bz^2$, $\delta(z)=0$を使うと
+$A_{a,b}=k[x,y,z][t;\delta]$である。
+順序$t>z>y>x$のdegree-lex順で六関係を簡約規則として向けると、全ての右辺の項は左辺より小さい。
+包含曖昧性はなく、重なりは次の四つで尽くされる。
+\begin{center}
+\begin{tabular}{c|l}
+\toprule
+語 & 左右の共通の正規形\\
+\midrule
+$zyx$ & $xyz$\\
+$tyx$ & $xyt+ayz^2+bxz^2$\\
+$tzx$ & $xzt+az^3$\\
+$tzy$ & $yzt+bz^3$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Diamond lemma\cite[Theorem 1.2]{Bergman}により$x^\alpha y^\beta z^\gamma t^\delta$が基底となる。
+二次Gr\"obner基底を持つので、語長についてKoszulである\cite[Theorem 5.3]{Priddy}。
+
+二次双対$E=A_{a,b}^!$を直接計算する。
+生成元を$X,Y,Z,T$とすると、異なる生成元は反可換であり、
+\begin{equation}\label{eq:ore-dual}
+X^2=Y^2=T^2=0,\qquad Z^2=aXT+bYT
+\end{equation}
+である。例えば$Z^2+aTX+bTY$は六つの原関係に直交し、
+反可換関係と合わせて\eqref{eq:ore-dual}を得る。
+全16次元の二次テンソル空間で、原関係は6次元なので、これら10本の独立関係で双対を尽くす。
+
+$C=\Lambda(X,Y,T)$とし、$\sigma$をparity自己同型とする。
+$c=(aX+bY)T$は$C$の偶中心元で$\sigma(c)=c$だから
+\[
+E\simeq C[Z;\sigma]/(Z^2-c).
+\]
+$Z^2-c$は中心的なmonic多項式なので割算により$C$上で$1,Z$が基底となる。
+従って
+$X^\epsilon Y^\eta Z^\theta T^\kappa$ ($\epsilon,\eta,\theta,\kappa\in\{0,1\}$)
+が$E$の基底で、語長次元は$(1,4,6,4,1)$、topの重みは7である。
+
+$XYZT$の係数を取るtraceを考える。
+二つの基底単項式の積に$Z$が二度現れれば、\eqref{eq:ore-dual}で$Z$が消え、top係数は零となる。
+それ以外の積は外積代数と同じ相補単項式対合を与える。
+よって各語長$p$と$4-p$の積対合は完全であり、重みも$d$と$7-d$を対にする。
+従って$E$はFrobeniusである。
+
+Koszul複体は正確で、その項は$E^*$から与えられる。
+このFrobenius対合でKoszul複体の双対を反転した複体と同一視すると、
+左右のAS双対性を得る。Koszul双加群解消も長さ4なのでglobal dimensionは4以下であり、
+$E^4\ne0$よりちょうど4となる。
+topの重みからAS添字は7である。基底単項式により成長は多項式的であり、
+各シフトは\eqref{eq:resolution}と一致する。
+connected graded代数のKoszul--Frobenius判定\cite[Corollary D]{LPWZKoszul}の具体例でもある。
+同文献のAS定義に含まれない多項式成長は、ここではPBW基底から別途確認した。
+同型についての残りの主張は次の命題から従う。
+\end{proof}
+
+\subsection{関係の射影階数}
+\begin{proposition}\label{prop:rho}
+語長斉次二次表示を持つ対象について、
+\[
+\rho_i(A)=\rk\left(R_{i,i+4}\longrightarrow
+V_{i,i+2}\otimes V_{i+2,i+4}\right)
+\]
+は添字保持同型不変である。右辺の射は二次経路空間の直和分解への射影である。
+特に$\rho_i\in\{0,1\}$であり、$\mathcal Q$の全対象で$\rho_{i+7}=\rho_i$である。
+\end{proposition}
+\begin{proof}
+語長付随次数において$R=\ker(V\otimes_{\ZZ}V\to I^2/I^3)$は内在的である。
+添字を保つ生成元変更は中間頂点$i+1,i+2,i+3$ごとの経路直和を保つので、射影階数も保つ。
+命題\ref{prop:linearization}により、これは非線型同型を許しても変わらない。
+値域の次元は1である。$\mathcal Q$の対象では定理\ref{thm:seven-period}を適用する。
+\end{proof}
+
+\begin{proof}[定理\ref{thm:ore}の同型分類の証明]
+$(a,b)\ne(0,0)$なら、$kx+ky$の基底を取り直して
+$\delta(x')=z^2$, $\delta(y')=0$とできる。
+従って$A_{a,b}\simeq A_{1,0}$は重みを保つgraded同型である。
+一方、$\check A_{a,b}$に対する射影の行列は$(-a,-b)$なので、
+零点では$\rho_i=0$、非零点では$\rho_i=1$である。
+よって両者はindexed同型でも異なり、族内にちょうど二つの同型類がある。
+対角量子族の重み4関係は$x_rt$と$tx_r$ ($r=0,1$) だけを含み、
+$zz$成分がないため常に$\rho_i=0$である。
+従って非零Ore族はそのどの対象とも同型でない。
+\end{proof}
+
+\begin{remark}
+この二同型類の分類は指定した二パラメータ族に関する完全な結果であり、
+$\rho_i=1$の全標準対象の分類ではない。
+零のlocusにも対角族以外の対象があるか、非定数の$\rho$パターンが正則性と両立するかは未解決である。
+またこの族の構成は既知のOre手法の範囲にあり、新規性は未確認である。
+\end{remark}
+
+\section{対角skew Oreチャートの表示分類}
+既知の二パラメータOre族を含む、対角量子三生成元部分の上の
+一般の斉次skew Oreチャートを解析した。
+その必要十分条件は四つの係数式であり、表示パラメータ空間の台集合は
+次元$6,5,5,4$の四つの既約成分に分かれる。
+全ファイバーの正則性と関係の$zz$射影階数による非同型性を含め、
+完全な証明は独立した公表用短報\path{papers/weighted_ore_strata.tex}に置く。
+これらは表示空間の成分であり、全モジュライの成分とは主張しない。
+\section{次数付き部分の段階的Ore分類}
+この節では基礎体を$\mathbb C$とし、重みを保つgraded同型を用いる。
+以下の定理の対象は、語長二次性を仮定しないgraded代数である。
+そのうち語長二次表示を持つものの付随$\ZZ$-代数が、
+$\mathcal H$の1周期的な部分を与える。
+
+\begin{theorem}[追加仮定付きgraded分類]\label{thm:graded-ore-summary}
+$A$を連結・局所有限・左右noetherianな四次元AS正則graded $\mathbb C$-代数とし、
+最小生成元次数を$(1,1,2,3)$、Hilbert級数を
+\[
+H_A(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}
+\]
+とする。このとき、次数1の二生成元$x,y$からなる量子平面またはJordan平面$B$と、
+次数2、3の最小生成元$z,w$を選び、
+\[
+A=B[z;\sigma,\delta][w;\tau,D]
+\]
+と表せる。ここで$\sigma$は$B$のgraded自己同型、$\delta$は次数2の$\sigma$-導分、
+$\tau$は$C=B[z;\sigma,\delta]$のgraded自己同型、$D$は次数3の$\tau$-導分である。
+逆に、これらのデータから作る全ての代数が上の仮定を満たす。
+\end{theorem}
+証明は\path{papers/graded_ore_classification.tex}の
+\texttt{thm:ore-exhaustion}にある。
+最小解消の双対性から関係の両側の係数階数を求め、
+指定Hilbert級数を用いて順序単項式の独立性を示す。
+正則性の逆向きには\cite[Theorem~3.3]{LWW}を適用し、成長条件をPBW基底で確認する。
+
+同稿の\texttt{thm:coefficient-data}は許容データを有限の係数条件で記述し、
+\texttt{thm:graded-isomorphisms}は全graded同型を
+\[
+u\longmapsto\varphi(u)\quad(u=x,y),\qquad
+z\longmapsto\alpha z'+a_2,\qquad
+w\longmapsto\beta w'+b_3
+\]
+とその必要十分条件で与える。
+ここで$\varphi:B\simeq B'$、$\alpha,\beta\in\mathbb C^\times$、
+$a_2\in B'_2$、$b_3\in C'_3$である。
+中心的な次数3最小生成元を選べる場合は$A=C[w]$となる
+（同稿\texttt{cor:central-generator}）。
+
+語長二次表示に適合する生成元を選ぶと、
+$\delta=0$、$\tau|_B=\mu$、$\tau(z)=cz$、
+$D(x),D(y)\in\mathbb C z^2$、$D(z)=0$となる。
+この部分の全必要十分条件とgraded同型の存在判定は、同稿の
+\texttt{cor:quadratic-chart}、\texttt{prop:quadratic-isomorphisms}にある。
+対角性を仮定しないため、可換平面・$q=-1$の量子平面・Jordan平面の
+非対角自己同型も含む。量子平面の上で両自己同型を対角に制限すると、前節の四係数式を回収する。
+
+定理\ref{thm:graded-ore-summary}のnoetherian性とHilbert条件は
+$\mathcal Q$全体に加えた仮定ではなく、この節の適用範囲である。
+また裸の添字保持同型ではZhang twistも同一視されるため、
+上のgraded同型条件だけから全indexed同型の商は得られない。
+
+次数1の最小生成元を$n$個に増やした場合の構造定理は
+\path{papers/general_weights.tex}にある。
+左右noetherian・整域・AS次元$n+2$・所期の重み付き多項式Hilbert級数・
+語長二次性の下では、任意の$n$について
+$A=B[z;\sigma][w;\tau,D]$という表示が網羅的である。
+$B=k\langle A_1\rangle$はAS正則次元$n$、Hilbert級数$(1-t)^{-n}$を持つ。
+同稿は正規元の商の二変数Hilbert級数とnoetherian性を使って任意次元の網羅性を証明し、
+一般の斉次Ore部分族の係数条件と全graded同型も記述する。
+語長二次性を外した全$n$の網羅性は未証明であり、
+最小生成元次数だけを指定した場合には大域次元が無界となる明示族がある。
+
+\section{残る課題と検証の範囲}
+最優先は一般七窓の構造分岐と正則性判定である。
+複素数体上のnoetherianなgraded部分で所期のHilbert級数を持つものは、
+前節の非対角の場合を含むOre表示で尽くされる。
+この適用範囲の外の候補と、裸の添字保持同型による追加の同一視を調べる。
+各$\rho$パターンの中で重み2の関係の階数、重み3の二経路への射影を調べる。
+有限双対のFrobenius性とKoszul複体の正確性を独立に扱い、
+一般点だけでなく例外値まで含む被覆を求める。
+
+同時に、広い対象と標準型の差、最小周期7の存在、対角族の全indexed同型、
+全成分と特殊化を課題に残す。
+degree 1 del Pezzoの反標準環や$E_8$量子化との比較では、
+四つの最小生成元と語長二次性が保たれるかを先に確かめる。
+関連文献の確認範囲とこの条件の障害は研究ノートへ置く。
+
+\path{computations/weighted_baseline.py}は、二変数Euler式、重み24までのHilbert係数、
+関係空間の次元、対角twistの整数指数行列と正規化、各族の四つの三重重なりを形式的に検算する。
+非零Ore族のAS性は上の構造的証明に基づき、有限Hilbert照合だけを根拠としない。
+証明の記載・論理監査・計算・組版・保存の状態は\path{research/validation.json}で区別する。
+全分類、形式化、第三者査読、新規性の確定は完了していない。
+
+\begin{thebibliography}{99}
+\bibitem{AKO}
+D.~Auroux, L.~Katzarkov and D.~Orlov,
+\emph{Mirror symmetry for weighted projective planes and their noncommutative deformations},
+Annals of Mathematics \textbf{167} (2008), 867--943.
+\href{https://doi.org/10.4007/annals.2008.167.867}{doi:10.4007/annals.2008.167.867};
+\href{https://arxiv.org/abs/math/0404281}{arXiv:math/0404281}.
+\bibitem{Sierra}
+S.~J.~Sierra, \emph{G-algebras, twistings, and equivalences of graded categories},
+Algebras and Representation Theory \textbf{14} (2011), 377--390.
+\href{https://doi.org/10.1007/s10468-009-9193-y}{doi:10.1007/s10468-009-9193-y};
+\href{https://arxiv.org/abs/math/0608791}{arXiv:math/0608791}.
+\bibitem{VdB}
+M.~Van den Bergh, \emph{Non-commutative quadrics},
+International Mathematics Research Notices \textbf{2011}, no.~17, 3983--4026.
+\href{https://doi.org/10.1093/imrn/rnq234}{doi:10.1093/imrn/rnq234};
+\href{https://arxiv.org/abs/0807.3753}{arXiv:0807.3753}.
+\bibitem{MVS}
+R.~Mart\'inez-Villa and \O.~Solberg,
+\emph{Artin--Schelter regular algebras and categories},
+Journal of Pure and Applied Algebra \textbf{215} (2011), 546--565.
+\href{https://doi.org/10.1016/j.jpaa.2010.06.006}{doi:10.1016/j.jpaa.2010.06.006};
+\href{https://arxiv.org/abs/0902.1119}{arXiv:0902.1119}.
+\bibitem{LWW}
+L.~Liu, S.~Wang and Q.~Wu, \emph{Twisted Calabi--Yau property of Ore extensions},
+Journal of Noncommutative Geometry \textbf{8} (2014), 587--609.
+\href{https://doi.org/10.4171/JNCG/165}{doi:10.4171/JNCG/165};
+\href{https://arxiv.org/abs/1205.0893}{arXiv:1205.0893}.
+\bibitem{LPWZ}
+D.-M.~Lu, J.~H.~Palmieri, Q.-S.~Wu and J.~J.~Zhang,
+\emph{Regular algebras of dimension 4 and their $A_\infty$-Ext-algebras},
+Duke Mathematical Journal \textbf{137} (2007), 537--584.
+\href{https://doi.org/10.1215/S0012-7094-07-13734-7}{doi:10.1215/S0012-7094-07-13734-7};
+\href{https://arxiv.org/abs/math/0411497}{arXiv:math/0411497}.
+\bibitem{Bergman}
+G.~M.~Bergman, \emph{The diamond lemma for ring theory},
+Advances in Mathematics \textbf{29} (1978), 178--218.
+\href{https://doi.org/10.1016/0001-8708(78)90010-5}{doi:10.1016/0001-8708(78)90010-5}.
+\url{https://math.berkeley.edu/~gbergman/papers/updates/diamond.html}.
+\bibitem{Priddy}
+S.~B.~Priddy, \emph{Koszul resolutions},
+Transactions of the American Mathematical Society \textbf{152} (1970), 39--60.
+\url{https://math.mit.edu/~hrm/palestine/priddy-koszul-resolutions.pdf}.
+\bibitem{LPWZKoszul}
+D.-M.~Lu, J.~H.~Palmieri, Q.-S.~Wu and J.~J.~Zhang,
+\emph{Koszul equivalences in $A_\infty$-algebras},
+New York Journal of Mathematics \textbf{14} (2008), 325--378.
+\url{https://nyjm.albany.edu/j/2008/14-16.pdf}.
+\end{thebibliography}
+\end{document}

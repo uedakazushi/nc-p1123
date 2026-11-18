@@ -35,14 +35,14 @@
 初期結果の再現にnc-p3や他の私的研究原稿の取得は必要ない。
 
 ## 対角skew Oreの追加検証（2026-11-18）
-新しい公表用短報 `papers/weighted_ore_strata.tex` は、AKOの対角量子多項式環を基底とし、
+新しい公表用短報 `nc-p1123.tex` は、AKOの対角量子多項式環を基底とし、
 Liu--Wang--Wu Thm.3.3のtwisted CY保存を利用する。重みを保つ語長二次の
 対角skew Ore表示の全必要十分条件とパラメータ空間の4成分は短報で直接証明する。
 Ore手法と一般正則性は既知である。これらの具体式と既存文献の構成の完全同定および新規性は未確認。
 
 ## 新規性と追加調査
 
-`papers/graded_ore_classification.tex` の段階的Ore表示の網羅性、全係数条件、全graded同型、
+`nc-p1123.tex` の段階的Ore表示の網羅性、全係数条件、全graded同型、
 語長二次部分への制限は同稿で証明する。網羅性は一般Ore正則性定理の結論ではない。
 外部依存は上表のdomain定理とOre拡大の正則性であり、その仮定を本文で確認する。
 対象は複素数体上の左右noetherianなgraded代数で、指定Hilbert級数と最小生成元条件を課す。
@@ -55,7 +55,7 @@ Ore手法と一般正則性は既知である。これらの具体式と既存�
 
 ## 一般の最小生成元次数 (1^n,2,3)
 
-`papers/general_weights.tex` は、左右 noetherian、指定大域次元と Hilbert 級数を持つ
+`nc-p1123.tex` は、左右 noetherian、指定大域次元と Hilbert 級数を持つ
 語長二次の graded algebra について、全 n の Koszul 性・関係数を導き、
 domain を加えた部分の canonical Ore 表示を網羅する。
 商 A/(z) の domain 性を追加仮定する必要はなく、二変数 Hilbert 級数と
