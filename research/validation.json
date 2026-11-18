@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-18",
-  "version": 4,
+  "date": "2026-11-19",
+  "version": 5,
   "generated": {
     "main_manuscript": true,
     "research_plan": true,
@@ -235,5 +235,13 @@
     "push_mode": "fast-forward update of main through the connected GitHub app; force=false",
     "remote_verification_method": "Require the GitHub tree SHA to equal the reviewed local commit tree; update main with force=false and the expected parent SHA; fetch and compare the final local HEAD with git ls-remote origin refs/heads/main.",
     "tracked_pdf": false
+  },
+  "integration_2026_11_19": {
+    "github_main_pushed": true,
+    "tex_label_reference_static_check": true,
+    "lualatex_compilation_executed": false,
+    "independent_proof_reverification_executed": false,
+    "library_bundle_saved": false,
+    "summary": "Consolidated publications into nc-p1123.tex; retained indexed Z-algebra research in research/indexed_z_algebra.tex. Earlier validations relate to earlier standalone sources and should not be read as integrated LaTeX compilation."
   }
 }

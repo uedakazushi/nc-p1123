@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
-  "date": "2026-11-18",
-  "version": 4,
+  "date": "2026-11-19",
+  "version": 5,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
@@ -18,43 +18,43 @@
     {
       "id": "ISO-LINEAR",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:linearization",
+      "proof": "research/indexed_z_algebra.tex#prop:linearization",
       "scope": "Isomorphism existence for word-homogeneous quadratic presentations, not full automorphism groupoids"
     },
     {
       "id": "STD-HILBERT",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:hilbert",
+      "proof": "research/indexed_z_algebra.tex#prop:hilbert",
       "scope": "S only"
     },
     {
       "id": "GENERAL-KOSZUL",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:general-koszul",
+      "proof": "research/indexed_z_algebra.tex#prop:general-koszul",
       "scope": "All Q; word-Koszul and constant AS translation"
     },
     {
       "id": "AS-INDEX-7",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:general-index",
+      "proof": "research/indexed_z_algebra.tex#thm:general-index",
       "scope": "All Q; polynomial row growth rules out L6,8,9,10"
     },
     {
       "id": "HILBERT-STANDARD",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#cor:hilbert-standard",
+      "proof": "research/indexed_z_algebra.tex#cor:hilbert-standard",
       "scope": "H=S; does not prove Q=H"
     },
     {
       "id": "PERIOD-7",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:seven-period",
+      "proof": "research/indexed_z_algebra.tex#thm:seven-period",
       "scope": "All Q; least period1 or7, no exact-period7 example asserted"
     },
     {
       "id": "FINITE-7",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:finite-window",
+      "proof": "research/indexed_z_algebra.tex#thm:finite-window",
       "scope": "Geometric classes via Frobenius-standard period; fixed ranks for S, finite union of rank strata for Q; AS locus not determined"
     },
     {
@@ -66,19 +66,19 @@
     {
       "id": "QUANTUM-TWIST",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:twist-normalization",
+      "proof": "research/indexed_z_algebra.tex#prop:twist-normalization",
       "scope": "Complete for diagonal twist action only; not complete indexed classification"
     },
     {
       "id": "ORE-2",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:ore",
+      "proof": "research/indexed_z_algebra.tex#thm:ore",
       "scope": "Specified (a,b) family only; two indexed classes; novelty unconfirmed"
     },
     {
       "id": "RHO-SPLIT",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#prop:rho",
+      "proof": "research/indexed_z_algebra.tex#prop:rho",
       "scope": "Index-preserving isomorphism invariant; full loci unclassified"
     },
     {
@@ -102,25 +102,25 @@
     {
       "id": "GRADED-ORE",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:ore-exhaustion",
+      "proof": "nc-p1123.tex#spec:thm:ore-exhaustion",
       "scope": "Over C, connected locally finite left/right noetherian AS4, prescribed Hilbert series and minimal degrees (1,1,2,3): all and only iterated Ore extensions of a quantum or Jordan plane. No claim for all Q."
     },
     {
       "id": "GRADED-ORE-DATA",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:coefficient-data",
+      "proof": "nc-p1123.tex#spec:thm:coefficient-data",
       "scope": "Finite necessary and sufficient coefficient equations for the graded Ore data; contains all special parameter values."
     },
     {
       "id": "GRADED-ORE-ISOM",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#thm:graded-isomorphisms",
+      "proof": "nc-p1123.tex#spec:thm:graded-isomorphisms",
       "scope": "All graded isomorphisms are the specified triangular changes satisfying explicit equations; not a classification of bare indexed isomorphisms."
     },
     {
       "id": "QUADRATIC-GRADED-ORE",
       "status": "proved_in_manuscript",
-      "proof": "nc-p1123.tex#cor:quadratic-chart",
+      "proof": "nc-p1123.tex#spec:cor:quadratic-chart",
       "scope": "Within the stated noetherian graded Hilbert locus over C: the full word-quadratic Ore chart, allowing non-diagonal automorphisms. Graded-isomorphism existence is characterized in prop:quadratic-isomorphisms; the displayed zero-correction conditions use generators adapted to a word-quadratic presentation."
     },
     {
@@ -238,5 +238,7 @@
     ],
     "obstacle": "The all-n theorem requires word-quadratic relations, left/right noetherianity, a domain, global dimension n+2 and the prescribed Hilbert series. The general homogeneous exhaustion and inference of these hypotheses from minimal degrees remain unresolved. The original nonperiodic indexed classification is separate.",
     "do_not_repeat": "All-n word-quadratic Koszulity, standard relation numbers, canonical Ore exhaustion in the domain locus, finite homogeneous Ore coefficient equations, full triangular graded isomorphisms, quadratic linear-isomorphism existence, the unbounded-dimension counterfamily, and the Sklyanin base obstruction are written in general_weights.tex. The quotient A/(z) domain property is derived, not additionally assumed."
-  }
+  },
+  "publication_manuscript": "nc-p1123.tex",
+  "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex"
 }

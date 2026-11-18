@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月18日\quad 第4版}
+\date{2026年11月19日\quad 第5版}
 \begin{document}
 \maketitle
 
@@ -30,7 +30,7 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 \[
 (0),\quad(1,1,2,3),\quad(2,3,3,4,4,5),\quad(4,5,6,6),\quad(7)
 \]
-とする。主論文の定義\texttt{def:target}, \texttt{def:standard}が正本である。
+とする。研究用Z代数原稿\path{research/indexed_z_algebra.tex}の定義\texttt{def:target}, \texttt{def:standard}が正本である。
 
 分類の達成基準は、対象の網羅的な構造分岐、各枝の正則性の必要十分条件、
 全特殊値を含む同型判定、周期層、成分と特殊化を証明することである。
@@ -39,7 +39,7 @@ H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
 本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読み、
-対象命題の証明を\path{nc-p1123.tex}、未収載の着想を\path{research/notes_ja.tex}で確認する。
+graded代数の定理を\path{nc-p1123.tex}、Z代数の定理を\path{research/indexed_z_algebra.tex}、未収載の着想を\path{research/notes_ja.tex}で確認する。
 外部文献の適用範囲は\path{research/BASELINE.md}に置く。
 
 \section{主要な到達点と適用範囲}
@@ -94,7 +94,7 @@ H=Sも証明。\texttt{prop:general-koszul}, \texttt{thm:general-index}, \texttt
 標準型は固定階数、一般Qは有限個の階数表の和へ還元できる。
 \texttt{thm:finite-window}。AS/Koszul条件の有限な必要十分判定は未完成。\\
 仮定付きgraded分類 & 複素数体、noetherian、指定Hilbert級数の下でOre表示が網羅的。
-主論文\texttt{thm:graded-ore-summary}は独立原稿の定理を要約する。
+Z代数研究原稿\texttt{thm:graded-ore-summary}は独立原稿の定理を要約する。
 全三角形graded同型と語長二次部分も同稿にある。\\
 対角族 & AKOの既知族を基準にし、6交換係数の対角twist商を3係数へ正規化。
 \texttt{prop:twist-normalization}。全indexed同型の完全不変量とは未同定。\\

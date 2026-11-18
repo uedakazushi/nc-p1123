@@ -8,7 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
     "AGENTS.md", "README.md", ".latexmkrc", ".vscode/settings.json", "nc-p1123.tex",
-    "research/plan_ja.tex", "research/notes_ja.tex", "research/BASELINE.md",
+    "research/plan_ja.tex", "research/notes_ja.tex", "research/indexed_z_algebra.tex", "research/BASELINE.md",
     "research/STATE.json", "research/validation.json", "computations/weighted_baseline.py",
     "computations/baseline_certificate.json", "computations/README.md", "scripts/build_bundle.py",
     
@@ -33,9 +33,7 @@ def check():
         errors.append("Initial project must not claim a complete classification")
 
     tex_labels = {}
-    for name in ("nc-p1123.tex", "research/plan_ja.tex", "research/notes_ja.tex",
-                 "nc-p1123.tex",
-                 "nc-p1123.tex"):
+    for name in ("nc-p1123.tex", "research/plan_ja.tex", "research/notes_ja.tex", "research/indexed_z_algebra.tex"):
         content = (ROOT / name).read_text()
         labels = re.findall(r"\\label\{([^}]+)\}", content)
         if len(labels) != len(set(labels)):
