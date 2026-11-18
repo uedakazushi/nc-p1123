@@ -84,19 +84,19 @@
     {
       "id": "SKEW-ORE-COND",
       "status": "proved_in_manuscript",
-      "proof": "papers/nc-p1123.tex#thm:ore-condition",
+      "proof": "papers/nc-p1123.tex#diag:thm:ore-condition",
       "scope": "Necessary and sufficient four equations within diagonal skew Ore ansatz; all fibres Koszul AS4"
     },
     {
       "id": "ORE-PARAM-COMP",
       "status": "proved_in_manuscript",
-      "proof": "papers/nc-p1123.tex#thm:components",
+      "proof": "papers/nc-p1123.tex#diag:thm:components",
       "scope": "Four irreducible components of presentation parameter space, not of AS moduli"
     },
     {
       "id": "ORE-SWAP",
       "status": "proved_in_manuscript",
-      "proof": "papers/nc-p1123.tex#prop:normalization",
+      "proof": "papers/nc-p1123.tex#diag:prop:normalization",
       "scope": "Swap x/y and scalar normalization of nonzero derivation coefficients"
     },
     {
