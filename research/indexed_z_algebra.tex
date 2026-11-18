@@ -26,7 +26,7 @@
 \title{非可換重み付き射影空間\texorpdfstring{$\mathbb P(1,1,2,3)$}{P(1,1,2,3)}の分類に向けて\\
 \large 整域部分のOre構造と一般対象の七窓表示}
 \author{}
-\date{2026年11月19日\quad 現行研究資料 v9\\
+\date{2026年11月19日\quad 現行研究資料 v10\\
 \small 完全分類および新規性の最終確認は未完成}
 \begin{document}
 \maketitle
@@ -36,6 +36,9 @@
 四次元AS正則$\ZZ$-代数の添字保持同型による分類を調べる。
 広い対象$\mathcal Q$では、AS双対性と多項式増大から語長Koszul性、AS添字7、
 語長を保つ7周期同型が従う。所期のHilbert級数を持つことと標準解消を持つことは同値である。
+また整域性を仮定せず$r_2(i)=r_5(i)=1$を強制でき、
+純jump 1部分は各行の次元が$n+1$となる。
+有限幅の数値的分岐は、混合関係の制約と積共変ベクトルによって排除される。
 
 さらに$\ZZ$-整域である対象については、標準Hilbert級数も1周期性も仮定する必要がない。
 整域性による関係数の上界と七行Euler式から標準型を強制し、
@@ -49,9 +52,14 @@ $A$が$\ZZ$-整域であることと同値である。7周期により、調べ�
 最小周期7、非標準Hilbert級数、非定数の関係射影階数が現れるとすれば、
 少なくとも一つの$z_i$に零因子がある部分に限られる。
 
-本稿は一般対象の七窓表示、traceの選択、二つの基準族と同型不変量を保持する。
-全対象が整域かどうか、零因子を持つ部分の存在と分類、
-整域部分を含む裸のindexed同型による完全な軌道分類は未解決である。
+整域部分の二つのOre表示が裸の添字保持同型で一致するための必要十分条件は、
+一つの可逆な$2\times2$行列と非零スカラーに関する有限系へ帰着した。
+対角量子多項式族では、三係数トーラスの明示的な対合による商が、
+全特殊値を含む裸の同型類の集合を与える。
+本稿はこれらの結果の要点に加え、一般対象の七窓表示、traceの選択、
+二つの基準族と同型不変量を保持する。
+全対象の整域性、$\mathcal Q=\mathcal H$、零因子を持つ部分の存在と分類、
+一般Oreデータの軌道の標準形およびモジュライ幾何は未解決である。
 構造定理と既存文献の完全な照合および新規性の最終確認も未完了である。
 \end{abstract}
 \tableofcontents
@@ -285,6 +293,60 @@ $\mathcal S\subseteq\mathcal H$は命題\ref{prop:hilbert}で示した。
 左右のAS対合により左解消も標準型となる。
 \end{proof}
 
+\subsection{純jump 1部分と外側の関係数}
+\begin{proposition}\label{prop:degree-one-dichotomy}
+$A\in\mathcal Q$に対し、純jump 1生成部分を$B$、
+$a_i=\dim R_{i,i+2}$と置く。次のどちらか一方が成立する。
+\begin{enumerate}
+\item 全ての$i$で$a_i=1$であり、$\dim B_{i,i+n}=n+1$である。
+\item 全ての$i$と$n\geq14$について$B_{i,i+n}=0$である。
+\end{enumerate}
+これは整域性を仮定しない全対象についての中間的な二分岐である。
+下の定理\ref{thm:outer-relation-ranks}で第二の枝を排除する。
+\end{proposition}
+\begin{proof}[証明の所在と要点]
+完全証明は\path{papers/nc-p1123.tex}の
+\texttt{idx:prop:degree-one-dichotomy}にある。
+bar複体の「重み$-$語長」が零の部分を取ると$B$のbar複体となる。
+AS添字7での$\operatorname{Tor}_3,\operatorname{Tor}_4$の重みから、
+$B$はKoszulで、左右の単純加群の射影次元は高々2である。
+従って$b_{i,n}=\dim B_{i,i+n}$は
+\[
+b_{i,n}=2b_{i,n-1}-a_{i+n-2}b_{i,n-2},
+\qquad b_{i,0}=1,\quad b_{i,1}=2
+\]
+を満たす。$a_i\in\{0,1,2\}$は7周期である。
+$a_{i-1}\ne0$を選ぶと、実際の二つの係数列
+$b_{i,n}$と$b_{i-1,n+1}$の初期ベクトルは独立であるため、
+七段の移行行列の全固有値は絶対値1以下となる。
+全ての$a_i$が正なら行列式から全て1となり、零を含む場合は
+七段が奇数であることからtraceの偶数性を使って移行行列の二乗が零となる。
+これが上の二分岐を与える。
+有限個の数値表の検査によって証明したものではない。
+\end{proof}
+\begin{theorem}[外側の関係数の強制]\label{thm:outer-relation-ranks}
+全ての$A\in\mathcal Q$と$i\in\ZZ$について
+\[
+r_2(i)=r_5(i)=1,\qquad \dim B_{i,i+n}=n+1
+\]
+である。
+\end{theorem}
+完全証明は統合論文\texttt{idx:thm:outer-relation-ranks}にある。
+有限幅の枝を仮定すると、混合関係の三重重なりとモノミアル商の成長から、
+一周期中に$a_i=2$の位置がちょうど一つあり、$a_i=0$も現れる。
+零関係の辺でtensor鎖を分割すると、各ブロックの二次元関係は高々一つである。
+代数閉性からそのannihilatorに非零の積共変ベクトルが存在し、
+一次元関係を消すように左右へ延長できるため、任意長の$B_{i,i+n}$が非零となる。
+これが有限幅と矛盾する。数値条件だけでは排除できない具体的な係数表と、
+その方法上の障害は\path{research/notes_ja.tex}に置く。
+
+関係空間の次元$r_2(i)=1$と、その生成tensorの行列階数2は異なる主張である。
+後者、$B$の整域性およびAS正則次元2は、全$\mathcal Q$ではまだ証明していない。
+例えば一般の二次代数$k\langle x,y\rangle/(xy)$はHilbert級数$(1-u)^{-2}$を持ち、
+Koszulで単純加群の射影次元は2だが零因子を持つ。
+これは$\mathcal Q$の構成例ではなく、純jump 1部分の数値からの推論を制限する比較例である。
+$r_3(i)=2$の強制、および$z_i$の全次数での左右正則性は未解決である。
+
 \subsection{七周期同型とtraceの選択}
 \begin{theorem}\label{thm:seven-period}
 定義\ref{def:target}の全対象$A$には添字保持同型$A\simeq A(7)$が存在し、
@@ -414,11 +476,40 @@ $\rho_i$は生成元変更で不変なので、1周期同型により$\rho_{i+1}
 \end{proof}
 
 この定理は整域部分の\emph{構造の網羅性}を与える。
-裸の添字保持同型による全パラメータ軌道の記述は残る。
 異なる1周期構造から復元したgraded代数は一般にgraded同型ではなく、
 Zhang twistまでの同一視が必要である\cite[Theorem 1.2 = Corollary 4.4]{Sierra}。
+この同一視を含む同型の存在は、次の有限条件で判定できる。
 また、$\mathcal Q$全体が整域であることは証明しておらず、
 零因子を持つ部分の存在自体を独立した問題として残す。
+
+\subsection{裸の添字保持同型の有限判定}
+有効な整域Ore表示を与える二つのデータ$(B,\sigma,\mu,c,L)$と$(B',\sigma',\mu',c',L')$に対し、
+$B=T(V)/(kr)$、$B'=T(V')/(kr')$と書く。
+ここで$L:V\to k$は最終段の導分を$D(v)=L(v)z^2$で記述する。
+生成元空間への制限を同じ記号で表し、
+\begin{gather*}
+T=\mu\sigma^{-1},\qquad J=c^{-1}\mu^2\sigma^{-3},\\
+T'=\mu'\sigma'^{-1},\qquad J'=c'^{-1}\mu'^2\sigma'^{-3},\qquad
+P_i=T'^{-i}PT^i
+\end{gather*}
+と置く。
+\begin{theorem}[同型の存在の有限条件]\label{thm:finite-isomorphism-summary}
+対応する二つの付随$\ZZ$-代数が添字保持同型となることと、
+可逆写像$P:V\to V'$と$\kappa\in k^\times$で
+\[
+\begin{gathered}
+J'P=PJ,\qquad(P\otimes P_1)r\in k^\times r',\\
+L'P_3=\kappa L,\qquad L'P_4=\kappa(c/c')L
+\end{gathered}
+\]
+を満たすものが存在することは同値である。
+\end{theorem}
+完全証明は\path{papers/nc-p1123.tex}の\texttt{idx:thm:finite-isomorphism}にある。
+語長の線型化、頂点スカラーの正規化、二つのshiftから得る
+$P_i=T'^{-i}PT^i$の漸化式が、全ての添字の条件を上の有限系へ帰着する。
+これは非線型同型も許した\emph{同型の存在}の必要十分条件であり、
+全自己同型群や一般の軌道の標準形、moduli stackを記述するものではない。
+個別結果の文献上の新規性の最終確認は未了である。
 
 \section{関係の七窓による有限表示}
 まず標準型$\mathcal S$の場合を記す。
@@ -465,7 +556,7 @@ $\mathfrak X_7$を、$\mathfrak P_7(k)$のうち生成される$\ZZ$-代数が�
 
 一般の$\mathcal Q$についても、同じ議論は関係数を動かす有限和に適用できる。
 実際、$L=7$と\eqref{eq:relation-symmetry}より$r_6=0$、
-$0\leq r_2,r_5\leq2$、$0\leq r_3,r_4\leq4$であり、これらは7周期である。
+$r_2=r_5=1$、$0\leq r_3,r_4\leq4$であり、これらは7周期である。
 各許される階数表について$\prod_{i,d}\Gr(r_d(i),W_{i,d})$を取り、
 AS条件・成長条件・Frobenius標準周期条件を満たす点へ制限すれば、
 その有限和の$G_7(k)$軌道が一般対象の幾何学的同型類を与える。
@@ -539,12 +630,24 @@ $\check{B(q)^\sigma}\simeq\check B(q)$を得る。
 従って正規化は添字保持同型も与える。
 \end{proof}
 
-\begin{remark}
-命題は\emph{指定した対角twist作用}の完全不変量を述べる。
-同重みの$x_0,x_1$の交換・一般線型変更や特殊値での同型をまだ除いていない。
-従って三係数の相異が全てのindexed同型に関する非同型を意味するとは限らない。
-6係数は同型類像の次元6を与えず、現段階では像の次元3も確定していない。
-\end{remark}
+\begin{theorem}[対角族の全特殊値における裸の同型]\label{thm:diagonal-indexed-summary}
+正規化した三係数を$(a,b,c)=(r_{12},r_{13},r_{23})$と書く。
+二つの三係数が同じ添字保持同型類を与えることと、
+同一であるか、対合
+\[
+s(a,b,c)=(a^{-1},b^{-1},ca^3/b^2)
+\]
+で移り合うことは同値である。
+従ってこの族の裸の同型類の集合は$(\GG_m)^3(k)/\langle s\rangle$であり、
+そのaffine有限商は既約かつ次元3である。
+固定点集合は$a=1$, $b=\pm1$, $c\in k^\times$である。
+\end{theorem}
+完全証明は統合論文\texttt{diag:thm:indexed-isomorphism}、
+\texttt{diag:cor:quotient}にある。一般線型変更と固有値の一致する例外値も含む。
+命題\ref{prop:twist-normalization}の三係数を求めた後、
+上の二つの場合を比較すれば、元の六係数の族の裸の同型が判定できる。
+これは対角族の商の記述であり、全ASモジュライの成分やstackの同定ではない。
+個別結果の文献上の新規性は未確認である。
 
 \section{非対角Ore族と最初の不変分岐}
 \subsection{全パラメータでの正則性}
@@ -714,6 +817,7 @@ $D(x),D(y)\in\mathbb C z^2$、$D(z)=0$となる。
 $\mathcal Q$全体に加えた仮定ではなく、この節の適用範囲である。
 また裸の添字保持同型ではZhang twistも同一視されるため、
 上のgraded同型条件だけから全indexed同型の商は得られない。
+語長二次の整域部分には定理\ref{thm:finite-isomorphism-summary}の有限な必要十分条件がある。
 
 次数1の最小生成元を$n$個に増やした場合の構造定理は
 \path{papers/nc-p1123.tex}にある。
@@ -738,9 +842,17 @@ $B=k\langle A_1\rangle$はAS正則次元$n$、Hilbert級数$(1-t)^{-n}$を持つ
 七窓の関係射影が退化する枝と、高い語長に初めて零化元が現れる可能性をともに扱う。
 有限双対のFrobenius性とKoszul複体の正確性は独立に扱う。
 
-分類上は、整域部分も含めて裸の添字保持同型の全軌道、成分と特殊化が残る。
-gradedのOre表示を得ただけでは、Zhang twistによる追加の同一視は済んでいない。
-対角族の三係数正規化と非対角基準族を回帰例に用い、一般点だけでなく例外値も調べる。
+数値型については、定理\ref{thm:outer-relation-ranks}で$r_2=r_5=1$と
+純jump 1部分のHilbert係数$n+1$を得た。
+残る数値上の核心は$r_3(i)=2$と、そのAS双対である$r_4(i)=2$の強制である。
+一本の重み2関係tensorの行列階数2や、$B$の整域性・AS正則次元2もまだ結論していない。
+研究ノートの非負Euler係数表は、実現する二次代数の追加構造を使う必要を示す障害例である。
+
+分類上は、整域部分の裸の同型の存在に関する必要十分条件は
+定理\ref{thm:finite-isomorphism-summary}で有限系に帰着した。
+対角族の軌道は定理\ref{thm:diagonal-indexed-summary}で全特殊値を含めて記述した。
+残るのは一般Oreデータの軌道の標準形、成分・特殊化・安定化群とモジュライ幾何である。
+対角族の明示的な有限商と非対角基準族を回帰例として、有限判定式の解集合を調べる。
 degree 1 del Pezzoの反標準環や$E_8$量子化との比較では、
 四つの最小生成元と語長二次性が保たれるかを先に確かめる。
 関連文献の確認範囲とこの条件の障害は研究ノートへ置く。

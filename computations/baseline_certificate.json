@@ -1,5 +1,6 @@
 {
-  "schema": "nc-p1123-weighted-baseline-v1",
+  "schema": "nc-p1123-weighted-baseline-v2",
+  "date": "2026-11-19",
   "weights": [
     1,
     1,
@@ -533,6 +534,115 @@
     ],
     "integral_kernel_basis": true,
     "scope": "Complete invariant for this diagonal twist action on the parameter torus only. Further indexed-isomorphism identifications are not classified here."
+  },
+  "pure_jump_one_obstruction": {
+    "ranks": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      1
+    ],
+    "recurrence": "b[i,0]=1, b[i,1]=2; b[i,n]=2*b[i,n-1]-a[(i+n-2)%7]*b[i,n-2]",
+    "rows_through_first_consecutive_zeros": [
+      [
+        1,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32,
+        16,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        4,
+        8,
+        12,
+        16,
+        8,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        4,
+        6,
+        8,
+        4,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        3,
+        2,
+        1,
+        2,
+        4,
+        8,
+        12,
+        16,
+        8,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        2,
+        2,
+        4,
+        8,
+        16,
+        24,
+        32,
+        16,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        3,
+        6,
+        12,
+        24,
+        36,
+        48,
+        24,
+        0,
+        0
+      ]
+    ],
+    "monodromy": [
+      [
+        0,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "scope": "Nonnegative Euler data only. This is not realized by a quadratic pure-jump-one algebra with exact length-two simple resolutions: the tensor-chain argument in idx:thm:outer-relation-ranks rules it out. It is not an AS-regular example."
   },
   "limitations": [
     "The standard resolution shifts are specified data, not deduced from the Hilbert series.",

@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v9。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v10。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | Auroux–Katzarkov–Orlov, *Mirror symmetry for weighted projective planes and their noncommutative deformations*, Ann. Math. 167 (2008), 867–943; DOI 10.4007/annals.2008.167.867; arXiv:math/0404281 | [出版版](https://annals.math.princeton.edu/wp-content/uploads/annals-v167-n3-p04.pdf), §2.2、Prop.2.3/Cor.2.4、Prop.2.6、Thm.2.12、Prop.2.18/Cor.2.19 | 任意重みの対角skew polynomial族。AS次元4、添字7と例外列7項は既知。qgrは可換基準でstackのcoh。非対角・非1周期の全分類ではない。 |
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
+| Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、§4.1 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。語長保存の周期同型を使うため二重次数を保持できる。隣の Lemma 3.5 の degree 1 生成条件や、三次元 quadric 分類の仮定と混同しない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
 | Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定の直接依存であり、適用順序は下記。 |
@@ -40,6 +41,26 @@
 Liu--Wang--Wu Thm.3.3のtwisted CY保存を利用する。重みを保つ語長二次の
 対角skew Ore表示の全必要十分条件とパラメータ空間の4成分は同節で直接証明する。
 Ore手法と一般正則性は既知である。これらの具体式と既存文献の構成の完全同定および新規性は未確認。
+
+## 添字保持同型の有限判定と対角族の商
+
+主論文 `idx:thm:finite-isomorphism` は、網羅済みの整域Ore表示間の裸の添字保持同型を、
+一つの可逆行列 P と非零スカラー κ に関する有限条件へ帰着する。
+その証明は、語長線型化、頂点スカラーの除去、重み2・3の交換関係が与える添字漸化式、
+導分項の偶数・奇数両列への伝播で完結する。
+Sierraの一般対応を踏まえているが、一般のtwisting systemを仮定したまま判定を残してはいない。
+この有限条件は量子平面・Jordan平面を共通に扱い、導分項が零の場合も含む。
+
+対角族の `diag:thm:indexed-isomorphism` は、三係数 (a,b,c) への正規化後、
+恒等変換と (a,b,c) -> (a^(-1),b^(-1),c*a^3/b^2) だけが同型を与えることを証明する。
+固定点は a=1, b=±1 であり、固有値重複と冪根を含む全特殊値を扱う。
+`diag:cor:quotient` の三次元有限商はこの対角族の同型類を与えるが、全ASモジュライの成分とはしない。
+Vitória Theorem 2.5 は通常次数1生成のskew polynomial環の重要な先行分類であり、
+本稿の重み付き定理とは対象と同定式を区別する。
+Cooney–Grabowski, *Automorphism groupoids in noncommutative projective geometry*,
+[arXiv:1807.06383v4](https://arxiv.org/pdf/1807.06383) (2022), Definition 1、Lemma 5、Theorem 12の設定も確認した。
+これらのdegree 1生成・幾何的代数の記述を、本稿の重み付きOre族へ直接適用してはいない。
+具体的な有限判定式と対角商の完全な先行結果照合は継続中であり、新規性の確定を意味しない。
 
 ## 整域 Z-代数の構造定理と直接依存
 
@@ -100,11 +121,17 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 この仮定付き定理と、語長二次の Z-domain から Hilbert 級数・noetherian 性まで導く定理を区別する。
 任意 n の語長二次 graded 定理でも、現在は noetherian 性と指定 Hilbert 級数を仮定している。
 
-未解決なのは、Q 全体の整域性、非整域対象の存在と分類、全 indexed 同型・成分・特殊化である。
+全Qでの `idx:thm:outer-relation-ranks` は、重み2・5の関係数が各1であることを証明する。
+純jump 1部分のbar複体と七周期monodromyから数値的二分岐を導き、
+零関係の位置の制約と代数閉体上の積型線型汎関数によって有限幅を排除する。
+これは有限次数のHilbert一致や、計算で残った数値表をAS対象と認定する議論ではない。
+この具体的な強制結果の新規性は未確定である。
+
+未解決なのは、Q 全体の整域性、重み3・4の関係数の標準性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化である。
 整域性の次の具体的課題は、七つの z_i の左右正則性である。
 最小語長の零化元を仮定し、最小解消・AS対合・関係射影と syzygy から排除できるかを調べる。
 最小周期7、非標準 Hilbert 級数、非定数の射影階数が現れるとすれば、ある z_i の左右正則性が破れる部分に限られる。
-対角族、二同型類の基準族、射影階数分岐も、既存の重み付き/Ore 族との完全な同定は未了である。
+対角族の同型判定と二同型類の基準族・射影階数分岐についても、既存の重み付き/Ore 族との完全な先行結果照合は未了である。
 
 ## 一般の最小生成元次数 (1^n,2,3)
 

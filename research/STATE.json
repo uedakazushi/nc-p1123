@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 9,
+  "version": 10,
   "classification_complete": false,
   "target": "Four-dimensional word-quadratic weighted-homogeneous AS-regular Z-algebras with primitive jumps (1,1,2,3), up to index-preserving isomorphism.",
   "scope": {
@@ -13,9 +13,13 @@
     "quadratic_graded_ore_locus": "The word-quadratic part of the preceding graded locus admits a complete Ore chart allowing non-diagonal automorphisms. Its associated Z-algebras lie in H and are 1-periodic; bare indexed isomorphism is a coarser relation.",
     "general_weights": "For n>=1: connected locally finite left/right noetherian AS-regular graded C-algebras with minimal generator degrees (1^n,2,3), global dimension n+2, and H(t)=1/((1-t)^n(1-t^2)(1-t^3)).",
     "general_weights_quadratic": "Within the stated general-n noetherian graded Hilbert class, word-quadratic algebras are word-Koszul with relation counts (binom(n,2),n,n,1); domain objects admit the exhaustive canonical two-step Ore classification and explicit graded-isomorphism orbits. The stronger indexed domain theorem removing noetherian, Hilbert and period assumptions is established only for n=2. General non-word-quadratic exhaustion is not proved for n>=3.",
-    "indexed_domain_locus": "All Z-domains in Q have standard relation counts and Hilbert series, admit a word-preserving period-one structure, and are associated Z-algebras of B[z;sigma][w;tau,D] over a quantum or Jordan plane. Hilbert series, noetherianity and period one are conclusions, not additional assumptions. Noetherianity follows from the Ore presentation; full bare indexed-isomorphism orbits remain unclassified.",
+    "indexed_domain_locus": "All Z-domains in Q have standard relation counts and Hilbert series, admit a word-preserving period-one structure, and are associated Z-algebras of B[z;sigma][w;tau,D] over quantum or Jordan planes. Hilbert series, noetherianity and period one are conclusions. A finite matrix criterion now decides existence of bare indexed isomorphisms; orbit normal forms, stabilizers, components and specializations for the full Ore locus remain to be described.",
     "non_domain_boundary": "Any nonstandard object, object of least period seven, or object with nonconstant rho_i in Q has zero divisors. The existence of such objects and automatic domainness of all Q remain open.",
-    "domain_regularity_criterion": "For a chosen word-homogeneous quadratic presentation of any A in Q, A is a Z-domain if and only if the jump-2, word-length-one generators z_i are left and right regular for i=0,...,6. Each regularity condition concerns multiplication in every degree. Seven-periodicity reduces the indices, not the degrees, so this is not a finite-degree computational test."
+    "domain_regularity_criterion": "For a chosen word-homogeneous quadratic presentation of any A in Q, A is a Z-domain if and only if the jump-2, word-length-one generators z_i are left and right regular for i=0,...,6. Each regularity condition concerns multiplication in every degree. Seven-periodicity reduces the indices, not the degrees, so this is not a finite-degree computational test.",
+    "pure_degree_one_dichotomy": "For every A in Q, without a domain assumption, the excess-zero pure jump-1 subalgebra B has a length-at-most-two simple resolution and endpoint recurrence. Seven-step monodromy first gives the alternative r_2(i)=1 for every i or width at most 13. The finite-width alternative is subsequently excluded by OUTER-RELATION-RANKS; it is no longer an open AS locus.",
+    "indexed_isomorphism_criterion": "For established domain Ore data (r,S,M,c,L) and (r_prime,S_prime,M_prime,c_prime,L_prime), set T=M S^(-1), J=c^(-1) M^2 S^(-3), lambda=c/c_prime and P_i=T_prime^(-i) P T^i. Bare indexed-isomorphism existence is equivalent to existence of P in GL_2(k) and kappa in k^* satisfying J_prime P=P J, (P tensor P_1)r in k^* r_prime, L_prime P_3=kappa L and L_prime P_4=kappa lambda L. This assumes valid AS/domain Ore data and is not an AS-regularity test or a description of all nonlinear isomorphisms.",
+    "diagonal_indexed_classification": "For the normalized diagonal quantum three-torus of parameters (a,b,c), bare indexed isomorphism classes are precisely the orbits of the involution (a,b,c)->(a^(-1),b^(-1),c*a^3/b^2). All special values are included; its fixed locus is a=1 and b=+/-1 with c arbitrary nonzero. The finite quotient has dimension 3. This classifies the diagonal family, not the whole domain Ore locus or Q.",
+    "outer_relation_ranks": "Over the standing algebraically closed field, every A in Q has r_2(i)=r_5(i)=1 and dim B_{i,i+n}=n+1 for its pure jump-1 subalgebra B. This needs neither domainness nor noetherianity. In the hypothetical finite-width branch, zero-relation edges split tensor chains into blocks with at most one rank-two relation space; a nonzero product covector annihilating that space extends across every rank-one edge, forcing all lengths of B to be nonzero. The mixed ranks r_3=r_4=2 and domainness of B or A do not follow from this result alone."
   },
   "claims": [
     {
@@ -70,7 +74,7 @@
       "id": "QUANTUM-TWIST",
       "status": "proved_in_manuscript",
       "proof": "research/indexed_z_algebra.tex#prop:twist-normalization",
-      "scope": "Complete for diagonal twist action only; not complete indexed classification"
+      "scope": "Complete normalization for the diagonal twist action. The remaining bare indexed identifications are now fully determined by QUANTUM-ISOM."
     },
     {
       "id": "ORE-2",
@@ -224,7 +228,7 @@
       "id": "DOMAIN-ORE",
       "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
       "proof": "papers/nc-p1123.tex#idx:thm:domain-ore",
-      "scope": "All Z-domains in Q are associated Z-algebras of two-step Ore extensions B[z;sigma][w;tau,D] over quantum or Jordan planes. Noetherianity, the standard Hilbert series and period one are conclusions. The AS3 quotient syzygy proves normality of w before quotient domainness is inferred. This strengthening is for n=2, not arbitrary n; it is a structural exhaustion, not the full quotient by bare indexed isomorphisms.",
+      "scope": "All Z-domains in Q are associated Z-algebras of two-step Ore extensions B[z;sigma][w;tau,D] over quantum or Jordan planes. Noetherianity, the standard Hilbert series and period one are conclusions. The AS3 quotient syzygy proves normality of w before quotient domainness is inferred. This strengthening is for n=2, not arbitrary n; the structural exhaustion is supplemented by ORE-FULL-ISOM, a finite existence criterion. Full orbit normal forms and geometry remain open.",
       "depends_on": [
         "DOMAIN-PERIOD-ONE"
       ],
@@ -263,33 +267,94 @@
       "novelty": "not_finally_verified; external implication theorems are known results",
       "external_peer_review": false,
       "formalized": false
+    },
+    {
+      "id": "DEGREE-ONE-DICHOTOMY",
+      "proof": "papers/nc-p1123.tex#idx:prop:degree-one-dichotomy",
+      "scope": "All Q without domain assumptions: either every r_2(i)=1 with pure jump-1 dimensions n+1, or the pure jump-1 subalgebra has width at most 13. The proof uses excess-zero bar complexes, endpoint Hilbert recurrences and two actual independent solution vectors to control every seven-step monodromy mode. This intermediate dichotomy is strengthened by OUTER-RELATION-RANKS, which excludes the finite-width branch.",
+      "depends_on": [
+        "GENERAL-KOSZUL",
+        "AS-INDEX-7",
+        "PERIOD-7"
+      ],
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "OUTER-RELATION-RANKS",
+      "proof": "papers/nc-p1123.tex#idx:thm:outer-relation-ranks",
+      "scope": "Over the standing algebraically closed field, every A in Q has r_2(i)=r_5(i)=1 and dim B_{i,i+n}=n+1 for its pure jump-1 subalgebra B. This needs neither domainness nor noetherianity. In the hypothetical finite-width branch, zero-relation edges split tensor chains into blocks with at most one rank-two relation space; a nonzero product covector annihilating that space extends across every rank-one edge, forcing all lengths of B to be nonzero. The mixed ranks r_3=r_4=2 and domainness of B or A do not follow from this result alone.",
+      "depends_on": [
+        "DEGREE-ONE-DICHOTOMY",
+        "AS-INDEX-7",
+        "PERIOD-7"
+      ],
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "ORE-FULL-ISOM",
+      "proof": "papers/nc-p1123.tex#idx:thm:finite-isomorphism",
+      "scope": "For established domain Ore data (r,S,M,c,L) and (r_prime,S_prime,M_prime,c_prime,L_prime), set T=M S^(-1), J=c^(-1) M^2 S^(-3), lambda=c/c_prime and P_i=T_prime^(-i) P T^i. Bare indexed-isomorphism existence is equivalent to existence of P in GL_2(k) and kappa in k^* satisfying J_prime P=P J, (P tensor P_1)r in k^* r_prime, L_prime P_3=kappa L and L_prime P_4=kappa lambda L. This assumes valid AS/domain Ore data and is not an AS-regularity test or a description of all nonlinear isomorphisms.",
+      "depends_on": [
+        "ISO-LINEAR",
+        "DOMAIN-ORE"
+      ],
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "QUANTUM-ISOM",
+      "proof": "papers/nc-p1123.tex#diag:thm:indexed-isomorphism",
+      "scope": "Complete bare indexed-isomorphism existence for all normalized diagonal quantum parameters: equality or the involution (a,b,c)->(a^(-1),b^(-1),c*a^3/b^2), including coincident eigenvalues and all special parameters. No generic-parameter exclusion.",
+      "depends_on": [
+        "QUANTUM-TWIST",
+        "ORE-FULL-ISOM"
+      ],
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "QUANTUM-QUOTIENT",
+      "proof": "papers/nc-p1123.tex#diag:cor:quotient",
+      "scope": "The diagonal quantum indexed-class space is the finite order-two quotient of (k^*)^3 by the stated involution and has dimension 3. Fixed locus: a=1, b=+/-1, c arbitrary nonzero. This is a statement about the diagonal family, not the global AS moduli space.",
+      "depends_on": [
+        "QUANTUM-ISOM"
+      ],
+      "status": "proved_in_manuscript_and_internally_audited_by_multiple_agents",
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
     }
   ],
   "open_problems": [
     {
       "id": "DOMAIN-AUTOMATIC",
       "priority": 1,
-      "problem": "Determine whether every object of Q is a Z-domain by the equivalent condition that the seven jump-2, word-length-one generators z_0,...,z_6 of a chosen word-quadratic presentation have zero left and right annihilators in every degree. Begin with kernels of the weight-3 and weight-5 relation projections, then control possible higher-degree annihilators using AS duality and exact Koszul resolutions. Finite-degree injectivity checks alone do not settle the question."
+      "problem": "Determine whether every object of Q is a Z-domain by the equivalent condition that the seven jump-2, word-length-one generators z_0,...,z_6 of a chosen word-quadratic presentation have zero left and right annihilators in every degree. Use the proved ranks r_2=r_5=1; neither nondegeneracy of the unique weight-2 relation nor nonvanishing of both coefficients of the unique weight-5 relation may be assumed. Begin with kernels of the weight-3 and weight-5 relation projections, then control possible higher-degree annihilators using AS duality and exact Koszul resolutions. Finite-degree injectivity checks alone do not settle the question."
     },
     {
       "id": "TYPE-EXHAUST",
       "priority": 2,
-      "problem": "Prove Q=H without a domain assumption or construct a nonstandard object with zero divisors. Every Z-domain in Q is already standard. Investigate whether relation-count bounds or comparison of seven row Hilbert series can be recovered from AS duality alone."
+      "problem": "Prove Q=H without a domain assumption or construct a nonstandard AS object. OUTER-RELATION-RANKS has already proved r_2(i)=r_5(i)=1 and excluded the finite-width pure jump-1 branch. The remaining numerical issue is to force r_3(i)=2, hence r_4(i)=2 by AS duality. Analyze kernels and images of the Vz/zV projections of R_3 and the Vw/wV/zz projections of R_4 using mixed syzygies, Frobenius pairings and the seven Euler identities. The two coefficients of the one-dimensional R_5 are not yet known to be nonzero."
     },
     {
-      "id": "ORE-FULL-ISOM",
-      "priority": 2,
-      "problem": "Determine bare indexed-isomorphism orbits in the exhaustive n=2 domain Ore locus, including Zhang twists and vertexwise generator changes. The period-one graded representative is not canonical. Distinguish presentation components from moduli components."
-    },
-    {
-      "id": "QUANTUM-ISOM",
+      "id": "ORE-ORBIT-GEOMETRY",
       "priority": 3,
-      "problem": "Complete index-preserving isomorphism classification after diagonal-twist normalization, including GL2 and special parameters"
+      "problem": "Use the proved finite necessary-and-sufficient criterion ORE-FULL-ISOM to obtain normal forms, stabilizers, components and specializations for general quantum- or Jordan-plane Ore data. Separate the L=0 and L!=0 cases, eigenspace coincidences and Jordan forms of J, while retaining the quadratic relation and both L compatibility conditions. The diagonal quantum involution quotient is already complete and is a regression family."
     },
     {
       "id": "AS-LOCUS",
       "priority": 4,
-      "problem": "Determine structural branches and necessary/sufficient AS and Koszul conditions for seven-window candidates with zero divisors. Finite Frobenius duality alone does not prove Koszulity or regularity."
+      "problem": "Determine structural branches and necessary/sufficient AS and Koszul conditions for seven-window candidates with zero divisors, retaining the necessary relation counts r_2=r_5=1. Finite Frobenius duality alone does not prove Koszulity or regularity; the discarded finite-width Euler tables illustrate that nonnegative numerical inverses need not be the Hilbert function of a realizing quadratic algebra."
     },
     {
       "id": "EXACT-PERIOD-7",
@@ -299,7 +364,7 @@
     {
       "id": "GLOBAL-MODULI",
       "priority": 6,
-      "problem": "Full coverage, irreducible components, specializations, stabilizers and relative descent"
+      "problem": "Full coverage of Q, irreducible components, specializations, stabilizers and relative descent. The diagonal quantum family has a proved dimension-three finite quotient; do not extrapolate this to the whole Ore or AS parameter space."
     },
     {
       "id": "GENERAL-NONQUADRATIC",
@@ -314,7 +379,7 @@
   ],
   "resume_point": {
     "task_id": "DOMAIN-AUTOMATIC",
-    "next_action": "Keep the original four-dimensional indexed target Q. Fix a word-homogeneous quadratic presentation and its seven jump-2, word-length-one generators z_0,...,z_6. Determine whether their left and right multiplication maps are injective in every degree; DOMAIN-Z-REGULARITY proves this equivalent to domainness of the entire Z-algebra. Begin with kernels of the weight-3 and weight-5 relation projections, which yield vz, zv, wz or zw equal to zero, and follow possible higher-degree annihilators through the minimal Koszul resolution and Frobenius pairings. In parallel, analyze bare indexed-isomorphism orbits of the established domain Ore locus, beginning with diagonal normalization and exceptional GL2 loci.",
+    "next_action": "Keep the original four-dimensional indexed target Q. Use the proved outer relation ranks r_2=r_5=1 and study the full-degree left and right annihilators of the seven jump-2, word-length-one generators z_i, beginning with relation-projection kernels and the smallest-word-length annihilator. In parallel, force the remaining mixed ranks r_3=r_4=2 through the Vz/zV and Vw/wV/zz projections, mixed syzygies and AS pairings. The finite-width pure jump-1 branch has been excluded and is not a construction target. For the established domain Ore locus, apply the finite isomorphism criterion to orbit normal forms and geometry; the complete diagonal involution quotient is a regression case.",
     "read": [
       "research/plan_ja.tex",
       "papers/nc-p1123.tex",
@@ -322,8 +387,8 @@
       "research/indexed_z_algebra.tex",
       "research/BASELINE.md"
     ],
-    "obstacle": "The domain locus is structurally exhausted without noetherian, Hilbert or periodicity assumptions. Domainness is equivalent to regularity of seven z_i, but regularity must hold in all degrees and is not implied by a finite truncation. Automatic regularity, Q=H for zero-divisor objects, and the complete bare indexed-isomorphism quotient remain unresolved. Nonstandard, least-period-seven and nonconstant-rho objects necessarily have zero divisors.",
-    "do_not_repeat": "The n=2 domain structure theorem and the seven-index regularity criterion are complete in papers/nc-p1123.tex. In the latter, z-regularity alone gives standard ranks and periods two and one; the AS3 normal quotient gives noetherianity by known theory before AS4/GK4 domainness is applied. Do not presuppose domainness or invoke the domain Ore theorem to establish the criterion. The arbitrary-n theorem retains its stated noetherian, domain and Hilbert hypotheses. General n>=3 nonquadratic work is secondary."
+    "obstacle": "Regularity of the seven z_i must hold in all degrees and is not implied by finite truncations. Although r_2=r_5=1 and all pure jump-1 dimensions are proved, the remaining mixed relation counts and projection nondegeneracy are unresolved; Q=H and automatic domainness remain open. Bare domain Ore isomorphism existence is governed by a finite exact criterion, but general orbit normal forms, stabilizers, components and specializations remain unresolved.",
+    "do_not_repeat": "Do not redo the n=2 domain structural theorem, seven-index regularity criterion, pure jump-1 dichotomy and exclusion of its finite-width branch, outer rank theorem r_2=r_5=1, finite domain Ore isomorphism criterion, or complete diagonal quantum involution classification. In the regularity criterion, derive noetherianity before applying AS4/GK4 domainness, without presupposing domainness or using the domain Ore theorem circularly. Numerical finite-width Euler patterns are excluded by the tensor-chain argument and are not surviving AS candidates. The arbitrary-n theorem retains its noetherian, domain and Hilbert hypotheses; general n>=3 nonquadratic work is secondary."
   },
   "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex"

@@ -2,7 +2,8 @@
 """Exact, dependency-free checks for the (1,1,2,3) starting stratum.
 
 The checks concern specified numerical data, the diagonal quantum family,
-and its diagonal Zhang twists.  They are not an AS-regularity test for an
+its diagonal Zhang twists, and a nonrealizable pure-jump-one numerical example.
+They are not an AS-regularity test for an
 arbitrary relation tuple and do not constitute a classification.
 
 Run from the repository root:
@@ -326,10 +327,41 @@ def twist_data():
             "scope": "Complete invariant for this diagonal twist action on the parameter torus only. Further indexed-isomorphism identifications are not classified here."}
 
 
+def pure_jump_one_obstruction():
+    """Reproduce the note's numerical example, not an algebra realization."""
+    ranks = (0, 0, 0, 1, 1, 2, 1)
+    rows = []
+    for start in range(7):
+        row = [1, 2]
+        for length in range(2, 16):
+            row.append(2 * row[-1] - ranks[(start + length - 2) % 7] * row[-2])
+        assert min(row) >= 0 and row[-2:] == [0, 0]
+        while row[-3:] == [0, 0, 0]:
+            row.pop()
+        rows.append(row)
+
+    monodromy = [[1, 0], [0, 1]]
+    for rank in ranks:
+        transfer = [[2, -rank], [1, 0]]
+        monodromy = [[sum(transfer[i][k] * monodromy[k][j] for k in range(2))
+                      for j in range(2)] for i in range(2)]
+    assert monodromy == [[0, 0], [8, 0]]
+    assert all(not (ranks[i] == ranks[(i + 3) % 7] == 0) for i in range(7))
+    assert all(not (ranks[i] == ranks[(i + d) % 7] == 2)
+               for i in range(7) for d in (2, 3))
+    return {
+        "ranks": list(ranks),
+        "recurrence": "b[i,0]=1, b[i,1]=2; b[i,n]=2*b[i,n-1]-a[(i+n-2)%7]*b[i,n-2]",
+        "rows_through_first_consecutive_zeros": rows,
+        "monodromy": monodromy,
+        "scope": "Nonnegative Euler data only. This is not realized by a quadratic pure-jump-one algebra with exact length-two simple resolutions: the tensor-chain argument in idx:thm:outer-relation-ranks rules it out. It is not an AS-regular example.",
+    }
+
+
 def build_certificate():
     denominator, betti = denominator_and_betti()
     hilbert, univariate = hilbert_coefficients(denominator)
-    return {"schema": "nc-p1123-weighted-baseline-v1", "weights": list(WEIGHTS),
+    return {"schema": "nc-p1123-weighted-baseline-v2", "date": "2026-11-19", "weights": list(WEIGHTS),
             "arithmetic": "Exact integers, rational elimination, and Laurent-monomial exponent vectors; no floating point.",
             "standard_resolution_shifts": betti,
             "bivariate_euler_polynomial": [
@@ -344,6 +376,7 @@ def build_certificate():
             "diagonal_quantum_pbw": quantum_overlap_data(),
             "additive_ore_pbw": ore_pbw_data(),
             "diagonal_twist": twist_data(),
+            "pure_jump_one_obstruction": pure_jump_one_obstruction(),
             "limitations": [
                 "The standard resolution shifts are specified data, not deduced from the Hilbert series.",
                 "A finite Hilbert check does not prove exactness of an arbitrary Koszul complex.",
@@ -366,7 +399,7 @@ def main():
         if retained != certificate:
             raise SystemExit("Certificate differs; inspect the mathematical change before using --write.")
         action = "matched"
-    print(f"PASS: exact weighted Hilbert/Euler, quantum and Ore PBW overlaps, and diagonal-twist checks; {action} {args.certificate.name}.")
+    print(f"PASS: exact weighted Hilbert/Euler, quantum and Ore PBW overlaps, diagonal twists, and the nonrealizable numerical recurrence; {action} {args.certificate.name}.")
 
 
 if __name__ == "__main__":

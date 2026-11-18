@@ -27,9 +27,9 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\qgr}{\operatorname{qgr}}
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
-\large Ore表示・次数付き同型と$\mathbb Z$-整域の1周期性}
+\large Ore表示・$\mathbb Z$-整域の1周期性と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v4}
+\date{2026年11月19日\quad 統合版 v5}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -55,11 +55,16 @@ AS添字は$n+5$で、最小解消の内部次数は4本の対角線上にある
 正規元族による2周期とAS双対性による7周期を結合して1周期を得る。
 三次元商の最高syzygyにより第2段の交換写像の可逆性を証明する。
 また整域性は、重み2の生成元族の左右正則性と同値であり、7周期で七つの添字に還元できる。
-整域性を外した全対象と、Zhang twistを含む全添字保持同型の軌道分類は未完成である。
+このOre表示間の添字保持同型の存在を、一つの可逆行列と有限個の等式で判定する。
+対角量子族では三係数への正規化後に残る同一視を一つの対合で完全に記述する。
+また整域性を仮定しない全対象で、重み2と5の関係数が各1であることを証明する。
+純jump 1部分の成長から得る有限幅の候補を、モノミアル商の成長と
+テンソル鎖上の積型線型汎関数によって排除することが要点である。
+全対象の整域性、重み3と4の関係数の標準性、一般の同型軌道の幾何は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v4\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v5\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -125,10 +130,31 @@ B=k\langle A_1\rangle,\quad |z|=2,\quad |w|=3
 第\ref{sec:quadratic-chart}節にある。
 語長二次性を仮定しない場合は、第\ref{sec:general-ore-data}節で
 指定したOre部分族の完全な同型判定を与える。
-$n=2$については、先行原稿本稿の四次元特殊化が
+$n=2$については、本稿の四次元特殊化が
 $\Gclass_2$全体をその部分族で尽くす。
 $n\geq3$で語長二次性を除いた網羅性、および最小生成元次数だけから
 定義\ref{def:general-class}の追加仮定を導くことは、本稿の結論に含まれない。
+
+重み$(1,1,2,3)$の$\mathbb Z$-代数については、第\ref{idx:sec:domain}節で
+Hilbert級数・noetherian性・1周期性を仮定しない広い対象$\mathcal Q$を定義する。
+その整域部分ではこれら三性質を結論として導き、量子平面またはJordan平面上の
+二段Ore表示を網羅する。定理\ref{idx:thm:finite-isomorphism}は、さらに
+この表示間の裸の添字保持同型の存在を有限個の行列条件に帰着する。
+同型判定は全特殊値を含むが、一般の軌道の標準形・成分・特殊化の列挙とは区別する。
+
+\paragraph{同型問題に関する先行研究との関係。}
+Auroux--Katzarkov--Orlov\cite[\S2, Proposition 2.6]{AKO}の重み付き対角量子多項式環は
+本稿の既知の基準族である。その正則性や一般的なOre構成を新規結果とはしない。
+Sierra\cite[Theorem 1.2 = Corollary 4.4]{Sierra}は、次数1生成を仮定せず、
+Zhang twistと付随$\mathbb Z$-代数の同型との対応を与える。
+従ってgraded代数の同型判定だけでは、本稿の添字保持同型問題は解決しない。
+Vit\'oria\cite[Theorem 2.5]{Vitoria}は、全生成元が次数1であるskew polynomial環の
+graded Morita同値を、係数のスカラー変更と置換によって分類している。
+本稿の対角族では重みが$(1,1,2,3)$であり、twistの指数と許される生成元変更が異なる。
+定理\ref{diag:thm:indexed-isomorphism}ではこの重みを保った同型を直接調べ、
+三係数への正規化後に残る対合を全パラメータで求める。
+また定理\ref{idx:thm:finite-isomorphism}は導分項を持つ一般の二段Ore表示を扱う。
+これらの具体的な結果と既存文献との完全な重複調査は未完了であり、新規性の最終確認は主張しない。
 
 \begin{lemma}[双対性と再次数付け]\label{lem:duality-regrading}
 左右noetherianな連結次数付きAS正則代数について、
@@ -2166,9 +2192,10 @@ $a*b=a\theta^{\deg a}(b)$という積で二つの順序を比較すれば
 \cite{Sierra}。
 \end{proof}
 \begin{remark}
-三つの値は指定した対角twistの完全不変量であるが、
-特殊値での同重み生成元の$\GL_2$変更などを含む全添字保持同型の
-完全不変量とは主張しない。$X_a,X_b,X_{ab}$の係数数から
+三つの値は指定した対角twistの完全不変量である。
+全添字保持同型については、定理\ref{diag:thm:indexed-isomorphism}により
+さらに一つの対合による同一視が残り、それで全てである。
+$X_a,X_b,X_{ab}$の係数数から
 非対角モジュライ成分の次元を推定することもできない。
 \end{remark}
 
@@ -2339,6 +2366,256 @@ r_2(j)+r_2(j+3)\leq1
 \]
 となる。これも多項式増大に反する。残る可能性は$L=7$である。
 \end{proof}
+
+
+\subsection{純jump 1部分の二分岐}
+\label{idx:sec:degree-one-dichotomy}
+
+$A\in\mathcal Q$の語長斉次二次表示を選び、語長を$m$、重みを$d$とする。
+$d-m\geq0$であり、その差が零の部分を$B$と置く。
+従って$B$はjump 1の二生成元だけからなる部分$\mathbb Z$-代数である。
+$a_i=\dim R_{i,i+2}$と書く。AS対合と7周期性から
+$a_{i+7}=a_i$、$a_i=\dim R_{i+2,i+7}\leq2$である。
+
+\begin{proposition}[純jump 1部分の二分岐]\label{idx:prop:degree-one-dichotomy}
+整域性を仮定しない全ての$A\in\mathcal Q$について、次のいずれかが成立する。
+\begin{enumerate}
+\item 全ての$i$で$a_i=1$であり、$\dim B_{i,i+n}=n+1$である。
+\item 全ての$i$と$n\geq14$について$B_{i,i+n}=0$である。
+\end{enumerate}
+第2の場合、$a_i=0$となる位置と$a_j=2$となる位置の双方が存在する。
+ここで有限幅という結論は、無限個の恒等射を含む$B$全体の有限次元性を意味しない。
+\end{proposition}
+\begin{proof}
+bar複体で差次数$d-m$は非負かつ加法的である。
+差次数零の部分複体は$B$のbar複体そのものなので、$B$のTorは
+$A$のTorの差次数零成分と同一視される。
+$A$は語長Koszulであり、$\operatorname{Tor}_3^A$の重みは$4,5,6$、
+$\operatorname{Tor}_4^A$の重みは7である。
+従って$B$はKoszulで、その各単純加群の最小解消は
+\[
+0\longrightarrow(e_{i+2}B)^{a_i}
+\longrightarrow(e_{i+1}B)^2
+\longrightarrow e_iB\longrightarrow S_i^B\longrightarrow0
+\]
+となる。
+
+$b_{i,n}=\dim B_{i,i+n}$と置く。
+この解消のEuler式は$B$の上三角Hilbert行列の左逆を与える。
+対角成分が1の上三角行列の形式的な逆は一意であり、各成分の積は有限和なので、
+右逆の式も成立する。従って
+\begin{equation}\label{idx:eq:degree-one-recurrence}
+b_{i,0}=1,\quad b_{i,1}=2,\qquad
+b_{i,n}=2b_{i,n-1}-a_{i+n-2}b_{i,n-2}\quad(n\geq2).
+\end{equation}
+$b_{i,n}\leq\dim A_{i,i+n}$なので、各固定$i$についてこの列は多項式的に増大する。
+
+$M_a=\left(\begin{smallmatrix}2&-a\\1&0\end{smallmatrix}\right)$、
+$P_i=M_{a_{i+6}}\cdots M_{a_i}$と置く。
+全ての$a_i$が零なら$b_{i,n}=2^n$となるので除外される。
+$a_{i-1}\ne0$となる$i$を選び、
+\[
+f_n=b_{i,n},\qquad g_n=b_{i-1,n+1}
+\]
+を考える。両者は\eqref{idx:eq:degree-one-recurrence}の同じ係数列に従う。
+初期ベクトルは
+\[
+(f_1,f_0)^{\mathsf T}=(2,1)^{\mathsf T},\qquad
+(g_1,g_0)^{\mathsf T}=(4-a_{i-1},2)^{\mathsf T}
+\]
+で、その行列式は$a_{i-1}\ne0$である。
+両列の多項式増大により$P_i^m$は基底上で多項式的に有界であり、
+$P_i$の全固有値の絶対値は1以下である。
+これは$a_j=0$の位置で一つの解のモードが消える可能性を回避するために、
+二つの開始行を用いる箇所である。
+
+全ての$a_j$が正なら
+$1\leq\det P_i=\prod_{j=0}^{6}a_j\leq1$なので、全て$a_j=1$である。
+このとき漸化式から$b_{i,n}=n+1$となる。
+
+ある$a_j$が零なら$\det P_i=0$である。
+各$M_a$は$\mathbb F_2$上で対角成分が零なので、奇数個である七つの積の対角成分も零である。
+従って$\operatorname{tr}P_i$は偶数である。
+固有値は$0,\operatorname{tr}P_i$であるため、絶対値の上界から$\operatorname{tr}P_i=0$となる。
+巡回積のtraceとdeterminantは開始位置によらないので、全ての$j$について
+$P_j^2=0$である。漸化式を14回進めると$(b_{j,15},b_{j,14})=(0,0)$となり、
+それ以後も零である。
+最後に全て$a_j\leq1$なら、漸化式から差$b_{i,n}-b_{i,n-1}$は1以上となるので有限幅にはならない。
+従って第2の場合には$a_j=2$となる位置も必要である。
+\end{proof}
+
+
+\subsection{外側の関係数の強制}
+\label{idx:sec:outer-relation-ranks}
+
+前節の純jump 1部分の有限幅分岐を、関係テンソルの幾何によって排除する。
+基礎体が代数閉体であることを、次の補題で用いる。
+
+\begin{lemma}[関係が少ないテンソル鎖の非消滅]
+\label{idx:lem:tensor-chain-nonzero}
+$m\geq1$とし、$U_0,\ldots,U_{m-1}$を二次元ベクトル空間とする。
+$R_j\subset U_j\otimes U_{j+1}$ ($0\leq j\leq m-2$) は
+$\dim R_j\leq2$を満たすとする。
+$\dim R_j=0$の辺で列を区切り、得られる各区間には
+$\dim R_j=2$の辺が高々一つしかないと仮定する。
+このとき
+\[
+\frac{U_0\otimes\cdots\otimes U_{m-1}}
+{\displaystyle\sum_{j=0}^{m-2}
+ U_0\otimes\cdots\otimes U_{j-1}\otimes R_j
+ \otimes U_{j+2}\otimes\cdots\otimes U_{m-1}}
+\ne0.
+\]
+$m=1$では分母を零とする。
+\end{lemma}
+\begin{proof}
+各$j$で非零な共変ベクトル$\alpha_j\in U_j^*$を選び、
+$(\alpha_j\otimes\alpha_{j+1})(R_j)=0$を同時に満たせばよい。
+その積$\alpha_0\otimes\cdots\otimes\alpha_{m-1}$は非零であり、
+分母の全ての関係挿入を消すので、商の非零な線型汎関数となる。
+$\dim R_j=0$の辺は条件を課さないため、各区間で独立に選べる。
+
+一つの区間に二次元関係$R\subset U\otimes W$がある場合、
+まずその辺の共変ベクトルを選ぶ。
+$R$の基底を$r_1,r_2$とすると、
+\[
+(\alpha\otimes1)(r_1),\quad(\alpha\otimes1)(r_2)\in W
+\]
+の係数行列の行列式は、$\alpha\in U^*$の二座標に関する斉次二次式である。
+代数閉体上では、この式が恒等的に零でない場合にも
+$\mathbb P(U^*)$に零点を持つ。
+従って、二つのベクトルが一次従属となる非零$\alpha$を選べる。
+それらをともに消す非零$\beta\in W^*$を取れば
+$(\alpha\otimes\beta)(R)=0$となる。
+
+この辺から左右へ共変ベクトルを延長する。
+他の非零関係は一次元なので、既に選んだ共変ベクトルを固定すると、
+隣の二次元双対空間に課される条件は高々一本の線型方程式である。
+従って非零解を順次選べる。
+二次元関係を持たない区間では、左端で任意の非零共変ベクトルを選び、
+同じ手続で右へ延長すればよい。
+これで全ての$\alpha_j$が得られる。
+\end{proof}
+
+\begin{theorem}[重み2と5の関係数の強制]
+\label{idx:thm:outer-relation-ranks}
+整域性を仮定しない全ての$A\in\mathcal Q$について
+\[
+\dim R_{i,i+2}=\dim R_{i,i+5}=1
+\qquad(i\in\mathbb Z)
+\]
+が成立する。
+従って純jump 1部分$B$は全ての$i\in\mathbb Z$, $n\geq0$について
+$\dim B_{i,i+n}=n+1$を満たし、
+命題\ref{idx:prop:degree-one-dichotomy}の有限幅分岐は起こらない。
+\end{theorem}
+\begin{proof}
+$r_d(i)=\dim R_{i,i+d}$、$a_i=r_2(i)$と置く。
+AS添字7の双対性と7周期性から
+\[
+a_i\in\{0,1,2\},\qquad a_{i+7}=a_i,\qquad
+r_5(i)=a_{i-2},\qquad r_6(i)=0
+\]
+である。
+命題\ref{idx:prop:degree-one-dichotomy}により、
+全ての$a_i$が1でない場合には$B$は有限幅となり、
+一周期の中に0と2の双方が現れる。
+この場合が不可能であることを示す。
+
+\paragraph{二つの零の位置の制約。}
+全ての$i$について
+\begin{equation}\label{idx:eq:outer-no-zero-pair}
+r_5(i)+r_5(i-3)>0,\qquad a_i+a_{i-3}>0
+\end{equation}
+である。
+実際、$r_5(i)=r_5(i-3)=0$と仮定する。
+全てのjump 1生成元を零にし、
+全ての$z_jz_{j+2}$と、
+$r_5(j)>0$の位置にある$z_jw_{j+2},w_jz_{j+3}$を零にする。
+元の重み2、3、4の関係は消え、重み5の関係も消える。
+重み6の関係はないので、これは$A$からの全射を持つモノミアル経路代数を定める。
+
+法7で始点$i$に戻る経路ブロック$w^7$と$zw^4$を考える。
+それぞれの重みは21と14である。
+$zw$は始点$i$に、ブロックの境界で生じる$wz$は始点$i-3$に現れる。
+これらの位置の重み5関係は零であり、$ww$も禁止されていない。
+$zz$は現れない。
+従って重み42の二つのブロック
+\[
+(w^7)^2,\qquad(zw^4)^3
+\]
+を任意に連結できる。
+最初の文字が異なるため、これらを$m$個連結した$2^m$本の経路は相異なる。
+モノミアル商においてそれらは始点$i$、終点$i+42m$の独立な元となり、
+行の多項式増大に反する。
+最後に$r_5(i)=a_{i-2}$によって
+\eqref{idx:eq:outer-no-zero-pair}の第2式も得る。
+
+\paragraph{関係数2の位置の制約。}
+$r_5(s)=2$なら、重み5の二次経路空間全体が関係であり、
+$z_s\otimes w_{s+2}$と$w_s\otimes z_{s+3}$の双方が関係に入る。
+従って$r_5(s)=r_5(s+2)=2$なら
+\[
+z_s\otimes w_{s+2}\otimes z_{s+5}
+\]
+は$(R\otimes W)\cap(W\otimes R)$の非零元となる。
+ここで$W$は全最小生成元空間である。
+これは重み7の三次Koszul syzygyを与える。
+同様に$r_5(s)=r_5(s+3)=2$なら
+$w_s\otimes z_{s+3}\otimes w_{s+5}$が重み8の三次syzygyを与える。
+いずれも$\operatorname{Tor}_3^A$の重みが$4,5,6$に限られることに反する。
+
+従って$a_i=2$となる二つの位置の差は、法7で$2,3,4,5$になれない。
+一周期中の2は高々二つであり、二つあるなら隣接する。
+しかし$a_i=a_{i+1}=2$も不可能である。
+実際、$b_{i,n}=\dim B_{i,i+n}$とし、
+\eqref{idx:eq:degree-one-recurrence}を用いると
+\[
+b_{i,2}=2,\qquad b_{i,3}=0,\qquad
+b_{i,4}=-2a_{i+2}.
+\]
+また開始位置を$i-1$に取ると
+\[
+b_{i-1,4}=-2a_{i-1}.
+\]
+次元の非負性から$a_{i+2}=a_{i-1}=0$となり、
+二つの零の距離が3であることが
+\eqref{idx:eq:outer-no-zero-pair}に反する。
+ゆえに有限幅の枝では、一周期に2がちょうど一つ存在する。
+
+\paragraph{有限幅との矛盾。}
+有限幅の枝には0も存在するため、整数直線上で
+連続する二つの$a_j=2$の間には必ず$a_\ell=0$の位置がある。
+従って任意の有限区間で、$a_j=0$の辺ごとに列を切ると、
+各区間には二次元関係が高々一つしかない。
+
+純jump 1部分は
+\[
+B=T_{\mathbb Z}(V)/(R_{i,i+2}\mid i\in\mathbb Z)
+\]
+そのものである。
+重みから語長を引いた差が非負であり、差が正の関係は
+差が零の部分へ追加の関係を作らないためである。
+特に$B_{i,i+n}$は
+$V_i\otimes\cdots\otimes V_{i+n-1}$を、
+各隣接位置への$R_{j,j+2}$の挿入で割った空間である。
+補題\ref{idx:lem:tensor-chain-nonzero}を適用すると、
+全ての$i$と$n\geq1$で$B_{i,i+n}\ne0$となる。
+これは$n\geq14$で全て零となる有限幅の結論に反する。
+
+従って全ての$a_i$が1である。
+$r_5(i)=a_{i-2}$から重み5の関係数も1であり、
+\eqref{idx:eq:degree-one-recurrence}から$b_{i,n}=n+1$を得る。
+\end{proof}
+
+\begin{remark}
+ここで強制したのは重み2と5の\emph{関係空間の次元}である。
+重み2の一つの関係テンソルが非退化な双一次形式であることや、
+重み5関係の二つの経路への射影がともに非零であることは、
+この定理だけからは従わない。
+重み3、4の関係数、重み2生成元族の正則性、
+全対象の標準Hilbert級数と整域性は、さらに検討を要する。
+\end{remark}
 
 
 \subsection{整域性による標準関係数の強制}
@@ -2674,12 +2951,454 @@ $A\simeq A(1)$なら$\rho_i=\rho_{i+1}$となる。
 \end{proof}
 \begin{remark}
 定理\ref{idx:thm:domain-ore}は整域部分の構造表示を尽くすが、
-裸の添字保持同型によるOreデータの軌道を列挙したものではない。
+それだけでは裸の添字保持同型によるOreデータの同一視は決まらない。
 $\check D\simeq\check D'$であることは$D,D'$がZhang twistで結ばれることと同値である
 \cite[Theorem 1.2, Corollary 4.4]{Sierra}。
-従って前節までのgraded同型の判定だけでは、添字保持同型類を分離できない。
+その必要十分条件を次節の定理\ref{idx:thm:finite-isomorphism}で与える。
 また全$\mathcal Q$の整域性は未証明であり、
 非整域対象の存在・標準型からの逸脱・最小周期7は引き続き未解決である。
+\end{remark}
+
+
+\section{Ore表示の添字保持同型を判定する有限条件}
+\label{idx:sec:finite-isomorphism}
+本節では、定理\ref{idx:thm:domain-ore}の二つのOreデータが
+同じ裸の$\mathbb Z$-代数を与えるための必要十分条件を求める。
+周期同型との可換性を要求せず、添字ごとに異なる生成元変更を許す。
+Zhang twistと付随$\mathbb Z$-代数の同型との一般的関係は
+\cite[Theorem 1.2, Corollary 4.4]{Sierra}にある。
+以下の判定は、与えられた二つのOre表示を有限個の行列の等式で比較するものである。
+個別の判定式の文献上の新規性は最終確認を終えていない。
+
+\subsection{同型の存在の線型化}
+\begin{lemma}[語長線型化]\label{idx:lem:linearization}
+$A=T_{\mathbb Z}(W)/(R)$と$A'=T_{\mathbb Z}(W')/(R')$を、
+正の重みを持つ語長斉次二次表示とする。
+添字保持同型$A\simeq A'$が存在することと、
+各生成元空間$W_{ij}\to W'_{ij}$の線型同型が存在し、
+その二次テンソル写像が$R$を$R'$へ移すことは同値である。
+\end{lemma}
+\begin{proof}
+$I=A_+$とする。語長斉次表示により
+\[
+I^m=\bigoplus_{\ell\ge m}A^{(\ell)}
+\]
+である。ここで$A^{(\ell)}$は語長$\ell$の部分である。
+実際、$I$の$m$個の元の積の語長は$m$以上であり、
+逆に語長$\ell\ge m$の単項式は$m$個の正語長の因子に分けられる。
+従って、選んだ表示により$\gr_I A\simeq A$となる。
+各添字成分$A_{ij}$では語長が$j-i$以下なので、完備化は必要ない。
+
+添字保持同型は$I$とその全ての冪を保つため、付随次数を取ると
+添字と語長を保つ同型を得る。
+語長1の部分は$W=I/I^2$であり、語長2の積の核は$R$である。
+従ってこの同型は、主張の線型写像と関係空間の対応を与える。
+逆に、そのような線型写像はテンソル代数の同型へ延長され、
+二次関係の生成するイデアルを対応させるので、商の同型を誘導する。
+\end{proof}
+
+\begin{remark}
+補題は同型の\emph{存在}を判定する。
+全ての同型が語長を保つと主張しているわけではない。
+例えば可換の場合、$z\mapsto z+x^2$は重みを保つ非線型自己同型である。
+以下の有限条件は裸の同型類を比較する条件であり、
+全自己同型群やmoduli stackを記述するものではない。
+\end{remark}
+
+\subsection{二段Oreデータの有限判定}
+定理\ref{idx:thm:domain-ore}のデータを
+\[
+(B,\sigma,\mu,c,L),\qquad
+(B',\sigma',\mu',c',L')
+\]
+とし、対応するgraded代数を$D,D'$とする。
+$B=T(V)/(kr)$、$B'=T(V')/(kr')$と書き、
+$r,r'$は非零な関係テンソル、$\dim V=\dim V'=2$とする。
+基底を選び、$S=\sigma|_V$, $M=\mu|_V$と、
+$S'=\sigma'|_{V'}$, $M'=\mu'|_{V'}$を行列で表す。
+$L,L'$は、それぞれ$V,V'$上の行ベクトルとして扱う。
+特に\eqref{idx:eq:compatibility}から
+\[
+SM=MS,\quad S'M'=M'S',\qquad
+LS=cL,\quad L'S'=c'L'
+\]
+である。
+
+次の可逆行列と非零スカラーを定める。
+\begin{equation}\label{idx:eq:isomorphism-operators}
+\begin{gathered}
+T=MS^{-1},\qquad T'=M'S'^{-1},\\
+J=c^{-1}M^2S^{-3},\qquad
+J'=c'^{-1}M'^2S'^{-3},\qquad
+\lambda=c/c'.
+\end{gathered}
+\end{equation}
+任意の可逆線型写像$P:V\to V'$に対し
+\[
+P_j=T'^{-j}PT^j\qquad(j\in\mathbb Z)
+\]
+と置く。
+
+\begin{theorem}[裸の添字保持同型の有限判定]
+\label{idx:thm:finite-isomorphism}
+$\check D\simeq\check D'$となることと、
+$P\in\GL_2(k)$および$\kappa\in k^\times$で次を満たすものが存在することは同値である。
+\begin{align}
+J'P&=PJ,\label{idx:eq:isomorphism-J}\\
+(P\otimes P_1)r&\in k^\times r',\label{idx:eq:isomorphism-r}\\
+L'P_3&=\kappa L,\qquad
+L'P_4=\kappa\lambda L.\label{idx:eq:isomorphism-L}
+\end{align}
+これらを満たす$P,\kappa$があれば、各添字で
+\begin{equation}\label{idx:eq:isomorphism-explicit}
+v_i\longmapsto (P_iv)'_i,\qquad
+z_i\longmapsto\lambda^i z_i',\qquad
+w_i\longmapsto\frac{\lambda^{i+2}}{\kappa}w_i'
+\end{equation}
+とする写像が添字保持同型を与える。
+ここで$v_i$は$v\in V$の第$i$頂点から出るjump 1のコピーである。
+\end{theorem}
+\begin{proof}
+付随$\mathbb Z$-代数の関係は、各$i$で
+\begin{align*}
+r_i&=0,&
+z_i v_{i+2}&=(Sv)_i z_{i+1},\\
+w_i v_{i+3}&=(Mv)_i w_{i+1}+L(v)z_i z_{i+2},&
+w_i z_{i+3}&=c z_i w_{i+2}.
+\end{align*}
+添字のない行列は、各頂点のコピーを固定した$V$と同一視して作用させる。
+
+\paragraph{必要性：一般の線型同型と頂点スカラー。}
+補題\ref{idx:lem:linearization}により、同型の存在については
+\[
+v_i\longmapsto(P_iv)'_i,\qquad
+z_i\longmapsto\alpha_i z_i',\qquad
+w_i\longmapsto\beta_i w_i',
+\quad P_i\in\GL_2(k),\quad\alpha_i,\beta_i\ne0
+\]
+と書ける。$a_i=\alpha_{i+1}/\alpha_i$、
+$b_i=\beta_{i+1}/\beta_i$と置く。
+Ore表示の順序付き基底で各関係の係数を比較すると
+\begin{align}
+S'P_{i+2}&=a_iP_iS,&
+M'P_{i+3}&=b_iP_iM,\label{idx:eq:isomorphism-general-SM}\\
+\beta_iL'P_{i+3}&=\alpha_i\alpha_{i+2}L,&
+c'\beta_i\alpha_{i+3}&=c\alpha_i\beta_{i+2},
+\label{idx:eq:isomorphism-general-Lc}
+\end{align}
+および$(P_i\otimes P_{i+1})r\in k^\times r'$を得る。
+
+\eqref{idx:eq:isomorphism-general-SM}の第1式を$i+1$に適用し、
+第2式と比較すると
+\begin{equation}\label{idx:eq:isomorphism-projective-recurrence}
+P_{i+1}=\frac{b_i}{a_{i+1}}\,T'^{-1}P_iT
+\end{equation}
+となる。従って$P=P_0$と置けば、
+$P_i=p_iT'^{-i}PT^i$となる非零スカラー列$p_i$が存在する。
+これは正負両方向に漸化式を解いて得られる。
+
+非零スカラー列$s_i$に対し
+\[
+g_{ij}(a)=\frac{s_i}{s_j}a\qquad
+(a\in(\check D')_{ij})
+\]
+は添字保持自己同型である。
+積の中間添字に対応する二つのスカラーが打ち消し合うためである。
+$s_{i+1}=p_is_i$を全整数で解き、この自己同型を後に合成すれば、
+jump 1上の写像は
+\begin{equation}\label{idx:eq:isomorphism-balanced-P}
+P_i=T'^{-i}PT^i
+\end{equation}
+となる。以下では、合成後の$z,w$のスカラーも$\alpha_i,\beta_i$と書く。
+
+\paragraph{必要性：一定の公比と$J$。}
+$S,T$および$S',T'$は可換なので、
+\eqref{idx:eq:isomorphism-balanced-P}を
+\eqref{idx:eq:isomorphism-general-SM}に代入すると
+\[
+S'T'^{-2}PT^2=a_iPS,\qquad
+M'T'^{-3}PT^3=b_iPM
+\]
+となる。左辺は$i$によらず、$PS,PM$は可逆であるから、
+$a_i=a$, $b_i=b$は定数である。
+\eqref{idx:eq:isomorphism-projective-recurrence}と
+\eqref{idx:eq:isomorphism-balanced-P}を比較すると$b/a=1$であり、$a=b$を得る。
+\eqref{idx:eq:isomorphism-general-Lc}の第2式は$c'a^3=ca^2$を与えるので
+\[
+a=b=\lambda=c/c',\qquad
+\alpha_i=\alpha\lambda^i,\quad
+\beta_i=\beta\lambda^i
+\]
+となる。ここで$\alpha=\alpha_0$, $\beta=\beta_0$である。
+
+$K=M^2S^{-3}$、$K'=M'^2S'^{-3}$と置くと
+$S'T'^{-2}=K'^{-1}$、$T^2=KS$である。
+従って$S'T'^{-2}PT^2=\lambda PS$は
+$K'^{-1}PK=\lambda P$と同値であり、
+\eqref{idx:eq:isomorphism-J}に等しい。
+$i=0$の基底関係から\eqref{idx:eq:isomorphism-r}も従う。
+
+\eqref{idx:eq:isomorphism-general-Lc}の第1式は
+\begin{equation}\label{idx:eq:isomorphism-all-L}
+L'P_{i+3}=\kappa\lambda^iL,\qquad
+\kappa=\alpha^2\lambda^2/\beta
+\end{equation}
+となる。$i=0,1$に適用すれば\eqref{idx:eq:isomorphism-L}を得る。
+$\alpha,\beta,\lambda$は非零なので$\kappa\ne0$である。
+
+\paragraph{十分性：交換関係と基底関係。}
+逆に\eqref{idx:eq:isomorphism-J}--\eqref{idx:eq:isomorphism-L}を仮定する。
+$K'^{-1}PK=\lambda P$と$S,T$、$S',T'$の可換性から
+\[
+S'P_{i+2}=\lambda P_iS
+\]
+が全整数$i$について成立する。
+また$P_{i+3}=T'^{-1}P_{i+2}T$、$M'=T'S'$、$ST=M$なので
+\[
+M'P_{i+3}=S'P_{i+2}T=\lambda P_iM.
+\]
+従って二つの交換写像に関する式が全添字で成立する。
+
+$T$と$T'$はそれぞれ$B,B'$のgraded自己同型であり、
+$kr$と$kr'$を保つ。さらに
+\[
+(P_i\otimes P_{i+1})r
+=(T'^{-i}\otimes T'^{-i})(P\otimes P_1)
+(T^i\otimes T^i)r.
+\]
+\eqref{idx:eq:isomorphism-r}により右辺は$kr'$の非零元となる。
+従って基底代数の関係も全添字で保存される。
+
+\paragraph{十分性：導分項の二つの添字列。}
+\eqref{idx:eq:isomorphism-all-L}がある$i$で成立するとする。
+$S'P_{i+5}=\lambda P_{i+3}S$と$L'S'=c'L'$、$LS=cL$により
+\[
+c'L'P_{i+5}
+=\lambda L'P_{i+3}S
+=\kappa\lambda^{i+1}cL.
+\]
+$c/c'=\lambda$なので
+\[
+L'P_{i+5}=\kappa\lambda^{i+2}L.
+\]
+全ての係数は非零であるから、この含意は逆方向にも成立する。
+\eqref{idx:eq:isomorphism-L}は$i=0,1$の初期条件であり、
+偶数と奇数の二つの添字列をそれぞれ正負両方向へ進めることで、
+\eqref{idx:eq:isomorphism-all-L}を全整数$i$について得る。
+
+ここで
+\[
+\alpha_i=\lambda^i,\qquad
+\beta_i=\lambda^{i+2}/\kappa
+\]
+と置けば、\eqref{idx:eq:isomorphism-general-SM}と
+\eqref{idx:eq:isomorphism-general-Lc}が全て成立する。
+従って\eqref{idx:eq:isomorphism-explicit}は全ての二次関係を保存する。
+生成元空間上の写像は全て可逆であり、
+重み$2,3,4,5$の関係空間の次元は両側とも$1,2,2,1$である。
+ゆえに二次テンソル写像による関係空間の包含は等号となる。
+テンソル代数の同型は関係イデアルを対応させ、所要の商の同型を誘導する。
+\end{proof}
+
+\begin{remark}
+この判定は$L=0$の場合も含む。
+実際、$P_3$が可逆で$\kappa\ne0$なので、
+$L'P_3=\kappa L$から$L=0$と$L'=0$は同値となる。
+両方が零なら$\kappa$は任意の非零値でよく、上の逆構成はそのまま使える。
+非零の$L$についても、特定の成分で割る正規化をしていないので、
+成分が零となる特殊値を除いていない。
+
+固定した二つのデータに対し、$P_j$は$P$の成分の線型式である。
+従って判定は、$\det P\ne0$、$\kappa\ne0$という条件の下で、
+有限本の線型式と、\eqref{idx:eq:isomorphism-r}に含まれる二次式を解く問題である。
+これによって全Oreデータの添字保持同型の存在を判定できるが、
+全軌道の標準形、退化、成分、安定化群を列挙したわけではない。
+\end{remark}
+
+\begin{remark}[任意の$n$の既存Ore族への適用]
+$B=T(V)/(R_2)$、$B'=T(V')/(R_2')$を、
+$\dim V=\dim V'=n$の語長斉次二次代数とする。
+$\sigma,\mu$および$\sigma',\mu'$がそれぞれ基底代数の可換なgraded自己同型であり、
+$c,c'\ne0$、$L,L'$が\eqref{eq:general-quadratic-compatibility}を満たし、
+対応する重み$(1^n,2,3)$の二段Ore表示を与えると仮定する。
+このとき$P\in\GL_n(k)$とし、\eqref{idx:eq:isomorphism-r}を
+\[
+(P\otimes P_1)R_2=R_2'
+\]
+に置き換えれば、同じ必要十分条件と証明が成立する。
+基底関係の次元が1であること以外に、上の証明は$n=2$を使っていない。
+これは指定したOre族の同型判定であり、
+任意$n$の全AS正則$\mathbb Z$-代数がこのOre族に入るという主張ではない。
+\end{remark}
+
+\section{対角量子多項式族の完全な添字保持同型判定}
+\label{diag:sec:complete-indexed-isomorphism}
+命題\ref{diag:prop:twist}により、対角量子多項式族は
+$q_{01}=q_{02}=q_{03}=1$へ正規化できる。
+本節では残る三つの非零交換係数を
+\begin{equation}\label{diag:eq:normalized-three}
+a=\frac{q_{01}^2q_{12}}{q_{02}},\qquad
+b=\frac{q_{01}^3q_{13}}{q_{03}},\qquad
+c=\frac{q_{02}^3q_{23}}{q_{03}^2}
+\end{equation}
+と書く。この小節の$a,b$は交換係数であり、
+\eqref{diag:eq:family}の導分係数とは区別する。
+$D(a,b,c)$を、重み$(1,1,2,3)$の$x,y,z,w$と関係
+\begin{equation}\label{diag:eq:normalized-presentation}
+\begin{aligned}
+yx&=xy,& zx&=xz,& wx&=xw,\\
+zy&=a\,yz,& wy&=b\,yw,& wz&=c\,zw
+\end{aligned}
+\end{equation}
+で定める。この表示では$x$が中心的であり、
+Oreデータは$B=k[x,y]$、$S=\operatorname{diag}(1,a)$、
+$M=\operatorname{diag}(1,b)$、$L=0$である。
+
+\begin{theorem}[対角族の全パラメータにおける同型判定]
+\label{diag:thm:indexed-isomorphism}
+$(a,b,c),(a',b',c')\in(k^\times)^3$について、
+\[
+\check D(a,b,c)\simeq\check D(a',b',c')
+\]
+が添字保持同型として成立することと、
+\[
+(a',b',c')=(a,b,c)
+\quad\text{または}\quad
+(a',b',c')=\left(a^{-1},b^{-1},c\,a^3/b^2\right)
+\]
+であることは同値である。
+従って\eqref{diag:eq:normalized-three}を計算した後、この二つの場合を比較すれば、
+元の六係数の対角量子多項式族の裸の添字保持同型を判定できる。
+\end{theorem}
+\begin{proof}
+有限判定定理の特殊化からも従うが、例外値を明確にするため直接証明する。
+補題\ref{idx:lem:linearization}により、
+$V_i=kx_i+ky_i$上の$P_i\in\GL_2(k)$、
+$z_i\mapsto\alpha_i z_i'$、$w_i\mapsto\beta_i w_i'$という同型だけを考えればよい。
+
+\paragraph{重み1生成元の変更。}
+重み2の関係は
+$k(x_i\otimes y_{i+1}-y_i\otimes x_{i+1})$である。
+\[
+\Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+\]
+と置くと、関係保存はある$\nu_i\ne0$について
+$P_i\Omega P_{i+1}^{\mathsf T}=\nu_i\Omega$と書ける。
+一方、$P_i\Omega P_i^{\mathsf T}=(\det P_i)\Omega$である。
+従って$P_{i+1}=(\nu_i/\det P_i)P_i$となり、
+一つの行列$P$と非零スカラー列$p_i$で$P_i=p_iP$と書ける。
+前節と同じ頂点スカラー自己同型を合成して、全$i$で$P_i=P$とできる。
+
+$E_a=\operatorname{diag}(1,a)$、$E_b=\operatorname{diag}(1,b)$と置く。
+$zV,wV$の関係を比較すると、非零スカラー$\lambda_z,\lambda_w$について
+\begin{equation}\label{diag:eq:simultaneous-projective-conjugacy}
+E_{a'}P=\lambda_zPE_a,\qquad
+E_{b'}P=\lambda_wPE_b
+\end{equation}
+となり、
+$\alpha_i=\alpha_0\lambda_z^i$、
+$\beta_i=\beta_0\lambda_w^i$を得る。
+ここでは$P_i$を定数にする正規化を選んでおり、
+前節の\eqref{idx:eq:isomorphism-balanced-P}とは正規化が異なる。
+従って$\lambda_z$と$\lambda_w$が等しいとは限らない。
+$wz$関係から
+$c'\beta_i\alpha_{i+3}=c\alpha_i\beta_{i+2}$であるため、
+\begin{equation}\label{diag:eq:third-parameter-transform}
+c'=c\,\lambda_w^2/\lambda_z^3.
+\end{equation}
+
+\paragraph{同時射影共役の全ての場合。}
+$(a,b)\ne(1,1)$なら、$E_a,E_b$の少なくとも一方は相異なる固有値を持つ。
+\eqref{diag:eq:simultaneous-projective-conjugacy}により、
+対応する終域の行列も相異なる固有値を持ち、
+$P$は二つの座標固有線を二つの座標固有線へ移す。
+従って$P$は対角または反対角である。
+
+$P$が対角なら\eqref{diag:eq:simultaneous-projective-conjugacy}から
+\[
+\lambda_z=\lambda_w=1,\qquad a'=a,\quad b'=b,
+\]
+ゆえに\eqref{diag:eq:third-parameter-transform}から$c'=c$となる。
+$P$が反対角なら同じ式から
+\[
+\lambda_z=a^{-1},\qquad\lambda_w=b^{-1},
+\qquad a'=a^{-1},\quad b'=b^{-1},
+\]
+従って$c'=ca^3/b^2$となる。
+
+$(a,b)=(1,1)$なら\eqref{diag:eq:simultaneous-projective-conjugacy}は
+$E_{a'}=\lambda_zI$、$E_{b'}=\lambda_wI$を与える。
+各行列の第1対角成分が1なので
+\[
+a'=b'=1,\qquad\lambda_z=\lambda_w=1.
+\]
+この場合$P$は任意の$\GL_2(k)$の元でよいが、
+\eqref{diag:eq:third-parameter-transform}から$c'=c$である。
+従って固有値が重複する場合にも、追加のパラメータの同一視は生じない。
+以上で必要性を示した。
+
+\paragraph{同型の構成。}
+同じ三つ組には恒等同型がある。
+$(a',b',c')=(a^{-1},b^{-1},ca^3/b^2)$の場合は
+\[
+x_i\longmapsto y_i',\qquad
+y_i\longmapsto x_i',\qquad
+z_i\longmapsto a^{-i}z_i',\qquad
+w_i\longmapsto b^{-i}w_i'
+\]
+が全関係を保つ。
+同じ構成を逆向きに適用すると恒等写像となるので、これは同型である。
+\end{proof}
+
+\begin{corollary}[三次元トーラスの対合による商]
+\label{diag:cor:quotient}
+対角量子多項式族の裸の添字保持同型類の集合は
+\[
+\mathcal T(k)/\langle s\rangle,\qquad
+\mathcal T=(\mathbb G_m)^3,\qquad
+s(a,b,c)=\left(a^{-1},b^{-1},ca^3/b^2\right)
+\]
+と同一視できる。$s$は対合であり、その固定点集合は
+\[
+a=1,\qquad b=1\ \text{または}\ b=-1,\qquad c\in k^\times
+\]
+である。
+従って各軌道は、固定点上で1点、それ以外で2点からなる。
+この族の同型類を与えるaffine有限商
+\[
+\operatorname{Spec}
+k[a^{\pm1},b^{\pm1},c^{\pm1}]^{\langle s\rangle}
+\]
+は既約で次元3である。
+\end{corollary}
+\begin{proof}
+$s^2=\mathrm{id}$は直接代入で分かる。
+固定点条件は$a^2=b^2=1$、$a^3=b^2$である。
+標数0であることから$a=1$、$b=\pm1$を得る。
+
+有限群によるaffine商の幾何学的点は軌道を区別する。
+実際、異なる二つの有限軌道上でそれぞれ0、1を取る正則関数を選び、
+群で平均すれば、それらを分ける不変関数を得る。
+また各正則関数$f$は
+$\prod_{g\in\langle s\rangle}(X-g(f))$を満たすので、不変環上整である。
+従って商射は有限で、次元は$\dim\mathcal T=3$に等しい。
+不変環は整域なので商も既約である。
+同型類と軌道との対応は定理\ref{diag:thm:indexed-isomorphism}による。
+\end{proof}
+
+\begin{remark}[例外値と適用範囲]
+$(a,b)=(1,1)$では、頂点スカラーを除いた重み1生成元の線型変更に
+任意の$P\in\GL_2(k)$を許すが、$c$は不変である。
+$(a,b)=(1,-1)$では、対角行列に加えて反対角行列も同じ三つ組の自己同型を与える。
+一方、$(a,b)=(-1,\pm1)$では$s$が$c$を$-c$へ移す。
+$c\ne0$かつ標数0なので、これは異なる二つの三つ組の同一視であり、
+同じ三つ組に対する反対角自己同型ではない。
+その他の、係数が1の冪根となる場合や係数間の乗法的関係も上の固有線の議論に含まれ、
+追加の同型による同一視は生じない。
+
+この系は対角族の同型類の完全な記述である。
+その三次元有限商を、全AS正則対象のmoduli成分や、
+非線型自己同型も含めたmoduli stackと同一視してはいない。
 \end{remark}
 
 
@@ -2693,9 +3412,13 @@ $\check D\simeq\check D'$であることは$D,D'$がZhang twistで結ばれる�
 その全次数の消去子をAS双対性と最小解消で追い、非整域の枝を排除または構成する。
 \item 整域性を外しても標準Hilbert級数と関係数が強制されるか。
 定理\ref{idx:thm:domain-standard}はこの問題の整域部分を解決する。
+定理\ref{idx:thm:outer-relation-ranks}により重み2と5の関係数は各1に確定した。
+残る重み3と4の関係数、およびそれらの射影の核を調べる。
+標準の純jump 1数値型だけから混合関係の本数や射影の可逆性を結論してはならない。
 \item 最小周期7または非定数の$\rho_i$を持つ対象が非整域部分に存在するか。
-\item 全Oreデータに対するZhang twistを含む添字保持同型の必要十分条件、
-例外パラメータ、退化、成分の交差を決定する。
+\item 定理\ref{idx:thm:finite-isomorphism}の有限同型条件を用いて、
+非対角Oreデータの軌道の標準形、特殊化、成分の交差を決定する。
+同型の存在判定、線型自己同型群、非線型自己同型を含むモジュライスタックは区別する。
 \end{enumerate}
 広い対象の定義と本稿の構造定理の証明は本稿内で完結する。
 有限七窓と未収載の着想は、現行研究資料
@@ -2714,6 +3437,11 @@ $\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
 \begingroup
 \small
 \begin{thebibliography}{9}
+\bibitem{Vitoria}
+J.~Vit\'oria, \emph{Equivalences for noncommutative projective spaces},
+arXiv:1001.4400v3 (2011).
+\url{https://arxiv.org/pdf/1001.4400}.
+比較箇所：第1節の次数1生成の設定とTheorem 2.5。
 \bibitem{VdB}
 M.~Van den Bergh, \emph{Non-commutative quadrics},
 arXiv:0807.3753v3 (2010).

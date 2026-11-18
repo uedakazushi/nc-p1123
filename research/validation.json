@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 9,
+  "version": 10,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -42,23 +42,30 @@
       "DOMAIN-PERIOD-ONE",
       "DOMAIN-ORE",
       "DOMAIN-BOUNDARY",
-      "DOMAIN-Z-REGULARITY"
+      "DOMAIN-Z-REGULARITY",
+      "DEGREE-ONE-DICHOTOMY",
+      "OUTER-RELATION-RANKS",
+      "ORE-FULL-ISOM",
+      "QUANTUM-ISOM",
+      "QUANTUM-QUOTIENT"
     ],
-    "logical_review": "Independent AI-assisted readings of the entire new indexed-domain section and its direct dependencies completed. Three parallel mathematical reviews covered the general-Q Koszul/AS-index/seven-period argument, domain relation-count forcing, normal-family two-periodicity, one-period descent, and the AS3 top-syzygy argument. The final integrated proof was read independently and its notation and choice of period structure were corrected. This is not formalization or external peer review. The subsequent equivalence of Z-domainness with the two-sided regularity of the jump-2 generator family was independently audited; the noetherian-to-domain dependency was checked against the cited primary papers.",
+    "logical_review": "The current manuscript contains complete proofs of the broad-Q Koszul/index/seven-period results, the domain structure and z-regularity criterion, the pure-jump-one dichotomy and exclusion of its finite-width branch, the finite Ore indexed-isomorphism criterion, and the complete diagonal indexed quotient. Independent AI-assisted readings checked the new tensor-chain and monodromy arguments, the noncircular use of AS assumptions, the indexed matrix and scalar recurrences, both parity conditions for the derivation, and all exceptional diagonal parameters. These readings are neither formal verification nor external peer review.",
     "new_reviewed_claims": [
-      "INDEXED-NORMAL-Z",
-      "DOMAIN-STANDARD",
-      "DOMAIN-PERIOD-ONE",
-      "DOMAIN-ORE",
-      "DOMAIN-BOUNDARY",
-      "DOMAIN-Z-REGULARITY"
+      "DEGREE-ONE-DICHOTOMY",
+      "OUTER-RELATION-RANKS",
+      "ORE-FULL-ISOM",
+      "QUANTUM-ISOM",
+      "QUANTUM-QUOTIENT"
     ],
     "reviewed_dependencies": [
       "GENERAL-KOSZUL",
       "AS-INDEX-7",
-      "PERIOD-7"
+      "PERIOD-7",
+      "ISO-LINEAR",
+      "DOMAIN-ORE",
+      "QUANTUM-TWIST"
     ],
-    "scope": "Over C, all positive connected locally finite two-sided AS4 Z-algebras with primitive jumps (1,1,2,3), a word-quadratic homogeneous presentation, finite finitely-generated projective resolutions of simples, polynomial row/column growth, and Z-domain property. Standard Hilbert series, one-periodicity and noetherianity are conclusions. General n retains its previously stated hypotheses.",
+    "scope": "Over the standing algebraically closed field of characteristic zero: all Q for the outer relation dimensions r_2=r_5=1 and pure-jump-one Hilbert function n+1; all valid domain Ore data for the finite necessary-and-sufficient indexed-isomorphism criterion; all nonzero parameters of the diagonal quantum family for its involution quotient. The domain structure theorem still does not prove that every Q object is a domain. General n retains the existing hypotheses, except that the stated finite isomorphism criterion also applies within the specified quadratic Ore family.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -72,14 +79,26 @@
       "PBW spanning and Hilbert comparison, Ore compatibility equations, reverse construction and noetherianity as a consequence",
       "Replacing jump-one injections by regular jump-two generators in the seven-row Hilbert comparison",
       "Z-domainness equivalent to full-degree left/right regularity of seven selected z_i; no finite-degree decision claim",
-      "No circular domain assumption in the route normal regular quotient AS3 -> noetherian -> AS4/GK4 domain"
+      "No circular domain assumption in the route normal regular quotient AS3 -> noetherian -> AS4/GK4 domain",
+      "Excess-zero bar complex, length-two simple resolutions and the endpoint Hilbert recurrence for the pure-jump-one subalgebra",
+      "Two independent actual Hilbert rows control every monodromy mode; parity of the seven-fold trace and the width-14 boundary",
+      "Monomial quotient excluding two zero weight-five relation spaces at distance three",
+      "Forbidden high-weight cubic syzygies and nonnegative Hilbert coefficients restrict two-dimensional pure-jump-one relation spaces",
+      "Over the algebraically closed field, a two-dimensional relation space admits a decomposable annihilator; extension along one-dimensional relations excludes finite width",
+      "Distinction between a one-dimensional relation space and nondegeneracy of its defining tensor",
+      "Augmentation-filtration linearization, vertex scalar gauge and finite matrix conditions for bare indexed-isomorphism existence",
+      "Orientation of c/c_prime, P tensor P_1, and the two initial derivation conditions; explicit isomorphism in both directions",
+      "Diagonal involution, scalar-matrix exceptional locus, all root-of-unity parameters, fixed locus and dimension-three finite quotient"
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
       "Van den Bergh, arXiv:0807.3753v3, Lemma 3.4",
       "Rogalski-Zhang, arXiv:1101.1998v2, Lemma 1.1, Corollary 1.2; Lemma 1.3(c) as an alternative route",
       "Sierra, arXiv:math/0608791v3, Theorem 1.2 = Corollary 4.4",
-      "Lu-Palmieri-Wu-Zhang, author PDF hiext.pdf, Lemma 1.3 (noetherian connected AS4 with GK dimension 4 is a domain; attributed there to ATV2, 3.9)"
+      "Lu-Palmieri-Wu-Zhang, author PDF hiext.pdf, Lemma 1.3 (noetherian connected AS4 with GK dimension 4 is a domain; attributed there to ATV2, 3.9)",
+      "Auroux-Katzarkov-Orlov, published PDF, Proposition 2.6, known weighted diagonal family",
+      "Vitoria, arXiv:1001.4400v3, degree-one setting and Theorem 2.5 / Remark 2.6, for comparison only",
+      "Cooney-Grabowski, arXiv:1807.06383v4, Definition 1, Lemma 5 and Theorem 12, degree-one geometric-algebra scope, not directly applied"
     ],
     "formalized": false,
     "peer_reviewed": false,
@@ -87,22 +106,35 @@
     "complete_classification": false,
     "not_claimed": [
       "Every object of Q is a Z-domain",
-      "Standard Hilbert series for the non-domain locus",
+      "Standard mixed relation dimensions r_3=r_4=2 or standard Hilbert series for all Q",
+      "Nondegeneracy of the unique weight-two relation or nonvanishing of both coefficients of the unique weight-five relation for all Q",
       "Existence or nonexistence of exact period-seven objects in the non-domain locus",
-      "Complete bare indexed-isomorphism orbits of Ore data",
-      "Removal of the hypotheses in the general-n theorem"
+      "Normal forms, components, specializations or full nonlinear automorphism groupoids of general Ore data",
+      "Removal of the noetherian and Hilbert hypotheses in the general-n exhaustive structure theorem",
+      "Novelty confirmed by an exhaustive literature search"
     ]
   },
   "exact_computation": {
-    "new_results": "Analytic proofs; no finite-degree computation is used to assert these theorems.",
-    "new_mathematical_computation_executed": false,
+    "new_results": "The new theorems have analytic proofs. Integer recurrence and monodromy calculations reproduce a numerical obstruction that the tensor-chain proof excludes; the computation does not certify an AS algebra.",
+    "new_mathematical_computation_executed": true,
+    "commands_executed": [
+      "python3 computations/weighted_baseline.py --write",
+      "python3 computations/weighted_baseline.py"
+    ],
     "existing_reproduction_commands": [
       "python3 computations/weighted_baseline.py",
       "python3 computations/verify_skew_ore.py"
     ],
-    "existing_scripts_modified": false,
-    "existing_scripts_rerun_in_this_update": false,
-    "retained_certificate": "computations/baseline_certificate.json"
+    "existing_scripts_modified": [
+      "computations/weighted_baseline.py"
+    ],
+    "existing_scripts_rerun_in_this_update": [
+      "computations/weighted_baseline.py"
+    ],
+    "retained_certificate": "computations/baseline_certificate.json",
+    "certificate_schema": "nc-p1123-weighted-baseline-v2",
+    "certificate_comparison": "passed",
+    "not_rerun": "computations/verify_skew_ore.py is unchanged; no new dependence on its parameter calculations was introduced."
   },
   "project_structure": {
     "status": "passed",
@@ -115,7 +147,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "Initial run lacked lualatex.fmt. A local format was successfully generated for diagnosis, but an actual retry stopped on missing luaotfload-main.lua and ltjsarticle.cls. LuaTeX-ja, luatexja-preset and HaranoAji font files were also absent. No system settings or project sources were changed for this diagnosis. Compilation of the final revised sources was not repeated because these missing dependencies remain unresolved.",
+    "diagnosis": "The v10 research notes and indexed working manuscript were each attempted with latexmk/LuaLaTeX; both exited 12 before reading the TeX source because lualatex.fmt was unavailable. No TeX log or PDF was generated. A separate local-format diagnosis has also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. The final v5 main manuscript and final revised v10 sources have not been compiled or visually checked.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -126,26 +158,47 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "0d345bcb96aabeea2322caadc8651d47235db9a49808bc24d40b9bd626c587b9",
+        "source_sha256": "5317dbc6eae33e1b577c28c32d3d03632075fbc1fc99e27c060f5ae2813b92de",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "0c3709e1e90bad784209e03165ae78b31ffd02b318f495220178088bbaa36ae3",
+        "source_sha256": "afb9953c887db13fcdbbd5c45cdcf1acdb2363fcac9d7632232fd88ebd23aa48",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "cff6c9fb5d7b7633dba72d0d985fe10cd03cb5284de26ed781f320fc87ed57d2",
+        "source_sha256": "9d6faa7f644132afffdac20904ed615bb70d4779f25fe1338d795ba437a16b94",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "9936c5b3f941b350f36b2aee9cd6a6dd2758580fab242465987c9e47d523ea1d",
+        "source_sha256": "4c61ac790fc0d971d74a89f8e5f45a5209b93a59daa3b8078e9f91958ff36282",
         "current_pdf_verified": false
       }
     ],
-    "final_sources_compiled": false
+    "final_sources_compiled": false,
+    "current_update_attempted": true,
+    "current_update_attempts": [
+      {
+        "source": "research/notes_ja.tex",
+        "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=/workspace/scratch/2a7af9244576/audit-notes-v10 research/notes_ja.tex",
+        "exit_code": 12,
+        "source_read": false,
+        "pdf_generated": false,
+        "tex_log_generated": false,
+        "failure": "Missing lualatex.fmt"
+      },
+      {
+        "source": "research/indexed_z_algebra.tex",
+        "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=/workspace/scratch/2a7af9244576/audit-indexed-v10 research/indexed_z_algebra.tex",
+        "exit_code": 12,
+        "source_read": false,
+        "pdf_generated": false,
+        "tex_log_generated": false,
+        "failure": "Missing lualatex.fmt"
+      }
+    ]
   },
   "storage": {
     "canonical_repository": "uedakazushi/nc-p1123",
