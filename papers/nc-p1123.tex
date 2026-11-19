@@ -403,6 +403,42 @@ $j\ge i$を満たす。AS--Gorenstein双対性
 $j\le\ell-d+i=i+3$となる。$i=2$の場合が最小関係式についての主張である。
 \end{proof}
 
+\begin{lemma}[重み5の残存関係]\label{lem:index-heavy-relation}
+補題\ref{lem:index-four-strands}の仮定の下で
+$V=A_1$、$Q=A/(V)$と置く。
+重み2、3の原始生成元の像をそれぞれ$\bar z,\bar w$とすると、
+$Q$には
+\[
+0\ne\alpha\,\bar z\bar w+\beta\,\bar w\bar z=0
+\qquad(\alpha,\beta\in k,\ (\alpha,\beta)\ne(0,0))
+\]
+という重み5の関係式が存在する。
+特に、$A$の重み5の最小関係式の少なくとも一つは、
+$V$で割った後に非零の関係式を与える。
+ただし$\alpha\beta\ne0$は結論しない。
+\end{lemma}
+\begin{proof}
+補題\ref{lem:index-four-strands}により、$A$の定義イデアルは
+重み2から5の最小関係で生成される。
+$Q$の重み2、3には原始生成元を消す関係がない。
+$\bar z,\bar w$だけからなる重み4の関係空間は
+$k\bar z^2$、重み5の関係空間は
+$k\bar z\bar w+k\bar w\bar z$に含まれる。
+もし重み5の関係空間が零なら、
+$Q$は$k\langle\bar z,\bar w\rangle$または
+$k\langle\bar z,\bar w\rangle/(\bar z^2)$である。
+いずれも、$\bar w$と$\bar z\bar w$をブロックとする
+全ての連結語が互いに異なる非零の語になる。
+$m$ブロックの$2^m$語の重みは$3m$から$5m$までにあるので、
+少なくとも一つの重みの次元は$2^m/(2m+1)$以上となる。
+これは$Q$の指数増大を示す。
+一方、$Q$は有限GK次元の$A$の次数付き商であるから、
+その増大は多項式的であり矛盾する。
+従って所要の重み5の関係が存在する。
+最小関係が全て重み5以下であることから、この関係は
+重み5の最小関係の像により生成される。
+\end{proof}
+
 \begin{proposition}\label{prop:four-strands}
 $A\in\Gclass_n$、$d=n+2$とする。このとき
 \[
