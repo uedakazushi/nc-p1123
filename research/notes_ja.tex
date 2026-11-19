@@ -8,7 +8,7 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第21版}
+\date{2026年11月19日\quad 第22版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
@@ -1313,6 +1313,19 @@ $y^{2\ell-1}$と$1-y^{2\ell}$は互いに素であるから、
 $A_1+B_1-H_1-nL=0$でなければならない。
 この導出では、剰余類以外の成分を捨てたり、核次元を仮定したりしていない。
 \hfill$\square$
+
+\paragraph{全行列式を確定する強い結果。}
+主論文\texttt{genidx:thm:d3-full-r5-euler-factorization}は、同じ$D=3$、全$r_5=1$から、
+任意$n$、AS周期$L$について
+\[
+ \det P=\det P_B\det(I-uvS^2)\det(I-uv^2S^3)
+\]
+を証明する。$3\mid L$は不要である。
+$n=4,N=9,L=12$では残余因子は厳密に$(1-(uv)^6)^2$となり、
+自由な係数を持つ$1+c(uv)^6+(uv)^{12}$という可能性は残らない。
+完全な証明は主論文へ置く。この行列式の一致から$r_3=n$やPBWを推論しない。
+また\texttt{euler:lem:jump-congruence}より、$3\mid L$では行列式の$x$次数は3の倍数であり、
+二飽和の残余で次に調べる係数は$x^6$である。
 
 \paragraph{境界の特異性と正核だけでは全飽和は出ない。}
 $n=4$、$L=3\ell$、全$r_5=1$の場合に、

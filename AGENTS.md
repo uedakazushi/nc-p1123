@@ -1,6 +1,6 @@
 # nc-p1123 研究指示
 
-2026-11-19 / v15。最初に `research/plan_ja.tex` を読む。
+2026-11-19 / v16。最初に `research/plan_ja.tex` を読む。
 主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
@@ -50,6 +50,8 @@
 - `d3:lem:single-z-collapse`：有限区間でt_(i+3k)=0,t_(i+2+3k)=1,b_(i+3k)=n+1ならM+1≤n。0/1交換版も成立。単一zのM+1語は欠損R5により独立、共通z乗法は単射、R4最大階数で像がw^(M+1)Vへ入る。AS/成長/周期不要。M=nで剰余類配置を排除。
 - `d3:thm:two-saturated-classes`：D3、3|Lなら少なくとも二つの法3classで全r5=1。ちょうどr,r+1ならclass r+1の全r4=n。全r5=1なら全r4≤nと一classの全r4=n。n4の全Nへ適用する。一飽和枝と二飽和時の指定classでのb<nは排除済みで、再探索しない。全r5と全r3の自動性はまだ未証明。
 - `mahler:thm:two-faces`：実周期L、有限Euler逆、多項式増大、語長次数、純w非零冪の下でm(detP)=0、detP_B(u)と(1−(uv²)^(L/g))^g (g=gcd(L,3))がdetP(u,v)を割り、その積も割る。AS/Koszul/noetherianはこの一般設定で不要。Issa–Lalín arXiv1203.5379v1 Thm1.2(s1)とJensen等号を使う。整数多項式への下降はx,y同時符号不変性で証明。重複度gから核次元gを推論しない。
+- `euler:lem:jump-congruence`：周期LのEuler行列式のu^m v^eにはm+e∈LZのみが現れる。置換u=x²,v=y/xのx^a y^bではa+3b∈2LZ。3|Lならx次数は3倍数で、x4/x5は自動零、次はx6。
+- `genidx:thm:d3-full-r5-euler-factorization`：任意nでD3かつ全r5=1なら、AS周期L=N+3のfoldでdetP=detPB det(I−uvS²)det(I−uv²S³)。3|L/Koszul/noetherian/Hを追加しない。pureB最高Torはdegree n、wordN−2、rank1。整数unitrootとAS対合から残余Qはbidegree(L,L)、符号(−1)^Lの相反性、totaljump合同支持を持つ。M0と一次z因子を除いた補正Y_jのdeg∞≤j−2がQの下半分を消し、相反性で全体が確定する。n4N9L12では残余因子(1−(uv)^6)^2。行列式のみの定理で、行列/Hilbert/PBW/r3飽和を結論しない。
 - notes `note:d3-two-saturated-leading`：D3の二飽和class0,1では正核の先頭支持h0=e2,g0=e1。h2=g1=1ならh=(κε,νε²,1)+高次、g=(λε,1,με²)+高次、ν≥κ≥1,μ≥λ≥1。核単純性やHilbert極次数は未結論。
 - notes `note:d3-full-r5-moment`：D3,L=3ℓ≥9,全r5=1ならΣ(a_i−H_i)+Σ(b_i−n)=0。H_i=Tor3word3excess3、n4ではH_i=p_(i+6,N−3)。全行列のx³跡計算と重み3面因子から得る。b_iのclass内一定性は不要。
 - notes `note:n4-cubic-corner-bounds`：n4、h_j=p_(j+6,N−3)、u=t_(j+1)a_j,v=t_j a_(j+3)に対しh_j≤min(b_j,b_(j+2),u+v,1+min(u,v))。片側t欠損ならh≤1。q_i=1,t_(i+N−3)=0なら低語長pureE3が必要。二次双対は全Extの対角部分であり、全Extを一次生成としない。
@@ -73,7 +75,7 @@
 ## 継続の優先順位
 
 1. n>=4の非Koszul対象で全始点r3=n,r5=1を元の仮定から導くことを主目標とする。一般indexed語長Koszul枝は任意nで解決済みなので再開しない。`igraph:thm:normal-z-ore` により、これだけでB-ASと全Oreが従う。Koszul性・標準Hの自動性を先に証明する必要はない。r3の欠損n−r3、r5の零位置を、親AS対合・混合Euler・R5欠損成長から排除する。n4ではこの課題が十条件の自動性と同値である。
-2. n4の非Koszul残余はN=9,12,15,…。最初のN9/L12/s7で、二飽和class0,1のb1=4とh0=e2,g0=e1を用いて次係数を解析する。全r5=1枝では全b≤4・一class b4・Σ(a−p6)+Σ(b−4)=0を使用する。次の操作は(1−y^8)^3で割ったdetP(x²,y/x)のx4,x5係数の分母消滅条件を純/mixed moments、pure tail≥2q、局所三次Ext上界と結ぶこと。これらからの最終矛盾は未証明。N7純モデルの親AS整域延長、一飽和r5枝、二飽和時のb1<4を再探索しない。
+2. n4の非Koszul残余はN=9,12,15,…。最初のN9/L12/s7で、二飽和class0,1のb1=4とh0=e2,g0=e1を用いて次係数を解析する。全r5=1枝では全b≤4・一class b4・Σ(a−p6)+Σ(b−4)=0を使用する。次の操作は二飽和枝で(1−y^8)^3で割ったdetP(x²,y/x)のx6係数の分母消滅を、語長4の第三Torも含めて解析すること。x4/x5はjump合同条件から恒等零。全r5枝では完全な行列式分解の係数等式をpure/mixed moments、pure tail≥2q、局所三次Ext上界と結び、行ごとの階数へ戻す。これらからの最終矛盾は未証明。N7純モデルの親AS整域延長、一飽和r5枝、二飽和時のb1<4を再探索しない。
 3. n3の全同型軌道を調べる。A1periodと通常graded二段Ore下降は全対象で証明済み。基礎AS3代数の自己同型、E=span ell_iと移動T、周期構造変更によるZhang twistを含めて同型判定を整理する。n1反例を独立light変数で拡張する際は三重重なりの係数制約を検証する。
 4. 一般条件付き定理ではL_B偶数ならA1period、Koszul baseかつn偶数はその場合。n>=4の前提自動性は未証明。通常wordKoszul全nの二段Oreへnoetherianを再導入しない。任意nのAS基礎代数のnoetherian性は未主張。ordinary三生成元の既知分類と2period認識定理の重複調査を進め、新規性確定と数学的証明を区別する。
 5. 副課題としてn2の整域Ore軌道幾何、domain自動性、混合射影退化、最小周期7の零因子例を保持する。逆向き片側R5関係の位置差2、3、4（法7）は `note:r5-orientation` で排除済み。rho=0全体を対角族、rho=1全体を初期Ore族と同一視しない。

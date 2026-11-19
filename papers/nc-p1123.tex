@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v16}
+\date{2026年11月19日\quad 統合版 v17}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -96,6 +96,10 @@ $n=4$では、最高Extの重みと語長の差が3であることを追加仮�
 最高差次数3では、重み5関係が法3の少なくとも二剰余類で全て存在することも証明する。
 単一の$z$を含む独立な語の有限次元圧縮が、一剰余類だけの飽和を排除する。
 また有限Euler行列式のMahler測度は零であり、純基礎面と重み3面の多項式が大域的な因子となる。
+さらに最高差次数3かつ全$r_5=1$なら、任意$n$で、Euler行列式は純基礎因子と
+重み2、3の二つの自由生成元因子へ完全に分解する。
+AS対合による相反性、jumpの合同条件、重み3境界の補正項の無限大次数を組み合わせる。
+この行列式の結論からHilbert行列の分解やOre表示を先取りしない。
 さらに$n=4$では、語長Koszul性、1周期性、純jump 1部分の1周期性、
 同部分の行Hilbert級数が始点によらないことが同値である。
 この条件の下で、標準二変数Hilbert級数と全関係数を追加仮定なしに導く。
@@ -122,7 +126,7 @@ $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v16\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v17\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -259,6 +263,11 @@ Boyd--Lawtonの特殊化極限をIssa--Lal\'in\cite[Theorem 1.2, $s=1$]{IssaLali
 Jensenの等号から面因子を取り出す。Mahler測度零の一般因数分解は
 Smyth\cite[Corollary 1]{Smyth1981}の既知の結果であり、本稿の貢献は具体的なEuler面への適用である。
 この応用の新規性は未確認であり、行列式の重複度を核次元と同一視しない。
+定理\ref{genidx:thm:d3-full-r5-euler-factorization}は、最高差次数3と全$r_5=1$を仮定すると、
+任意$n$で残る因子も$\det(I-uvS^2)$に等しいことを証明する。
+純基礎の最高Torは各頂点で階数1となるため、商の二次数は$(L,L)$である。
+AS相反性とjumpの合同条件が候補の台を限定し、無限大次数の評価が全ての余分な係数を消す。
+この必要条件は非Koszul対象にも有効だが、行列等式やPBW分解とは区別する。
 語長Koszul性を追加した場合は、命題\ref{n4:prop:koszul-base-numerics}が
 純基礎部分の標準線型解消とHilbert級数を強制し、
 定理\ref{n4:thm:koszul-numerics-period}が全混合関係数・標準Hilbert級数・1周期性を導く。
@@ -3106,6 +3115,276 @@ $R(u,v)\in\mathbb Z[u,v]$を得る。
 純$u$多項式の非定数因子が$1-(uv^2)^{L/g}$を割ることはなく、
 $v=0$で後者は1となるので、二つの表示した因子は互いに素である。
 \end{proof}
+
+\subsection{最高差次数三でのEuler行列式の完全分解}
+
+\begin{lemma}[折畳Euler行列式のjump合同条件]
+\label{euler:lem:jump-congruence}
+$L$周期の二重次数付き$\mathbb Z$-algebraの有限Euler行列を
+\[
+ P(u,v)=\sum_{p,m,e}(-1)^p u^mv^e
+       \operatorname{diag}(\beta_{i,p,m,e})S^{m+e},
+ \qquad S_{ij}=\delta_{j,i+1}
+\]
+とする。$F(u,v)=\det P(u,v)$に現れる各単項式$u^mv^e$は
+$m+e\equiv0\pmod L$を満たす。
+従って$F(u,0)$は$u^L$の多項式である。
+さらに$0\le e\le2m$がTorの支持条件であれば、
+$\widetilde F(x,y)=F(x^2,y/x)$は多項式であり、
+$3\mid L$の場合は
+\[
+ \widetilde F(x,y)\in\mathbb Z[x^3,y].
+\]
+\end{lemma}
+\begin{proof}
+$\omega$を原始$L$乗根とし、
+$T=\operatorname{diag}(1,\omega,\ldots,\omega^{L-1})$とする。
+$T^{-1}ST=\omega S$であり、対角係数は$T$と可換なので、
+\[
+ P(\omega u,\omega v)=T^{-1}P(u,v)T.
+\]
+行列式を取ると$F(\omega u,\omega v)=F(u,v)$を得る。
+これが第一の合同条件を与える。
+置換後の$x$指数は$2m-e=3m-(m+e)$であり、
+支持条件から非負、$3\mid L$なら3の倍数である。
+\end{proof}
+
+\begin{theorem}[最高差次数3と重み5関係の全飽和からのEuler行列式分解]
+\label{genidx:thm:d3-full-r5-euler-factorization}
+$A\in\mathcal Q_n^{\mathrm{dom}}$とし、最高差次数が3で、
+全ての始点で$r_5(i)=1$と仮定する。
+最高Extの語長を$N$、AS移動を$L=N+3$、
+純jump~1部分を$B$とする。
+語長を$u$、差次数を$v$で数える$L$折畳Euler行列について
+\[
+ \boxed{\quad
+ \det P(u,v)=\det P_B(u)\,
+             \det(I-uvS^2)\,
+             \det(I-uv^2S^3)
+ \quad}
+\]
+が成立する。
+同値に、$g_2=\gcd(L,2)$、$g_3=\gcd(L,3)$と置けば
+\[
+ \det P(u,v)=\det P_B(u)
+     \bigl(1-(uv)^{L/g_2}\bigr)^{g_2}
+     \bigl(1-(uv^2)^{L/g_3}\bigr)^{g_3}.
+\]
+この定理は行列式についての等式であり、Euler行列そのものの積分解、
+Hilbert行の積表示、PBW性、$r_3(i)=n$の自動性をこの等式だけから主張するものではない。
+Koszul性、noetherian性、$B$のAS性は追加仮定しない。
+\end{theorem}
+\begin{proof}
+\paragraph{純基礎部分の最高項。}
+$d=n+2$とする。
+AS平行移動と語長保存周期の既証の議論により、AS移動は一定の$L$である。
+最高Extの語長も一定になることを確認する。
+$0\ne a\in E^1_{i,i+1}$を取り、$ab\ne0$となる語長斉次なAS相補項
+$b\in E^{d-1}_{i+1,i+L}$を選ぶ。
+Nakayama対応のtrace巡回式により
+$b\nu(a)\ne0\in E^d_{i+1,i+L+1}$である。
+$\nu(a)\in E^1_{i+L,i+L+1}$は語長1であり、
+$ab$の語長から$b$の語長は$N_i-1$である。
+従って$b\nu(a)$の語長も$N_i$であり、$N_{i+1}=N_i$となる。
+この共通の値を$N$と書く。
+差次数零のbar複体は$B$のbar複体である。
+AS対合の相手を考えると、
+$E^{d-1}_{e=0}$と$E^d_{e=0}$はそれぞれ$E^1_{e=3}$と$E^0_{e=3}$に相補なので零である。
+一方、$E^{d-2}_{e=0}=E^n_{e=0}$は
+$E^2_{e=3}=R_5^*$に相補である。
+全$r_5(i)=1$より、各始点でこの成分は一次元、語長$s=N-2$である。
+さらに$p<n$のExt成分の相補項はホモロジー次数$d-p\ge3$を持つため、
+最小性からその語長は3以上であり、元の成分の語長は$N-3<s$以下である。
+従って
+\[
+ P_B(u)=(-1)^n u^sS^s+\text{$u$次数が$s$未満の項},
+ \qquad s=L-5.
+\]
+$D(u)=\det P_B(u)$と置くと、
+\[
+ \deg D=sL,\qquad D(0)=1,\qquad
+ a_D:=\operatorname{lc}(D)=(-1)^{nL+s(L-1)}.
+\]
+多項式増大と$P_BH_B=I$から$D$は単位円内に零点を持たない。
+補題\ref{mahler:lem:integer-disk}により全零点は単位円上にある。
+実係数なので零点の重複度付き集合は逆数写像で不変であり、
+\begin{equation}\label{genidx:eq:d3-pure-reciprocity}
+ D(u)=a_Du^{sL}D(u^{-1}).
+\end{equation}
+$B$自身のAS性はここで用いていない。
+
+\paragraph{残る行列式の次数、符号および相反性。}
+$F(u,v)=\det P(u,v)$と置く。
+AS完全対合と$L$周期から
+\[
+ P(u,v)=(-1)^d u^Nv^3P(u^{-1},v^{-1})^{\mathsf T}.
+\]
+最小性とAS対合により、$P$の最高$u$項は
+$(-1)^du^Nv^3I$だけである。
+従って$F$の$u$次数は$NL$、$v$次数は$3L$で、
+最高$u$項は$\epsilon_Fu^{NL}v^{3L}$、$\epsilon_F=(-1)^{nL}$である。
+また
+\[
+ F(u,v)=\epsilon_Fu^{NL}v^{3L}F(u^{-1},v^{-1}).
+\]
+重み3面の因子を
+\[
+ W(u,v)=\det(I-uv^2S^3)
+       =\bigl(1-(uv^2)^{L/g_3}\bigr)^{g_3}
+\]
+とする。$g_3\in\{1,3\}$は奇数なので、
+$W$の次数は$(L,2L)$、最高係数は$-1$であり、
+$W(u,v)=-u^Lv^{2L}W(u^{-1},v^{-1})$となる。
+
+定理\ref{mahler:thm:two-faces}により、互いに素な$D$と$W$の積は$F$を割り切る。
+\[
+ Q(u,v)=\frac{F(u,v)}{D(u)W(u,v)}\in\mathbb Z[u,v]
+\]
+と置くと、$\deg_uQ=\deg_vQ=L$であり、
+$Q(u,0)=Q(0,v)=1$である。
+最高$u$項は$a_Qu^Lv^L$で、
+\[
+ a_Q=\frac{\epsilon_F}{-a_D}
+     =(-1)^{s(L-1)+1}=(-1)^L.
+\]
+最後の等式では$s=L-5$を用いた。
+各因子の相反性から
+\begin{equation}\label{genidx:eq:d3-quotient-reciprocity}
+ Q(u,v)=a_Qu^Lv^LQ(u^{-1},v^{-1})
+\end{equation}
+を得る。
+
+\paragraph{残る支持の制限。}
+補題\ref{euler:lem:jump-congruence}により$F,D,W$は
+$(u,v)\mapsto(\omega u,\omega v)$で不変であり、従って$Q$も不変である。
+次数の長方形$0\le m,e\le L$と座標軸上の値から、
+$Q$の支持は定数項、$m+e=L$の項、および$(m,e)=(L,L)$に限られる：
+\begin{equation}\label{genidx:eq:d3-quotient-support}
+ Q(u,v)=1+\sum_{m=1}^{L-1}c_m u^mv^{L-m}+a_Qu^Lv^L.
+\end{equation}
+ここでは$3\mid L$を仮定していない。
+
+$\widetilde P(x,y)=P(x^2,y/x)$、$\widetilde F=\det\widetilde P$、
+$\widetilde Q(x,y)=Q(x^2,y/x)$と置く。
+面因子定理の証明により
+\[
+ \frac{\widetilde F(x,y)}{W_0(y)}\in\mathbb Z[x,y],
+ \qquad
+ W_0(y)=\det(I-y^2S^3),
+ \qquad
+ \left.\frac{\widetilde F(x,y)}{W_0(y)}\right|_{x=0}=1.
+\]
+これと
+$D(x^2)\widetilde Q=\widetilde F/W_0$を用いる。
+$D(x^2)$の定数項は1なので、Laurent多項式$\widetilde Q$に負の$x$指数があれば、
+その最小指数は積でも消えず矛盾する。
+従って$\widetilde Q\in\mathbb Z[x,y]$であり、$\widetilde Q(0,y)=1$である。
+相反性は
+\[
+ \widetilde Q(x,y)=a_Qx^Ly^L\widetilde Q(x^{-1},y^{-1})
+\]
+となるので、その$x$次数は$L$で、最高$x$係数は$a_Qy^L$である。
+よって\eqref{genidx:eq:d3-quotient-support}の非零中間項は
+\[
+ k=3m-L\in\{1,\ldots,L-1\},\qquad
+ u^mv^{L-m}\longmapsto x^ky^{(2L-k)/3}
+\]
+を満たし、相反性は$k$と$L-k$を対応させる。
+
+\paragraph{無限遠の次数による下半分の消去。}
+$y$の有理関数の無限遠次数を、分子の次数から分母の次数を引いた値と定義し、
+零関数の次数を$-\infty$とする。
+行列については各成分の最大値を取る。
+$\widetilde P=\sum_{j\ge0}x^jM_j(y)$と展開する。
+全Torの差次数はAS対合により0以上3以下であり、
+$j=2m-e$である。
+従って$j\ge2$では$e\le j$である。
+実際、$j=2$では$e\equiv j\pmod2$より$e\le2$、
+$j\ge3$では$e\le3\le j$となる。
+よって
+\[
+ \deg_\infty M_j\le j\qquad(j\ge2).
+\]
+全$r_5=1$と最高差次数3から最初の二項は
+\[
+ M_0=I-y^2S^3,\qquad
+ M_1=-yS^2+y^3S^5=-yS^2M_0.
+\]
+$T=M_0^{-1}$、$K=yS^2$と置くと、無限遠で
+\[
+ T=-y^{-2}S^{-3}+O(y^{-4}),\qquad \deg_\infty T\le-2.
+\]
+$K$と$T$は可換であり、$\mathbb Q(y)[[x]]$上で
+\begin{align*}
+ \widetilde P
+ &=M_0(I-xK)J(x,y),\\
+ J(x,y)&=I+\sum_{j\ge2}x^jY_j(y),\\
+ Y_j&=\sum_{r=0}^{j-2}K^rT M_{j-r}.
+\end{align*}
+各項の次数を比較すると
+\[
+ \deg_\infty Y_j\le j-2.
+\]
+従って、$k>0$に対して
+\begin{equation}\label{genidx:eq:d3-det-remainder-infinity}
+ \deg_\infty [x^k]\det J\le k-2.
+\end{equation}
+実際、行列式のその係数に寄与する積は少なくとも一つの$Y_j$を含む。
+$r\ge1$個のそのような因子を含む積の次数は、
+各$x$次数の和を$k$として高々$k-2r\le k-2$である。
+
+\[
+ Z(x,y)=\det(I-xyS^2)
+       =\bigl(1-(xy)^{L/g_2}\bigr)^{g_2}
+\]
+と置く。行列式を取ると
+\[
+ D(x^2)\widetilde Q(x,y)=Z(x,y)\det J(x,y)
+\]
+である。補題\ref{euler:lem:jump-congruence}から
+$D(x^2)=1+O(x^{2L})$であり、
+$Z$の最初の正の$x$次数は$L/g_2\ge L/2$である。
+従って整数$0<k\le L/2$について
+\[
+ [x^k](\widetilde Q-Z)
+ =[x^k]\bigl(Z(\det J-1)\bigr)
+ =[x^k]\det J.
+\]
+$L$が偶数で$k=L/2$の場合も、$\det J-1$の定数項が零なので最後の等式は成立する。
+\eqref{genidx:eq:d3-det-remainder-infinity}から、左辺の無限遠次数は高々$k-2$である。
+
+一方、支持制限により、この左辺が非零なら
+$y^{(2L-k)/3}$の定数倍である。
+偶数$L$の中央項についても$Z$の項はまさに同じ$y$次数を持つ。
+$k\le L/2$では
+\[
+ \frac{2L-k}{3}\ge k>k-2
+\]
+なので矛盾する。従って全ての下半分の係数は零である。
+$\widetilde Q$と$Z$は同じ符号$a_Q=(-1)^L$の相反性、同じ定数項と最高項を持つ。
+相反性が残る上半分の係数も消すため、$\widetilde Q=Z$を得る。
+置換$u\mapsto x^2$、$v\mapsto y/x$は単射なので、
+$Q(u,v)=\det(I-uvS^2)$となり、所要の分解が成立する。
+\end{proof}
+
+\begin{corollary}[六次元の全飽和枝]
+\label{n4:cor:full-r5-euler-factorization}
+$A\in\mathcal Q_4^{\mathrm{dom}}$で全$r_5(i)=1$ならば、
+系\ref{n4:cor:top-excess-three}から上の定理が適用できる。
+さらに$3\mid L$であるから
+\[
+ \det P(u,v)=\det P_B(u)
+   \bigl(1-(uv)^{L/\gcd(L,2)}\bigr)^{\gcd(L,2)}
+   \bigl(1-(uv^2)^{L/3}\bigr)^3.
+\]
+特に$N=9,L=12$の場合は
+\[
+ \det P(u,v)=\det P_B(u)
+             \bigl(1-(uv)^6\bigr)^2
+             \bigl(1-(uv^2)^4\bigr)^3.
+\]
+この場合$\det P_B(u)$は$u^{12}$の7次多項式で、定数項1、最高係数$-1$を持つ。
+\end{corollary}
 
 \subsection{三本のjump 1生成元を持つ部分代数の数値補題}
 \begin{lemma}[短い解消と周期的整域の増大]
