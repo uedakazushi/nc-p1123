@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v8}
+\date{2026年11月19日\quad 統合版 v9}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -77,14 +77,17 @@ $n=1$の全整域対象は添字付き二段Ore表示を持つことを証明し
 $n=3$では、指定Hilbert級数やnoetherian性を仮定せずに、語長Koszul性、AS添字8、
 関係数$(3,3,3,1)$、標準Hilbert級数、および重み2正規元族による2周期性を証明する。
 純jump 1部分の折畳Hilbert行列と整域性による成長比較が数値型を強制する。
+さらに、二周期の三生成元二次$\mathbb Z$-整域でHilbert級数が$(1-t)^{-3}$なら、
+AS正則次元3であることを証明する。退化した三次syzygyを分数斜体内で標準化し、
+一次分数変換と$\mathbb P^1$上の極因子の増大から排除する。
+これにより$n=3$の全対象で基礎部分のAS正則性・1周期性と添字付き二段Ore表示を得る。
 任意$n$について、純jump 1部分$B$自身がAS正則次元$n$であれば、
 混合関係数・Hilbert級数・Koszul性・noetherian性をさらに仮定せず、添字付き二段Ore表示を導く。
-$n=3$では、このOre表示の存在は$B$のAS正則性、および$B$の1周期性と同値である。
-元の仮定から$B$のAS性を導くことと、$n\geq4$の数値型の自動性は未解決である。
+$n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条件の網羅性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v8\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v9\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -178,16 +181,24 @@ Hilbert級数・noetherian性・1周期性を仮定しない広い対象$\mathca
 この証明では純jump 1部分の短い解消を抽出し、折畳Hilbert行列の最高Laurent係数、
 一次の恒等式と残る一階数の行列式を用いる。
 有限次数でのHilbert一致をAS正則性の認定に使うものではない。
+続く定理\ref{p2base:thm:as3}は、二周期三生成元二次$\mathbb Z$-整域で
+Hilbert級数が$(1-t)^{-3}$なら、Koszul性と左右AS正則次元3が従うことを示す。
+唯一の三次syzygyの両端rankが2となる場合を、二頂点foldの分数斜体で調べる。
+左右supportが異なれば三生成元空間の積が高々5次元となり、
+一致すれば$\mathbb P^1$上の有効因子で行の増大が線型に抑えられる。
+いずれもHilbert級数と矛盾するため、AS双対性に必要な完全対合が得られる。
 定理\ref{genidx:thm:as-base-ore}は、任意$n$について純jump 1部分$B$のAS正則性だけを追加すると、
 添字付き二段Ore表示が従うことを示す。全Extの差次数零部分とAS完全対合で
 混合関係の射影を制御し、最小解消のEuler式からPBW分解を導くため、
 Koszul性・noetherian性・標準Hilbert級数を追加仮定しない。
-従って$n=3$の構造上の残りは$B$のAS双対性であり、$n\geq4$では数値型の自動性も残る。
+これらを組み合わせた定理\ref{genidx:thm:three-light-ore}は、
+$n=3$の全整域対象で添字付き二段Ore表示と基礎部分$B$の1周期性を証明する。
+従って整域の場合の二段Ore網羅性は$n=1,2,3$で成立し、$n\geq4$が残る。
 Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}は、
 通常の三生成元二次代数で$H(t)=(1-t)^{-3}$を持つものについて、整域性とAS正則次元3が同値であることを与える。
-本稿では$B$の1周期性が得られた場合に限ってこれを適用し、
-系\ref{genidx:cor:five-dimensional-ore-criterion}で$n=3$のOre表示の存在と$B$の1周期性の同値を得る。
-一般の2周期$\mathbb Z$-代数にこの既知分類をそのまま適用することはしない。
+定理\ref{p2base:thm:as3}は、この通常の次数付き場合も含む二周期$\mathbb Z$-代数に対し、
+分類表に依存しない証明を与える。一般の2周期対象へ既知の1頂点分類を直接適用してはいない。
+この証明と既存文献との新規性の最終照合は未完了である。
 Van den Bergh\cite[Definition 4.1.1, Theorem 4.2.2]{VdB}の
 通常の三次元quadratic $\mathbb Z$-代数の1周期性定理は、隣接jumpだけで生成される型を扱う。
 本例のprimitive jumpsは$(1,2,3)$であり、その仮定には含まれない。
@@ -3097,14 +3108,283 @@ $i+2$から$j+2$への任意の経路式$a$について$z_i\bar a=\overline{\phi
 生成元上で全射なので同型となり、所要の2周期性を得る。
 \end{proof}
 
-\begin{remark}[数値型とOre網羅性の区別]
+\begin{remark}[数値型から構造定理への依存]
 定理\ref{genidx:thm:five-dimensional-numerics}は、$n=3$でのKoszul性、AS添字、
 全関係数、Hilbert級数、および2周期性を追加仮定なしに確定する。
-基礎部分代数$B$のAS双対性や第二段のOre交換写像の可逆性は、この数値表だけで証明済みとはしない。
-$n=3$の二段Ore網羅性を結論する際には、それらを別途確立する必要がある。
+基礎部分代数$B$のAS双対性は、続く定理\ref{p2base:thm:as3}の退化syzygyの排除で証明する。
+第二段のOre交換写像の可逆性は定理\ref{genidx:thm:as-base-ore}から従い、
+定理\ref{genidx:thm:three-light-ore}で$n=3$の二段Ore網羅性を得る。
 $n\geq4$では同じ数値型の自動性も未証明である。
 個別結果の文献上の新規性の最終確認は未完了である。
 \end{remark}
+
+\section{二周期三生成元整域のAS性}
+
+\begin{theorem}\label{p2base:thm:as3}
+標数零の代数閉体上の正連結・局所有限な$\mathbb Z$-代数$B$を考える。
+$B$は隣接成分$V_i=B_{i,i+1}$から生成される語長二次整域であり、
+$B(2)\simeq B$とする。さらに、
+\[
+\dim B_{i,i+m}=\binom{m+2}{2}\qquad(m\ge0)
+\]
+を満たすとする。このとき$B$は左右Koszul、左右AS正則次元3、AS移動3である。
+noetherian性、Koszul性、1周期性はいずれも仮定しない。
+\end{theorem}
+
+\subsection{二頂点foldと分数斜体}
+
+証明で用いる分数表示を先に記す。
+2周期同型を一つ固定し、その整数冪で成分を輸送して、
+頂点集合$\{0,1\}$の非負次数付き圏$\mathcal R$へfoldする。
+具体的に、$r,s\in\{0,1\}$に対して
+\[
+\mathcal R_{rs}=
+\bigoplus_{\substack{m\ge0\\r+m\equiv s\pmod2}}B_{r,r+m}
+\]
+とし、合成時には第二因子の始点を第一因子の終点へ2周期同型で移す。
+同じ同型の冪を用いるので合成は結合的である。
+最高次数項を取ると、合成可能な非零射の積は非零である。
+また全ての射空間は次数による多項式増大を持つ。
+
+\begin{lemma}\label{p2base:lem:fraction-frame}
+上の$\mathcal R$は、全ての非零射が可逆である圏へ忠実に埋め込まれる。
+従って$X=\mathcal R_{01,1}$、$Y=\mathcal R_{10,1}$とし、
+$0\ne p\in X$を選ぶと、ある斜体$D$の中で
+\[
+X\longmapsto Xp^{-1},\qquad Y\longmapsto pY
+\]
+と表せる。全ての交代積、線型関係とその次元は保存され、$p$の像は1である。
+\end{lemma}
+\begin{proof}
+各corner $\mathcal R_{rr}$は、多項式増大を持つ通常の整域であり、左右Oreである。
+実際、非零$a,b$について$a\mathcal R_{rr}\cap b\mathcal R_{rr}=0$なら、
+$a,b$を先頭に置く二語の反復により、長さ$m$の$2^m$語が線型独立になる。
+これらの次数は$m$の定数倍以下なので多項式増大に反する。
+左側も同じである。
+
+始点が同じで終点の異なる非零射$a:r\to s$、$b:r\to t$には、
+非零の戻り射$c:s\to r$、$d:t\to r$を選ぶ。
+cornerのOre性から$ac\,e=bd\,f\ne0$となる$e,f\in\mathcal R_{rr}$があり、
+これが$a,b$の共通右倍数を与える。左側も同様である。
+従って非零射全体に対する左右の分数計算が成立する。
+約分則は整域性から従うので、この局所化への写像は忠実であり、
+局所化後は非零射が全て可逆である。
+頂点0の自己準同型斜体を$D$とし、$p$で二頂点を同一視すればよい。
+この同一視の下で$x\in X,y\in Y$の積は
+$(xp^{-1})(py)=xy$となり、逆順の積は$p(yx)p^{-1}$となる。
+従って主張された積と次元の保存が成立する。
+\end{proof}
+
+\subsection{退化した三次syzygyの標準形}
+
+\begin{proof}[定理\ref{p2base:thm:as3}の証明]
+$R_i\subset V_i\otimes V_{i+1}$を二次関係空間とする。
+$\dim V_i=3$、$\dim R_i=3$、$\dim B_{i,i+3}=10$なので、三次Koszul空間は
+\[
+K_{3,i}=(R_i\otimes V_{i+2})\cap(V_i\otimes R_{i+1})=kT_i
+\]
+である。整域性により$R_i$は非零の分解可能テンソルを含まない。
+
+まずKoszul性を確認する。$P_j=e_jB$と置く。二次表示から得る標準複体
+\[
+R_i\otimes P_{i+2}\longrightarrow V_i\otimes P_{i+1}
+\longrightarrow P_i\longrightarrow S_i\longrightarrow0
+\]
+は$V_i\otimes P_{i+1}$以降で正確である。
+$H(t)=(1-t)^{-3}$を用いると、最初の写像の核のHilbert級数は
+\[
+(1-3t+3t^2)H(t)-1=t^3H(t)
+\]
+である。$T_i\in R_i\otimes V_{i+2}$による$P_{i+3}$からの写像は、
+少なくとも一つの非零一次成分を持つので整域性により単射であり、
+その像は上の核に含まれる。同じHilbert級数を持つので両者は一致する。
+従って右単純加群の最小解消は線型でBetti数$(1,3,3,1)$である。
+左も同じ議論であり、$B$は左右Koszulである。
+
+$T_i$の最初と最後の因子に関するflattening rankを$(a_i,b_i)$とする。
+どちらかが1なら、他端を縮約することで$R_i$または$R_{i+1}$に
+非零の分解可能テンソルを得るので不可能である。
+
+また$(a_i,b_i)=(3,2)$なら、$R_{i+1}$全体が
+$3\times2$行列空間の3次元部分空間に入る。
+その射影化$\mathbb P^2$は$\mathbb P^5$中の
+rank 1のSegre多様体$\mathbb P^2\times\mathbb P^1$と交わる。
+これは関係空間に分解可能テンソルがないことに反する。
+$(2,3)$も同様である。従って可能性は$(3,3)$と$(2,2)$だけである。
+
+ある$i$で$(a_i,b_i)=(2,2)$と仮定し、頂点を移して$i=0$とする。
+二周期foldにおいて$X=V_0=V_2$、$Y=V_1$と書く。
+$T=T_0$の左右supportを$U,W\subset X$とすれば、
+\[
+T\in U\otimes Y\otimes W,\qquad \dim U=\dim W=2.
+\]
+中央supportの次元は3である。
+もし2以下なら、$T$の右端縮約から得る関係の2次元空間は
+$2\times2$行列空間に入り、代数閉体上ではrank 1の元を含んでしまう。
+
+従って中央縮約の像は$U\otimes W$の超平面である。
+この超平面を定める双線型形式のrankが1なら、適当な基底で
+\[
+T=u\otimes a\otimes x+u\otimes b\otimes y+v\otimes c\otimes x
+\]
+となる。中央supportが3次元なので$a,b,c$は一次独立であり、特に$b\ne0$である。
+右端$y$成分の縮約は非零の分解可能な関係$u\otimes b$を与えるので不可能である。
+超平面を定める形式はrank 2であり、基底を選んで
+\begin{equation}\label{p2base:eq:tensor-normal}
+T=u\otimes a\otimes x+u\otimes b\otimes y
+ +v\otimes b\otimes x+v\otimes c\otimes y
+\end{equation}
+とできる。ここで$(u,v)$、$(x,y)$、$(a,b,c)$はそれぞれ$U,W,Y$の基底である。
+特に$B$の関係として
+\begin{equation}\label{p2base:eq:four-relations}
+ua+vb=0,\quad ub+vc=0,\qquad ax+by=0,\quad bx+cy=0
+\end{equation}
+が成立する。
+
+$\phi:U\to W$を$u\mapsto x,v\mapsto y$で定める。
+$(u,v)$と$(x,y)$へ同じ基底変換を施し、$Y$の基底へ対応する誘導変換を施せば、
+形\eqref{p2base:eq:tensor-normal}は保たれる。
+以下ではこの基底変更を用いる。
+
+\subsection*{場合1：$U\ne W$}
+
+$L=U\cap W$と$M=\phi^{-1}(L)$はいずれも直線である。
+$M=L$なら、$u\in L$、$v\in U\setminus L$を選び、
+\[
+x=\lambda u,\qquad y=z:=\phi(v)\notin U,\qquad\lambda\ne0
+\]
+とできる。$M\ne L$なら、$0\ne u\in M$を取り、$v=\phi(u)\in L$、
+$z=\phi(v)\notin U$と置けば
+\[
+x=v,\qquad y=z
+\]
+となる。これで部分写像$\phi$の二つの標準形を尽くしている。
+
+前者では補題\ref{p2base:lem:fraction-frame}を$p=u$に適用し、
+$u=1,v=t,z=q$と書く。
+最初の二関係から$Y=\langle c,tc,t^2c\rangle$となり、後の二関係は
+\[
+cq=\lambda tc
+\]
+を与える。後者では$p=v$に適用し、$v=1,u=t,z=q$と書く。
+同じく、最初の二関係から、元$a$を改めて$c$と書いて
+$Y=\langle c,tc,t^2c\rangle$となり、後の二関係は
+\[
+cq=t^{-1}c
+\]
+を与える。従って、いずれの場合も一つの斜体内で
+\begin{equation}\label{p2base:eq:unequal-model}
+X=\langle1,t,q\rangle,\qquad
+Y=\langle1,t,t^2\rangle c,\qquad
+cqc^{-1}=g(t),
+\end{equation}
+ただし$g(t)=\lambda t$または$t^{-1}$である。
+
+$1,t$は線型独立であり、$t$は$k$上超越的である。
+実際、代数閉体上で代数的な斜体の元は、最小多項式を一次因子へ分解することで
+スカラーと分かる。
+$P_j=\langle1,t,\ldots,t^j\rangle\subset k(t)$と書く。
+$\dim XY=6$である一方、
+\[
+XY=(P_3+qP_2)c,\qquad \dim P_3=4,\quad\dim qP_2=3.
+\]
+従って$P_3\cap qP_2\ne0$であり、$q=f(t)\in k(t)$を得る。
+$h=ctc^{-1}$と置くと
+\[
+YXc^{-1}=P_2+P_2h+P_2g(t)=L_g+P_2h,
+\]
+ここで
+\[
+L_g=
+\begin{cases}
+\langle1,t,t^2,t^3\rangle,&g(t)=\lambda t,\\
+\langle t^{-1},1,t,t^2\rangle,&g(t)=t^{-1}.
+\end{cases}
+\]
+$\dim YX=6$、$\dim L_g=4$、$\dim P_2h=3$から、再び非零の交わりを取り、
+$h\in k(t)$を得る。
+\eqref{p2base:eq:unequal-model}の共役等式は
+\[
+f(h(t))=g(t)
+\]
+となる。非定数有理写像の次数は合成で乗法的であり、$\deg g=1$なので
+$f,h$はいずれも一次分数変換である。
+$1,t,q$は線型独立なので、$f$は一次多項式ではない。
+従ってある一次式$\ell(t)$について
+\[
+\ell(t)X=P_2.
+\]
+すると
+\[
+XY=\ell(t)^{-1}P_4c
+\]
+の次元は5となり、$\dim XY=6$に矛盾する。
+
+\subsection*{場合2：$U=W$}
+
+$p=u$でframeを選び、$u=1,v=t$、$X=\langle1,t,q\rangle$とする。
+\eqref{p2base:eq:four-relations}の最初の二関係から
+$Y=\langle1,t,t^2\rangle c$である。
+$\phi$は$U$の自己同型なので
+\[
+x=\alpha+\beta t,\qquad y=\gamma+\delta t,
+\qquad\alpha\delta-\beta\gamma\ne0.
+\]
+後の二関係から$cy=tcx$を得る。
+$h=ctc^{-1}$と置くと
+\[
+\gamma+\delta h=t(\alpha+\beta h),\qquad
+h=\frac{\alpha t-\gamma}{\delta-\beta t}.
+\]
+従って$c$による共役は$k(t)$の一次分数自己同型$\psi$を定める。
+場合1と同じ$\dim XY=6$の議論で$q\in k(t)$でもある。
+
+$W_0=(XY)c^{-1}\subset k(t)$とする。
+長さ$2m$の全交代積は
+\[
+W_0\,\psi(W_0)\cdots\psi^{m-1}(W_0)c^m
+\]
+に入る。$W_0$の全ての元の極を抑える$\mathbb P^1$上の有効因子$D_0$を一つ選ぶ。
+上の積の有理関数部分の極は、$D_0$の$\psi$による$m$個の移動の和で抑えられる。
+一次分数変換は因子の次数を保つので、この有効因子の次数は$m\deg D_0$である。
+$\mathbb P^1$上の有効因子$D$に対して$h^0(\mathcal O(D))=\deg D+1$だから、
+\[
+\dim B_{0,2m}\le m\deg D_0+1.
+\]
+これは$\dim B_{0,2m}=\binom{2m+2}{2}$と矛盾する。
+
+以上により全ての$T_i$の両flatteningはrank 3である。
+
+\subsection*{Koszul双対から左右AS性と大域次元へ}
+
+二次双対の次数$0,1,2,3$の次元は$(1,3,3,1)$である。
+$T_i$の両flatteningがrank 3であることは、次数1と次数2の積が
+左右ともtopへの完全対合であることに等しい。
+従って$B$のKoszul双対圏は、top移動$i\mapsto i+3$のFrobenius圏である。
+この完全対合で右Koszul解消を双対化すると、対応する左Koszul解消と
+内部移動3を除いて同じ複体になる。
+従って単純加群に対する左右AS双対性が成立する。
+
+全unital加群に対する左右大域次元も確認する。
+左右Koszul性により、標準Koszul双加群複体
+\[
+0\longrightarrow B\otimes_{\mathcal E}K_3\otimes_{\mathcal E}B
+\longrightarrow B\otimes_{\mathcal E}K_2\otimes_{\mathcal E}B
+\longrightarrow B\otimes_{\mathcal E}K_1\otimes_{\mathcal E}B
+\longrightarrow B\otimes_{\mathcal E}B\longrightarrow B\longrightarrow0
+\]
+は$B$の双加群解消である。$\mathcal E=\bigoplus_i ke_i$とし、各テンソル積は
+合成可能な添字の直和として解釈する。
+この複体の正確性は、一方の因子の次数によるfiltrationを取り、
+対応する片側Koszul複体の正確性へ帰着して得られる。
+各項は左右いずれの側でも射影であり、解消する右加群$B$自身も射影なので、
+右加群としての各短完全列は順次分裂する。
+従って任意のunital左$B$加群をテンソルしても正確であり、
+長さ3の射影解消を与える。右加群についても同様である。
+従って左右大域次元は3以下であり、単純加群の射影次元が3なのでちょうど3である。
+既定の多項式増大と合わせ、$B$は左右AS正則次元3である。
+\end{proof}
+
 
 \section{基礎代数のAS性による添字付きOre表示}\label{genidx:sec:as-base-ore}
 
@@ -3406,44 +3686,149 @@ $H_{B_0}(t)=(1-t)^{-n}$を得る。
 \end{remark}
 
 
-\begin{corollary}[五次元の場合の基礎部分によるOre判定]
-\label{genidx:cor:five-dimensional-ore-criterion}
-$A\in\mathcal Q_3^{\mathrm{dom}}$とし、$B$を純jump 1部分代数とする。
-次は同値である。
-\begin{enumerate}
-\item $A$は$B$からjump 2、次いでjump 3の生成元族を付加する添字付き二段Ore表示を持つ。
-\item $B$は1周期的である。
-\item $B$は左右AS正則次元3である。
-\end{enumerate}
-ここで2の周期性は基礎部分$B$についての条件であり、$A$の1周期性ではない。
-\end{corollary}
+\begin{remark}[基礎部分の1周期性は二段表示の必要条件]
+隣接成分から生成される$B$の上で、jump 2、次いでjump 3の添字付きOre拡張を持てば、
+AS性を使わずに$B$の1周期性が従う。
+実際、第1段の交換同型は$B(2)\simeq B$を与える。
+第2段の交換同型$\theta:C(3)\to C$はjump 1成分を全単射で保つため、
+その生成部分に制限して$B(3)\simeq B$となる。
+周期の集合が$\mathbb Z$の部分群であることから、$B(1)\simeq B$を得る。
+この必要条件は最終代数$A$自身の1周期性を意味しない。
+\end{remark}
+
+\subsection{三本のjump 1生成元の場合の無条件の二段表示}
+
+\begin{theorem}[五次元整域の添字付き二段Ore表示]
+\label{genidx:thm:three-light-ore}
+$A\in\mathcal Q_3^{\mathrm{dom}}$とし、純jump 1部分を
+$B=k\langle V_i\mid i\in\mathbb Z\rangle$とする。
+このとき$B$は左右Koszul、左右AS正則次元3であり、1周期的である。
+従って、通常の三生成元二次AS正則整域$B_0$について$B\simeq\check{B_0}$と書ける。
+さらに$A$は
+\[
+C=B[z;\sigma],\qquad A=C[w;\theta,\delta]
+\]
+という添字付き二段Ore表示を持つ。
+ここで$z_i$のjumpは2、$w_i$のjumpは3であり、
+$\sigma:B(2)\to B$と$\theta:C(3)\to C$は語長を保つ同型である。
+可逆線型写像$\sigma_i:V_{i+2}\to V_i$、$\mu_i:V_{i+3}\to V_i$、
+非零スカラー$c_i$および線型形式$L_i:V_{i+3}\to k$を用いて
+\[
+\begin{aligned}
+z_i v&=\sigma_i(v)z_{i+1} &&(v\in V_{i+2}),\\
+w_i v&=\mu_i(v)w_{i+1}+L_i(v)z_i z_{i+2} &&(v\in V_{i+3}),\\
+w_i z_{i+3}&=c_i z_i w_{i+2}
+\end{aligned}
+\]
+と書ける。$B$の各成分の基底に$z$族、次いで$w$族を続けた全ての合成可能な語が
+$A$のPBW基底をなす。
+
+$A$は語長Koszul、AS移動8、2周期的であり、
+全行・全列の語長$u$、重み$t$のHilbert級数は
+\[
+H_A(u,t)=\frac{1}{(1-ut)^3(1-ut^2)(1-ut^3)}
+\]
+である。Hilbert級数、noetherian性、Koszul性、1周期性を追加仮定しない。
+$A$自身の1周期性は、この定理の結論には含めない。
+\end{theorem}
 \begin{proof}
-1を仮定する。第1段の交換同型は$B(2)\simeq B$を与える。
-第2段の交換同型$\theta:C(3)\to C$はjump 1部分を保つので、
-それが生成する部分代数に制限して$B(3)\simeq B$を得る。
-周期の集合は$\mathbb Z$の部分群なので、2周期と3周期から1周期を得る。
-この含意は$n=3$に限らない。
+定理\ref{genidx:thm:five-dimensional-numerics}により、$A$の数値型、語長Koszul性、
+AS移動8と2周期性が得られる。
+純jump 1部分は差次数零部分なので、
+$B=T_{\mathbb Z}(V)/(R_2)$は二次$\mathbb Z$-整域であり、
+\[
+\dim B_{i,i+m}=\binom{m+2}{2}
+\]
+である。$z$族から得た$A(2)\simeq A$は純jump 1部分を保つため、$B(2)\simeq B$でもある。
+従って定理\ref{p2base:thm:as3}を適用でき、$B$の左右AS正則次元3を得る。
+同定理の証明は、有限生成射影による左右の$(1,3,3,1)$線型解消も与える。
+定理\ref{genidx:thm:as-base-ore}を$n=3$に適用すると、所要の二段表示、
+交換写像の可逆性、PBW基底、および$B$の1周期性が全て従う。
+\end{proof}
 
-2を仮定すると、$B\simeq\check{B_0}$となる通常の連結次数付き代数$B_0$が存在する。
-$B$では語長と添字差が一致するので、$B_0$は三生成元の二次代数である。
-定理\ref{genidx:thm:five-dimensional-numerics}の証明から
-$H_{B_0}(t)=(1-t)^{-3}$であり、$B$の整域性は$B_0$の整域性を与える。
-Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}の分類の帰結により、
-標数零の代数閉体上の通常の三生成元二次代数でこのHilbert級数を持つものは、
-整域であることとAS正則次元3であることが同値である。
-従って$B_0$、したがって$B$はAS正則次元3である。
-この文献結果は1周期化の後に適用しており、一般の$\mathbb Z$-代数へ直接適用していない。
+\begin{proposition}[導分補正の零集合と零補正部分の下降]
+\label{genidx:prop:three-light-derivation-support}
+$A\in\mathcal Q_3^{\mathrm{dom}}$ を、純 jump 1 部分 $B$ 上の
+添字付き二段 Ore 表示
+\[
+z_i v=\sigma_i(v)z_{i+1},\qquad
+w_i v=\mu_i(v)w_{i+1}+L_i(v)z_i z_{i+2},\qquad
+w_i z_{i+3}=c_i z_iw_{i+2}
+\]
+で表す。このとき、$L_i$ は全て零であるか、全て非零である。
+全て零の場合、$A$ は語長を保つ 1 周期同型を持ち、通常の次数付き代数へ下降する。
+この命題は、全ての $L_i$ が非零の場合の 1 周期性を主張しない。
+\end{proposition}
+\begin{proof}
+まず $B$ の二次関係空間 $R_j\subset V_j\otimes V_{j+1}$ は、
+左右どちらの因子についても全支持を持つ。
+実際、$B$ は二次 AS 正則次元 3 であり、三次 Koszul 空間の生成元
+\[
+T_j\in(R_j\otimes V_{j+2})\cap(V_j\otimes R_{j+1})
+\]
+の左右 flattening はともに階数 3 である。
+$R_j\subset U\otimes V_{j+1}$ となる真部分空間 $U\subsetneq V_j$ があれば、
+$T_j$ の左支持も $U$ に入り、階数 3 に反する。
+同様に $R_j\subset V_j\otimes U'$ となる真部分空間
+$U'\subsetneq V_{j+1}$ があれば、
+$T_{j-1}\in V_{j-1}\otimes R_j$ の右支持が $U'$ に入って矛盾する。
 
-3から1は定理\ref{genidx:thm:as-base-ore}による。
-有限生成射影による有限解消の条件は、
-定理\ref{genidx:thm:five-dimensional-numerics}の証明にある
-$B$の左右の$(1,3,3,1)$線型解消から満たされる。
+$r=\sum_\alpha v_\alpha\otimes u_\alpha\in R_{i+3}$ に
+第 2 段の導分を適用する。
+導分則と第 1 段の交換式から、$z_{i+1}z_{i+3}$ を右へ揃えた係数は
+\begin{equation}\label{genidx:eq:three-light-derivation-support}
+\sum_\alpha \mu_i(v_\alpha)L_{i+1}(u_\alpha)
++\sum_\alpha L_i(v_\alpha)
+ \sigma_i\sigma_{i+2}(u_\alpha)=0.
+\end{equation}
+添字を厳密に記せば、第 2 項の二つの $\sigma$ は
+$V_{i+4}\to V_{i+2}\to V_i$ の合成である。
+PBW 分解、または $z$ の整域性による約分により、この係数は $V_i$ 内で零である。
+
+$L_i=0$ なら、$\mu_i$ の可逆性と
+\eqref{genidx:eq:three-light-derivation-support} より
+\[
+(\operatorname{id}\otimes L_{i+1})(R_{i+3})=0.
+\]
+従って $R_{i+3}\subset V_{i+3}\otimes\ker L_{i+1}$ となる。
+右全支持から $L_{i+1}=0$ である。
+逆に $L_{i+1}=0$ なら、二つの $\sigma$ の合成が可逆なので
+\[
+(L_i\otimes\operatorname{id})(R_{i+3})=0.
+\]
+左全支持から $L_i=0$ となる。
+従って $L_i=0$ と $L_{i+1}=0$ は同値であり、整数直線上で零集合は空か全体である。
+
+全ての $L_i$ が零とする。
+このとき第 2 段は導分零の Ore 拡張であり、
+$C=k\langle V,z\rangle$ の同型 $\theta:C(3)\to C$ に対して
+\[
+w_i a=\theta(a)w_j\qquad(a\in C_{i+3,j+3})
+\]
+となる。$\theta$ を全生成元上で
+$w_{i+3}\mapsto w_i$ と延長した写像を $\Phi:A(3)\to A$ と考える。
+テンソル代数上で交換式を反復すると、$A(3)$ の任意の経路式 $f$ に対して
+\[
+w_i\overline f=\overline{\Phi(f)}w_j
+\]
+が成り立つ。$f$ が関係式なら右辺は零であり、右端の非零 $w_j$ を
+整域性によって約分すれば $\Phi(f)=0$ である。
+従って $\Phi$ は代数準同型に降りる。
+同じ等式で左端の $w_i$ を約分すれば単射であり、生成元上では全射なので同型である。
+この写像は語長を保つ。
+
+既に $A$ は語長を保つ 2 周期同型を持つ。
+3 周期同型と 2 周期同型の逆を適切に移動して合成すると、
+差 $3-2=1$ の周期同型を得る。
+従って $A$ は通常の次数付き代数へ下降する。
 \end{proof}
 
 \begin{remark}
-本系は、全ての$A\in\mathcal Q_3^{\mathrm{dom}}$でこれらの条件が成立する、と主張するものではない。
-既に証明したのは$A$と$B$の2周期性であり、$B$の1周期性が残る。
-また、$B$のAS正則性が判明しても、$A$の1周期性は別の条件である。
+五次元対象では、基礎部分$B$のAS正則性・1周期性と添字付き二段Ore表示が
+全て元の仮定から従う。導分補正が零の枝では$A$も1周期的である。
+全ての$L_i$が非零の枝での$A$の1周期性は、別の問題として残る。
+任意$n$の無条件の網羅性に向けては、$n\geq4$で基礎部分のAS正則性を導く必要があり、
+本節の三生成元テンソルと一次分数変換による排除を、そのまま高次元へ適用することはできない。
 \end{remark}
 
 \section{重み$(1,1,2,3)$のAS正則$\mathbb Z$-代数の数値型と整域部分}\label{idx:sec:domain}
@@ -4918,10 +5303,11 @@ $n=1$の例が反例となる。
 定理\ref{genidx:thm:one-light-classification}により、添字付きOre網羅性、全同型類と周期を決定した。
 $n=3$では定理\ref{genidx:thm:five-dimensional-numerics}により、Koszul性、AS添字8、
 標準関係数・Hilbert級数と2周期性を確定した。
+定理\ref{p2base:thm:as3}で二周期の基礎部分$B$のAS正則性を導き、
+定理\ref{genidx:thm:three-light-ore}で全対象の添字付き二段Ore表示と$B$の1周期性を証明した。
+従って整域の場合の二段Ore網羅性は$n=1,2,3$で成立する。
 定理\ref{genidx:thm:as-base-ore}により、任意$n$で純jump 1部分$B$がAS正則次元$n$なら二段表示が従う。
-従って$n=3$に残る核心は$B$のAS双対性である。
-系\ref{genidx:cor:five-dimensional-ore-criterion}により、これは$B$の1周期性を示す問題とも同値である。
-$n\geq4$では数値型の自動性と添字付き二段Ore網羅性も未証明である。
+$n\geq4$では数値型の自動性、$B$のAS正則性、および添字付き二段Ore網羅性が未証明である。
 $n\geq3$で通常の次数付き代数へ下降できる条件も決める必要がある。
 整域性以外にHilbert級数やnoetherian性を追加する場合は、その依存を明示する。
 

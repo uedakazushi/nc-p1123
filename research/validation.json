@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 13,
+  "version": 14,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -62,25 +62,27 @@
       "THREE-LIGHT-BASE-NUMERICS",
       "N3-INDEXED-NUMERICS",
       "GEN-AS-BASE-ORE",
-      "N3-ORE-BASE-CRITERION"
+      "PERIOD2-FRACTION-FRAME",
+      "PERIOD2-BASE-AS3",
+      "N3-INDEXED-ORE",
+      "N3-DERIVATION-SUPPORT"
     ],
-    "logical_review": "The n=3 proof was independently checked by multiple AI-assisted readings: D=3, extraction of the pure-base resolution, row/folded Hilbert comparison using domainness, the cJ Laurent leading coefficient and derivative identity, the unique s9 exception and exact rank-one determinant formula, and the mixed-rank positivity argument. The general conditional AS-base Ore proof and non-Koszul indexed one-heavy lemma were also independently audited, including all Ext gradings, AS pairings, minimal mapping cones, period subgroups, PBW independence and indexed theta/delta types. The n3 equivalence with B period one uses a primary-source ordinary graded classification only after descent. These are mathematical/internal audits, not formal verification or external peer review. Earlier n1/n2 proofs and unchanged computation assets are retained.",
+    "logical_review": "Multiple independent AI-assisted readings verified the complete n3 numerical and structural route. The period-two base recognition proof was independently reconstructed using both a two-object Ore fraction category and explicit corner-fraction formulas. Checks covered derivation of the exact 1331 Koszul complexes from Hilbert/domain, exclusion of flattening ranks other than 33/22, the rank22 symmetric tensor normal form without external Kronecker classification, both support cases, rational-map degree multiplication, P1 pole-divisor growth, Frobenius duality and a length-three Koszul bimodule resolution for all unital modules. The conditional all-n AS-base theorem was independently audited and applied only after B-AS3 was proved. These checks are internal mathematical audits, not formal verification or external peer review.",
     "new_reviewed_claims": [
-      "GEN-R5-GROWTH",
-      "PERIODIC-SHORT-RESOLUTION",
-      "THREE-LIGHT-BASE-NUMERICS",
+      "PERIOD2-FRACTION-FRAME",
+      "PERIOD2-BASE-AS3",
+      "N3-INDEXED-ORE",
       "N3-INDEXED-NUMERICS",
       "GEN-AS-BASE-ORE",
-      "N3-ORE-BASE-CRITERION",
-      "ONE-HEAVY-FROBENIUS"
+      "N3-DERIVATION-SUPPORT"
     ],
     "reviewed_dependencies": [
       "GEN-AS-TRANSLATION",
       "GEN-NORMAL-Z-CONDITIONAL",
-      "N1-INDEXED-ORE",
+      "THREE-LIGHT-BASE-NUMERICS",
       "ONE-HEAVY-FROBENIUS"
     ],
-    "scope": "For all Q_3^dom, N5/L8, Koszulity, standard ranks/Hilbert and normal-z period two are proved with no extra numerical/noetherian assumptions. For all Q_n^dom, the sole extra AS condition on pure jump-one B suffices for indexed two-step Ore. For n3, canonical Ore iff B1period iff B-AS3, but none of these equivalent conditions has yet been proved from the original hypotheses. The n1 complete classification and n2 stronger graded descent remain valid. Numerical automaticity for n>=4, unconditional base-AS for n>=3 and final A descent for n>=3 remain open.",
+    "scope": "Unconditional indexed two-step Ore exhaustion is now proved for n1,n2,n3 over the standing algebraically closed characteristic-zero field. For n3, all standard numerical data and period two lead to a pure-base AS3 recognition theorem, then to the general AS-base Ore theorem. Period one is established for the base B, not for final A. The all-n theorem still assumes B-ASn and finite resolutions; unconditional exhaustion and numerical automaticity for n>=4 remain open. No extra H/noetherian/Koszul/period hypotheses were silently inserted.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -131,8 +133,17 @@
       "B has periods 2, L_B and L_B+5, so is period one without a commutativity assumption on periodicity maps.",
       "The first Ore mapping cone is minimal without Koszulity. Low-excess bar components and full AS duality give all four Tor strands and the exact Hilbert product.",
       "The weight-four relation projections are both isomorphisms by AS pairings; ordered spanning plus the exact Hilbert product proves PBW. Associativity and uniqueness prove indexed theta homomorphism and delta derivation identities.",
-      "For n3, any canonical two-step Ore flag forces periods two and three of B; conversely B1period allows the ordinary Iyudu-Shkarin domain-AS3 criterion, then the conditional theorem.",
-      "The general R5 monomial quotient growth bound counts nonzero positions; using their sum as the count additionally uses the domain rank bound. The notes describe the exact limitation of that quotient test."
+      "The general R5 monomial quotient growth bound counts nonzero positions; using their sum as the count additionally uses the domain rank bound. The notes describe the exact limitation of that quotient test.",
+      "Quadratic standard Hilbert and domain give the exact left/right 1331 complexes: K3 has dimension one; its nonzero linear coefficient makes the top map injective; the remaining kernel has the same Hilbert series t^3 H. Koszulity is a conclusion of the period-two recognition theorem.",
+      "The two-period fold is an actual graded category using powers of one fixed periodicity isomorphism. Highest-degree terms preserve composable-domainness, and polynomial growth gives corner Ore fractions.",
+      "Faithful localization preserves all alternating product spaces X,Y. An independent corner realization x->xh(gh)^(-1), y->gy verifies the same multiplication and dimensions.",
+      "Domain relations contain no decomposable tensors. Segre dimension excludes flattening ranks 32/23; rank-one flattenings are also excluded. A rank22 tensor has full middle support and a rank-two defining hyperplane, yielding ua x+ub y+vb x+vc y.",
+      "For different supports U,W in a common three-dimensional X, the partial isomorphism has exactly the two cases determined by whether its common line is preserved. After framing, c q c^(-1)=lambda t or t^(-1).",
+      "The equalities dim XY=dim YX=6 force q=f(t) and c t c^(-1)=h(t) in k(t). f composed with h has degree one, so f is Möbius and dim XY<=5, contradiction.",
+      "For equal supports, conjugation by c is Möbius on k(t), and every alternating product has poles bounded by a divisor of degree O(m). This contradicts dim B_(0,2m)=binom(2m+2,2).",
+      "Nondegenerate top pairings identify dual right Koszul complexes with shifted left ones. The standard length-three Koszul bimodule resolution is split exact on each side and bounds global dimension for all unital modules.",
+      "N3-INDEXED-ORE uses numerical forcing, actual period two of B, the independent AS3 recognition theorem and the all-n conditional Ore theorem. B period one follows from periods two and AS translation three. Final A period one is not concluded.",
+      "For n3, delta(R) gives mu_i(id tensor L_(i+1))+(sigma_i sigma_(i+2))(L_i tensor id)=0. Nondegenerate top tensors imply full relation supports, so adjacent correction functionals vanish together. All-zero corrections give a normal w family and period three; periods two/three give final A period one. The all-nonzero branch is not settled."
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
@@ -159,19 +170,19 @@
       "Normal forms, components, specializations or full nonlinear automorphism groupoids of general Ore data",
       "Novelty confirmed by an exhaustive literature search",
       "Period one or noetherianity for every object of Q without a domain or regularity hypothesis",
-      "Two-step indexed Ore exhaustion for all n>=3 under only the current AS/domain hypotheses",
       "A period-two counterexample for each fixed n>=3",
       "A complete classification of all n or of the full secondary n=2 locus",
       "Identification of the n=1 isomorphism-class set k^* x ({0} disjoint_union P^1) with an affine categorical quotient",
-      "Unconditional AS3 or period one of the n3 pure jump-one base",
       "Automatic numerical type or Koszulity for n>=4",
-      "Noetherianity of all n>=3 target objects from the present results",
-      "Application of an ordinary three-generator classification directly to a period-two Z-algebra"
+      "Application of an ordinary three-generator classification directly to a period-two Z-algebra",
+      "Unconditional indexed two-step Ore exhaustion for n>=4",
+      "Period one of the final n3 algebra A",
+      "A blanket noetherianity statement for every arbitrary-dimensional AS base"
     ],
-    "literature_followup": "Iyudu-Shkarin ordinary three-generator classification and its domain-AS3 equivalence were checked in primary text. The classification is an external input to N3-ORE-BASE-CRITERION after period-one descent, not to N3 numerical forcing. Newness of the n3 numerical theorem and general indexed AS-base criterion is not finally verified. The Smith primary source behind the earlier survey pointer is still unchecked and is not used here."
+    "literature_followup": "Iyudu-Shkarin arXiv1806.06844v1 Theorem1.11/Remark1.15/section12.1 is a primary-source ordinary graded comparison. The current period-two recognition theorem and n3 Ore proof do not depend on that classification; its ordinary domain-AS3 equivalence is a special comparison case. Newness of the recognition theorem, n3 numerical/structural theorem and indexed all-n conditional criterion is not finally verified. The Smith primary source from the earlier survey pointer is still not used."
   },
   "exact_computation": {
-    "current_analytic_results": "GEN-R5-GROWTH, PERIODIC-SHORT-RESOLUTION, THREE-LIGHT-BASE-NUMERICS, N3-INDEXED-NUMERICS, GEN-AS-BASE-ORE and N3-ORE-BASE-CRITERION have direct mathematical proofs. No new enumeration or finite-degree numerical certification is used.",
+    "current_analytic_results": "The n3 numerical forcing, period-two three-generator AS3 recognition, unconditional n3 indexed Ore theorem and all-n AS-base criterion have complete direct mathematical proofs. Rank22 exclusion is symbolic/rational and uses P1 dimension bounds; no finite enumeration or parameter sampling is a premise.",
     "current_symbolic_audit": {
       "executed": true,
       "scope": "Exact n3 mixed inverse Hilbert factorization and the full exceptional 7-by-7 Euler determinant, independently checked in the root session.",
@@ -234,7 +245,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt exited 12 before reading TeX source because lualatex.fmt was unavailable. Local-format diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v8 main manuscript and v13 supporting sources have not been compiled or visually checked; the blocked attempt was not repeated for this update.",
+    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt exited 12 before reading TeX source because lualatex.fmt was unavailable. Local-format diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v9 main manuscript and v14 supporting sources have not been compiled or visually checked; the blocked attempt was not repeated for this update.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -245,22 +256,22 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "11dbce620db768f05192c18a1c27964c98f2ac083007f824307cc6b60bc32e8d",
+        "source_sha256": "98eecef334dd90e76f326a8bff71f9695909f8c1eabe75a482bf0bc37103d79e",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "8540ece48d847b82f74160ed85b1d3af77bf54f6ad0625bd9ab940f73bc9a38f",
+        "source_sha256": "40d7ba7408f458b09eb0b15569c9794bec0da374b189d76f3b9017ac11ee87ba",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "ac49e33debb1e5d1397929295fbb30c4c9dc03e1694518c1a77cfc082c2ad715",
+        "source_sha256": "9278af66258f05d9f95704a6fb6d66ac5c7ab327be20202c716fe22ed145eed3",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "34bcc2f8b49d1a6a47de9eaecc3588cd824f72bcf09918d493f435d0dbea1abc",
+        "source_sha256": "659f7c7883d2897af7ac6753a24d60b6439e8e18344f82c1dacbfc2e8d353a28",
         "current_pdf_verified": false
       }
     ],

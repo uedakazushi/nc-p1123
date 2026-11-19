@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v13。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v14。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -13,7 +13,7 @@
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
-| Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。`genidx:cor:five-dimensional-ore-criterion` において、Bの1周期性を先に確立した後のgraded下降B₀へ適用する。一般の非1周期Z-代数へ直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
+| Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
 | Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定の直接依存であり、適用順序は下記。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
@@ -103,7 +103,7 @@ QがAS次元n+1、純jump 1基礎 B がAS次元n、双方が有限生成射影�
 Q=B[w;μ]、μ:B(d)≅Bを導く。Koszul性、noetherian性、指定Hilbert級数、整域性は不要である。
 二次双対と全Extの同一視は使わず、一般のFrobenius対合そのものを新規な結果としない。
 
-### n=3の数値型と、基礎代数の1周期性によるOre判定
+### n=3の数値型と無条件のOre構造
 
 `genidx:thm:five-dimensional-numerics` は、primitive jumps (1,1,1,2,3)、
 AS次元5、語長二次のZ-domainから、最高語長5、AS添字8、語長Koszul性、
@@ -116,16 +116,34 @@ Hilbert級数、noetherian性、Koszul性は追加仮定ではない。
 AS完全対合、単項式商の増大、Hopfの次元不等式、行列Hilbert級数の一般的な手法は既知である。
 この具体的な数値型強制と既存のweighted/quiver分類との完全照合、新規性の最終確認は未完である。
 
-`genidx:cor:five-dimensional-ore-criterion` は、このn=3の範囲で、
-純jump 1部分B上の標準的なindexed二段Ore表示、Bの1周期性、B自身のAS3性の三条件を同値にする。
-Ore表示の二つの同型からBの2周期・3周期を得る方向は直接証明する。
-Bが1周期なら、その下降B₀は通常のquadratic domainでH=(1−t)^−3となるので、
-上表の `ISclass` の既知分類を用いてAS3性を得る。
-この依存は、同論文のRemark1.15によるAS3とtwisted potentialの対応と、
-§12.1によるΩ内のdomainとtwisted potentialの対応である。
-基礎体は本研究の代数閉体・標数0の仮定で適合する。
-Bの1周期性もAS3性も無条件に確立したとはしない。
-B自身の1周期性と、A全体の1周期性を区別する。
+`p2base:thm:as3` は、標数0の代数閉体上で、隣接成分から生成される
+正連結・局所有限な二次Z-domain Bが2周期で、
+dim B_(i,i+m)=binom(m+2,2) を満たせば、左右Koszul・AS正則次元3・AS移動3となることを証明する。
+noetherian性、Koszul性、1周期性はいずれも仮定しない。
+標準二次表示複体の核と三次syzygyの単射像をHilbert級数で比較することで、
+Betti数 (1,3,3,1) の左右線型解消を導く。
+
+AS性を得るための退化syzygyの排除には、`p2base:lem:fraction-frame` を用いる。
+二頂点foldの各cornerの多項式増大から左右Ore性を直接証明し、
+二つの三次元生成空間X,Yの全交代積と次元を一つの分数斜体に保つ。
+両端flatteningの階数 (2,2) の場合、異なるsupportには
+dim XY=dim YX=6と一変数有理写像の合成次数から矛盾を得る。
+等しいsupportには、P¹上の極因子の次数を使って交代積の線形成長を導き、
+標準Hilbert数値の二次成長と矛盾させる。
+最後にKoszul双対の完全対合とKoszul双加群解消から、左右AS性と大域次元3を確認する。
+
+この証明は通常の一頂点代数の分類を使わず、本稿内で完結する。
+上表の `ISclass` は、同じHilbert級数を持つ通常のgraded代数について
+domain・twisted potential・AS3の対応を与える重要な比較先である。
+二周期対象の認識定理では1周期への下降を先取りしない。
+Ore局所化、Segre多様体による階数判定、有理写像の次数、P¹上の有効因子の次元公式、
+Koszul双対は既知の道具であり、この組合せによる二周期認識の完全な先行結果照合と新規性確認は未完である。
+
+`genidx:thm:three-light-ore` は、n=3の数値型によって純jump 1部分Bに上の認識定理を適用し、
+BのAS3性と `genidx:thm:as-base-ore` から、全てのA∈Q₃^domのindexed二段Ore表示を導く。
+Bには2周期とAS移動3があるので1周期でもある。
+A自身の1周期性は未証明であり、Bの1周期性と混同しない。
+この無条件の構造定理と、通常のgraded代数への下降や全同型分類は別の問題である。
 
 ### 任意nでのAS基礎代数を仮定した構造定理
 
@@ -140,7 +158,8 @@ Hilbert級数と整列語の比較によるPBW基底を使い、第2段の同型
 この定理はBの1周期性、L_A=L_B+5、N_A=L_B+2と
 H_A(u,t)=H_B₀(ut)/((1−ut²)(1−ut³))も与える。
 Aの語長Koszul性とBのKoszul性は同値であり、BがKoszulなら標準数値型となる。
-この条件付き定理と、BのAS性を全対象から導く未解決問題を区別する。
+この条件付き定理と、n>=4でBのAS性を全対象から導く未解決問題を区別する。
+n=3では上の二周期基礎代数の認識定理によって、この追加仮定を対象の条件から導いた。
 mapping cone、完全対合、PBWからのOreデータの構成は既知の方法である。
 この仮定の組合せと結論の既存文献との完全同定、新規性の最終確認は未完である。
 
@@ -160,7 +179,7 @@ Daniel Rogalski, *Artin-Schelter Regular Algebras*,
 標準Hilbert級数を持つAS正則代数のKoszul性に関するSmith論文内のZhangの定理への案内である。
 これはsurveyによる所在情報であり、Smithの原資料を今回確認したという意味ではない。
 今回確認した資料だけから、n>=4の一般indexed対象で不足しているKoszul性やHilbert仮定を補うことはできない。
-n=3では上記の直接証明によって数値型を確定しており、このsurveyから補ってはいない。
+n=3では上記の直接証明によって数値型と基礎代数のAS3性を確定しており、このsurveyから補ってはいない。
 この限定した確認を、文献全体に該当定理が存在しないという主張にはしない。
 
 ### n=2の網羅的な正の結果
@@ -236,10 +255,11 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 必要な数値型をAS条件から絞ることと、候補のAS正則性を有限次数で認定することは異なる。
 新規性の最終確認、形式化、外部査読は未完了である。
 
-n>=3の整域については、添字付き二段Ore表示の無条件の網羅性と基礎Z-代数のAS性が未解決である。
-n=3の混合関係数・Koszul性・標準Hilbert級数は証明済みであり、その強制が残るのはn>=4である。
-任意nでのAS基礎代数を仮定した二段Ore定理と、n=3でのBの1周期性による同値判定は、
-この未解決範囲を正確に切り分ける結果である。
+n=1,2,3の整域については、添字付き二段Ore表示の無条件の網羅性を証明した。
+n>=4では、混合関係数・Koszul性・標準Hilbert級数の強制、
+純jump 1基礎Z-代数のAS性、無条件のOre網羅性が未解決である。
+任意nでのAS基礎代数を仮定した二段Ore定理は、この未解決範囲を切り分ける。
+n=3の全対象のA自身の1周期性や完全同型分類は、Ore網羅性を得ても残る。
 n=2の全分類では、Q 全体の整域性、混合関係射影の非退化性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化が残る。
 n=2の整域性の自動性に関する具体的課題は、七つの z_i の左右正則性である。
 最小語長の零化元を仮定し、最小解消・AS対合・関係射影と syzygy から排除できるかを調べる。
