@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v7}
+\date{2026年11月19日\quad 統合版 v8}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -74,11 +74,17 @@ $\mathbb Z$-代数上の添字付きOre表示の網羅性を区別する。
 $n=1$の全整域対象は添字付き二段Ore表示を持つことを証明し、
 正規形$(c;\alpha,\beta)$の全同型類を$c$固定・$(\alpha,\beta)$の共通スカラー倍で分類する。
 1周期性は$\alpha^2=c\beta^2$と同値であり、その他の対象は最小周期2を持つ。
-$n\geq3$での添字付きOre網羅性と1周期下降の可否は未解決である。
+$n=3$では、指定Hilbert級数やnoetherian性を仮定せずに、語長Koszul性、AS添字8、
+関係数$(3,3,3,1)$、標準Hilbert級数、および重み2正規元族による2周期性を証明する。
+純jump 1部分の折畳Hilbert行列と整域性による成長比較が数値型を強制する。
+任意$n$について、純jump 1部分$B$自身がAS正則次元$n$であれば、
+混合関係数・Hilbert級数・Koszul性・noetherian性をさらに仮定せず、添字付き二段Ore表示を導く。
+$n=3$では、このOre表示の存在は$B$のAS正則性、および$B$の1周期性と同値である。
+元の仮定から$B$のAS性を導くことと、$n\geq4$の数値型の自動性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v7\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v8\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -167,7 +173,21 @@ Hilbert級数・noetherian性・1周期性を仮定しない広い対象$\mathca
 一方、本例には添字付き二段Ore表示がある。
 定理\ref{genidx:thm:one-light-ore}は$n=1$の全整域対象でこの表示を導き、
 定理\ref{genidx:thm:one-light-classification}は全同型類と周期を決定する。
-$n\geq3$における添字付きOre網羅性、1周期性と下降の可否は未解決である。
+さらに定理\ref{genidx:thm:five-dimensional-numerics}は$n=3$の全整域対象について、
+語長Koszul性、AS添字8、全関係数、標準Hilbert級数および2周期性を強制する。
+この証明では純jump 1部分の短い解消を抽出し、折畳Hilbert行列の最高Laurent係数、
+一次の恒等式と残る一階数の行列式を用いる。
+有限次数でのHilbert一致をAS正則性の認定に使うものではない。
+定理\ref{genidx:thm:as-base-ore}は、任意$n$について純jump 1部分$B$のAS正則性だけを追加すると、
+添字付き二段Ore表示が従うことを示す。全Extの差次数零部分とAS完全対合で
+混合関係の射影を制御し、最小解消のEuler式からPBW分解を導くため、
+Koszul性・noetherian性・標準Hilbert級数を追加仮定しない。
+従って$n=3$の構造上の残りは$B$のAS双対性であり、$n\geq4$では数値型の自動性も残る。
+Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}は、
+通常の三生成元二次代数で$H(t)=(1-t)^{-3}$を持つものについて、整域性とAS正則次元3が同値であることを与える。
+本稿では$B$の1周期性が得られた場合に限ってこれを適用し、
+系\ref{genidx:cor:five-dimensional-ore-criterion}で$n=3$のOre表示の存在と$B$の1周期性の同値を得る。
+一般の2周期$\mathbb Z$-代数にこの既知分類をそのまま適用することはしない。
 Van den Bergh\cite[Definition 4.1.1, Theorem 4.2.2]{VdB}の
 通常の三次元quadratic $\mathbb Z$-代数の1周期性定理は、隣接jumpだけで生成される型を扱う。
 本例のprimitive jumpsは$(1,2,3)$であり、その仮定には含まれない。
@@ -2698,8 +2718,733 @@ $C(3)$の関係$zx=xz$を保つことは$\epsilon_{i+2}=\epsilon_i$に一致す�
 
 以上で$n=1$の添字付き二段Ore表示と全同型類は決定された。
 $n=2$では次節の定理により、整域性の下で通常の次数付き二段Ore表示まで得られる。
-$n\geq3$で添字付き表示が全対象を尽くすか、また1周期下降がいつ可能かは未解決である。
-その検討では、Hilbert級数やnoetherian性の追加仮定を明示する。
+次に$n=3$の全数値型と2周期性を証明する。
+添字付きOre網羅性のために必要な基礎部分のAS双対性と第二段の交換写像は、数値表だけから認定しない。
+
+\subsection{一般の重み5関係と多項式増大}
+次の成長障害は任意$n$に適用でき、AS性そのものを仮定しない。
+\begin{lemma}[重み5関係の欠損に対する成長障害]
+\label{genidx:lem:weight-five-growth}
+$A=T_{\mathbb Z}(V\oplus kz\oplus kw)/(R)$を正のjumpを持つ語長二次
+$\mathbb Z$-代数とし、$V_i$のjumpは1、$z_i,w_i$のjumpはそれぞれ2,3とする。
+全ての重み6関係空間を零とし、$r_5(i)=\dim R_{i,i+5}$は正整数$L$を周期とする。
+重み5関係空間は$k(z_iw_{i+2})\oplus k(w_iz_{i+3})$に含まれる。
+\[
+S=\{i\in\mathbb Z/L\mathbb Z:r_5(i)=0\},\qquad
+T=\{i\in\mathbb Z/L\mathbb Z:i\in S,\ i-3\in S\}
+\]
+と置く。
+
+各行が多項式増大するなら、次が成立する。
+\begin{enumerate}
+\item $3\nmid L$なら$T=\varnothing$である。従って全ての$i$について
+\[
+r_5(i)+r_5(i-3)>0,
+\]
+また一周期内で$r_5(i)\ne0$となる位置は少なくとも$\lceil L/2\rceil$個ある。
+\item $3\mid L$なら、$T$は法3の三つの剰余類の少なくとも一つと交わらない。
+従って一周期内で$r_5(i)\ne0$となる位置は少なくとも$\lceil L/6\rceil$個ある。
+\end{enumerate}
+特に、全ての$i$で$r_5(i)=0$となることは不可能である。
+$A$が整域なら重み6関係の消滅は自動的であり、$r_5(i)\leq1$も成り立つため、
+上の個数はそのまま$\sum_{i=0}^{L-1}r_5(i)$の下界となる。
+
+\end{lemma}
+\begin{proof}
+$V$の全生成元、全ての$z_iz_{i+2}$、および$i\notin S$における
+$z_iw_{i+2}$と$w_iz_{i+3}$を零にする単項式商$M$を作る。
+重み2,3の関係は$V$とともに消え、重み4の関係の残りは$zz$として消え、
+重み5の関係は指定した二つの単項式とともに消える。
+重み6関係は仮定によって存在しないので、$A\twoheadrightarrow M$は確かに定義される。
+$M$の基底は、これらの禁止二文字を含まない$z,w$の経路語である。
+
+端点以外の$z_j$は、前後に$w$を持たなければならない。
+その直前の$w$の始点は$j-3$、直後の$w$の始点は$j+2$である。
+従ってその部分語が許される必要十分条件は$j-3,j\in S$、すなわち$j\in T$である。
+直前の文字が$w$である状態から、$w$を一つ進む操作と$zw$を進む操作を考えると、
+法$L$の頂点上に次の有向辺を得る。
+\[
+W:j\longrightarrow j+3\quad(\text{全ての }j),\qquad
+Z:j\longrightarrow j+5\quad(j\in T).
+\]
+$Z$辺は二文字の経路$zw$を表す。どちらの操作も最後の文字を$w$に保つ。
+
+$3\nmid L$の場合、$W$辺だけで全頂点が一つの有向巡回をなす。
+$j\in T$が存在すれば、$j$から$Z$辺を進み、$W$辺で$j$へ戻る有向閉路$Q$を作れる。
+$W$辺だけの閉路を$P$とする。$P$の最初の文字は$w$、$Q$の最初の文字は$z$で、
+両方とも最後の文字は$w$である。
+各閉路の全重みは正の$L$の倍数なので、正の冪を取って全重みを共通の$D$に揃える。
+この二つの語は同じ始点・終点を持ち、$j\in T$により、どの順に連結しても禁止二文字を作らない。
+従って重み$mD$の成分に少なくとも$2^m$個の異なる基底語を得る。
+これは$A$の行の多項式増大に反する。ゆえに$T=\varnothing$である。
+
+$3\mid L$の場合、$W$辺の巡回は法3の三つの剰余類に分かれる。
+$Z$辺は法3の剰余類を$+2$だけ変える。
+もし$T$が三つの剰余類全てと交われば、各剰余類で$T$の頂点を一つ選び、
+$Z$辺を三回使い、その間を$W$辺でつなぐことで、出発頂点に戻る閉路$Q$を得る。
+同じ頂点には$W$辺だけの閉路$P$もある。
+前段と同様に共通重みへ揃えて二つの語を自由に連結すると、指数増大となる。
+従って$T$が空となる法3剰余類が少なくとも一つ存在する。
+
+最後に個数を数える。$3\nmid L$なら、$S$は$+3$による長さ$L$の巡回上で
+隣り合う二点を含まないので$|S|\leq\lfloor L/2\rfloor$である。
+$3\mid L$とし、$T$と交わらない法3剰余類を一つ取る。
+この剰余類に属する$S$は$+3$による長さ$L/3$の巡回上で隣り合う二点を含まない。
+従ってその剰余類だけで少なくとも
+$\lceil(L/3)/2\rceil=\lceil L/6\rceil$個の位置が$S$の外にある。
+\end{proof}
+
+\subsection{三本のjump 1生成元を持つ部分代数の数値補題}
+\begin{lemma}[短い解消と周期的整域の増大]
+\label{genidx:lem:short-domain-resolution}
+$B$を、各頂点で$m\geq3$本のjump 1生成元を持つ、正連結・局所有限な
+語長二次$\mathbb Z$-整域とする。ある正整数$L$について語長を保つ$L$周期同型を持ち、
+各行が多項式増大するなら、全ての単純加群の射影次元が2以下となることはない。
+\end{lemma}
+\begin{proof}
+全ての単純解消の長さが2以下と仮定し、重み2関係の次元を$r_i$とする。
+行Hilbert級数$H_i(u)$は$0<u<1$で有限であり、Euler式
+\[
+1=H_i-muH_{i+1}+r_i u^2H_{i+2}
+\]
+を満たす。非零のjump 1生成元による左乗法は単射なので
+$H_i\geq uH_{i+1}$である。$L$周期性により、全ての行の比は$u\uparrow1$で1へ収束する。
+整域性により全ての長さに非零経路が存在し、$H_i(u)\to\infty$である。
+Euler式を$H_i$で割って極限を取ると$r_i=m-1$を得る。
+全係数が一定なので、語長の帰納法から全行が一致し、
+\[
+H_i(u)=\frac1{1-mu+(m-1)u^2}
+       =\frac1{(1-u)(1-(m-1)u)}.
+\]
+$m\geq3$では$u=1/(m-1)<1$に極を持ち、多項式増大と矛盾する。
+\end{proof}
+
+\begin{lemma}[三生成元の純jump 1解消の数値型]
+\label{genidx:lem:three-light-base-numerics}
+$B$をjump 1の三生成元を各始点に持つ正連結・局所有限な
+$\mathbb Z$-整域とし、各行は多項式増大するとする。
+ある整数$s\geq3$について$L=s+5$と置く。
+$B$の二添字Hilbert次元は$L$周期的であり、各右単純加群は
+\[
+0\longrightarrow P_{i+s}^{q_i}\longrightarrow P_{i+2}^{r_i}
+\longrightarrow P_{i+1}^{3}\longrightarrow P_i\longrightarrow S_i\longrightarrow0
+\]
+という語長斉次の解消を持つとする。
+ここで$q_i\in\{0,1\}$、$r_i\geq0$で、両係数列は$L$周期的である。
+基礎体は代数閉体とする。
+
+このとき、
+\[
+s=3,\qquad q_i=1,\qquad r_i=3\quad(\text{全ての }i)
+\]
+である。この結果単独では$B$のAS--Gorenstein性を主張しない。
+
+\end{lemma}
+\begin{proof}
+\paragraph{折畳Hilbert行列。}
+$S$を$L\times L$の巡回シフト行列、$R=\operatorname{diag}(r_i)$、
+$Q=\operatorname{diag}(q_i)$とし、
+\[
+P(u)=I-3uS+u^2RS^2-u^sQS^s
+\]
+と置く。$H_{ij}(u)$は始点$i$から、終点が法$L$で$j$に合同な全経路成分の
+語長Hilbert級数とする。Euler等式から$P(u)H(u)=I$であり、
+$P(0)=I$なので$H(u)P(u)=I$も成り立つ。
+特に全成分は有理関数であり、多項式増大から$0<u<1$で収束する。
+
+\paragraph{最高Laurent係数は全て等しい。}
+整域性により、長さ$d$の非零経路による左乗法・右乗法はそれぞれ単射である。
+任意の$0\leq d<L$について、左乗法と$L$周期性から
+\[
+u^dH_{i+d,j}(u)\leq H_{ij}(u),\qquad
+u^{L-d}H_{ij}(u)\leq H_{i+d,j}(u)
+\]
+を得る。添字は法$L$で読む。
+右乗法についても同様に
+\[
+u^dH_{ij}(u)\leq H_{i,j+d}(u),\qquad
+u^{L-d}H_{i,j+d}(u)\leq H_{ij}(u)
+\]
+を得る。従って$u\to1-$で全ての$H_{ij}$の比は1へ収束する。
+
+各有限次元成分の乗法は非零元の積を零にしない双線型写像である。
+代数閉体上で、乗法の核の射影化は分解可能テンソルのSegre多様体と交わらない。
+射影次元定理によりその余次元は$\dim U+\dim V-1$以上であり、
+Hopfの不等式$\dim UV\geq\dim U+\dim V-1$を得る。これを反復すると、
+\[
+\dim B_{i,i+m}\geq 2m+1
+\]
+となる。従って各$H_{ij}$は$u=1$で少なくとも二位の極を持つ。
+有理性と全成分の比較から、ある整数$p\geq2$、実数$h>0$および行列$K$について
+\[
+H(u)=h(1-u)^{-p}J+(1-u)^{-p+1}K+
+O((1-u)^{-p+2}),
+\]
+と書ける。$J$は全成分が1の行列である。
+
+\paragraph{零次・一次の行列恒等式。}
+$PH=HP=I$の最高Laurent係数から
+\[
+P(1)J=JP(1)=0
+\]
+を得る。行和と列和を取ると、それぞれ
+\[
+r_i=2+q_i,\qquad r_{j-2}=2+q_{j-s}
+\]
+である。従って
+\[
+q_i=q_{i+s-2}.
+\]
+$q$は既に$L=s+5$周期なので、
+\[
+g=\gcd(s-2,L)=\gcd(s-2,7)\in\{1,7\}
+\]
+を周期とする。
+
+次のLaurent係数は
+$P(1)K-hP'(1)J=0$である。
+左から$J$を掛け、$JP(1)=0$を使うと$JP'(1)J=0$を得る。
+全成分の和を計算すれば
+\[
+0=-3L+2\sum_i r_i-s\sum_iq_i
+=L-(s-2)\sum_iq_i.
+\]
+一つの$g$周期内の$q_i=1$の個数を$a$とすると、
+\[
+(s-2)a=g.
+\]
+$g=1$なら$a=1$、$s=3$であり、全ての$q_i$は1となる。
+$g=7$なら$s-2$は7の正の倍数なので、唯一の可能性は
+\[
+s=9,\quad L=14,\quad a=1,
+\]
+すなわち$q$は7周期で、一周期内に一つだけ1を持つ場合である。
+
+\paragraph{残る例外の排除。}
+この場合$r_i=2+q_i$も7周期である。
+上の解消のEuler漸化式は、始点・終点の差に関する帰納法により
+各$\dim B_{ij}$を一意に定めるので、Hilbert次元自体も7周期となる。
+従って7頂点で折り畳むことができる。
+添字を平行移動して$q_0=1$とし、$E_{00}$を$(0,0)$だけが1の行列とすると、
+7巡回シフト$S$に対するEuler行列は
+\[
+P_7(u)=(I-uS)(I-2uS)+u^2(1-u^7)E_{00}S^2.
+\]
+$A_0=(I-uS)(I-2uS)$と置く。
+\[
+\det A_0=(1-u^7)(1-128u^7)
+\]
+であり、幾何級数展開から
+\[
+(A_0^{-1})_{2,0}
+=u^5\left(\frac{64}{1-128u^7}-\frac{1}{1-u^7}\right).
+\]
+一階数の行列式公式を使うと
+\begin{align*}
+\det P_7(u)
+&=\det A_0\left(1+u^2(1-u^7)(A_0^{-1})_{2,0}\right)\\
+&=(1-u^7)^2(1-64u^7).
+\end{align*}
+従って$0<u=64^{-1/7}<1$で$P_7(u)$は特異となる。
+しかし多項式増大から$H_7(u)$はこの範囲で収束し、$P_7(u)H_7(u)=I$である。
+これは矛盾する。例外は存在せず、所要の結論を得る。
+\end{proof}
+
+\subsection{AS次元5の全数値型と二周期性}
+\begin{theorem}[三本のjump 1生成元を持つ整域の数値型]
+\label{genidx:thm:five-dimensional-numerics}
+$A\in\mathcal Q_3^{\mathrm{dom}}$とする。すなわち、最小生成元のjumpは
+$(1,1,1,2,3)$、語長二次、左右AS次元5であり、整域性を仮定する。
+このとき$A$は語長Koszulであり、AS頂点置換は$i\mapsto i+8$である。
+各始点の関係数と二変数Hilbert級数は
+\[
+(r_2(i),r_3(i),r_4(i),r_5(i),r_6(i))=(3,3,3,1,0),
+\]
+\[
+H_i(u,t)=\frac1{(1-ut)^3(1-ut^2)(1-ut^3)}
+\]
+となる。最小解消の重みシフトは
+\[
+\begin{array}{c|l}
+p&\text{第$p$項のシフト}\\\hline
+0&(0)\\
+1&(1,1,1,2,3)\\
+2&(2,2,2,3,3,3,4,4,4,5)\\
+3&(3,4,4,4,5,5,5,6,6,6)\\
+4&(5,6,7,7,7)\\
+5&(8)
+\end{array}
+\]
+で、全ての第$p$項は語長$p$に集中する。
+さらに重み2の生成元族は正規元族をなし、語長を保つ同型$A(2)\simeq A$が存在する。
+これらの結論に、指定Hilbert級数、noetherian性、Koszul性、周期性を追加仮定していない。
+\end{theorem}
+\begin{proof}
+\paragraph{AS平行移動と最高語長。}
+$E_{ij}^p=\Ext_A^p(S_i,S_j)$と置く。
+定理\ref{genidx:thm:one-light-ore}で使った有限射影解消の評価双対性を、
+AS次元5に適用すると、Yoneda完全対合
+$E_{ij}^p\otimes E_{j,\ell(i)}^{5-p}\to k$を得る。
+各top Extにtraceを選べば、巡回式により積を保つNakayama同型
+$E_{ij}^p\to E_{\ell(i),\ell(j)}^p$が存在する。
+$E^1$の矢印による到達可能性が整数の順序と一致するため、
+$\ell(i)=i+L$という一定平行移動となる。
+
+第$i$top Extの語長を$N_i$とする。
+$E^1_{i,i+1}$とその完全対合相手にtraceの巡回式を適用すると、
+相補成分の語長は$N_i-1$、Nakayama像の$E^1$の語長は1なので、
+$N_{i+1}=N_i$を得る。その一定値を$N$とする。
+同じ巡回式と完全対合からNakayama同型は全Extの語長を保つ。
+二次表示では$E^1E^1\to E^2$が関係埋込み$R\hookrightarrow W\otimes W$の双対なので、
+$E^1$上の逆双対から語長を保つ周期同型$A\simeq A(L)$を復元できる。
+これは全Extが$E^1$で生成されることを仮定しない。
+
+語長二次性とAS対合により、Extの語長は
+\[
+0,\quad1,\quad2,\quad N-2,\quad N-1,\quad N
+\]
+に集中し、最小性から$N\geq5$である。
+差次数を重みから語長を引いたものとし、最高差次数を$D=L-N$と置く。
+bar複体から全Extの差次数は非負であり、完全対合から$D$以下でもある。
+$E^1$の重み3成分の差次数は2なので$D\geq2$である。
+$D=2$なら重み5関係の差次数3は許されず、全ての$r_5(i)$が零となる。
+整域性により$r_6(i)=0$なので、補題\ref{genidx:lem:weight-five-growth}が
+多項式増大に反する。従って$D\geq3$である。
+
+\paragraph{最高差次数は3。}
+jump 1の生成元だけからなる部分代数を$B$とする。
+差次数は非負なので$B=T_{\mathbb Z}(V)/(R_2)$であり、
+$A$のbar複体の差次数零部分は$B$のbar複体に一致する。
+従って$\operatorname{Tor}^B_p$は$\operatorname{Tor}^A_p$の差次数零部分である。
+$B$は整域性、多項式増大、および語長を保つ$L$周期性を受け継ぐ。
+
+$E^2$の重みは2から5の間である。相補関係の重みを$r$とすると、
+$E^3$の差次数は$D+2-r$である。
+また相補生成元の重みを$a\in\{1,2,3\}$とすると、$E^4$の差次数は$D+1-a$である。
+$D\geq4$なら$E^3,E^4,E^5$の差次数は全て正であり、
+$B$の全単純解消は長さ2以下となる。
+しかし各始点のjump 1生成元は三本であり、
+補題\ref{genidx:lem:short-domain-resolution}に矛盾する。
+従って$D=3$、すなわち$L=N+3$である。
+
+\paragraph{純jump 1部分からのKoszul性の強制。}
+$s=N-2\geq3$と置くと$L=s+5$である。
+$E^3$の差次数零部分は、相補重み5関係だけに対応する。
+$E^4,E^5$には差次数零部分がないので、$B$の単純解消は
+\[
+0\longrightarrow P_{i+s}^{q_i}\longrightarrow P_{i+2}^{r_i}
+\longrightarrow P_{i+1}^{3}\longrightarrow P_i\longrightarrow S_i\longrightarrow0,
+\qquad r_i=r_2(i),\quad q_i=r_5(i+s)
+\]
+となる。ここでは$P_j=e_jB$である。
+整域性から重み5関係の二つの一次元経路への射影は単射なので、$q_i\in\{0,1\}$である。
+従って補題\ref{genidx:lem:three-light-base-numerics}を適用でき、
+\[
+s=3,\quad N=5,\quad L=8,\quad r_2(i)=3,\quad r_5(i)=1
+\]
+を得る。全AS解消の語長はhomological degreeに等しくなり、$A$は語長Koszulである。
+$B$の解消は$(1,3,3,1)$の語長線型解消なので、
+Euler式と語長についての帰納法から$H_i^B(u)=(1-u)^{-3}$となる。
+この段階で、$B$のAS--Gorenstein性を数値だけから結論してはいない。
+
+\paragraph{二つの混合関係数。}
+$a_i=r_3(i)$、$b_i=r_4(i)$と置き、語長を$u$、差次数を$v$で数える行級数を$H_i(u,v)$とする。
+AS対合と上で得た数値型から、Euler式は
+\begin{align*}
+1={}&H_i-u(3H_{i+1}+vH_{i+2}+v^2H_{i+3})\\
+&+u^2(3H_{i+2}+a_i vH_{i+3}+b_i v^2H_{i+4}+v^3H_{i+5})\\
+&-u^3(H_{i+3}+b_{i+4}vH_{i+4}+a_{i+5}v^2H_{i+5}+3v^3H_{i+6})\\
+&+u^4(vH_{i+5}+v^2H_{i+6}+3v^3H_{i+7})-u^5v^3H_{i+8}.
+\end{align*}
+固定した$0<v<1$について、多項式増大から全級数は$0<u<1$で収束する。
+$H_i(u,v)\geq H_i^B(u)=(1-u)^{-3}$であり、jump 1生成元の左乗法から
+$H_i(u,v)\geq uH_{i+1}(u,v)$である。
+8周期性により$u\uparrow1$で全行の比が1に収束するので、
+Euler式を$H_i$で割って極限を取ると
+\[
+v(a_i-b_{i+4})+v^2(b_i-a_{i+5})=0
+\]
+となる。全ての$0<v<1$で成立することから
+$a_i=b_{i+4}$、$b_i=a_{i+5}$を得る。
+従って$a_i=a_{i+9}=a_{i+1}$であり、全ての$a_i,b_i$は同じ定数$a$となる。
+重み3関係の両射影の単射性から$a\leq3$である。
+
+行Euler式の係数が全て一定となったので、語長の帰納法で全行は一致し、
+$H_i(u,v)=1/p(u,v)$となる。ここで
+\begin{align*}
+p(u,v)={}&1-u(3+v+v^2)+u^2(3+av+av^2+v^3)\\
+&-u^3(1+av+av^2+3v^3)+u^4(v+v^2+3v^3)-u^5v^3\\
+={}&(1-u)^3(1-uv)(1-uv^2)+(a-3)u^2(1-u)(v+v^2).
+\end{align*}
+$a<3$なら、固定した$0<v<1$で$u<1$を十分1に近付けると$p(u,v)<0$となり、
+正の有限値$H_i(u,v)=1/p(u,v)$に矛盾する。
+従って$a=3$であり、$(u,v)\mapsto(ut,t)$により所要の重みHilbert級数を得る。
+左解消のシフトもAS双対性から同じ表となり、列についても同じ級数を得る。
+
+\paragraph{正規元族と二周期性。}
+重み3関係の両射影は整域性により単射で、次元は全て3なので同型である。
+従って可逆な線型写像$\sigma_i:V_{i+2}\to V_i$により
+$z_i v=\sigma_i(v)z_{i+1}$と書ける。
+また$r_5(i)=1$と整域性から$w_i z_{i+3}=c_i z_i w_{i+2}$、$c_i\ne0$である。
+生成元上で
+\[
+\phi:A(2)\longrightarrow A,\qquad
+v\mapsto\sigma_i(v),\quad z_{i+2}\mapsto z_i,\quad w_{i+2}\mapsto c_i^{-1}w_i
+\]
+と置く。テンソル代数上で交換式を反復すると、
+$i+2$から$j+2$への任意の経路式$a$について$z_i\bar a=\overline{\phi(a)}z_j$である。
+右端の$z_j$で約分すれば$\phi$は関係を保ち、左端の$z_i$で約分すれば単射である。
+生成元上で全射なので同型となり、所要の2周期性を得る。
+\end{proof}
+
+\begin{remark}[数値型とOre網羅性の区別]
+定理\ref{genidx:thm:five-dimensional-numerics}は、$n=3$でのKoszul性、AS添字、
+全関係数、Hilbert級数、および2周期性を追加仮定なしに確定する。
+基礎部分代数$B$のAS双対性や第二段のOre交換写像の可逆性は、この数値表だけで証明済みとはしない。
+$n=3$の二段Ore網羅性を結論する際には、それらを別途確立する必要がある。
+$n\geq4$では同じ数値型の自動性も未証明である。
+個別結果の文献上の新規性の最終確認は未完了である。
+\end{remark}
+
+\section{基礎代数のAS性による添字付きOre表示}\label{genidx:sec:as-base-ore}
+
+\subsection{Koszul性を仮定しない一重生成元補題}
+\begin{lemma}\label{genidx:lem:one-heavy-as}
+$d>1$とする。正連結・局所有限な語長二次$\mathbb Z$-代数
+$Q=T_{\mathbb Z}(V\oplus kw)/(R\oplus S)$を考える。
+$V_i$のjumpは1、$w_i$のjumpは$d$とし、
+\[
+R_i\subset V_i\otimes V_{i+1},\qquad
+S_i\subset (V_i\otimes kw_{i+1})\oplus(kw_i\otimes V_{i+d})
+\]
+とする。$Q$は左右AS正則次元$n+1$であり、
+$B=T_{\mathbb Z}(V)/(R)$自身が左右AS正則次元$n$であると仮定する。
+左右単純加群のAS解消は有限生成射影による有限解消とする。
+このとき、ある語長を保つ同型$\mu:B(d)\to B$について
+$Q=B[w;\mu]$という添字付きOre表示が成立する。
+Koszul性、noetherian性、指定Hilbert級数、整域性は仮定しない。
+\end{lemma}
+\begin{proof}
+$w$の個数は非負次数を定める。次数零部分は$B$であり、
+bar複体の同じ部分を取ると、全Yoneda圏について
+\[
+E=\operatorname{Ext}_Q^*(S,S),\qquad
+F=\operatorname{Ext}_B^*(S,S)=E_{w\text{-次数}=0}
+\]
+を得る。ここで内部次数はTorの次数を正に記録する。
+二次双対と全Extを同一視してはいない。
+有限AS解消から$E,F$の完全対合を得る。
+
+全jump 1の矢印が存在するので、$B$のAS頂点置換は$i\mapsto i+L_B$である。
+$F^n_{i,i+L_B}$と$E^1$の完全対合から、$E$のtopの$w$次数は0または1である。
+一方、$\eta_i=w_i^*\in E^1_{i,i+d}$とその完全対合相手の$w$次数は非負なので、
+topの$w$次数は少なくとも1である。従ってtopの$w$次数は1であり、
+$Q$のAS頂点置換は$i\mapsto i+L_B+d$である。
+全ての$E$の$w$次数は0または1となる。
+
+$w$次数1の部分を$J$と書く。両側の完全対合により
+\[
+F^n_{i,i+L_B}\eta_{i+L_B}\ne0,\qquad
+\eta_i F^n_{i+d,i+d+L_B}\ne0.
+\]
+$0\ne f\in F^{p-1}_{i+d,j}$に対し、$F$の完全対合で
+$fg\ne0$となる相補元$g$を選べば、
+$\eta_i f=0$は$\eta_i(fg)\ne0$に反する。
+同様に、$0\ne f\in F^{p-1}_{i,j-d}$なら$f\eta_{j-d}\ne0$である。
+二つのAS完全対合を比較すると
+\[
+\dim J^p_{ij}
+=\dim F^{p-1}_{i+d,j}
+=\dim F^{p-1}_{i,j-d}
+\]
+となるので、これらの積はともに同型である。内部語長も、$\eta$の語長1だけ移動する。
+従って
+\[
+J^p_{ij}
+=\eta_i F^{p-1}_{i+d,j}
+=F^{p-1}_{i,j-d}\eta_{j-d}.
+\]
+
+$p=2$を取る。語長二次性だけで
+$E^1\otimes E^1\to E^2$は関係埋込みの双対である。
+従って$S_i$の$w_iV_{i+d}$と$V_iw_{i+1}$への両射影は同型であり、
+可逆線型写像$\mu_i:V_{i+d}\to V_i$を用いて
+\[
+w_i v=\mu_i(v)w_{i+1}
+\]
+と書ける。
+
+語長を$u$、$w$次数を$v$で数え、$P_B$を全最小解消のEuler行列、
+$S^d_{ij}=\delta_{j,i+d}$とする。上の二つの積同型から
+\[
+P_Q=P_B(I-uvS^d)=(I-uvS^d)P_B
+\]
+である。これは全内部次数を記録した等式であり、Koszul性を必要としない。
+したがって、形式的な上三角行列の逆を取れば
+\[
+H_Q=H_B(I-uvS^d)^{-1}.
+\]
+交換関係で$w$を右へ動かして得る全射
+\[
+\bigoplus_{m\ge0}
+B_{i,j-md}\,w_{j-md}w_{j-(m-1)d}\cdots w_{j-d}
+\longrightarrow Q_{ij}
+\]
+は、各有限次元の二次数成分で次元が一致するので同型である。
+特に右端の$w$の乗法は単射である。
+
+$B(d)$の関係式$r$に対して
+$w_i r=\mu^{\otimes2}(r)w_{i+2}=0$を使い、右端の$w$を約分すれば、
+$\mu$は$B(d)\to B$の準同型へ降りる。
+生成元上では全射であり、$P_BS^d=S^dP_B$から
+$B(d)$と$B$の各成分の次元は一致するので、この準同型は同型である。
+PBW分解と合わせ、所要の添字付きOre表示を得る。
+\end{proof}
+
+\subsection{純jump 1部分のAS性から二段表示を導く}
+\begin{theorem}\label{genidx:thm:as-base-ore}
+$A\in\mathcal Q_n^{\mathrm{dom}}$とし、
+純jump 1部分
+\[
+B=k\langle V_i\mid i\in\mathbb Z\rangle
+=T_{\mathbb Z}(V)/(R_2)
+\]
+自身が左右AS正則次元$n$で、左右単純加群が有限生成射影による有限AS解消を持つと仮定する。
+このとき$A$は$B$上の添字付き二段Ore拡張である。
+この追加仮定以外にKoszul性、標準Hilbert級数、noetherian性、
+混合関係数や周期を仮定する必要はない。
+
+より具体的に、
+\[
+r_3(i)=r_4(i)=n,\qquad r_5(i)=1,\qquad r_6(i)=0
+\]
+であり、ある可逆線型写像$\sigma_i:V_{i+2}\to V_i$、
+$\mu_i:V_{i+3}\to V_i$、非零係数$c_i$、線型形式$L_i:V_{i+3}\to k$により
+\[
+z_i v=\sigma_i(v)z_{i+1},\qquad
+w_i v=\mu_i(v)w_{i+1}+L_i(v)z_i z_{i+2},\qquad
+w_i z_{i+3}=c_i z_i w_{i+2}
+\]
+と表示できる。$B$は語長を保つ1周期構造を持つ。
+その次数付き下降を$B_0$、AS添字を$L_B$とすると、
+\[
+L_A=L_B+5,\qquad N_A=L_B+2,\qquad
+H_i^A(u,t)=\frac{H_{B_0}(ut)}{(1-ut^2)(1-ut^3)}.
+\]
+ここで$N_A$は最高Extの語長である。
+$A$は語長Koszulであることと$B$がKoszulであることが同値である。
+\end{theorem}
+\begin{proof}
+以下$E=\operatorname{Ext}_A^*(S,S)$、
+$F=\operatorname{Ext}_B^*(S,S)$とし、
+差次数を「添字差$-$語長」と定める。
+bar複体の差次数零部分は$B$のbar複体なので、$F=E_{e=0}$である。
+純jump 1部分には正の差次数の関係から新たな関係は生じないため、
+表示した$B=T_{\mathbb Z}(V)/(R_2)$は実際に$A$へ埋め込まれる。
+$B$は$A$の部分代数なので$\mathbb Z$-整域であり、多項式増大を持つ。
+
+\paragraph{最高差次数と重み5関係。}
+AS対応は$A$と$B$のいずれでも一定平行移動であり、
+最高Extの語長も一定である。これは有限AS双対性のNakayama対応が
+primitive矢印を保つことと、全jump 1矢印による整数の順序から従う。
+記号を$L_A,N_A,L_B$とし、$D=L_A-N_A$と置く。
+
+整域性より$R_6(i)=0$である。
+もし全ての$R_5(i)$が零なら、$A/(V)$の関係は、一部の始点の$zz=0$だけである。
+語$w$と$zw$の任意の連接は$zz$を含まず、
+異なる連接は異なる単項式基底元となる。
+長さ$m$の連接は重み$5m$以下なので、各行の累積増大は指数的となり矛盾する。
+従ってある$R_5(i)$は非零であり、$E^2$の差次数3成分とAS完全対合から$D\ge3$である。
+
+一方、$F^n_{i,i+L_B}\ne0$の相補相手は$E^2$にある。
+二次表示と$R_6=0$から$E^2$の差次数は高々3なので、$D\le3$となる。
+従って
+\[
+D=3,\qquad N_A=L_B+2,\qquad L_A=L_B+5.
+\]
+$F^n_{i,i+L_B}$の相補相手は正確に
+$E^2_{i+L_B,i+L_B+5}=R_5(i+L_B)^*$であるから、
+完全対合により$r_5(j)=1$が全$j$で成立する。
+整域性により、この関係の$wz$と$zw$の係数はともに非零である。
+
+\paragraph{重み3関係と正規元族。}
+$\zeta_i=z_i^*$、$\eta_i=w_i^*$とする。
+$R_5(i)^*$の非零元を$\chi_i$とすると、
+$\eta_i\zeta_{i+3}$と$\zeta_i\eta_{i+2}$はともに$\chi_i$の非零倍である。
+ここでは、二次関係埋込みの双対が$E^1E^1\to E^2$であることだけを用いる。
+
+$0\ne f\in F^1_{i+2,i+3}$に対して、
+$F$の完全対合で$fg$が非零topとなる$g$を選ぶ。
+もし$\zeta_i f=0$なら
+\[
+\eta_{i-3}\zeta_i(fg)=0
+\]
+となるが、左辺は$\chi_{i-3}F^n_{i+2,i+2+L_B}$の非零元である。
+これは$E$のAS完全対合に反する。
+従って$F^1_{i+2,i+3}\to E^2_{i,i+3}$、$f\mapsto\zeta_i f$は単射であり、
+$r_3(i)\ge n$である。
+整域性は$R_3(i)$の両経路への射影の単射性を与えるので$r_3(i)\le n$であり、
+$r_3(i)=n$を得る。
+
+従って可逆$\sigma_i$と$c_i\ne0$により
+$z_i v=\sigma_i(v)z_{i+1}$、$w_i z_{i+3}=c_i z_i w_{i+2}$と書ける。
+左右の$z_i$で約分する正規元族の議論により、
+語長を保つ同型$A(2)\simeq A$を得る。その制限は$B(2)\simeq B$である。
+また$B$のAS周期$L_B$と、$A$のAS周期を制限した$L_B+5$周期も存在する。
+周期の集合は$\mathbb Z$の部分群であり、
+\[
+\gcd(2,L_B,L_B+5)=1
+\]
+なので$B$は1周期である。
+この1周期同型は語長を保ち、次数付き代数$B_0$へ下降する。
+
+\paragraph{低差次数のbar複体と全Betti成分。}
+$C=k\langle V,z\rangle\subset A$とする。
+$z$を右へ動かすと$C$は$bz^m$で張られる。
+異なる$m$は差次数で分かれ、同じ$m$では$z^m$の正則性から係数$b$を約分できる。
+従って
+$C=B[z;\sigma]$という添字付きOre拡張である。
+
+この第1段の最小解消は、$B$の最小解消からmapping coneで作れる。
+実際、$M_i=S_i^B\otimes_B C$に対し
+\[
+0\longrightarrow M_{i+2}(-1)
+\xrightarrow{z_i}M_i\longrightarrow S_i^C\longrightarrow0
+\]
+が正確である。ここで$(-1)$は語長シフトである。
+$\sigma:B(2)\to B$で輸送した$B$の最小解消を使うと、
+$z_i$の写像は各項で$z$を掛ける鎖写像に持ち上がる。
+そのmapping coneの全成分はaugmentation idealに入るので最小である。
+従って$C$のTorは$B$のTorと、そのhomological degreeを1、
+語長を1、重みを2移動したコピーからなる。
+これは$B$のKoszul性を仮定しない議論である。
+
+$A$と$C$の差次数0、1の成分とその乗法は一致するので、
+同じ差次数のbar複体も一致する。
+$B_0$のBetti数を$\beta_{p,r}=\dim\operatorname{Tor}^{B_0}_p(k,k)_r$と書く。
+$B$の1周期性と、$A,B$のAS完全対合を使うと、
+$A$の第$p$ Torの全成分は、差次数ごとに次の次元を持つ。
+\[
+\begin{array}{c|c|c|c}
+\text{差次数}&\text{次元}&\text{語長}&\text{重み}\\ \hline
+0&\beta_{p,r}&r&r\\
+1&\beta_{p-1,r}&r+1&r+2\\
+2&\beta_{p-1,r}&r+1&r+3\\
+3&\beta_{p-2,r}&r+2&r+5
+\end{array}
+\]
+範囲外のBetti数は零とする。
+最初の二行はbar複体とmapping coneから従い、
+最後の二行はそれぞれ差次数1、0とのAS完全対合から従う。
+全差次数が$0,\ldots,3$に入ることもtopの差次数3と完全対合による。
+
+各行のEuler係数は始点によらない。
+重みに関する帰納法で全Hilbert行が一致し、
+上の四行を交代和で足すと
+\[
+H_A(u,t)^{-1}
+=H_{B_0}(ut)^{-1}(1-ut^2)(1-ut^3)
+\]
+を得る。特に$r_4(i)=\beta_{1,1}=n$である。
+この四成分の式は、$A$が語長Koszulであることと$B_0$がKoszulであることの同値も与える。
+
+\paragraph{重み4関係の両射影。}
+$0\ne f\in F^1_{i+3,i+4}$を取り、$F$の完全対合で$fg\ne0$をtopまで延長する。
+$\eta_i f=0$なら左から$\zeta_{i-2}$を掛けて
+$\chi_{i-2}(fg)=0$となり、AS完全対合に反する。
+従って$\eta_iF^1_{i+3,i+4}\to E^2_{i,i+4}$は単射である。
+同様に$F^1_{i,i+1}\eta_{i+1}\to E^2_{i,i+4}$も単射である。
+後者では$F$の左完全対合で前に元を掛け、後ろに$\zeta_{i+4}$を掛ければよい。
+始域と終域は全て$n$次元なので両方同型である。
+二次関係の双対を取ると、$R_4(i)$の$w_iV_{i+3}$と$V_iw_{i+1}$への両射影が同型となる。
+従って可逆$\mu_i$と線型形式$L_i$を用いて
+\[
+w_i v=\mu_i(v)w_{i+1}+L_i(v)z_i z_{i+2}
+\]
+と書ける。
+
+\paragraph{PBW分解と第2段のOreデータ。}
+この交換式で$w$を右へ動かし、次に$z$を右へ動かす。
+補正項を取ると$w$の個数が減るので、書換えは停止する。
+従って$B$の各成分の基底に$z^a w^b$を続けた語が$A$を張る。
+これらの基底候補の二変数Hilbert級数は
+$H_{B_0}(ut)/((1-ut^2)(1-ut^3))$に等しい。
+従って全ての有限次元成分で次元が一致し、これらはPBW基底である。
+
+$a\in C_{i+3,j+3}$について$w_i a$の一意な$w$係数と定数係数を取ると、
+\[
+w_i a=\theta_{ij}(a)w_j+\delta_{ij}(a),\qquad
+\theta:C(3)\to C,\qquad
+\delta_{ij}:C_{i+3,j+3}\to C_{i,j+3}
+\]
+を得る。生成元では
+\[
+\theta(v)=\mu_i(v),\qquad\theta(z_{i+3})=c_i z_i,\qquad
+\delta(v)=L_i(v)z_i z_{i+2},\qquad\delta(z_{i+3})=0.
+\]
+結合律とPBW分解の一意性から$\theta$は準同型、
+$\delta(ab)=\theta(a)\delta(b)+\delta(a)b$である。
+$\theta$は生成元上で全射であり、$B$の1周期性と第1段のPBW分解から
+$C(3)$と$C$の各成分の次元は一致するので、$\theta$は同型である。
+これで添字付き二段Ore表示を得る。
+\end{proof}
+
+\begin{remark}
+定理の追加仮定は、純jump 1部分$B$自身のAS正則性である。
+$B$が有限大域次元を持つこと、指定Hilbert級数を持つこと、
+あるいは$\mathbb Z$-整域であることだけで、この仮定が済んだとはしない。
+従って、この定理は一般$n$の無条件の網羅性を証明するものではない。
+一方、混合関係数、Koszul性、noetherian性、Hilbert級数をさらに仮定する必要はない。
+
+$B$がKoszulなら$L_B=n$であり、
+次数$n$・一次係数$-n$のHilbert逆多項式に単位円の議論を適用して
+$H_{B_0}(t)=(1-t)^{-n}$を得る。
+この場合$A$もKoszulで、AS添字$n+5$と標準二変数Hilbert級数を持つ。
+また$A$は2周期かつ$(L_B+5)$周期なので、$L_B$が偶数なら1周期である。
+特に$B$がKoszulで$n$が偶数なら、通常の次数付き代数へ下降する。
+奇数$n$での無条件の1周期化は結論しない。
+\end{remark}
+
+
+\begin{corollary}[五次元の場合の基礎部分によるOre判定]
+\label{genidx:cor:five-dimensional-ore-criterion}
+$A\in\mathcal Q_3^{\mathrm{dom}}$とし、$B$を純jump 1部分代数とする。
+次は同値である。
+\begin{enumerate}
+\item $A$は$B$からjump 2、次いでjump 3の生成元族を付加する添字付き二段Ore表示を持つ。
+\item $B$は1周期的である。
+\item $B$は左右AS正則次元3である。
+\end{enumerate}
+ここで2の周期性は基礎部分$B$についての条件であり、$A$の1周期性ではない。
+\end{corollary}
+\begin{proof}
+1を仮定する。第1段の交換同型は$B(2)\simeq B$を与える。
+第2段の交換同型$\theta:C(3)\to C$はjump 1部分を保つので、
+それが生成する部分代数に制限して$B(3)\simeq B$を得る。
+周期の集合は$\mathbb Z$の部分群なので、2周期と3周期から1周期を得る。
+この含意は$n=3$に限らない。
+
+2を仮定すると、$B\simeq\check{B_0}$となる通常の連結次数付き代数$B_0$が存在する。
+$B$では語長と添字差が一致するので、$B_0$は三生成元の二次代数である。
+定理\ref{genidx:thm:five-dimensional-numerics}の証明から
+$H_{B_0}(t)=(1-t)^{-3}$であり、$B$の整域性は$B_0$の整域性を与える。
+Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}の分類の帰結により、
+標数零の代数閉体上の通常の三生成元二次代数でこのHilbert級数を持つものは、
+整域であることとAS正則次元3であることが同値である。
+従って$B_0$、したがって$B$はAS正則次元3である。
+この文献結果は1周期化の後に適用しており、一般の$\mathbb Z$-代数へ直接適用していない。
+
+3から1は定理\ref{genidx:thm:as-base-ore}による。
+有限生成射影による有限解消の条件は、
+定理\ref{genidx:thm:five-dimensional-numerics}の証明にある
+$B$の左右の$(1,3,3,1)$線型解消から満たされる。
+\end{proof}
+
+\begin{remark}
+本系は、全ての$A\in\mathcal Q_3^{\mathrm{dom}}$でこれらの条件が成立する、と主張するものではない。
+既に証明したのは$A$と$B$の2周期性であり、$B$の1周期性が残る。
+また、$B$のAS正則性が判明しても、$A$の1周期性は別の条件である。
+\end{remark}
 
 \section{重み$(1,1,2,3)$のAS正則$\mathbb Z$-代数の数値型と整域部分}\label{idx:sec:domain}
 本節では、次数付き代数への帰着を仮定せずに$\mathbb Z$-代数を扱う。
@@ -4171,8 +4916,13 @@ $c\ne0$かつ標数0なので、これは異なる二つの三つ組の同一視
 $n=1$の例が反例となる。
 一方、$n=1$では定理\ref{genidx:thm:one-light-ore}と
 定理\ref{genidx:thm:one-light-classification}により、添字付きOre網羅性、全同型類と周期を決定した。
-残る一般化の課題は、$n\geq3$の$\mathcal Q_n^{\mathrm{dom}}$に対する添字付き二段Ore表示の網羅性と、
-$n\geq3$で通常の次数付き代数へ下降できるための条件を決めることである。
+$n=3$では定理\ref{genidx:thm:five-dimensional-numerics}により、Koszul性、AS添字8、
+標準関係数・Hilbert級数と2周期性を確定した。
+定理\ref{genidx:thm:as-base-ore}により、任意$n$で純jump 1部分$B$がAS正則次元$n$なら二段表示が従う。
+従って$n=3$に残る核心は$B$のAS双対性である。
+系\ref{genidx:cor:five-dimensional-ore-criterion}により、これは$B$の1周期性を示す問題とも同値である。
+$n\geq4$では数値型の自動性と添字付き二段Ore網羅性も未証明である。
+$n\geq3$で通常の次数付き代数へ下降できる条件も決める必要がある。
 整域性以外にHilbert級数やnoetherian性を追加する場合は、その依存を明示する。
 
 四次元対象について、
@@ -4257,6 +5007,13 @@ P.~A.~A.~B.~Carvalho, S.~A.~Lopes and J.~Matczuk,
 \emph{Double Ore Extensions versus Iterated Ore Extensions},
 arXiv:0909.3238v1 (2009).
 \url{https://arxiv.org/pdf/0909.3238}.
+\bibitem{ISclass}
+N.~Iyudu and S.~Shkarin,
+\emph{Classification of quadratic and cubic PBW algebras on three generators},
+arXiv:1806.06844v1 (2018).
+\url{https://arxiv.org/pdf/1806.06844v1}.
+使用箇所：Theorem 1.11、Remark 1.15、\S12.1（p.78）。
+通常の三生成元二次代数で$H(t)=(1-t)^{-3}$を持つ場合の整域性とAS正則性の同値。
 \bibitem{IS}
 N.~Iyudu and S.~Shkarin,
 \emph{Three dimensional Sklyanin algebras and Gr\"obner bases},
