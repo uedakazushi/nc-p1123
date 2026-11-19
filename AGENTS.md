@@ -1,18 +1,26 @@
 # nc-p1123 研究指示
 
-2026-11-20 / v24。最初に `research/plan_ja.tex` を読む。
+2026-11-20 / v25。最初に `research/plan_ja.tex` を読む。
 主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
 
 ## 公表準備の構成
 
-- 主論文は `papers/nc-p1123.tex`、公表準備稿 v24。要旨と序論の後、次数付き準備・一般indexed構造・低次元・同型・非語長二次四次元・高次元の六部で読む。
+- 主論文は `papers/nc-p1123.tex`、公表準備稿 v25。要旨と序論の後、次数付き準備・一般indexed構造・低次元・同型・非語長二次四次元・高次元の六部で読む。
 - 一般AS双対性と語長保存AS周期の共通補題は `genidx:lem:as-translation`。全Extの一次生成性を使わない。ノートの同名内容は本文を参照する。
 - 周期Hilbert行列の共通極は `hilbert:lem:common-pole`。隣接生成、Hilbert次元の周期性、有限右Euler逆を明記する。代数周期・AS性・左右解消は不要。
 - n3の主依存は純数値型→AのKoszul性→一般 `knd:thm:koszul-ore`→B-AS3/Ore。二周期三生成元認識は独立の定理と別証明として保持し、定理と証明を一続きに保つ。混合階数の直接証明はノート `note:n3-direct-mixed-ranks` に全文を保持する。
 - 序論の `intro:thm:recognition`、`intro:thm:koszul` は本文の定理を案内する再掲であり、新たな未検証定理ではない。既存の定理ラベルを維持する。
 - 主張の新規性の最終確認、第三者査読、n>=4非Koszulの自動性は未完了である。内部検証や組版成功と区別する。
+
+## graded 非二次対象の一般Ore構造問題（2026-11-20）
+
+- 優先問題：次数付きAS正則整域（左右noetherian）、最小生成元次数 (1^n,2,3)、大域次元 n+2、AS index n+5 だけで通常の二段Ore表示を得る。**未解決**。語長二次・Hilbert級数・Koszul性を追加しない。
+- `lem:index-four-strands`：AS添字だけから第i最小解消の重みシフトは [i,i+3]、最小関係の重みは2～5。証明を主論文に記載した。
+- `lem:index-heavy-relation`：A/(A1)ではzw,wzに非自明な重み5関係が残る。両係数非零は未証明。商の整域性を仮定してはならない。
+- `prop:nonquadratic-ore-family`：B=k[x1,...,xn]、z x1−x1 z=x1^3、z xj=xj z (j>1)、w中心は全nで非語長二次、標準Hilbert/AS index n+5のnoetherian AS整域かつ通常の二段Ore拡大。quadratic性の自動性を経由する証明方針は否定済み。二段Ore網羅性の反例ではない。
+- 次の焦点は、非二次関係を許して重み5関係の両係数の非零性、重み2生成元の交換写像、PBW性を導くこと。現時点では新結果のLuaLaTeX組版・外部査読を未実行として扱う。
 
 ## 現在の目標と対象
 
