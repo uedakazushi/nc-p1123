@@ -1,6 +1,6 @@
 # nc-p1123 研究指示
 
-2026-11-19 / v11。最初に `research/plan_ja.tex` を読む。
+2026-11-19 / v12。最初に `research/plan_ja.tex` を読む。
 主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
@@ -29,7 +29,7 @@
 ## n=4 と任意nの条件付き構造の現行結果
 
 - `n4:lem:periodic-pd3-obstruction`：m>=4の隣接生成元を持つ周期的二次Z-domain、多項式増大、有限生成simple解消の条件で、全simpleのpd<=3は不可能。folded Hilbertの主部hJ、Euler零固有値の二次変動の平方和、inverseの非負性から矛盾。Koszul/AS/noetherianを補題へ追加しない。
-- `n4:cor:top-excess-three`：全Q4domでD=L−N=3。`n4:prop:pure-base-numerics`：s=N−2>=4,L=s+5、pureB解消 (1,4,r_i,{p_ij},q_i)、shift (0,1,2,j,s)、q_i=r5(i+s)∈{0,1},notall0、rank balanceとfirst moment。N6/L9自動性は未証明。
+- `n4:cor:top-excess-three`：全Q4domでD=L−N=3。`n4:prop:pure-base-numerics`：s=N−2>=4,L=s+5、pureB解消 (1,4,r_i,{p_ij},q_i)、shift (0,1,2,j,s)、q_i=r5(i+s)∈{0,1},notall0、rank balanceとfirst moment。N6/L9自動性は未証明。`n4:thm:top-word-divisible-three` により3|N,3|Lは無条件で、非Koszul残余はN=9,12,15,…。N7/N8および全N≡1,2(mod3)は排除済み。
 - `n4:prop:koszul-base-numerics` と `n4:thm:koszul-numerics-period`：wordKoszulならpureBの14641線型解消、H_B=(1-u)^-4、全mixed ranks(6,4,4,1,0)、H_A標準、L9、normalz、A1period。基礎欠損は非負行列のPF半径、混合欠損はP=FKFとdetK(1,v)=−9(sum(4−r3_i))v+O(v²)、pole<=2対pure pole4で排除。
 - `n4:thm:equivalent-criteria`：A wordKoszul ⇔ N6 ⇔ A1period ⇔ B1period ⇔ pureB Hilbert rows independent of source ⇔ all H_B=(1-u)^-4 ⇔ B-AS4 ⇔ indexed二段Ore over B-AS4 ⇔ ordinary graded二段Ore over Koszul AS4 domain ⇔ 全始点r3=4,r5=1、の十条件が同値。row uniformならscalar Euler同一、q全1、unit roots/self reciprocityからs4。n4構造の残る核心は十条件の自動性である。条件成立後のB-AS4性と第二段Oreは証明済みで、追加noetherian性は不要。
 - `ogk:thm:numerics` と `ogk:thm:ore-without-noetherian`：通常graded、wordKoszul、AS(n+2)、domain、polynomial growthなら任意nでD3、標準HS/ranks、B Koszul ASn、normalz、二段Ore表示を得る。H/noetherian不要。スカラーEulerの根の議論を一般indexedへ移さない。`ogk:cor:noetherian-ore` と `n4:cor:noetherian-periodic-ore` は、さらにAの通常下降を左右noetherianと仮定すればBもnoetherianとなる系であり、第二Oreのための仮定ではない。
@@ -38,8 +38,11 @@
 - `ibar:cor:normal-z-rank`：全始点r3=n,r5=1から、H/Koszulを追加せずr4=nを得る。mixed射影の単射性と2周期商の二変数Golod–Shafarevich不等式による。`igraph:thm:normal-z-ore` が、この階数条件だけから全OreとB-ASを完成させる。`ibar:cor:koszul-normal-z` はさらにA wordKoszulならL=n+5、標準二変数Hを与える。notes `note:koszul-normal-z-frobenius` にはQの純bar複体でB Koszulを先に導き、E=F⊕Fη、η²=0とFrobenius対合からB-ASを導く完全な別証明を保持する。一般階数判定はこの別証明に依存しない。
 - notes `note:ordinary-graph-finite-res`：通常Q=T(V,w)/(R,wv−μ(v)w)、μ可逆の場合、k_Qの有限生成射影による有限解消だけでμR=RとOre表示が従う。AS/domain/Koszul/noetherian/growthは不要。係数イデアルの有限安定化とスカラーEulerのt次数による。indexed行列版にはAS最高係数可逆性を使うため、この補足の適用範囲と区別する。
 - Rogalski–Sierra arXiv1101.0737v2 Theorem1.1/(1.2) は、noetherian domain/Koszul/14641/gldim4/standardHでも非ASの例。ordinaryなので1periodもある。この既知例は一般の基礎代数の数値だけのAS認識を否定するが、十条件定理によりQ4domのpureBとしては実現不能。Prop5.4の最高微分(0,0,z9,z10)^Tはtop flattening rank 2を与え、親ASの混合射影との対合から得るrank>=3にも反する。親内の実現を未確認に戻さない。
-- notes `note:n4-pure-euler-obstruction`：s5/N7/L10の形式的pure Eulerデータで、非負Betti階数、行列Euler恒等式、単位円上の全根、全次数の正の行Hilbert係数、多項式増大、共通最高Laurent係数、全次数のHopf不等式と、Hilbert行の始点依存性が共存する。`computations/verify_n4_pure_euler.py` は厳密整数・多項式計算で再現する。代数、最小解消、AS6対象の実現ではなく、これらの純数値条件だけで十条件を強制する方法の障害である。親の中央Ext対合・混合Euler・実際の二次関係を追加して研究する。
-- notes `note:n4-s5-period-two-obstruction` はs5の一般の二周期純数値枝を解析的に排除する。`note:n4-parent-mixed-obstruction` は表示した十周期モデルの親AS6条件を20整数a_i=r3_i,b_i=r4_iと全行列束の恒等的特異性へ還元する。一次条件を通る表示1延長は二次係数−942で排除したが、純モデルの全延長は未排除。`computations/verify_n4_parent_mixed.py` は担当・主担当とも実行済みで、現行入力を厳密照合した。
+- notes `note:n4-pure-euler-obstruction`：s5/N7/L10の形式的pure Eulerデータで、非負Betti階数、行列Euler恒等式、単位円上の全根、全次数の正の行Hilbert係数、多項式増大、共通最高Laurent係数、全次数のHopf不等式と、Hilbert行の始点依存性が共存する。`computations/verify_n4_pure_euler.py` は厳密整数・多項式計算で再現する。代数、最小解消、AS6対象の実現ではなく、これらの純数値条件だけで十条件を強制する方法の障害である。親AS整域への全延長は三整除性定理で排除済みである。純条件だけの方法の限界として保持する。
+- notes `note:n4-s5-period-two-obstruction` はs5の一般の二周期純数値枝を解析的に排除する。`note:n4-parent-mixed-obstruction` は表示した十周期モデルの親AS6条件を20整数a_i=r3_i,b_i=r4_iと全行列束の恒等的特異性へ還元する。一次条件を通る表示1延長は二次係数−942で排除される。純モデルのAS整域への全延長は `n4:thm:top-word-divisible-three` により排除済み。`computations/verify_n4_parent_mixed.py` は担当・主担当とも実行済みで、現行入力を厳密照合した。
+
+- `n4:thm:top-word-divisible-three`：全Q4domで3|N,3|L。3∤Lを仮定するとr5all1、heavy-w境界detP(ε²,ε^-1)=0とsimple kernelからsum r4=4L,sum r3=sum p_(s−1)。pure/mixed momentからE3pureはword s−1に集中。domain/minimal exactnessで各tail rank p_i>=2、ゆえs<=6。s5/s6は数値Eulerの実零点で排除。全証明は解析的で有限列挙なし。
+- `nozz:prop:koszul-saturation`：固定wordgradingでR4のzz射影0かつwordKoszulなら、任意nで全mixed ranks標準・通常二段skew下降・B Koszul ASn。有限foldでFrob dualの4corner全射とdimF=dimE11からF→Fζη同型を導く。`nozz:cor:periodic-saturation` は同じnozz、r5all1、6∤Lの実周期からKoszulなしに全ranks/通常skew下降。`nozz:lem:one-heavy-gs` が二つの商に適用できる。nozzを一般対象へ黙って追加しない。
 
 ## 保持する n=2 と graded の成果
 
@@ -53,12 +56,12 @@
 - n=2の全対象は固定階数98次元の七窓表示へ帰着するが、AS locus・軌道幾何・全分類は未完成。最小周期7や非定数rhoなら零因子を持つという結論はn=2のQに限定される。n=1の非定数rhoを持つ整域反例と矛盾しない。
 - 元のn=2全分類の成果・未解決問題は副課題として保持する。加重射影空間の可換基準ではスタックを用い、coarse Projと同一視しない。
 
-- `genidx:lem:r5-gs-saturation`：語長保存L周期を持つ正連結局所有限二次Z-domainと多項式行増大だけで、3∤Lなら全r5=1、3|Lなら少なくとも一つのmod3class上で全r5=1。AS/Koszul/有限大域次元/noetherian不要。P2=I−S³+ε(−S²+R5S⁵)+O(ε²)とPH>=I、軌道平均の負固有値/正左ベクトル補正で証明。n4 N7/L10では全q_i=1が必要。3|Lの残る二classやr3=nは未解決。
+- `genidx:lem:r5-gs-saturation`：語長保存L周期を持つ正連結局所有限二次Z-domainと多項式行増大だけで、3∤Lなら全r5=1、3|Lなら少なくとも一つのmod3class上で全r5=1。AS/Koszul/有限大域次元/noetherian不要。P2=I−S³+ε(−S²+R5S⁵)+O(ε²)とPH>=I、軌道平均の負固有値/正左ベクトル補正で証明。n4で3∤Lと仮定した全q_i=1は、三整除性定理の背理法で使用済みである。3|Lの残る二classやr3=nは未解決。
 
 ## 継続の優先順位
 
 1. n>=4で全始点r3=n,r5=1を元の仮定から導くことを主目標とする。`igraph:thm:normal-z-ore` により、これだけでB-ASと全Oreが従う。Koszul性・標準Hの自動性を先に証明する必要はない。r3の欠損n−r3、r5の零位置を、親AS対合・混合Euler・R5欠損成長から排除する。n4ではこの課題が十条件の自動性と同値である。
-2. n4のD3は証明済み。s=N−2のpure解消を出発点とし、中央E3の自己相補性・混合Euler成分・二次関係の積対合を使う。pure Eulerの高次Laurent条件・正値成長・Hopf不等式だけではs5形式例を排除できない。表示モデルはr5≡1なので、親のr3≡4を強制できれば一般階数判定と十条件定理で排除できる。具体的には20整数のSegre上界・非負性と全行列束の恒等的特異性を調べる。表示1延長の排除を全延長の排除に読み替えない。
+2. n4ではD3と3|N,3|Lを無条件に証明済み。非Koszul枝はN=9,12,15,…に限られる。最初にN9/L12/s7の重み3境界の三次元核を法3剰余類へ分解し、有効3×3行列を作る。少なくとも一つのr5飽和剰余類、pure tailのsum_j p_ij>=2q_i、r2_i>=3+q_i、中央E3対合とmixed momentを組み合わせる。N7の十周期純形式モデルのAS整域への全延長は排除済みで、20整数探索へ戻らない。全次数の純形式証明と個別mixed pencil計算は方法障害として保持する。
 3. n3の全同型軌道を調べる。A1periodと通常graded二段Ore下降は全対象で証明済み。基礎AS3代数の自己同型、E=span ell_iと移動T、周期構造変更によるZhang twistを含めて同型判定を整理する。n1反例を独立light変数で拡張する際は三重重なりの係数制約を検証する。
 4. 一般条件付き定理ではL_B偶数ならA1period、Koszul baseかつn偶数はその場合。n>=4の前提自動性は未証明。通常wordKoszul全nの二段Oreへnoetherianを再導入しない。任意nのAS基礎代数のnoetherian性は未主張。ordinary三生成元の既知分類と2period認識定理の重複調査を進め、新規性確定と数学的証明を区別する。
 5. 副課題としてn2の整域Ore軌道幾何、domain自動性、混合射影退化、最小周期7の零因子例を保持する。逆向き片側R5関係の位置差2、3、4（法7）は `note:r5-orientation` で排除済み。rho=0全体を対角族、rho=1全体を初期Ore族と同一視しない。

@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v17。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v18。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -11,6 +11,7 @@
 | Auroux–Katzarkov–Orlov, *Mirror symmetry for weighted projective planes and their noncommutative deformations*, Ann. Math. 167 (2008), 867–943; DOI 10.4007/annals.2008.167.867; arXiv:math/0404281 | [出版版](https://annals.math.princeton.edu/wp-content/uploads/annals-v167-n3-p04.pdf), §2.2、Prop.2.3/Cor.2.4、Prop.2.6、Thm.2.12、Prop.2.18/Cor.2.19 | 任意重みの対角skew polynomial族。AS次元4、添字7と例外列7項は既知。qgrは可換基準でstackのcoh。非対角・非1周期の全分類ではない。 |
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
+| He–Van Oystaeyen–Zhang, *Skew polynomial algebras with coefficients in Koszul Artin–Schelter regular algebras*, arXiv:1304.3799v2 (2013), 引用キー `HVZSkew` | [一次PDF](https://arxiv.org/pdf/1304.3799), §2、Proposition 2.2（PDF p.7） | 通常Koszul代数と既知のskew拡張B=A[z;σ]に対し、Ext(B)をA!とそのtwisted copyの自明拡大として記述する。今回のno-zz認識は、Ore表示を仮定せず有限頂点上のFrobenius対合から混合階数・自由性を強制する。既知命題を逆向きに適用せず、類似構造の比較先として引用する。 |
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
 | Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
@@ -380,17 +381,25 @@ det P=(1−u¹⁰)³(1+u²⁰)と、各剰余類の二次準多項式を用い�
 
 研究ノート `note:n4-s5-period-two-obstruction` は、s=5の一般の純基礎係数列に2周期性を追加すると、
 二頂点のdet Kに対する単位円上の根の条件とBetti非負性が矛盾することを解析的に証明する。
-これは表示した十周期列を全て排除する主張ではなく、2周期の枝についての追加の障害である。
+この純数値だけの結果は2周期枝に適用される。十周期モデルの親AS整域への全延長は、主論文 `n4:thm:top-word-divisible-three` により別に排除される。
 
 `note:n4-parent-mixed-obstruction` は、表示した十周期純モデルの親AS6が存在すると仮定した場合に、
 中央混合数値を20個の整数a_i=r₃(i)、b_i=r₄(i)へ還元する。
 二次関係の交叉からSegre上界を加え、全親Euler行列の三位以上の極が、
 残る行列束の行列式 det K(v)≡0 を要求することを示す。
 一次係数を通る表示された一つの混合延長は、二次係数−942によって厳密に排除される。
-**純モデルの全混合延長を排除したわけではない。** 全係数の同時消滅、二次代数の実現、AS完全対合の実現を別々に残す。
+この個別行列束の計算とは別に、`n4:thm:top-word-divisible-three` は全Q4domで3|N,3|Lを証明する。従ってN7純モデルの親AS整域への全延長は不可能である。二次係数の具体例は親AS構造に由来する追加障害として保持する。
 整数恒等式の再現コードは `computations/verify_n4_parent_mixed.py` である。
 表示した計算は担当エージェントと主担当がそれぞれ実行し、現行入力の全恒等式を厳密に照合した。
 実行・照合状態は `research/validation.json` に記録する。
+
+### 最高語長の三整除性と平方項消滅条件
+
+主論文 `n4:thm:top-word-divisible-three` の3|N,3|Lは、二変数Euler行列の重み3境界の特異性、純・混合モーメント、整域最小解消の末尾階数から直接証明する。Reyes–Rogalskiの一般的な行列Hilbert成長理論と区別し、この具体的な三整除性を同文献から引用してはいない。新規性は未確認である。
+
+`nozz:prop:koszul-saturation` は重み4のzz射影消滅とKoszul性から任意nの標準混合階数と通常二段skew表示を導く。有限頂点ASの完全対合は既存のMartínez-Villa–Solbergの枠組みに基づき、四成分分解から右乗法の単射性を得る段階を直接証明する。`nozz:cor:periodic-saturation` は同じ平方項消滅、r5≡1、6の倍数でない実周期から、Koszul性なしに同じ構造を得る。He–Van Oystaeyen–Zhang Proposition 2.2との相違は上表に記載した。一般のzz補正を消してPBW変形と見なすには、別途PBWまたはHilbert一致の証明が必要である。
+
+研究ノート `note:matrix-generator-bound-obstruction` は、相反性・Betti正値性・行列式の単位円条件・多項式Hilbert正値性だけでは行列生成元のPerron根を大域次元で抑えられない、具体的な2×2形式例を記す。これは実際の代数ではなく、整域の成分比較には反する。
 
 ### n>=4に残る数値型・Koszul性の文献上の確認範囲
 

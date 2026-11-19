@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v12}
+\date{2026年11月19日\quad 統合版 v13}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -90,6 +90,9 @@ $n=4$では、最高Extの重みと語長の差が3であることを追加仮�
 そのために、四本以上の隣接生成元を持つ周期的二次整域は、多項式増大の下では
 全単純加群の有限生成最小解消を長さ三以下にできないことを示す。
 折畳Euler行列の零固有値の二次変動を平方和として評価する証明である。
+さらに、最高語長$N$とAS移動$L$はともに3の倍数であることを証明する。
+重み3生成元の非零冪が与える境界特異性と、純・混合Eulerモーメントが中心的な役割を持つ。
+従って非Koszulの場合に残る最高語長は$N=9,12,15,\ldots$である。
 さらに$n=4$では、語長Koszul性、1周期性、純jump 1部分の1周期性、
 同部分の行Hilbert級数が始点によらないことが同値である。
 この条件の下で、標準二変数Hilbert級数と全関係数を追加仮定なしに導く。
@@ -103,11 +106,14 @@ Hilbert級数・Koszul性・基礎AS性を仮定せずに二段Ore表示を導�
 第二段のPBW分解を強制する。
 任意$n$について、純jump 1部分$B$自身がAS正則次元$n$であれば、
 混合関係数・Hilbert級数・Koszul性・noetherian性をさらに仮定せず、添字付き二段Ore表示を導く。
+$R_4$の$zz$射影が零の場合は、語長Koszul性から任意$n$の混合階数飽和を証明し、
+通常の二段skew polynomial代数への下降を得る。
+同じ平方項消滅条件の下では、全$r_5=1$と6の倍数でない実周期から、Koszul性なしにも同じ構造が従う。
 $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条件の網羅性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v12\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v13\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -227,6 +233,11 @@ $n=4$については、系\ref{n4:cor:top-excess-three}で最高差次数$L-N=3$
 折畳Euler行列の零固有値を二次まで調べ、巡回Fourier二次形式と均衡した有向グラフの
 平方和によって、Hilbert逆行列の正値性に矛盾する負の固有値を得る。
 命題\ref{n4:prop:pure-base-numerics}は、純基礎部分の解消と二つのモーメント制約を与える。
+定理\ref{n4:thm:top-word-divisible-three}は、追加仮定なしに$3\mid N$、$3\mid L$を示す。
+$w$の非零冪による境界でのEuler行列の特異性から混合階数の総和を決め、
+純・混合の一次モーメントと整域上の最小解消の末尾階数を組み合わせて証明する。
+行列Hilbert級数と成長の一般理論はReyes--Rogalski\cite{RRgrowth}が比較先であるが、
+本稿はこの二変数境界の特異性と具体的な三整除性を直接証明する。
 語長Koszul性を追加した場合は、命題\ref{n4:prop:koszul-base-numerics}が
 純基礎部分の標準線型解消とHilbert級数を強制し、
 定理\ref{n4:thm:koszul-numerics-period}が全混合関係数・標準Hilbert級数・1周期性を導く。
@@ -260,6 +271,16 @@ AS双対性はEuler行列の最高$w$係数を可逆にするので、
 補題\ref{genidx:lem:r5-gs-saturation}は、AS周期$L$が3で割り切れなければ
 全$r_5(i)=1$を強制する。$3\mid L$でも、少なくとも一つの法3剰余類上で全て1となる。
 Koszul性を追加した系\ref{ibar:cor:koszul-normal-z}では、標準Hilbert級数も結論となる。
+重み4関係に$zz$項がない場合、命題\ref{nozz:prop:koszul-saturation}はKoszul性から
+三重次数付きFrobenius対合を用いて全混合階数を強制する。
+補題\ref{nozz:lem:one-heavy-gs}と系\ref{nozz:cor:periodic-saturation}は、
+全$r_5=1$かつ6の倍数でない実周期という別の仮定の下で、Koszul性なしに同じ構造を導く。
+いずれも$z,w$の両正規元族が得られ、通常の二段skew polynomial代数へ下降する。
+既知の通常Koszul skew拡張のExt代数を自明拡大として記述する結果として、
+He--Van Oystaeyen--Zhang\cite[Proposition 2.2]{HVZSkew}がある。
+同命題は既にOre表示を持つ代数から出発する。本稿の認識命題では、有限頂点上の三重次数と
+Frobenius対合から混合階数を先に強制するため、この既知の記述を逆向きに仮定しない。
+AS対合・正規拡張そのものは既知の方法であり、この具体的な飽和条件の新規性は未確認である。
 
 四生成元の場合、標準Hilbert級数とKoszul性・整域性・大域次元4からAS4を推論する一般的方法には、
 Rogalski--Sierra\cite[Theorem 1.1, (1.2)]{RSsurface}の反例がある。
@@ -3386,6 +3407,203 @@ $P_BH_B=H_BP_B=I$の最高係数から$P_B(1)J=JP_B(1)=0$を得て、
 \eqref{n4:eq:base-first-moment}を得る。
 \end{proof}
 
+\begin{theorem}[六次元対象の最高語長の三整除性]
+\label{n4:thm:top-word-divisible-three}
+$A\in\mathcal Q_4^{\mathrm{dom}}$の最高Extの語長を$N$、AS移動を$L$とする。
+このとき$3\mid N$および$3\mid L$である。
+従って、$N=6$、または$N\ge9$である。
+特に、最高語長7および8の非Koszul枝は存在しない。
+\end{theorem}
+\begin{proof}
+系\ref{n4:cor:top-excess-three}と命題\ref{n4:prop:pure-base-numerics}から
+最高差次数は3であり、$s=N-2\ge4$、$L=s+5=N+3$である。
+$3\nmid L$と仮定して矛盾を導く。
+語長を保つ実際の$L$周期があるので、補題\ref{genidx:lem:r5-gs-saturation}から
+$r_5(i)=1$が全始点で成立する。
+以下、添字は法$L$で読み、$S_{ij}=\delta_{j,i+1}$、
+$\boldsymbol1=(1,\ldots,1)^{\mathsf T}$、$J=\boldsymbol1\boldsymbol1^{\mathsf T}$とする。
+
+\paragraph{純部分および混合部分のモーメント。}
+純jump 1部分を$B$とし、$r_i=r_2(i)$とする。
+全$q_i=1$なので、純部分のEuler行列は
+\[
+ P_0(u)=I-4uS+u^2\operatorname{diag}(r_i)S^2
+ -\sum_{j=3}^{s-1}u^j\operatorname{diag}(p_{i,j})S^j+u^sS^s.
+\]
+命題\ref{n4:prop:pure-base-numerics}の行和・列和および一次モーメントから
+\begin{equation}\label{n4:eq:div3-pure-moments}
+ r_i=2+\sum_{j=3}^{s-1}p_{i,j},\qquad
+ \sum_{i,j}(j-2)p_{i,j}=sL.
+\end{equation}
+
+$a_i=r_3(i)$、$b_i=r_4(i)$とする。
+第三Torの差次数1・語長$j$の次元を$c_{i,j}$と置く。
+その語長は$3\le j\le s-1$に限られ、全$c_{i,j}\ge0$である。
+語長を$u$、差次数を$v$で数える全Euler行列の差次数1部分は
+\[
+ P_1(u)=-uS^2+u^2\operatorname{diag}(a_i)S^3
+ -\sum_{j=3}^{s-1}u^j\operatorname{diag}(c_{i,j})S^{j+1}
+ +u^s\operatorname{diag}(b_{i+s+1})S^{s+1}-u^{s+1}S^{s+2}.
+\]
+AS完全対合から、全Euler行列は
+\begin{equation}\label{n4:eq:div3-full-euler}
+ P(u,v)=P_0(u)+vP_1(u)
+ +v^2u^{s+2}P_1(u^{-1})^{\mathsf T}
+ +v^3u^{s+2}P_0(u^{-1})^{\mathsf T}.
+\end{equation}
+
+一般の$A$に対して、$P_1$にも行和・列和および一次モーメントが適用できる。
+実際、$0<v<1$を固定すると全Hilbert行列$H(u,v)$は純部分$H_B(u)$以上であり、
+整域性とHopfの不等式から$\dim B_{i,i+m}\ge3m+1$なので、$u=1$で少なくとも二位の極を持つ。
+純jump 1の非零経路による左右乗法と実際の$L$周期を用いる成分比較では、
+差次数が変わらず、比較係数は$u\to1-$で1に近付く。
+従って最高Laurent係数は$h(v)J$、$h(v)>0$である。
+$PH=HP=I$の最高係数と次の係数を比べ、後者を左右から$J$で挟むと
+\[
+ P(1,v)J=JP(1,v)=0,\qquad JP_u'(1,v)J=0.
+\]
+これは$0<v<1$の全てで成立する多項式恒等式なので、$v$の各係数について成り立つ。
+
+$A_1=\sum_i a_i$、$B_1=\sum_i b_i$と置く。
+$P_1(1)$および$P_1'(1)$の全成分の和を計算すると
+\begin{equation}\label{n4:eq:div3-mixed-moments}
+ \sum_{i,j}c_{i,j}=A_1+B_1-2L,\qquad
+ \sum_{i,j}(j-2)c_{i,j}=(s-2)(B_1-L).
+\end{equation}
+この議論は純Hilbert行列に三位以上の極を仮定しない。
+
+\paragraph{重み3生成元の境界における特異性。}
+$0<\varepsilon<1$を固定し、$\varepsilon^2<c<1$について
+\[
+ u=\frac{\varepsilon^2}{c},\qquad v=\frac{c}{\varepsilon}
+\]
+と評価する。$V,z,w$の評価値はそれぞれ$\varepsilon^2/c,\varepsilon,c$であり、全て1未満である。
+多項式増大によって$H(u,v)$は絶対収束し、$P(u,v)H(u,v)=I$となる。
+整域性により、長さ$Lm$の$w$の積は非零であり、法$L$の折畳で始点に戻る。
+従って
+\[
+ H_{ii}(\varepsilon^2/c,c/\varepsilon)
+ \ge\sum_{m\ge0}c^{Lm}=\frac1{1-c^L}.
+\]
+$c\to1-$で右辺は発散するから、$P(\varepsilon^2,\varepsilon^{-1})$は特異である。
+各Tor次数の語長$m$と差次数$e$は$e\le2m$を満たすため、この置換後の行列は
+$\varepsilon$の多項式行列であり、
+\begin{equation}\label{n4:eq:div3-heavy-boundary}
+ \det P(\varepsilon^2,\varepsilon^{-1})\equiv0
+\end{equation}
+を得る。
+
+\eqref{n4:eq:div3-full-euler}から
+\[
+ \mathscr P(\varepsilon):=P(\varepsilon^2,\varepsilon^{-1})
+ =M_0+\varepsilon M_1+\varepsilon^2M_2+\varepsilon^3M_3+O(\varepsilon^4),
+\]
+ただし
+\begin{align*}
+ M_0&=I-S^3,\\
+ M_1&=-S^2+S^5=-S^2M_0,\\
+ M_2&=\operatorname{diag}(b_i)S^4-4S,\\
+ M_3&=\operatorname{diag}(a_i)S^3
+       -\operatorname{diag}(p_{i+6,s-1})S^6.
+\end{align*}
+$3\nmid L$なので$M_0$の右核・左核はともに$\mathbb R\boldsymbol1$で、階数は$L-1$である。
+\eqref{n4:eq:div3-heavy-boundary}から、解析的な右核ベクトル
+\[
+ h(\varepsilon)=\boldsymbol1+\varepsilon h_1+
+ \varepsilon^2h_2+\varepsilon^3h_3+\cdots,
+ \qquad \boldsymbol1^{\mathsf T}h(\varepsilon)=L
+\]
+を取れる。随伴行列の0で非零な列を正規化すればよい。
+$M_1\boldsymbol1=0$から一次係数は$h_1=0$となる。
+二次係数を左から$\boldsymbol1^{\mathsf T}$で評価すると$B_1-4L=0$を得る。
+また$\boldsymbol1^{\mathsf T}M_1=0$なので、三次係数から
+$A_1-\sum_i p_{i,s-1}=0$を得る。従って
+\begin{equation}\label{n4:eq:div3-heavy-moments}
+ B_1=4L,\qquad A_1=\sum_i p_{i,s-1}.
+\end{equation}
+
+\paragraph{中央語長の集中。}
+全$c_{i,j}$は非負で、$j-2\le s-3$である。
+\eqref{n4:eq:div3-mixed-moments}と\eqref{n4:eq:div3-heavy-moments}から
+\[
+ (s-3)(A_1+2L)\ge3(s-2)L,
+ \quad\text{すなわち}\quad (s-3)A_1\ge sL.
+\]
+一方、\eqref{n4:eq:div3-pure-moments}から
+\[
+ sL=\sum_{i,j}(j-2)p_{i,j}
+ \ge(s-3)\sum_i p_{i,s-1}=(s-3)A_1.
+\]
+従って両方とも等号であり、
+\begin{equation}\label{n4:eq:div3-concentration}
+ A_1=\frac{sL}{s-3},\qquad
+ p_{i,j}=c_{i,j}=0\quad(3\le j<s-1).
+\end{equation}
+以下、$p_i=p_{i,s-1}$と略記する。純部分の各右単純解消は
+\[
+ 0\longrightarrow P_{i+s}
+ \xrightarrow{d_4}P_{i+s-1}^{p_i}
+ \xrightarrow{d_3}P_{i+2}^{r_i}
+ \longrightarrow P_{i+1}^{4}\longrightarrow P_i\longrightarrow S_i\longrightarrow0,
+ \qquad r_i=2+p_i
+\]
+となる。
+
+\paragraph{整域性による末尾階数の下界。}
+この最小完全列では$p_i\ge2$である。
+$p_i=0$は$d_4$の単射性に反する。
+$p_i=1$なら$d_4$は一つの非零一次成分で与えられる。
+$d_3d_4=0$と整域性から$d_3$の全成分は零である。
+すると完全性により$d_4$は全射でなければならず、正次数の写像であることに反する。
+従って$A_1=\sum_i p_i\ge2L$であり、\eqref{n4:eq:div3-concentration}から$s\le6$となる。
+$s\ge4$であり、$s=4$なら$L=9$となって仮定$3\nmid L$に反するので、残るのは$s=5,6$である。
+
+\paragraph{$s=6$の排除。}
+この場合$\sum_i p_i=2L$なので、全$p_i=2$、全$r_i=4$である。
+Euler係数が始点によらないので、純Hilbert係数の漸化式の一意性から全行は一致し、
+\[
+ H_{B,i}(u)=\frac1{1-4u+4u^2-2u^5+u^6}
+\]
+となる。分母は0で1、$u=1/2$で$-3/64$であるから$(0,1/2)$に零点を持つ。
+これは多項式増大による$|u|<1$での収束に反する。
+
+\paragraph{$s=5$の排除。}
+純Euler行列の行和と列和に$r_i=2+p_i$を代入すると
+$p_i=p_{i+2}$を得る。また$L=10$で$\sum_i p_i=25$なので、
+$p_0+p_1=5$および$r_0+r_1=9$である。
+純Euler係数の二周期性から、語長についての帰納により
+$\dim B_{i,i+m}=\dim B_{i+2,i+2+m}$が全ての$m$で成り立つ。
+ここでは$B$自身の二周期同型を必要としない。
+偶数長・奇数長を分けて得る$2\times2$のHilbert行列は、
+対応する$2\times2$のEuler行列$P_0^{[2]}(u)$の形式逆行列であり、$|u|<1$で収束する。
+従って$0<u<1$では$\det P_0^{[2]}(u)\ne0$でなければならない。
+
+$S_2=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$、
+$\alpha=r_0-5$、$\beta=r_1-5$と置くと、$\alpha+\beta=-1$であり、直接計算で
+\[
+ P_0^{[2]}(u)=(I-uS_2)
+ \bigl(I-2uS_2+u^2\operatorname{diag}(\alpha,\beta)+u^3S_2\bigr)
+ (I-uS_2).
+\]
+$x=u^2$と置いた中央行列の行列式は
+\[
+ f(x)=1-5x+(\alpha\beta+4)x^2-x^3.
+\]
+$f(0)=1$であり、$\alpha\beta\le1/4$から$f(1)=\alpha\beta-1<0$である。
+従って$(0,1)$に$f$の零点があり、対応する$u\in(0,1)$で
+$\det P_0^{[2]}(u)=0$となって矛盾する。
+
+全ての場合が排除されたので$3\mid L$である。$L=N+3$から$3\mid N$も従う。
+\end{proof}
+
+\begin{remark}[残る非Koszul枝]
+本定理は$N\equiv1,2\pmod3$の全てを排除するが、$N=9,12,15,\ldots$は排除しない。
+この場合$L=N+3$は3の倍数であり、境界行列$I-S^3$の核は三次元となる。
+また重み5関係の飽和補題は、三つの剰余類のうち少なくとも一つでの飽和しか与えない。
+この三成分の問題が、残る解析の具体的な核心である。
+既存の十周期純Euler形式候補は、親AS正則整域への延長が不可能な形式例として位置付けられる。
+\end{remark}
+
 \begin{proposition}[語長Koszul性の下での四生成元基礎数値型]
 \label{n4:prop:koszul-base-numerics}
 $A\in\mathcal Q_4^{\mathrm{dom}}$が語長Koszulであるとさらに仮定する。
@@ -4494,6 +4712,244 @@ $B(2)\simeq B$とする。さらに、
 を満たすとする。このとき$B$は左右Koszul、左右AS正則次元3、AS移動3である。
 noetherian性、Koszul性、1周期性はいずれも仮定しない。
 \end{theorem}
+
+\subsection{重み4関係の平方項が消える場合}
+
+以下では $A\in\mathcal Q_n^{\mathrm{dom}}$ とし、原稿の記法
+$V_i,z_i,w_i,R_j(i),r_j(i)$ を用いる。
+本節の追加条件は
+\begin{equation}\label{nozz:eq:hypothesis}
+ R_4(i)\subset
+ (V_i\otimes kw_{i+1})\oplus(kw_i\otimes V_{i+3})
+ \qquad(i\in\mathbb Z)
+\end{equation}
+である。これは $R_4(i)$ の $kz_iz_{i+2}$ への射影が零である、という
+固定した語長次数を保つ生成元の基底変換に対して不変な条件である。
+語長1かつjump 2の最小生成空間は一次元である。
+
+\begin{proposition}[平方項のないKoszul対象の混合階数]
+\label{nozz:prop:koszul-saturation}
+条件\eqref{nozz:eq:hypothesis}と語長Koszul性を仮定する。
+このとき全ての $i$ について
+\[
+ r_3(i)=r_4(i)=n,\qquad r_5(i)=1
+\]
+である。従って $A$ は純jump 1部分 $B$ 上の添字付き二段Ore拡張であり、
+$B$ はKoszul AS正則次元 $n$ である。
+さらに $A$ 自身が語長を保って1周期的となり、通常の次数付き代数
+\[
+ D=B_0[z;\sigma][w;\tau]
+\]
+の付随 $\mathbb Z$-代数へ下降する。ここで第二段の導分は零である。
+標準Hilbert級数、noetherian性、1周期性、全 $r_5(i)=1$ は仮定しない。
+\end{proposition}
+
+\begin{proof}
+条件\eqref{nozz:eq:hypothesis}の下では、全ての二次関係は
+$(\#V,\#z,\#w)$ の三重次数について斉次である。
+語長を保つAS周期で有限頂点へ折り畳む。
+周期同型は語長1とjumpを保つため、$V,z,w$ の各最小生成空間を保ち、
+この三重次数も保存する。次数零部分を $S=\bigoplus_i ke_i$ とする。
+
+Koszul双対を $E$ とし、$V,z,w$ の双対生成空間をそれぞれ
+$X$, $k\zeta_i$, $k\eta_i$ と書く。
+AS正則性により $E$ は有限次元Frobenius代数であり、最高ホモロジー次数は
+$d=n+2$ である。積の向きは二次双対の規約に合わせ、必要なら全体の反対代数を取る。
+以下の議論はその選択によらない。有限頂点全体の和を
+$\zeta=\sum_i\zeta_i$, $\eta=\sum_i\eta_i$ とする。
+$X$ で生成される部分代数を $F$ と書く。
+
+まず整域性により、$R_3(i)$ の $V_iz_{i+1}$ と $z_iV_{i+2}$ への
+両射影は単射である。例えば一方の射影の核の非零元は
+$z_iv=0$ または $vz_{i+1}=0$ を与えてしまう。
+双対を取れば、$X\zeta$ と $\zeta X$ の積の像は
+同じ二次双対成分全体を張る。
+同じく\eqref{nozz:eq:hypothesis}と整域性から、$R_4(i)$ の二つの
+$Vw,wV$ 射影も単射であり、$X\eta$ と $\eta X$ の像は一致する。
+従って任意の $\zeta x$ および $\eta x$ は、それぞれ
+$x'\zeta$ および $x'\eta$ の線型結合へ書き換えられる。
+
+また $r_5(i)\in\{0,1\}$ である。$r_5(i)=1$ の場合、
+その関係の $zw,wz$ 両係数は非零なので、対応する双対積
+$\zeta\eta$ と $\eta\zeta$ は非零スカラー倍である。
+$r_5(i)=0$ の場合は両積とも零となる。
+条件\eqref{nozz:eq:hypothesis}は二次双対で $\zeta^2=0$ を与え、
+整域性による $R_6=0$ は $\eta^2=0$ を与える。
+
+$E$ はホモロジー次数1で生成される。
+上の書換えによって重い双対生成元を右へ移し、
+$\eta\zeta$ を $\zeta\eta$ の順へ移せる。
+二回現れる $\zeta$ または $\eta$ は平方零性で消えるので、
+三重次数に関して
+\begin{equation}\label{nozz:eq:four-corners}
+ E=F\oplus F\zeta\oplus F\eta\oplus F\zeta\eta.
+\end{equation}
+ここで表示は直和であるが、各右乗法が単射であるとはまだ主張していない。
+特に $E$ の $z,w$ 次数はそれぞれ0または1だけである。
+順序を逆に選べば、同じ理由で
+$E_{(\#z,\#w)=(1,1)}=F\eta\zeta$ も成立する。
+
+各頂点から出る $\zeta_i$ は非零であり、AS完全対合によってその右補元を持つ。
+従ってその頂点の最高Ext成分の $z$ 次数は少なくとも1である。
+$\eta_i$ にも同じ議論が適用できるので、全ての最高Ext成分の
+$(z,w)$ 次数は $(1,1)$ となる。
+よって三重次数付きAS完全対合は
+\[
+ F \ \times\ E_{(z,w)=(1,1)}
+ \longrightarrow E^d
+\]
+に制限して非退化である。各ホモロジー次数と頂点を対応させて足し合わせると
+\[
+ \dim_k F=\dim_k E_{(z,w)=(1,1)}
+\]
+を得る。
+
+式\eqref{nozz:eq:four-corners}による右乗法
+\[
+ F\longrightarrow E_{(z,w)=(1,1)},\qquad f\longmapsto f\zeta\eta
+\]
+は全射であるから、有限次元性により同型である。
+同様に $f\mapsto f\eta\zeta$ も同型である。
+各 $e_i\in F$ の像が非零であることから、全ての $i$ において
+対応する $\zeta_i\eta_{i+2}$ は非零であり、$r_5(i)=1$ を得る。
+さらに $f\zeta=0$ なら $f\zeta\eta=0$、
+$f\eta=0$ なら $f\eta\zeta=0$ であるため、
+$F\to F\zeta$ と $F\to F\eta$ はともに単射である。
+添字を前向きの経路として記す規約では、$X_i=e_iF^1e_{i+1}$ に対して
+この二つの単射は
+\[
+ X_i\longrightarrow e_iE^2e_{i+3},\quad x\longmapsto x\zeta_{i+1},
+ \qquad
+ X_i\longrightarrow e_iE^2e_{i+4},\quad x\longmapsto x\eta_{i+1}
+\]
+を含む。前者をさらに $\eta_{i+3}$、後者を $\zeta_{i+4}$ と掛ければ、
+それぞれ既に単射と分かった $F\to F\zeta\eta$ と $F\to F\eta\zeta$ の制限となる。
+両標的の該当三重次数成分は $R_3(i)^*$ と $R_4(i)^*$ である。
+従って $\dim X_i=n$ より
+\[
+ r_3(i)\ge n,\qquad r_4(i)\ge n
+\]
+を得る。一方、上記の両射影単射性は $r_3(i),r_4(i)\le n$ を与えるので、
+両者は等号である。
+
+これで定理\ref{igraph:thm:normal-z-ore}を適用できる。
+従って $B$ のAS正則性と添字付き二段Ore表示を得る。
+条件\eqref{nozz:eq:hypothesis}により第二段の導分は零である。
+全ての $R_3,R_4,R_5$ の交換写像は同型で、$z_i,w_i$ は双方とも左右正則な
+正規元族となる。従って語長を保つ2周期構造と3周期構造が存在し、
+その合成から1周期構造が存在する。
+最高Extの三重次数は $(n,1,1)$ なので、$N=n+2$、$L=n+5$ でもある。
+定理\ref{ogk:thm:numerics}を下降へ適用すれば、標準Hilbert級数も従う。
+\end{proof}
+
+\begin{remark}[一般の場合に残る障害]
+この証明は追加条件\eqref{nozz:eq:hypothesis}を本質的に使う。
+$R_4$ に $zz$ 成分がある場合、二次双対の $\zeta^2$ は必ずしも零ではなく、
+$X\eta+\eta X$ の成分と混ざる。また $R_4$ の混合射影の単射性も
+整域性だけでは従わない。そのため四隅分解\eqref{nozz:eq:four-corners}は未確立である。
+Koszul性を外した場合も全Extが次数1で生成されるとは限らないため、同じ分解を用いられない。
+有限Frobenius代数における正規元の存在だけから、その元の乗法単射性を
+結論することはできない。本命題は一般の$r_3=n$自動性を証明していない。
+\end{remark}
+
+\subsection{一つの重い生成元に対する周期的GS飽和}
+
+\begin{lemma}\label{nozz:lem:one-heavy-gs}
+$C$ を、jump 1の $n$ 本の生成元 $V_i$ とjump $h\ge2$ の一本の
+生成元 $y_i$ による、正連結・局所有限な語長二次$\mathbb Z$-代数とする。
+関係は純 $VV$ 関係と $Vy,yV$ 関係だけであり、$yy$ 関係はないとする。
+混合関係数を $s(i)\le n$ とする。
+語長を保つ正の $L$ 周期と各行の多項式増大があるとき、
+$+h$ による $\mathbb Z/L\mathbb Z$ の軌道の少なくとも一つで、
+全ての $s(i)=n$ が成立する。
+特に $\gcd(h,L)=1$ なら全ての $s(i)=n$ である。
+この補題は整域性、AS性、Koszul性、noetherian性を要求しない。
+\end{lemma}
+
+\begin{proof}
+$L$ 頂点で折り畳み、巡回シフト行列を $T$、純関係数の対角行列を $R$、
+混合関係数の対角行列を $M=\operatorname{diag}(s(i))$ とする。
+$V,y$ の個数を数える二変数 $a,b$ を用いれば、行列GS不等式は
+\[
+ P_2(a,b)H_C(a,b)\ge I,
+ \qquad
+ P_2=I-naT-bT^h+a^2RT^2+abMT^{h+1}
+\]
+である。$a=\varepsilon$, $b=1-\varepsilon^2$ と置くと
+\[
+ P_2=P_0+\varepsilon P_1+O(\varepsilon^2),
+ \qquad P_0=I-T^h,\quad P_1=-nT+MT^{h+1}.
+\]
+$g=\gcd(h,L)$ とし、$+h$ の軌道を $\mathcal O_r$、$r\in\mathbb Z/g\mathbb Z$
+で表す。軌道内平均への射影を $\Pi$ とすれば
+\[
+ \Pi P_1\Pi=-\operatorname{diag}(\delta_r)U,
+ \qquad
+ \delta_r=\frac1{|\mathcal O_r|}\sum_{i\in\mathcal O_r}(n-s(i))\ge0,
+\]
+である。ここで $U$ は $g$ 軌道を順に送る巡回シフトである。
+全ての $\delta_r$ が正なら、
+$\rho=(\prod_r\delta_r)^{1/g}>0$ に対して
+この圧縮行列は固有値 $-\rho$ の全成分正の左固有ベクトルを持つ。
+それを各軌道上で一定として持ち上げ、$\ell_0>0$ とする。
+
+$\ell_0P_0=0$ かつ $\ell_0P_1\Pi=-\rho\ell_0$ なので、
+$-\rho\ell_0-\ell_0P_1$ は各軌道内の和が零である。
+従ってある実行ベクトル $\ell_1$ について
+\[
+ \ell_1P_0=-\rho\ell_0-\ell_0P_1
+\]
+と書ける。十分小さい正の $\varepsilon$ では
+\[
+ \ell_\varepsilon=\ell_0+\varepsilon\ell_1>0,
+ \qquad
+ \ell_\varepsilon P_2=-\rho\varepsilon\ell_0+O(\varepsilon^2)<0.
+\]
+多項式増大と $0<a,b<1$ により、この点で $H_C$ は有限の非負行列である。
+GS不等式の左から $\ell_\varepsilon$ を掛ければ
+$0\ge\ell_\varepsilon P_2H_C\ge\ell_\varepsilon>0$ という矛盾を得る。
+従って少なくとも一つの $\delta_r$ は零であり、各欠損が非負であることから結論が従う。
+\end{proof}
+
+\begin{corollary}[平方項のない対象の周期条件]
+\label{nozz:cor:periodic-saturation}
+$A\in\mathcal Q_n^{\mathrm{dom}}$ は
+\eqref{nozz:eq:hypothesis}を満たし、全ての $r_5(i)=1$ であるとする。
+語長を保つ正の周期 $L$ について $6\nmid L$ なら、全ての $r_3(i)=r_4(i)=n$ である。
+従って添字付き二段Ore表示が存在し、さらに通常の二段skew polynomial代数へ下降する。
+この結論にはKoszul性を仮定しない。
+特に $3\nmid L$ のときは、全 $r_5(i)=1$ という仮定も不要である。
+\end{corollary}
+
+\begin{proof}
+$A/(w)$ は $V,z$ のみで生成され、関係は $R_2,R_3$ だけである。
+条件\eqref{nozz:eq:hypothesis}により、$w$ を零にしても $zz$ 関係は生じない。
+整域性によって元の $r_3(i)\le n$ である。
+従って $L$ が奇数なら補題\ref{nozz:lem:one-heavy-gs}を $h=2$ として適用し、
+全ての $r_3(i)=n$ を得る。
+全 $r_5(i)=1$ と合わせると $z_i$ は正則正規元族であり、$A$ は2周期的である。
+$A/(z)$ は $V,w$ のみによる二次代数であり、$R_4$ の両混合射影の単射性から
+$r_4(i)\le n$ である。
+同じ補題を周期2、$h=3$ として適用し、全ての $r_4(i)=n$ を得る。
+
+一方 $3\nmid L$ なら、最初に $A/(z)$ に $h=3$ で同じ補題を適用して
+全ての $r_4(i)=n$ を得る。
+全 $r_5(i)=1$ と\eqref{nozz:eq:hypothesis}により $w_i$ は左右正則正規元族となり、
+$A$ は3周期的である。
+そこで $A/(w)$ に周期3、$h=2$ で補題を適用すれば全ての $r_3(i)=n$ を得る。
+$6\nmid L$ のときはこの二場合の少なくとも一方に属する。
+
+定理\ref{igraph:thm:normal-z-ore}で $B$ のAS正則性と二段Ore表示を得る。
+両正規元族による2周期と3周期を合成すれば1周期となり、
+\eqref{nozz:eq:hypothesis}により第二段の導分は零である。
+最後の主張は、補題\ref{genidx:lem:r5-gs-saturation} が $3\nmid L$ のとき全 $r_5(i)=1$ を与えることから従う。
+\end{proof}
+
+\paragraph{本節で解決しない範囲。}
+一般の $R_4$ に $zz$ 項がある場合は、上の二つの結果の対象外である。
+平方項が消える場合でも、Koszul性が未知で、利用できる全ての周期が6の倍数である場合は、
+本節の議論だけでは全 $r_3=n$ を導けない。
+また新規性は未確認であり、公表時は三重次数付きAS正則代数の既存の正規拡張結果との照合が必要である。
 
 \subsection{二頂点foldと分数斜体}
 
@@ -7093,6 +7549,9 @@ $n=3$のOre表示間の全同型軌道の標準形・成分・特殊化の分類
 定理\ref{genidx:thm:as-base-ore}により、任意$n$で純jump 1部分$B$がAS正則次元$n$なら二段表示が従う。
 $n=4$では系\ref{n4:cor:top-excess-three}により最高差次数3を証明し、
 命題\ref{n4:prop:pure-base-numerics}により基礎部分の解消とモーメント制約を得た。
+定理\ref{n4:thm:top-word-divisible-three}により$3\mid N$、$3\mid L$も必要であり、
+非Koszul枝は$N=9,12,15,\ldots$へ限定される。最初の未決着は$N=9,L=12$で、
+重み3境界の三つの核成分と$r_5$の剰余類ごとの欠損を同時に扱う必要がある。
 定理\ref{n4:thm:equivalent-criteria}により、$n=4$での語長Koszul性と1周期性は同値であり、
 純基礎部分の行Hilbert級数が始点によらないことも同値である。
 これらに$B$のAS4性、添字付き・通常の二段Ore表示、$r_3=4,r_5=1$を加えた十条件が同値である。
@@ -7145,6 +7604,11 @@ $\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
 \begingroup
 \small
 \begin{thebibliography}{9}
+\bibitem{HVZSkew}
+J.-W.~He, F.~Van Oystaeyen and Y.~Zhang,
+\emph{Skew polynomial algebras with coefficients in Koszul Artin--Schelter regular algebras},
+arXiv:1304.3799v2 (2013), Proposition 2.2.
+\url{https://arxiv.org/abs/1304.3799}.
 \bibitem{RRgrowth}
 M.~L.~Reyes and D.~Rogalski,
 \emph{Growth of graded twisted Calabi--Yau algebras},

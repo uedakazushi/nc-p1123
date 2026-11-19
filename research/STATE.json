@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 17,
+  "version": 18,
   "classification_complete": false,
   "target": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). The main all-n reduction now proves B-ASn if and only if every r3(i)=n,r5(i)=1; those two rank conditions imply the full indexed two-step Ore structure without H, Koszulity, noetherianity or initial B-AS. Thus only their automaticity remains for unconditional indexed exhaustion. This automaticity is proved for n=1,2,3; n2,n3 also descend to ordinary Ore. At n4, D=L-N=3 is unconditional and ten conditions are equivalent, including Koszulity, N6, A/B period one, uniform/standard B Hilbert rows, B-AS4, indexed/ordinary Ore, and r3=4,r5=1. Their automaticity remains open. Ordinary graded word-Koszul objects admit full two-step Ore without initial H or noetherianity. Standard bigraded row Hilbert series imply the indexed structure and Koszulity for every n. A formal n4 pure-Euler model passes all-degree positivity/growth/Hopf constraints; it is not a realized algebra. Unconditional indexed exhaustion remains open for n>=4. Additionally, r5 is forced everywhere when the AS period L is not divisible by three, and on at least one mod-three class otherwise.",
   "scope": {
@@ -51,10 +51,15 @@
     "indexed_standard_hilbert_ore": "For A in Qn_dom, the standard BIGRADED row Hilbert series 1/((1-ut)^n(1-ut^2)(1-ut^3)) imply indexed two-step Ore, B Koszul ASn and period one, and A word-Koszul. No initial B-AS, Koszul, noetherian or A-period-one assumption. Word-degree-two coefficient comparison gives r3=n,r5=1; INDEXED-NORMAL-Z-ORE then proves PBW and base-AS. Standard H_B and AS duality force a linear resolution. This is not a theorem from the univariate weighted Hilbert series alone.",
     "indexed_normal_z_mixed_ranks": "For A in Qn_dom with all r3=n,r5=1, both R4 mixed projections are injective and r4=n. Standard H and Koszulity are not required. Bar obstruction gives r4<=n; a two-vertex Golod-Shafarevich determinant and positive eigenvector exclude r4<n. The subsequent INDEXED-NORMAL-Z-ORE theorem proves non-Koszul PBW and B-AS under the same rank hypotheses, using the highest Euler coefficient rather than an extra Hilbert assumption.",
     "indexed_koszul_normal_z_ore": "For A in Qn_dom with word-Koszulity and all r3=n,r5=1, the general INDEXED-NORMAL-Z-ORE criterion supplies B-ASn and indexed Ore. A Koszul iff B Koszul; the ordinary B descent and generator bound then give standard bigraded H and L_A=n+5. No initial H/noetherian/B-AS hypothesis. A separate direct Koszul proof is retained in notes: Q=A/(z), its zero-w bar summand proves B Koszul, E(Q)=F direct_sum F eta, the highest w-count is one, and the Frobenius pairing transfers to F. This alternative is not needed for the non-Koszul main criterion.",
-    "four_light_pure_euler_obstruction": "A fixed s5,N7,L10 pure-Euler formal model with q=1 has nonnegative Betti data, balance/moment identities, det P=(1-u^10)^3(1+u^20), positive inverse-Hilbert coefficients of polynomial growth, common leading Laurent coefficient, all-degree Hopf inequalities and left/right monotonicity, but nonuniform Hilbert rows. An exact integer certificate plus a cofactor-degree bound proves all degrees, not just a finite sample. It is not a constructed algebra, domain or AS parent. Two-period s5 data are separately excluded analytically. The parent-mixed Euler conditions reduce extensions of the displayed pure model to 20 integers; one displayed extension passes first-order tests but has determinant coefficient -942 at v^2 and is excluded. All mixed extensions of the pure model remain unclassified.",
+    "four_light_pure_euler_obstruction": "A fixed s5,N7,L10 pure-Euler formal model with q=1 has nonnegative Betti data, balance/moment identities, det P=(1-u^10)^3(1+u^20), positive inverse-Hilbert coefficients of polynomial growth, common leading Laurent coefficient, all-degree Hopf inequalities and left/right monotonicity, but nonuniform Hilbert rows. An exact integer certificate plus a cofactor-degree bound proves all degrees, not just a finite sample. It is not a constructed algebra, domain or AS parent. Two-period s5 data are separately excluded analytically. The parent-mixed Euler conditions reduce extensions of the displayed pure model to 20 integers; one displayed extension passes first-order tests but has determinant coefficient -942 at v^2 and is excluded. Every extension of this formal pure model to a Q4dom AS-domain is impossible by N4-TOP-WORD-DIVISIBLE-THREE; the formal model and individual pencil obstruction remain useful methodological examples.",
     "indexed_normal_z_ore": "For A in Qn_dom, all r3(i)=n,r5(i)=1 imply B two-sided ASn, indexed two-step Ore, r4=n, B period one, L_A=L_B+5, N_A=L_B+2, D3 and H_A=H_B(ut)/((1-ut^2)(1-ut^3)); A word-Koszul iff B Koszul. No specified H, Koszul, noetherian or initial B-AS assumption. The converse B-ASn implies these ranks is GEN-AS-BASE-ORE, so the original all-n structural target is reduced exactly to the two rank conditions. Normal z folds to two vertices and gives an AS quotient Q. Bar plus GS makes mixed relations a full invertible graph. In free-path Ore coordinates Q=F[w;mu]/(R), coefficient ideals I_j=(R,...,mu^j R) stabilize because F2 is finite dimensional. Thus G=H_Q(I-tT) is polynomial in w-count t. AS duality gives invertible leading Euler coefficient P_J(x)=(-1)^d*x^a*Pi*P_0(x^-1)^T. Since P G=I-tT, J+deg_t G=1. J>=1 forces G constant, I_1=I_0, mu R=R and w regular. The second normal quotient gives B-ASn. No non-Koszul PBW gap remains once r3/r5 are known.",
     "as_graph_ore_recognition": "Over S=k^m, let F=T_S(V), mu a degree-preserving automorphism permuting vertices, R subset F2, Q=F[w;mu]/(R). Finite finitely generated simple resolutions and a compatible AS perfect pairing with source-independent highest bidegree (a,J) force J1 and mu(R)=R, hence Q=(F/(R))[w;mu] and w is regular. No domain, growth, Koszul, noetherian or specified Hilbert assumption in this lemma. The indexed version uses AS pairing; finite resolution alone is not claimed sufficient for arbitrary matrix Euler series.",
-    "general_r5_gs_saturation": "A positive connected locally finite word-quadratic Z-domain with jumps (1^n,2,3), an actual word-preserving period L and polynomial row growth has all r5(i)=1 if 3 does not divide L. If 3 divides L, at least one complete residue class modulo three has r5=1 everywhere. No AS, finite global dimension, Koszul or noetherian assumption. The two-stage matrix GS inequality is evaluated on a=eps^2/(1-eps^2), b=eps, c=1-eps^2. Orbit-mean deficit gives a positive left vector and a negative first-order product unless one orbit is saturated. The other two classes and r3=n are not concluded. In Q4dom, N7 implies L10, hence all q_i=r5(i+s)=1."
+    "general_r5_gs_saturation": "A positive connected locally finite word-quadratic Z-domain with jumps (1^n,2,3), an actual word-preserving period L and polynomial row growth has all r5(i)=1 if 3 does not divide L. If 3 divides L, at least one complete residue class modulo three has r5=1 everywhere. No AS, finite global dimension, Koszul or noetherian assumption. The two-stage matrix GS inequality is evaluated on a=eps^2/(1-eps^2), b=eps, c=1-eps^2. Orbit-mean deficit gives a positive left vector and a negative first-order product unless one orbit is saturated. The other two classes and r3=n are not concluded. In Q4dom this saturation is used in N4-TOP-WORD-DIVISIBLE-THREE to rule out every hypothetical AS shift L not divisible by three.",
+    "four_light_top_word_divisibility": "Every Q4dom object has 3 dividing N and L=N+3. No initial Koszul, Hilbert, noetherian or period-one assumption. If 3 does not divide L, R5 GS gives all r5=1. Nonzero w powers force det P(eps^2,eps^-1)=0; its simple-kernel coefficients give sum r4=4L and sum r3=sum p_(s-1). Pure/mixed moments force third pure Tor into word s-1. Domain cancellation and minimal exactness give each tail rank p_i>=2, so s<=6. The s5 and s6 numerical Euler matrices have positive roots inside the unit disk, contradicting polynomial growth. Hence the only unresolved non-Koszul top words are N=9,12,15,...; first N9/L12/s7. This is an analytic proof with no enumeration. The N7 ten-period formal model has no AS-domain parent extension.",
+    "nozz_koszul_structure": "For any Qn_dom, add word-Koszulity and zero projection of every R4 to zz for the fixed word grading. Then all r3=r4=n,r5=1, B Koszul ASn, standard bigraded Hilbert and L=n+5 hold. Both z and w are regular normal families, giving actual periods 2 and 3 and hence period one; A descends to an ordinary two-step skew polynomial algebra B0[z;sigma][w;tau]. Finite folded Frobenius duality yields E=F+Fzeta+Feta+Fzetaeta as a direct sum of multidegrees, equal dimensions of F and E11, and injective right multiplication by zetaeta and etazeta. This forces the ranks without assuming them. No initial H, noetherian or period-one assumption. The no-zz hypothesis is additional, invariant under fixed-word/jump-preserving generator basis changes only.",
+    "one_heavy_periodic_gs": "For a positive connected locally finite word-quadratic periodic Z-algebra generated by n adjacent V arrows and one jump-h arrow y, with only VV and Vy/yV relations, no yy relations, mixed rank at most n and polynomial row growth, at least one complete +h orbit has all mixed ranks n. If gcd(h,L)=1 all mixed ranks are n. No AS, domain, Koszul, noetherian or finite global dimension assumption. The compressed first GS coefficient is a negative weighted cyclic shift if every orbit has a deficit; a positive left vector and first-order correction contradict P2 H>=I.",
+    "nozz_periodic_structure": "For any Qn_dom with zero R4-to-zz projections, all r5=1 and an actual word-preserving period L not divisible by six, all r3=r4=n and full indexed Ore over an ASn base follow without Koszulity. One-heavy GS applied successively to A/(w) and A/(z) gives normal z and w, periods two and three, and ordinary two-step skew descent. If 3 does not divide L, the all-r5 hypothesis is also unnecessary by GEN-R5-GS-SATURATION. No assertion of standard Hilbert, Koszulity or noetherianity in this non-Koszul result.",
+    "matrix_generator_bound_obstruction": "The explicit formal 2x2 Euler matrix with q=(1-t)^2, diagonals q^2+a^2t^2,q^2 and off-diagonals -atq has AS-type degree-four reciprocity, nonnegative Betti signs, det=(1-t)^8 and entrywise nonnegative polynomial-growth inverse. Its generator matrix has Perron root 4+a>4. This is not a realized algebra and fails domain leading-Laurent component comparison, since diagonal pole orders differ. Thus those formal Euler conditions alone do not prove a matrix generator bound."
   },
   "claims": [
     {
@@ -831,7 +836,7 @@
       "id": "N4-PURE-EULER-OBSTRUCTION",
       "status": "proved_by_exact_computation_and_all_degree_argument_for_formal_data_only",
       "proof": "research/notes_ja.tex#note:n4-pure-euler-obstruction",
-      "scope": "A fixed s5,N7,L10 pure-Euler formal model with q=1 has nonnegative Betti data, balance/moment identities, det P=(1-u^10)^3(1+u^20), positive inverse-Hilbert coefficients of polynomial growth, common leading Laurent coefficient, all-degree Hopf inequalities and left/right monotonicity, but nonuniform Hilbert rows. An exact integer certificate plus a cofactor-degree bound proves all degrees, not just a finite sample. It is not a constructed algebra, domain or AS parent. Two-period s5 data are separately excluded analytically. The parent-mixed Euler conditions reduce extensions of the displayed pure model to 20 integers; one displayed extension passes first-order tests but has determinant coefficient -942 at v^2 and is excluded. All mixed extensions of the pure model remain unclassified.",
+      "scope": "A fixed s5,N7,L10 pure-Euler formal model with q=1 has nonnegative Betti data, balance/moment identities, det P=(1-u^10)^3(1+u^20), positive inverse-Hilbert coefficients of polynomial growth, common leading Laurent coefficient, all-degree Hopf inequalities and left/right monotonicity, but nonuniform Hilbert rows. An exact integer certificate plus a cofactor-degree bound proves all degrees, not just a finite sample. It is not a constructed algebra, domain or AS parent. Two-period s5 data are separately excluded analytically. The parent-mixed Euler conditions reduce extensions of the displayed pure model to 20 integers; one displayed extension passes first-order tests but has determinant coefficient -942 at v^2 and is excluded. Every extension of this formal pure model to a Q4dom AS-domain is impossible by N4-TOP-WORD-DIVISIBLE-THREE; the formal model and individual pencil obstruction remain useful methodological examples.",
       "depends_on": [
         "N4-PURE-NUMERICS"
       ],
@@ -843,7 +848,7 @@
       "id": "N4-S5-PERIOD-TWO-OBSTRUCTION",
       "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
       "proof": "research/notes_ja.tex#note:n4-s5-period-two-obstruction",
-      "scope": "For Q4dom, the pure resolution branch s5,N7 cannot have a two-periodic pure B. The two-vertex determinant and unit-circle roots exclude every q0,q1 in {0,1}, not all zero. This does not exclude the ten-period formal model or all s>=6 branches.",
+      "scope": "For Q4dom, the pure resolution branch s5,N7 cannot have a two-periodic pure B. The two-vertex determinant and unit-circle roots exclude every q0,q1 in {0,1}, not all zero. This numerical two-period obstruction does not itself apply to the ten-period formal model. The separate N4-TOP-WORD-DIVISIBLE-THREE theorem rules out all N7 AS-domain parents and all N not divisible by three.",
       "depends_on": [
         "N4-PURE-NUMERICS"
       ],
@@ -855,7 +860,7 @@
       "id": "N4-PARENT-MIXED-OBSTRUCTION",
       "status": "proved_by_exact_computation_and_all_degree_argument_for_formal_data_only",
       "proof": "research/notes_ja.tex#note:n4-parent-mixed-obstruction",
-      "scope": "For the displayed s5 pure formal model, parent AS6 duality and the pure pole of order three force a cubic matrix pencil to be identically singular. A displayed 20-integer mixed extension passes nonnegativity/Segre/first-order constraints but its determinant has v^2 coefficient -942, so it is impossible. Not an exclusion of all mixed extensions of the pure model.",
+      "scope": "For the displayed s5 pure formal model, parent AS6 duality and the pure pole of order three force a cubic matrix pencil to be identically singular. A displayed 20-integer mixed extension passes nonnegativity/Segre/first-order constraints but its determinant has v^2 coefficient -942, so it is impossible. This coefficient calculation alone excludes the displayed extension; the separate N4-TOP-WORD-DIVISIBLE-THREE theorem excludes all AS-domain parent extensions.",
       "depends_on": [
         "N4-PURE-EULER-OBSTRUCTION"
       ],
@@ -891,7 +896,68 @@
       "id": "GEN-R5-GS-SATURATION",
       "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
       "proof": "papers/nc-p1123.tex#genidx:lem:r5-gs-saturation",
-      "scope": "A positive connected locally finite word-quadratic Z-domain with jumps (1^n,2,3), an actual word-preserving period L and polynomial row growth has all r5(i)=1 if 3 does not divide L. If 3 divides L, at least one complete residue class modulo three has r5=1 everywhere. No AS, finite global dimension, Koszul or noetherian assumption. The two-stage matrix GS inequality is evaluated on a=eps^2/(1-eps^2), b=eps, c=1-eps^2. Orbit-mean deficit gives a positive left vector and a negative first-order product unless one orbit is saturated. The other two classes and r3=n are not concluded. In Q4dom, N7 implies L10, hence all q_i=r5(i+s)=1.",
+      "scope": "A positive connected locally finite word-quadratic Z-domain with jumps (1^n,2,3), an actual word-preserving period L and polynomial row growth has all r5(i)=1 if 3 does not divide L. If 3 divides L, at least one complete residue class modulo three has r5=1 everywhere. No AS, finite global dimension, Koszul or noetherian assumption. The two-stage matrix GS inequality is evaluated on a=eps^2/(1-eps^2), b=eps, c=1-eps^2. Orbit-mean deficit gives a positive left vector and a negative first-order product unless one orbit is saturated. The other two classes and r3=n are not concluded. In Q4dom this saturation is used in N4-TOP-WORD-DIVISIBLE-THREE to rule out every hypothetical AS shift L not divisible by three.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-TOP-WORD-DIVISIBLE-THREE",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:thm:top-word-divisible-three",
+      "scope": "Every Q4dom object has 3 dividing N and L=N+3. No initial Koszul, Hilbert, noetherian or period-one assumption. If 3 does not divide L, R5 GS gives all r5=1. Nonzero w powers force det P(eps^2,eps^-1)=0; its simple-kernel coefficients give sum r4=4L and sum r3=sum p_(s-1). Pure/mixed moments force third pure Tor into word s-1. Domain cancellation and minimal exactness give each tail rank p_i>=2, so s<=6. The s5 and s6 numerical Euler matrices have positive roots inside the unit disk, contradicting polynomial growth. Hence the only unresolved non-Koszul top words are N=9,12,15,...; first N9/L12/s7. This is an analytic proof with no enumeration. The N7 ten-period formal model has no AS-domain parent extension.",
+      "depends_on": [
+        "N4-TOP-EXCESS",
+        "N4-PURE-NUMERICS",
+        "GEN-R5-GS-SATURATION"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "NOZZ-KOSZUL-SATURATION",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#nozz:prop:koszul-saturation",
+      "scope": "For any Qn_dom, add word-Koszulity and zero projection of every R4 to zz for the fixed word grading. Then all r3=r4=n,r5=1, B Koszul ASn, standard bigraded Hilbert and L=n+5 hold. Both z and w are regular normal families, giving actual periods 2 and 3 and hence period one; A descends to an ordinary two-step skew polynomial algebra B0[z;sigma][w;tau]. Finite folded Frobenius duality yields E=F+Fzeta+Feta+Fzetaeta as a direct sum of multidegrees, equal dimensions of F and E11, and injective right multiplication by zetaeta and etazeta. This forces the ranks without assuming them. No initial H, noetherian or period-one assumption. The no-zz hypothesis is additional, invariant under fixed-word/jump-preserving generator basis changes only.",
+      "depends_on": [
+        "INDEXED-NORMAL-Z-ORE",
+        "INDEXED-KOSZUL-NORMAL-Z-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "ONE-HEAVY-PERIODIC-GS",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#nozz:lem:one-heavy-gs",
+      "scope": "For a positive connected locally finite word-quadratic periodic Z-algebra generated by n adjacent V arrows and one jump-h arrow y, with only VV and Vy/yV relations, no yy relations, mixed rank at most n and polynomial row growth, at least one complete +h orbit has all mixed ranks n. If gcd(h,L)=1 all mixed ranks are n. No AS, domain, Koszul, noetherian or finite global dimension assumption. The compressed first GS coefficient is a negative weighted cyclic shift if every orbit has a deficit; a positive left vector and first-order correction contradict P2 H>=I.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "NOZZ-PERIODIC-SATURATION",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#nozz:cor:periodic-saturation",
+      "scope": "For any Qn_dom with zero R4-to-zz projections, all r5=1 and an actual word-preserving period L not divisible by six, all r3=r4=n and full indexed Ore over an ASn base follow without Koszulity. One-heavy GS applied successively to A/(w) and A/(z) gives normal z and w, periods two and three, and ordinary two-step skew descent. If 3 does not divide L, the all-r5 hypothesis is also unnecessary by GEN-R5-GS-SATURATION. No assertion of standard Hilbert, Koszulity or noetherianity in this non-Koszul result.",
+      "depends_on": [
+        "ONE-HEAVY-PERIODIC-GS",
+        "GEN-R5-GS-SATURATION",
+        "INDEXED-NORMAL-Z-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "MATRIX-GENERATOR-BOUND-OBSTRUCTION",
+      "status": "proved_for_explicit_formal_matrix_only_not_a_realized_algebra",
+      "proof": "research/notes_ja.tex#note:matrix-generator-bound-obstruction",
+      "scope": "The explicit formal 2x2 Euler matrix with q=(1-t)^2, diagonals q^2+a^2t^2,q^2 and off-diagonals -atq has AS-type degree-four reciprocity, nonnegative Betti signs, det=(1-t)^8 and entrywise nonnegative polynomial-growth inverse. Its generator matrix has Perron root 4+a>4. This is not a realized algebra and fails domain leading-Laurent component comparison, since diagonal pole orders differ. Thus those formal Euler conditions alone do not prove a matrix generator bound.",
       "depends_on": [],
       "novelty": "not_finally_verified",
       "external_peer_review": false,
@@ -902,12 +968,12 @@
     {
       "id": "GEN-INDEXED-ORE-EXHAUST",
       "priority": 1,
-      "problem": "For every Qn_dom object with n>=4, force all r3(i)=n,r5(i)=1 or construct a counterexample. INDEXED-NORMAL-Z-ORE proves these rank conditions equivalent to B-ASn and sufficient for full indexed Ore, without H/Koszul/noetherianity. At n4 this is the tenth condition equivalent to all the Koszul/period/Hilbert/Ore conditions. n1,n2,n3 are solved."
+      "problem": "For every Qn_dom object with n>=4, force all r3(i)=n,r5(i)=1 or construct a counterexample. INDEXED-NORMAL-Z-ORE proves these rank conditions equivalent to B-ASn and sufficient for full indexed Ore, without H/Koszul/noetherianity. At n4 this is the tenth condition equivalent to all the Koszul/period/Hilbert/Ore conditions. n1,n2,n3 are solved. At n4 only N=9,12,15,... remain outside the known N6 branch, by unconditional three-divisibility."
     },
     {
       "id": "GEN-MIXED-RANKS",
       "priority": 2,
-      "problem": "Prioritize automaticity of r3=n and r5=1. The full R4 graph, PBW and base AS follow once these two ranks hold. At n4 use D3, the pure resolution/moments and the parent E3 pairing/mixed Euler pencil; pure Euler positivity/growth/Hopf alone cannot force the standard branch. Normal-z existence is now sufficient even without first proving Koszulity or standard H. At n>=5 exploit AS periodicity, excess strands and R5-defect growth. GEN-R5-GS-SATURATION settles r5 for 3∤L, reducing this branch to r3=n; for 3|L use its saturated residue class to propagate or constrain remaining defects."
+      "problem": "Force r3=n and r5=1; full graph/PBW/base AS then follow. At n4 start with N9/L12/s7: use the three-dimensional kernel at the heavy-w boundary, at least one saturated r5 residue class, pure/mixed moments, central E3 pairing and the general tail bounds sum_j p_ij>=2q_i and r2_i>=3+q_i. All N not divisible by three are excluded, and every AS-domain parent extension of the N7 pure formal model is impossible. At n>=5, 3∤L already forces r5=1; for 3|L use the saturated class. Nozz Koszul and nozz periodic branches are settled under their explicit additional assumptions."
     },
     {
       "id": "GEN-BASE-AS",
@@ -970,7 +1036,7 @@
   ],
   "resume_point": {
     "task_id": "GEN-INDEXED-ORE-EXHAUST",
-    "next_action": "Read INDEXED-NORMAL-Z-ORE and its AS-GRAPH-ORE-RECOGNITION lemma first. The structural work after r3=n,r5=1 is complete. Prioritize proving these two ranks for the original indexed target. At n4 use D3 and the parent E3 pairing: the explicit s5 pure model supplies a test, and the mixed-pencil reduction is a concrete 20-integer problem with cubic-intersection bounds. Its known extension with coefficient -942 is excluded, not all extensions. For n>=5 combine AS periodicity, excess-zero bar bounds and R5 growth constraints. A proof of Koszulity/H may be an alternative route but is not a prerequisite. Apply GEN-R5-GS-SATURATION first: for 3∤L, all r5 are already one; in particular all q are one in the n4 N7/L10 branch. For 3|L at least one residue class is saturated. The remaining rank target is r3=n plus any r5 defects on the other classes.",
+    "next_action": "Read the current plan first. The rank criterion INDEXED-NORMAL-Z-ORE settles all structural work once r3=n,r5=1. At n4 apply N4-TOP-WORD-DIVISIBLE-THREE: non-Koszul candidates start at N9/L12/s7, and N is a multiple of three. Form the effective 3x3 matrix on ker(I-S^3) at the heavy-w boundary, retaining r5 deficiencies on unsaturated residue classes. Combine GS saturation of at least one class, central E3 duality, pure/mixed moment identities and sum_j p_ij>=2q_i. Do not return to the N7 20-integer search: every AS-domain parent extension is excluded. At arbitrary n apply the nozz Koszul or nozz periodic theorem when its hypotheses hold; investigate genuine zz corrections and the remaining r3/r5 deficiencies. No need to first prove H/Koszulity in the unrestricted target.",
     "read": [
       "research/plan_ja.tex",
       "papers/nc-p1123.tex",
@@ -978,8 +1044,8 @@
       "research/BASELINE.md",
       "research/STATE.json"
     ],
-    "obstacle": "The automaticity of r3=n,r5=1 remains open for n>=4. Pure Euler, polynomial growth, coefficient positivity and Hopf bounds cannot alone force uniform rows: the s5 formal model passes all of them. Parent mixed AS structure is required. Once the two ranks hold, finite relation-orbit stabilization and AS leading-coefficient invertibility now prove non-Koszul PBW and B-ASn. No actual nonstandard AS-domain example is known.",
-    "do_not_repeat": "Do not reopen solved n1 classification, n2 domain Ore, n3 numerics/base-AS/Ore/descent/noetherianity, n4 D3/ten-condition equivalence, or ordinary all-n Koszul second Ore. The n1 period-two example refutes universal ordinary descent only. Do not add H/Koszul/noetherian/period assumptions silently. A normal quotient need not be a domain; bar obstruction uses finite Tor instead. Generic pure 14641 data do not imply AS4, but RS non-AS examples cannot be Q4dom pure bases. The n4 formal model is not an algebra or a counterexample. Keep all proof/certificate assets; novelty and external review remain unverified. Do not reopen the non-Koszul normal-z PBW/base-AS problem: INDEXED-NORMAL-Z-ORE settles it. The matrix argument uses an invertible highest Euler coefficient from AS duality; do not claim degree additivity for arbitrary polynomial matrices or omit uniform top bidegree."
+    "obstacle": "Unconditional all-n rank automaticity remains open for n>=4. At n4 the heavy-w kernel has three components because 3|L is now forced. One saturated r5 class does not yet control the other two, and the first effective matrix may be nilpotent with distinct left/right supports. The N7 formal Euler example only obstructs pure numerical methods and is proved nonrealizable as an AS-domain parent. Nozz has solved conditional cases, while zz corrections mix zeta^2 with X eta+eta X and prevent the four-corner dual argument.",
+    "do_not_repeat": "Do not reopen solved n1 classification, n2 domain Ore, n3 numerics/base-AS/Ore/descent/noetherianity, n4 D3/ten-condition equivalence, or ordinary all-n Koszul second Ore. The n1 period-two example refutes universal ordinary descent only. Do not add H/Koszul/noetherian/period assumptions silently. A normal quotient need not be a domain; bar obstruction uses finite Tor instead. Generic pure 14641 data do not imply AS4, but RS non-AS examples cannot be Q4dom pure bases. The n4 formal model is not an algebra or a counterexample. Keep all proof/certificate assets; novelty and external review remain unverified. Do not reopen the non-Koszul normal-z PBW/base-AS problem: INDEXED-NORMAL-Z-ORE settles it. The matrix argument uses an invertible highest Euler coefficient from AS duality; do not claim degree additivity for arbitrary polynomial matrices or omit uniform top bidegree. Do not reopen N7/N8 or any N not divisible by three in Q4dom, or the AS-parent extensions of the N7 formal pure model. The new nozz statements have an explicit extra hypothesis, not part of the unrestricted target."
   },
   "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex",
