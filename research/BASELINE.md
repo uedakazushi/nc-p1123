@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v14。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v15。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -15,7 +15,7 @@
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
 | Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
-| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定の直接依存であり、適用順序は下記。 |
+| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), §1冒頭の次数1生成の設定、Lemma 1.1、Cor.1.2、Lemma 1.3(a),(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(a) はAS3基礎代数のautomorphism Ore拡大に適用し、n=3の第1段Cの左右noetherian性を得る。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定に用いる。両者の適用順序は下記。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
 | Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求せず、出典を [ATV2, 3.9] と明記する。graded Ore網羅定理と重み2生成元族による整域判定で、noetherian性とGK dimension 4を先に確認して適用する。 |
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
@@ -103,7 +103,7 @@ QがAS次元n+1、純jump 1基礎 B がAS次元n、双方が有限生成射影�
 Q=B[w;μ]、μ:B(d)≅Bを導く。Koszul性、noetherian性、指定Hilbert級数、整域性は不要である。
 二次双対と全Extの同一視は使わず、一般のFrobenius対合そのものを新規な結果としない。
 
-### n=3の数値型と無条件のOre構造
+### n=3の数値型・Ore構造・通常のgraded代数への下降
 
 `genidx:thm:five-dimensional-numerics` は、primitive jumps (1,1,1,2,3)、
 AS次元5、語長二次のZ-domainから、最高語長5、AS添字8、語長Koszul性、
@@ -142,8 +142,38 @@ Koszul双対は既知の道具であり、この組合せによる二周期認�
 `genidx:thm:three-light-ore` は、n=3の数値型によって純jump 1部分Bに上の認識定理を適用し、
 BのAS3性と `genidx:thm:as-base-ore` から、全てのA∈Q₃^domのindexed二段Ore表示を導く。
 Bには2周期とAS移動3があるので1周期でもある。
-A自身の1周期性は未証明であり、Bの1周期性と混同しない。
-この無条件の構造定理と、通常のgraded代数への下降や全同型分類は別の問題である。
+
+`genidx:thm:three-light-descent` は、さらにn=3の全対象A自身の1周期性を証明し、
+通常の三生成元二次AS3代数を基礎とするgraded二段Ore表示へ下降させる。
+この証明は、Aの2周期と8周期だけから1周期性を結論するものではない。
+`genidx:prop:three-light-derivation-support` の係数の零集合の二分岐を保持し、
+零補正の枝は正規元族wによる3周期、非零枝は以下の有限次元の延長で扱う。
+
+共通表示では、zv=Svz、wv=Svw+ℓ_i(v)z²、wz=zw とでき、
+E=span{ℓ_i}上の移動T(ℓ_i)=ℓ_(i+1)は可逆でT²=S*を満たす。
+dim E=0,1,3では、Sと可換な基礎代数の自己同型PでT=P*|_Eを満たすものを直接構成する。
+dim E=2では、Ann(E)が直線であることと整域性を使い、
+商上のQ=T*の可能性を相異なる相反固有値または固有値1のJordanブロックへ絞る。
+前者には対角写像、後者にはSのunipotent部分の平方根を用いてPを構成する。
+これがA(1)≅Aを与える。分類に用いたブロック条件と各場合の排除・延長は本稿内で証明し、
+三次元AS代数の外部分類には依存しない。
+
+下降後の基礎代数は、共通表示のB₀=T(V)/(R)に対して
+B′=T(V)/((id⊗P)R)である。
+交換係数はSP^(-2)、SP^(-3)、ℓ₀P^(-3)となり、wz=zwを保つ。
+B′はB₀のZhang twistであり、通常のgraded同型でB₀そのものと同一視しない。
+Sierraの一般的なtwist/associated Z-algebra対応は既知であるが、
+この具体的な延長と下降を既存分類と完全に照合したものではなく、新規性は未確認である。
+二段表示と下降の網羅性は、全てのOreデータや基礎代数を含む同型軌道の完全分類とは異なる。
+
+n=3の左右noetherian性は、下降後の第1段C=B′[z;σ′]に
+Rogalski–Zhang Lemma1.3(a)を適用して得る。
+Vとzを全て次数1とする語長次数ではCは連結・次数1生成であり、
+基礎B′はAS正則次元3、σ′は次数付き自己同型なので、同論文の設定を満たす。
+得られたCの左右noetherian性と、第2段のθ′の可逆性から、
+通常のOre Hilbert基底定理によりD=C[w;θ′,δ′]は左右noetherianである。
+A≅check(D)へ移すと、各行は右noetherian、各列は左noetherianとなる。
+Lemma1.3(a)のより強い結論を、ここでのAの結論へ追加してはいない。
 
 ### 任意nでのAS基礎代数を仮定した構造定理
 
@@ -256,10 +286,13 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 新規性の最終確認、形式化、外部査読は未完了である。
 
 n=1,2,3の整域については、添字付き二段Ore表示の無条件の網羅性を証明した。
+n=2,3では全対象の1周期性と通常のgraded二段Ore代数への下降も証明した。
+これらの整域対象の左右noetherian性も結論であり、追加仮定ではない。
+n=1では1周期化の必要十分条件があり、これを満たさない最小周期2の整域が存在する。
 n>=4では、混合関係数・Koszul性・標準Hilbert級数の強制、
-純jump 1基礎Z-代数のAS性、無条件のOre網羅性が未解決である。
+純jump 1基礎Z-代数のAS性、無条件のOre網羅性と各次元での下降条件が未解決である。
 任意nでのAS基礎代数を仮定した二段Ore定理は、この未解決範囲を切り分ける。
-n=3の全対象のA自身の1周期性や完全同型分類は、Ore網羅性を得ても残る。
+n=3の基礎代数とOreデータを含む同型軌道の完全分類は残る。
 n=2の全分類では、Q 全体の整域性、混合関係射影の非退化性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化が残る。
 n=2の整域性の自動性に関する具体的課題は、七つの z_i の左右正則性である。
 最小語長の零化元を仮定し、最小解消・AS対合・関係射影と syzygy から排除できるかを調べる。

@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v9}
+\date{2026年11月19日\quad 統合版 v10}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -81,13 +81,16 @@ $n=3$では、指定Hilbert級数やnoetherian性を仮定せずに、語長Kosz
 AS正則次元3であることを証明する。退化した三次syzygyを分数斜体内で標準化し、
 一次分数変換と$\mathbb P^1$上の極因子の増大から排除する。
 これにより$n=3$の全対象で基礎部分のAS正則性・1周期性と添字付き二段Ore表示を得る。
+さらに、導分補正の移動作用素を三次元生成空間上の自己同型へ延長し、
+最終代数も1周期であることを証明する。従って$n=3$の全対象は通常の次数付き二段Ore表示へ下降する。
+この表示から左右noetherian性も従う。
 任意$n$について、純jump 1部分$B$自身がAS正則次元$n$であれば、
 混合関係数・Hilbert級数・Koszul性・noetherian性をさらに仮定せず、添字付き二段Ore表示を導く。
 $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条件の網羅性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v9\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v10\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -193,7 +196,14 @@ Hilbert級数が$(1-t)^{-3}$なら、Koszul性と左右AS正則次元3が従う�
 Koszul性・noetherian性・標準Hilbert級数を追加仮定しない。
 これらを組み合わせた定理\ref{genidx:thm:three-light-ore}は、
 $n=3$の全整域対象で添字付き二段Ore表示と基礎部分$B$の1周期性を証明する。
-従って整域の場合の二段Ore網羅性は$n=1,2,3$で成立し、$n\geq4$が残る。
+定理\ref{genidx:thm:three-light-descent}は、さらに最終代数$A$の1周期性を証明する。
+共通の交換自己同型を持つframeを選び、導分係数の張る部分空間上の移動作用素を構成する。
+その次元が2の場合は関係行列の$2\times2$ブロックを分類し、
+相反固有値の場合とunipotentの場合のいずれでも、移動作用素を基礎代数の自己同型へ延長する。
+従って$n=3$では通常の次数付き二段Ore表示まで元の仮定から従う。
+系\ref{genidx:cor:three-light-noetherian}により、左右noetherian性も追加仮定ではなく結論となる。
+整域の場合の添字付き二段Ore網羅性は$n=1,2,3$で成立し、$n\geq4$が残る。
+$n=3$のOreデータの全同型軌道分類は、この構造定理とは別に未完了である。
 Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}は、
 通常の三生成元二次代数で$H(t)=(1-t)^{-3}$を持つものについて、整域性とAS正則次元3が同値であることを与える。
 定理\ref{p2base:thm:as3}は、この通常の次数付き場合も含む二周期$\mathbb Z$-代数に対し、
@@ -3682,7 +3692,8 @@ $H_{B_0}(t)=(1-t)^{-n}$を得る。
 この場合$A$もKoszulで、AS添字$n+5$と標準二変数Hilbert級数を持つ。
 また$A$は2周期かつ$(L_B+5)$周期なので、$L_B$が偶数なら1周期である。
 特に$B$がKoszulで$n$が偶数なら、通常の次数付き代数へ下降する。
-奇数$n$での無条件の1周期化は結論しない。
+この周期の最大公約数だけでは奇数$n$の1周期化は結論できない。
+$n=3$では、定理\ref{genidx:thm:three-light-descent}で導分補正を解析して1周期化する。
 \end{remark}
 
 
@@ -3729,7 +3740,8 @@ $A$は語長Koszul、AS移動8、2周期的であり、
 H_A(u,t)=\frac{1}{(1-ut)^3(1-ut^2)(1-ut^3)}
 \]
 である。Hilbert級数、noetherian性、Koszul性、1周期性を追加仮定しない。
-$A$自身の1周期性は、この定理の結論には含めない。
+$A$自身の1周期性と通常の次数付き二段Ore表示への下降は、
+定理\ref{genidx:thm:three-light-descent}で証明する。
 \end{theorem}
 \begin{proof}
 定理\ref{genidx:thm:five-dimensional-numerics}により、$A$の数値型、語長Koszul性、
@@ -3757,7 +3769,7 @@ w_i z_{i+3}=c_i z_iw_{i+2}
 \]
 で表す。このとき、$L_i$ は全て零であるか、全て非零である。
 全て零の場合、$A$ は語長を保つ 1 周期同型を持ち、通常の次数付き代数へ下降する。
-この命題は、全ての $L_i$ が非零の場合の 1 周期性を主張しない。
+全ての $L_i$ が非零の場合も、定理\ref{genidx:thm:three-light-descent}で1周期性を導く。
 \end{proposition}
 \begin{proof}
 まず $B$ の二次関係空間 $R_j\subset V_j\otimes V_{j+1}$ は、
@@ -3823,13 +3835,429 @@ w_i\overline f=\overline{\Phi(f)}w_j
 従って $A$ は通常の次数付き代数へ下降する。
 \end{proof}
 
-\begin{remark}
-五次元対象では、基礎部分$B$のAS正則性・1周期性と添字付き二段Ore表示が
-全て元の仮定から従う。導分補正が零の枝では$A$も1周期的である。
-全ての$L_i$が非零の枝での$A$の1周期性は、別の問題として残る。
-任意$n$の無条件の網羅性に向けては、$n\geq4$で基礎部分のAS正則性を導く必要があり、
-本節の三生成元テンソルと一次分数変換による排除を、そのまま高次元へ適用することはできない。
+\subsection{五次元整域の1周期性と通常のOre表示}
+
+定理\ref{genidx:thm:three-light-ore}の添字付き二段Ore表示から、最終代数の1周期性を導く。
+$B$ は二次 AS 正則次元 3、$C=B[z;\sigma]$ とし、
+$A=C[w;\theta,\delta]$ とする。
+$A$ は整域で、生成元の jump は $(1,1,1,2,3)$ である。
+
+\begin{lemma}[共通自己同型を持つframe]\label{n3desc:lem:common-frame}
+生成元を適切に同一視すると、通常の三生成元二次 AS 正則代数
+$B_0=T(V)/(R)$、自己同型 $S\in\operatorname{Aut}_{\mathrm{gr}}B_0$、
+線型形式 $\ell_i\in V^*$ によって、全整数 $i$ で
+\begin{equation}\label{nzred:eq:common-frame}
+\begin{aligned}
+z_i v_{i+2}&=S(v)_i z_{i+1},\\
+w_i v_{i+3}&=S(v)_i w_{i+1}+\ell_i(v)z_i z_{i+2},\\
+w_i z_{i+3}&=z_i w_{i+2}
+\end{aligned}
+\end{equation}
+と書ける。全ての $V_i$ は $V$、全ての純二次関係は $R$ と同一視される。
+さらに
+\begin{align}
+\ell_{i+2}&=\ell_i\circ S,\label{nzred:eq:two-step}\\
+\bigl(\operatorname{id}\otimes\ell_{i+1}
+  +\ell_i\otimes S\bigr)(R)&=0.
+\label{nzred:eq:adjacent}
+\end{align}
+\end{lemma}
+\begin{proof}
+$z$ の正規元族が与える同型 $\Phi_z:A(2)\to A$ を
+2 周期の同一視に用いる。
+生成元上では $\Phi_z(v)=\sigma(v)$、$\Phi_z(z)=z$、
+$\Phi_z(w_{i+2})=c_i^{-1}w_i$ である。
+この同型の整数冪によって全生成空間を輸送すると、
+2 頂点表示において $z$ は中心的な元族となる。
+すなわち $\sigma_i$ は恒等写像、$c_i=1$ となり、
+全ての係数・関係は厳密に 2 周期となる。
+
+この表示では $\theta:C(3)\to C$ は
+\[
+\theta(v)=M_i(v),\qquad\theta(z)=z
+\]
+と書け、$M_{i+2}=M_i$ である。
+厳密な 2 周期同一視と $\theta$ を合成すると、
+\[
+\Psi:C(1)\longrightarrow C
+\]
+という 1 周期同型を得る。その $V$ 上の写像は $M_i$、
+$z$ 上の写像は恒等写像である。
+この $\Psi$ は厳密な 2 周期移動と可換である。
+
+$\Psi$ によって $C$ を通常の次数付き代数へ下降させる。
+この際、全ての $z_i$ の基底は保ち、$w_i$ の基底も変更しない。
+$V_i\to V$ の同一視を $g_i$ とすると
+\[
+g_{i+1}=g_i M_i
+\]
+と取れる。2 周期表示での恒等写像を省略すると、
+新しい $zv$ の交換写像は
+\[
+g_i g_{i+2}^{-1}
+=g_i M_{i+1}^{-1}M_i^{-1}g_i^{-1}.
+\]
+一方、新しい $wv$ の先頭係数の交換写像は
+\[
+g_i M_i g_{i+3}^{-1}
+=g_i M_{i+1}^{-1}M_i^{-1}g_i^{-1}
+\]
+であり、両者は等しい。
+$M_{i+2}=M_i$ と $g_{i+1}=g_iM_i$ を代入すれば、この共通値は $i$ によらない。
+これを $S$ と書く。
+純 $V$ 部分とその関係も $\Psi$ によって同一視され、
+$S$ は $B_0$ の次数付き自己同型である。
+$B$の線型解消とAS完全対合が$B_0$へ下降するので、$B_0$は二次AS正則次元3である。
+$z,w$ の基底を保ったので $wz=zw$ も保たれる。
+これで \eqref{nzred:eq:common-frame} を得る。
+
+$w_i z_{i+3}v_{i+5}$ を二通りに簡約し、
+$z_i z_{i+2}z_{i+4}$ の係数を比較すると
+\eqref{nzred:eq:two-step} を得る。
+また $r=\sum v_\alpha\otimes u_\alpha\in R$ に $\delta$ を適用し、
+$z_{i+1}z_{i+3}$ を右へ揃えると
+\[
+\sum S(v_\alpha)\ell_{i+1}(u_\alpha)
++\sum\ell_i(v_\alpha)S^2(u_\alpha)=0.
+\]
+$S^{-1}$ を適用すると \eqref{nzred:eq:adjacent} となる。
+\end{proof}
+
+\begin{lemma}[導分係数の移動作用素]\label{n3desc:lem:shift-operator}
+\[
+E=\operatorname{span}_k\{\ell_i\mid i\in\mathbb Z\}\subseteq V^*
+\]
+と置く。このとき
+\[
+T:E\longrightarrow E,\qquad T(\ell_i)=\ell_{i+1}
+\]
+は well-defined な可逆線型写像であり、
+\[
+T^2(\ell)=\ell\circ S\qquad(\ell\in E)
+\]
+を満たす。非零補正の場合は $1\leq\dim E\leq3$ である。
+\end{lemma}
+\begin{proof}
+線型部分空間
+\[
+K=\{(\ell,m)\in V^*\oplus V^*:
+(\operatorname{id}\otimes m+\ell\otimes S)(R)=0\}
+\]
+を考える。命題\ref{genidx:prop:three-light-derivation-support}の証明で示した通り、
+$R$は左右とも全支持を持つ。
+従って $(0,m)\in K$ なら
+$R\subset V\otimes\ker m$ より $m=0$ である。
+同じく $(\ell,0)\in K$ なら、$S$ の可逆性と左全支持から $\ell=0$ である。
+すなわち $K$ の二つの射影はいずれも単射である。
+
+\eqref{nzred:eq:adjacent} は $(\ell_i,\ell_{i+1})\in K$ を意味する。
+$\sum a_j\ell_{i_j}=0$ なら
+$(0,\sum a_j\ell_{i_j+1})\in K$ なので後者の和も零である。
+これが $T$ の well-defined 性を与える。
+逆向きの添字移動にも同じ議論を適用でき、$T$ は可逆である。
+最後の等式は \eqref{nzred:eq:two-step} を線型に延長したものである。
+\end{proof}
+
+\begin{lemma}[移動作用素が延長できる場合の下降]\label{n3desc:lem:extension-descent}
+ある $P\in\operatorname{Aut}_{\mathrm{gr}}B_0$ が
+\[
+PS=SP,\qquad T(\ell)=\ell\circ P\quad(\ell\in E)
+\]
+を満たせば、$A$ は 1 周期である。
+特に $\dim E=0,1,3$ なら、この条件を満たす $P$ が存在する。
+\end{lemma}
+\begin{proof}
+$A(1)\to A$ を、生成元上で
+\[
+v_{i+1}\longmapsto P(v)_i,\qquad
+z_{i+1}\longmapsto z_i,\qquad
+w_{i+1}\longmapsto w_i
+\]
+と定める。$P$ が $R$ を保ち、$S$ と可換であることから、
+純 $V$ 関係と $zv$ 関係を保つ。
+$wv$ 関係の補正係数は
+$\ell_i(Pv)=\ell_{i+1}(v)$ なので、この関係も保つ。
+$wz$ 関係も保ち、逆写像も $P^{-1}$ で定義できる。
+従って語長を保つ 1 周期同型である。
+
+$E=0$ なら $P=\operatorname{id}_V$ と取ればよい。
+$\dim E=1$ なら、ある $\lambda\ne0$ について $T=\lambda\operatorname{id}_E$ である。
+$P=\lambda\operatorname{id}_V$ と取れば所要の条件を満たす。
+
+$E=V^*$ の場合、$T(\ell)=\ell\circ P$ となる可逆 $P:V\to V$ を取る。
+$T^2=S^*$ なので $P^2=S$、特に $P$ は $S$ と可換である。
+全ての $\ell\in V^*$ に対して
+\[
+(\operatorname{id}\otimes\ell P+\ell\otimes S)(r)=0
+\qquad(r\in R)
+\]
+である。$\tau$ を二因子の交換とすると、これは
+\[
+(P\otimes\operatorname{id})\tau(r)
++(\operatorname{id}\otimes S)r=0
+\]
+と同値である。従って
+\[
+\tau(r)=-(P^{-1}\otimes S)r.
+\]
+もう一度交換し、$S=P^2$ を使うと
+\[
+r=(SP^{-1}\otimes P^{-1}S)r=(P\otimes P)r.
+\]
+従って $P\otimes P$ は $R$ の各元を固定する。
+特に $P$ は $B_0$ の次数付き自己同型へ降り、所要の条件を満たす。
+\end{proof}
+
+\subsubsection{二次元の補正空間からの延長}
+\begin{lemma}\label{n3desc:lem:two-dimensional-extension}
+$\dim E=2$ の場合も、$T$ の双対は $S$ と可換な
+$B_0$ の次数付き自己同型 $P$ へ延長する。
+\end{lemma}
+\begin{proof}
+$W=\operatorname{Ann}(E)=kt\subset V$ とし、
+$V/W$ 上の $T$ の双対を $Q$ と書く。
+$S$ は $W$ を保ち、$V/W$ 上では $Q^2$ として作用する。
+$V$ の基底を $(x,y,t)$ と選び、列ベクトルに作用する行列で
+\[
+S=\begin{pmatrix}Q^2&0\\s&\nu\end{pmatrix},\qquad\nu\ne0
+\]
+と書く。関係テンソル $r\in R$ の係数行列を
+\[
+M_r=\begin{pmatrix}A&b\\c&d\end{pmatrix}
+\]
+と分ける。ここで $A$ は $2\times2$、$b$ は $2\times1$、
+$c$ は $1\times2$ である。
+全ての $\ell\in E$ に対する
+$(\operatorname{id}\otimes T\ell+\ell\otimes S)(r)=0$ は
+\begin{equation}\label{nzred:eq:block-constraints}
+A Q^{\mathsf T}+Q^2 A^{\mathsf T}=0,\qquad
+c Q^{\mathsf T}+s A^{\mathsf T}+\nu b^{\mathsf T}=0
+\end{equation}
+と同値である。
+
+$\mathcal K_Q$ を第一の行列等式を満たす $A$ の空間とする。
+$R\to\mathcal K_Q$ の核では、$c$ は $b$ から一意に定まり、
+$b=0$ なら関係は $dt^2$ となる。
+整域性によりそのような非零関係は存在しないので、核から $k^2$ への
+$r\mapsto b$ は単射である。従って核の次元は高々 2 であり、
+$\dim R=3$ から $\mathcal K_Q\ne0$ である。
+また $E$ は一つの $\ell_0$ の $T$ 軌道で生成されるので、
+$\dim E=2$ のとき $Q$ はスカラー行列ではない。
+
+\paragraph{$Q$ の候補の分類。}
+まず $Q=\operatorname{diag}(\lambda,\mu)$、$\lambda\ne\mu$ とする。
+$A=(a_{jk})$ に対する \eqref{nzred:eq:block-constraints} の第一式は
+\[
+\lambda(1+\lambda)a_{11}=0,\quad
+\mu(1+\mu)a_{22}=0,\quad
+\mu a_{12}+\lambda^2a_{21}=0,\quad
+\lambda a_{21}+\mu^2a_{12}=0.
+\]
+$\lambda\mu\ne1$ なら、$\mathcal K_Q$ は零であるか、
+一方の固有値が $-1$ の場合の一次元空間 $kE_{11}$ または $kE_{22}$ である。
+零の場合は既に排除した。
+後者も不可能である。添字を交換して $\mathcal K_Q=kE_{11}$ とすると、
+$R\to\mathcal K_Q$ の核は二次元で、その $b$ への単射は同型である。
+従って $b=(1,0)^{\mathsf T}$ を持つ核の関係と、
+$A=E_{11},b=0$ を持つ関係を取れる。
+第二式で $c$ を計算すると、どちらも
+$\langle x,t\rangle\otimes\langle x,t\rangle$ に属する。
+この二次元関係空間の射影直線は、$2\times2$ 行列の行列式二次曲面と交わるため、
+非零の分解可能関係を含む。これは整域性に反する。
+従って、相異なる固有値の場合は
+\begin{equation}\label{nzred:eq:reciprocal}
+\mu=\lambda^{-1},\qquad\lambda\ne\pm1,
+\qquad
+\mathcal K_Q=k\begin{pmatrix}0&1\\-\lambda^{-3}&0\end{pmatrix}
+\end{equation}
+だけが残る。
+
+次に $Q=\left(\begin{smallmatrix}\lambda&1\\0&\lambda\end{smallmatrix}\right)$ とする。
+$A=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)$ と置くと、第一式の四成分は
+\[
+\lambda(1+\lambda)a+(1+2\lambda)b=0,\quad
+\lambda b+\lambda^2c+2\lambda d=0,
+\]
+\[
+\lambda c+d+\lambda^2b=0,\quad
+\lambda(1+\lambda)d=0.
+\]
+$\lambda\ne\pm1$ なら $A=0$ なので不可能である。
+$\lambda=-1$ なら $\mathcal K_Q=kE_{11}$ となり、
+前段と同じ二次元関係空間の議論で排除できる。
+この場合も $Q^{-1}(1,0)^{\mathsf T}$ は $(1,0)^{\mathsf T}$ の倍数なので、
+第二式から取った二関係は確かに $\langle x,t\rangle^{\otimes2}$ に入る。
+従って残る非対角化可能な場合は、固有値 1 の Jordan ブロックである。
+
+\paragraph{固有値 1 の Jordan ブロック。}
+$S$ の乗法的 Jordan 分解を $S=S_sS_u$ とし、
+$P=S_u^{1/2}$ を一意的な unipotent 平方根とする。
+これは有限和 $\exp(\tfrac12\log S_u)$ で定義される。
+$S\otimes S$ が $R$ を保つので、その unipotent 部分
+$S_u\otimes S_u$ も $R$ を保つ。
+その unipotent 平方根は $P\otimes P$ である。
+平方根は unipotent 行列の多項式で与えられるため、$P\otimes P$ も $R$ を保つ。
+従って $P$ は $B_0$ の自己同型であり、$S$ と可換である。
+$V/W$ 上の $S$ は $Q^2$ という unipotent 行列であるため、
+$P$ の誘導作用はその一意的な unipotent 平方根 $Q$ に等しい。
+これで必要な延長を得る。
+
+\paragraph{相異なる相反固有値。}
+\eqref{nzred:eq:reciprocal} の場合、$R\to\mathcal K_Q$ の核は二次元であり、
+$b$ を任意に指定できる。
+$Sx=\lambda^2x+s_x t$、$Sy=\mu^2y+s_y t$、$St=\nu t$ と書くと、
+核の基底は
+\[
+r_x=xt-\frac\nu\lambda tx+d_x t^2,\qquad
+r_y=yt-\frac\nu\mu ty+d_y t^2
+\]
+と取れる。$S$ が関係を保つことを $r_x$ に適用すると、
+\[
+(S\otimes S)(r_x)-\lambda^2\nu r_x
+=\nu\left[s_x\left(1-\frac\nu\lambda\right)
+  +d_x(\nu-\lambda^2)\right]t^2\in R.
+\]
+整域性により $t^2\notin R$ なので、括弧内は零である。
+
+$1-\nu/\lambda\ne0$ なら
+$x'=x+a t$、$a=d_x/(1-\nu/\lambda)$ と取る。
+新しい係数は
+\[
+d_x'=d_x-a(1-\nu/\lambda)=0,\qquad
+s_x'=s_x+a(\nu-\lambda^2)=0
+\]
+である。
+$1-\nu/\lambda=0$ なら $\nu=\lambda\ne\lambda^2$ であり、
+上の係数等式は $d_x=0$ を与える。
+この場合は $a=-s_x/(\nu-\lambda^2)$ と取ればよい。
+従っていずれも $x$ に $t$ の倍数を加えるだけで、$d_x=s_x=0$ とできる。
+同じ操作を $y$ に行えば、$d_y=s_y=0$ とできる。
+
+この基底では $S=\operatorname{diag}(\lambda^2,\mu^2,\nu)$ であり、
+核の二関係は $r_x=xt-(\nu/\lambda)tx$、$r_y=yt-(\nu/\mu)ty$ である。
+第三の関係からこれら二関係を引いて $b=0$ とすれば、
+\eqref{nzred:eq:block-constraints} の第二式は $c=0$ を与える。
+従って
+\[
+R=\left\langle
+xt-\frac\nu\lambda tx,\quad
+yt-\nu\lambda ty,\quad
+xy-\lambda^{-3}yx+d_0t^2
+\right\rangle.
+\]
+ここで
+\[
+P(x)=\lambda x,\qquad P(y)=\lambda^{-1}y,\qquad P(t)=t
+\]
+と取る。$P\otimes P$ は最初の二関係をそれぞれ
+$\lambda,\lambda^{-1}$ 倍し、第三の関係を固定する。
+従って $P$ は $B_0$ の自己同型である。
+これは対角写像 $S$ と可換で、$V/W$ 上の作用は $Q$ そのものである。
+以上で全ての可能性を尽くし、延長を構成した。
+\end{proof}
+
+\subsubsection{五次元対象の下降定理}
+\begin{theorem}[五次元整域の通常の二段Ore表示]
+\label{genidx:thm:three-light-descent}
+$A\in\mathcal Q_3^{\mathrm{dom}}$とする。
+このとき$A$は語長を保つ1周期同型を持ち、
+\[
+A\simeq\check D,\qquad
+D=B'[z;\sigma'][w;\tau',\delta']
+\]
+と書ける。ここで$B'$は通常の三生成元二次AS正則整域であり、AS次元は3、
+$|V|=1$、$|z|=2$、$|w|=3$である。
+$\sigma'\in\operatorname{Aut}_{\mathrm{gr}}B'$、
+$\tau'\in\operatorname{Aut}_{\mathrm{gr}}(B'[z;\sigma'])$であり、
+$\delta'$は重み次数3の$\tau'$-導分である。
+
+具体的には、補題\ref{n3desc:lem:common-frame}の$B_0=T(V)/(R)$と$S$、
+および$S$と可換な可逆線型写像$P$を用いて
+\[
+B'=T(V)/\bigl((\operatorname{id}\otimes P)R\bigr)
+\]
+と取れ、交換式は
+\begin{equation}\label{n3desc:eq:ordinary-ore}
+\begin{aligned}
+zv&=(SP^{-2})(v)z,\\
+wv&=(SP^{-3})(v)w+(\ell_0P^{-3})(v)z^2,\\
+wz&=zw
+\end{aligned}
+\end{equation}
+となる。従って$\sigma'=SP^{-2}$、
+$\tau'|_V=SP^{-3}$、$\tau'(z)=z$、
+$\delta'|_V=(\ell_0P^{-3})(-)z^2$、$\delta'(z)=0$である。
+$B'$はもとのframeの$B_0$のZhang twistになり得るため、両者が同じ代数であるとは主張しない。
+
+この結論にHilbert級数、noetherian性、Koszul性または周期性を追加仮定しない。
+$n=3$のこのクラスには最小周期2の対象は存在しない。
+本定理はOre表示の網羅性を与えるが、表示間の全同型軌道を分類するものではない。
+\end{theorem}
+\begin{proof}
+補題\ref{n3desc:lem:common-frame}により共通の$S$を持つframeを選び、
+補題\ref{n3desc:lem:shift-operator}の$E$と$T$を取る。
+$\dim V=3$なので$0\leq\dim E\leq3$である。
+$\dim E=0,1,3$なら補題\ref{n3desc:lem:extension-descent}、
+$\dim E=2$なら補題\ref{n3desc:lem:two-dimensional-extension}により、
+$S$と可換で$T(\ell)=\ell\circ P$を満たす$B_0$の自己同型$P$を得る。
+補題\ref{n3desc:lem:extension-descent}は、生成元上で
+$v_{i+1}\mapsto P(v)_i$、$z_{i+1}\mapsto z_i$、$w_{i+1}\mapsto w_i$
+という語長を保つ1周期同型を与える。
+
+この同型を反復して$g_i=P^i$で生成空間を同一視する。
+$P\otimes P$が$R$を保つので
+\[
+(P^i\otimes P^{i+1})R=(\operatorname{id}\otimes P)R
+\]
+であり、下降後の純jump 1部分は表示した$B'$となる。
+$PS=SP$と$\ell_i=\ell_0P^i$を交換関係へ代入すると、
+\eqref{n3desc:eq:ordinary-ore}の一定係数を得る。
+$z,w$の基底は変更していないため、添字付きのPBW分解とOreの積則も下降する。
+従って$D$は表示した通常の二段Ore拡張であり、$A\simeq\check D$である。
+
+純jump 1部分の同定は$B\simeq\check{B'}$を与える。
+$B$の左右の線型$1331$解消とAS完全対合が$B'$へ下降し、
+対応するKoszul双加群解消から通常の左右大域次元も3となる。
+また整域性と標準Hilbert級数も保たれるので、$B'$は二次AS正則整域である。
+最後に、関係空間の変更$(\operatorname{id}\otimes P)R$は、
+この1周期frameの変更に対応するZhang twistである。
+\end{proof}
+
+\begin{corollary}[五次元整域のnoetherian性]
+\label{genidx:cor:three-light-noetherian}
+$A\in\mathcal Q_3^{\mathrm{dom}}$とする。
+定理\ref{genidx:thm:three-light-descent}の下降代数$D$は左右noetherianであり、
+$A\simeq\check D$の全ての表現可能な右加群と左加群もnoetherianである。
+\end{corollary}
+\begin{proof}
+$C'=B'[z;\sigma']$において、$V$の三生成元と$z$の全てを次数1とする
+\emph{語長次数}を用いる。
+$B'$は三生成元二次AS正則次元3であり、$\sigma'$はその次数付き自己同型なので、
+Rogalski--Zhang\cite[Lemma~1.3(a)]{RZ}を$C'$に適用できる。
+同文献の次数1生成という条件は、この語長次数で満たされている。
+従って$C'$は左右noetherianである。
+これは台となる環の性質なので、$z$の重みを2としていることとは両立する。
+
+$\tau'$は$C'$の自己同型であるから、自己同型によるOre拡張のHilbert基底定理により
+$D=C'[w;\tau',\delta']$も左右noetherianである。
+具体的には、$w$の個数によるフィルトレーションの付随次数環は
+$C'[w;\tau']$であり、自己同型型skew polynomial環のnoetherian性と
+最高次係数の持上げによって同じ結論を得る。
+最後に、$A=\check D$の右行加群・左列加群は、それぞれ重み次数付き$D$の
+右正則加群・左正則加群の移動に対応する。
+従って全ての表現可能加群がnoetherianである。
+\end{proof}
+
+\begin{remark}[到達範囲と残る同型問題]
+$n=3$の数値型、純jump 1部分のAS正則性、添字付き二段Ore表示、
+最終代数の通常の次数付き代数への下降、および左右noetherian性は、全て元の整域仮定から従う。
+導分補正が非零の場合も、補正空間$E$上の移動作用素の延長によって下降する。
+ここで用いた三生成元の関係行列の分類を、そのまま任意$n$へ適用することはできない。
+$n\geq4$での数値型と基礎部分のAS正則性の自動性、無条件のOre網羅性、
+および一般の下降条件は未証明である。
+$n=3$についても、得られたOreデータ間の全同型軌道の標準形・成分・特殊化の分類は残る。
 \end{remark}
+
 
 \section{重み$(1,1,2,3)$のAS正則$\mathbb Z$-代数の数値型と整域部分}\label{idx:sec:domain}
 本節では、次数付き代数への帰着を仮定せずに$\mathbb Z$-代数を扱う。
@@ -5304,11 +5732,13 @@ $n=1$の例が反例となる。
 $n=3$では定理\ref{genidx:thm:five-dimensional-numerics}により、Koszul性、AS添字8、
 標準関係数・Hilbert級数と2周期性を確定した。
 定理\ref{p2base:thm:as3}で二周期の基礎部分$B$のAS正則性を導き、
-定理\ref{genidx:thm:three-light-ore}で全対象の添字付き二段Ore表示と$B$の1周期性を証明した。
-従って整域の場合の二段Ore網羅性は$n=1,2,3$で成立する。
+定理\ref{genidx:thm:three-light-ore}で全対象の添字付き二段Ore表示と$B$の1周期性を証明し、
+定理\ref{genidx:thm:three-light-descent}で最終代数$A$の1周期性と通常の二段Ore表示への下降も証明した。
+従って整域の場合の添字付き二段Ore網羅性は$n=1,2,3$で成立し、$n=2,3$では通常の次数付き代数へ下降する。
+$n=3$のOre表示間の全同型軌道の標準形・成分・特殊化の分類は残っている。
 定理\ref{genidx:thm:as-base-ore}により、任意$n$で純jump 1部分$B$がAS正則次元$n$なら二段表示が従う。
 $n\geq4$では数値型の自動性、$B$のAS正則性、および添字付き二段Ore網羅性が未証明である。
-$n\geq3$で通常の次数付き代数へ下降できる条件も決める必要がある。
+$n\geq4$で通常の次数付き代数へ下降できる条件も決める必要がある。
 整域性以外にHilbert級数やnoetherian性を追加する場合は、その依存を明示する。
 
 四次元対象について、
