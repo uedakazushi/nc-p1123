@@ -8,7 +8,7 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第15版}
+\date{2026年11月19日\quad 第16版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
@@ -36,7 +36,12 @@ $n=1$では以下の正規形と裸の添字保持同型類まで決定した。
 $n=3$では語長Koszul性・AS添字8・標準関係数・標準Hilbert級数・2周期性を導き、
 純jump 1部分のAS3性から添字付き二段Ore表示を得た。
 さらに全対象の1周期性、通常のgraded二段Ore代数への下降、左右noetherian性も証明した。
-Ore網羅性と数値型の強制が残る範囲は$n\geq4$である。
+無条件のOre網羅性が残る範囲は$n\geq4$である。
+$n=4$では最高差次数$D=L-N=3$を追加仮定なしに確定し、
+純jump 1部分の解消型と周期モーメント制約を得た。
+語長Koszul性を追加した場合には、全標準数値型と$A$自身の1周期性まで従う。
+通常の次数付き対象では、任意$n$で語長Koszul性から標準数値型を導ける。
+これらの結果と、一般indexed対象でKoszul性や基礎部分のAS性を導く問題を区別する。
 任意$n$について、純jump 1部分$B$自身のAS正則性だけを追加すれば、
 添字付き二段Ore表示を導く一般定理を得た。
 この追加仮定を$n\geq4$の全対象から導くことが、残る構造上の核心である。
@@ -293,12 +298,170 @@ $D=C[w;\theta',\delta']$も左右noetherianとなる。
 AS次元3では$E^1\otimes E^2$の完全対合からtopの語長が3となり、
 AS次元4では$E^2\otimes E^2$の完全対合からtopの語長が4となる。
 $n=3$では同じ低次対合だけではtopを決められず、上記の成長と行列Hilbert級数の議論を使う。
-$n\geq4$について、この数値型の強制や語長Koszul性を既に得たとはしない。
+$n=4$では以下の方法で$D=L-N=3$まで確定したが、
+これだけで$N=6$や語長Koszul性を得たとはしない。
 また、標準Hilbert級数を仮定したgraded定理のAS添字$n+5$の導出を、
 そのHilbert仮定のないindexed対象へそのまま適用してはいけない。
 以下の補題でAS平行移動量を$L$と書いても、$L=n+5$を意味しない。
 重み3、5の関係数$r_3(i)=n,r_5(i)=1$の無条件の強制も、
 任意$n$で証明したとはしない。$n\leq3$について得た強制を、$n\geq4$へ黙って移さない。
+
+\subsection{$n=4$の最高差次数と純jump 1部分の制約}
+\label{note:n4-current}
+主論文\texttt{n4:lem:periodic-pd3-obstruction}は、
+各頂点に$m\geq4$本の隣接生成元を持つ周期的な二次$\mathbb Z$-整域について、
+多項式増大と有限生成射影による単純解消を保ったまま、
+全単純加群の射影次元を3以下にはできないことを証明する。
+periodとはHilbert数列の周期でなく、代数同型$B(L)\simeq B$である。
+
+証明では、折畳Hilbert行列の最高Laurent係数が正の定数倍の全1行列$J$になることを使う。
+Euler行列の行和・列和から得る有向グラフの入出次数の均衡と、
+巡回シフトの対称部分の正値性により、零固有値が単純となる。
+Hopfの次元不等式からHilbert行列の極の位数は2以上であり、
+対応する固有値の一次微分は零である。
+二次微分を平方完成すると厳密に負となり、$0<u<1$での逆行列の非負性に矛盾する。
+全証明は主論文にあり、有限候補の探索に置き換えていない。
+
+\paragraph{最高差次数は無条件に3である。}
+$A\in\mathcal Q_4^{\mathrm{dom}}$とし、最高Extの語長を$N$、AS移動を$L$とする。
+重み5関係の全消失による指数増大を排除すると$D=L-N\geq3$である。
+もし$D\geq4$なら、AS完全対合と$E_A^2$の差次数の上界3により、
+差次数零部分$E_B=\Ext_B$はhomological degree 4以上で消える。
+純jump 1部分$B$の全単純解消は長さ3以下となり、上の周期的障害に反する。
+従って\texttt{n4:cor:top-excess-three}は
+\[
+L-N=3
+\]
+を追加仮定なしに与える。これはAS移動$L=9$を既に得たという意味ではない。
+
+\paragraph{純粋部分の現在の解消型。}
+\texttt{n4:prop:pure-base-numerics}で$s=N-2\geq4$、$L=s+5$と置くと、
+純jump 1部分の右単純解消は
+\[
+0\longrightarrow P_{i+s}^{q_i}
+\longrightarrow\bigoplus_{j=3}^{s-1}P_{i+j}^{p_{i,j}}
+\longrightarrow P_{i+2}^{r_i}\longrightarrow P_{i+1}^{4}
+\longrightarrow P_i\longrightarrow S_i\longrightarrow0
+\]
+となる。ここで$q_i=r_5(i+s)\in\{0,1\}$、$r_i=r_2(i)$であり、
+全係数は$L$周期的、少なくとも一つの$q_i$は1である。
+さらに、$i$は一周期を動くものとして
+\[
+r_i=3+\sum_jp_{i,j}-q_i,\qquad
+\sum_{i,j}(j-2)p_{i,j}-(s-2)\sum_iq_i=2L
+\]
+が成り立つ。これは最高Laurent係数と次の係数から得る必要条件であり、
+一般の場合の$s=4$や全$q_i=1$を結論するものではない。
+
+\paragraph{語長Koszul性を追加した場合。}
+\texttt{n4:prop:koszul-base-numerics}は、語長Koszul性、同値に$N=6$の下で
+\[
+r_2(i)=6,\qquad r_5(i)=1,\qquad
+H_i^B(u)=(1-u)^{-4}
+\]
+を証明する。この場合$s=4$、$L=9$であり、純粋部分の解消は$(1,4,6,4,1)$の線型型となる。
+行和・列和から$p_i=2+q_i+q_{i-1}$、$r_i=5+q_{i-1}$が従い、
+$F(u)=I-uS$、$Q_- =\operatorname{diag}(q_{i-1})$とすると
+\[
+P_B(u)=F(u)\bigl(I-2uS+u^2Q_-S^2\bigr)F(u)
+\]
+と因数分解できる。
+$q_i$に欠損があれば、非負行列
+$u^2F(u)^{-2}(I-Q_-)S^2$のスペクトル半径が0から無限大へ動き、
+区間$(0,1)$の内部にEuler行列の零点を作るため、多項式増大と矛盾する。
+この条件付きの結論を、語長Koszul性自体の証明としない。
+
+\paragraph{Koszul条件の下では混合関係も標準となり、1周期へ下降する。}
+\texttt{n4:thm:koszul-numerics-period}は、さらに混合関係数を確定して
+\[
+(r_2,r_3,r_4,r_5,r_6)=(6,4,4,1,0),\qquad
+H_i^A(u,t)=\frac1{(1-ut)^4(1-ut^2)(1-ut^3)}
+\]
+を与える。差次数変数$v$を固定し、折畳Euler行列の行和と一次モーメントを比較すると、
+混合関係の欠損は$\alpha_i=4-r_3(i)\geq0$の一つの列で表される。
+主論文の式\texttt{n4:eq:mixed-factorization}で二つの$I-uS$因子を取り出し、
+その中間因子を$K(u,v)$とすると、
+\[
+\det K(1,v)=-9\Bigl(\sum_i\alpha_i\Bigr)v+O(v^2)
+\]
+となる。欠損があれば小さい$v>0$について中間因子は$u=1$で可逆となり、
+$H_A$の極は高々2位となる。
+一方、純粋部分は$(1-u)^{-4}$なので少なくとも4位の極が必要であり、矛盾する。
+これにより全混合関係数を強制する。
+
+正則正規元族$z$から得る2周期とAS移動9を合成すると、$A$は1周期的である。
+後述の\texttt{n4:thm:equivalent-criteria}は、これと純粋部分のスカラーEuler式を用いて、
+語長Koszul性、$N=6$、$A$の1周期性、$B$の1周期性、$B$の全行Hilbert級数の一致、
+$B$の標準Hilbert級数の六条件を同値にする。
+いずれかの性質の無条件の自動性を証明したわけではない。
+これらが成立し、さらに通常の下降が左右noetherianなら、
+\texttt{n4:cor:noetherian-periodic-ore}によって二段Ore表示と基礎のAS4性が従う。
+noetherian性を追加しない場合の基礎のAS性は残る。
+
+\paragraph{四生成元でAS性を認識する方法の本質的障害。}
+Rogalski--Sierra\cite[Theorem 1.1, (1.2), Theorem 1.6]{RSsurface}は、
+通常の連結次数付き代数$R$で、左右noetherianな整域、Koszul、
+GK次元・大域次元とも4でありながら、AS--Gorensteinでないものを構成している。
+単純加群は
+\[
+0\longrightarrow R(-4)\longrightarrow R(-3)^4
+\longrightarrow R(-2)^6\longrightarrow R(-1)^4
+\longrightarrow R\longrightarrow k\longrightarrow0
+\]
+という線型解消を持つので、$H_R(u)=(1-u)^{-4}$である。
+同論文では非可算な代数閉体を用い、Theorem 1.6は二つのパラメータが素体上で代数的に独立な場合を与える。
+特に$k=\mathbb C$上でこれらの例を取れる。
+付随$\mathbb Z$-代数$\check R$は1周期、従って2周期でもある。
+
+従って、有限大域次元、整域性、Koszul性、標準Hilbert級数、
+線型Betti数$(1,4,6,4,1)$にnoetherian性と1周期性を加えても、一般の$B$のAS4性は従わない。
+$n=3$の基礎認識定理を生成元数だけ置き換える方法は使えない。
+一方、これらの$\check R$が$\mathcal Q_4^{\mathrm{dom}}$の純jump 1部分として実現することは未証明であり、
+二段Ore命題自体の反例ではない。
+残る構造問題では、親代数$A$のAS完全対合から得る追加の制約が必要である。
+
+\subsection{通常の次数付き対象でKoszul性を仮定した任意$n$の数値型}
+\label{note:ordinary-koszul-numerics}
+主論文\texttt{ogk:thm:numerics}は、最初から通常の連結次数付き整域である$A$について、
+AS次元$n+2$、最小生成元次数$(1^n,2,3)$、有限生成射影による有限AS解消、
+多項式増大、語長Koszul性から
+\[
+L=n+5,\qquad
+H_A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)},\qquad
+(r_2,r_3,r_4,r_5,r_6)=\left(\binom n2,n,n,1,0\right)
+\]
+を導く。noetherian性と指定Hilbert級数は仮定しない。
+純jump 1部分$B$はKoszul整域で、大域次元$n$、$H_B(u)=(1-u)^{-n}$である。
+$z$は正則正規元となり、第1段は$C=B[z;\sigma]$である。
+
+鍵となる\texttt{ogk:lem:generator-bound}は、有限生成射影による有限Koszul解消と
+多項式増大を持つ通常の代数について、生成元数が大域次元以下であることを示す。
+スカラーEuler多項式の全根の絶対値と最高次係数を比較し、
+生成元数と大域次元が等しい場合には全根が1であることから標準Hilbert級数を得る。
+この議論はAS性を必要としないが、一般の周期的Hilbert\emph{行列}へそのまま移せるものではない。
+$A$の完全対合と差次数1のYoneda成分を併せて、上の二重次数型を確定する。
+
+この定理だけで$B$のAS性や第2段Ore表示を得たとはしない。
+さらに$A$の左右noetherian性を仮定すれば、既存のgraded構造定理が適用でき、
+\texttt{ogk:cor:noetherian-ore}により$B$はAS正則次元$n$、
+$A=B[z;\sigma][w;\tau,\partial]$となる。
+この場合、指定Hilbert級数を別に仮定する必要はない。
+
+\paragraph{$n=4$の六つの同値条件。}
+\texttt{n4:thm:equivalent-criteria}は、$A\in\mathcal Q_4^{\mathrm{dom}}$について、
+語長Koszul性、$N=6$、$A$の1周期性、$B$の1周期性、
+純粋部分の全行Hilbert級数が始点によらないこと、
+全行Hilbert級数が$(1-u)^{-4}$であることが同値であると証明する。
+$B$の全行Hilbert級数が共通の$h(u)$なら、行Euler式は全て
+$p_i(u)h(u)=1$となり、解消の全係数は始点によらない。
+従って、少なくとも一つが1である最高係数$q_i$は全て1である。
+このスカラーEuler多項式は単位円上の全根を持ち、自己相反的である。
+$s\geq5$では正の二次係数と非正の$(s-2)$次係数が対応して矛盾するため、$s=4$となる。
+従って$N=6$と語長Koszul性を得る。
+残りは上のKoszul数値型定理と、1周期性から全行Hilbert級数が一致することによる。
+六条件の同値性は、それらが一般indexed対象で自動的に成り立つという主張ではない。
+条件が成り立ち、通常の下降に左右noetherian性を追加した場合の二段Ore表示は
+\texttt{n4:cor:noetherian-periodic-ore}である。
 
 \subsection{重み5関係の欠損を調べる単項式商と、その限界}
 \label{note:general-r5-growth-limit}
@@ -489,6 +652,8 @@ $C$の最小解消は$B$の解消を$\sigma$で輸送したmapping coneであり
 \paragraph{未解決箇所と下降。}
 $B$の有限大域次元、標準Hilbert級数、整域性だけから
 $B$のAS--Gorenstein性を得たとはしない。
+第\ref{note:n4-current}節のRogalski--Sierraの例は、
+一般の基礎候補ではKoszul性とnoetherian性を加えてもこの推論が偽であることを示す。
 未解決の$n\geq4$の無条件の網羅性には、この追加仮定を対象の条件から導く必要がある。
 $n=3$では、上記の二周期基礎代数の認識定理によってこの追加仮定を導いた。
 一方、この仮定の下では混合関係数、Koszul性、noetherian性、Hilbert級数を
@@ -1057,6 +1222,10 @@ Journal of the European Mathematical Society \textbf{12} (2010), 1371--1416.
 \bibitem{Rains}
 E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
 \href{https://arxiv.org/abs/2107.13540v2}{arXiv:2107.13540v2} (2022).
+\bibitem{RSsurface}
+D.~Rogalski and S.~J.~Sierra,
+\emph{Some noncommutative projective surfaces of GK-dimension 4},
+\href{https://arxiv.org/abs/1101.0737v2}{arXiv:1101.0737v2} (2011).
 \end{thebibliography}
 \endgroup
 \end{document}

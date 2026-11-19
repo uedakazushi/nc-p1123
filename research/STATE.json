@@ -1,9 +1,9 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 15,
+  "version": 16,
   "classification_complete": false,
-  "target": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). Unconditional exhaustion is proved for n=1,2,3. For n3, standard numerical data, pure-base AS3, the indexed Ore flag, final A period one, ordinary graded two-step Ore descent and left/right noetherianity all follow from the original hypotheses. For every n, AS regularity of the pure jump-one base B suffices for indexed Ore without further numerical/noetherian assumptions. The remaining unconditional exhaustion range is n>=4. Universal final graded descent is false at n1; full indexed orbit classification remains separate.",
+  "target": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). Unconditional exhaustion is proved for n=1,2,3; n2,n3 descend to ordinary two-step Ore algebras. For n4, top excess D=L-N=3 is proved without extra hypotheses. Word-Koszulity, N6, A period one, pure-base B period one, source-independent B Hilbert rows, and standard B Hilbert rows are equivalent; under these conditions all numerical data are standard. Their automaticity and B-AS4 remain open. For all n, B-ASn with finite two-sided resolutions implies indexed Ore. Ordinary graded word-Koszul objects have standard numerics and first Ore; adding noetherianity gives the second Ore stage. Unconditional indexed exhaustion remains open for n>=4.",
   "scope": {
     "broad_target": "Secondary n=2 target Q: primitive jumps (1,1,2,3), word-quadratic, two-sided AS4 and polynomial row/column growth over the standing algebraically closed characteristic-zero field. Word-Koszulity, AS translation +7, seven-periodicity and the standard relation counts and Hilbert series are proved, not assumed. Domain, noetherianity and period one are not imposed on this secondary all-Q target.",
     "weighted_hilbert_locus": "H: Q with H(t)=1/((1-t)^2(1-t^2)(1-t^3))",
@@ -22,11 +22,11 @@
     "outer_relation_ranks": "Over the standing algebraically closed field, every A in Q has r_2(i)=r_5(i)=1 and dim B_{i,i+n}=n+1 for its pure jump-1 subalgebra B. This needs neither domainness nor noetherianity. Zero-relation edges in the hypothetical finite-width branch split tensor chains into blocks with at most one two-dimensional relation space; nonzero product covectors extend across the remaining one-dimensional constraints and contradict finite width. Domainness of B or A does not follow from this result alone. MIXED-RELATION-RANKS separately fixes the remaining relation counts.",
     "mixed_relation_ranks": "For all Q, r_3(i)=r_4(i)=2. Positivity of the folded Hilbert matrix and divergence of its pure jump-1 part force det P(1,v) identically zero. Its first coefficient forces sum_i(r_3(i)-2)=0; a weight-four cubic-syzygy bound forces r_3(i)+r_3(i+1)<=5. An exact integer check of det P(1,1) over the 890 arrays delta in {-2,-1,0,1,2}^7 with sum zero and delta_i+delta_(i+1)<=1 leaves only delta=0. All assumptions and the matrix orientation are proved before enumeration. Neither projection nondegeneracy nor regularity of z_i is inferred from the ranks.",
     "general_indexed_target": "For n>=1 over the standing algebraically closed characteristic-zero field: positive connected locally finite word-quadratic Z-domains with primitive jumps (1^n,2,3), two-sided AS dimension n+2, finitely generated finite projective resolutions of simples, and polynomial row/column growth. No standard Hilbert, noetherian, Koszul or period-one assumption is built into this target.",
-    "general_indexed_descent": "Universal descent of every arbitrary-n target object to a single graded two-step Ore algebra is false at n1: descent there is equivalent to alpha^2=c beta^2 including the zero pair, and (1,1,0) is a period-two counterexample even with standard Hilbert, word-Koszulity, noetherianity and domainness. Every n2 and every n3 domain target does descend. N3-GRADED-DESCENT extends the derivation shift operator to a base automorphism; periods two/eight alone do not prove that conclusion. General descent conditions remain unresolved for n>=4.",
+    "general_indexed_descent": "Universal all-n ordinary descent is false at n1, with exact criterion alpha^2=c beta^2 there. Every n2,n3 domain target descends. At n4, A period one is equivalent to word-Koszulity, N6, B period one and uniform or standard pure-base Hilbert rows. These equivalent conditions are not proved automatic. General descent conditions remain unresolved for n>=5.",
     "general_indexed_ore": "Unconditional indexed two-step Ore exhaustion is proved for n=1,2,3 under the original AS/domain/growth hypotheses. For all n, GEN-AS-BASE-ORE proves it from the sole extra AS condition on the pure jump-one base B and its finite two-sided resolutions; no Koszul/H/noetherian/initial-rank/period-one assumptions are added. N3-INDEXED-ORE derives B-AS3 using PERIOD2-BASE-AS3. N3-GRADED-DESCENT further proves final A period one and ordinary graded two-step Ore for all n3 objects. The remaining unconditional range is n>=4.",
     "general_indexed_counterexample": "The choice (c,alpha,beta)=(1,1,0) in N1-INDEXED-CLASSIFICATION gives epsilon_(2j)=1 and epsilon_(2j+1)=0, with relations z_i x_(i+2)=x_i z_(i+1), w_i z_(i+3)=z_i w_(i+2), and w_i x_(i+3)=x_i w_(i+1)+epsilon_i z_i z_(i+2). It is a word-Koszul, left/right noetherian AS3 Z-domain with AS translation 6, standard two-variable Hilbert series and least positive period 2. The zz-projection rank of R_4 alternates, obstructing period one and hence any presentation as check(D) for a single graded D.",
     "general_indexed_translation": "AS Frobenius duality gives a translation i->i+L and a word-preserving A isomorphic to A(L) for arbitrary n, without assuming Koszulity. Directed reachability identifies the vertex order, and E^1,E^2 with their product recover the quadratic presentation. This does not determine L=n+5 or prove word-Koszulity.",
-    "general_normal_z_conditional": "For arbitrary n, if all r_3(i)=n and r_5(i)=1 and all z_i are left/right regular, the mixed relation projections are isomorphisms, the z_i form a regular normal family, and A(2) is isomorphic to A. Domainness alone gives r_3<=n, r_5<=1 and r_6=0. Attainment of the upper bounds is proved for n=1,2,3 but not established for n>=4.",
+    "general_normal_z_conditional": "For arbitrary n, all r3=n,r5=1 and regular z imply a regular normal z family and A(2) isomorphic to A. Domain gives only r3<=n,r5<=1,r6=0. Attainment is unconditional for n1,n2,n3, and is proved for n4 under any condition in N4-EQUIVALENT-CRITERIA. Ordinary word-Koszul objects also attain the bounds in every n. Do not infer their automaticity for general indexed n>=4.",
     "one_heavy_frobenius_conditional": "Indexed non-Koszul one-heavy lemma: Q=T_Z(V direct_sum kw)/(R direct_sum S), V jump one, w jump d>1, R pure V and S in Vw direct_sum wV. If Q is AS(n+1) and B=T_Z(V)/(R) itself is ASn with finite two-sided AS resolutions, then Q=B[w;mu] for an isomorphism B(d)->B. No Koszul, noetherian, prescribed Hilbert or Q-domain assumption. The full Yoneda algebra and its internal degrees, not only the quadratic dual, are used.",
     "one_light_indexed_ore": "Every object of Q_1^dom admits a two-step indexed Ore presentation without extra Hilbert, noetherian or Koszul assumptions. AS3 and word-quadraticity force top word length 3 and word-Koszulity; domainness gives r_2=r_6=0; AS duality forces translation 6 and r_3=r_4=r_5=1. The top tensor forces both mixed coefficients of R_4 to be nonzero, and Euler Hilbert series plus ordered spanning gives a PBW basis. Standard Hilbert series and left/right noetherianity are conclusions.",
     "one_light_indexed_classification": "Every Q_1^dom object has a normalized presentation z_i x_(i+2)=x_i z_(i+1), w_i z_(i+3)=c z_i w_(i+2), w_i x_(i+3)=x_i w_(i+1)+d_i z_i z_(i+2), where c is nonzero, d_(2j)=c^(-j) alpha and d_(2j+1)=c^(-j) beta. Every parameter triple gives a word-Koszul, left/right noetherian AS3 Z-domain with standard Hilbert series, verified using explicit left/right resolutions. Bare indexed isomorphism is equivalent to c_prime=c and (alpha_prime,beta_prime)=s(alpha,beta) for a nonzero scalar s. For each c the SET of classes is {0} disjoint_union P^1(k), without an affine-quotient or moduli-space assertion. Period one holds exactly when alpha^2=c beta^2, including the zero pair; otherwise the least positive period is two.",
@@ -37,7 +37,16 @@
     "three_light_indexed_ore": "Every Q_3^dom admits C=B[z;sigma], A=C[w;theta,delta] as indexed Ore extensions, with sigma:B(2)->B and theta:C(3)->C isomorphisms. B is a quadratic AS3 Z-domain and has period one; A has period two and AS translation eight. Relations are z_i v=sigma_i(v)z_(i+1), w_i v=mu_i(v)w_(i+1)+L_i(v)z_i z_(i+2), w_i z_(i+3)=c_i z_i w_(i+2), with sigma_i,mu_i invertible and c_i nonzero. Ordered B z^a w^b components form PBW bases. No extra H/noetherian/Koszul/period assumption. N3-GRADED-DESCENT separately proves final A period one; full indexed orbit classification remains open.",
     "three_light_derivation_support": "In the n3 indexed Ore presentation, either all L_i vanish or all are nonzero. Applying delta to the base relations and using their full left/right support makes L_i=0 equivalent to L_(i+1)=0. In the all-zero case w is a regular normal family, so periods three/two give final A period one. N3-GRADED-DESCENT also settles the all-nonzero branch through extension of the coefficient shift operator.",
     "three_light_graded_descent": "Every Q_3^dom is word-preservingly period one and A is isomorphic to check(D), D=B_prime[z;sigma_prime][w;tau_prime,delta_prime], with B_prime an ordinary three-generator quadratic AS3 domain. In a common frame zv=S(v)z, w_i v=S(v)w_(i+1)+ell_i(v)zz, wz=zw, the space E=span ell_i has a well-defined invertible T ell_i=ell_(i+1), T^2=S*|E. T is induced by a base automorphism P commuting with S. Dimensions E0,E1,E3 are direct; E2 reduces to reciprocal distinct eigenvalues or a Jordan block at one. The latter uses the canonical unipotent square root; the former normalizes the relation space explicitly, including resonance cases. Descent gives R_prime=(id tensor P)R, sigma_prime=SP^(-2), tau_prime|V=SP^(-3), tau_prime(z)=z, delta_prime(v)=(ell_0 P^(-3))(v)z^2, delta_prime(z)=0. B_prime is a Zhang twist of the common-frame B0, not necessarily graded-isomorphic to it. No H/Koszul/noetherian/period assumption is added. No least-period-two n3 objects exist in this target. This is an exhaustion theorem, not full orbit classification.",
-    "three_light_noetherian": "Every Q_3^dom is left/right noetherian in the row/column sense. The ordinary descended first stage C_prime=B_prime[z;sigma_prime] is generated in word degree one. Rogalski-Zhang arXiv1101.1998v2 Lemma1.3(a), applied in that word grading, gives its noetherianity. The automorphism Ore Hilbert basis theorem gives D=C_prime[w;tau_prime,delta_prime] left/right noetherian. The regular graded D modules correspond to representable row/column modules of check(D). This is a conclusion, not a new hypothesis; no arbitrary-dimensional-base noetherianity assertion is made."
+    "three_light_noetherian": "Every Q_3^dom is left/right noetherian in the row/column sense. The ordinary descended first stage C_prime=B_prime[z;sigma_prime] is generated in word degree one. Rogalski-Zhang arXiv1101.1998v2 Lemma1.3(a), applied in that word grading, gives its noetherianity. The automorphism Ore Hilbert basis theorem gives D=C_prime[w;tau_prime,delta_prime] left/right noetherian. The regular graded D modules correspond to representable row/column modules of check(D). This is a conclusion, not a new hypothesis; no arbitrary-dimensional-base noetherianity assertion is made.",
+    "four_light_top_excess": "Every Q4dom object has top excess D=L-N=3. If D>=4, the excess-zero bar complex gives pure-base simple projective dimensions at most three, excluded by PERIODIC-PD3-OBSTRUCTION. N=6 and L=9 are not unconditional conclusions.",
+    "periodic_pd3_obstruction": "A positive connected locally finite adjacent quadratic Z-domain with m>=4 generators at each vertex, an actual finite algebra period, polynomial row growth, and finitely generated simple resolutions cannot have every right simple projective dimension at most three. No AS, Koszul or noetherian assumption. A balanced-graph square identity forces the simple Euler eigenvalue negative near u=1, contrary to entrywise nonnegative inverse Hilbert matrices.",
+    "four_light_pure_resolution": "For Q4dom, s=N-2>=4,L=s+5. Pure B has simple resolution P_(i+s)^q_i -> direct_sum_(j=3..s-1) P_(i+j)^p_ij -> P_(i+2)^r_i -> P_(i+1)^4 -> P_i -> S_i, with q_i=r5(i+s) in {0,1}, not all zero. All ranks are L-periodic. r_i=3+sum_j p_ij-q_i and sum_(i,j)(j-2)p_ij-(s-2)sum_i q_i=2L. No B-AS4 assertion.",
+    "four_light_koszul_base": "For Q4dom with word-Koszulity, equivalently N6, s4/L9. Pure B has two-sided linear 14641 resolutions, r2=6,r5=1 and all H_B=(1-u)^-4. A Perron-Frobenius spectral-radius crossing excludes any missing q_i. These numerical data do not alone imply B-AS4.",
+    "four_light_koszul_numerics": "For Q4dom with word-Koszulity, all ranks are (6,4,4,1,0), L9, H_A(u,t)=1/((1-ut)^4(1-ut^2)(1-ut^3)), z is a regular normal family, and A is word-preservingly period one. For alpha_i=4-r3_i>=0, P=F K F and det K(1,v)=-9(sum alpha_i)v+O(v^2); a nonzero defect would bound the Hilbert pole by two, contrary to its pure-base pole four. No B-AS/noetherian/initial-H/period hypothesis.",
+    "four_light_equivalent_criteria": "Within Q4dom the following six conditions are equivalent: A word-Koszul; N6; A period one; B period one; H_i^B independent of source i; every H_i^B=(1-u)^-4. A period one need not initially preserve word length: its restriction to intrinsic B gives B period one. Uniform rows make all scalar Euler polynomials equal, q_i=1, and unit roots/self-reciprocity force s4. None of the equivalent conditions is proved automatic. Their validity yields all standard A numerics and word-preserving descent, but B-AS4 and second Ore still require proof or explicit additional hypotheses.",
+    "ordinary_koszul_numerics": "For ordinary connected graded word-Koszul AS(n+2) domains with primitive generator weights (1^n,2,3), finite finitely generated simple resolutions and polynomial growth, one gets L=n+5, standard bigraded Hilbert/ranks, pure B Koszul of global dimension n and H_B=(1-t)^-n, regular normal z, and first Ore B[z;sigma]. No initial H or noetherian assumption. The scalar Koszul Euler root bound and total binomial Betti counts force the four excess strands. Second Ore and B-ASn are not concluded here.",
+    "ordinary_koszul_noetherian_ore": "Adding left/right noetherianity to ORDINARY-KOSZUL-NUMERICS gives the complete ordinary two-step Ore presentation and a noetherian Koszul ASn base by the earlier graded structure theorem. At n4 any equivalent criterion plus noetherianity of an ordinary descent suffices. These extra hypotheses are not proved automatic in the original indexed target.",
+    "four_generator_as_obstruction": "Known Rogalski-Sierra arXiv1101.0737v2 Theorem1.1/(1.2), with Theorem1.6, gives ordinary noetherian Koszul domains of global dimension four with linear 14641 resolution and H=(1-t)^-4 which are not AS-Gorenstein, also over C. Hence numerical/domain/Koszul/period-one data alone do not recognize AS4. No realization of these examples as pure bases of Q4dom is claimed; parent AS6 duality remains relevant."
   },
   "claims": [
     {
@@ -609,28 +618,153 @@
       "novelty": "not_finally_verified",
       "external_peer_review": false,
       "formalized": false
+    },
+    {
+      "id": "PERIODIC-PD3-OBSTRUCTION",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:lem:periodic-pd3-obstruction",
+      "scope": "A positive connected locally finite adjacent quadratic Z-domain with m>=4 generators at each vertex, an actual finite algebra period, polynomial row growth, and finitely generated simple resolutions cannot have every right simple projective dimension at most three. No AS, Koszul or noetherian assumption. A balanced-graph square identity forces the simple Euler eigenvalue negative near u=1, contrary to entrywise nonnegative inverse Hilbert matrices.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-TOP-EXCESS",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:cor:top-excess-three",
+      "scope": "Every Q4dom object has top excess D=L-N=3. If D>=4, the excess-zero bar complex gives pure-base simple projective dimensions at most three, excluded by PERIODIC-PD3-OBSTRUCTION. N=6 and L=9 are not unconditional conclusions.",
+      "depends_on": [
+        "PERIODIC-PD3-OBSTRUCTION",
+        "GEN-AS-TRANSLATION",
+        "GEN-R5-GROWTH"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-PURE-NUMERICS",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:prop:pure-base-numerics",
+      "scope": "For Q4dom, s=N-2>=4,L=s+5. Pure B has simple resolution P_(i+s)^q_i -> direct_sum_(j=3..s-1) P_(i+j)^p_ij -> P_(i+2)^r_i -> P_(i+1)^4 -> P_i -> S_i, with q_i=r5(i+s) in {0,1}, not all zero. All ranks are L-periodic. r_i=3+sum_j p_ij-q_i and sum_(i,j)(j-2)p_ij-(s-2)sum_i q_i=2L. No B-AS4 assertion.",
+      "depends_on": [
+        "N4-TOP-EXCESS",
+        "PERIODIC-PD3-OBSTRUCTION"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-KOSZUL-BASE-NUMERICS",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:prop:koszul-base-numerics",
+      "scope": "For Q4dom with word-Koszulity, equivalently N6, s4/L9. Pure B has two-sided linear 14641 resolutions, r2=6,r5=1 and all H_B=(1-u)^-4. A Perron-Frobenius spectral-radius crossing excludes any missing q_i. These numerical data do not alone imply B-AS4.",
+      "depends_on": [
+        "N4-PURE-NUMERICS"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-KOSZUL-NUMERICS-PERIOD",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:thm:koszul-numerics-period",
+      "scope": "For Q4dom with word-Koszulity, all ranks are (6,4,4,1,0), L9, H_A(u,t)=1/((1-ut)^4(1-ut^2)(1-ut^3)), z is a regular normal family, and A is word-preservingly period one. For alpha_i=4-r3_i>=0, P=F K F and det K(1,v)=-9(sum alpha_i)v+O(v^2); a nonzero defect would bound the Hilbert pole by two, contrary to its pure-base pole four. No B-AS/noetherian/initial-H/period hypothesis.",
+      "depends_on": [
+        "N4-KOSZUL-BASE-NUMERICS",
+        "GEN-NORMAL-Z-CONDITIONAL",
+        "GEN-AS-TRANSLATION"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-EQUIVALENT-CRITERIA",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:thm:equivalent-criteria",
+      "scope": "Within Q4dom the following six conditions are equivalent: A word-Koszul; N6; A period one; B period one; H_i^B independent of source i; every H_i^B=(1-u)^-4. A period one need not initially preserve word length: its restriction to intrinsic B gives B period one. Uniform rows make all scalar Euler polynomials equal, q_i=1, and unit roots/self-reciprocity force s4. None of the equivalent conditions is proved automatic. Their validity yields all standard A numerics and word-preserving descent, but B-AS4 and second Ore still require proof or explicit additional hypotheses.",
+      "depends_on": [
+        "N4-PURE-NUMERICS",
+        "N4-KOSZUL-BASE-NUMERICS",
+        "N4-KOSZUL-NUMERICS-PERIOD"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "ORDINARY-KOSZUL-GENERATOR-BOUND",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#ogk:lem:generator-bound",
+      "scope": "For a connected Koszul algebra with n degree-one generators, finite global dimension m, finite Tor and polynomial growth: n<=m, top Betti one; if n=m the Hilbert series is (1-t)^-n and all Betti numbers are binomial. No AS condition; this scalar argument is not an indexed matrix result.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "ORDINARY-KOSZUL-NUMERICS",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#ogk:thm:numerics",
+      "scope": "For ordinary connected graded word-Koszul AS(n+2) domains with primitive generator weights (1^n,2,3), finite finitely generated simple resolutions and polynomial growth, one gets L=n+5, standard bigraded Hilbert/ranks, pure B Koszul of global dimension n and H_B=(1-t)^-n, regular normal z, and first Ore B[z;sigma]. No initial H or noetherian assumption. The scalar Koszul Euler root bound and total binomial Betti counts force the four excess strands. Second Ore and B-ASn are not concluded here.",
+      "depends_on": [
+        "ORDINARY-KOSZUL-GENERATOR-BOUND"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "ORDINARY-KOSZUL-NOETHERIAN-ORE",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#ogk:cor:noetherian-ore",
+      "scope": "Adding left/right noetherianity to ORDINARY-KOSZUL-NUMERICS gives the complete ordinary two-step Ore presentation and a noetherian Koszul ASn base by the earlier graded structure theorem. At n4 any equivalent criterion plus noetherianity of an ordinary descent suffices. These extra hypotheses are not proved automatic in the original indexed target.",
+      "depends_on": [
+        "ORDINARY-KOSZUL-NUMERICS",
+        "GENERAL-QUADRATIC-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-NOETHERIAN-PERIODIC-ORE",
+      "status": "proved_in_manuscript_under_the_stated_hypotheses_and_internally_audited",
+      "proof": "papers/nc-p1123.tex#n4:cor:noetherian-periodic-ore",
+      "scope": "For Q4dom under one of the six equivalent conditions, adding left/right noetherianity of the ordinary graded descent yields two-step Ore over a noetherian Koszul AS4 base. Noetherianity is an additional hypothesis.",
+      "depends_on": [
+        "N4-EQUIVALENT-CRITERIA",
+        "ORDINARY-KOSZUL-NOETHERIAN-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
     }
   ],
   "open_problems": [
     {
       "id": "GEN-INDEXED-ORE-EXHAUST",
       "priority": 1,
-      "problem": "For n>=4, derive AS regularity of the pure jump-one base B or find a counterexample. GEN-AS-BASE-ORE already provides the complete indexed Ore construction from B-AS alone. Unconditional exhaustion is proved for n1,n2,n3; do not reopen n3 base-AS, final graded descent or noetherianity. No additional H/Koszul/noetherian/period assumption is authorized."
+      "problem": "For n>=4 prove pure-base ASn or find an appropriate counterexample under the original domain hypotheses. GEN-AS-BASE-ORE already supplies indexed Ore from B-AS alone. At n4 D3 and six equivalent Koszul/period/Hilbert conditions are proved, but their automaticity and B-AS4 are open. Do not add H/Koszul/noetherian/period hypotheses silently; n1,n2,n3 exhaustion and n2,n3 graded descent remain complete."
     },
     {
       "id": "GEN-MIXED-RANKS",
       "priority": 2,
-      "problem": "For n>=4, determine the top word length, AS index and mixed ranks from the original domain/AS/growth hypotheses. All standard numerical conclusions are now proved for n=1,2,3. Use the excess-zero bar complex, folded Hilbert comparisons and GEN-R5-GROWTH; the latter alone permits some missing-relation patterns. Do not assume L=n+5 or Koszulity."
+      "problem": "At n4, derive uniform pure-base Hilbert rows (equivalently N6, Koszulity, A/B period one). Start from N4-PURE-NUMERICS with s=N-2, higher Laurent identities and the internal-degree self-pairing of E3. D3 is proved; under Koszulity all mixed ranks and H are proved. At n>=5 the top excess and numerical type still require analysis. Scalar Euler reciprocity is unavailable for arbitrary periodic matrices."
     },
     {
       "id": "GEN-BASE-AS",
       "priority": 1,
-      "problem": "For n>=4 establish ASn for the pure jump-one base from the original parent hypotheses. PERIOD2-BASE-AS3 solves n3 directly. Its proof uses three-dimensional support intersections and 3-by-2 Segre bounds, so those steps cannot be transferred by replacing the number of generators. Start with n4/AS6 and the internally graded self-pairing of E3, together with the excess-zero bar complex."
+      "problem": "For n>=4 derive B-ASn from parent AS duality. At n4 even standard 14641, domain, Koszul, H and period one do not recognize AS4 in general, by the checked Rogalski-Sierra examples. They are not known to occur as pure bases in Q4dom. Use parent AS6 pairing to exclude radical/socle defects in E(B); do not assume A/(z) is a domain or infer R4 projection injectivity from ranks."
     },
     {
       "id": "GEN-INDEXED-DESCENT",
       "priority": 2,
-      "problem": "For n>=4 determine final A descent conditions. General AS-base Ore gives periods two and L_B+5, hence period one when L_B is even. A Koszul base with even n is a special case. For n3, N3-GRADED-DESCENT solves all coefficient branches by extending T on E to a base automorphism; its dimension-two relation analysis uses dim V=3. n1 has the exact alpha^2=c beta^2 criterion, and n2,n3 have unconditional domain descent. Do not reopen those cases."
+      "problem": "At n4 the exact criterion A period one iff word-Koszul iff N6 iff B period one iff uniform/standard pure-base Hilbert rows is proved; automaticity is open. For n>=5 determine descent conditions. Under B-AS, even L_B gives descent from periods two and L_B+5. n1 has the exact alpha^2=c beta^2 criterion; all n2,n3 domains descend."
     },
     {
       "id": "DOMAIN-AUTOMATIC",
@@ -677,13 +811,13 @@
     {
       "id": "GENERAL-HYPOTHESES",
       "priority": 12,
-      "problem": "For n>=4 determine whether numerical/Koszul/base-AS properties follow from the original domain target. These and indexed Ore exhaustion are proved for n1,n2,n3; n3 final graded descent and noetherianity are also proved. No blanket noetherianity theorem for arbitrary AS bases is asserted. Preserve the separate hypotheses of the nonquadratic graded problem; unbounded-dimension examples do not settle the fixed n+2 problem.",
+      "problem": "At n4 determine whether the six equivalent conditions and B-AS4 follow from the original hypotheses; at n>=5 determine numerical/Koszul/base-AS automaticity. Ordinary graded Koszul objects now have standard numerics without an H/noetherian assumption, but the second Ore theorem still uses noetherianity or B-AS. No arbitrary-dimensional AS-base noetherianity assertion is made.",
       "role": "secondary"
     }
   ],
   "resume_point": {
     "task_id": "GEN-INDEXED-ORE-EXHAUST",
-    "next_action": "Read N3-INDEXED-NUMERICS, PERIOD2-BASE-AS3, N3-INDEXED-ORE, N3-GRADED-DESCENT and GEN-AS-BASE-ORE. Continue at n>=4: start with n4/AS6, the full internal-degree self-duality of E3 and the excess-zero base resolution, plus periodic growth inequalities. The n3 final graded descent and noetherianity are complete; a separate secondary problem is orbit classification of base AS3 and Ore data.",
+    "next_action": "Read N4-TOP-EXCESS, N4-PURE-NUMERICS, N4-KOSZUL-NUMERICS-PERIOD and N4-EQUIVALENT-CRITERIA. First try to force pure-base Hilbert rows independent of source using higher Laurent coefficients and the AS6 middle E3 pairing; this would settle Koszulity, full numerical type and period one. In the standard case use parent AS6 to prove the pure top pairing nondegenerate; generic 14641 recognition is false. GEN-AS-BASE-ORE then supplies both Ore stages. For n>=5 continue excess-zero bar and growth analysis; ordinary Koszul scalar results do not imply indexed periodic descent.",
     "read": [
       "research/plan_ja.tex",
       "papers/nc-p1123.tex",
@@ -691,8 +825,8 @@
       "research/BASELINE.md",
       "research/STATE.json"
     ],
-    "obstacle": "For n>=4, numerical automaticity and AS regularity of the pure base are unproved. The n3 base-AS recognition uses three-dimensional support intersections; final descent uses extension of a shift on a subspace of a three-dimensional dual. Neither case analysis transfers automatically to higher n. Universal all-n final graded descent remains false at n1.",
-    "do_not_repeat": "Do not reopen n1 indexed classification, n2 domain Ore, n3 numerical exhaustion, n3 base-AS/indexed Ore, n3 final period-one descent or n3 noetherianity as unsolved. The period-two n1 counterexample only refutes universal final graded descent. Do not insert H, Koszul, noetherian or period-one hypotheses into the original target. Preserve existing n2 exact computation assets. A normal quotient need not be a domain. Two-period base recognition uses algebra periodicity, not just Hilbert periodicity. The descended base can be a Zhang twist of the common frame. Newness and external peer review remain unverified."
+    "obstacle": "At n4 D3 is proved, but source variation of pure-base Euler/Hilbert data may obstruct s4. Once Koszul/period one holds all standard numerical data follow, yet Rogalski-Sierra shows that these data do not by themselves force B-AS4. Parent AS duality or a new normal-quotient argument is needed. Normal quotients need not be domains. The original all-n indexed Ore conclusion remains open for n>=4.",
+    "do_not_repeat": "Do not reopen n1 indexed classification, n2 domain Ore, n3 numerical exhaustion, n3 base-AS/indexed Ore, n3 final period-one descent or n3 noetherianity as unsolved. The period-two n1 counterexample only refutes universal final graded descent. Do not insert H, Koszul, noetherian or period-one hypotheses into the original target. Preserve existing n2 exact computation assets. A normal quotient need not be a domain. Two-period base recognition uses algebra periodicity, not just Hilbert periodicity. The descended base can be a Zhang twist of the common frame. Newness and external peer review remain unverified. Do not reopen n4 D3 or the six-condition equivalence; distinguish proving an equivalence from proving its conditions hold. Keep the conditional noetherian Ore theorem conditional. The RS examples obstruct a method and are not counterexamples to the original two-step Ore problem."
   },
   "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex",

@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月19日\quad 第15版}
+\date{2026年11月19日\quad 第16版}
 \begin{document}
 \maketitle
 
@@ -36,6 +36,7 @@ $n=3$では数値型・Koszul性・基礎部分のAS3性・添字付き二段Ore
 \textbf{無条件のindexed網羅性の未解決範囲は$n\geq4$である。}
 任意$n$で、純jump 1部分$B$自身がAS正則次元$n$なら添字付き二段Ore表示が従うため、
 一般次元で$B$のAS正則性を元の仮定から導くことが構造上の核心である。
+$n=4$では最高差次数3を無条件に証明し、Koszul性・1周期性・基礎Hilbert行の始点独立性の同値性まで得た。
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
 再開時は本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読む。
@@ -43,6 +44,69 @@ $n=3$では数値型・Koszul性・基礎部分のAS3性・添字付き二段Ore
 \path{research/notes_ja.tex}、$n=2$の七窓表示は\path{research/indexed_z_algebra.tex}にある。
 一次文献の適用範囲は\path{research/BASELINE.md}、実行した検証の範囲は
 \path{research/validation.json}を参照する。
+
+\section{$n=4$の最高差次数とKoszul・周期・Hilbert条件}
+\subsection{無条件の到達点}
+主論文\texttt{n4:lem:periodic-pd3-obstruction}は、四本以上の隣接生成元を持つ
+周期的二次$\mathbb Z$-整域が、多項式増大の下で、全単純加群に長さ三以下の
+有限生成最小解消を持つことはできないと証明する。
+折畳Hilbert行列の主要係数が$hJ$となることを用い、Euler行列の単純零固有値の
+二次変動を、巡回Fourier二次形式と均衡有向グラフの平方和で厳密に負と示す。
+逆Hilbert行列の非負性との矛盾による完全な証明であり、有限列挙ではない。
+
+この補題により、全ての$A\in\mathcal Q_4^{\mathrm{dom}}$で
+\[
+D=L-N=3
+\]
+が従う（\texttt{n4:cor:top-excess-three}）。$N$は最高語長、$L$はAS移動である。
+$s=N-2\ge4$、$L=s+5$と置くと、純jump 1部分$B$の解消は
+\[
+0\to P_{i+s}^{q_i}\to\bigoplus_{j=3}^{s-1}P_{i+j}^{p_{i,j}}
+\to P_{i+2}^{r_i}\to P_{i+1}^{4}\to P_i\to S_i\to0,
+\qquad q_i=r_5(i+s)\in\{0,1\},\quad q\not\equiv0
+\]
+である。主論文\texttt{n4:prop:pure-base-numerics}の階数釣合いと一次モーメント制約を使える。
+ただし、$N=6$、$L=9$、全$q_i=1$はここでの無条件の結論ではない。
+
+\subsection{六条件の同値性と標準数値型}
+主論文\texttt{n4:thm:equivalent-criteria}は、次を同値とする。
+\begin{enumerate}
+\item $A$が語長Koszulである。
+\item $N=6$である。
+\item $A$が1周期的である。
+\item $B$が1周期的である。
+\item $B$の行Hilbert級数が始点によらない。
+\item 全行で$H_i^B(u)=(1-u)^{-4}$である。
+\end{enumerate}
+これらの条件の下では、語長を保つ1周期同型と
+\[
+L=9,\qquad (r_2,r_3,r_4,r_5,r_6)=(6,4,4,1,0),\qquad
+H_i^A(u,t)=\frac1{(1-ut)^4(1-ut^2)(1-ut^3)}
+\]
+を得る。$B$の左右解消は$(1,4,6,4,1)$の線型型である。
+完全証明は\texttt{n4:prop:koszul-base-numerics}、
+\texttt{n4:thm:koszul-numerics-period}と同値条件定理にある。
+Koszulの場合の基礎階数欠損は非負行列のスペクトル半径で排除する。
+混合階数欠損は$P=FKF$の因数分解と
+$\det K(1,v)=-9(\sum_i(4-r_3(i)))v+O(v^2)$で排除する。
+行Hilbertが一定ならEuler多項式も一定であり、根の絶対値と自己相反性が$s=4$を強制する。
+
+\textbf{六条件の自動性と$B$のAS4性は未証明である。}
+Rogalski--Sierra, arXiv:1101.0737v2, Theorem 1.1と式(1.2)には、
+noetherian整域・Koszul・大域次元4・標準線型解消でもAS--Gorensteinでない四生成元例がある。
+これは一般的な数値認識法の障害であり、この例が対象$A$の純基礎として実現するとは主張しない。
+親代数のAS対合から、$B$の最上積対合の非退化性を導く必要がある。
+
+\subsection{任意$n$の通常Koszul対象での補助定理}
+主論文\texttt{ogk:thm:numerics}は、最初から通常の連結次数付き整域であり、
+語長Koszul・AS次元$n+2$・多項式増大を満たす場合、指定Hilbert級数とnoetherian性なしに
+$L=n+5$、全標準数値型、正則正規元$z$、第一段$B[z;\sigma]$を導く。
+スカラーEuler多項式の根から、Koszul有限増大代数では生成元数が大域次元以下であり、
+等号なら標準Hilbert級数となることを使う。
+一般indexed対象へこのスカラー論法をそのまま適用しない。
+左右noetherian性を追加すると、既存の構造定理により二段Ore表示と$B$のAS性も得る
+（\texttt{ogk:cor:noetherian-ore}）。$n=4$の六条件と下降後のnoetherian性の下での系は
+\texttt{n4:cor:noetherian-periodic-ore}にある。このnoetherian性は追加仮定である。
 
 \section{$n=3$の完全構造と任意$n$の条件付き構造定理}
 \subsection{$n=3$の数値型は追加仮定なしに確定}
@@ -245,17 +309,20 @@ supportの交わりと$3\times2$のSegre次元計算に依存し、そのまま�
 また$A$の整域性から正規商$A/(z)$の整域性を推測しない。
 
 \section{優先順位と次の具体的操作}
-\paragraph{P1：$n\geq4$の最高差次数と基礎部分のAS性。}
-AS平行移動$i\mapsto i+L$、整域性の上界$r_3\leq n$, $r_5\leq1$, $r_6=0$から出発する。
-重み5関係の成長障害\texttt{genidx:lem:weight-five-growth}を利用する。
-$3\nmid L$なら$r_5(i)+r_5(i-3)>0$、$3\mid L$なら少なくとも
-$\lceil L/6\rceil$個の非零位置が必要である。
-この補題だけでは全位置の非零性は従わず、方法の限界は
-研究ノート\texttt{note:general-r5-growth-limit}にある。
-差次数零のbar複体で$B$の解消を取り出し、成長と左右の成分比較から可能な数値型を絞る。
-最初の具体例$n=4$ではAS次元6の中央$E^3$の自己相補性を、内部語長・重みごとに調べる。
-一般条件付きOre定理に必要な追加仮定は$B$のAS正則次元$n$だけであり、
-混合関係数や第二段の交換写像を独立の追加仮定とする必要はない。
+\paragraph{P1：$n=4$のHilbert行一定性と基礎AS性。}
+最高差次数は3と確定したため、まず\texttt{n4:prop:pure-base-numerics}の
+$s=N-2$、階数列$r_i,p_{i,j},q_i$を出発点とする。
+折畳Euler行列の二次以上のLaurent条件と、AS6の中央$E^3$の自己相補性を組み合わせ、
+$B$の行Hilbert級数が始点によらないことを証明または反証する。
+これが得られれば六条件定理によりKoszul性・全標準型・1周期性が一度に従う。
+$s=4$の後は、$E^*(A)$の完全対合が差次数零部分の最高積対合に及ぼす制約を調べる。
+Rogalski--Sierraの一般的反例があるため、$14641$解消だけで$B$をAS4と判定しない。
+$A/(z)$の整域性も未証明なので、重み4関係の両射影の単射性をそこから仮定しない。
+
+任意$n$では、$B$自身のAS正則性が得られれば既存の一般定理が二段Oreを構成する。
+$n\ge5$の数値型には、AS平行移動、差次数零bar複体、
+$r_3\le n,r_5\le1,r_6=0$および重み5関係の成長障害を使う。
+周期的Euler行列に対するスカラー自己相反性は未証明であり、通常gradedの場合と区別する。
 
 \paragraph{P2：$n=3$の同型軌道と下降構成の一般化。}
 $n=3$では最終代数$A$の1周期下降と左右noetherian性まで証明済みである。
@@ -270,7 +337,8 @@ $n=1$の周期2反例を独立のjump 1変数で拡張すると、三重重な�
 
 \paragraph{P3：一般条件付き定理の周期と文献比較。}
 基礎AS性の下では$A$が2周期かつ$(L_B+5)$周期なので、$L_B$が偶数なら1周期である。
-特に$B$がKoszulで$n$が偶数なら下降するが、この前提の自動性は$n\geq4$で未証明である。
+特に$B$がKoszulで$n$が偶数なら下降する。$n=4$では基礎AS性なしに
+親代数のKoszul性と1周期性が同値と分かったが、その自動性は未証明である。
 $n=3$の移動作用素の延長は$\dim V=3$の関係行列に依存しており、
 一般次元へそのまま移すことはできない。基礎AS性を仮定した場合にも、
 奇数$L_B$に対する一般の下降条件は別に調べる。
@@ -374,6 +442,7 @@ $n=2$のindexed網羅性とgraded下降も証明済みだが、その全対象�
 一般indexed網羅性は$n\geq4$で未完成である。
 $n=3$の数値型、無条件の二段Ore表示、最終代数の1周期下降、左右noetherian性、
 任意$n$の基礎AS性を仮定した構造定理は完成している。
+$n=4$の最高差次数3と六条件同値、通常Koszul対象の任意$n$の数値型も完全証明を収めた。
 反例や補助定理の証明を記載したこと、内部監査、計算、形式化、第三者査読、新規性確認は別の状態とする。
 形式化・第三者査読・新規性の最終確認は未完である。
 
