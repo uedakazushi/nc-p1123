@@ -32,7 +32,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月20日\quad 公表準備稿 v26}
+\date{2026年11月20日\quad 公表準備稿 v27}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -41,7 +41,7 @@
 \begin{abstract}
 原始生成元の重みが$(1^n,2,3)$である語長二次AS正則$\mathbb Z$-整域を考える。
 AS次元は$n+2$とし、標準Hilbert級数、noetherian性、1周期性を仮定しない。
-重み3と5の関係数が各始点で$n$と1であること、純jump 1部分がAS正則次元$n$であること、
+一般次元での簡潔な十分条件として、重み3と5の関係数が各始点で$n$と1であること、純jump 1部分がAS正則次元$n$であること、
 およびAS正則次元$n$の同部分上の添字付き二段Ore表示が存在することの同値性を証明する。
 語長Koszulの場合は任意$n$でこれらの条件を強制し、標準二変数Hilbert級数を得る。
 
@@ -50,7 +50,7 @@ $n=1$の全添字保持同型類と周期を決定し、最小周期2の明示�
 $n=2,3$では通常の次数付き二段Ore表示への下降と左右noetherian性を証明する。
 さらに、二周期三生成元整域のAS認識、Oreデータ間の有限同型判定、
 対角表示空間、および語長二次性を外した四次元の次数付き分類を与える。
-通常の次数付き対象では、AS添字$n+5$と両立する語長次数、または
+通常の次数付き対象の主要結果として、AS添字$n+5$と両立する語長次数、または
 増大イデアルに対するKoszul整域の付随次数環から二段Ore表示を導く。
 四次元ではAS添字7と整域性から指定Hilbert級数を追加せずに同表示を得る。
 $n=4$では最高差次数と最高語長の制約、およびKoszul性・周期性・基礎AS性を含む十条件の同値性を得る。
@@ -127,7 +127,7 @@ AS添字$n+5$のみから語長二次性を導くことはできない。
 従ってAS添字だけを仮定する一般構造予想には、
 Koszul定理へ帰着する以外の認識法が必要である。
 
-\subsection{中心となる構造定理}
+\subsection{一般次元の二段Ore認識：添字付き対象の十分条件}
 次の定理が、一般次元の認識問題を二つの関係数へ還元する。
 添字付きOre表示の定義には、整列語による一意なPBW分解を含める。
 従って交換関係を書けることだけをOre表示とは呼ばない。
@@ -147,6 +147,14 @@ $A\in\mathcal Q_n^{\mathrm{dom}}$とし、$B$を純jump 1部分とする。
 定理\ref{igraph:thm:normal-z-ore}と
 定理\ref{genidx:thm:as-base-ore}による。
 \end{proof}
+
+定理\ref{intro:thm:recognition}により、任意$n$で
+\emph{純jump $1$部分$B$が左右AS正則次元$n$であること}、
+または\emph{混合二次関係数$r_3(i)=n,\ r_5(i)=1$が全始点で成立すること}は、
+添字付き二段Ore表示の簡潔な十分条件である。
+いずれも必要十分条件であり、標準Hilbert級数、noetherian性、
+Koszul性、1周期性を追加仮定しない。
+ただし、通常の次数付き代数への下降はこの結論に含まれない。
 
 \begin{theorem}[Koszul対象の構造]\label{intro:thm:koszul}
 任意の$n\ge1$と語長Koszulな$A\in\mathcal Q_n^{\mathrm{dom}}$について、
@@ -170,6 +178,59 @@ $A\in\mathcal Q_n^{\mathrm{dom}}$とし、$B$を純jump 1部分とする。
 AS双対性とHilbert行列の最高係数からPBW分解と基礎のAS正則性を導く。
 Koszulの場合には、双対の正規元の商の差次数が0と2に限られることを使って、
 認識に必要な二つの関係数を強制する。
+
+\subsection{通常の次数付き対象：二つの十分条件}
+添字付きの場合とは別に、通常の連結次数付きAS正則整域では、
+語長二次性を仮定しない二段Ore認識も得られる。
+次の定理では、結論の二段Ore表示は添字付き表示ではなく、
+元の重み次数を保つ通常の次数付き代数の表示である。
+
+\begin{theorem}[通常の次数付き対象の二段Ore表示：十分条件]
+\label{intro:thm:graded-sufficient}
+$k=\mathbb C$、$n\ge1$とし、$A$を連結局所有限・左右noetherianな
+AS正則整域とする。最小生成元次数を$(1^n,2,3)$、
+大域次元を$n+2$とする。次のいずれかを仮定する。
+\begin{enumerate}
+\item AS添字が$n+5$であり、重み斉次な最小生成元の持上げに対し、
+全生成元を語長$1$とする第二次数が元の重み次数と両立する。
+\item 増大イデアル$I=A_+$に対し、$\gr_I A$が
+$I$次数に関してKoszulな整域である。
+\end{enumerate}
+このとき$B=k\langle A_1\rangle$はKoszul AS正則整域で、
+$\gldim B=n$であり、ある次数付き自己同型と捩れ導分によって
+\[
+ A\simeq B[z;\sigma,\delta_1][w;\tau,\delta_2],
+ \qquad \deg z=2,\quad \deg w=3
+\]
+と書ける。さらに
+\[
+ H_A(t)=\frac{1}{(1-t)^n(1-t^2)(1-t^3)},
+ \qquad \operatorname{ASind}A=n+5
+\]
+となる。(1)では$\delta_1=0$とでき、$A$自身が語長Koszulである。
+(2)ではAS添字を仮定せず、非語長斉次の関係を許す。
+\end{theorem}
+\begin{proof}
+(1)は命題\ref{prop:index-compatible-word-grading}、
+(2)は定理\ref{thm:koszul-tangent-ore}による。
+\end{proof}
+
+条件(2)は$zx-xz=x^3$のような非二次の導分を許す
+（命題\ref{prop:nonquadratic-ore-family}）。
+従って、AS添字$n+5$と標準Hilbert級数だけから語長二次性を
+導こうとする方法は成立しない。
+これらの十分条件が一般のAS正則整域で自動的に成立するかは未解決である。
+
+\begin{corollary}[四次元の通常次数付き対象]
+\label{intro:cor:graded-n2}
+通常の連結局所有限・左右noetherian AS正則整域$A$について
+$\gldim A=4$、$\operatorname{ASind}A=7$、
+最小生成元次数$(1,1,2,3)$なら、
+追加の語長次数や付随環の条件なしに通常の二段Ore表示が成立する。
+\end{corollary}
+\begin{proof}
+系\ref{spec:cor:index-seven-ore}による。
+\end{proof}
 
 \subsection{低次元の分類、下降、および未解決範囲}
 各次元で得られる結果を表\ref{intro:tab:scope}にまとめる。
@@ -228,28 +289,6 @@ $n=4$では、これは定理\ref{n4:thm:equivalent-criteria}の十条件の自�
 本稿の対象に属する非Koszul例は構成していない。
 高次元のEuler行列式の因子分解も証明するが、行列式の一致を
 Hilbert行列の一致やPBW分解へ読み替えない。
-
-\subsection{通常の次数付き対象の簡潔な十分条件}
-通常の連結局所有限な左右noetherian AS正則整域で、最小生成元次数が$(1^n,2,3)$、
-大域次元が$n+2$、AS添字が$n+5$である場合には、
-全最小生成元を語長1とする、重み次数と両立した第二次数の存在だけで、
-語長Koszul性と通常の二段Ore表示が従う
-（命題\ref{prop:index-compatible-word-grading}）。
-語長二次性や標準Hilbert級数はこの判定の結論である。
-
-非語長斉次の関係を許す自然な判定もある。
-$I=A_+$に対する$\gr_I A$が語長次数に関してKoszulな整域なら、
-定理\ref{thm:koszul-tangent-ore}により
-$A=B[z;\sigma,\delta_1][w;\tau,\delta_2]$となる。
-ここでは$A$のAS次元$n+2$と最小生成元次数を固定するが、
-AS添字$n+5$と標準Hilbert級数は結論である。
-証明では固定重みごとの有限なbar filtrationによりExtを比較し、
-既知のFrobenius判定\cite[Corollary D]{LPWZKoszul}で付随環のAS性を認識した後、
-重み1、2、3を使ってOre表示を持ち上げる。
-$zx-xz=x^3$を許す例もこの条件を満たすが、第二次数の条件は満たさない。
-これらの十分条件が全ての対象で自動的に成立するとは主張しない。
-ただし$n=2$では、系\ref{spec:cor:index-seven-ore}により、
-AS添字7を固定した基本仮定だけから標準Hilbert級数と非二次のOre網羅定理への適用が従う。
 
 \subsection{先行研究との関係}
 AS正則性から得られる最小解消の双対性とExt代数のFrobenius性は既知である
