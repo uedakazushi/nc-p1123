@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 22,
+  "version": 23,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -113,161 +113,25 @@
       "EULER-JUMP-CONGRUENCE",
       "D3-FULL-R5-EULER-FACTORIZATION"
     ],
-    "logical_review": "The root and two specialist AI agents independently audited the full arbitrary-n indexed Koszul theorem. They checked dual mixed-projection surjectivity, ideal normality of zeta, support {0,2} of E/(zeta), both local AS complement arguments, and the crucial D4 vanishing F^(d-2)=0 from its partner E^2_e4=R6*=0. This excludes every formerly apparent Koszul exception without a matrix generator-bound assumption. The D3 two-saturated-class theorem was independently audited by the root and two specialists. They verified exact classwise constancy at every fixed epsilon, rational analytic kernel selection at arbitrary corank, pointwise low-order equations, the forbidden cubic tensor, defect propagation and both directions of the finite one-z collapse. The proof applies to every n under D3 and every Q4dom regardless of N. Current N4 three-divisibility and nozz proofs retain their completed internal audits. These are mathematical/internal AI audits, not formalization, external peer review or verified novelty. The root and a specialist independently verified the classical Heisenberg comparison, its quadratic presentation and central commutator, PBW Hilbert series/domain argument, exact nonKoszul Hilbert obstruction, exterior quadratic dual and the general augmentation-indecomposable formula for Lie enveloping algebras. This verifies a known comparison example outside the target, not existence or nonexistence of nonKoszul Qn_dom objects. For the hypothetical N9 branch, the root and specialist checked the E3 word4/5 annihilation and complementary pairing by word support. The root additionally checked that all E3 word>3 components inject into E/(zeta), and that a nonzero word4/5 pair forces odd excess in this quotient. These statements do not assert that the branch or its central components exist. The root and specialists checked the nozz normal-word growth proof and removal of the independent all-r5 assumption. The root read the primary Issa-Lalin Theorem1.2 and Section4, and Smyth Corollary1; the Mahler face proof was independently checked for positive specializations, Jensen equality, multiplicities and parity descent to Z[u,v]. The root checked the full-matrix trace derivation of the all-r5 third-order moment, and the specialist reported exact symbolic matrix verification at L9,L12. The leading kernels of the two-saturated residual and diagonal cubic Ext bounds were algebraically audited. These are written proofs and internal AI audits, not formalized or externally peer-reviewed results; novelty remains unverified. The root and three specialists independently audited the D3 full-r5 Euler determinant factorization for arbitrary n and every L. They checked top-word uniformity via AS trace cyclicity, pure-B top Tor and its leading determinant, the signs of both reciprocities, the jump-congruence support, polynomial descent under (u,v)=(x^2,y/x), the infinity-degree estimate for detJ, and the even-L central coefficient after subtracting the z factor. The theorem is analytic and algebraic, not a finite-enumeration result.",
-    "new_reviewed_claims": [
-      "D3-EXACT-BOUNDARY-KERNEL",
-      "LOCAL-SQUARE-R5-OBSTRUCTION",
-      "SINGLE-Z-COLLAPSE",
-      "D3-TWO-SATURATED-CLASSES",
-      "EULER-MAHLER-FACE-FACTORS",
-      "NOZZ-FULL-R5",
-      "D3-TWO-SATURATED-LEADING",
-      "D3-FULL-R5-MOMENT",
-      "N4-CUBIC-CORNER-BOUNDS",
-      "NOZZ-PERIODIC-SATURATION",
-      "EULER-JUMP-CONGRUENCE",
-      "D3-FULL-R5-EULER-FACTORIZATION"
-    ],
-    "reviewed_dependencies": [
-      "GEN-AS-TRANSLATION",
-      "GEN-R5-GS-SATURATION",
-      "N4-TOP-EXCESS",
-      "N4-TOP-WORD-DIVISIBLE-THREE",
-      "N4-PURE-NUMERICS",
-      "INDEXED-NORMAL-Z-ORE",
-      "ONE-HEAVY-PERIODIC-GS"
-    ],
+    "claim_status_and_proof_locations": "research/STATE.json; complete proofs in the current paper and notes. A written proof is distinct from the bounded current review below.",
+    "publication_revision_audit": {
+      "date": "2026-11-19",
+      "status": "completed_internal_reading_no_definite_error_identified",
+      "scope": [
+        "General mixed-rank/Ore recognition and arbitrary-n Koszul proofs with direct normal-quotient/bar dependencies.",
+        "n=1 normal forms, inverse constructions, isomorphisms, periods and explicit reflected-opposite formula.",
+        "Two-period three-generator AS recognition and n=3 descent/derivation extension.",
+        "Graded coefficient/isomorphism results and four-dimensional non-word-quadratic Ore proof.",
+        "Ten-condition n=4 equivalence: dependency structure, taking the numerical input lemmas as premises.",
+        "New common AS lemma, introduction summaries and six-part reordering."
+      ],
+      "limits": [
+        "Not a fresh complete audit of every n=3/n=4 numerical lemma or high-dimensional Euler determinant proof.",
+        "Not formal verification, external peer review or a completed novelty investigation."
+      ],
+      "retained_existing_main_labels": 282
+    },
     "scope": "All word-Koszul Qn_dom objects have full indexed Ore for every n; the original nonKoszul problem remains open for n>=4. Every Q4dom has D3 and 3|N,3|L. Every D3 object with 3|L has at least two whole saturated r5 classes, with the proved pointwise r4 constraints. For arbitrary n with D3 and all r5=1, detP=detPB det(I-uvS^2) det(I-uv^2S^3), without 3|L, Koszul, noetherian, H or B-AS assumptions. The first unresolved n4 word is N9/L12; neither the determinant factorization nor the local bounds settle its existence or exclude it. Nozz implies full r5 at every period, and a period not divisible by six gives full ordinary skew Ore. No nonKoszul target example has been constructed or identified in the primary sources checked; residual possibilities are hypothetical.",
-    "checked": [
-      "Yoneda perfect pairings from finite resolutions and AS duality",
-      "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
-      "Relation projection upper bounds and the seven-row Euler deficit inequality",
-      "Finiteness and uniform comparison of word-Hilbert series without assuming noetherianity",
-      "Normal degree-two generator family giving an isomorphism of the full Z-algebra with its two-shift",
-      "One-periodicity from the subgroup of periods, without assuming commuting period isomorphisms",
-      "Word-preserving descent to an AS-regular graded domain",
-      "Rogalski-Zhang normal quotient theorem applied in word degree one, with no noetherian hypothesis",
-      "AS3 top-syzygy projections and relation preservation without assuming the quotient is a domain",
-      "PBW spanning and Hilbert comparison, Ore compatibility equations, reverse construction and noetherianity as a consequence",
-      "Replacing jump-one injections by regular jump-two generators in the seven-row Hilbert comparison",
-      "Z-domainness equivalent to full-degree left/right regularity of seven selected z_i; no finite-degree decision claim",
-      "No circular domain assumption in the route normal regular quotient AS3 -> noetherian -> AS4/GK4 domain",
-      "Excess-zero bar complex, length-two simple resolutions and the endpoint Hilbert recurrence for the pure-jump-one subalgebra",
-      "Two independent actual Hilbert rows control every monodromy mode; parity of the seven-fold trace and the width-14 boundary",
-      "Monomial quotient excluding two zero weight-five relation spaces at distance three",
-      "Forbidden high-weight cubic syzygies and nonnegative Hilbert coefficients restrict two-dimensional pure-jump-one relation spaces",
-      "Over the algebraically closed field, a two-dimensional relation space admits a decomposable annihilator; extension along one-dimensional relations excludes finite width",
-      "Distinction between a one-dimensional relation space and nondegeneracy of its defining tensor",
-      "Augmentation-filtration linearization, vertex scalar gauge and finite matrix conditions for bare indexed-isomorphism existence",
-      "Orientation of c/c_prime, P tensor P_1, and the two initial derivation conditions; explicit isomorphism in both directions",
-      "Diagonal involution, scalar-matrix exceptional locus, all root-of-unity parameters, fixed locus and dimension-three finite quotient",
-      "The weight-four cubic Koszul intersection gives r_3(i)+r_3(i+1)<=5 without a relation-projection injectivity hypothesis",
-      "The seven-periodic Hilbert matrix uses word length and excess, with P=(I-uvS^2)(I-uv^2S^3)(I-uS)^2+u^2(v Delta S^3+v^2 S^4 Delta)",
-      "Polynomial row growth gives convergence for 0<u<1 and 0<=v<=1; coefficientwise domination of the pure-jump-one part forces det P(1,v) identically zero",
-      "The adjugate of (I-S)^2 is 7 times the all-ones matrix, so the linear v coefficient is 7 sum(delta_i)",
-      "Exact enumeration of 890 mean-zero adjacent-bounded integer arrays leaves only delta=0 singular at u=v=1",
-      "With all ranks fixed, multiplication by the constant vector and (u,v)->(ut,t) yields the stated two-variable Hilbert series for every row",
-      "Current summaries and seven-window description use the proved equality Q=H=S and do not retain a hypothetical nonstandard numerical locus",
-      "Opposite one-sided R_5 relations at distances 2 and 4 create forbidden cubic syzygies; distance 3 gives a verified monomial quotient with two prefix-distinct weight-42 code words and exponential row growth. No full exclusion of one-sided degeneration is asserted.",
-      "For n=1, the E^1/E^2 perfect pairing fixes top word length 3; domainness excludes weight-two and weight-six relations, so AS duality forces translation 6 and relation weights 3,4,5.",
-      "The two decompositions of the n=1 top Koszul tensor force both wx/xw coefficients nonzero; the exact resolution Euler recurrence yields the full standard Hilbert series, not only low-degree agreement.",
-      "General n=1 Ore compatibility is a_i c_i b_(i+2)=a_(i+3)b_i c_(i+1) and c_i d_(i+2)=a_(i+3)d_i. Normalization gives a=b=1, constant c and c d_(i+2)=d_i.",
-      "All residual word-linear basis changes preserve c and multiply the entire d sequence by one nonzero scalar. Augmentation-filtration linearization extends this existence criterion to bare indexed isomorphism.",
-      "The shift-one action is (alpha,beta)->(beta,c^(-1)alpha), giving alpha^2=c beta^2 as the exact period-one condition, including the zero pair. Shift two is always scalar-equivalent.",
-      "For the reverse construction, the sole PBW ambiguity, explicit differentials d1d2=d2d3=0 and both top tensor expansions were checked symbolically for both source parities with general parameters.",
-      "The w-count associated graded is the check algebra of k[x,z][w;tau], tau(x)=x, tau(z)=c z; it proves domainness and left/right noetherianity by leading terms and lifting finite generators.",
-      "Exact left and right Koszul resolutions and nondegenerate top pairings establish both AS conditions. The bimodule Koszul resolution bounds global dimension for all unital modules, not just simples.",
-      "The n=1 counterexample (c,alpha,beta)=(1,1,0) has alternating zz-projection ranks and cannot be check(D) for any single graded algebra D.",
-      "The excess-zero bar subcomplex is exactly the pure jump-one bar complex, with no new pure relations from positive excess.",
-      "For n3, D>=4 would give all pure-base simples projective dimension at most two; periodic row Hilbert ratios force an interior pole and exclude this.",
-      "In the pure-base numerical lemma, domain multiplication and the algebraically closed-field Segre dimension bound imply a common folded Hilbert pole of order at least two with leading coefficient cJ.",
-      "P(1)J=JP(1)=0 and JPprime(1)J=0 give r_i=2+q_i, q_i=q_(i+s-2), (s-2)sum q=L, leaving only s3 or s9.",
-      "The exceptional s9/L14 pattern folds to seven vertices and has determinant (1-u^7)^2(1-64u^7), contradicting polynomial growth at an interior positive root.",
-      "The mixed-rank row Hilbert limit gives a_i=b_(i+4), b_i=a_(i+5); period eight forces constancy. Positivity of the full inverse Hilbert polynomial forces a=b=3.",
-      "General AS-base Ore needs B itself ASn. AS pairings force D3 and r5=1, then multiplication by z dual forces r3=n, yielding a normal regular z family.",
-      "B has periods 2, L_B and L_B+5, so is period one without a commutativity assumption on periodicity maps.",
-      "The first Ore mapping cone is minimal without Koszulity. Low-excess bar components and full AS duality give all four Tor strands and the exact Hilbert product.",
-      "The weight-four relation projections are both isomorphisms by AS pairings; ordered spanning plus the exact Hilbert product proves PBW. Associativity and uniqueness prove indexed theta homomorphism and delta derivation identities.",
-      "The general R5 monomial quotient growth bound counts nonzero positions; using their sum as the count additionally uses the domain rank bound. The notes describe the exact limitation of that quotient test.",
-      "Quadratic standard Hilbert and domain give the exact left/right 1331 complexes: K3 has dimension one; its nonzero linear coefficient makes the top map injective; the remaining kernel has the same Hilbert series t^3 H. Koszulity is a conclusion of the period-two recognition theorem.",
-      "The two-period fold is an actual graded category using powers of one fixed periodicity isomorphism. Highest-degree terms preserve composable-domainness, and polynomial growth gives corner Ore fractions.",
-      "Faithful localization preserves all alternating product spaces X,Y. An independent corner realization x->xh(gh)^(-1), y->gy verifies the same multiplication and dimensions.",
-      "Domain relations contain no decomposable tensors. Segre dimension excludes flattening ranks 32/23; rank-one flattenings are also excluded. A rank22 tensor has full middle support and a rank-two defining hyperplane, yielding ua x+ub y+vb x+vc y.",
-      "For different supports U,W in a common three-dimensional X, the partial isomorphism has exactly the two cases determined by whether its common line is preserved. After framing, c q c^(-1)=lambda t or t^(-1).",
-      "The equalities dim XY=dim YX=6 force q=f(t) and c t c^(-1)=h(t) in k(t). f composed with h has degree one, so f is Möbius and dim XY<=5, contradiction.",
-      "For equal supports, conjugation by c is Möbius on k(t), and every alternating product has poles bounded by a divisor of degree O(m). This contradicts dim B_(0,2m)=binom(2m+2,2).",
-      "Nondegenerate top pairings identify dual right Koszul complexes with shifted left ones. The standard length-three Koszul bimodule resolution is split exact on each side and bounds global dimension for all unital modules.",
-      "N3-INDEXED-ORE uses numerical forcing, actual period two of B, the independent AS3 recognition theorem and the all-n conditional Ore theorem. B period one follows from periods two and AS translation three. N3-GRADED-DESCENT subsequently proves final A period one by extending the coefficient shift.",
-      "For n3, delta(R) gives mu_i(id tensor L_(i+1))+(sigma_i sigma_(i+2))(L_i tensor id)=0. Nondegenerate top tensors imply full relation supports, so adjacent correction functionals vanish together. All-zero corrections give a normal w family and period three; periods two/three give final A period one. N3-GRADED-DESCENT settles the all-nonzero branch as well.",
-      "Normal-z strict two-period framing gives sigma_i=id and c_i=1. The second Ore exchange has M_(i+2)=M_i and preserves z. Descending C via theta and the strict two-shift, with g_(i+1)=g_i M_i, makes the z and w exchange coefficients equal to one constant base automorphism S.",
-      "The coefficient identities ell_(i+2)=ell_i S and (id tensor ell_(i+1)+ell_i tensor S)(R)=0 imply a well-defined invertible T on E=span ell_i, because R has full left/right support and both projections of K are injective.",
-      "For dim E0 take P=id; for dim E1 take a scalar. For dim E3, P^2=S and flipping the tensor identity twice gives (P tensor P)r=r for every relation.",
-      "For dim E2, the exact block equations are A Q^T+Q^2 A^T=0 and c Q^T+s A^T+nu b^T=0. The kernel maps injectively to b, and the cyclicity of E rules out scalar Q. Matrix solutions and the domain prohibition on rank-one relations leave only distinct reciprocal eigenvalues or the Jordan block at one.",
-      "In the reciprocal case the simultaneous elimination of d_x and s_x, and then d_y and s_y, includes all resonances nu=lambda and nu=lambda^2. The resulting three relations are preserved by diag(lambda,lambda^(-1),1).",
-      "In the Jordan-one case the canonical unipotent square root P=S_u^(1/2) preserves R: P tensor P is the polynomial unipotent square root of the unipotent part S_u tensor S_u of S tensor S. It commutes with S and induces Q on V/W.",
-      "The resulting period-one isomorphism fixes z and w. Changing frames by P^i yields R_prime=(id tensor P)R, sigma_prime=SP^(-2), tau_prime|V=SP^(-3), delta_prime(v)=(ell_0 P^(-3))(v)z^2. The base change is a Zhang twist and need not be a graded isomorphism.",
-      "Rogalski-Zhang Lemma1.3(a) applies to C_prime in word grading, with every V and z generator in degree one. Its noetherianity and the automorphism Ore Hilbert basis theorem imply D left/right noetherian, hence all representable row/column modules of check(D) are noetherian.",
-      "Periodic pd<=3 Euler has a common folded Hilbert pole hJ of order at least two; row/column balance yields a balanced weighted graph. The symmetric Euler form is positive definite on constants-perpendicular for m>=4.",
-      "For the simple eigenvalue lambda, the Hilbert pole forces lambda_prime(1)=0. The exact identity L lambda_second(1)/2=(4-m)L/2-E_m(x)-sum a_(i,l)(l+x_i-x_(i+l))^2/2 is strictly negative, contradicting the nonnegative inverse applied to a positive eigenvector.",
-      "N4 D>=4 would kill pure Ext in degrees 4,5,6, contradicting the pd3 obstruction. D>=3 follows from domain R6=0 and the weight-five growth obstruction.",
-      "N4 pure resolution shifts, q_i=r5(i+s), q in {0,1}, not all zero, row rank balance and first Laurent moment all follow before assuming Koszulity.",
-      "For n4 N6, p_i=2+q_i+q_(i-1),r_i=5+q_(i-1); P_B=F(F^2-u^2 Delta S^2)F. Any missing q makes a nonnegative G spectral radius cross one inside (0,1), contradicting polynomial growth.",
-      "N4 mixed AS complement shifts are c_(i+5),b_(i+5),a_(i+6); row and first-moment identities give b_i=a_(i+5),c_i=a_i+a_(i+1)-2. Exact P=F K F and adj((I-S)^2)=9J imply det K(1,v)=-9(sum alpha_i)v+O(v^2).",
-      "A nonzero mixed defect gives a Hilbert pole of order at most two for fixed small positive v, contrary to coefficientwise domination of the pure-base pole of order four. Thus all standard ranks/H and periods two/nine give period one.",
-      "N4 uniform pure Hilbert rows imply identical scalar Euler polynomials, q_i=1 and positive common r. Unit roots and reciprocity contradict r=-p_(s-2)<=0 for s>=5. Intrinsic B is preserved by bare A period-one maps, giving the first six of the ten equivalent criteria.",
-      "For ordinary finite Koszul polynomial-growth algebras, root products force top Betti one and generator number <= global dimension; equality forces all roots one. Applied to pure B and A, domain relation projections and AS complementary strands force all standard bigraded numerics.",
-      "Alternating bar tensors are nonzero over k or a product of vertex fields, and have no incoming boundary in their diagonal word degree.",
-      "Normal-square cancellation occurs in the original domain, not in its quotient; nonzero v,w survive the quotient because their jumps differ from z.",
-      "Rogalski-Zhang Lemma1.1/Corollary1.2 applies in word degree one without noetherianity. The finite semisimple extension is proved via the two-row spectral sequence and minimum internal degree, not an unjustified degeneration claim.",
-      "The finite-fold quotient preserves jump grading and unfolds finite simple resolutions/AS shifts; separability of the degree-zero algebra gives a finite minimal bimodule resolution for all unital modules.",
-      "Indexed standard-H theorem assumes the full two-variable row Hilbert series. The normal-z mixed-rank theorem has no H/Koszul assumption and does not alone claim non-Koszul PBW.",
-      "For the Koszul normal-z theorem, the w-count-zero normalized bar summand identifies Ext_B and proves B Koszul before transferring the Frobenius form. The top w-count is uniformly one; eta multiplication is an isomorphism.",
-      "The n4 pure-Euler certificate uses a cofactor-degree bound and a 40-residue quadratic formula to prove positivity and Hopf inequalities for all degrees. It does not construct an algebra.",
-      "The coefficient -942 is the individual pencil obstruction. The separate three-divisibility theorem excludes every AS-domain parent extension of the N7 pure formal model.",
-      "The exact w^j coefficient ideal is I_j=F(R+mu R+...+mu^j R)F; mu(R)=R is not assumed in this step. Stabilization takes place in finite-dimensional F2.",
-      "The highest Q bidegree has J=(L_A-N_A-1)/2 and a=N_A-1-J, uniform over the folded vertices. Nonnegative bar bidegrees and AS duality imply J>=1.",
-      "P_J=(-1)^d*x^a*Pi*P_0(x^-1)^T is invertible over Q((x)); therefore P_J G_N cannot vanish. The equation P G=I-tT forces J1 and G constant. This is not an invalid determinant or arbitrary-matrix degree argument.",
-      "Equal Hilbert matrices for the nested coefficient ideals imply equality in every finite component; the degree-two comparison gives mu(R)=R. Returning to the original cover gives a regular normal jump-three family and the second AS quotient.",
-      "The new periodic R5 saturation proof was independently checked by the root and two agents. The explicit positive-weight curve respects b^2=ac and convergence; the Poisson correction of an orbit-constant positive left vector avoids any unjustified analytic perturbation of a multiple zero eigenvalue. Only one saturated mod-three class is concluded when 3 divides L.",
-      "The N4 top-word theorem covers every N not divisible by three, not merely a fixed N7 formal model. Its remaining non-Koszul words are N=9,12,15,... .",
-      "Nozz is explicitly additional and invariant only for the fixed word grading and jump-preserving basis changes. Koszulity is required in the Frobenius recognition result; the second periodic result requires an actual period not divisible by six; all r5=1 is now a proved consequence of nozz at every period.",
-      "General pure tail lower bounds sum_j p_ij>=2q_i and r2_i>=3+q_i follow from cancellation and minimal exactness even without word concentration.",
-      "The formal matrix generator-bound obstruction is not an algebra and fails domain component comparison; it is not a counterexample to the target theorem.",
-      "The Koszul recognition uses only E zeta=zeta E, not an unproved normalizing automorphism for the dual zero-divisor.",
-      "In the last D4 case the AS complement of eta has homological degree d-1 and excess 2, while its quotient component is Fbar^(d-2) eta. AS pairing with E^2_e4=0 proves this component vanishes.",
-      "The N9 exact-two-saturated-class equality requires gamma_(r+1)!=0. No condition is extrapolated to the degenerate branch or from an average to individual ranks.",
-      "The classical quadratic Heisenberg AS5 example has four minimal generators and is outside Qn_dom; C! is exterior4 modulo the symplectic form, has H=1+4t+5t^2 and is not full Ext. For finite-dimensional positively graded Lie g, augmentation indecomposables equal g/[g,g], so equality of minimal generator count and AS dimension forces g abelian.",
-      "Exact heavy-boundary K kernels at every fixed epsilon and rational analytic normalization without corank-one",
-      "Local square relation producing nonzero forbidden Tor3(word3,excess4), with both exact index patterns",
-      "Finite-window one-z independence and forward/reverse common-z injections into dimension n",
-      "D3 two saturated mod-three classes and pointwise r4 constraints, valid for all Q4dom N",
-      "Nozz partial wz rewrite basis and equal-jump exponential-growth words giving full r5",
-      "Mahler-zero Euler determinant and integer face divisibility with polynomial parity descent",
-      "Two-saturated leading supports and the global full-r5 x3 trace identity",
-      "Diagonal cubic Ext bounds and the forced lower pure syzygy at adjacent r5 defects",
-      "Euler jump-congruence and automatic vanishing of x4/x5 when 3|L",
-      "General-n D3 all-r5 pure-base top degree/rank and reciprocal determinant signs",
-      "Complete D3 all-r5 Euler determinant factorization via the infinity-degree bound, including even-L central terms"
-    ],
-    "primary_sources_checked": [
-      "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
-      "Van den Bergh, arXiv:0807.3753v3, Lemma 3.4",
-      "Rogalski-Zhang, arXiv:1101.1998v2, Lemma 1.1, Corollary 1.2; Lemma 1.3(c) as an alternative route, and Lemma 1.3(a) in word grading for the n3 first Ore stage",
-      "Sierra, arXiv:math/0608791v3, Theorem 1.2 = Corollary 4.4",
-      "Lu-Palmieri-Wu-Zhang, author PDF hiext.pdf, Lemma 1.3 (noetherian connected AS4 with GK dimension 4 is a domain; attributed there to ATV2, 3.9)",
-      "Auroux-Katzarkov-Orlov, published PDF, Proposition 2.6, known weighted diagonal family",
-      "Vitoria, arXiv:1001.4400v3, degree-one setting and Theorem 2.5 / Remark 2.6, for comparison only",
-      "Cooney-Grabowski, arXiv:1807.06383v4, Definition 1, Lemma 5 and Theorem 12, degree-one geometric-algebra scope, not directly applied",
-      "Reyes-Rogalski, arXiv:1808.10538v1, Proposition 2.8; matrix-Hilbert growth comparison only, not a direct application proving the weighted four-dimensional theorem",
-      "Van den Bergh, arXiv:0807.3753v3, Definition 4.1.1 and Theorem 4.2.2: the ordinary three-dimensional quadratic type has three adjacent-jump generators, so that period-one theorem does not apply to primitive jumps (1,2,3).",
-      "Kabbaj, arXiv:2501.11346v1, Corollary 2.5, Definition 3.2, Theorems 3.4, 3.9, 3.10: checked as a scope comparison, not used to infer arbitrary-n indexed Koszulity.",
-      "Iyudu-Shkarin, arXiv:1806.06844v1, Theorem 1.11, Remark 1.15, section 12.1, printed page 78: over an algebraically closed field of characteristic not 2 or 3, ordinary quadratic H=(1-t)^(-3) domains are exactly AS3 algebras. Used for ordinary graded comparison only; not a premise of the direct two-period recognition theorem.",
-      "Rogalski-Sierra, Some noncommutative projective surfaces of GK-dimension 4, arXiv:1101.0737v2, Theorem 1.1 and resolution (1.2), Theorem 1.6: known noetherian Koszul domains of global dimension four with standard 14641 linear resolution but not AS-Gorenstein, over an uncountable algebraically closed field including C.",
-      "Rogalski-Zhang, Regular algebras of dimension 4 with 3 generators, arXiv:1101.1998v2, Lemma1.1 and Corollary1.2: finite-global-dimension and AS regularity pass across a regular normal degree-one quotient; no noetherian hypothesis. The proof is applied to word grading and adapted in-text to finite semisimple degree zero.",
-      "Floystad-Vatne, arXiv:0911.5129v3, Theorem 2.1 (PDF p.6), Remark 3.2 (PDF pp.9-10): finite-dimensional positive graded Lie enveloping AS theorem and the explicit quadratic Heisenberg AS5 nonKoszul resolution. Root and specialist read the original text.",
-      "Issa-Lalin, A generalization of a theorem of Boyd and Lawton, arXiv1203.5379v1, Theorem1.2(s=1) and Section4; publication journal reference CMB56(2013)759-768 and DOI10.4153/CMB-2012-010-2 verified on arXiv. Root read the original PDF.",
-      "Smyth, A Kronecker-type theorem for complex polynomials in several variables, CMB24(4)(1981)447-452, DOI10.4153/CMB-1981-068-8, Theorem1,Corollary1 and face-polynomial proof: root read publisher PDF. Used as comparison for known Mahler theory, not an unproved new factorization premise."
-    ],
     "formalized": false,
     "peer_reviewed": false,
     "novelty_confirmed": false,
@@ -298,17 +162,53 @@
       "A nonKoszul example satisfying all Qn_dom hypotheses, or a completed literature-wide nonexistence claim for such examples",
       "An Euler-matrix factorization, rowwise Hilbert product, PBW decomposition or full r3 ranks from the proved scalar Euler determinant identity alone"
     ],
-    "literature_followup": "Finite-vertex Frobenius Ext is covered by the retained MVS primary-source comparison. HVZ arXiv1304.3799v2 Proposition2.2 computes the Ext of an already known ordinary Koszul skew extension; the current theorem instead recognizes arbitrary indexed Koszul objects using quotient support and AS complements. The theorem is proved directly. Specific novelty of this recognition, N4 three-divisibility, the D3 local saturation theorem, the nozz strengthening and the Euler face-factor application remains unconfirmed; no external review or formalization is claimed. The nonKoszul Heisenberg example is classical and explicitly attributed to Floystad-Vatne; the current research does not assert any new nonKoszul example. Exhaustive existence/nonexistence status in the exact indexed class remains unresolved. The Issa-Lalin limit theorem and Smyth Mahler classification are established results. Their specific Euler applications and the one-z local obstruction still require a dedicated novelty comparison. The new full-r5 D3 determinant factorization is proved in the current manuscript and internally audited; its specific novelty has not been established by an exhaustive comparison."
+    "primary_source_details": "research/BASELINE.md records bibliographic identifiers, exact locations, verified scope and unresolved source questions.",
+    "current_literature_review": {
+      "primary_texts_compared": [
+        "Martinez-Villa-Solberg: Lemma 6.1(b), Theorem 6.2",
+        "Rogalski-Zhang: Lemma 1.1, Corollary 1.2 and Lemma 1.3",
+        "Lu-Palmieri-Wu-Zhang: Lemma 1.3",
+        "Van den Bergh: Lemma 3.4, Definition 4.1.1, Theorem 4.2.2",
+        "Sierra: Theorem 1.2 / Corollary 4.4",
+        "Liu-Wang-Wu: Ore-extension theorem and connected graded scope",
+        "Iyudu-Shkarin: Theorem 1.11 and ordinary three-generator scope",
+        "He-Van Oystaeyen-Zhang: Proposition 2.2",
+        "Carvalho-Lopes-Matczuk: Definition 1.1, Theorem 2.2(a),(b)"
+      ],
+      "publication_metadata_updated": [
+        "Floystad-Vatne",
+        "He-Van Oystaeyen-Zhang",
+        "Reyes-Rogalski",
+        "Carvalho-Lopes-Matczuk"
+      ],
+      "limits": "No exhaustive novelty determination. ATV2 original proof and full classification-table comparison remain unverified as specified in BASELINE. The publication summaries state the assumptions of known results and separate them from the manuscript conclusions."
+    }
   },
   "exact_computation": {
-    "current_analytic_results": "Bar obstruction, ordinary/indexed Ore theorems, GS rank forcing, Koszul normal-z recognition and the two-period s5 exclusion are algebraic/analytic proofs, independent of numerical sampling. The n4 formal obstruction and one mixed extension use the exact finite certificates described below, with proofs of their all-degree or coefficient implications in notes. The general non-Koszul graph-Ore and normal-z criterion uses no finite enumeration or parameter sampling. The D3 exact-kernel, cubic and finite-window collapse proofs and the nozz strengthening use no finite enumeration. The Mahler face theorem depends on the cited established limit theorem and a written Jensen equality proof. The complete D3 all-r5 determinant factorization uses a general degree estimate and reciprocity; no sampled rank array or computer algebra output is a premise.",
-    "current_symbolic_audit": {
-      "executed": true,
-      "scope": "Exact n3 mixed inverse Hilbert factorization and the full exceptional 7-by-7 Euler determinant, independently checked in the root session.",
-      "arithmetic": "SymPy exact polynomial/rational arithmetic; determinant computed from the full matrix using domain-ge. No floating-point or sampling.",
-      "result": "passed",
-      "reproduction": "The inverse Hilbert polynomial and 7-by-7 matrix P7 are written explicitly in papers/nc-p1123.tex. The manuscript proves the determinant by the rank-one formula. These supplementary checks are not computational premises of the theorem."
-    },
+    "executed_current_revision": true,
+    "python_version": "3.12.14",
+    "commands": [
+      {
+        "command": "python3 computations/verify_mixed_ranks.py",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 computations/weighted_baseline.py",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 computations/verify_skew_ore.py",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 computations/verify_n4_pure_euler.py",
+        "exit_code": 0
+      },
+      {
+        "command": "python3 computations/verify_n4_parent_mixed.py",
+        "exit_code": 0
+      }
+    ],
     "retained_mixed_rank_proof": {
       "script": "computations/verify_mixed_ranks.py",
       "certificate": "computations/mixed_ranks_certificate.json",
@@ -335,25 +235,21 @@
         3010
       ],
       "certificate_comparison": "passed",
-      "independent_audit": {
-        "executed": true,
-        "matrix_construction": "Directly from all terms of the seven-row Koszul Euler polynomial, independently of the collapsed C_delta formula",
-        "arithmetic": "Fraction-based rational Gaussian elimination; no call to the canonical Bareiss routine",
-        "cases": 890,
-        "all_determinants_agree": true,
-        "survivors_agree": true
-      },
-      "current_update_rerun": false,
-      "scope": "The unchanged exact 890-array n2 proof asset is retained. The new Ore structure theorems do not depend on a new enumeration; the separate formal n4 obstruction has its own exact certificate."
+      "current_update_rerun": true,
+      "scope": "The canonical 890-array proof was rerun with exact integer arithmetic and matched the retained certificate. No new independent implementation was executed in this publication revision."
     },
-    "reproduction_commands": [
-      "python3 computations/verify_mixed_ranks.py",
-      "python3 computations/weighted_baseline.py",
-      "python3 computations/verify_skew_ore.py",
-      "python3 computations/verify_n4_pure_euler.py",
-      "python3 computations/verify_n4_parent_mixed.py"
-    ],
-    "unchanged_scripts_not_rerun": "The retained n2 enumeration/baseline/skew-Ore scripts and certificates were unchanged and not rerun. The two new n4 certificate scripts were executed by the root.",
+    "weighted_baseline": {
+      "script": "computations/weighted_baseline.py",
+      "certificate": "computations/baseline_certificate.json",
+      "result": "passed",
+      "scope": "Hilbert/Euler, PBW and twisting baseline identities; retained certificate comparison."
+    },
+    "skew_ore": {
+      "script": "computations/verify_skew_ore.py",
+      "result": "passed",
+      "arithmetic": "SymPy exact symbolic arithmetic",
+      "scope": "Four rewriting overlaps and the four displayed parameter components of dimensions 6,5,5,4; does not classify all moduli."
+    },
     "n4_pure_euler_formal_certificate": {
       "script": "computations/verify_n4_pure_euler.py",
       "executed_by_root": true,
@@ -374,116 +270,121 @@
       "second_determinant_coefficient": -942,
       "scope": "Excludes one displayed mixed extension of the formal pure model; does not exclude all possible extensions."
     },
-    "current_displayed_identities": {
-      "status": "passed_exact_symbolic_check",
-      "engine": "Python sympy",
-      "scope": [
-        "N4 s5 two-vertex factorization and determinant",
-        "N4 s6 denominator value at one half equals -3/64",
-        "Explicit formal matrix-generator-bound inverse",
-        "Formal three-class pencil determinant and its exact positive left/right kernel identities"
-      ],
-      "proof_role": "Independent checks of displayed symbolic identities; the three-divisibility and nozz theorems have analytic proofs and do not depend on a finite search."
-    },
-    "heisenberg_comparison": {
-      "executed_by_root": true,
-      "arithmetic": "SymPy exact polynomial and integer matrix arithmetic",
-      "result": "passed",
-      "inverse_hilbert_polynomial": "1+4t+5t^2-5t^4-4t^5-t^6",
-      "wedge_matrix": [
-        [
-          0,
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0,
-          0
-        ]
-      ],
-      "wedge_determinant": 1,
-      "scope": "Supplementary verification of the displayed elementary identities; the known AS statement and minimal resolution are checked in Floystad-Vatne and not established by this calculation. All formulas needed to reproduce these small checks are in note:nonkoszul-existence."
-    },
-    "heavy_face_third_order": {
-      "executed_by_specialist": true,
-      "executed_by_root": false,
-      "root_algebraic_audit": true,
-      "arithmetic": "Specialist reports exact rational-function matrix checks at L9 and L12 with varying diagonal arrays; root separately verified the symbolic trace derivation in the current note.",
-      "result": "passed_internal_audit",
-      "identity": "[x^3] detP(x^2,y/x)/(1-y^(2ell))^3 = y^(2ell-1)/(1-y^(2ell))*(sum a+sum b-sum H-nL)",
-      "proof_role": "Supplementary checks only. The all-L proof and all matrices needed to reproduce it are in note:d3-full-r5-moment; no new script is a proof premise."
-    }
+    "proof_role": "The 890-array calculation is a premise of the general n2 mixed-rank proof. The formal n4 calculations have only the scopes specified in their notes; they do not construct an algebra. Other principal structure theorems have written algebraic/analytic proofs. No unexecuted supplementary symbolic checks are reported as current verification."
   },
   "project_structure": {
     "status": "passed",
     "command": "python3 scripts/check_project.py",
-    "scope": "Current files, local TeX labels/citations/environments, claim proof targets and resume inputs; not a mathematical or typesetting check.",
-    "additional_checks": [
-      "git diff --check",
-      "Claim dependency references and absence of dependency cycles",
-      "Exactly ten entries in n4 equivalent-criteria theorem"
-    ]
+    "scope": "Required files, local TeX labels/citations/environments, empty author fields, claim proof targets, version agreement, Markdown links and resume inputs. Not a mathematical proof check.",
+    "git_diff_check": "passed",
+    "original_main_labels_retained": 282,
+    "current_main_labels": 306
   },
   "typesetting": {
-    "status": "blocked_missing_lualatex_japanese_dependencies",
-    "attempted": true,
-    "pdf_generated": false,
-    "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
-    "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt failed before reading TeX source because lualatex.fmt was unavailable. The diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v17 main manuscript and v22 supporting sources have not been compiled or visually checked. The unchanged dependency blocker was not retested in this update.",
-    "required_dependencies": [
-      "LuaLaTeX with luaotfload",
-      "LuaTeX-ja including ltjsarticle and luatexja-preset",
-      "HaranoAji fonts",
-      "Working TeX file database and format configuration"
+    "status": "passed_with_font_warnings",
+    "pdf_generated": true,
+    "final_sources_compiled": true,
+    "engine": "LuaLaTeX / latexmk; LuaTeX-ja and HaranoAji fonts",
+    "commands": [
+      "latexmk",
+      "latexmk research/plan_ja.tex research/notes_ja.tex research/indexed_z_algebra.tex"
     ],
-    "layout_review_executed": false,
-    "sources": [
-      {
-        "source": "papers/nc-p1123.tex",
-        "source_sha256": "d8dd60d194edad468d14ad8d2c064731ef7bde446e0617248b92538cc345df66",
-        "current_pdf_verified": false
+    "documents": {
+      "papers/nc-p1123.tex": {
+        "source_sha256": "7324bf35b65b8ca9f9591f654ae7eac5317e1a7173a324ff03c7095c60feb854",
+        "pdf": "nc-p1123.pdf",
+        "pdf_sha256": "6d1d5add1ae5b4a2ba63d6bec7ffdaac0873a9b2da0fdabbbfbc6929ce47d911",
+        "pages": 129,
+        "exit_code": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "undefined_control_sequences": 0,
+        "undefined_references_or_citations": false,
+        "multiply_defined_labels": false,
+        "pdf_string_warnings": 0,
+        "selected_visual_review_pdf_pages": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          21,
+          22,
+          69,
+          70,
+          128,
+          129
+        ]
       },
-      {
-        "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "9a35326ef4bc5321ed45d5328078e119fc6c7e3ff6428f676d387b937229d626",
-        "current_pdf_verified": false
+      "research/plan_ja.tex": {
+        "source_sha256": "af552652e0fc57ddbaec9e68a9b0f4fc663608aeadc371df6898e855672741db",
+        "pdf": "plan_ja.pdf",
+        "pdf_sha256": "667529ea0d61760c119221cd75d7143cc8aa65b7be17cc0cc57935dd5989a179",
+        "pages": 14,
+        "exit_code": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "undefined_control_sequences": 0,
+        "undefined_references_or_citations": false,
+        "multiply_defined_labels": false,
+        "pdf_string_warnings": 0,
+        "selected_visual_review_pdf_pages": [
+          1,
+          2
+        ]
       },
-      {
-        "source": "research/plan_ja.tex",
-        "source_sha256": "c5d55a8ae58af8eb4be4d34471f2d9b4416069f4b5a91b954c182e78578c7d9d",
-        "current_pdf_verified": false
+      "research/notes_ja.tex": {
+        "source_sha256": "03305e9c4af76c77b05d937532d736dce39890a94500f6285b5d37bbf75f5074",
+        "pdf": "notes_ja.pdf",
+        "pdf_sha256": "94ba91b650cafb088528d946c2e23deda99c30b4e531b9bf5e3e1903e4e773f4",
+        "pages": 40,
+        "exit_code": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "undefined_control_sequences": 0,
+        "undefined_references_or_citations": false,
+        "multiply_defined_labels": false,
+        "pdf_string_warnings": 0,
+        "selected_visual_review_pdf_pages": [
+          8,
+          20
+        ]
       },
-      {
-        "source": "research/notes_ja.tex",
-        "source_sha256": "d4ecc3c28745cda01af92cba2d4a545b1feb035eb9036af03ea584cdf3243c6b",
-        "current_pdf_verified": false
+      "research/indexed_z_algebra.tex": {
+        "source_sha256": "445df5abab305a9b76b19084155e3fdf30dcf647ab9658fe93a5cdec17d0570f",
+        "pdf": "indexed_z_algebra.pdf",
+        "pdf_sha256": "e2d03870b83ce912917f6ca46294708baab7f1a9a153f6d83e5c6a5e595fe4da",
+        "pages": 16,
+        "exit_code": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "undefined_control_sequences": 0,
+        "undefined_references_or_citations": false,
+        "multiply_defined_labels": false,
+        "pdf_string_warnings": 0,
+        "selected_visual_review_pdf_pages": [
+          1,
+          5
+        ]
       }
-    ],
-    "final_sources_compiled": false,
-    "current_update_attempted": false
+    },
+    "layout_review_executed": true,
+    "layout_review_scope": "Selected pages were rendered with pdftoppm and visually reviewed. Scope includes title, table of contents, notation/scope tables, common AS proof, two-period recognition, references and the corrected support-document locations. This is not a claim of visual review of every page.",
+    "remaining_warnings": "LuaTeX-ja font scaling/addjfontfeature messages, Japanese italic font fallback to upright, and small mathematical font size substitutions. No missing glyphs or visible defects were found on the selected pages.",
+    "reproduction": "Use the dependencies and commands in README.md. The temporary user-level TeX installation used for this run is not a project dependency or a bundle asset."
   },
   "storage": {
     "canonical_repository": "uedakazushi/nc-p1123",
     "branch": "main",
-    "tracked_deliverables": "Current source files only",
+    "tracked_deliverables": "Current source files only; PDF, ZIP, logs and caches are untracked.",
     "pdf_zip_logs_or_caches_committed": false,
-    "repository_duplicated_to_library": false,
-    "zip_generated_in_this_update": false
+    "distribution_generator": "python3 scripts/build_bundle.py, after a clean verified source commit",
+    "distribution_contents": "Current tracked sources and the three primary PDFs, with BUNDLE.json recording source commit, byte sizes and SHA256. No Git history, old bundle, external paper PDF or compile cache.",
+    "distribution_verification": "The generator checks ZIP CRC and byte-for-byte equality of every member. It does not upload.",
+    "remote_delivery_status": "Remote Git and file delivery are confirmed separately by their actual returned commit and upload receipts; this source file does not assert that a future upload succeeded."
   }
 }

@@ -1,86 +1,86 @@
-# nc-p1123 — 最小生成元次数 (1^n,2,3) のAS正則代数
+# nc-p1123 — 重み (1^n,2,3) のAS正則代数
 
-**2026-11-19 / 統合版 v17。任意nの対象で、全始点の二つの階数条件 r3=n, r5=1、純基礎BのAS正則性、AS基礎上の添字付き二段Ore表示が同値である。Hilbert級数・Koszul性・noetherian性はこの判定の追加仮定ではない。n=1,2,3では階数条件の自動性を含めて証明済みで、n=2,3では通常gradedへ下降する。n=4では最高差次数3を無条件に証明し、語長Koszul性・周期・基礎AS4性・Ore表示・二つの階数条件を含む十条件が同値である。無条件の全次元問題は、n>=4で二つの階数条件を強制することに還元された。**
+**2026-11-19 / 公表準備稿 v23。** 主論文は [papers/nc-p1123.tex](papers/nc-p1123.tex)。日本語 LuaLaTeX、著者欄は空欄。
 
-[研究方針](research/plan_ja.tex) → [統合公表用主論文](papers/nc-p1123.tex) → [研究ノート](research/notes_ja.tex) の順に読む。
+研究を再開するときは [研究方針](research/plan_ja.tex) を最初に読む。本文外の有効な補題・例・障害は [研究ノート](research/notes_ja.tex)、七窓表示の詳細は [添字付き研究資料](research/indexed_z_algebra.tex) にある。
 
-現在は、整域性を仮定して primitive jumps `(1^n,2,3)`、AS次元 `n+2` の語長二次Z-代数へ拡張する問題を扱う。**全対象が単一のgraded二段Ore代数の付随Z-代数になる、という任意nの主張は n=1 で偽**である。`genidx:thm:period-two-counterexample` に、標準Hilbert級数・語長Koszul性・左右noetherian性も満たすAS正則Z-整域で、最小周期が2となる例と完全な証明を記載した。この例は2周期の添字付きOre表示を持つため、Z-代数上のOre表示そのものの反例ではない。
+## 中心結果と適用範囲
 
-**n=4、AS次元6では、最高Extの重みLと語長Nの差は無条件に L−N=3 である**（`n4:cor:top-excess-three`）。鍵は、四本以上の隣接生成元を持つ周期的二次整域で、多項式増大と全単純加群の射影次元3以下が両立しないという補題である。Euler行列の零固有値の二次変動を平方和で評価し、逆Hilbert行列の非負性と矛盾させる。純jump 1部分Bの長さ4の解消とモーメント制約も得た。
+一般対象 Q_n^dom は、正連結・局所有限、primitive jumps (1^n,2,3)、語長斉次二次、左右AS次元 n+2、有限生成射影による単純加群の有限解消、行・列の多項式増大、Z-domain性を要求する。Hilbert級数・Koszul性・noetherian性・1周期性は定義に含めない。
 
-**n=4では、最高語長NとAS移動Lはともに3の倍数である**（`n4:thm:top-word-divisible-three`）。重み3生成元の非零冪による境界特異性、純・混合Eulerモーメント、整域上の最小解消の末尾階数から証明した。有限列挙は用いない。非Koszul枝は N=9,12,15,… に限定され、最初の未決着は N=9,L=12。N=7の純Euler形式例は、親AS整域への全延長が不可能である。
+純jump 1部分を B、重み d の二次関係数を r_d(i) とする。任意 n で次は同値である。
 
-**最高差次数3の場合には、法3の少なくとも二つの剰余類で全 r5=1 である**（`d3:thm:two-saturated-classes`）。n=4の全てのNに適用できる。ちょうどr,r+1が飽和するなら剰余類r+1の全r4=n、全r5=1なら全r4≤nかつ一剰余類の全r4=nとなる。重み3境界の正核は各εで厳密に剰余類定数であり、局所的な平方関係の三次Tor障害と、n+1個の独立語をn次元以下へ送る整域単射の矛盾で証明する。残る一剰余類のr5と全位置のr3の自動性は未証明である。
+1. 全始点で r_3(i)=n、r_5(i)=1。
+2. B が有限生成の単純解消を持つ左右AS正則次元 n の代数である。
+3. A がそのAS基礎 B 上の添字付き二段Ore拡張である。
 
-**Euler行列式には、純基礎面と重み3面の大域的な因子がある**（`mahler:thm:two-faces`）。g=gcd(L,3)として detP_B(u)·(1−(uv²)^(L/g))^g が detP(u,v) を割る。整数係数、Hilbert逆行列の収束、Boyd–LawtonのMahler測度極限とJensenの等号を用いる。n4の全r5=1枝では、新しい総和等式 Σ_i(r3(i)−p_(i,N−3))+Σ_i(r4(i)−4)=0 を得る（ノート `note:d3-full-r5-moment`）。この行列式の重複度を核次元と同一視しない。
+証明は本文の igraph:thm:normal-z-ore と genidx:thm:as-base-ore。交換関係の存在だけでなく、PBW分解も結論に含む。A の語長Koszul性と B のKoszul性は同値となる。
 
-**さらに任意nで、最高差次数3かつ全r5=1なら、Euler行列式は完全に三因子へ分解する**（`genidx:thm:d3-full-r5-euler-factorization`）：detP=detPB·det(I−uvS²)·det(I−uv²S³)。AS周期Lの折畳についての結果で、3|LやKoszul性は要求しない。AS相反性・jump合同条件と、重い境界での補正項の無限大次数から残余因子を一意に確定する。n4N9L12では重い部分が(1−(uv)^6)^2(1−(uv²)^4)^3となる。これは行列式の一致であり、Hilbert行列の分解・r3=n・Ore表示まで従うとはしていない。
+| 対象・追加条件 | 主な到達点 | 本文の主要ラベル |
+| --- | --- | --- |
+| 任意 n、語長Koszul | 全混合階数、標準二変数Hilbert級数、添字付き二段Ore。偶数 n は1周期下降 | knd:thm:koszul-ore |
+| n=1、追加条件なし | 全添字保持同型類と周期を決定。最小周期2の整域が存在 | genidx:thm:one-light-classification |
+| n=2、追加条件なし | Koszul性、1周期下降、量子平面／Jordan平面上の二段Ore、左右noetherian性 | idx:thm:domain-ore |
+| n=3、追加条件なし | 数値型、二周期基礎のAS3認識、最終代数の1周期下降、左右noetherian性 | p2base:thm:as3, genidx:thm:three-light-descent |
+| n=4、追加条件なし | L−N=3、3がN,Lを割る。Koszul性・周期・基礎AS4性等の十条件が同値 | n4:thm:top-word-divisible-three, n4:thm:equivalent-criteria |
 
-**n=4では、次の十条件が同値である**（`n4:thm:equivalent-criteria`）。
+n=1 の正規形は zx=xz, wz=c zw, w_i x_(i+3)=x_i w_(i+1)+d_i z_i z_(i+2)、d_(2j)=c^(-j) alpha, d_(2j+1)=c^(-j) beta。裸の添字保持同型は c の一致と (alpha,beta) の共通非零スカラー倍で分類される。1周期性は alpha^2=c beta^2 と同値であり、零対を含む。他の対象の最小周期は2。この結果は「全対象が一つの通常graded代数から来る」という全次元の主張を否定するが、添字付きOre網羅性とは両立する。
 
-1. Aが語長Koszulである。
-2. 最高語長が N=6 である。
-3. Aが1周期的である。
-4. 純jump 1部分Bが1周期的である。
-5. Bの行Hilbert級数が始点によらない。
-6. 全行で H_B=(1-u)^−4 である。
-7. Bが左右AS正則次元4を持つ。
-8. AがB上の添字付き二段Ore表示を持ち、BがAS4である。
-9. Aが四生成元Koszul AS4整域上の通常graded二段Ore代数へ下降する。
-10. 全始点で r3=4, r5=1 が成立する。
+n=2 では整域性を仮定しない広い対象 Q も扱い、標準関係数とHilbert級数を得る。混合関係数の強制には890個の整数列の厳密検査を用いる。整域部分には計算に依存しない数値強制の証明もある。
 
-これらの条件の下で L=9、関係数 (6,4,4,1,0)、標準二変数Hilbert級数を得る。**n=4の構造に残る核心は十条件の自動性である。条件成立後のB-AS4性と第二段Ore表示は証明済み**であり、noetherian性を追加する必要はない。四生成元のnoetherian Koszul整域・標準14641解消でも非ASの既知例は、一般の基礎代数の数値だけによるAS認識を妨げる（Rogalski–Sierra, arXiv:1101.0737v2, Theorem 1.1, (1.2)）。一方、この既知例は上の同値定理により対象AS6代数の純基礎Bとして実現できない。
+## 論文の構成
 
-**通常の次数付き語長Koszul対象では、任意nで二段Ore表示と基礎BのKoszul AS正則性を証明した**（`ogk:thm:numerics`, `ogk:thm:ore-without-noetherian`）。Hilbert級数とnoetherian性は追加仮定ではなく、標準数値型とHilbert級数も結論である。語長1の正規元zによる商は有限大域次元を持つ。混合関係の退化があれば、この商に両方向の積が零となる非零の語長1元v,wが生じ、交代barテンソルが全次数の非零Torを与えて矛盾する。混合射影の可逆性とHilbert比較からPBW基底、第二段Ore表示、BのAS性が従う。追加のnoetherian仮定を置く系は、Bもnoetherianとなる帰結を記録する。
+要旨と序論では、中心定理、次数の規約、仮定と結論の一覧、先行研究との関係を説明する。本文は次の六部からなる。
 
-**一般indexed対象でも、全行の標準二変数Hilbert級数だけを追加すれば、任意nで添字付き二段Ore表示とBのKoszul AS正則性が従う**（`ibar:thm:standard-hilbert-ore`）。AのKoszul性・1周期性、BのAS性、noetherian性は追加仮定しない。正規元族で2周期に折り畳み、半単純次数零部分上の有限Torとbar複体を使う。Bは1周期的となるが、Aの1周期性を任意nの結論には含めない。
+| 部 | 内容 |
+| --- | --- |
+| I | 通常の次数付き代数の数値型、一般Oreデータ、次数付き同型、次数列だけでは決まらない例 |
+| II | 添字付き対象、共通AS双対性と周期、正規元商、基礎AS性と混合階数の認識、一般Koszul構造 |
+| III | n=1,2,3 の分類・数値型・周期と通常graded下降 |
+| IV | 裸の添字保持同型の有限判定、対角表示空間と全特殊値を含む対角族の同型 |
+| V | 語長二次性を仮定しない四次元の通常graded分類 |
+| VI | 多項式増大、Euler行列式の因子、六次元対象の数値拘束、未解決問題 |
 
-**任意nで、全始点の r3=n, r5=1 だけから、B-ASnと全二段Ore表示まで従う**（`igraph:thm:normal-z-ore`）。標準Hilbert級数・Koszul性・noetherian性を追加しない。bar障害と二周期Golod–Shafarevich不等式が r4=n を与える。正規商Qの混合関係を自由純部分の自己同型μによるグラフとして書くと、wの個数を増やす際の係数イデアルは `(R,μR,…,μ^jR)` となり、有限次元の二次関係空間内で安定する。一方、AS双対性はEuler行列の最高w係数を可逆にする。この二つからイデアルは最初から一定、従って μR=R とQのOre表示が従う。wの正則性から基礎AS性を得て、一般AS-base定理でAの二段表示が完成する。逆向きも既存のAS-base定理から従い、二つの階数条件は基礎AS性と同値である。
+第I部の G_n は noetherian性と指定一変数Hilbert級数を仮定する。第V部はこの通常graded設定の n=2 について語長二次性を外す。一般indexed対象の仮定と混同しない。
 
-語長Koszul性も満たす場合は、L=n+5と標準Hilbert級数も従う（`ibar:cor:koszul-normal-z`）。この系には、正規商Qのw次数零のbar複体と、Ext代数の分解 F⊕Fη、η²=0 を使う別証明もある。完全な別証明を研究ノート `note:koszul-normal-z-frobenius` に保存した。一般の階数判定はこの別証明に依存しない。
+共通AS補題は genidx:lem:as-translation。全Extを一次生成と仮定せず、完全対合・AS平行移動・最高語長の一定性・二次表示からの周期復元を証明する。二周期三生成元認識定理は定理文と証明を一続きに配置する。
 
-**一般の語長KoszulなZ-整域については、任意nで二段indexed Ore表示を証明した**（`knd:thm:koszul-ore`）。指定Hilbert級数・noetherian性・zz射影の消滅・1周期性・混合階数は追加仮定しない。双対の正規元ζによる商の差次数が0と2だけであることと、AS補元のホモロジー次数を使い、全r3=r4=n,r5=1を強制する。基礎BはKoszul ASn、L=n+5、Hilbert級数も標準となる。偶数nなら最終Aも通常graded二段Oreへ下降する。**元の語長二次問題にはKoszul性を仮定していないため、無条件の全次元問題に残るのは非Koszul対象である。**
+## 未解決問題と主張の確実性
 
-**対象内の非Koszul例の存在は未確認である。** n=4で残る N=9,12,15,… は、実現した族ではなく排除できていない候補である。一般の二次AS正則整域には、五次元Heisenberg Lie代数の包絡代数という四生成元の非Koszul例がある（Fløystad–Vatne, arXiv:0911.5129v3, Theorem 2.1, Remark 3.2）。この例は生成元数4に対してAS次元5で、本研究の同数条件を満たさない。任意の有限次元正次数付きLie代数でも、AS次元と最小生成元数の差は導来Lie代数の次元に等しく、非可換包絡代数をそのまま用いる構成では同数条件を満たせない。既知例の具体的表示、非Koszul性の証明、二次双対と全Extの差は研究ノート `note:nonkoszul-existence` に記す。
+- n>=4 の非Koszul対象で二つの階数条件が自動かは未解決。n=4 の最初の未決着は N=9,L=12。N=9,12,15,... は未排除候補であり、存在族ではない。
+- 全ての語長Koszul対象の添字付き構造は任意 n で証明を収めている。偶数 n と n=3 の下降を、全奇数 n へ拡張してはいない。
+- n=2 非整域部分、一般Oreデータの軌道の幾何、n=3 の全同型軌道は未分類。同型の存在判定とモジュライ全体の構成を区別する。
+- Euler行列式の因子分解は、Hilbert行列やPBW分解を自動的に与えない。
+- 原稿中の証明、今回の内部点検、厳密計算、形式化、第三者査読、新規性の最終確認は別状態である。後三者の完了は主張しない。
 
-**平方項がない場合の任意nの構造も証明した。** 固定した語長次数についてR4のzz射影が零なら、語長Koszul性から全 r3=r4=n,r5=1 が従い、通常の二段skew polynomial代数へ下降する（`nozz:prop:koszul-saturation`）。同じ平方項消滅条件だけから、周期の割り切れ方によらず全r5=1が従う（`nozz:lem:full-r5`）。さらに6の倍数でない実周期があれば、Koszul性なしにも同じ構造を得る（`nozz:cor:periodic-saturation`）。これらは平方項消滅を追加した結果であり、一般の全対象を解決したとはしない。
+詳細な証明位置と次の具体的な着手方法は [STATE](research/STATE.json)、一次文献と確認箇所は [BASELINE](research/BASELINE.md)、実際の検証範囲は [validation](research/validation.json) を参照する。
 
-**n=4の純基礎Euler条件だけでは、標準型の自動性を強制できない。** s=5、N=7、L=10の形式数値データが、Eulerの行列恒等式、全次数の行Hilbert係数の正値性、多項式増大、共通の最高Laurent係数、全次数のHopf不等式を満たす一方、行Hilbert級数は始点に依存する。完全な計算補助証明は研究ノート `note:n4-pure-euler-obstruction`、再現コードは `computations/verify_n4_pure_euler.py` にある。代数・最小解消としての実現は主張しない。親AS6整域としての実現は、最高語長の三整除性定理により不可能である。純数値だけの方法と親AS構造を使う方法の差を示す例として保持する。
+## 組版と再現
 
-**n=3、primitive jumps (1,1,1,2,3)、AS次元5の全整域対象では、語長Koszul性・AS添字8・関係数 (3,3,3,1,0)・標準Hilbert級数・2周期性を導いた**（`genidx:thm:five-dimensional-numerics`）。Hilbert級数・noetherian性・周期を追加仮定しない。純jump 1部分の解消、折畳Hilbert行列のLaurent係数、唯一の例外の行列式排除、混合関係数の正値性による数学的証明であり、新しい有限列挙には依存しない。
-
-**n=3では、純jump 1部分BのAS3性も導け、添字付き二段Ore表示が無条件に成立する**（`genidx:thm:three-light-ore`）。鍵となる `p2base:thm:as3` は、2周期の三生成元二次Z-整域が H=(1-t)^-3 を持てばAS3であることを証明する。Koszul性や有限大域次元も仮定不要。分数斜体内の交代積空間に移し、退化した最高syzygyを積空間次元または有理関数の極因子による成長で排除する。通常gradedの分類を直接適用する証明ではない。基礎Bは1周期的になる。さらに `genidx:thm:three-light-descent` は、導分係数が張る空間上の移動を基礎代数の自己同型へ延長し、**最終代数A自身の1周期性と通常のgraded二段Ore表示**を証明する。移動空間の次元0,1,2,3を全て処理しており、非零補正も含む。下降後の基礎代数は共通表示のZhang twistとなる場合がある。第1段を語長次数でRogalski–Zhang Lemma 1.3(a)へ適用し、第2段にOreのHilbert基底定理を使うことで、左右noetherian性も導く。
-
-**任意nについて、純jump 1部分 B 自身が左右AS正則次元nなら、添字付き二段Ore表示が成立する**（`genidx:thm:as-base-ore`）。Bの有限AS解消を仮定するが、混合関係数・Koszul性・指定Hilbert級数・noetherian性を追加仮定しない。Bは1周期的で、AS添字 L_B に対し L_A=L_B+5、最高語長 N_A=L_B+2、H_A=H_B(ut)/((1-ut^2)(1-ut^3)) となる。n=3ではBのAS性を上の認識定理で確立した。
-
-**n=1の全対象については、添字付き二段Ore表示と裸の添字保持同型を完全に決定した**（`genidx:thm:one-light-ore`, `genidx:thm:one-light-classification`）。正規形は `zx=xz`, `wz=c zw`, `w_i x_(i+3)=x_i w_(i+1)+d_i z_i z_(i+2)`、ただし `c!=0`, `d_(2m)=c^(-m) alpha`, `d_(2m+1)=c^(-m) beta`。二つの正規形はcが一致し、`(alpha,beta)`が同時非零スカラー倍で一致するときに限り同型である。1周期性の必要十分条件は `alpha^2=c beta^2`（零の組を含む）で、その他の最小周期は2。この構成の全てが語長Koszul・標準Hilbert・左右noetherianなAS3 Z-domainとなることも、一般パラメータの解消で証明した。
-
-公表用原稿は `papers/nc-p1123.tex` の1本に統合。重み `(1,1,2,3)`、語長二次、AS次元4のZ-代数について、**Z-domainなら標準Hilbert級数・1周期性・量子平面またはJordan平面上の2段Ore表示が従う**。Hilbert級数、周期性、noetherian性を追加仮定せず、noetherian性も結論として得る。完全な証明は `idx:thm:domain-standard` から `idx:thm:domain-ore` にある。
-
-また全対象で、**Z-domain性は、選んだ語長斉次二次表示の重み2・語長1生成元 `z_0,...,z_6` が全次数で左右正則であることと同値**である（`idx:prop:z-regular-criterion`）。7周期性により調べる添字は七つで足りるが、有限次数までの単射性検査だけで十分とはしていない。
-
-整域性を仮定しない全対象について、**標準関係数 `(1,2,2,1)` と標準二変数Hilbert級数が従い、Q=H=S** となる（`idx:thm:mixed-relation-ranks`, `idx:cor:all-standard`）。重み2・5の関係数は、七周期の漸化式とテンソル鎖の非消滅で解析的に強制する。重み3・4の関係数の証明は、行列Hilbert級数の成長から必要条件を導き、890個の整数列を厳密に検査して零列以外を排除する計算補助の証明である。有限次数のHilbert一致からAS正則性を認定してはいない。
-
-整域部分の二つのOre表示については、**裸の添字保持同型の存在を、一つの可逆行列と有限個の条件で完全に判定できる**（`idx:thm:finite-isomorphism`）。量子平面・Jordan平面と零の導分項を同じ条件で扱う。対角量子族では、三係数 `(a,b,c)` への正規化後の同一視は恒等変換と `(a,b,c) -> (a^(-1),b^(-1),c*a^3/b^2)` だけである（`diag:thm:indexed-isomorphism`）。全特殊値を含み、対角族の同型類は三次元トーラスの有限商で与えられる。
-
-一般の `(1^n,2,3)` 型については、左右noetherian・指定AS次元・指定Hilbert級数の下の数値拘束と、さらに語長二次・整域である場合の全Ore表示・次数付き同型を収録する。この任意nの定理の仮定を上記の n=2 の強化によって除去したとはしない。語長二次を仮定しない n=2 の仮定付きgraded Ore網羅定理、対角Ore表示パラメータの4既約成分、添字保持同型の不変量も含む。
-
-残る主課題は、n>=4の非Koszul対象で r3=n, r5=1 を元の仮定から導くことである。一般indexedのKoszul枝は任意nで解決済みである。n4ではこれは十条件の自動性と同値であり、N=9,L=12を最初の対象として、二剰余類飽和の既知の正核の先頭項、全飽和時の新しい総和等式、Euler行列式の重み3面因子、親AS6の中央Ext対合と局所三次Ext上界を使って階数欠損を調べる。Koszul性や標準Hilbert級数を先に確定することは必須ではない。n3の数値型、基礎AS3性、添字付き二段Ore表示、最終代数の1周期下降を未解決として扱わない。n3では基礎代数とOreデータを含む全同型軌道の分類が残る。Iyudu–Shkarin, arXiv:1806.06844v1, §12.1 の通常三生成元分類と今回の2周期認識定理を比較し、新規性の最終確認は未了と明示する。一般の重み5関係の欠損を多項式増大で制限する補題と、その方法だけでは解けない配置も保持する。任意nのAS基礎代数が自動的にnoetherianであるとは主張しない。
-
-元のn=2の全分類では、整域性の自動性、零因子を持つ枝、一般の軌道の幾何は引き続き未解決である。n=2で最小周期7または非定数の射影階数列を持つ対象は必ず零因子を持つ、という結果を、今回のn=1の整域反例へ適用しない。同型の存在判定と、非線型自己同型を含むモジュライスタックも区別する。
-
-**階数の自動性について、AS周期 L が3で割り切れなければ全 r5(i)=1 も証明した**（`genidx:lem:r5-gs-saturation`）。3で割り切れる場合にも、少なくとも一つの法3剰余類上では全て1である。二段目までの行列GS不等式と正の左ベクトルの一次補正による証明で、Koszul性は不要。この結果を踏まえ、前者では残る r3=n、後者では r3 と他の剰余類の r5 を調べる。
-
-研究状態は [STATE](research/STATE.json)、先行文献は [BASELINE](research/BASELINE.md)、組版・計算の検証は [validation](research/validation.json) を参照する。
+LuaLaTeX、LuaTeX-ja（ltjsarticle、luatexja-preset）、原ノ味フォント、標準の数学・組版パッケージを用意する。.latexmkrc の既定対象は主論文で、PDFとSyncTeXはリポジトリのルートに生成する。VS Code の LaTeX Workshop 設定も同梱する。
 
 ```bash
-latexmk -lualatex -outdir=. papers/nc-p1123.tex
+latexmk
+latexmk research/plan_ja.tex research/notes_ja.tex research/indexed_z_algebra.tex
 python3 scripts/check_project.py
 python3 computations/verify_mixed_ranks.py
+python3 computations/weighted_baseline.py
 python3 computations/verify_n4_pure_euler.py
 python3 computations/verify_n4_parent_mixed.py
 python3 -m pip install -r requirements-symbolic.txt
 python3 computations/verify_skew_ore.py
 ```
 
-VS Code の設定は `.latexmkrc` と `.vscode/settings.json`。組版は別途確認が必要。
+check_project.py はファイル・ラベル・引用・主張参照の検査であり、数学的証明や組版の代用ではない。計算の役割と入力は [computations/README.md](computations/README.md) に記載する。
+
+## 保存と配布
+
+編集可能なソースの正本は GitHub main。PDF、ZIP、ログ、キャッシュ、旧版はGitで追跡せず、GitHub Actionsは使わない。現行ソースと主要PDFを含む配布用研究継続一式は、常設の保存指示に従って別途保存する。
+
+検証済みソースをコミットし、主論文・方針・ノートを組版した後に、次で現行版だけのZIPを作成できる。
+
+```bash
+python3 scripts/build_bundle.py
+```
+
+このスクリプトはZIP内のCRCと各ファイルのバイト一致を検査する。生成、組版、遠隔保存は別々に確認する。

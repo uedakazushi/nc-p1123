@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper]{ltjsarticle}
 \usepackage[margin=25mm]{geometry}
 \usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage{mathrsfs}
 \usepackage[haranoaji]{luatexja-preset}
 \usepackage[unicode,hidelinks]{hyperref}
 \usepackage{xurl}
@@ -8,14 +9,14 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第22版}
+\date{2026年11月19日\quad 第23版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
 主結果の証明は公表用統合原稿\path{papers/nc-p1123.tex}とZ代数研究原稿\path{research/indexed_z_algebra.tex}にあり、ここでは重複しない。未収載の補助結果には必要な証明を付ける。
 研究の目標と再開順序は\path{research/plan_ja.tex}を先に読む。
 
-\section{任意$n$の$\mathbb Z$-整域への拡張}
+\section{任意\texorpdfstring{$n$}{n}の\texorpdfstring{$\mathbb Z$}{Z}-整域への拡張}
 \label{note:general-indexed-current}
 現在の優先課題は、整域性を仮定した、primitive jumps $(1^n,2,3)$、
 AS次元$n+2$、語長斉次二次の$\mathbb Z$-代数への二段Ore構造の拡張である。
@@ -133,7 +134,7 @@ $n=4$の標準枝と任意$n$の通常Koszul枝では基礎のAS性と二段Ore�
 任意$n$を扱う前向きな補助結果は、以下のAS平行移動、関係数を仮定した重み2正規元族、
 および基礎代数のAS性だけを追加した一般二段Ore定理である。
 
-\subsection{$n=3$の数値型と二段Ore構造}
+\subsection{\texorpdfstring{$n=3$}{n=3}の数値型と二段Ore構造}
 \label{note:five-dimensional-current}
 主論文\texttt{genidx:thm:five-dimensional-numerics}により、
 primitive jumps $(1,1,1,2,3)$、AS次元5の語長二次$\mathbb Z$-整域は、
@@ -322,7 +323,7 @@ $n=4$では以下の方法で$D=L-N=3$まで確定したが、
 重み3、5の関係数$r_3(i)=n,r_5(i)=1$の無条件の強制も、
 任意$n$で証明したとはしない。$n\leq3$について得た強制を、$n\geq4$へ黙って移さない。
 
-\subsection{$n=4$の最高差次数と純jump 1部分の制約}
+\subsection{\texorpdfstring{$n=4$}{n=4}の最高差次数と純jump 1部分の制約}
 \label{note:n4-current}
 主論文\texttt{n4:lem:periodic-pd3-obstruction}は、
 各頂点に$m\geq4$本の隣接生成元を持つ周期的な二次$\mathbb Z$-整域について、
@@ -466,14 +467,14 @@ Rogalski--Sierra\cite[Proposition 5.4, (5.5)--(5.6), Proposition 5.11(1)]{RSsurf
 これは片側top階数が高々2であることを示し、$n=4$の親代数由来の下界3と矛盾する。
 したがって、このtop階数の補助制約だけでも当該族の非実現を確認できる。
 
-\subsection{通常の次数付きKoszul対象での任意$n$の二段Ore表示}
+\subsection{通常の次数付きKoszul対象での任意\texorpdfstring{$n$}{n}の二段Ore表示}
 \label{note:ordinary-koszul-numerics}
 主論文\texttt{ogk:thm:numerics}は、最初から通常の連結次数付き整域である$A$について、
 AS次元$n+2$、最小生成元次数$(1^n,2,3)$、有限生成射影による有限AS解消、
 多項式増大、語長Koszul性から
 \[
 L=n+5,\qquad
-H_A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)},\qquad
+H_A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)},\quad
 (r_2,r_3,r_4,r_5,r_6)=\left(\binom n2,n,n,1,0\right)
 \]
 を導く。noetherian性と指定Hilbert級数は仮定しない。
@@ -548,7 +549,7 @@ $s\geq5$では正の二次係数と非正の$(s-2)$次係数が対応して矛�
 通常の下降がさらに左右noetherianである場合の基礎noetherian性は
 \texttt{n4:cor:noetherian-periodic-ore}で記録する。
 
-\subsection{二つの混合階数による任意$n$の構造判定}
+\subsection{二つの混合階数による任意\texorpdfstring{$n$}{n}の構造判定}
 \label{note:normal-z-ore}
 主論文\texttt{igraph:thm:normal-z-ore}は、任意の$A\in\mathcal Q_n^{\mathrm{dom}}$について
 次の三条件を同値にする。
@@ -623,7 +624,7 @@ $\deg_tP\ge1$とスカラー多項式の次数加法性から$\deg_tG=0$とな�
 主論文\texttt{igraph:lem:as-graph-ore}は、AS完全対合から最高$t$係数を可逆にすることで
 この行列版の障害を解決する。通常の場合の本補足は、そのAS仮定も不要にできる点で異なる。
 
-\subsection{標準二変数Hilbert級数からの任意$n$のindexed構造}
+\subsection{標準二変数Hilbert級数からの任意\texorpdfstring{$n$}{n}のindexed構造}
 \label{note:indexed-standard-hilbert-ore}
 主論文\texttt{ibar:thm:standard-hilbert-ore}は、$A\in\mathcal Q_n^{\mathrm{dom}}$に
 \[
@@ -910,7 +911,7 @@ W_{i,a,b}&=cB_{i,r}+C_{i,r}-C_{i,a}-C_{i+a,b}+1.
 \texttt{python3 computations/verify\_n4\_pure\_euler.py}。
 400項表を手作業で転記せず、再帰・次数評価・全剰余類の整数係数検査を組み合わせる。
 
-\subsubsection{$s=5$の二周期枝の解析的排除}
+\subsubsection{\texorpdfstring{$s=5$}{s=5}の二周期枝の解析的排除}
 \label{note:n4-s5-period-two-obstruction}
 ここでは表示した特定の十周期列を固定せず、$s=5$の一般の純基礎係数列を扱う。
 上の純基礎数値条件に加えて$B$が2周期であると仮定すると、$s=5$は不可能である。
@@ -947,7 +948,7 @@ $q_0=q_1=0$は$q\not\equiv0$に反するため、全ての場合を尽くした�
 したがって、上の十周期形式候補を二周期へ短縮して自動性を証明する方法は、
 実際に追加の構造を与えることになる。
 
-\subsubsection{$s=5$の親AS6の混合Euler条件}
+\subsubsection{\texorpdfstring{$s=5$}{s=5}の親AS6の混合Euler条件}
 \label{note:n4-parent-mixed-obstruction}
 前の十周期形式候補が実際の$A\in\mathcal Q_4^{\mathrm{dom}}$の純基礎部分であると仮定し、
 $a_i=r_3(i)$、$b_i=r_4(i)$と置く。
@@ -1702,34 +1703,14 @@ $r_5(i)=1$を全位置で結論するには、AS相補対合や純jump 1部分�
 
 \subsection{AS平行移動と二次表示}
 \label{note:general-as-translation}
-\paragraph{主張。}
-$n\geq1$とし、$A$をprimitive jumps $(1^n,2,3)$の正連結・局所有限な
-語長斉次二次$\mathbb Z$-代数とする。
-同じ有限大域次元の左右AS解消とYoneda完全対合を仮定する。
-このときAS頂点置換は$\ell(i)=i+L$という平行移動であり、
-語長を保つ同型$A\simeq A(L)$が存在する。
-ここでは$L$の具体値もKoszul性も結論しない。
-
-\paragraph{証明。}
-各top Extに非零traceを選ぶと、完全対合からExt圏のNakayama同型
-$N:E_{ij}^p\longrightarrow E_{\ell(i),\ell(j)}^p$が得られ、Yoneda積を保つ。
-特に$N$は$E^1$の矢印の有無を保つ。
-$E^1$の有向グラフでは全ての矢印が正のjumpを持ち、全てのjump 1の矢印が存在するので、
-矢印列による到達可能性は整数の大小関係と一致する。
-従って$\ell$は整数の順序を保つ全単射であり、$\ell(i)=i+L$となる。
-
-第$i$top Extの語長を$N_i$とする。
-非零の$E^1_{i,i+1}$とその完全対合相手を取り、traceの巡回式を適用する。
-その相手の語長は$N_i-1$で、Nakayama像も$E^1$に属するため語長1である。
-従って$N_{i+1}=N_i$となる。
-全ての$N_i$が等しいので、同じtrace式は$N$が全Extの語長を保つことを示す。
-
-二次表示のため、$E^2$は語長2に集中し、積
-$E^1\otimes E^1\to E^2$は関係埋込み$R\hookrightarrow W\otimes W$の双対である。
-従って$E^1$上の$N$の逆双対は$R$を平行移動した関係空間へ写し、
-二次テンソル代数の商の同型$A\simeq A(L)$を与える。
-ここでは$E$全体が$E^1$で生成されることを使わない。
-\hfill$\square$
+共通のAS補題の完全証明は、主論文\texttt{genidx:lem:as-translation}にある。
+正連結・局所有限の二次$\mathbb Z$-代数で全隣接原始生成元が非零であり、
+同じ有限ホモロジー次元の左右AS条件と有限生成射影解消を持つとき、
+Yoneda完全対合、AS平行移動$\ell(i)=i+L$、最高語長の始点独立性、
+語長を保つ同型$A\simeq A(L)$が従う。
+整域性・Koszul性・noetherian性は不要である。
+証明は到達可能性による整数の順序と、$E^1,E^2$の積による二次表示の復元を使う。
+全Extの一次生成性、$L=n+5$、Koszul性の自動性までは結論しない。
 
 \subsection{関係数を仮定した重み2正規元族}
 \label{note:general-normal-z}
@@ -1878,7 +1859,7 @@ Lu--Palmieri--Wu--Zhangの二生成元・三次四次関係の四次元AS正則�
 四生成元の所期のクラスに入ると誤判定しない。
 本文と一次文献の参照箇所は\path{research/BASELINE.md}に記載する。
 
-\section{四次元対象$\mathcal Q$の数値型に関する還元}
+\section{四次元対象\texorpdfstring{$\mathcal Q$}{Q}の数値型に関する還元}
 Z代数研究原稿\texttt{prop:general-koszul}で、語長二次のAS次元4という条件から語長Koszul性を示した。
 $E^2$と$E^2$の完全対合がtopの語長を4にし、$E^3$も語長3に集中する。
 最小生成元のjump 1成分だけが二次元なので、Nakayama対応は添字の一定平行移動になる。
@@ -2261,7 +2242,7 @@ s(a,b,c)=(a^{-1},b^{-1},ca^3/b^2)
 これは対角族の商についての結論であり、全ASモジュライの成分やstackを同定していない。
 有限判定と対角商の個別結果について、文献上の新規性の最終確認は未了である。
 
-\section{追加仮定付きgraded定理：次数列$(1^n,2,3)$}
+\section{追加仮定付きgraded定理：次数列\texorpdfstring{$(1^n,2,3)$}{(1ⁿ,2,3)}}
 \path{papers/nc-p1123.tex}で、左右noetherian・AS次元$n+2$・指定Hilbert級数の下の
 数値拘束と、語長二次・整域部分の全$n$のOre網羅性を証明した。
 生成元の次数だけを固定した明示族$A_{n,m}$は次元$n+m+2$を持ち、

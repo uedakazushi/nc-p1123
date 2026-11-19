@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v22。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v23。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -13,9 +13,9 @@
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
 | Issa–Lalín, *A generalization of a theorem of Boyd and Lawton*, Canad. Math. Bull. 56 (2013), no.4, 759–768; arXiv:1203.5379v1; DOI 10.4153/CMB-2012-010-2 | [一次PDF](https://arxiv.org/pdf/1203.5379v1), Theorem 1.2 (s=1)、§4の証明。arXivのJournal referenceも確認 | m(F(t,t^k))→m(F)をEuler行列式へ適用する。正次数特殊化のHilbert逆と整数定数項1から各一変数Mahler測度が零となる段階は本文で直接証明。元のBoyd–Lawton定理を新結果とはしない。 |
 | Smyth, *A Kronecker-type theorem for complex polynomials in several variables*, Canad. Math. Bull. 24 (1981), no.4, 447–452; DOI 10.4153/CMB-1981-068-8 | [出版社一次PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0008439500065693), Theorem 1、Corollary 1 (p.448)、面多項式を扱う証明 | Mahler測度1の整数多項式のextended cyclotomic因数分解は既知。本稿は必要な座標面の可除性をJensenの等号から直接証明し、Eulerの純基礎面・重み3面へ適用する。方法や数論的分類の新規性は主張しない。 |
-| Fløystad–Vatne, *Artin-Schelter regular algebras of dimension five*, arXiv:0911.5129v3 (2010), 本稿引用キー `FVfive` | [一次PDF](https://arxiv.org/pdf/0911.5129v3), Theorem 2.1（PDF p.6）、Remark 3.2（PDF pp.9–10） | 有限次元正次数付きLie代数の包絡代数がAS正則で、global/GK dimensionはLie次元に等しい。四生成元・五二次関係のHeisenberg例はAS5かつ非Koszulで、最小解消の語長は0,1,2,4,5,6。生成元数とAS次元が一致しないためQn_domの例ではない。ノートで表示、PBW、二次双対、一般の最小生成元数の式を直接確認する。既知例を本研究の新規構成としない。 |
-| He–Van Oystaeyen–Zhang, *Skew polynomial algebras with coefficients in Koszul Artin–Schelter regular algebras*, arXiv:1304.3799v2 (2013), 引用キー `HVZSkew` | [一次PDF](https://arxiv.org/pdf/1304.3799), §2、Proposition 2.2（PDF p.7） | 通常Koszul代数と既知のskew拡張B=A[z;σ]に対し、Ext(B)をA!とそのtwisted copyの自明拡大として記述する。今回のno-zz認識は、Ore表示を仮定せず有限頂点上のFrobenius対合から混合階数・自由性を強制する。既知命題を逆向きに適用せず、類似構造の比較先として引用する。 |
-| Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
+| Fløystad–Vatne, *Artin-Schelter regular algebras of dimension five*, Banach Center Publ. 93 (2011), 19–39; DOI 10.4064/bc93-0-2; arXiv:0911.5129v3, 本稿引用キー `FVfive` | [一次PDF](https://arxiv.org/pdf/0911.5129v3), Theorem 2.1（PDF p.6）、Remark 3.2（PDF pp.9–10） | 有限次元正次数付きLie代数の包絡代数がAS正則で、global/GK dimensionはLie次元に等しい。四生成元・五二次関係のHeisenberg例はAS5かつ非Koszulで、最小解消の語長は0,1,2,4,5,6。生成元数とAS次元が一致しないためQn_domの例ではない。ノートで表示、PBW、二次双対、一般の最小生成元数の式を直接確認する。既知例を本研究の新規構成としない。 |
+| He–Van Oystaeyen–Zhang, *Skew polynomial algebras with coefficients in Koszul Artin–Schelter regular algebras*, J. Algebra 390 (2013), 231–249; DOI 10.1016/j.jalgebra.2013.05.023; arXiv:1304.3799v2, 引用キー `HVZSkew` | [一次PDF](https://arxiv.org/pdf/1304.3799), §2、Proposition 2.2（PDF p.7） | 通常Koszul代数と既知のskew拡張B=A[z;σ]に対し、Ext(B)をA!とそのtwisted copyの自明拡大として記述する。今回のno-zz認識は、Ore表示を仮定せず有限頂点上のFrobenius対合から混合階数・自由性を強制する。既知命題を逆向きに適用せず、類似構造の比較先として引用する。 |
+| Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, J. Algebra 539 (2019), 201–259; DOI 10.1016/j.jalgebra.2019.07.029; arXiv:1808.10538v1 | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
 | Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
 | Rogalski–Sierra, *Some noncommutative projective surfaces of GK-dimension 4*, arXiv:1101.0737v2 (2011), 本稿引用キー `RSsurface` | [一次本文](https://arxiv.org/html/1101.0737v2)、[PDF](https://arxiv.org/pdf/1101.0737), Theorem 1.1、解消 (1.2)、Theorem 1.6、Proposition 5.4の(5.5)–(5.6)、Proposition 5.11(1) | 通常の連結次数付きnoetherian整域で、Koszul、GK次元・大域次元4、線型Betti型14641、H=(1−t)^−4であってもAS–Gorensteinでない例。非可算代数閉体上の代数的に独立な二パラメータで成立し、特にC上で取れる。一般的な数値認識法の障害である。一方、本稿の十条件同値定理によりQ₄^domの純基礎として実現しない。最上写像(0,0,z₉,z₁₀)^Tと親AS由来の階数下界からも非実現を確認できる。 |
@@ -26,6 +26,13 @@
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
 | Priddy, *Koszul resolutions*, Trans. AMS 152 (1970), 39–60 | [一次PDF](https://math.mit.edu/~hrm/palestine/priddy-koszul-resolutions.pdf), Thm.5.3, p.51 | PBW基底から語長Koszul性。重み次数について線型であるとの主張ではない。 |
 | Lu–Palmieri–Wu–Zhang, *Koszul equivalences in A-infinity-algebras*, NYJM 14 (2008), 325–378 | [出版版](https://nyjm.albany.edu/j/2008/14-16.pdf), Corollary D, p.327; 証明§9.3, p.372 | connected graded AS-regular性とFrobenius Extの対応。Definition9.1は有限GK成長を含めないので、本文では成長をPBW基底から独立に示す。 |
+
+出版情報は次の出版社一次ページでも照合した。引用する定理番号は上表で指定した版を用いる。
+
+- [Fløystad–Vatne](https://www.impan.pl/en/publishing-house/banach-center-publications/all/93//86099/artin-schelter-regular-algebras-of-dimension-five): Banach Center Publ. 93 (2011), 19–39。
+- [Reyes–Rogalski](https://www.sciencedirect.com/science/article/pii/S0021869319304338): J. Algebra 539 (2019), 201–259。
+- [He–Van Oystaeyen–Zhang](https://www.sciencedirect.com/science/article/pii/S0021869313003086): J. Algebra 390 (2013), 231–249。
+- [Carvalho–Lopes–Matczuk](https://www.tandfonline.com/doi/full/10.1080/00927872.2010.489532): Comm. Algebra 39 (2011), no.8, 2838–2848、DOI 10.1080/00927872.2010.489532。Definition 1.1、Theorem 2.2(a),(b) を参照する。同定には genuine double extension の仮定を要し、任意の混合表示へそのまま適用しない。
 
 ## 混同を避ける比較先
 
