@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-20 / v24。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-20 / v26。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -25,7 +25,7 @@
 | Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求せず、出典を [ATV2, 3.9] と明記する。graded Ore網羅定理と重み2生成元族による整域判定で、noetherian性とGK dimension 4を先に確認して適用する。 |
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
 | Priddy, *Koszul resolutions*, Trans. AMS 152 (1970), 39–60 | [一次PDF](https://math.mit.edu/~hrm/palestine/priddy-koszul-resolutions.pdf), Thm.5.3, p.51 | PBW基底から語長Koszul性。重み次数について線型であるとの主張ではない。 |
-| Lu–Palmieri–Wu–Zhang, *Koszul equivalences in A-infinity-algebras*, NYJM 14 (2008), 325–378 | [出版版](https://nyjm.albany.edu/j/2008/14-16.pdf), Corollary D, p.327; 証明§9.3, p.372 | connected graded AS-regular性とFrobenius Extの対応。Definition9.1は有限GK成長を含めないので、本文では成長をPBW基底から独立に示す。 |
+| Lu–Palmieri–Wu–Zhang, *Koszul equivalences in A-infinity-algebras*, NYJM 14 (2008), 325–378 | [出版版](https://nyjm.albany.edu/j/2008/14-16.pdf), Corollary D, p.327; 証明§9.3, p.372 | connected graded AS-regular性とFrobenius Extの対応。今回Corollary Dの声明・証明とDefinition 9.1を再確認。iadic:lem:ext-comparisonで得たYoneda代数同型から付随環のAS性を認識する。Definition 9.1は有限GK成長を含めないため、thm:koszul-tangent-oreでは固定重みのHilbert一致と1≤重み/語長≤3から成長を別に示す。 |
 
 出版情報は次の出版社一次ページでも照合した。引用する定理番号は上表で指定した版を用いる。
 
@@ -33,6 +33,14 @@
 - [Reyes–Rogalski](https://www.sciencedirect.com/science/article/pii/S0021869319304338): J. Algebra 539 (2019), 201–259。
 - [He–Van Oystaeyen–Zhang](https://www.sciencedirect.com/science/article/pii/S0021869313003086): J. Algebra 390 (2013), 231–249。
 - [Carvalho–Lopes–Matczuk](https://www.tandfonline.com/doi/full/10.1080/00927872.2010.489532): Comm. Algebra 39 (2011), no.8, 2838–2848、DOI 10.1080/00927872.2010.489532。Definition 1.1、Theorem 2.2(a),(b) を参照する。同定には genuine double extension の仮定を要し、任意の混合表示へそのまま適用しない。
+
+## 通常gradedの新たな十分条件の位置付け
+
+`prop:index-compatible-word-grading` は、既存のAS双対性と本稿の重み5残存関係を組み合わせ、AS添字 n+5 の下で両立する語長次数からKoszul性を導く整理である。第二次数の存在を、非二次関係に対する単なるfiltrationで置換しない。
+
+`iadic:lem:ext-comparison` と `thm:koszul-tangent-ore` は、固定重みごとの有限bar filtrationの退化とYoneda積の比較を本文で証明し、LPWZのNYJM論文 Corollary D を用いて付随環のAS性を導く。続いて本稿の通常Koszul認識を適用し、重み1、2、3の補正項を明示してOre基底を持ち上げる。通常の増加filtrationのPBW変形定理をそのまま引用する議論ではない。付随環のKoszul性と整域性は追加仮定であり、親AS代数からの自動性は未証明。一般のfiltered/Koszul理論自体を新規性と主張しない。
+
+`spec:cor:index-seven-ore` は、四次元のAS添字7・domain条件からEuler分母の正値性で標準Hilbert級数を導き、既存の `spec:thm:ore-exhaustion` へ帰着する系である。一般nの非二次対象を尽くす結果ではない。以上三判定の具体的な定式化について、網羅的な文献比較と新規性確定は未完了である。
 
 ## 認識定理と分数圏・PBW理論の比較
 

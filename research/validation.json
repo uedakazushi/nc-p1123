@@ -1,6 +1,6 @@
 {
   "date": "2026-11-20",
-  "version": 25,
+  "version": 26,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -116,39 +116,13 @@
       "N3-DIRECT-MIXED-RANKS",
       "GRADED-ASINDEX-FOUR-STRANDS",
       "GRADED-WEIGHT5-SURVIVAL",
-      "NONQUADRATIC-GRADED-ORE-FAMILY"
+      "NONQUADRATIC-GRADED-ORE-FAMILY",
+      "GRADED-COMPATIBLE-WORD-ORE",
+      "IADIC-KOSZUL-EXT",
+      "GRADED-KOSZUL-TANGENT-ORE",
+      "GRADED-N2-INDEX-SEVEN-ORE"
     ],
     "claim_status_and_proof_locations": "research/STATE.json; complete proofs in the current paper and notes. A written proof is distinct from the bounded current review below.",
-    "publication_revision_audit": {
-      "date": "2026-11-20",
-      "status": "completed_internal_reading_with_explicit_generation_hypotheses",
-      "scope": [
-        "Common Hilbert-pole lemma: adjacent generation, Hilbert-dimension periodicity, two-sided component comparison, finite right Euler inverse, rationality and p>=2.",
-        "n3 short-resolution and pure-base numerical forcing, exceptional seven-row determinant, extraction of word Koszulity, and the new route through the arbitrary-n Koszul theorem.",
-        "The full direct n3 mixed-rank proof retained in the notes, with its independent hypotheses and explicit final Hilbert series.",
-        "n4 projective-dimension obstruction, D3 conclusion, pure numerical constraints and divisibility of N by three; analytic spectral projection and second variation.",
-        "r5 Golod-Shafarevich saturation and orbit-average argument.",
-        "Mahler-measure proof, coordinate-face divisibility and the full D3/all-r5 Euler determinant factorization for arbitrary n, including multiplicities, signs, noncommuting product order and middle coefficients."
-      ],
-      "retained_internal_checks": [
-        "General mixed-rank/Ore recognition and arbitrary-n Koszul proofs with direct normal-quotient/bar dependencies.",
-        "n=1 normal forms, inverse constructions, isomorphisms, periods and explicit reflected-opposite formula.",
-        "Two-period three-generator AS recognition and n=3 descent/derivation extension.",
-        "Graded coefficient/isomorphism results and four-dimensional non-word-quadratic Ore proof.",
-        "Ten-condition n=4 equivalence: dependency structure, taking the numerical input lemmas as premises.",
-        "New common AS lemma, introduction summaries and six-part reordering."
-      ],
-      "findings": [
-        "Adjacent-component generation is now explicit in the three short/pure-resolution lemmas. Their actual applications already satisfy it.",
-        "No conclusion-changing error was identified in the stated audited ranges. This records internal reading, not a proof of global correctness.",
-        "The two-period AS3 recognition theorem is retained as an independent theorem and alternate route; it is not a premise of the main n3 proof."
-      ],
-      "limits": [
-        "Not a fresh exhaustive independent audit of every proof. The boundary-kernel/local-saturation and all isomorphism arguments have not all been rechecked in this revision.",
-        "Not formal verification, external peer review, or a completed novelty investigation."
-      ],
-      "retained_existing_main_labels": 306
-    },
     "scope": "All word-Koszul Qn_dom objects have full indexed Ore for every n; the original nonKoszul problem remains open for n>=4. Every Q4dom has D3 and 3|N,3|L. Every D3 object with 3|L has at least two whole saturated r5 classes, with the proved pointwise r4 constraints. For arbitrary n with D3 and all r5=1, detP=detPB det(I-uvS^2) det(I-uv^2S^3), without 3|L, Koszul, noetherian, H or B-AS assumptions. The first unresolved n4 word is N9/L12; neither the determinant factorization nor the local bounds settle its existence or exclude it. Nozz implies full r5 at every period, and a period not divisible by six gives full ordinary skew Ore. No nonKoszul target example has been constructed or identified in the primary sources checked; residual possibilities are hypothetical.",
     "formalized": false,
     "peer_reviewed": false,
@@ -207,27 +181,82 @@
         "Ardizzoni-Saracco-Stefan",
         "Presotto"
       ],
-      "limits": "No exhaustive novelty determination. No publication version of ISclass was identified; its verified arXiv v1 metadata is retained. ATV2 original proof and the complete classification-table comparison remain unverified as specified in BASELINE. The compared external proofs were not all independently audited. The 2026 Ore-descent preprint is a comparison in BASELINE, not a proof dependency."
+      "limits": "No exhaustive novelty determination. No publication version of ISclass was identified; its verified arXiv v1 metadata is retained. ATV2 original proof and the complete classification-table comparison remain unverified as specified in BASELINE. The compared external proofs were not all independently audited. The 2026 Ore-descent preprint is a comparison in BASELINE, not a proof dependency.",
+      "scope_revision": 24,
+      "current_addition": "In v26, LPWZ Koszul equivalences, NYJM14(2008), Corollary D and Definition9.1/section9.3 were rechecked in the published primary PDF. The growth hypothesis was supplied separately."
     },
     "current_graded_AS_index_research": {
-      "status": "partial_results_proved_in_manuscript_not_independently_peer_reviewed",
+      "status": "sufficient_conditions_proved_and_internally_checked_general_automaticity_open",
       "labels": [
         "lem:index-four-strands",
         "lem:index-heavy-relation",
-        "prop:nonquadratic-ore-family"
+        "prop:nonquadratic-ore-family",
+        "prop:index-compatible-word-grading",
+        "iadic:lem:ext-comparison",
+        "thm:koszul-tangent-ore",
+        "spec:cor:index-seven-ore"
       ],
-      "open": "Unconditional two-stage Ore recognition from AS index n+5 without quadraticity"
+      "open": "General two-stage Ore recognition from AS index n+5 without a compatible second grading or a Koszul-domain augmentation tangent algebra. n=2 is proved under the original ordinary graded base assumptions."
+    },
+    "retained_v24_publication_audit": {
+      "date": "2026-11-20",
+      "status": "completed_internal_reading_with_explicit_generation_hypotheses",
+      "scope": [
+        "Common Hilbert-pole lemma: adjacent generation, Hilbert-dimension periodicity, two-sided component comparison, finite right Euler inverse, rationality and p>=2.",
+        "n3 short-resolution and pure-base numerical forcing, exceptional seven-row determinant, extraction of word Koszulity, and the new route through the arbitrary-n Koszul theorem.",
+        "The full direct n3 mixed-rank proof retained in the notes, with its independent hypotheses and explicit final Hilbert series.",
+        "n4 projective-dimension obstruction, D3 conclusion, pure numerical constraints and divisibility of N by three; analytic spectral projection and second variation.",
+        "r5 Golod-Shafarevich saturation and orbit-average argument.",
+        "Mahler-measure proof, coordinate-face divisibility and the full D3/all-r5 Euler determinant factorization for arbitrary n, including multiplicities, signs, noncommuting product order and middle coefficients."
+      ],
+      "retained_internal_checks": [
+        "General mixed-rank/Ore recognition and arbitrary-n Koszul proofs with direct normal-quotient/bar dependencies.",
+        "n=1 normal forms, inverse constructions, isomorphisms, periods and explicit reflected-opposite formula.",
+        "Two-period three-generator AS recognition and n=3 descent/derivation extension.",
+        "Graded coefficient/isomorphism results and four-dimensional non-word-quadratic Ore proof.",
+        "Ten-condition n=4 equivalence: dependency structure, taking the numerical input lemmas as premises.",
+        "New common AS lemma, introduction summaries and six-part reordering."
+      ],
+      "findings": [
+        "Adjacent-component generation is now explicit in the three short/pure-resolution lemmas. Their actual applications already satisfy it.",
+        "No conclusion-changing error was identified in the stated audited ranges. This records internal reading, not a proof of global correctness.",
+        "The two-period AS3 recognition theorem is retained as an independent theorem and alternate route; it is not a premise of the main n3 proof."
+      ],
+      "limits": [
+        "Not a fresh exhaustive independent audit of every proof. The boundary-kernel/local-saturation and all isomorphism arguments have not all been rechecked in this revision.",
+        "Not formal verification, external peer review, or a completed novelty investigation."
+      ],
+      "retained_existing_main_labels": 306,
+      "source_revision": 24
+    },
+    "current_sufficient_criteria_audit": {
+      "date": "2026-11-20",
+      "status": "completed_internal_reading_of_new_arguments",
+      "labels": [
+        "lem:index-four-strands",
+        "lem:index-heavy-relation",
+        "prop:nonquadratic-ore-family",
+        "prop:index-compatible-word-grading",
+        "iadic:lem:ext-comparison",
+        "thm:koszul-tangent-ore",
+        "spec:cor:index-seven-ore"
+      ],
+      "scope": [
+        "Compatible word grading: relation-weight bound, nonzero word-two heavy relation, bigraded AS duality, N=d and the existing ordinary Koszul theorem.",
+        "Koszul tangent criterion: finite decreasing bar filtration, spectral-sequence direction, Yoneda product comparison, LPWZ Corollary D, separate polynomial growth, strict PBW basis lift, B injection, both twisted derivations and triangular automorphism.",
+        "n2 AS index7 corollary: complete Euler polynomial, rank-one tensor obstruction and sign near t=1, followed by the existing nonquadratic Ore theorem.",
+        "Retained v25 numerical lemmas and cubic-derivation family; formal nonzero-relation notation corrected."
+      ],
+      "independent_internal_reading": "The compatible-grading and tangent proofs were independently read by another agent and the primary agent. The n2 derivation was checked by the primary agent against the existing theorem assumptions.",
+      "limits": [
+        "No fresh exhaustive audit of every existing theorem in the long manuscript.",
+        "No formal verification, external peer review or exhaustive novelty determination."
+      ]
     }
   },
   "exact_computation": {
     "executed_current_revision": false,
     "python_version": "3.12.14",
-    "commands": [
-      {
-        "command": "python3 computations/verify_euler_identities.py",
-        "exit_code": 0
-      }
-    ],
     "retained_mixed_rank_proof": {
       "script": "computations/verify_mixed_ranks.py",
       "certificate": "computations/mixed_ranks_certificate.json",
@@ -299,7 +328,7 @@
       "verification_status": "previously_verified_result_retained_for_unchanged_source"
     },
     "proof_role": "The retained 890-array certificate is a premise of the general n2 mixed-rank proof. The formal n4 calculations have only the scopes specified in their notes and do not construct an algebra. The new Euler identity script supplements written algebraic/analytic proofs. Execution and source-preserving retention are recorded separately.",
-    "execution_scope": "Only verify_euler_identities.py was executed for this revision. The five previously verified scripts and their inputs/certificates are unchanged in content; their verification status is retained, without claiming a fresh rerun.",
+    "execution_scope": "No mathematical computation script was rerun in v26. All six existing scripts and certificate inputs are unchanged; v24 supplementary Euler and earlier certificate verification are retained only for those unchanged sources. New arguments are written proofs, not finite computational claims.",
     "retained_verified_assets": {
       "verified_source_commit": "1f211e86f2a49aac13cc30b9838aaf2b85ddac0f",
       "content_unchanged": true,
@@ -346,45 +375,141 @@
         "n4 s6 scalar denominator at u=1/2 equals -3/64",
         "Fourier factorization and second-variation square completion"
       ],
-      "limits": "Supplementary identity checks only. The analytic growth arguments are proved in the paper; this script does not certify AS regularity, algebra existence or positivity of every Hilbert coefficient."
-    }
+      "limits": "Supplementary identity checks only. The analytic growth arguments are proved in the paper; this script does not certify AS regularity, algebra existence or positivity of every Hilbert coefficient.",
+      "current_update_rerun": false,
+      "verification_status": "previously_verified_v24_result_retained_for_unchanged_source"
+    },
+    "retained_previous_commands": [
+      {
+        "command": "python3 computations/verify_euler_identities.py",
+        "exit_code": 0
+      }
+    ],
+    "commands": []
   },
   "project_structure": {
-    "status": "not_run_on_v25",
+    "status": "passed",
     "command": "python3 scripts/check_project.py",
     "scope": "Required files, local TeX labels/citations/environments, empty author fields, claim proof targets, version agreement, Markdown links and resume inputs. Not a mathematical proof check.",
-    "git_diff_check": "not_run_on_v25",
+    "git_diff_check": "passed",
     "original_main_labels_retained": 306,
-    "current_main_labels": null,
+    "current_main_labels": 320,
     "dependency_graph": {
-      "status": "not_rechecked_on_v25"
-    }
+      "status": "passed",
+      "claims": 111,
+      "missing_dependencies": 0,
+      "cycles": 0
+    },
+    "previous_main_labels_retained": 312
   },
   "typesetting": {
-    "status": "not_run_on_v25",
-    "pdf_generated": false,
-    "final_sources_compiled": false,
-    "layout_review_executed": false,
+    "status": "passed",
+    "pdf_generated": true,
+    "final_sources_compiled": true,
+    "layout_review_executed": true,
     "engine": "LuaLaTeX / latexmk; LuaTeX-ja and HaranoAji fonts",
     "commands": [
       "latexmk",
       "latexmk research/plan_ja.tex research/notes_ja.tex research/indexed_z_algebra.tex"
     ],
-    "outputs": {},
-    "layout_review": {
-      "status": "not_run_on_v25"
+    "outputs": {
+      "nc-p1123.pdf": {
+        "pages": 140,
+        "bytes": 1343184,
+        "sha256": "6d0ab6df7d34e6a14fbc018b2b2064d52417380d8127dcb53d12ea3f5ae39282",
+        "synctex": "nc-p1123.synctex.gz"
+      },
+      "plan_ja.pdf": {
+        "pages": 15,
+        "bytes": 414167,
+        "sha256": "e705ddc28f886c0a368736ab5065399664c49a874dc05da251411b0be98e86c7",
+        "synctex": "plan_ja.synctex.gz"
+      },
+      "notes_ja.pdf": {
+        "pages": 41,
+        "bytes": 681003,
+        "sha256": "652ee60b43904cbcc222fd94a049c254b472631647c745354e316eba5cfb4fd3",
+        "synctex": "notes_ja.synctex.gz"
+      },
+      "indexed_z_algebra.pdf": {
+        "pages": 16,
+        "bytes": 457169,
+        "sha256": "6f6f4ea7c9bf058b94869ac3e0cde8e2e550d7be564a68d07cd105ec5346db9e",
+        "synctex": "indexed_z_algebra.synctex.gz"
+      }
     },
-    "remaining_warnings": [],
-    "scope": "No LuaLaTeX compile for v25 in this session; previous v24 compile does not verify these edits."
+    "layout_review": {
+      "status": "passed_on_changed_regions",
+      "scope": "New statements and proofs, title/abstract and introduction, n2 corollary, research-plan conditions and saving rules, and research-note summary. New main theorem/proof pages were inspected by the primary agent and two other agents; notes summary by another agent. This is not a fresh visual inspection of every unchanged page.",
+      "main_physical_pages": [
+        1,
+        6,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        100,
+        101
+      ],
+      "plan_physical_pages": [
+        2,
+        15
+      ],
+      "notes_physical_pages": [
+        40,
+        41
+      ],
+      "final_formula_recheck": "The bar filtration display was re-rendered and visually checked after replacing atop with substack.",
+      "bookmark_cleanup": "The research-plan heading uses texorpdfstring for AS index n+5; the final plan compile has no hyperref warning and unchanged visible text."
+    },
+    "remaining_warnings": {
+      "nc-p1123": [
+        "Package luatexja-preset Warning: Japanese fonts will be scaled by 0.924715.",
+        "Package luatexja-fontspec Warning: \\addjfontfeature(s) ignored;",
+        "LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Size substitutions with differences"
+      ],
+      "plan_ja": [
+        "Package luatexja-preset Warning: Japanese fonts will be scaled by 0.924715.",
+        "Package luatexja-fontspec Warning: \\addjfontfeature(s) ignored;"
+      ],
+      "notes_ja": [
+        "Package luatexja-preset Warning: Japanese fonts will be scaled by 0.924715.",
+        "Package luatexja-fontspec Warning: \\addjfontfeature(s) ignored;",
+        "LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Size substitutions with differences"
+      ],
+      "indexed_z_algebra": [
+        "Package luatexja-preset Warning: Japanese fonts will be scaled by 0.924715.",
+        "Package luatexja-fontspec Warning: \\addjfontfeature(s) ignored;",
+        "LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.5> not available",
+        "LaTeX Font Warning: Size substitutions with differences"
+      ]
+    },
+    "scope": "Final v26 sources compiled with LuaLaTeX/latexmk. No unresolved references/citations, missing characters, overfull or underfull boxes remain. Nonblocking existing font preset/size substitutions are recorded separately. A completed compile is not a proof verification."
   },
   "storage": {
     "canonical_repository": "uedakazushi/nc-p1123",
     "branch": "main",
     "tracked_deliverables": "Current source files only; PDF, ZIP, logs and caches are untracked.",
     "pdf_zip_logs_or_caches_committed": false,
-    "distribution_generator": "python3 scripts/build_bundle.py, after a clean verified source commit",
+    "distribution_generator": "Optional python3 scripts/build_bundle.py for emergency preservation or an explicitly requested distribution, after a clean verified source commit. Not run routinely.",
     "distribution_contents": "Current tracked sources and the three primary PDFs, with BUNDLE.json recording source commit, byte sizes and SHA256. No Git history, old bundle, external paper PDF or compile cache.",
     "distribution_verification": "The generator checks ZIP CRC and byte-for-byte equality of every member. It does not upload.",
-    "remote_delivery_status": "Remote Git and file delivery are confirmed separately by their actual returned commit and upload receipts; this source file does not assert that a future upload succeeded."
+    "remote_delivery_status": "Remote Git and file delivery are confirmed separately by their actual returned commit and upload receipts; this source file does not assert that a future upload succeeded.",
+    "regular_library_duplication": false,
+    "distribution_created_current_revision": false,
+    "hub_update": "Required after source main is confirmed; actual remote success is reported separately."
   }
 }

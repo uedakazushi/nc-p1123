@@ -32,7 +32,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月20日\quad 公表準備稿 v25}
+\date{2026年11月20日\quad 公表準備稿 v26}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -50,12 +50,15 @@ $n=1$の全添字保持同型類と周期を決定し、最小周期2の明示�
 $n=2,3$では通常の次数付き二段Ore表示への下降と左右noetherian性を証明する。
 さらに、二周期三生成元整域のAS認識、Oreデータ間の有限同型判定、
 対角表示空間、および語長二次性を外した四次元の次数付き分類を与える。
+通常の次数付き対象では、AS添字$n+5$と両立する語長次数、または
+増大イデアルに対するKoszul整域の付随次数環から二段Ore表示を導く。
+四次元ではAS添字7と整域性から指定Hilbert級数を追加せずに同表示を得る。
 $n=4$では最高差次数と最高語長の制約、およびKoszul性・周期性・基礎AS性を含む十条件の同値性を得る。
 $n\ge4$の非Koszul対象での混合関係数の自動性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月20日（Asia/Tokyo）、公表準備稿 v24\\
+現行原稿：2026年11月20日（Asia/Tokyo）、公表準備稿 v26\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -226,6 +229,28 @@ $n=4$では、これは定理\ref{n4:thm:equivalent-criteria}の十条件の自�
 高次元のEuler行列式の因子分解も証明するが、行列式の一致を
 Hilbert行列の一致やPBW分解へ読み替えない。
 
+\subsection{通常の次数付き対象の簡潔な十分条件}
+通常の連結局所有限な左右noetherian AS正則整域で、最小生成元次数が$(1^n,2,3)$、
+大域次元が$n+2$、AS添字が$n+5$である場合には、
+全最小生成元を語長1とする、重み次数と両立した第二次数の存在だけで、
+語長Koszul性と通常の二段Ore表示が従う
+（命題\ref{prop:index-compatible-word-grading}）。
+語長二次性や標準Hilbert級数はこの判定の結論である。
+
+非語長斉次の関係を許す自然な判定もある。
+$I=A_+$に対する$\gr_I A$が語長次数に関してKoszulな整域なら、
+定理\ref{thm:koszul-tangent-ore}により
+$A=B[z;\sigma,\delta_1][w;\tau,\delta_2]$となる。
+ここでは$A$のAS次元$n+2$と最小生成元次数を固定するが、
+AS添字$n+5$と標準Hilbert級数は結論である。
+証明では固定重みごとの有限なbar filtrationによりExtを比較し、
+既知のFrobenius判定\cite[Corollary D]{LPWZKoszul}で付随環のAS性を認識した後、
+重み1、2、3を使ってOre表示を持ち上げる。
+$zx-xz=x^3$を許す例もこの条件を満たすが、第二次数の条件は満たさない。
+これらの十分条件が全ての対象で自動的に成立するとは主張しない。
+ただし$n=2$では、系\ref{spec:cor:index-seven-ore}により、
+AS添字7を固定した基本仮定だけから標準Hilbert級数と非二次のOre網羅定理への適用が従う。
+
 \subsection{先行研究との関係}
 AS正則性から得られる最小解消の双対性とExt代数のFrobenius性は既知である
 \cite[Lemma 1.1, Theorem 1.9]{LPWZ}。
@@ -343,8 +368,10 @@ $\Gclass_n^{\mathrm{qd}}$は、さらに整域であり、最小生成元のあ�
 語長とは、重み1、2、3のどの生成元も長さ1として数える次数である。
 \end{definition}
 
-本部では$\mathcal G_n$および$\mathcal G_n^{\mathrm{qd}}$の仮定を固定する。
-数値的な拘束から語長二次の場合の構造を導き、続いてOreデータと全次数付き同型を記述する。
+本部では$\mathcal G_n$および$\mathcal G_n^{\mathrm{qd}}$を主な比較対象とする。
+次のAS添字と付随次数環による判定では、これらのクラスへの所属を仮定せず、
+各声明の仮定から標準Hilbert級数とOre構造を導く。
+その後、語長二次の場合のOreデータと全次数付き同型を記述する。
 Hilbert級数とnoetherian性を仮定しない結果は第\ref{part:indexed}部に置く。
 語長二次性を外す$n=2$の網羅定理は第\ref{part:nonquadratic}部にある。
 
@@ -409,10 +436,11 @@ $V=A_1$、$Q=A/(V)$と置く。
 重み2、3の原始生成元の像をそれぞれ$\bar z,\bar w$とすると、
 $Q$には
 \[
-0\ne\alpha\,\bar z\bar w+\beta\,\bar w\bar z=0
+\alpha\,\bar z\bar w+\beta\,\bar w\bar z=0
 \qquad(\alpha,\beta\in k,\ (\alpha,\beta)\ne(0,0))
 \]
-という重み5の関係式が存在する。
+という重み5の関係式が存在し、左辺の形式語は自由代数
+$k\langle\bar z,\bar w\rangle$では非零である。
 特に、$A$の重み5の最小関係式の少なくとも一つは、
 $V$で割った後に非零の関係式を与える。
 ただし$\alpha\beta\ne0$は結論しない。
@@ -438,6 +466,142 @@ $m$ブロックの$2^m$語の重みは$3m$から$5m$までにあるので、
 最小関係が全て重み5以下であることから、この関係は
 重み5の最小関係の像により生成される。
 \end{proof}
+
+\begin{proposition}[AS添字と両立する語長次数からの二段Ore表示]
+\label{prop:index-compatible-word-grading}
+$k=\mathbb C$、$n\geq1$とし、$A$を連結局所有限な左右noetherian AS正則整域とする。
+重み次数に関する最小生成元の次数は$(1^n,2,3)$であり、
+\[
+ \operatorname{gldim}A=n+2,\qquad
+ \operatorname{ASind}A=n+5
+\]
+と仮定する。AS正則性には左右のAS--Gorenstein条件と有限GK次元を含める。
+最小生成元のある重み斉次持上げ
+\[
+ W=V\oplus kz\oplus kw,\qquad
+ V=A_1,\quad \deg V=1,\quad \deg z=2,\quad\deg w=3
+\]
+について、全ての元を語長$1$に置く第二の次数付けが重み次数と両立すると仮定する。
+すなわち、元の重み次数を第二成分とする代数の二重次数付けがあり、
+$V,z,w$の二重次数がそれぞれ$(1,1),(1,2),(1,3)$であるとする。
+この追加仮定は関係の語長斉次性だけを要求し、
+関係の語長が$2$であることも、Koszul性も要求しない。
+
+このとき$A$はこの語長次数についてKoszulであり、特に語長斉次二次である。
+さらに$B=k\langle A_1\rangle$はKoszul AS正則整域で、
+\[
+ \operatorname{gldim}B=n,\qquad H_B(t)=(1-t)^{-n},
+\]
+かつ、元の重み次数を保つ同型として
+\[
+ A=B[z;\sigma][w;\tau,\partial]
+\]
+と書ける。ここで$\sigma$と$\tau$は次数付き自己同型である。
+ある$\mu\in\operatorname{Aut}_{\mathrm{gr}}B$、$c\in k^\times$、$\lambda\in V^*$により
+\[
+ zv=\sigma(v)z,\qquad
+ wv=\mu(v)w+\lambda(v)z^2,\qquad
+ wz=c zw,
+\]
+\[
+ \tau|_B=\mu,\quad \tau(z)=cz,\quad
+ \partial(v)=\lambda(v)z^2,\quad \partial(z)=0
+\]
+であり、$\partial(ab)=\tau(a)\partial(b)+\partial(a)b$である。
+また、$u$を語長、$t$を重みの変数とすると
+\[
+ H_A(u,t)=\frac{1}{(1-ut)^n(1-ut^2)(1-ut^3)}.
+\]
+\end{proposition}
+
+\begin{proof}
+$d=n+2$、$L=n+5=d+3$と置き、二重次数を
+$(a,b)=(\text{語長},\text{重み})$の順に記録する。
+
+補題\ref{lem:duality-regrading}により、最小解消は二重次数付きに選べ、
+最後の自由項の生成次数を$(N,L)$とすれば
+\begin{equation}\label{eq:index-compatible-betti-duality}
+ \dim_k\operatorname{Tor}^A_p(k,k)_{a,b}
+ =\dim_k\operatorname{Tor}^A_{d-p}(k,k)_{N-a,L-b}
+\end{equation}
+が成立する。この二重次数付き双対性は語長二次性を使わない。
+全生成元の語長が$1$なので、正規化bar複体の第$p$項は語長$p$未満の成分を持たない。
+従って
+\begin{equation}\label{eq:index-compatible-word-lower-bound}
+ \operatorname{Tor}^A_p(k,k)_{a,b}\ne0\quad\Longrightarrow\quad a\geq p.
+\end{equation}
+特に$N\geq d$である。
+また、生成元の差次数$e=b-a$はそれぞれ$0,1,2$である。
+代数とbar複体の差次数は全て非負なので、Tor、したがって
+内部次数を正に記録した$E=\operatorname{Ext}_A^*(k,k)$も、差次数が負の成分を持たない。
+AS双対性\eqref{eq:index-compatible-betti-duality}の下では、
+差次数$e$は$L-N-e$へ移る。
+全Extがホモロジー次数$1$で生成されることは、ここでは用いない。
+
+\par\smallskip\noindent\textbf{重み5・語長2の最小関係。}\quad
+補題\ref{lem:index-four-strands}により、最小関係の重みは$2$から$5$に限られる。
+補題\ref{lem:index-heavy-relation}により、$Q=A/(V)$では
+\[
+ \alpha\bar z\bar w+\beta\bar w\bar z=0,
+ \qquad(\alpha,\beta)\ne(0,0)
+\]
+という関係が残り、その左辺は自由代数$k\langle\bar z,\bar w\rangle$では非零である。
+ここで$Q$の整域性も$\alpha\beta\ne0$も必要ない。
+$T(W)\twoheadrightarrow A$の関係イデアルは二重次数付きである。
+上の非零関係を与える重み5の関係式を取り、その語長2成分を取る。
+$\bar z,\bar w$だけの重み5の語は$\bar z\bar w,\bar w\bar z$だけであり、
+いずれも語長2なので、この成分の$Q$の自由表示における像はなお非零である。
+従って重み5・語長2の非零関係が存在する。
+$W$は最小生成元空間の持上げなので語長1の関係はなく、
+語長2の非零関係は全て最小関係である。
+ゆえに
+\[
+ \operatorname{Tor}^A_2(k,k)_{2,5}\ne0.
+\]
+AS双対性\eqref{eq:index-compatible-betti-duality}により
+\[
+ \operatorname{Tor}^A_{d-2}(k,k)_{N-2,L-5}\ne0.
+\]
+後者の差次数は非負だから
+\[
+ (L-5)-(N-2)=L-N-3\geq0.
+\]
+従って$L-N\geq3$である。
+
+\par\smallskip\noindent\textbf{Koszul性とOre表示。}\quad
+$N\geq d$と$L=d+3$を合わせると
+\[
+ 3\leq L-N\leq L-d=3,
+ \qquad N=d.
+\]
+任意の非零成分$\operatorname{Tor}^A_p(k,k)_{a,b}$について、
+\eqref{eq:index-compatible-word-lower-bound}と双対成分への同じ下界により
+\[
+ p\leq a\leq N-(d-p)=p
+\]
+である。従って第$p$ Torは語長$p$に集中する。
+これは語長次数に関するKoszul性であり、特に最小関係は全て語長2である。
+
+重み次数と語長次数の間には$a\leq b\leq3a$があるので、
+有限GK増大は語長次数へ移しても保たれる。
+以上により、定理\ref{ogk:thm:numerics}および
+定理\ref{ogk:thm:ore-without-noetherian}の全仮定が成立する。
+両定理から、基礎$B$のKoszul AS正則性、標準二変数Hilbert級数、
+表示した通常の二段Ore構造と交換式を得る。
+\end{proof}
+
+\begin{remark}[十分条件の範囲]
+本命題の第二次数の仮定は、二段Ore表示のための十分条件であり、必要条件とは主張しない。
+実際、命題\ref{prop:nonquadratic-ore-family}の
+\[
+ A_n=k[x_1,\ldots,x_n][z;\partial][w],\qquad
+ \partial(x_1)=x_1^3,\quad\partial(x_j)=0\ (j>1)
+\]
+は本命題の第二次数以外の仮定を全て満たす二段Ore拡大であるが、
+いかなる重み斉次最小生成元の持上げについても語長二次表示を持たない。
+本命題より、全最小生成元を語長1とする両立した第二次数も存在しない。
+従って第二次数の存在を仮定しない一般のgraded構造問題は、なお別に残る。
+\end{remark}
 
 \begin{proposition}\label{prop:four-strands}
 $A\in\Gclass_n$、$d=n+2$とする。このとき
@@ -525,7 +689,270 @@ r_2=3,\qquad r_3-r_5=2
 =1-3t+2t^2+t^3-t^5-2t^6+3t^7-t^8
 \]
 であり、ホモロジー次数2と3の重み4の項が相殺される。
-次節では語長二次性から、これより強い構造を導く。
+以下では、付随次数環の判定に続き、語長二次の場合の構造を導く。
+
+\section{増大イデアルの付随次数環による判定}\label{sec:tangent-ore}
+
+以下で$A=\bigoplus_{j\ge0}A_j$は正連結・局所有限な重み次数付き代数であり、
+最小斉次生成元の重みは$(1^n,2,3)$とする。
+重み1生成空間を$V=A_1$とし、重み2,3の最小生成元の代表を$z,w$と書く。
+$I=A_{>0}$に対する\emph{減少する}augmentation filtrationと、その付随次数環を
+\[
+ I^0=A\supset I\supset I^2\supset\cdots,
+ \qquad R=\operatorname{gr}_I A=\bigoplus_{p\ge0}I^p/I^{p+1}
+\]
+とする。$R$は$I$次数$p$と元の重み$j$による二重次数を持つ。
+ここでいう$R$のKoszul性は$I$次数についての通常のKoszul性である。
+
+\begin{lemma}[Koszul接錐とYoneda積]
+\label{iadic:lem:ext-comparison}
+上の設定で$R$がKoszulなら、ホモロジー次数と元の重みを保つ代数同型
+\[
+ \underline{\operatorname{Ext}}_A^*(k,k)
+ \simeq \underline{\operatorname{Ext}}_R^*(k,k)
+\]
+が存在する。
+\end{lemma}
+\begin{proof}
+$I^p$は、選んだ最小生成元による長さ$p$以上の語の像で張られる。
+各生成元の重みは正なので、固定した重み$j$では
+\[
+ I^{j+1}\cap A_j=0.
+\]
+従ってこのfiltrationは各重みで有限かつ分離的である。
+
+正規化bar複体$\mathrm B_i(A)=I^{\otimes i}$に、各因子の$I$次数の和によるfiltration
+\[
+ F^p\mathrm B_i(A)=
+ \sum_{\substack{p_1+\cdots+p_i\ge p\\p_1,\ldots,p_i\ge1}}
+ I^{p_1}\otimes\cdots\otimes I^{p_i}
+\]
+を入れる。その付随次数複体は$R$のbar複体である。
+固定した重み$j$では、非零のfiltration次数は$i\le p\le j$に限られ、
+複体の各項も有限次元である。従ってスペクトル系列は重みごとに収束し、
+\[
+ E^1_{i,p,j}=\operatorname{Tor}^R_i(k,k)_{p,j}
+ \quad\Longrightarrow\quad
+ \operatorname{Tor}^A_i(k,k)_j
+\]
+を得る。減少filtrationのこの添字規約では、$r\ge1$について
+\[
+ d_r:(i,p,j)\longmapsto(i-1,p+r,j)
+\]
+である。
+
+$R$のKoszul性により$E^1$は$p=i$に集中する。
+上記の次数を持つ微分には非零の始域と終域が同時に存在しないので、
+全ての微分は零である。
+従って$\operatorname{Tor}^A_i(k,k)$の誘導filtrationも$p=i$の一層だけに集中し、
+その付随次数空間は$\operatorname{Tor}^R_i(k,k)$である。
+
+bar複体のdeconcatenationはこのfiltrationと両立する。
+従って上の比較はTorの余積も保ち、各重みで双対を取るとYoneda積を保つ。
+各ホモロジー次数に一層しかないため、積についてのfiltration拡張の曖昧さもない。
+これで所要の次数付き代数同型を得る。
+この主張は通常のYoneda積についてのものであり、
+高次の$A_\infty$積の一致を要求しない。
+\end{proof}
+
+\begin{theorem}[Koszul整域である接錐からの二段Ore表示]
+\label{thm:koszul-tangent-ore}
+基礎体を標数零の代数閉体とする。
+上の$A$は多項式増大を持ち、左右AS正則次元$n+2$であり、
+$k$の左右最小解消は有限生成自由加群による有限解消であると仮定する。
+例えば、左右noetherianなAS正則代数にはこの有限生成条件が成立する。
+追加条件として
+\[
+ \operatorname{gr}_I A\ \text{がKoszul整域である}
+\]
+と仮定する。
+このとき、$V$で生成される部分代数$B\subset A$は
+通常のKoszul AS正則次元$n$の整域であり、
+\[
+ A\simeq B[z;\sigma,\delta_1][w;\tau,\delta_2]
+\]
+という二段の自己同型型Ore表示を持つ。
+$\sigma$と$\tau$は重みを保ち、$\delta_1$は重み次数2の斉次$\sigma$-導分、
+$\delta_2$は重み次数3の斉次$\tau$-導分である。
+さらに、$C=B[z;\sigma,\delta_1]$と置くと、
+\[
+ \tau(B)=B,\qquad \tau(z)=cz+q,
+ \qquad c\in k^\times,\quad q\in B_2
+\]
+と書ける。
+$A$のAS添字は$n+5$であり、
+\[
+ H_A(t)=\frac1{(1-t)^n(1-t^2)(1-t^3)}.
+\]
+元の$A$に語長次数付けや語長二次性を仮定する必要はない。
+\end{theorem}
+
+\begin{proof}
+\par\smallskip\noindent\textbf{接錐のAS正則性。}\quad
+各重みのfiltrationが有限なので、
+\[
+ \sum_p\dim R_{p,j}=\dim A_j.
+\]
+従って$R$は元の重みについて$A$と同じHilbert級数を持つ。
+$R$は$R_1=I/I^2$で生成され、その生成元の重みは$(1^n,2,3)$なので、
+$p\le j\le3p$以外では$R_{p,j}=0$である。
+$A$の多項式増大から、$R$は$I$次数についても多項式増大を持つ。
+
+$A$のAS正則性から、その有限次元Yoneda代数はFrobeniusである。
+補題\ref{iadic:lem:ext-comparison}によって$R$のYoneda代数もFrobeniusである。
+従ってLu--Palmieri--Wu--Zhangの
+\cite[Corollary~D, p.~372]{LPWZKoszul}から$R$はAS正則である。
+同型はホモロジー次数と元の重みを保つので、
+$R$のAS次元は$n+2$で、元の重みに関するAS添字も$A$のものと一致する。
+ここで文献のAS正則の定義は増大条件を含まないため、
+必要な多項式増大は上で別に確認した。
+
+\par\smallskip\noindent\textbf{接錐の二段表示と基底の持上げ。}\quad
+$R$は$I$次数についてKoszulであり、特に二次代数である。
+通常の次数付きKoszul整域についての定理
+\ref{ogk:thm:ore-without-noetherian}を、元の重みと$I$次数に適用できる。
+従って、純重み1部分$B_0$と生成元$\bar z,\bar w$を用いて
+\[
+ R=B_0[\bar z;\sigma_0][\bar w;\tau_0,\partial_0]
+\]
+となる。$B_0$は$n$生成元のKoszul AS正則次元$n$であり、
+\[
+ \bar z v=\sigma_0(v)\bar z,\qquad
+ \bar wv=\mu_0(v)\bar w+\ell(v)\bar z^2,
+ \qquad \bar w\bar z=c\bar z\bar w
+\]
+と書ける。ここで$\sigma_0,\mu_0$は$B_0$の自己同型、
+$\ell:V\to k$は線型形式、$c\ne0$である。
+同定理の数値型から、AS添字は$n+5$で、所要のHilbert級数を持つ。
+従って既に$A$のAS添字とHilbert級数についての結論を得る。
+
+$B_0$の二次関係は重み2である。
+これを$A$へ持ち上げた値は$I^3\cap A_2=0$に属するので、
+同じ関係が$A$でも成立する。
+また$0\ne f\in(B_0)_j$の像の$I^j/I^{j+1}$成分は$f$自身なので非零である。
+従って$B_0$から$A$への写像は単射であり、その像は$B$に一致する。
+以下$B_0=B$と同一視する。
+
+$B$の重み斉次基底$\mathcal B$を選ぶと、$R$の基底は
+$f\bar z^a\bar w^b$、$f\in\mathcal B$という順序付き語で与えられる。
+その持上げ
+\[
+ \{\,f z^a w^b:\ f\in\mathcal B,\ a,b\ge0\,\}
+\]
+は$A$の基底である。
+実際、$0\ne a\in A_j$の$I$-adic orderを
+$\nu_I(a)=\max\{p:a\in I^p\}$と定める。
+その初期成分を対応する順序付き語で消すと、差の$I$-adic orderは厳密に上がる。
+$I^{j+1}\cap A_j=0$なので、この操作は有限回で停止して全ての元を張る。
+線型関係があれば、非零係数を持つ項の最小$I$次数を取ることで
+$R$の基底間の線型関係を得るため、独立性も従う。
+同じ議論はfiltrationとの両立性も与え、
+\[
+ I^p\cap A_j=
+ \operatorname{span}_k\{f z^a w^b:\
+ \deg f+2a+3b=j,\quad \deg f+a+b\ge p\}
+\]
+である。特に低い重みでは
+\[
+ \begin{aligned}
+ I^3\cap A_3&=B_3,\\
+ I^3\cap A_4&=B_4\oplus B_2z,\\
+ I^3\cap A_5&=B_5\oplus B_3z\oplus B_1z^2\oplus B_2w.
+ \end{aligned}
+\]
+
+\par\smallskip\noindent\textbf{第一段。}\quad
+$v\in V$について
+\[
+ zv-\sigma_0(v)z\in I^3\cap A_3=B_3
+\]
+である。右辺を$\delta_1(v)$と置く。
+この重み3の補正には、重み3・$I$次数1の生成元$w$は入らない。
+$\sigma=\sigma_0$は既に$B$の自己同型である。
+自由代数上で$\delta_1$を$\sigma$-導分として延長すると、
+$B$の定義関係$r$に対して
+\[
+ 0=zr=\sigma(r)z+\delta_1(r)=\delta_1(r)
+\]
+となる。$B\subset A$の単射性から、$\delta_1$は$B$上の導分へ降りる。
+$\delta_1$の重み次数は2である。
+従って$B[z;\sigma,\delta_1]\to A$を得る。
+上で確立した基底のうち$w$を含まない語の独立性からこの写像は単射であり、
+その像は$V,z$で生成される部分代数$C$である。
+
+\par\smallskip\noindent\textbf{第二段で許される補正。}\quad
+重み4については
+\[
+ wv-\mu_0(v)w-\ell(v)z^2\in I^3\cap A_4\subset C_4.
+\]
+実際、重み4で長さ3以上の語には$w$を含められない。
+従って$wv=\mu_0(v)w+\delta_2(v)$、$\delta_2(v)\in C_4$と書ける。
+
+同様に、$wz-czw\in I^3\cap A_5$である。
+重み5の語に$w^2$は現れない。
+長さ3以上で$w$を一つ含む語は、$w$と二つの$V$からなる語だけである。
+直前の$wv$の式を使って$w$を右へ動かすと、これらは
+$B_2w+C_5$へ入る。
+従って
+\[
+ wz=(cz+q)w+\delta_2(z),
+ \qquad q\in B_2,\quad\delta_2(z)\in C_5
+\]
+と書ける。
+
+自由代数上で
+$\tau(v)=\mu_0(v)$、$\tau(z)=cz+q$と定め、
+$\delta_2$を$\tau$-導分として延長する。
+上の生成元の交換式から、任意の語$a$について
+\[
+ wa=\tau(a)w+\delta_2(a)
+\]
+となる。$a$が$C$の定義関係なら左辺は零である。
+既に得た基底によって$C\oplus Cw\to A$は単射なので、
+$\tau(a)=\delta_2(a)=0$が$C$で成立する。
+従って$\tau$は$C$の準同型、$\delta_2$は$C$上の$\tau$-導分へ降りる。
+重みから$\tau$は次数0、$\delta_2$は次数3である。
+
+$\tau|_B=\mu_0$は自己同型であり、$c\ne0$なので、
+$\tau$の像は$B$と$z=c^{-1}(\tau(z)-q)$を含む。
+従って$\tau$は全射である。
+$C$は重みごとに有限次元であり、$\tau$は重みを保つので、
+各重みで全射は単射でもある。よって$\tau$は自己同型である。
+最後に、自然な全射$C[w;\tau,\delta_2]\to A$は
+両辺の順序付き基底を一致させるため単射でもあり、所要の同型を得る。
+\end{proof}
+
+\begin{remark}[filtrationの向きと第一段の導分]
+この条件は、原始生成元に語長1を与える第二の\emph{次数付け}の存在より広い。
+例えば
+\[
+ A=k\langle x,z,w\rangle/
+ (zx-xz-x^3,\ wx-xw,\ wz-zw),
+ \qquad \deg(x,z,w)=(1,2,3)
+\]
+は重み次数付きであるが、表示した関係は語長斉次ではない。
+これは$k[x][z;\delta][w]$、$\delta(x)=x^3$であり、
+順序付き基底は$x^a z^b w^c$である。
+自己同型型Ore拡張の基本性質から、左右noetherian整域でもある。
+書換え$zx\mapsto xz+x^3$は語長を減らさないので、
+\[
+ I^p=\operatorname{span}_k
+ \{x^a z^b w^c:\ a+b+c\ge p\}.
+\]
+一方の包含は正規形への書換えから、逆の包含は各基底語がその語長個の
+augmentation元の積であることから従う。
+従って$\operatorname{gr}_I A\simeq k[x,z,w]$であり、追加条件を満たす。
+bar比較と\cite[Corollary~D]{LPWZKoszul}からAS次元3・添字6も得られる。
+
+第一段には一般に$\delta_1\ne0$を許す必要がある。
+この例で$z$を重み2の別の最小生成元$az+f(x)$に替えても、
+$[az+f(x),x]=a x^3$は消えない。
+
+長さ$p$以下の語で張る\emph{増加}word filtrationを使うと、
+同じ関係は$x^3\in F_2$を意味するので、その付随次数環では$\bar x^3=0$となる。
+従って、非二次の重み斉次例を含める本条件では、
+増加word filtrationと減少$I$-adic filtrationを区別する必要がある。
+\end{remark}
 
 \section{語長二次の場合の構造}
 \label{sec:quadratic-general-structure}
@@ -6333,6 +6760,112 @@ noetherian性、1周期性、指定Hilbert級数は仮定しない。
 後者は語長二次対象における周期と数値型の復元を扱う。
 両者の対応は第\ref{spec:sec:quadratic}節で具体的に記述する。
 
+\begin{corollary}[重み$(1,1,2,3)$ではAS添字7から二段表示が従う]
+\label{spec:cor:index-seven-ore}
+$k=\mathbb C$とし、$A$を連結局所有限な左右noetherian AS正則整域とする。
+左右の大域次元が4、AS添字が7であり、最小生成元の次数が
+$(1,1,2,3)$であると仮定する。
+このとき
+\[
+H_A(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}
+\]
+であり、定理\ref{spec:thm:ore-exhaustion}の二段Ore表示
+\[
+A=B[z;\sigma,\delta][w;\tau,D],\qquad |z|=2,\quad |w|=3,
+\]
+を持つ。ここで$B=k\langle A_1\rangle$は量子平面またはJordan平面であり、
+$\sigma$と$\tau$は次数付き自己同型である。
+語長二次性、Koszul性、指定Hilbert級数を追加仮定する必要はない。
+\end{corollary}
+
+\begin{proof}
+$\beta_{i,j}=\dim_k\Tor_i^A(k,k)_j$と置く。
+補題\ref{lem:index-four-strands}により、最小関係の重みは2から5に限られる。
+AS双対性\eqref{eq:betti-duality}は
+$\beta_{2,j}=\beta_{2,7-j}$を与えるので、ある非負整数$a,b$について
+\[
+\sum_j\beta_{2,j}t^j=a(t^2+t^5)+b(t^3+t^4)
+\]
+と書ける。他のBetti数は最小生成元次数と双対性によって定まり、
+最小右自由解消の各項は
+\[
+\begin{aligned}
+P_0&=A,\qquad
+P_1=A(-1)^2\oplus A(-2)\oplus A(-3),\\
+P_2&=A(-2)^a\oplus A(-3)^b\oplus A(-4)^b\oplus A(-5)^a,\\
+P_3&=A(-4)\oplus A(-5)\oplus A(-6)^2,\qquad
+P_4=A(-7)
+\end{aligned}
+\]
+となる。従ってEuler等式は$H_A(t)p(t)=1$、ただし
+\begin{equation}\label{spec:eq:index-seven-euler}
+\begin{split}
+p(t)={}&1-2t+(a-1)t^2+(b-1)t^3\\
+&\quad +(b-1)t^4+(a-1)t^5-2t^6+t^7,
+\end{split}
+\end{equation}
+を与える。
+
+まず$a\le1$を示す。$V=A_1$とし、重み2の原始生成元を$z$と選ぶ。
+最小生成元であることから、重み2の関係に$z$の非零線型項は現れない。
+従って重み2の最小関係空間は
+\[
+R_2=\ker(V\otimes V\longrightarrow A_2),\qquad \dim R_2=a
+\]
+である。$\dim V=2$であり、基底を選べば$V\otimes V$を$2\times2$行列の空間と同一視できる。
+$A$が整域であるため、$R_2$の非零元は階数1ではない。
+実際、階数1のテンソル$u\otimes v$は非零な$u,v\in A_1$の積を零にする。
+もし$a\ge2$なら、線型独立な$r,s\in R_2$を選ぶ。
+その行列を$M_r,M_s$とすると、
+\[
+\det(\lambda M_r+\mu M_s)
+\]
+は$(\lambda,\mu)$に関する斉次二次式である。
+代数閉体上では、恒等零の場合も含め、これを零にする
+$[\lambda:\mu]\in\mathbb P^1$が存在する。
+$r,s$の独立性より$\lambda r+\mu s\ne0$なので、この行列は階数1となり矛盾する。
+よって$a\in\{0,1\}$である。
+
+次に$A$は有限GK次元を持つので、$H_A(t)$は$0<t<1$で収束し正である。
+非零な$x\in A_1$を選ぶと、整域性より全ての$x^m$が非零であるから
+\[
+H_A(t)\ge\sum_{m\ge0}t^m=\frac{1}{1-t}.
+\]
+従って$p(t)=H_A(t)^{-1}\to0$ ($t\uparrow1$)であり、
+\eqref{spec:eq:index-seven-euler}から
+\[
+p(1)=2(a+b-3)=0,
+\qquad a+b=3
+\]
+を得る。
+もし$a=0$なら$b=3$であり、直接微分して
+\[
+p(1)=p'(1)=0,\qquad p''(1)=-4
+\]
+となる。そのため
+\[
+p(t)=-2(t-1)^2+O((t-1)^3)<0
+\]
+が1に十分近い$t<1$で成立し、$p(t)=H_A(t)^{-1}>0$に反する。
+従って$a=1,b=2$であり、
+\[
+p(t)=1-2t+t^3+t^4-2t^6+t^7
+=(1-t)^2(1-t^2)(1-t^3).
+\]
+これで所要のHilbert級数が得られた。
+
+$A$はもとの仮定から連結局所有限、左右noetherian、左右AS正則次元4であり、
+最小生成元次数も$(1,1,2,3)$である。
+従って、今得たHilbert級数と合わせて定義\ref{spec:def:graded-target}の全条件を満たす。
+定理\ref{spec:thm:ore-exhaustion}を適用すれば、結論の二段Ore表示を得る。
+\end{proof}
+
+\begin{remark}
+この系は、AS双対性による解消の制約と既存の四次元網羅定理を組み合わせたものである。
+語長二次性を外す一般$n$の問題や、$B=k\langle A_1\rangle$のAS性だけによる
+一般次元の認識を解決したという主張ではない。
+\end{remark}
+
 \section{有限個の係数によるOreデータ}\label{spec:sec:data}
 \subsection{基礎平面の自己同型}
 $V=kx\oplus ky$とする。次数付き自己同型群は次の通りである。
@@ -8934,6 +9467,13 @@ D.-M.~Lu, J.~H.~Palmieri, Q.-S.~Wu and J.~J.~Zhang,
 Duke Math. J. \textbf{137} (2007), 537--584.
 \href{https://doi.org/10.1215/S0012-7094-07-13734-7}{doi:10.1215/S0012-7094-07-13734-7}.
 \url{https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf}.
+\bibitem{LPWZKoszul}
+D.-M.~Lu, J.~H.~Palmieri, Q.-S.~Wu and J.~J.~Zhang,
+\emph{Koszul equivalences in $A_\infty$-algebras},
+New York J. Math. \textbf{14} (2008), 325--378.
+\url{https://nyjm.albany.edu/j/2008/14-16.pdf}.
+使用箇所：Corollary D（p.~327、証明p.~372）。
+Definition~9.1は成長条件を含まないため、多項式増大は別途確認する。
 \bibitem{LWW}
 L.~Liu, S.~Wang and Q.~Wu,
 \emph{Twisted Calabi--Yau property of Ore extensions},

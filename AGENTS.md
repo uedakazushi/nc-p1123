@@ -1,26 +1,29 @@
 # nc-p1123 研究指示
 
-2026-11-20 / v25。最初に `research/plan_ja.tex` を読む。
+2026-11-20 / v26。最初に `research/plan_ja.tex` を読む。
 主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
 
 ## 公表準備の構成
 
-- 主論文は `papers/nc-p1123.tex`、公表準備稿 v25。要旨と序論の後、次数付き準備・一般indexed構造・低次元・同型・非語長二次四次元・高次元の六部で読む。
+- 主論文は `papers/nc-p1123.tex`、公表準備稿 v26。要旨と序論の後、次数付き準備・一般indexed構造・低次元・同型・非語長二次四次元・高次元の六部で読む。
 - 一般AS双対性と語長保存AS周期の共通補題は `genidx:lem:as-translation`。全Extの一次生成性を使わない。ノートの同名内容は本文を参照する。
 - 周期Hilbert行列の共通極は `hilbert:lem:common-pole`。隣接生成、Hilbert次元の周期性、有限右Euler逆を明記する。代数周期・AS性・左右解消は不要。
 - n3の主依存は純数値型→AのKoszul性→一般 `knd:thm:koszul-ore`→B-AS3/Ore。二周期三生成元認識は独立の定理と別証明として保持し、定理と証明を一続きに保つ。混合階数の直接証明はノート `note:n3-direct-mixed-ranks` に全文を保持する。
 - 序論の `intro:thm:recognition`、`intro:thm:koszul` は本文の定理を案内する再掲であり、新たな未検証定理ではない。既存の定理ラベルを維持する。
 - 主張の新規性の最終確認、第三者査読、n>=4非Koszulの自動性は未完了である。内部検証や組版成功と区別する。
 
-## graded 非二次対象の一般Ore構造問題（2026-11-20）
+## 通常graded対象の自然な十分条件と残る構造問題
 
-- 優先問題：次数付きAS正則整域（左右noetherian）、最小生成元次数 (1^n,2,3)、大域次元 n+2、AS index n+5 だけで通常の二段Ore表示を得る。**未解決**。語長二次・Hilbert級数・Koszul性を追加しない。
+- 並行するgraded問題：次数付きAS正則整域（左右noetherian）、最小生成元次数 (1^n,2,3)、大域次元 n+2、AS index n+5 だけで通常の二段Ore表示を得る。一般nでは**未解決**。以下の十分条件を、その自動性の証明と混同しない。
+- `prop:index-compatible-word-grading`：上記の仮定へ、全最小生成元を語長1とする重みと両立した第二次数の存在だけを加えると、語長Koszul・標準Hilbert・通常二段Oreが従う。二次性は結論。R5の語長2成分とAS双対性から最高語長N=n+2を導く。
+- `thm:koszul-tangent-ore`：I=A_+に対するgr_I Aが語長Koszul整域なら、通常の二段Ore A=B[z;σ,δ₁][w;τ,δ₂]が従う。Aは左右noetherian AS正則次元n+2、最小生成元次数(1^n,2,3)。AS index n+5と標準Hilbertは結論。固定重みの有限bar filtration、Frobenius Ext、既存の通常Koszul認識、PBW基底の持上げを使う。gr_I Aの整域性をAの整域性から推論しない。
+- `spec:cor:index-seven-ore`：通常gradedのn=2では、AS4・AS index7・整域・左右noetherianの基本仮定から標準Hilbertと既存非二次Ore網羅定理の適用が従う。二重次数や付随環のKoszul性は追加不要。
 - `lem:index-four-strands`：AS添字だけから第i最小解消の重みシフトは [i,i+3]、最小関係の重みは2～5。証明を主論文に記載した。
 - `lem:index-heavy-relation`：A/(A1)ではzw,wzに非自明な重み5関係が残る。両係数非零は未証明。商の整域性を仮定してはならない。
 - `prop:nonquadratic-ore-family`：B=k[x1,...,xn]、z x1−x1 z=x1^3、z xj=xj z (j>1)、w中心は全nで非語長二次、標準Hilbert/AS index n+5のnoetherian AS整域かつ通常の二段Ore拡大。quadratic性の自動性を経由する証明方針は否定済み。二段Ore網羅性の反例ではない。
-- 次の焦点は、非二次関係を許して重み5関係の両係数の非零性、重み2生成元の交換写像、PBW性を導くこと。現時点では新結果のLuaLaTeX組版・外部査読を未実行として扱う。
+- 次の焦点は、一般graded対象で付随環条件をどこまで導けるか、または付随環条件を使わずに混合交換写像とPBW性を得られるかである。十分条件の証明と無条件の網羅性は別である。実際の組版・内部点検の範囲はvalidation.jsonで確認し、外部査読・新規性確認とは区別する。
 
 ## 現在の目標と対象
 
@@ -106,8 +109,15 @@
 - 明示したソースだけをstageし、通常のfast-forward pushを行い、遠隔SHAを照合する。
 - **PR、force push、GitHub Actionsは禁止。** 空コミット、認証情報、PDF、ZIP、コンパイル中間物、旧版をGitに入れない。
 - 保存は研究完了ではない。継続依頼の実行枠内では次の具体的課題へ進む。無期限実行や自動再起動は約束しない。
-- GitHub mainが編集可能なソース正本。現行ソースと主要PDFを含む非追跡の配布用bundleは、ユーザーの常設指示に従いLibraryへ保存する。旧版や作業ログは含めない。
+- GitHub mainが編集可能なソース正本。通常のコミットとmainへのpushは承諾を改めて求めず行う。Libraryへの定常的な二重保存やZIP作成は行わず、push不能時の緊急保存または別途明示指示がある場合に用いる。
 - 保存失敗を成功と記録しない。Library上の既存ファイルを無断で削除しない。
+
+## research-hubの更新
+
+- 研究全体の入口は https://github.com/uedakazushi/research-hub 。再開時には該当項目と適用されるAGENTS.mdを読む。
+- 区切りでは対象repoの主原稿 `papers/nc-p1123.tex`、研究ノート、方針、READMEを現在の内容へ整え、mainへの反映を確認した後、hubの該当項目を更新する。
+- 主要到達点、確実性、未解決の核心、次の一手、依存関係、再開先と実際の資料確認日を反映する。詳細な証明・todo・履歴をhubへ重複させない。実質的な変化がなければ日付だけ更新しない。
+- 保存直前にhubの最新内容を読み、他研究と並行変更を保持して通常コミットでmainへ反映する。研究repoの保存とhub更新は別々に成否を確認し、hub未反映時はその対象と理由を報告する。
 
 ## 原稿と主張
 

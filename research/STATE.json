@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-20",
-  "version": 24,
+  "version": 26,
   "classification_complete": false,
   "target": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). The main all-n reduction now proves B-ASn if and only if every r3(i)=n,r5(i)=1; those two rank conditions imply the full indexed two-step Ore structure without H, Koszulity, noetherianity or initial B-AS. Thus only their automaticity remains for unconditional indexed exhaustion. This automaticity is proved for n=1,2,3; n2,n3 also descend to ordinary Ore. At n4, D=L-N=3 is unconditional and ten conditions are equivalent, including Koszulity, N6, A/B period one, uniform/standard B Hilbert rows, B-AS4, indexed/ordinary Ore, and r3=4,r5=1. Their automaticity remains open. Ordinary graded word-Koszul objects admit full two-step Ore without initial H or noetherianity. Standard bigraded row Hilbert series imply the indexed structure and Koszulity for every n. A formal n4 pure-Euler model passes all-degree positivity/growth/Hopf constraints; it is not a realized algebra. Unconditional indexed exhaustion remains open for n>=4. Additionally, r5 is forced everywhere when the AS period L is not divisible by three. When D3 and 3|L, at least two full mod-three classes are forced. For arbitrary n with D3 and all r5=1, the complete Euler determinant factorization detP=detPB det(I-uvS^2) det(I-uv^2S^3) is proved, with no 3|L or Koszul assumption; it does not by itself supply the missing r3 ranks or Ore structure.",
   "scope": {
@@ -74,7 +74,9 @@
     "d3_full_r5_moment": "For Qn_dom with D3, L=3ell>=9 and all r5=1, put a_i=r3(i),b_i=r4(i),H_i=Tor3(word3,excess3) dimension. Then sum(a_i-H_i)+sum(b_i-n)=0. Exact full-matrix trace calculation yields x^3 coefficient y^(2ell-1)/(1-y^(2ell)) times that sum in detP(x^2,y/x)/(1-y^(2ell))^3; the face-factor theorem forces the coefficient polynomial. No classwise constancy of b_i is assumed. For n4, H_i=p_(i+6,N-3). This is a necessary identity, not automatic Koszulity.",
     "four_light_cubic_corner_bounds": "For Q4dom, h_j=p_(j+6,N-3)=dim diagonal E3_excess3 at j, u_j=t_(j+1)a_j, v_j=t_j a_(j+3), h_j<=min(b_j,b_(j+2),u_j+v_j,1+min(u_j,v_j)). Both neighboring t zero imply h=0; one zero implies h<=1. Thus q_i=1,t_(i+N-3)=0 forces a nonzero lower-word pure third syzygy. Also dim diagonal E3_excess2 at j <=min(r_j+a_j,r_(j+3)+a_(j+2)); equality forces injectivity and a direct sum in the displayed normal form. Uses the quadratic-dual diagonal subalgebra, never generation of full Ext in degree one.",
     "euler_jump_congruence": "For an L-folded finite bigraded Euler matrix, every determinant monomial u^m v^e has m+e divisible by L. Thus detPB is a polynomial in u^L. Under the bar support 0<=e<=2m, F(x^2,y/x) is a polynomial, and if 3|L its x powers are all multiples of three. The x4 and x5 coefficients vanish identically, not by new rank constraints.",
-    "d3_full_r5_euler_factorization": "For every n>=1 and A in Qn_dom, assume D3 and all r5(i)=1. At its AS shift L=N+3, detP(u,v)=detPB(u) det(I-uvS^2) det(I-uv^2S^3). No 3|L, Koszulity, noetherianity, standard Hilbert or initial B-AS assumption. Pure B has top Tor in homological degree n, word N-2, rank one at every vertex. Integer unit-circle roots and AS pairing give reciprocal quotient Q of bidegree (L,L) with sign (-1)^L. Jump-congruence restricts its support; the infinity-degree estimate deg_infinity[x^k]detJ<=k-2 forces the lower half of Q-det(I-uvS^2) to vanish, and reciprocity forces the rest. At n4 this applies to every all-r5 branch; N9/L12 gives heavy factors (1-(uv)^6)^2(1-(uv^2)^4)^3 and detPB a degree-seven polynomial in u^12 with constant 1 and leading -1. This is a determinant identity, not an Euler-matrix or Hilbert-row factorization, PBW recognition, or proof of r3=n."
+    "d3_full_r5_euler_factorization": "For every n>=1 and A in Qn_dom, assume D3 and all r5(i)=1. At its AS shift L=N+3, detP(u,v)=detPB(u) det(I-uvS^2) det(I-uv^2S^3). No 3|L, Koszulity, noetherianity, standard Hilbert or initial B-AS assumption. Pure B has top Tor in homological degree n, word N-2, rank one at every vertex. Integer unit-circle roots and AS pairing give reciprocal quotient Q of bidegree (L,L) with sign (-1)^L. Jump-congruence restricts its support; the infinity-degree estimate deg_infinity[x^k]detJ<=k-2 forces the lower half of Q-det(I-uvS^2) to vanish, and reciprocity forces the rest. At n4 this applies to every all-r5 branch; N9/L12 gives heavy factors (1-(uv)^6)^2(1-(uv^2)^4)^3 and detPB a degree-seven polynomial in u^12 with constant 1 and leading -1. This is a determinant identity, not an Euler-matrix or Hilbert-row factorization, PBW recognition, or proof of r3=n.",
+    "graded_AS_index_problem": "Ordinary connected locally finite left/right noetherian AS-regular domains with minimal generator weights (1^n,2,3), global dimension n+2 and AS index n+5. General unconditional two-step Ore recognition remains open; n=2 is now proved without a prescribed Hilbert series.",
+    "graded_sufficient_conditions": "A compatible word grading putting every primitive generator in word degree one is sufficient under AS index n+5; quadraticity and Koszulity follow. More generally, a Koszul domain gr_(A+) A is sufficient for ordinary two-step automorphism Ore with both derivations allowed; AS index n+5 follows, rather than being assumed. These are explicit sufficient conditions, not automatic properties of every AS-regular domain."
   },
   "claims": [
     {
@@ -1197,9 +1199,95 @@
       "novelty": "not_finally_verified",
       "external_peer_review": false,
       "formalized": false
+    },
+    {
+      "id": "GRADED-ASINDEX-FOUR-STRANDS",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#lem:index-four-strands",
+      "scope": "AS dimension n+2 and AS index n+5 force the weight shifts of Tor_i into [i,i+3]; minimal relation weights are 2 through 5. Connected locally finite left/right noetherian hypotheses as stated; no Hilbert or word-quadratic premise.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "GRADED-WEIGHT5-SURVIVAL",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#lem:index-heavy-relation",
+      "scope": "Under the preceding index hypotheses, a nonzero formal weight-five zw/wz relation survives in A/(A1). Its two coefficients are not both zero; their individual nonvanishing is not concluded, and the quotient is not assumed to be a domain. The exponential-growth argument uses the complete relation-weight bound.",
+      "depends_on": [
+        "GRADED-ASINDEX-FOUR-STRANDS"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "NONQUADRATIC-GRADED-ORE-FAMILY",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#prop:nonquadratic-ore-family",
+      "scope": "For every n, B=k[x1,...,xn], partial(x1)=x1^3, partial(xj)=0 for j>1, A=B[z;partial][w] gives a left/right noetherian AS domain of dimension n+2, index n+5 and standard Hilbert series with no word-quadratic presentation for any weight-homogeneous primitive lifts. It is itself an iterated Ore extension, not a counterexample to Ore recognition.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "GRADED-COMPATIBLE-WORD-ORE",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#prop:index-compatible-word-grading",
+      "scope": "Ordinary connected locally finite left/right noetherian AS domain of dimension n+2, index n+5 and primitive weights (1^n,2,3). A compatible second grading assigning every primitive generator word degree one forces top word N=n+2, hence word Koszulity, standard bigraded Hilbert series and ordinary two-step Ore over a Koszul AS_n base. Word-quadraticity is a conclusion.",
+      "depends_on": [
+        "GRADED-WEIGHT5-SURVIVAL",
+        "ORDINARY-KOSZUL-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "IADIC-KOSZUL-EXT",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#iadic:lem:ext-comparison",
+      "scope": "For a positively weight-graded locally finite algebra with the given finite primitive generator space, a Koszul augmentation-adic associated graded algebra gives a weight-preserving Yoneda algebra isomorphism Ext_A(k,k)=Ext_grA(k,k). The decreasing bar filtration is finite in each weight, all higher differentials miss the diagonal, and one filtration layer per homological degree removes coalgebra/product extension ambiguity. No equality of higher A-infinity operations is claimed.",
+      "depends_on": [],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "GRADED-KOSZUL-TANGENT-ORE",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#thm:koszul-tangent-ore",
+      "scope": "Connected locally finite, polynomial-growth, two-sided AS dimension n+2 with finite finitely generated simple resolutions, primitive weights (1^n,2,3). A Koszul domain gr_(A+) A implies A=B[z;sigma,delta1][w;tau,delta2], B Koszul AS_n domain, tau(B)=B and tau(z)=c z+q with c nonzero and q in B2. Index n+5 and standard Hilbert series follow. Both derivations are allowed. Associated-graded domainness is an additional hypothesis, not inferred from domainness of A.",
+      "depends_on": [
+        "IADIC-KOSZUL-EXT",
+        "ORDINARY-KOSZUL-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "GRADED-N2-INDEX-SEVEN-ORE",
+      "status": "proved_in_manuscript_and_internally_checked",
+      "proof": "papers/nc-p1123.tex#spec:cor:index-seven-ore",
+      "scope": "Over C, connected locally finite left/right noetherian AS4 domain, AS index7 and primitive generator weights (1,1,2,3) imply standard Hilbert and the existing non-word-quadratic Ore theorem. AS duality gives relation weights (a,b,b,a), absence of rank-one tensors gives a<=1, and positivity of the Euler denominator near t=1 excludes a=0. No prescribed Hilbert, second grading, quadraticity or Koszul tangent hypothesis.",
+      "depends_on": [
+        "GRADED-ASINDEX-FOUR-STRANDS",
+        "GRADED-ORE"
+      ],
+      "novelty": "not_finally_verified",
+      "external_peer_review": false,
+      "formalized": false
     }
   ],
   "open_problems": [
+    {
+      "id": "GRADED-ASINDEX-ORE-EXHAUST",
+      "priority": 1,
+      "problem": "General ordinary non-word-homogeneous AS domains of dimension n+2 and index n+5: establish two-step Ore without assuming a compatible second grading or a Koszul domain augmentation tangent algebra, or construct a counterexample. The compatible-grading and Koszul-tangent sufficient conditions are now proved; their automaticity is not. n=2 is solved under the base hypotheses. The cubic derivation family is Ore and does not contradict recognition."
+    },
     {
       "id": "GEN-INDEXED-ORE-EXHAUST",
       "priority": 1,
@@ -1281,20 +1369,34 @@
       "research/STATE.json"
     ],
     "obstacle": "The nonKoszul full Ext need not be generated in degree one. At n4 two full r5 residue classes are proved, but the last class and full r3 are unresolved. If all r5=1, the complete global Euler determinant factorization is proved; converting this scalar identity into rowwise ranks, a Hilbert-matrix decomposition or PBW remains open. The exact positive boundary kernel need not be simple; determinant face multiplicity does not identify its dimension or Hilbert pole order. No nonKoszul Qn_dom example has been constructed; the classical Heisenberg AS5 example is outside the generatorcount=ASdim target.",
-    "do_not_repeat": "Do not reopen solved n1 classification, n2 domain Ore, n3 numerics/base-AS/Ore/descent/noetherianity, n4 D3/ten-condition equivalence, or ordinary all-n Koszul second Ore. The n1 period-two example refutes universal ordinary descent only. Do not add H/Koszul/noetherian/period assumptions silently. A normal quotient need not be a domain; bar obstruction uses finite Tor instead. Generic pure 14641 data do not imply AS4, but RS non-AS examples cannot be Q4dom pure bases. The n4 formal model is not an algebra or a counterexample. Keep all proof/certificate assets; novelty and external review remain unverified. Do not reopen the non-Koszul normal-z PBW/base-AS problem: INDEXED-NORMAL-Z-ORE settles it. The matrix argument uses an invertible highest Euler coefficient from AS duality; do not claim degree additivity for arbitrary polynomial matrices or omit uniform top bidegree. Do not reopen N7/N8 or any N not divisible by three in Q4dom, or the AS-parent extensions of the N7 formal pure model. The new nozz statements have an explicit extra hypothesis, not part of the unrestricted target. INDEXED-KOSZUL-ORE now solves the word-Koszul case for all n; no D4 or sixfold-dimensional Koszul exception remains. Original quadraticity alone is weaker, so non-Koszul rank automaticity remains open. In D3 do not reopen exactly one saturated r5 class or the two-saturated branch with b<n on the specified saturated class: D3-TWO-SATURATED-CLASSES excludes them for every N. Do not reintroduce all-r5 as an assumption in the nozz periodic theorem. Do not infer boundary corank from the Mahler face multiplicity. Do not rederive the now-proved full-r5 D3 determinant factorization or search for x4/x5 constraints when 3|L: jump congruence makes those coefficients zero."
+    "do_not_repeat": "Do not reopen solved n1 classification, n2 domain Ore, n3 numerics/base-AS/Ore/descent/noetherianity, n4 D3/ten-condition equivalence, or ordinary all-n Koszul second Ore. The n1 period-two example refutes universal ordinary descent only. Do not add H/Koszul/noetherian/period assumptions silently. A normal quotient need not be a domain; bar obstruction uses finite Tor instead. Generic pure 14641 data do not imply AS4, but RS non-AS examples cannot be Q4dom pure bases. The n4 formal model is not an algebra or a counterexample. Keep all proof/certificate assets; novelty and external review remain unverified. Do not reopen the non-Koszul normal-z PBW/base-AS problem: INDEXED-NORMAL-Z-ORE settles it. The matrix argument uses an invertible highest Euler coefficient from AS duality; do not claim degree additivity for arbitrary polynomial matrices or omit uniform top bidegree. Do not reopen N7/N8 or any N not divisible by three in Q4dom, or the AS-parent extensions of the N7 formal pure model. The new nozz statements have an explicit extra hypothesis, not part of the unrestricted target. INDEXED-KOSZUL-ORE now solves the word-Koszul case for all n; no D4 or sixfold-dimensional Koszul exception remains. Original quadraticity alone is weaker, so non-Koszul rank automaticity remains open. In D3 do not reopen exactly one saturated r5 class or the two-saturated branch with b<n on the specified saturated class: D3-TWO-SATURATED-CLASSES excludes them for every N. Do not reintroduce all-r5 as an assumption in the nozz periodic theorem. Do not infer boundary corank from the Mahler face multiplicity. Do not rederive the now-proved full-r5 D3 determinant factorization or search for x4/x5 constraints when 3|L: jump congruence makes those coefficients zero.",
+    "parallel_graded_problem": {
+      "task_id": "GRADED-ASINDEX-ORE-EXHAUST",
+      "read_labels": [
+        "prop:index-compatible-word-grading",
+        "iadic:lem:ext-comparison",
+        "thm:koszul-tangent-ore",
+        "spec:cor:index-seven-ore"
+      ],
+      "next_action": "Analyze which initial relations and syzygies can obstruct gr_(A+) A from being Koszul or a domain, keeping the nonquadratic cubic-derivation example as a valid regression example. Alternatively recognize mixed exchanges without the tangent condition. Existing B-AS recognition is restricted to word-quadratic objects.",
+      "status": "Sufficient conditions proved; general automaticity open. The original indexed n4 N9/L12 problem remains separate."
+    }
   },
   "publication_manuscript": "papers/nc-p1123.tex",
   "indexed_z_algebra_working_source": "research/indexed_z_algebra.tex",
-  "current_user_authorization": "Z-domainness may be assumed in the current arbitrary-n problem. Standard Hilbert series, noetherianity, Koszulity, PBW properties and period one have not thereby been authorized as extra hypotheses.",
+  "current_user_authorization": "Z-domainness may be assumed in the current arbitrary-n problem. Standard Hilbert series, noetherianity, Koszulity, PBW properties and period one have not thereby been authorized as extra hypotheses. The current request explicitly asks for natural additional sufficient conditions; they are recorded as conditional theorems and do not replace the original unconditional target. Main source commits/pushes and corresponding research-hub updates are authorized without a fresh confirmation; routine Library duplication/ZIP creation is unnecessary.",
   "publication_preparation": {
-    "manuscript_version": 24,
+    "manuscript_version": 26,
     "structure": "Abstract and introduction followed by six thematic parts; all existing theorem/equation labels retained.",
     "central_results": [
       "intro:thm:recognition",
       "intro:thm:koszul",
       "genidx:thm:one-light-classification",
       "idx:thm:domain-ore",
-      "genidx:thm:three-light-descent"
+      "genidx:thm:three-light-descent",
+      "prop:index-compatible-word-grading",
+      "thm:koszul-tangent-ore",
+      "spec:cor:index-seven-ore"
     ],
     "open_publication_tasks": [
       "Complete novelty comparison for individual structural results, with the precise distinctions in BASELINE.",

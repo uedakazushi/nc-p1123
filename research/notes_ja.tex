@@ -9,7 +9,7 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月20日\quad 第25版}
+\date{2026年11月20日\quad 第26版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
@@ -571,7 +571,7 @@ $A$がさらに左右noetherianなら、$B=A/(z,w)$も左右noetherianである
 （\texttt{ogk:cor:noetherian-ore}）。
 bar複体、正規元商、PBWという一般的な道具は既知であり、この具体的な仮定削減の新規性の最終確認は未完である。
 
-\paragraph{$n=4$の九つの同値条件。}
+\paragraph{$n=4$の十の同値条件。}
 \texttt{n4:thm:equivalent-criteria}は、$A\in\mathcal Q_4^{\mathrm{dom}}$について、
 次の十条件が同値であると証明する。
 \begin{enumerate}
@@ -2321,8 +2321,9 @@ Euler式から全て決めることはできない。
 $r_2=3$, $r_3-r_5=2$で、$r_4$の寄与はホモロジー次数2と3で相殺される。
 この語長二次性を外す補助課題は、固定した次元5・指定Hilbert級数の下でのaugmentation filtrationである。
 現在優先するindexed構造問題とは仮定と目標を区別する。
-付随次数代数が二次AS正則になることは未証明であり、
-これを先に確認してから一般化の網羅定理を適用する。
+付随次数代数が無条件にKoszul整域となることは未証明である。
+この条件の下での認識は主論文\texttt{thm:koszul-tangent-ore}で証明した。
+個々の対象への適用には、付随環条件自体の確認が必要である。
 証明のないPBW変形への還元を仮定しない。
 
 \section{対角skew Oreチャートの分類済み範囲}
@@ -2426,7 +2427,8 @@ v2では命題5.1、v1では対応する命題が4.1なので版を固定する�
 全filtered deformationを幾何的構成で尽くすという部分は予想であり、既知の全射性定理としない。
 本研究への適用、標識忘却、重み付きambientとの一致は未確認である。
 
-\section{AS添字$n+5$のgraded問題：非二次Ore例とその意味}
+\section{通常graded対象の十分条件と非二次の障害}
+\label{note:graded-sufficient-criteria}
 現行主論文の\texttt{lem:index-four-strands}と
 \texttt{prop:nonquadratic-ore-family}を参照する。
 最小解消のshift幅3はAS添字のみから従い、
@@ -2446,13 +2448,41 @@ $m$ブロックの$2^m$語の重みは$[3m,5m]$に入るので
 多項式増大に反する。ただし関係が$zw=0$のように片側だけでも
 商の増大は多項式となり得るため、両係数非零性は別途示す必要がある。
 
-有効な次の補題候補は、重み2のOre変数の交換則を、
-三次以上の補正項を許すPBW形として認識するものである。
-重み5以下という制約だけでは関係式の語長は2とは限らないため、
-最小関係の重みと語長を常に区別する。
-$A/(A_1)$は$z,w$で生成されるが、親代数が整域でもこの商が
-整域とは限らない。従ってTor有限性や成長だけから
-$A/(A_1)$を量子平面と宣言しない。
+\paragraph{第二次数と付随次数環による二つの判定。}
+主論文\texttt{prop:index-compatible-word-grading}は、AS添字$n+5$の下で、
+最小生成元を語長1に置く両立した第二次数だけからKoszul性を導く。
+重み5・語長2の最小関係に対するAS双対成分の差次数が非負であることから
+$L-N\ge3$となり、$N\ge n+2$と合わせて$N=n+2$を得る。
+二次性、基礎AS性、標準Hilbertはこの判定の結論である。
+
+非二次の例も含む判定は\texttt{thm:koszul-tangent-ore}である。
+$I=A_+$と置き、減少する$I$進filtrationの付随次数環がKoszul整域なら、
+$A=B[z;\sigma,\delta_1][w;\tau,\delta_2]$が従う。
+AS添字$n+5$も結論なので、この定理だけを使うときには独立の仮定にしなくてよい。
+固定重みごとの有限bar filtrationによりYoneda代数を比較し、
+付随環のAS性を認識してから、低い重みの補正項と基底を持ち上げる。
+完全証明は本文に置き、ここには重複しない。
+
+$zx_1-x_1z=x_1^3$の非二次例では、この付随次数環は可換多項式環となる。
+語長以下で切る増加filtrationとは異なり、こちらは語長以上の語が作る$I^p$を使う。
+増加filtrationでは$x_1^3$が次数2以下へ落ち、付随環に$\bar x_1^3=0$が生じる。
+従って、二種類のfiltrationを混同するとこの基本例さえ誤って除外する。
+第一段の導分$\delta_1$を零と仮定してはならない。
+
+\paragraph{四次元と残る範囲。}
+$k=\mathbb C$、$n=2$では、AS4・AS添字7・整域・左右noetherianという
+基本仮定だけで標準Hilbert級数を導ける
+（\texttt{spec:cor:index-seven-ore}）。
+二次関係空間の階数1テンソルがないことから$r_2\le1$、
+Euler分母の$t=1$近傍の正値性から$r_2=1$を得て、既存の非二次網羅定理へ進む。
+指定Hilbert・第二次数・付随環条件はこの四次元の系では追加不要である。
+
+一般$n$で二つの十分条件が自動かどうかは未解決である。
+$A$が整域でも$\operatorname{gr}_I A$や$A/(A_1)$が整域とは限らない。
+また、$B$がAS正則なら十分という既存の基礎認識定理は語長二次クラス内の結果であり、
+非語長斉次の対象へのそのままの適用は未証明である。
+次に調べるべき点は付随環のKoszul性・整域性の導出、またはそれを使わない
+混合交換写像とPBW性の認識である。
 
 \section{計算の現状と限界}
 基準族に関する証明書は\path{computations/baseline_certificate.json}にある。

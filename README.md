@@ -1,6 +1,6 @@
 # nc-p1123 — 重み (1^n,2,3) のAS正則代数
 
-**2026-11-20 / 公表準備稿 v24。** 主論文は [papers/nc-p1123.tex](papers/nc-p1123.tex)。日本語 LuaLaTeX、著者欄は空欄。
+**2026-11-20 / 公表準備稿 v26。** 主論文は [papers/nc-p1123.tex](papers/nc-p1123.tex)。日本語 LuaLaTeX、著者欄は空欄。
 
 研究を再開するときは [研究方針](research/plan_ja.tex) を最初に読む。本文外の有効な補題・例・障害は [研究ノート](research/notes_ja.tex)、七窓表示の詳細は [添字付き研究資料](research/indexed_z_algebra.tex) にある。
 
@@ -28,6 +28,20 @@ n=1 の正規形は zx=xz, wz=c zw, w_i x_(i+3)=x_i w_(i+1)+d_i z_i z_(i+2)、d_
 
 n=2 では整域性を仮定しない広い対象 Q も扱い、標準関係数とHilbert級数を得る。混合関係数の強制には890個の整数列の厳密検査を用いる。整域部分には計算に依存しない数値強制の証明もある。
 
+## 通常の次数付き対象で二段Oreを得る自然な条件
+
+最小生成元次数 (1^n,2,3)、AS次元 n+2 の通常の連結局所有限AS正則代数について、次の判定を本文に証明した。左右noetherian性は必要な有限生成解消を保証する。
+
+| 条件 | 結論と適用範囲 | 本文ラベル |
+| --- | --- | --- |
+| AS添字 n+5、整域、全最小生成元を語長1とする重みと両立した第二次数 | 語長Koszul性、基礎のKoszul AS_n性、標準二変数Hilbert、通常の二段Ore。語長二次性は結論 | prop:index-compatible-word-grading |
+| I=A_+ に対する gr_I A が I次数でKoszulな整域 | 非二次補正を許す A=B[z;σ,δ₁][w;τ,δ₂]。AS添字 n+5と標準Hilbertも結論。gr_I Aの整域性は追加仮定 | thm:koszul-tangent-ore |
+| n=2、AS添字7、整域・左右noetherian | 標準Hilbertと量子平面／Jordan平面上の二段Ore。二次性・第二次数・付随環条件は追加不要 | spec:cor:index-seven-ore |
+
+z x₁−x₁ z=x₁³、他のx_jとzは可換、wは中心という族は、標準HilbertとAS添字 n+5を持つ非語長二次の二段Ore例である。この族の減少I進付随環は可換多項式環なので、第二の判定が適用できる。増加する語長filtrationとは区別する。
+
+一般nでAS添字と基本仮定だけから二段Oreが従うかは未解決。上記は十分条件の証明であり、条件の自動性を主張するものではない。元の語長二次indexed問題と、通常gradedの非二次問題の仮定を混同しない。
+
 ## 論文の構成
 
 要旨と序論では、中心定理、次数の規約、仮定と結論の一覧、先行研究との関係を説明する。本文は次の六部からなる。
@@ -41,7 +55,7 @@ n=2 では整域性を仮定しない広い対象 Q も扱い、標準関係数�
 | V | 語長二次性を仮定しない四次元の通常graded分類 |
 | VI | 多項式増大、Euler行列式の因子、六次元対象の数値拘束、未解決問題 |
 
-第I部の G_n は noetherian性と指定一変数Hilbert級数を仮定する。第V部はこの通常graded設定の n=2 について語長二次性を外す。一般indexed対象の仮定と混同しない。
+第I部の比較クラス G_n は noetherian性と指定一変数Hilbert級数を仮定する。一方、AS添字・付随環の判定は各声明の独立した仮定からHilbert級数を導く。第V部はこの通常graded設定の n=2 について語長二次性を外す。一般indexed対象の仮定と混同しない。
 
 共通AS補題は genidx:lem:as-translation。全Extを一次生成と仮定せず、完全対合・AS平行移動・最高語長の一定性・二次表示からの周期復元を証明する。周期Hilbert行列の共通極と一次モーメントは hilbert:lem:common-pole にまとめる。n=3 の主依存は数値型から一般Koszul定理へ進む。親代数を要しない二周期三生成元認識定理も独立結果として保持し、定理文と証明を一続きに配置する。直接の混合階数証明は研究ノート note:n3-direct-mixed-ranks に収める。
 
@@ -76,9 +90,9 @@ check_project.py はファイル・ラベル・引用・主張参照の検査で
 
 ## 保存と配布
 
-編集可能なソースの正本は GitHub main。PDF、ZIP、ログ、キャッシュ、旧版はGitで追跡せず、GitHub Actionsは使わない。現行ソースと主要PDFを含む配布用研究継続一式は、常設の保存指示に従って別途保存する。
+編集可能なソースの正本は GitHub main。PDF、ZIP、ログ、キャッシュ、旧版はGitで追跡せず、GitHub Actionsは使わない。Libraryへの定常的な二重保存やZIP作成は行わない。push不能時の緊急保存または別途指示がある場合に、現行ソースと主要PDFを含む一式を保存する。研究の区切りでは、本repoのmainへの反映を確認してから[research-hub](https://github.com/uedakazushi/research-hub)の該当項目を更新する。
 
-検証済みソースをコミットし、主論文・方針・ノートを組版した後に、次で現行版だけのZIPを作成できる。
+緊急保存または明示的に配布一式が必要な場合には、検証済みソースをコミットし、主論文・方針・ノートを組版した後、次で現行版だけのZIPを作成できる。
 
 ```bash
 python3 scripts/build_bundle.py
