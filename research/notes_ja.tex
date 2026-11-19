@@ -8,7 +8,7 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第20版}
+\date{2026年11月19日\quad 第21版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
@@ -41,6 +41,9 @@ $n=4$では最高差次数$D=L-N=3$を追加仮定なしに確定し、
 純jump 1部分の解消型と周期モーメント制約を得た。
 さらに最高語長とAS移動の三整除性を無条件に証明し、
 非Koszulの残余を$N=9,12,15,\ldots$へ限定した。
+最高差次数3では少なくとも二つの法3剰余類で全$r_5=1$であり、
+二飽和・全飽和の各場合の点ごとの$r_4$制約も得た。
+Euler行列式の純基礎面・重み3面の大域的因子は、残る場合の高次係数条件を与える。
 語長Koszul性を追加した場合には、全標準数値型、$A$自身の1周期性、
 基礎のAS4性と通常の二段Ore表示が従う。
 通常の次数付き対象では、任意$n$で語長Koszul性から標準数値型と二段Ore表示を導ける。
@@ -1100,10 +1103,22 @@ $w^*=\eta$との積は$r_5=0$なら両方零、$r_5=1$なら同じ一次元空�
 差次数、有限Frobenius対合、親代数の整域性と成長を合わせる方針であり、
 この記述から階数の自動性が証明済みであるとはしない。
 
-\subsection{最高語長九の三成分境界条件}
+\subsection{差次数三の三成分境界と残る配置}
 \label{note:n4-three-class-boundary}
-主論文\texttt{n4:thm:top-word-divisible-three}により、非Koszul枝の最初は$N=9,L=12$である。
-一般の純解消でも、各始点において
+主論文\texttt{d3:lem:boundary-kernel}は、重み3境界の正の左右核が、
+固定した$\varepsilon>0$ごとに厳密に$K=\ker(I-S^3)$へ属することを証明する。
+これは先頭項だけの性質ではなく、$w$の乗法単射と有限周期から得る等式である。
+正規化した核は有理関数として選べ、0に解析的に延長するため、核が多次元でも係数比較を使える。
+
+主論文\texttt{d3:thm:two-saturated-classes}により、最高差次数$D=3$、$3\mid L$なら、
+法3の少なくとも二剰余類で全$r_5=1$である。
+ちょうど$r,r+1$が飽和する場合には、剰余類$r+1$の全$r_4=n$が従う。
+全三類が飽和する場合には全$r_4\le n$、かつ少なくとも一剰余類で全$r_4=n$である。
+局所平方関係が作る禁止三次Torと、単一の$z$を含む$n+1$個の独立な語の圧縮で証明する。
+完全な証明は主論文にあり、ここでは重複しない。
+$n=4$には全ての$N$で適用されるが、$N=9,12,15,\ldots$の全排除には至っていない。
+
+$n=4$、$s=N-2$の純解消では、各始点において
 \[
 \sum_{j=3}^{s-1}p_{i,j}\ge2q_i,\qquad r_2(i)\ge3+q_i
 \]
@@ -1112,139 +1127,198 @@ $w^*=\eta$との積は$r_5=0$なら両方零、$r_5=1$なら同じ一次元空�
 完全性が末尾写像の全射性を要求し、正次数の最小写像であることに反する。
 この下界は第三項が同一語長に集中する前にも使える。
 
+\subsection{二つの飽和剰余類がある場合の正核の先頭項}
+\label{note:d3-two-saturated-leading}
 
-$A\in\mathcal Q_4^{\mathrm{dom}}$について$N=9$、$s=7$、$L=12$と仮定する。
-$a_i=r_3(i)$、$b_i=r_4(i)$、$t_i=r_5(i)\in\{0,1\}$とし、
-純第三Torの語長6の次元を$p_{i,6}$とする。
-各法3剰余類$t\in\mathbb Z/3$について
+ここでは$A\in\mathcal Q_n^{\mathrm{dom}}$、$D=3$、$3\mid L$とする。
+従って$n=4$の全対象を含む。
+$t_i=r_5(i)\in\{0,1\}$、$b_i=r_4(i)\le n+1$とする。
+剰余類0、1は飽和し、剰余類2は飽和しないと仮定する：
 \[
- \delta_t=1-\frac14\sum_{i\equiv t\ (3)}t_i,\qquad
- \gamma_t=\frac14\sum_{i\equiv t\ (3)}b_i-4,\qquad
- \alpha_t=\frac14\sum_{i\equiv t\ (3)}(a_i-p_{i,6})
+ t_i=1\quad(i\equiv0,1\pmod3),
+ \qquad \text{ある }i\equiv2\pmod3\text{ で }t_i=0.
 \]
-と置く。$\delta_t=0$は、その剰余類の全$r_5$が1であることと同値である。
-既存の飽和補題により少なくとも一つの$\delta_t$は零である。
+主論文の二剰余類飽和定理から、剰余類1では点ごとに$b_i=n$である。
 
-\paragraph{三成分の境界必要条件。}
-以下が成立する。
-\begin{enumerate}
-\item $\delta_r=0$、$\delta_{r+1},\delta_{r-1}>0$なら
+主論文\texttt{d3:lem:boundary-kernel}の解析的な正核$h,g$を用いる。
+厳密な核定数性により、各$\varepsilon$で$h_i$、$g_i$は$i\bmod3$だけに依存する。
+以下は3成分で記し、必要なら先頭係数をさらに正の定数で割って正規化する。
+$z$の左右正則性から
 \[
- \gamma_r\ge0,\qquad\gamma_{r+1}\ge0.
+ h_r(\varepsilon)\ge\varepsilon h_{r+2}(\varepsilon),
+ \qquad
+ g_r(\varepsilon)\ge\varepsilon g_{r+1}(\varepsilon)
+ \quad(r\bmod3)
 \]
-従って、法3剰余類$r$と$r+1$のそれぞれで$\sum r_4(i)\ge16$である。
-\item $\delta_r=\delta_{r+1}=0$、$\delta_{r-1}>0$、かつ$\gamma_{r+1}\ne0$なら
-\[
- \gamma_r\ge0,\qquad\gamma_{r-1}\ge0,\qquad
- \delta_{r-1}\alpha_r+\gamma_r\gamma_{r-1}=0.
-\]
-特に$\alpha_r\le0$である。
-\item 全ての$\delta_t$が零なら
-\[
- \gamma_0\gamma_1\gamma_2=0.
-\]
-すなわち少なくとも一つの法3剰余類で$\sum r_4(i)=16$である。
-\end{enumerate}
+が成立する。
 
-\paragraph{証明。}
-十二頂点巡回シフトを$S$とし、重み3生成元の境界Euler行列を
-$\mathscr P(\varepsilon)=P(\varepsilon^2,\varepsilon^{-1})$と置く。
-既に用いた境界発散の議論により$\det\mathscr P\equiv0$である。
-AS対合から低次展開は
+\paragraph{残余二飽和枝の先頭正核。}
+上記の仮定と既証の局所障害および主論文\texttt{d3:lem:single-z-collapse}の下で、
+正核を定数倍して
 \[
- \mathscr P=M_0+\varepsilon M_1+\varepsilon^2M_2+\varepsilon^3M_3+O(\varepsilon^4),
-\]
-\begin{align*}
- M_0&=I-S^3,\\
- M_1&=-S^2+\operatorname{diag}(t_i)S^5,\\
- M_2&=\operatorname{diag}(b_i)S^4-4S,\\
- M_3&=\operatorname{diag}(a_i)S^3
-       -\operatorname{diag}(p_{i+6,6})S^6.
-\end{align*}
-各剰余類上で定数である三次元部分空間を$K=\ker M_0$とし、
-$\Pi$を各剰余類の平均を取る射影とする。
-$C$を三成分上のシフト$(Cx)_r=x_{r+1}$とすると
-\[
- \Pi M_1|_K=-\operatorname{diag}(\delta_r)C^2,\qquad
- \Pi M_2|_K=\operatorname{diag}(\gamma_r)C,\qquad
- \Pi M_3|_K=\operatorname{diag}(\alpha_r).
-\]
-
-まず、$\varepsilon>0$を十分小さく固定したときの境界核の正性を述べる。
-$u=\varepsilon^2/c$、$v=c/\varepsilon$、$c\to1-$とするとHilbert行列は非負で発散する。
-純jump 1の経路による左右乗法と十二周期性は、その全成分を
-$c$に依存しない正の定数倍の範囲で比較する。
-従って正規化したHilbert列または行の部分列極限は、それぞれ境界Euler行列の
-厳密に正の右核または左核ベクトルとなる。
-境界核が一次元のとき、そのベクトルの符号は一意に定まる。
-
-\paragraph{一剰余類だけが飽和する場合。}
-添字をずらして$r=0$とする。
-$\Pi M_1|_K$の階数は2であり、その右核は第2成分、左核は第0成分である。
-$M_0$は$K^\perp$上で可逆なので、$\mathscr P(\varepsilon)$は
-十分小さな$\varepsilon\ne0$で階数11となる。
-多項式随伴行列の共通の$\varepsilon$因子を除くことで、右核・左核を
-0の近傍で解析的に選べる。
-剰余類の指示ベクトルを$e_r$と書けば、正規化して
-\[
- h=e_2+\varepsilon h_1+O(\varepsilon^2),\qquad
- g=e_0^{\mathsf T}+\varepsilon g_1+O(\varepsilon^2)
+ h(\varepsilon)=e_2+O(\varepsilon),
+ \qquad g(\varepsilon)=e_1+O(\varepsilon)
 \]
 とできる。
-剰余類0では全$t_i=1$なので$M_1e_2=0$、$e_0^{\mathsf T}M_1=0$である。
-一次係数により$h_1,g_1$も剰余類ごとに定数である。
-二次係数を剰余類ごとに平均すると
+この主張は境界核の次元が1であることを仮定しない。
+\paragraph{証明。}
+境界Euler行列の初めの係数は
 \[
- (h_1)_0=\frac{\gamma_1}{\delta_1},\qquad
- (g_1)_2=\frac{\gamma_0}{\delta_2}.
+ \mathscr P(\varepsilon)=I-S^3
+ +\varepsilon\bigl(-S^2+\operatorname{diag}(t_i)S^5\bigr)
+ +\varepsilon^2\bigl(\operatorname{diag}(b_i)S^4-nS\bigr)
+ +O(\varepsilon^3)
 \]
-元の$h,g$は$\varepsilon>0$で正なので、定数項が零のこれらの成分の
-最初の一次係数は非負でなければならない。
-従って$\gamma_1,\gamma_0\ge0$となる。
+である。$h$、$g$は全ての$\varepsilon$で$\ker(I-S^3)$に属するので、
+この先頭項による補正項は存在しない。
+$h_r=h_r^{(0)}+\varepsilon h_r^{(1)}+\cdots$と書く。
+一次係数と剰余類2の欠損から$h_1^{(0)}=0$である。
 
-\paragraph{二剰余類が飽和する非退化の場合。}
-$r=0$とし、$\delta_0=\delta_1=0$、$\delta_2>0$、$\gamma_1\ne0$とする。
-$\Pi M_1|_K$の右核は$e_0,e_2$、左核は$e_0^{\mathsf T},e_1^{\mathsf T}$で張られる。
-これらの間での二次作用は、行$e_1^{\mathsf T}$・列$e_2$の成分$\gamma_1$だけである。
-従って小さい非零$\varepsilon$で境界核は一次元となり、その右・左の先頭項はいずれも$e_0$である。
-しかも$M_1e_0=0$、$e_0^{\mathsf T}M_1=0$なので、一次補正も$K$上にある。
-二次係数の平均から
+$h_0^{(0)}>0$と仮定する。
+$h_1\ge\varepsilon h_0$から
+$\kappa=h_1^{(1)}/h_0^{(0)}\ge1$である。
+剰余類2の各行$i$における二次係数は
 \[
- (h_1)_1=\frac{\gamma_2}{\delta_2},\qquad
- (g_1)_2=\frac{\gamma_0}{\delta_2}
+ -(1-t_i)h_1^{(1)}+(b_i-n)h_0^{(0)}=0.
 \]
-を得て、正性から$\gamma_2,\gamma_0\ge0$となる。
-さらに右核方程式の三次係数を剰余類0で平均する。
-この剰余類は全$t_i=1$なので、任意のベクトル$x$について
-$\Pi_0M_1x=0$である。
-従ってこの可解条件は
+従って$b_i-n=(1-t_i)\kappa$である。
+欠損位置では$b_i\le n+1$なので$\kappa\le1$となり、
 \[
- \gamma_0(h_1)_1+\alpha_0=0,
+ \kappa=1,\qquad b_i=n+1-t_i\quad(i\equiv2\pmod3).
 \]
-すなわち$\delta_2\alpha_0+\gamma_0\gamma_2=0$となる。
+ある$t_i=0$を取ると$b_i=n+1$である。
+局所三次障害
+\[
+ b_i=n+1\ \Longrightarrow\ t_it_{i+2}=0,\qquad t_{i-3}t_{i-1}=0
+\]
+と$t_{i-1}=1$から$t_{i-3}=0$を得る。
+有限な$+3$巡回を遡ることで剰余類2は全て欠損し、
+同じ剰余類で全$b_i=n+1$となる。
+これは、欠損剰余類$r=2$、飽和剰余類$r+2=1$、$b_r=n+1$に対する
+主論文\texttt{d3:lem:single-z-collapse}に反する。
+従って$h_0^{(0)}=0$であり、非零性から$h_2^{(0)}>0$となる。
 
-\paragraph{全剰余類が飽和する場合。}
-この場合$M_1=-S^2M_0$である。
-左から$(I-\varepsilon S^2)^{-1}$を掛けると一次項は消える。
-$K^\perp$をSchur補行列によって除去した、$K$上の有効行列の先頭項は
+左核については、一次係数から$g_2^{(0)}=0$である。
+$g_0^{(0)}>0$と仮定すると、$g_2\ge\varepsilon g_0$から
+$\lambda=g_2^{(1)}/g_0^{(0)}\ge1$である。
+列$j\equiv1\pmod3$の二次係数を取って$i=j-4\equiv0\pmod3$と置くと
 \[
- \varepsilon^2\operatorname{diag}(\gamma_0,\gamma_1,\gamma_2)C.
+ -(1-t_{i-1})g_2^{(1)}+(b_i-n)g_0^{(0)}=0.
 \]
-三つの$\gamma_t$が全て非零なら、この有効行列は小さい非零$\varepsilon$で可逆であり、
-$\det\mathscr P\equiv0$に反する。従って少なくとも一つは零である。
+欠損位置の存在と$b_i\le n+1$から$\lambda=1$であり、
+\[
+ b_i=n+1-t_{i-1}\quad(i\equiv0\pmod3).
+\]
+$t_{i-1}=0$なら$b_i=n+1$であり、$t_i=1$と局所三次障害から$t_{i+2}=0$を得る。
+従って欠損は$+3$方向へ伝播し、剰余類2の全$t$が零、剰余類0の全$b$が$n+1$となる。
+
+ここでは単一$z$語の圧縮補題の反対代数版が適用される。
+添字を反転して$(A^{\mathrm{op}})_{ij}=A_{-j,-i}$とすれば、
+重み5関係と重み4関係の始点はそれぞれ
+\[
+ t_i^{\mathrm{op}}=t_{-i-5},\qquad b_i^{\mathrm{op}}=b_{-i-4}
+\]
+となる。法3の$r=2$について、$t_r^{\mathrm{op}}=0$、
+$t_{r+2}^{\mathrm{op}}=1$、$b_r^{\mathrm{op}}=n+1$が成立し、
+前と同じ単一$z$語の圧縮補題に反する。
+従って$g_0^{(0)}=0$で、$g_1^{(0)}>0$である。
 \hfill$\square$
 
-\paragraph{本条件の限界。}
-これらは$N=9$の追加必要条件であり、存在例または排除定理ではない。
-二剰余類飽和の場合の$\gamma_{r+1}=0$枝は別の退化枝であり、上の第二項の等式を適用してはならない。
-全剰余類飽和の場合にも、少なくとも一つの$\gamma_t=0$しか結論していない。
-平均条件を各$i$の条件へ置き換えることもできない。
-次の課題は、これらの残余核に対して三次以上の作用を計算し、
-純・混合Torのモーメントと末尾階数下界
-$\sum_jp_{i,j}\ge2q_i$、$r_2(i)\ge3+q_i$を併用することである。
+\paragraph{次の係数の初期条件。}
+$h_2=1$、$g_1=1$と解析的に正規化し直すと、
+\[
+ h=(\kappa\varepsilon+O(\varepsilon^2),\ \nu\varepsilon^2+O(\varepsilon^3),\ 1),\qquad
+ g=(\lambda\varepsilon+O(\varepsilon^2),\ 1,\ \mu\varepsilon^2+O(\varepsilon^3)),
+\]
+\[
+ \nu\ge\kappa\ge1,\qquad \mu\ge\lambda\ge1
+\]
+と書ける。二次の核方程式を欠損位置で評価すると$h_1'(0)=g_2'(0)=0$となり、
+$z$の不等式が表示した先頭係数の下界を与える。
+本結果は核の単純性やHilbert行列の極の位数を結論しない。
+
+\subsection{全ての重み5関係が飽和する場合の三次行列式係数}
+\label{note:d3-full-r5-moment}
+
+以下では$A\in\mathcal Q_n^{\mathrm{dom}}$、$D=3$、$L=3\ell\ge9$、全$t_i=1$とする。
+$a_i=r_3(i)$、$b_i=r_4(i)$とし、
+$H_i$を第3Torの語長3・差次数3成分の次元とする。
+特に$n=4$では$H_i=p_{i+6,N-3}$であり、$N=9,L=12$なら$H_i=p_{i+6,6}$である。
+$a_i,b_i,H_i$は$L$周期であればよく、剰余類内で一定であるとは仮定しない。
+
+\paragraph{全飽和枝の三次係数恒等式。}
+上記の仮定の下で
+\[
+ \sum_i(a_i-H_i)+\sum_i(b_i-n)=0.
+\]
+従って$n=4$では$A_1+B_1-H_1=4L$である。
+ここで$A_1=\sum_i a_i$、$B_1=\sum_i b_i$、$H_1=\sum_iH_i$とした。
+\paragraph{証明。}
+$\widetilde P(x,y)=P(x^2,y/x)$とし、$x$について展開する。
+最高差次数3および最小解消の語長支持から、三次までの係数は
+\begin{align*}
+ \widetilde P(x,y)&=M_0(y)+xM_1(y)+x^2M_2(y)+x^3M_3(y)+O(x^4),\\
+ M_0(y)&=I-y^2S^3,\\
+ M_1(y)&=-yS^2+y^3S^5=-yS^2M_0(y),\\
+ M_2(y)&=y^2\operatorname{diag}(b_i)S^4-nS,\\
+ M_3(y)&=y\operatorname{diag}(a_i)S^3-y^3\operatorname{diag}(H_i)S^6.
+\end{align*}
+有理関数体$\mathbb Q(y)$上で$X_j=M_0^{-1}M_j$と置く。
+特に$X_1=-yS^2$は全行列における厳密な等式であり、
+核への射影だけの等式ではない。
+
+$S^3$の冪と対角行列は法3の剰余類を保つ。
+従って、剰余類をずらす作用素の跡は零であり、
+\[
+ \operatorname{tr}X_1=\operatorname{tr}X_2
+ =\operatorname{tr}(X_1^2)=0.
+\]
+$F_0(y)=\det M_0(y)=(1-y^{2\ell})^3$とすると、
+形式的な$\log\det$の三次係数から
+\[
+ [x^3]\frac{\det\widetilde P(x,y)}{F_0(y)}
+ =\operatorname{tr}\left(X_3-X_1X_2+\frac13X_1^3\right).
+\]
+ここで一次・二次係数が零なので、$\log\det$と$\det$の三次係数は一致する。
+$L\ge9$より$\operatorname{tr}S^6=0$であり、右辺は
+\begin{align*}
+ &y\operatorname{tr}\left(M_0^{-1}\operatorname{diag}(a_i-n)S^3\right)\\
+ &\hspace{12mm}
+ +y^3\operatorname{tr}\left(M_0^{-1}
+                 \operatorname{diag}(b_{i+2}-H_i)S^6\right)
+\end{align*}
+に等しい。
+実際、$S^2$は$M_0^{-1}$と可換であり、
+$S^2\operatorname{diag}(b_i)=\operatorname{diag}(b_{i+2})S^2$である。
+
+任意の$L$周期列$c_i$に対して、幾何級数
+$M_0^{-1}=\sum_{k\ge0}y^{2k}S^{3k}$を用いれば
+\begin{align*}
+ \operatorname{tr}\left(M_0^{-1}\operatorname{diag}(c_i)S^3\right)
+ &=\frac{y^{2\ell-2}}{1-y^{2\ell}}\sum_i c_i,\\
+ \operatorname{tr}\left(M_0^{-1}\operatorname{diag}(c_i)S^6\right)
+ &=\frac{y^{2\ell-4}}{1-y^{2\ell}}\sum_i c_i.
+\end{align*}
+これは$3k+3$、それぞれ$3k+6$が$L$の倍数のときだけ跡が非零となるためである。
+従って、全行列から直接
+\[
+ [x^3]\frac{\det\widetilde P(x,y)}{F_0(y)}
+ =\frac{y^{2\ell-1}}{1-y^{2\ell}}\bigl(A_1+B_1-H_1-nL\bigr)
+\]
+を得る。
+
+主論文\texttt{mahler:thm:two-faces}から$F_0(y)$は$\det\widetilde P(x,y)$を
+$\mathbb Z[x,y]$で割り切るので、左辺は$y$の多項式である。
+$y^{2\ell-1}$と$1-y^{2\ell}$は互いに素であるから、
+$A_1+B_1-H_1-nL=0$でなければならない。
+この導出では、剰余類以外の成分を捨てたり、核次元を仮定したりしていない。
+\hfill$\square$
 
 \paragraph{境界の特異性と正核だけでは全飽和は出ない。}
-全$r_5=1$の場合、形式的な有効三次行列
+$n=4$、$L=3\ell$、全$r_5=1$の場合に、
+$\gamma_r=\ell^{-1}\sum_{i\equiv r}(b_i-4)$、
+$\alpha_r=\ell^{-1}\sum_{i\equiv r}(a_i-H_i)$と書く。
+形式的な三次元有効行列
 \[
 Q(\varepsilon)=\begin{pmatrix}
 \varepsilon^3&-\varepsilon^5&0\\
@@ -1258,7 +1332,9 @@ Q(\varepsilon)=\begin{pmatrix}
 各次数の法3移動と該当符号も保つ。
 これは全Eulerデータや実際の代数の実現例ではないが、境界の恒等的特異性と正核だけから
 三剰余類全ての$\gamma=0$を結論することはできない。
-完全なモーメント・AS対合・剰余類内部の係数を追加する必要がある。
+本節の大域的な三次係数恒等式も追加する必要がある。
+実際、この形式例では$\sum_r(\alpha_r+\gamma_r)=1$なので、その恒等式に反する。
+従って、全Euler行列式の面因子まで満たす候補ではない。
 
 \subsection{非Koszul例の存在状況と包絡代数による比較}
 \label{note:nonkoszul-existence}
@@ -1408,9 +1484,124 @@ $E^3_{[4]}$と$E^3_{[5]}$は、左右とも$E^1$および$E^2$で消される。
 これは非零の中央成分が実在することを証明したものではない。
 現在必要なのは、その消滅を最小解消・整域性または高次積の制約から導くことである。
 
+\subsection{三次の対角Extによる最高純syzygyの局所上界}
+\label{note:n4-cubic-corner-bounds}
+$A\in\mathcal Q_4^{\mathrm{dom}}$とし、$D=3$、$L=N+3$を用いる。
+$E$を有限頂点に折り畳んだ全Ext、$C\subset E$を一次Extで生成される対角部分とする。
+語長二次性により$C$は二次双対であるが、$C=E$とは仮定しない。
+$X,\zeta,\eta$はそれぞれjump $1,2,3$の一次Extを表す。
+以下の添字は法$L$で読む。
+\[
+ a_j=r_3(j),\quad b_j=r_4(j),\quad t_j=r_5(j)\in\{0,1\},\qquad
+ h_j=\dim e_jC^3_{e=3}e_{j+6}.
+\]
+AS対合から、純第三Extの最高語長成分について
+\[
+ h_j=p_{j+6,N-3}
+\]
+である。実際、$e_{j+6}E^3_{[N-3],e=0}e_{j+L}$の右補元は
+$e_{j+L}C^3_{[3],e=3}e_{j+L+6}$であり、周期$L$で添字を戻せばよい。
+
+\paragraph{局所上界。}
+$u_j=t_{j+1}a_j$、$v_j=t_ja_{j+3}$と置くと
+\begin{equation}\label{note:eq:n4-cubic-corner-bound}
+ h_j\le
+ \min\{b_j,b_{j+2},u_j+v_j,1+\min(u_j,v_j)\}.
+\end{equation}
+特に、
+\[
+ t_j=t_{j+1}=0\Longrightarrow h_j=0,
+ \qquad
+ t_jt_{j+1}=0\Longrightarrow h_j\le1.
+\]
+
+\paragraph{証明。}
+整域性から$R_3(j)$の$Vz,zV$への射影は単射であり、双対では$X\zeta=\zeta X$である。
+また$\zeta\eta$と$\eta\zeta$は非零スカラー倍か、両方とも零である。
+$R_4$の$Vw+zz$と$wV+zz$への射影も単射なので、
+\[
+ \eta X\subset X\eta+S\zeta^2S,\qquad
+ X\eta\subset\eta X+S\zeta^2S.
+\]
+従って差次数3の三次語を並べ替えると
+\begin{align*}
+ e_jC^3_{e=3}e_{j+6}
+ &=U_j+k\zeta_j\zeta_{j+2}\zeta_{j+4}\\
+ &=V_j+k\zeta_j\zeta_{j+2}\zeta_{j+4},
+ \end{align*}
+ただし
+\[
+ U_j=X_j\zeta_{j+1}\eta_{j+3},\qquad
+ V_j=\zeta_j\eta_{j+2}X_{j+5}.
+\]
+$U_j$の次元は$a_j$以下であり、$t_{j+1}=0$なら$U_j=0$である。
+$V_j=\eta_j\zeta_{j+3}X_{j+5}$は非零スカラー倍までの等式として読め、
+$t_j=0$なら両辺が零である。従って$\dim V_j\le t_ja_{j+3}=v_j$である。
+これで$h_j\le1+\min(u_j,v_j)$を得る。
+
+さらに、$R_4(j)$の$Vw\oplus wV$への射影も単射である。
+その核の非零元は$z_jz_{j+2}=0$という関係であり、整域性に反するからである。
+双対化すると、二次成分全体は$X\eta+\eta X$で張られ、特に
+$\zeta^2\in X\eta+\eta X$である。
+従って$\zeta_j\zeta_{j+2}\zeta_{j+4}\in U_j+V_j$であり、
+\[
+ e_jC^3_{e=3}e_{j+6}=U_j+V_j.
+\]
+これから$h_j\le u_j+v_j$が従う。
+
+また、同じ三次成分は
+\[
+ \zeta_j(e_{j+2}C^2_{e=2}e_{j+6})
+ =(e_jC^2_{e=2}e_{j+4})\zeta_{j+4}
+\]
+でも張られるので、$h_j\le b_{j+2}$、$h_j\le b_j$を得る。
+以上で\eqref{note:eq:n4-cubic-corner-bound}を示した。
+\hfill$\square$
+
+\paragraph{欠損位置が強制する低い純syzygy。}
+純解消の末尾階数は$q_i=t_{i+N-2}$である。
+もし
+\[
+ t_{i+N-3}=0,\qquad q_i=t_{i+N-2}=1
+\]
+なら、上の上界により$p_{i,N-3}\le1$となる。
+一方、整域性と最小完全性から$\sum_{j=3}^{N-3}p_{i,j}\ge2q_i=2$である。
+従って
+\[
+ \sum_{j=3}^{N-4}p_{i,j}\ge1.
+\]
+これは最高語長への集中と重み5階数欠損が両立する位置を制限する。
+最高語長への集中そのものや、非Koszul対象の存在・非存在は、この局所上界だけでは結論しない。
+
+\paragraph{差次数二の三次成分。}
+$g_j=\dim e_jC^3_{e=2}e_{j+5}$、$r_j=r_2(j)$と置けば
+\begin{equation}\label{note:eq:n4-cubic-excess-two-bound}
+ g_j\le\min\{r_j+a_j,\ r_{j+3}+a_{j+2}\}.
+\end{equation}
+実際、差次数二の三次語は、二つの$X$と一つの$\eta$、または一つの$X$と二つの$\zeta$からなる。
+上の交換式を使って$\eta$を右へ、$\zeta$を右へ移せば
+\[
+ e_jC^3_{e=2}e_{j+5}
+ =(e_jC^2_{e=0}e_{j+2})\eta_{j+2}
+   +X_j\zeta_{j+1}\zeta_{j+3}.
+\]
+第一項の次元は$r_j$以下、第二項の次元は$a_j$以下である。
+逆向きに移せば
+\[
+ e_jC^3_{e=2}e_{j+5}
+ =\eta_j(e_{j+3}C^2_{e=0}e_{j+5})
+  +\zeta_j\zeta_{j+2}X_{j+4},
+\]
+従って第二の上界も得る。いずれも三次までの二次双対の計算であり、全Extの一次生成性を用いない。
+
+第一の上界で等号が成立するなら、表示された和は直和であり、
+二つの乗法写像$C^2_{e=0}(j)\to C^2_{e=0}(j)\eta$および
+$X_j\zeta_{j+1}\to X_j\zeta_{j+1}\zeta_{j+3}$は単射である。
+これは単なる次元上界を超える、三次の乗法に対する条件である。
+
 \subsection{平方項消滅条件の効用と限界}
 \label{note:nozz-structure}
-主論文\texttt{nozz:prop:koszul-saturation}、\texttt{nozz:lem:one-heavy-gs}、
+主論文\texttt{nozz:prop:koszul-saturation}、\texttt{nozz:lem:full-r5}、\texttt{nozz:lem:one-heavy-gs}、
 \texttt{nozz:cor:periodic-saturation}に証明を収める。
 固定した語長次数について$R_4$の$zz$射影が零なら、$V,z,w$の個数による三重次数が存在する。
 Koszulの場合、双対は$E=F\oplus F\zeta\oplus F\eta\oplus F\zeta\eta$と分解でき、
@@ -1419,8 +1610,9 @@ Koszulの場合、双対は$E=F\oplus F\zeta\oplus F\eta\oplus F\zeta\eta$と分
 この次元比較が、正規な平方零元に一次の消去子がないことを証明する段階である。
 有限次元Frobenius代数の正規元だから消去子がない、と推論してはいけない。
 
-Koszul性なしでも、同じ平方項消滅条件、全$r_5=1$、6の倍数でない実周期があれば、
-一重い生成元の周期的GS補題を二つの商へ順に適用できる。
+Koszul性なしでも、同じ平方項消滅条件と多項式増大から、周期によらず全$r_5=1$が従う。
+$A/(V)$の重い二生成元の書換えを用い、欠損位置があると指数個の基底語を作れるためである。
+さらに6の倍数でない実周期があれば、一重い生成元の周期的GS補題を二つの商へ順に適用できる。
 いずれの場合も$z,w$の両正規元族から通常の二段skew polynomial代数へ下降する。
 $zz$補正があると、双対の$\zeta^2$は$X\eta+\eta X$と混ざり、四成分分解が使えない。
 平方項が消えても非Koszulで全周期が6の倍数の場合は、上記だけでは未解決である。

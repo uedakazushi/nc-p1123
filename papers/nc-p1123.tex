@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v15}
+\date{2026年11月19日\quad 統合版 v16}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -93,6 +93,9 @@ $n=4$では、最高Extの重みと語長の差が3であることを追加仮�
 さらに、最高語長$N$とAS移動$L$はともに3の倍数であることを証明する。
 重み3生成元の非零冪が与える境界特異性と、純・混合Eulerモーメントが中心的な役割を持つ。
 従って非Koszulの場合に残る最高語長は$N=9,12,15,\ldots$である。
+最高差次数3では、重み5関係が法3の少なくとも二剰余類で全て存在することも証明する。
+単一の$z$を含む独立な語の有限次元圧縮が、一剰余類だけの飽和を排除する。
+また有限Euler行列式のMahler測度は零であり、純基礎面と重み3面の多項式が大域的な因子となる。
 さらに$n=4$では、語長Koszul性、1周期性、純jump 1部分の1周期性、
 同部分の行Hilbert級数が始点によらないことが同値である。
 この条件の下で、標準二変数Hilbert級数と全関係数を追加仮定なしに導く。
@@ -113,12 +116,13 @@ Hilbert級数・Koszul性・基礎AS性を仮定せずに二段Ore表示を導�
 任意$n$の語長Koszul対象に二段indexed Ore表示と標準Hilbert級数を得る。
 $R_4$の$zz$射影が零の場合は、語長Koszul性から任意$n$の混合階数飽和を証明し、
 通常の二段skew polynomial代数への下降を得る。
-同じ平方項消滅条件の下では、全$r_5=1$と6の倍数でない実周期から、Koszul性なしにも同じ構造が従う。
+同じ平方項消滅条件の下では、周期によらず全$r_5=1$が従い、
+6の倍数でない実周期があれば、Koszul性なしにも同じ構造が従う。
 $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条件の網羅性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v15\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v16\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -243,6 +247,18 @@ $w$の非零冪による境界でのEuler行列の特異性から混合階数の
 純・混合の一次モーメントと整域上の最小解消の末尾階数を組み合わせて証明する。
 行列Hilbert級数と成長の一般理論はReyes--Rogalski\cite{RRgrowth}が比較先であるが、
 本稿はこの二変数境界の特異性と具体的な三整除性を直接証明する。
+定理\ref{d3:thm:two-saturated-classes}は、最高差次数3の任意次元の対象について、
+少なくとも二つの法3剰余類で全$r_5=1$を強制する。
+その核心は、禁止された差次数4の三次Torを作る局所平方関係と、
+$n+1$個の独立な語を整域性の下で$n$次元以下の空間へ単射で送る矛盾である。
+この結果は$n=4$の全ての最高語長に適用できるが、残る一剰余類の飽和は未証明である。
+
+定理\ref{mahler:thm:two-faces}は、純基礎Euler行列式と
+$(1-(uv^2)^{L/\gcd(L,3)})^{\gcd(L,3)}$が、全Euler行列式を割り切ることを示す。
+Boyd--Lawtonの特殊化極限をIssa--Lal\'in\cite[Theorem 1.2, $s=1$]{IssaLalin2013}の証明された形で用い、
+Jensenの等号から面因子を取り出す。Mahler測度零の一般因数分解は
+Smyth\cite[Corollary 1]{Smyth1981}の既知の結果であり、本稿の貢献は具体的なEuler面への適用である。
+この応用の新規性は未確認であり、行列式の重複度を核次元と同一視しない。
 語長Koszul性を追加した場合は、命題\ref{n4:prop:koszul-base-numerics}が
 純基礎部分の標準線型解消とHilbert級数を強制し、
 定理\ref{n4:thm:koszul-numerics-period}が全混合関係数・標準Hilbert級数・1周期性を導く。
@@ -294,8 +310,10 @@ $n=4$で残る$N=9,12,15,\ldots$も、まだ排除できていない最高語長
 
 重み4関係に$zz$項がない場合、命題\ref{nozz:prop:koszul-saturation}はKoszul性から
 三重次数付きFrobenius対合を用いて全混合階数を強制する。
+補題\ref{nozz:lem:full-r5}は、同じ平方項消滅条件だけから、周期によらず全$r_5=1$を導く。
+商$A/(V)$の二文字書換えを用い、欠損位置から指数個の独立語を作る証明である。
 補題\ref{nozz:lem:one-heavy-gs}と系\ref{nozz:cor:periodic-saturation}は、
-全$r_5=1$かつ6の倍数でない実周期という別の仮定の下で、Koszul性なしに同じ構造を導く。
+さらに6の倍数でない実周期があれば、Koszul性なしに同じ構造を導く。
 いずれも$z,w$の両正規元族が得られ、通常の二段skew polynomial代数へ下降する。
 既知の通常Koszul skew拡張のExt代数を自明拡大として記述する結果として、
 He--Van Oystaeyen--Zhang\cite[Proposition 2.2]{HVZSkew}がある。
@@ -2887,6 +2905,208 @@ $3\mid L$のとき、この補題は残る二つの剰余類の欠損を排除�
 
 
 
+\subsection{Euler行列式のMahler測度と二つの面因子}
+\label{mahler:sec:euler-faces}
+
+この節ではKoszul性、noetherian性および標準Hilbert級数を仮定しない。
+必要な仮定を明記するため、次の少し一般的な設定を用いる。
+$A$は語長とjumpによる二重次数を持つ正連結・局所有限な$\mathbb Z$-algebraで、
+各始点からの最小生成元はjump~1の$n$次元空間$V_i$、
+jump~2の元$z_i$、jump~3の元$w_i$である。
+語長とjumpを保つ実際の$L$周期が存在し、
+各単純加群は有限生成射影による有限最小解消を持つとする。
+また、各行の次元はjumpに関して多項式増大すると仮定する。
+以下の重み3面に関する結論では、さらに全ての連続積
+$w_iw_{i+3}\cdots w_{i+3(m-1)}$が非零であると仮定する。
+最後の条件は$\mathbb Z$-domain性から従う。
+従って、この節の結果は本論文の$\mathcal Q_n^{\mathrm{dom}}$の全対象に適用できる。
+AS双対性は、ここで明記した有限性と周期性が得られた後の議論には不要である。
+
+語長を$m$、差次数を$e=\mathrm{jump}-m$とし、
+$\beta_{i,p,m,e}$を$i$を始点とする第$p$ Torの対応する成分の次元とする。
+添字を法$L$で読み、$S_{ij}=\delta_{j,i+1}$と置く。
+有限Euler行列およびその行列式を
+\[
+ P(u,v)=\sum_{p,m,e}(-1)^p u^m v^e
+       \operatorname{diag}(\beta_{i,p,m,e})S^{m+e},
+ \qquad F(u,v)=\det P(u,v)
+\]
+と定義する。bar複体から$0\le e\le2m$であり、
+$P\in\operatorname{Mat}_L(\mathbb Z[u,v])$、$P(0,0)=I$である。
+折畳Hilbert行列$H$とのEuler恒等式は
+$PH=HP=I$である。
+純jump~1部分を$B$とすると、差次数零のbar複体は$B$のbar複体なので、
+\[
+ P_B(u)=P(u,0),\qquad H_B(u)=H(u,0)
+\]
+が成立する。
+
+非零多項式$G$の対数Mahler測度を
+\[
+ m(G)=\int_{[0,1]^r}
+   \log\left|G(e^{2\pi i\theta_1},\ldots,e^{2\pi i\theta_r})\right|
+   \,d\theta_1\cdots d\theta_r
+\]
+で表す。この積分の収束は多項式に対する既知の事実であり、以下で用いる特殊化極限は、
+Issa--Lal\'in \cite[Theorem~1.2, $s=1$]{IssaLalin2013}
+の範囲に含まれる。Mahler測度零の整数多項式の一般的な因数分解は
+Smyth\cite[Corollary 1]{Smyth1981}の既知の定理である。
+以下ではその全分類を用いず、必要な面因子をJensenの等号から直接導く。
+Mahler測度の方法自体を新しい結果とはしない。
+
+\begin{lemma}[整数係数と単位円内の零点]
+\label{mahler:lem:integer-disk}
+$G(t)\in\mathbb Z[t]$、$G(0)=1$とし、$|t|<1$に零点がないとする。
+このとき最高係数は$\pm1$であり、全ての零点は単位円上にある。
+特に$m(G)=0$である。
+\end{lemma}
+\begin{proof}
+定数多項式の場合は自明である。
+$G(t)=a\prod_{j=1}^d(t-\alpha_j)$と書くと、
+\[
+ 1=|G(0)|=|a|\prod_j|\alpha_j|.
+\]
+$a$は非零整数であり、各$|\alpha_j|\ge1$なので、
+$|a|=1$かつ全ての$|\alpha_j|=1$となる。
+Jensenの公式から$m(G)=0$を得る。
+\end{proof}
+
+\begin{proposition}[二変数Euler行列式のMahler測度]
+\label{mahler:prop:euler-measure}
+上記の仮定の下で$m(F)=0$である。
+\end{proposition}
+\begin{proof}
+正整数$k$に対して$G_k(t)=F(t,t^k)$と置く。
+この特殊化で$V,z,w$の次数はそれぞれ$1,1+k,1+2k$となり、全て正である。
+次数$d$以下の成分のjumpは高々$3d$なので、
+仮定した多項式増大から$H(t,t^k)$は$|t|<1$で絶対収束する。
+従って$P(t,t^k)H(t,t^k)=I$がこの円板上で成立し、$G_k$に零点はない。
+$G_k\in\mathbb Z[t]$、$G_k(0)=1$なので、
+補題\ref{mahler:lem:integer-disk}から$m(G_k)=0$である。
+
+Boyd--Lawtonの特殊化極限を、
+\cite[Theorem~1.2, $s=1$]{IssaLalin2013}で証明されている形で用いる。
+ベクトル$(1,k)$に直交する非零整数ベクトルの最小最大ノルムは$k$であるから、
+\[
+ m(F)=\lim_{k\to\infty}m\bigl(F(t,t^k)\bigr)=0.
+\]
+ここでは零点を単位円へ移すためにAS相反性を用いていない。
+\end{proof}
+
+\begin{lemma}[Jensenの等号からの面因子]
+\label{mahler:lem:face-divides}
+$G(x,y)=\sum_{j=0}^{D}a_j(y)x^j\in\mathbb C[x,y]$、$a_0\ne0$とする。
+$a_0$の全零点が単位円上にあり、$m(G)=m(a_0)$ならば、
+$a_0(y)$は$G(x,y)$を$\mathbb C[x,y]$で割り切る。
+さらに$G\in\mathbb Z[x,y]$かつ$a_0$の最高係数が$\pm1$ならば、
+商は$\mathbb Z[x,y]$に属する。
+\end{lemma}
+\begin{proof}
+$|y|=1$、$a_0(y)\ne0$を固定する。
+定数項を用いたJensenの公式により
+\[
+ \int_0^1\log|G(e^{2\pi i\theta},y)|\,d\theta
+       -\log|a_0(y)|\ge0.
+\]
+$y$について積分した値は$m(G)-m(a_0)=0$である。
+従ってほとんど全ての$y$で等号が成立し、
+$G(x,y)$の$x$に関する全零点は$|x|\ge1$にある。
+このとき、実際の$x$次数が$D$より小さい場合も含め、
+$G(x,y)/a_0(y)$を逆零点の基本対称式で展開すれば
+\[
+ \left|\frac{a_j(y)}{a_0(y)}\right|\le\binom Dj
+ \qquad(0\le j\le D)
+\]
+を得る。
+
+$a_0$の単位円上の零点$\rho$において、ある$a_j$の消滅位数が
+$a_0$の消滅位数より小さければ、
+$|a_j(y)/a_0(y)|$は単位円上で$y\to\rho$としたとき無限大に発散する。
+これは上のほとんど至る所での一様有界性に反する。
+従って$a_0$の各零点は、必要な重複度を含めて全ての$a_j$の零点でもあり、
+$a_0\mid a_j$である。
+整数係数の場合、最高係数$\pm1$の$a_0$による多項式除法は整数係数内で行えるので、
+商も整数係数を持つ。
+\end{proof}
+
+\begin{theorem}[純基礎面と重み3面の大域的因子]
+\label{mahler:thm:two-faces}
+$g=\gcd(L,3)$と置くと、
+\[
+ \det P_B(u)\mid\det P(u,v),
+ \qquad
+ \bigl(1-(uv^2)^{L/g}\bigr)^g\mid\det P(u,v)
+ \quad\text{in }\mathbb Z[u,v].
+\]
+両因子は互いに素なので、その積も$\det P(u,v)$を割り切る。
+特に$n=4$では、既知の$3\mid L$を用いると
+\[
+ \det P_B(u)\,
+ \bigl(1-(uv^2)^{L/3}\bigr)^3\mid\det P(u,v).
+\]
+この行列式の重複度から、境界Euler行列の核次元が3であるとは結論しない。
+\end{theorem}
+\begin{proof}
+まず$P_B(u)H_B(u)=I$と$B$の多項式増大から、
+$\det P_B(u)$は$|u|<1$に零点を持たない。
+その整数係数と定数項1に補題\ref{mahler:lem:integer-disk}を適用すると、
+全零点は単位円上にあり、最高係数は$\pm1$、Mahler測度は零である。
+命題\ref{mahler:prop:euler-measure}と補題\ref{mahler:lem:face-divides}を
+$G(x,y)=F(y,x)$に適用すれば、第一の可除性を得る。
+
+重み3面を座標面に移すため
+\[
+ \widetilde P(x,y)=P(x^2,y/x),\qquad
+ \widetilde F(x,y)=F(x^2,y/x)
+\]
+と置く。Torの支持条件$e\le2m$から、
+各単項式は$u^mv^e=x^{2m-e}y^e$となり、
+$\widetilde P$と$\widetilde F$は整数係数多項式である。
+単位二次元トーラス上の写像
+$(x,y)\mapsto(x^2,y/x)$は全射な群準同型であり、
+Haar確率測度をHaar確率測度へ移す。
+従って$m(\widetilde F)=m(F)=0$である。
+
+$x=0$に残るbar成分は$e=2m$の成分、すなわち純粋な$w$の語だけである。
+仮定によりその全ての連続積は非零で、各始点・長さの空間は一次元である。
+従ってこの部分はjump~3の一本の矢の自由経路代数であり、
+そのTorは第0項と第1項だけに存在する。
+よって
+\[
+ \widetilde P(0,y)=I-y^2S^3,\qquad
+ \widetilde F(0,y)=\det(I-y^2S^3)
+              =\bigl(1-y^{2L/g}\bigr)^g=:Q(y).
+\]
+$S^3$の置換は長さ$L/g$の$g$個の巡回からなるので、最後の等式が成立する。
+$Q$の全零点は単位円上、最高係数は$\pm1$、Mahler測度は零である。
+補題\ref{mahler:lem:face-divides}から
+$\widetilde F=Q\widetilde R$、$\widetilde R\in\mathbb Z[x,y]$を得る。
+
+最後に、この可除性がLaurent多項式環だけの結論でないことを確認する。
+$\widetilde F$の各単項式$x^{2m-e}y^e$の指数和は偶数であり、
+$Q$も$y$の偶数乗だけからなる。
+従って
+\[
+ \widetilde R(-x,-y)=\widetilde R(x,y).
+\]
+実際、$Q$を掛けた両辺が一致し、$\mathbb Z[x,y]$は整域だからである。
+よって$\widetilde R$に現れる各単項式$x^ay^b$は
+$a,b\ge0$かつ$a+b$が偶数である。
+それを
+\[
+ x^ay^b\longmapsto u^{(a+b)/2}v^b
+\]
+と移せば、負の指数を生じることなく
+$R(u,v)\in\mathbb Z[u,v]$を得る。
+元の埋込み$u\mapsto x^2$、$v\mapsto y/x$は単射なので、
+\[
+ F(u,v)=\bigl(1-(uv^2)^{L/g}\bigr)^gR(u,v)
+\]
+が$\mathbb Z[u,v]$内で成立する。
+純$u$多項式の非定数因子が$1-(uv^2)^{L/g}$を割ることはなく、
+$v=0$で後者は1となるので、二つの表示した因子は互いに素である。
+\end{proof}
+
 \subsection{三本のjump 1生成元を持つ部分代数の数値補題}
 \begin{lemma}[短い解消と周期的整域の増大]
 \label{genidx:lem:short-domain-resolution}
@@ -3620,10 +3840,336 @@ $\det P_0^{[2]}(u)=0$となって矛盾する。
 \begin{remark}[残る非Koszul枝]
 本定理は$N\equiv1,2\pmod3$の全てを排除するが、$N=9,12,15,\ldots$は排除しない。
 この場合$L=N+3$は3の倍数であり、境界行列$I-S^3$の核は三次元となる。
-また重み5関係の飽和補題は、三つの剰余類のうち少なくとも一つでの飽和しか与えない。
-この三成分の問題が、残る解析の具体的な核心である。
+重み5関係のGS飽和補題だけでは、一剰余類の飽和までである。
+次の定理\ref{d3:thm:two-saturated-classes}は、整域性をより直接に用いて少なくとも二剰余類へ強める。
+残る二剰余類飽和の場合と、全飽和時の重み3関係の欠損が、解析の核心である。
 既存の十周期純Euler形式候補は、親AS正則整域への延長が不可能な形式例として位置付けられる。
 \end{remark}
+
+\subsection{最高差次数三での境界核と重み5関係の飽和}
+
+本節では$A\in\mathcal Q_n^{\mathrm{dom}}$について最高差次数$D=3$を仮定する。
+$L$は語長を保つ実際の正周期とし、$3\mid L$とする。
+特に$n=4$では、最高差次数とAS移動の三整除性の定理によってこの設定が適用できる。
+$N=9$という制限は置かない。
+\[
+t_i=r_5(i),\qquad b_i=r_4(i),\qquad d_i=1-t_i
+\]
+と書く。整域性から$t_i\in\{0,1\}$、$R_6(i)=0$である。
+また、射影
+\[
+R_4(i)\longrightarrow V_iw_{i+1}\oplus kz_i z_{i+2}
+\]
+の核は純粋な$w_iV_{i+3}$関係であり、整域性から零である。
+従って、全ての$i$で
+\begin{equation}\label{d3:eq:r4-upper}
+0\le b_i\le n+1
+\end{equation}
+が成立する。以下では添字を法$L$で読む。
+
+\begin{lemma}[重み3境界の正核]
+\label{d3:lem:boundary-kernel}
+$S_{ij}=\delta_{j,i+1}$とし、$L$頂点折畳のEuler行列を$P(u,v)$と書く。
+$u$は語長、$v$は差次数を数える変数とする。
+\[
+\mathscr P(\varepsilon)=P(\varepsilon^2,\varepsilon^{-1}),\qquad
+K=\ker(I-S^3)
+\]
+と置く。このとき$0<\varepsilon<1$ごとに、$K$に属する厳密に正の右核$h$と左核$g$が存在し、
+\begin{equation}\label{d3:eq:z-kernel-inequalities}
+h_i\ge\varepsilon h_{i+2},\qquad
+g_{i+2}\ge\varepsilon g_i
+\end{equation}
+を満たす。
+さらに、十分小さい正の$\varepsilon$について、剰余類ごとの三成分を
+$\sum_{r=0}^2h_r=\sum_{r=0}^2g_r=1$と正規化し、
+$h(\varepsilon),g(\varepsilon)$を$\varepsilon$の有理関数として選べる。
+これらは$\varepsilon=0$に解析的に延長し、非負かつ非零の先頭ベクトルを持つ。
+境界行列の核の次元を1と仮定する必要はない。
+\end{lemma}
+
+\begin{proof}
+まず$\varepsilon\in(0,1)$を固定し、$\varepsilon^2<c<1$について
+\[
+u=\varepsilon^2/c,\qquad v=c/\varepsilon
+\]
+と置く。各生成元$V,z,w$の評価値はそれぞれ
+\[
+a=\varepsilon^2/c,\qquad b=\varepsilon,\qquad c
+\]
+であり、全て0と1の間にある。
+多項式増大によって、Hilbert行列$H(c)=H_A(\varepsilon^2/c,c/\varepsilon)$は有限の非負行列である。
+有限最小解消のEuler等式から、対応する$P(c)$について
+$P(c)H(c)=H(c)P(c)=I$である。
+
+左からの$w_i$の乗法は各斉次成分で単射なので、
+\[
+H_{ij}(c)\ge cH_{i+3,j}(c).
+\]
+折畳の境界を跨ぐ場合にも、実周期が語長とjumpを保つことにより同じ不等式が成立する。
+$w$だけを$L/3$個掛けた経路は始点と同じ折畳頂点へ戻り、その全ての冪が非零なので、
+\[
+H_{jj}(c)\ge\frac1{1-c^{L/3}}\longrightarrow\infty.
+\]
+固定した列$j$を成分和で正規化し、$c\to1-$の部分列極限を$h$とする。
+純$V$経路の左乗法も単射であり、各二頂点を結ぶ長さ$0\le\ell<L$の経路を使うと
+$H_{ij}(c)\ge a^\ell H_{i+\ell,j}(c)$となる。
+$a^\ell\ge\varepsilon^{2(L-1)}>0$なので、正規化した各成分は一様に正の下界を持つ。
+従って$h$は厳密に正である。
+$P(c)H(c)=I$を正規化して極限を取れば$\mathscr P(\varepsilon)h=0$となる。
+さらに$h_i\ge h_{i+3}$であり、$+3$の各有限巡回上で全て等号となる。
+従って$h\in K$である。
+左からの$z_i$の乗法の評価値は常に$\varepsilon$なので、
+$H_{ij}(c)\ge\varepsilon H_{i+2,j}(c)$から右核の不等式も得られる。
+
+左核については、発散する一行を成分和で正規化する。
+純$V$経路の右乗法によって各成分を比較できるので、極限は厳密に正である。
+右からの$w_j,z_j$の乗法は
+\[
+H_{i,j+3}(c)\ge cH_{ij}(c),\qquad
+H_{i,j+2}(c)\ge\varepsilon H_{ij}(c)
+\]
+を与える。$H(c)P(c)=I$と合わせて、$g\mathscr P(\varepsilon)=0$、
+$g_{j+3}=g_j$および\eqref{d3:eq:z-kernel-inequalities}を得る。
+
+解析的な選択も説明する。
+$H(\varepsilon^2/c,c/\varepsilon)=P(\varepsilon^2/c,c/\varepsilon)^{-1}$は
+$(c,\varepsilon)$の有理関数行列である。
+十分小さい穿孔区間$0<\varepsilon<\varepsilon_0$では、$c=1$での極の位数を一定にできる。
+有限個の分子・分母の非恒等的な零点を避ければよい。
+純$V$経路による左右の成分比較から、全成分は同じ極の位数を持ち、
+$(1-c)$に関する最高Laurent係数行列$G(\varepsilon)$は全成分が正である。
+$G$の各成分は$\varepsilon$の有理関数であり、
+\[
+ \mathscr P G=G\mathscr P=0,\qquad
+ G=S^3G=GS^3
+\]
+となる。後の等式は、上で用いた$w$の単射比較を有限巡回上で一周させれば得られる。
+$z$の不等式も$G$に引き継がれる。
+$G$の一つの列・行を取り、三つの剰余類成分の和でそれぞれ割ると、
+正規化された正の有理核$h,g$を得る。
+各成分は0と1の間にあるので、0での特異点は除去可能であり、解析的に延長する。
+延長後も成分和は1であるから先頭ベクトルは非零である。
+\end{proof}
+
+\paragraph{境界の最初の三係数。}
+AS完全対合と最高差次数$D=3$により、全Torの差次数は0以上3以下である。
+最小解消のホモロジー次数$p$の語長は$p$以上なので、$p\ge3$の寄与は
+$\varepsilon^{2\mathrm{word}-\mathrm{excess}}$の次数3以上である。
+従って、$N$にかかわらず
+\begin{equation}\label{d3:eq:boundary-first-coefficients}
+\mathscr P(\varepsilon)=I-S^3+\varepsilon(-S^2+\operatorname{diag}(t_i)S^5)
++\varepsilon^2(\operatorname{diag}(b_i)S^4-nS)+O(\varepsilon^3).
+\end{equation}
+$h,g\in K$について、右核方程式の第$i$行と、左核方程式の第$i+4$列はそれぞれ
+\begin{align}
+0&=-\varepsilon d_i h_{i+2}
+   +\varepsilon^2(b_i-n)h_{i+1}+O(\varepsilon^3),
+   \label{d3:eq:right-pointwise}\\
+0&=-\varepsilon d_{i-1}g_{i+2}
+   +\varepsilon^2(b_i-n)g_i+O(\varepsilon^3).
+   \label{d3:eq:left-pointwise}
+\end{align}
+正規化したベクトルは有界なので、剰余項は一様にこの形で評価できる。
+これらは各位置の等式であり、剰余類平均に留まるものではない。
+
+\begin{lemma}[局所的な平方関係と重み5関係の障害]
+\label{n4:lem:local-square-r5}
+語長二次$\mathbb Z$-整域$A$において、語長3・差次数4の第三Tor成分が零であるとする。
+特に、最高差次数$D=3$のAS対象ではこの仮定が満たされる。
+全ての$i$について次が成立する。
+\begin{enumerate}
+\item $R_4(i)$に$w_i v-z_i z_{i+2}$という関係が存在するなら、
+      $r_5(i)r_5(i+2)=0$である。
+\item $R_4(i)$に$xw_{i+1}-z_i z_{i+2}$という関係が存在するなら、
+      $r_5(i-3)r_5(i-1)=0$である。
+\end{enumerate}
+従って$\dim V_i=n$が一定で$r_4(i)=n+1$なら、両方の積が零になる。
+\end{lemma}
+\begin{proof}
+第一項に反して$r_5(i)=r_5(i+2)=1$とする。
+整域性から非零係数$a,b$を用いて関係を
+\[
+r=w_i v-z_i z_{i+2},\qquad
+s=z_i w_{i+2}-a w_i z_{i+3},\qquad
+t=z_{i+2}w_{i+4}-b w_{i+2}z_{i+5}
+\]
+と書ける。$v\ne0$である。
+テンソル代数で
+\[
+r w_{i+4}+z_i t+b s z_{i+5}
+=w_i\bigl(vw_{i+4}-ab z_{i+3}z_{i+5}\bigr)
+\]
+が成り立つ。$A$で左辺は零なので、$w_i$の左正則性により
+$q=vw_{i+4}-ab z_{i+3}z_{i+5}$も零となる。
+語長が2であるから$q\in R_4(i+3)$である。
+従って
+\[
+T=r\otimes w_{i+4}+b s\otimes z_{i+5}
+ =w_i\otimes q-z_i\otimes t
+\]
+は$(R\otimes W)\cap(W\otimes R)$に属する。
+$w_i\otimes v\otimes w_{i+4}$の係数から$T\ne0$である。
+この成分は語長3、jump 7、差次数4なので、第三Torの仮定に反する。
+
+第二項では$r_5(i-3)=r_5(i-1)=1$と仮定する。
+$xw_{i+1}=z_i z_{i+2}$を左から$w_{i-3}$倍し、二つの重み5交換関係を用いると
+\[
+ w_{i-3}xw_{i+1}=c z_{i-3}z_{i-1}w_{i+1}
+\]
+となる。ここで$c\ne0$である。右端を約分して
+$w_{i-3}x=c z_{i-3}z_{i-1}$を得る。
+これは第一項を$i-3$で適用すると排除される。
+
+最後に$r_4(i)=n+1$なら、$R_4(i)$から$n$次元空間$V_iw_{i+1}$への射影に核がある。
+核の非零関係は$w_i v+\lambda z_i z_{i+2}$であり、整域性から$v\ne0$、$\lambda\ne0$である。
+正規化して第一項の形を得る。$w_iV_{i+3}$への射影についても同様である。
+\end{proof}
+
+\begin{lemma}[単一の$z$を含む語の有限区間での圧縮]
+\label{d3:lem:single-z-collapse}
+primitive jumps $(1^n,2,3)$の語長二次$\mathbb Z$-整域を考える。
+ある$i$と$M\ge1$について
+\begin{align*}
+r_5(i+3k)&=0 &&(0\le k<M),\\
+r_5(i+2+3k)&=1 &&(0\le k<M),\\
+r_4(i+3k)&=n+1 &&(0\le k\le M)
+\end{align*}
+なら、$M+1\le n$である。
+上の最初の二行の0と1を交換した場合にも、同じ結論が成立する。
+本補題にはAS性、周期性、多項式増大を仮定しない。
+\end{lemma}
+
+\begin{proof}
+非負次数
+\[
+\nu=3\,\mathrm{word}-\mathrm{jump}
+\]
+を用いると$\nu(V)=2$、$\nu(z)=1$、$\nu(w)=0$である。
+$i$から始まる$M+1$個の経路語
+\[
+U_a=w^a z w^{M-a},\qquad 0\le a\le M
+\]
+は、全て語長$M+1$、jump $3M+2$、$\nu=1$を持つ。
+この成分に寄与し得る関係イデアルの生成元は$R_5$と$R_6$だけである。
+$R_6=0$は整域性から従う。
+$R_5$の前後には$w$だけを付けられ、その始点は$i+3k$、$0\le k<M$となるが、
+仮定によって全ての該当関係空間が零である。
+従って$U_0,\ldots,U_M$は$A$で線型独立である。
+
+$r_4(j)=n+1$となる位置$j$では、$R_4(j)$の$zz$射影は非零である。
+もし零なら$R_4(j)\subset V_jw_{j+1}\oplus w_jV_{j+3}$であり、
+片側射影の核が整域性から零なので、その次元は$n$以下となってしまう。
+従って$zz$射影の核は$n$次元で、その$Vw,wV$への両射影は同型である。
+これは$V_jw_{j+1}$と$w_jV_{j+3}$を可逆に交換する関係を与える。
+また、$R_4(j)\to V_jw_{j+1}$の核から
+\[
+z_jz_{j+2}\in w_jV_{j+3}
+\]
+を得る。係数が零にならないことには整域性を使う。
+
+全ての$U_a$の右端へ同じ$z_{i+3M+2}$を掛ける。
+これは整域性によって単射である。
+$i+2+3k$の重み5関係で、付加した$z$を$M-a$個の$w$の左へ順に動かすと、
+非零スカラー倍を除き$w^a zz w^{M-a}$となる。
+上の平方関係で$zz$を$wV$へ移し、その後$Vw\to wV$を反復すると、全ての像は
+\[
+w_iw_{i+3}\cdots w_{i+3M}V_{i+3M+3}
+\]
+に入る。この空間の次元は高々$n$なので、単射性から$M+1\le n$となる。
+
+0と1を交換した場合には、$i+2$から始まる$w^a z w^{M-a}$を取る。
+これらは同じ理由で線型独立である。
+今度は共通の$z_i$を左から掛け、$i+3k$の重み5関係によって最初の$z$を右へ動かす。
+再び$w^a zz w^{M-a}$へ移り、同じ$n$次元空間に入るので結論が従う。
+\end{proof}
+
+\begin{corollary}[剰余類全体での配置の禁止]
+\label{d3:cor:single-z-class}
+ある$r\pmod3$について、$r_4(i)=n+1$が全ての$i\equiv r$で成立するとする。
+剰余類$r$と$r+2$の重み5関係数が、それぞれ恒等的に0と1である配置は不可能である。
+0と1を交換した配置も不可能である。
+\end{corollary}
+\begin{proof}
+補題\ref{d3:lem:single-z-collapse}を$M=n$で適用する。
+\end{proof}
+
+\begin{theorem}[最高差次数三での二剰余類飽和]
+\label{d3:thm:two-saturated-classes}
+$A\in\mathcal Q_n^{\mathrm{dom}}$の最高差次数は$D=3$であり、
+語長を保つ正周期$L$について$3\mid L$であるとする。
+このとき、法3の少なくとも二つの剰余類で$r_5(i)=1$が全位置で成立する。
+さらに次が成り立つ。
+\begin{enumerate}
+\item 飽和する剰余類がちょうど$r,r+1$なら、全ての$i\equiv r+1$で$r_4(i)=n$である。
+\item 全ての$r_5(i)=1$なら、全ての$i$で$r_4(i)\le n$であり、
+      少なくとも一つの法3剰余類で$r_4(i)=n$が全位置で成立する。
+\end{enumerate}
+特に$n=4$では、任意の最高語長$N$について適用できる。
+残る一剰余類の$r_5$の全飽和や、全位置の$r_3=n$を本定理だけからは結論しない。
+\end{theorem}
+
+\begin{proof}
+補題\ref{genidx:lem:r5-gs-saturation}によって、少なくとも一つの法3剰余類が飽和する。
+以下、補題\ref{n4:lem:local-square-r5}を用いる。
+その仮定は$D=3$により満たされる。
+
+\paragraph{一剰余類だけが飽和する場合の排除。}
+添字をずらし、剰余類0だけが飽和すると仮定する。
+補題\ref{d3:lem:boundary-kernel}により、正規化した右核を解析的に選ぶ。
+\eqref{d3:eq:right-pointwise}の一次係数から、
+剰余類1、2の欠損位置をそれぞれ用いると$h_0(0)=h_1(0)=0$となる。
+従って$h_2(0)=1$である。
+\eqref{d3:eq:z-kernel-inequalities}から
+\[
+h_0(\varepsilon)=\kappa\varepsilon+O(\varepsilon^2),\qquad\kappa\ge1.
+\]
+全ての$i\equiv1$について\eqref{d3:eq:right-pointwise}の二次係数を比較すると
+\[
+b_i-n=\kappa(1-t_i).
+\]
+この剰余類に欠損位置が存在することと\eqref{d3:eq:r4-upper}から$\kappa\le1$であり、
+従って$\kappa=1$、$b_i=n+1-t_i$である。
+
+$j\equiv1$で$t_j=0$なら$b_j=n+1$であり、$t_{j-1}=1$である。
+局所平方関係の障害により$t_{j-3}=0$となる。
+同じ議論を繰り返し、有限周期を用いると、剰余類1の全てで$t=0$、$b=n+1$となる。
+剰余類0は飽和しているので、系\ref{d3:cor:single-z-class}を$r=1$で適用すると矛盾する。
+従って、飽和剰余類は少なくとも二つである。
+
+\paragraph{ちょうど二剰余類が飽和する場合。}
+剰余類0、1が飽和し、剰余類2には欠損位置があるとする。
+$i\equiv1$では$t_i=t_{i+2}=1$なので、局所平方関係の障害と
+\eqref{d3:eq:r4-upper}により$b_i\le n$である。
+この剰余類に$b_i<n$となる位置があると仮定する。
+
+右核方程式の一次係数と剰余類2の欠損から$h_1(0)=0$である。
+さらに上の$b_i<n$の位置で二次係数を比較すると、$t_i=1$なので
+$(b_i-n)h_2(0)=0$となり、$h_2(0)=0$を得る。
+従って$h_0(0)=1$である。
+$z$の不等式$h_1\ge\varepsilon h_0$から
+\[
+h_1(\varepsilon)=\kappa\varepsilon+O(\varepsilon^2),\qquad\kappa\ge1.
+\]
+全ての$i\equiv2$で二次係数を比較すれば
+$b_i-n=\kappa(1-t_i)$となる。
+欠損位置と$b_i\le n+1$から$\kappa=1$を得る。
+従って、この剰余類で$t_j=0$なら$b_j=n+1$である。
+$t_{j-1}=1$なので局所平方関係の障害から$t_{j-3}=0$となり、
+周期性によって剰余類2の全位置で$t=0$、$b=n+1$を得る。
+剰余類1は飽和しているから、系\ref{d3:cor:single-z-class}を$r=2$で適用すると矛盾する。
+従って$b_i<n$の位置はなく、剰余類1で全て$b_i=n$である。
+
+\paragraph{三剰余類とも飽和する場合。}
+全ての$i$で$t_i=t_{i+2}=1$なので、局所平方関係の障害から$b_i\le n$である。
+また$d_i=0$なので、右核方程式の二次係数は
+\[
+(b_i-n)h_{i+1}(0)=0
+\]
+である。正規化から$h_s(0)>0$となる剰余類$s$がある。
+従って全ての$i\equiv s-1$について$b_i=n$となる。
+以上で全ての主張を得る。
+\end{proof}
 
 \begin{proposition}[語長Koszul性の下での四生成元基礎数値型]
 \label{n4:prop:koszul-base-numerics}
@@ -5013,6 +5559,47 @@ Koszul性を外した場合も全Extが次数1で生成されるとは限らな�
 結論することはできない。本命題は一般の$r_3=n$自動性を証明していない。
 \end{remark}
 
+\begin{lemma}[平方項がない場合の重み5関係の全飽和]
+\label{nozz:lem:full-r5}
+$A$をprimitive jumps $(1^n,2,3)$の正連結・局所有限な語長二次$\mathbb Z$-整域とする。
+語長を保つ正の$L$周期と各行の多項式増大があり、
+全$R_4(i)$の$kz_i z_{i+2}$への射影が零であると仮定する。
+このとき、全ての$i$で$r_5(i)=1$である。
+AS性、Koszul性、有限大域次元、noetherian性、$6\nmid L$は要求しない。
+\end{lemma}
+\begin{proof}
+整域性から$r_5(i)\in\{0,1\}$、$R_6(i)=0$であり、
+非零の重み5関係では$zw,wz$の両係数が非零である。
+$C=A/(V)$を取る。平方項消滅の仮定から、$C$は$z_i,w_i$だけで生成され、
+関係は$r_5(i)=1$となる位置での
+\[
+w_i z_{i+3}=c_i z_i w_{i+2},\qquad c_i\ne0
+\]
+だけである。特に$zz$関係は生じない。
+各関係を左辺から右辺へ書き換えると、$w$が$z$より前にある対の数が1減るので停止する。
+先頭語$wz$同士には重なりがなく、離れた二箇所の書換えは可換である。
+従ってDiamond lemmaにより、利用可能な書換え位置で$wz$を含まない経路語が$C$の基底となる。
+
+$r_5(i)=0$となる$i$が存在すると仮定し、$j=i+3$を基点とする。
+$j$から始まる二つの語
+\[
+P=w^{3L},\qquad Q=z^{3L}w^L
+\]
+を考える。いずれもjumpは$9L$である。
+これらの語を任意の順序で$m$個連結する。
+各語の内部には$wz$は現れず、連結点で$wz$が現れる場合、その$w$の始点は
+$i$と法$L$で合同である。その位置には関係がない。
+従って全ての連結語は上の基底語である。
+$P,Q$の最初の文字はそれぞれ$w,z$で異なり、同じjumpを持つので、
+$2^m$個の連結語は互いに異なる。
+ゆえに
+\[
+\dim C_{j,j+9Lm}\ge2^m
+\]
+となり、$A$の商である$C$の多項式増大に反する。
+従って欠損位置は存在しない。
+\end{proof}
+
 \subsection{一つの重い生成元に対する周期的GS飽和}
 
 \begin{lemma}\label{nozz:lem:one-heavy-gs}
@@ -5075,14 +5662,14 @@ $0\ge\ell_\varepsilon P_2H_C\ge\ell_\varepsilon>0$ という矛盾を得る。
 \begin{corollary}[平方項のない対象の周期条件]
 \label{nozz:cor:periodic-saturation}
 $A\in\mathcal Q_n^{\mathrm{dom}}$ は
-\eqref{nozz:eq:hypothesis}を満たし、全ての $r_5(i)=1$ であるとする。
-語長を保つ正の周期 $L$ について $6\nmid L$ なら、全ての $r_3(i)=r_4(i)=n$ である。
+\eqref{nozz:eq:hypothesis}を満たすとする。
+語長を保つ正の周期 $L$ について $6\nmid L$ なら、全ての $r_3(i)=r_4(i)=n$、$r_5(i)=1$ である。
 従って添字付き二段Ore表示が存在し、さらに通常の二段skew polynomial代数へ下降する。
 この結論にはKoszul性を仮定しない。
-特に $3\nmid L$ のときは、全 $r_5(i)=1$ という仮定も不要である。
 \end{corollary}
 
 \begin{proof}
+補題\ref{nozz:lem:full-r5}により、周期の割り切れ方によらず全ての$r_5(i)=1$である。
 $A/(w)$ は $V,z$ のみで生成され、関係は $R_2,R_3$ だけである。
 条件\eqref{nozz:eq:hypothesis}により、$w$ を零にしても $zz$ 関係は生じない。
 整域性によって元の $r_3(i)\le n$ である。
@@ -5103,13 +5690,17 @@ $6\nmid L$ のときはこの二場合の少なくとも一方に属する。
 定理\ref{igraph:thm:normal-z-ore}で $B$ のAS正則性と二段Ore表示を得る。
 両正規元族による2周期と3周期を合成すれば1周期となり、
 \eqref{nozz:eq:hypothesis}により第二段の導分は零である。
-最後の主張は、補題\ref{genidx:lem:r5-gs-saturation} が $3\nmid L$ のとき全 $r_5(i)=1$ を与えることから従う。
 \end{proof}
 
 \paragraph{本節で解決しない範囲。}
-一般の $R_4$ に $zz$ 項がある場合は、上の二つの結果の対象外である。
+一般の $R_4$ に $zz$ 項がある場合は、本節の平方項消滅を仮定する結果の対象外である。
 平方項が消える場合でも、Koszul性が未知で、利用できる全ての周期が6の倍数である場合は、
 本節の議論だけでは全 $r_3=n$ を導けない。
+ただし、この場合にも補題\ref{nozz:lem:full-r5}により全$r_5=1$は確定する。
+特に$n=4$で平方項が消える非Koszul対象が存在するなら、
+定理\ref{n4:thm:equivalent-criteria}と上の系から$6\mid L$が必要である。
+$L=N+3$および$3\mid N$と合わせ、残る最高語長は$N=9,15,21,\ldots$に限られる。
+これは存在を主張するものではない。
 また新規性は未確認であり、公表時は三重次数付きAS正則代数の既存の正規拡張結果との照合が必要である。
 
 \subsection{二頂点foldと分数斜体}
@@ -7712,7 +8303,10 @@ $n=4$では系\ref{n4:cor:top-excess-three}により最高差次数3を証明し
 命題\ref{n4:prop:pure-base-numerics}により基礎部分の解消とモーメント制約を得た。
 定理\ref{n4:thm:top-word-divisible-three}により$3\mid N$、$3\mid L$も必要であり、
 非Koszul枝は$N=9,12,15,\ldots$へ限定される。最初の未決着は$N=9,L=12$で、
-重み3境界の三つの核成分と$r_5$の剰余類ごとの欠損を同時に扱う必要がある。
+定理\ref{d3:thm:two-saturated-classes}により、一剰余類だけの$r_5$飽和は既に排除される。
+二剰余類飽和の残余では、飽和類$r,r+1$に対し剰余類$r+1$の全$r_4=4$を保って解析する。
+全$r_5=1$の残余では、全$r_4\le4$および一剰余類の全$r_4=4$に加え、
+定理\ref{mahler:thm:two-faces}の大域的因子と純・混合のモーメントを組み合わせる。
 定理\ref{n4:thm:equivalent-criteria}により、$n=4$での語長Koszul性と1周期性は同値であり、
 純基礎部分の行Hilbert級数が始点によらないことも同値である。
 これらに$B$のAS4性、添字付き・通常の二段Ore表示、$r_3=4,r_5=1$を加えた十条件が同値である。
@@ -7767,7 +8361,20 @@ $\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
 
 \begingroup
 \small
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+\bibitem{IssaLalin2013}
+Z.~Issa and M.~Lal\'in,
+\emph{A generalization of a theorem of Boyd and Lawton},
+Canad. Math. Bull. \textbf{56} (2013), no.~4, 759--768.
+\href{https://doi.org/10.4153/CMB-2012-010-2}{doi:10.4153/CMB-2012-010-2}.
+\url{https://arxiv.org/pdf/1203.5379v1}.
+使用箇所：Theorem 1.2 ($s=1$)、第4節の証明。
+\bibitem{Smyth1981}
+C.~J.~Smyth,
+\emph{A Kronecker-type theorem for complex polynomials in several variables},
+Canad. Math. Bull. \textbf{24} (1981), no.~4, 447--452.
+\href{https://doi.org/10.4153/CMB-1981-068-8}{doi:10.4153/CMB-1981-068-8}.
+比較箇所：Theorem 1、Corollary 1および面多項式を扱う証明。
 \bibitem{FVfive}
 G.~Fl\o ystad and J.~E.~Vatne,
 \emph{Artin-Schelter regular algebras of dimension five},

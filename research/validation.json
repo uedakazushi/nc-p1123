@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 20,
+  "version": 21,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -17,6 +17,7 @@
       "HILBERT-STANDARD",
       "PERIOD-7",
       "FINITE-7",
+      "QUANTUM-AS",
       "QUANTUM-TWIST",
       "ORE-2",
       "RHO-SPLIT",
@@ -98,23 +99,41 @@
       "KOSZUL-DUAL-QUOTIENT-SUPPORT",
       "INDEXED-KOSZUL-ORE",
       "INDEXED-KOSZUL-EVEN-DESCENT",
-      "N4-N9-BOUNDARY-CONDITIONS",
       "NONKOSZUL-KNOWN-EXAMPLE-COMPARISON",
-      "N4-MIDDLE-EXT-OBSTRUCTION"
+      "N4-MIDDLE-EXT-OBSTRUCTION",
+      "D3-EXACT-BOUNDARY-KERNEL",
+      "LOCAL-SQUARE-R5-OBSTRUCTION",
+      "SINGLE-Z-COLLAPSE",
+      "D3-TWO-SATURATED-CLASSES",
+      "EULER-MAHLER-FACE-FACTORS",
+      "NOZZ-FULL-R5",
+      "D3-TWO-SATURATED-LEADING",
+      "D3-FULL-R5-MOMENT",
+      "N4-CUBIC-CORNER-BOUNDS"
     ],
-    "logical_review": "The root and two specialist AI agents independently audited the full arbitrary-n indexed Koszul theorem. They checked dual mixed-projection surjectivity, ideal normality of zeta, support {0,2} of E/(zeta), both local AS complement arguments, and the crucial D4 vanishing F^(d-2)=0 from its partner E^2_e4=R6*=0. This excludes every formerly apparent Koszul exception without a matrix generator-bound assumption. The N9 three-class necessary conditions were independently audited for positive boundary kernels, exact saturated rows, vanishing of the relevant Schur corrections and the explicit nondegeneracy requirement. Current N4 three-divisibility and nozz proofs retain their completed internal audits. These are mathematical/internal AI audits, not formalization, external peer review or verified novelty. The root and a specialist independently verified the classical Heisenberg comparison, its quadratic presentation and central commutator, PBW Hilbert series/domain argument, exact nonKoszul Hilbert obstruction, exterior quadratic dual and the general augmentation-indecomposable formula for Lie enveloping algebras. This verifies a known comparison example outside the target, not existence or nonexistence of nonKoszul Qn_dom objects. For the hypothetical N9 branch, the root and specialist checked the E3 word4/5 annihilation and complementary pairing by word support. The root additionally checked that all E3 word>3 components inject into E/(zeta), and that a nonzero word4/5 pair forces odd excess in this quotient. These statements do not assert that the branch or its central components exist.",
+    "logical_review": "The root and two specialist AI agents independently audited the full arbitrary-n indexed Koszul theorem. They checked dual mixed-projection surjectivity, ideal normality of zeta, support {0,2} of E/(zeta), both local AS complement arguments, and the crucial D4 vanishing F^(d-2)=0 from its partner E^2_e4=R6*=0. This excludes every formerly apparent Koszul exception without a matrix generator-bound assumption. The D3 two-saturated-class theorem was independently audited by the root and two specialists. They verified exact classwise constancy at every fixed epsilon, rational analytic kernel selection at arbitrary corank, pointwise low-order equations, the forbidden cubic tensor, defect propagation and both directions of the finite one-z collapse. The proof applies to every n under D3 and every Q4dom regardless of N. Current N4 three-divisibility and nozz proofs retain their completed internal audits. These are mathematical/internal AI audits, not formalization, external peer review or verified novelty. The root and a specialist independently verified the classical Heisenberg comparison, its quadratic presentation and central commutator, PBW Hilbert series/domain argument, exact nonKoszul Hilbert obstruction, exterior quadratic dual and the general augmentation-indecomposable formula for Lie enveloping algebras. This verifies a known comparison example outside the target, not existence or nonexistence of nonKoszul Qn_dom objects. For the hypothetical N9 branch, the root and specialist checked the E3 word4/5 annihilation and complementary pairing by word support. The root additionally checked that all E3 word>3 components inject into E/(zeta), and that a nonzero word4/5 pair forces odd excess in this quotient. These statements do not assert that the branch or its central components exist. The root and specialists checked the nozz normal-word growth proof and removal of the independent all-r5 assumption. The root read the primary Issa-Lalin Theorem1.2 and Section4, and Smyth Corollary1; the Mahler face proof was independently checked for positive specializations, Jensen equality, multiplicities and parity descent to Z[u,v]. The root checked the full-matrix trace derivation of the all-r5 third-order moment, and the specialist reported exact symbolic matrix verification at L9,L12. The leading kernels of the two-saturated residual and diagonal cubic Ext bounds were algebraically audited. These are written proofs and internal AI audits, not formalized or externally peer-reviewed results; novelty remains unverified.",
     "new_reviewed_claims": [
-      "NONKOSZUL-KNOWN-EXAMPLE-COMPARISON",
-      "N4-MIDDLE-EXT-OBSTRUCTION"
+      "D3-EXACT-BOUNDARY-KERNEL",
+      "LOCAL-SQUARE-R5-OBSTRUCTION",
+      "SINGLE-Z-COLLAPSE",
+      "D3-TWO-SATURATED-CLASSES",
+      "EULER-MAHLER-FACE-FACTORS",
+      "NOZZ-FULL-R5",
+      "D3-TWO-SATURATED-LEADING",
+      "D3-FULL-R5-MOMENT",
+      "N4-CUBIC-CORNER-BOUNDS",
+      "NOZZ-PERIODIC-SATURATION"
     ],
     "reviewed_dependencies": [
-      "ORDINARY-KOSZUL-NUMERICS",
-      "GEN-AS-BASE-ORE",
-      "GEN-NORMAL-Z-CONDITIONAL",
-      "N4-KOSZUL-NUMERICS-PERIOD",
-      "N4-PURE-NUMERICS"
+      "GEN-AS-TRANSLATION",
+      "GEN-R5-GS-SATURATION",
+      "N4-TOP-EXCESS",
+      "N4-TOP-WORD-DIVISIBLE-THREE",
+      "N4-PURE-NUMERICS",
+      "INDEXED-NORMAL-Z-ORE",
+      "ONE-HEAVY-PERIODIC-GS"
     ],
-    "scope": "For arbitrary n, all word-Koszul Qn_dom objects have full indexed two-step Ore, Koszul ASn pure base, standard bigraded H and L=n+5 without H/noetherian/nozz/period-one assumptions. Even n also gives ordinary descent. The original word-quadratic problem without Koszulity remains open for n>=4, exactly at automaticity of r3=n,r5=1. At n4, D3 and 3|N,3|L are unconditional; the first non-Koszul remainder is N9/L12, with proved averaged three-class boundary conditions. The ten-condition n4 equivalence, lower-dimensional full results, general normal-z criterion, nozz conditions and formal obstruction assets remain valid. No nonKoszul target example has been constructed or found in the checked primary sources. The N9 and higher n4 possibilities are hypothetical residual cases. The known four-generator Heisenberg AS5 example is documented only as an outside-target comparison.",
+    "scope": "All word-Koszul Qn_dom objects have full indexed Ore for every n; the original nonKoszul problem remains open for n>=4. Every Q4dom has D3 and 3|N,3|L. Every D3 object with 3|L now has at least two whole saturated r5 classes, with the proved pointwise r4 constraints. The first unresolved n4 word is still N9/L12. The global Euler determinant has both proved face factors; full r5 gives a new third-order moment, not complete exclusion. Nozz implies full r5 at every period, and a period not divisible by six gives full ordinary skew Ore. No nonKoszul target example has been constructed or identified in the primary sources checked; residual possibilities are hypothetical.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -207,13 +226,21 @@
       "Equal Hilbert matrices for the nested coefficient ideals imply equality in every finite component; the degree-two comparison gives mu(R)=R. Returning to the original cover gives a regular normal jump-three family and the second AS quotient.",
       "The new periodic R5 saturation proof was independently checked by the root and two agents. The explicit positive-weight curve respects b^2=ac and convergence; the Poisson correction of an orbit-constant positive left vector avoids any unjustified analytic perturbation of a multiple zero eigenvalue. Only one saturated mod-three class is concluded when 3 divides L.",
       "The N4 top-word theorem covers every N not divisible by three, not merely a fixed N7 formal model. Its remaining non-Koszul words are N=9,12,15,... .",
-      "Nozz is explicitly additional and invariant only for the fixed word grading and jump-preserving basis changes. Koszulity is required in the Frobenius recognition result; the second periodic result replaces it by all r5=1 and an actual period not divisible by six.",
+      "Nozz is explicitly additional and invariant only for the fixed word grading and jump-preserving basis changes. Koszulity is required in the Frobenius recognition result; the second periodic result requires an actual period not divisible by six; all r5=1 is now a proved consequence of nozz at every period.",
       "General pure tail lower bounds sum_j p_ij>=2q_i and r2_i>=3+q_i follow from cancellation and minimal exactness even without word concentration.",
       "The formal matrix generator-bound obstruction is not an algebra and fails domain component comparison; it is not a counterexample to the target theorem.",
       "The Koszul recognition uses only E zeta=zeta E, not an unproved normalizing automorphism for the dual zero-divisor.",
       "In the last D4 case the AS complement of eta has homological degree d-1 and excess 2, while its quotient component is Fbar^(d-2) eta. AS pairing with E^2_e4=0 proves this component vanishes.",
       "The N9 exact-two-saturated-class equality requires gamma_(r+1)!=0. No condition is extrapolated to the degenerate branch or from an average to individual ranks.",
-      "The classical quadratic Heisenberg AS5 example has four minimal generators and is outside Qn_dom; C! is exterior4 modulo the symplectic form, has H=1+4t+5t^2 and is not full Ext. For finite-dimensional positively graded Lie g, augmentation indecomposables equal g/[g,g], so equality of minimal generator count and AS dimension forces g abelian."
+      "The classical quadratic Heisenberg AS5 example has four minimal generators and is outside Qn_dom; C! is exterior4 modulo the symplectic form, has H=1+4t+5t^2 and is not full Ext. For finite-dimensional positively graded Lie g, augmentation indecomposables equal g/[g,g], so equality of minimal generator count and AS dimension forces g abelian.",
+      "Exact heavy-boundary K kernels at every fixed epsilon and rational analytic normalization without corank-one",
+      "Local square relation producing nonzero forbidden Tor3(word3,excess4), with both exact index patterns",
+      "Finite-window one-z independence and forward/reverse common-z injections into dimension n",
+      "D3 two saturated mod-three classes and pointwise r4 constraints, valid for all Q4dom N",
+      "Nozz partial wz rewrite basis and equal-jump exponential-growth words giving full r5",
+      "Mahler-zero Euler determinant and integer face divisibility with polynomial parity descent",
+      "Two-saturated leading supports and the global full-r5 x3 trace identity",
+      "Diagonal cubic Ext bounds and the forced lower pure syzygy at adjacent r5 defects"
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
@@ -230,7 +257,9 @@
       "Iyudu-Shkarin, arXiv:1806.06844v1, Theorem 1.11, Remark 1.15, section 12.1, printed page 78: over an algebraically closed field of characteristic not 2 or 3, ordinary quadratic H=(1-t)^(-3) domains are exactly AS3 algebras. Used for ordinary graded comparison only; not a premise of the direct two-period recognition theorem.",
       "Rogalski-Sierra, Some noncommutative projective surfaces of GK-dimension 4, arXiv:1101.0737v2, Theorem 1.1 and resolution (1.2), Theorem 1.6: known noetherian Koszul domains of global dimension four with standard 14641 linear resolution but not AS-Gorenstein, over an uncountable algebraically closed field including C.",
       "Rogalski-Zhang, Regular algebras of dimension 4 with 3 generators, arXiv:1101.1998v2, Lemma1.1 and Corollary1.2: finite-global-dimension and AS regularity pass across a regular normal degree-one quotient; no noetherian hypothesis. The proof is applied to word grading and adapted in-text to finite semisimple degree zero.",
-      "Floystad-Vatne, arXiv:0911.5129v3, Theorem 2.1 (PDF p.6), Remark 3.2 (PDF pp.9-10): finite-dimensional positive graded Lie enveloping AS theorem and the explicit quadratic Heisenberg AS5 nonKoszul resolution. Root and specialist read the original text."
+      "Floystad-Vatne, arXiv:0911.5129v3, Theorem 2.1 (PDF p.6), Remark 3.2 (PDF pp.9-10): finite-dimensional positive graded Lie enveloping AS theorem and the explicit quadratic Heisenberg AS5 nonKoszul resolution. Root and specialist read the original text.",
+      "Issa-Lalin, A generalization of a theorem of Boyd and Lawton, arXiv1203.5379v1, Theorem1.2(s=1) and Section4; publication journal reference CMB56(2013)759-768 and DOI10.4153/CMB-2012-010-2 verified on arXiv. Root read the original PDF.",
+      "Smyth, A Kronecker-type theorem for complex polynomials in several variables, CMB24(4)(1981)447-452, DOI10.4153/CMB-1981-068-8, Theorem1,Corollary1 and face-polynomial proof: root read publisher PDF. Used as comparison for known Mahler theory, not an unproved new factorization premise."
     ],
     "formalized": false,
     "peer_reviewed": false,
@@ -261,10 +290,10 @@
       "Removal of all extra structural hypotheses for unrestricted non-Koszul targets",
       "A nonKoszul example satisfying all Qn_dom hypotheses, or a completed literature-wide nonexistence claim for such examples"
     ],
-    "literature_followup": "Finite-vertex Frobenius Ext is covered by the retained MVS primary-source comparison. HVZ arXiv1304.3799v2 Proposition2.2 computes the Ext of an already known ordinary Koszul skew extension; the current theorem instead recognizes arbitrary indexed Koszul objects using quotient support and AS complements. The theorem is proved directly. Specific novelty of this recognition, N4 three-divisibility and N9 necessary conditions remains unconfirmed; no external review or formalization is claimed. The nonKoszul Heisenberg example is classical and explicitly attributed to Floystad-Vatne; the current research does not assert any new nonKoszul example. Exhaustive existence/nonexistence status in the exact indexed class remains unresolved."
+    "literature_followup": "Finite-vertex Frobenius Ext is covered by the retained MVS primary-source comparison. HVZ arXiv1304.3799v2 Proposition2.2 computes the Ext of an already known ordinary Koszul skew extension; the current theorem instead recognizes arbitrary indexed Koszul objects using quotient support and AS complements. The theorem is proved directly. Specific novelty of this recognition, N4 three-divisibility, the D3 local saturation theorem, the nozz strengthening and the Euler face-factor application remains unconfirmed; no external review or formalization is claimed. The nonKoszul Heisenberg example is classical and explicitly attributed to Floystad-Vatne; the current research does not assert any new nonKoszul example. Exhaustive existence/nonexistence status in the exact indexed class remains unresolved. The Issa-Lalin limit theorem and Smyth Mahler classification are established results. Their specific Euler applications and the one-z local obstruction still require a dedicated novelty comparison."
   },
   "exact_computation": {
-    "current_analytic_results": "Bar obstruction, ordinary/indexed Ore theorems, GS rank forcing, Koszul normal-z recognition and the two-period s5 exclusion are algebraic/analytic proofs, independent of numerical sampling. The n4 formal obstruction and one mixed extension use the exact finite certificates described below, with proofs of their all-degree or coefficient implications in notes. The general non-Koszul graph-Ore and normal-z criterion uses no finite enumeration or parameter sampling.",
+    "current_analytic_results": "Bar obstruction, ordinary/indexed Ore theorems, GS rank forcing, Koszul normal-z recognition and the two-period s5 exclusion are algebraic/analytic proofs, independent of numerical sampling. The n4 formal obstruction and one mixed extension use the exact finite certificates described below, with proofs of their all-degree or coefficient implications in notes. The general non-Koszul graph-Ore and normal-z criterion uses no finite enumeration or parameter sampling. The D3 exact-kernel, cubic and finite-window collapse proofs and the nozz strengthening use no finite enumeration. The Mahler face theorem depends on the cited established limit theorem and a written Jensen equality proof.",
     "current_symbolic_audit": {
       "executed": true,
       "scope": "Exact n3 mixed inverse Hilbert factorization and the full exceptional 7-by-7 Euler determinant, independently checked in the root session.",
@@ -381,6 +410,15 @@
       ],
       "wedge_determinant": 1,
       "scope": "Supplementary verification of the displayed elementary identities; the known AS statement and minimal resolution are checked in Floystad-Vatne and not established by this calculation. All formulas needed to reproduce these small checks are in note:nonkoszul-existence."
+    },
+    "heavy_face_third_order": {
+      "executed_by_specialist": true,
+      "executed_by_root": false,
+      "root_algebraic_audit": true,
+      "arithmetic": "Specialist reports exact rational-function matrix checks at L9 and L12 with varying diagonal arrays; root separately verified the symbolic trace derivation in the current note.",
+      "result": "passed_internal_audit",
+      "identity": "[x^3] detP(x^2,y/x)/(1-y^(2ell))^3 = y^(2ell-1)/(1-y^(2ell))*(sum a+sum b-sum H-nL)",
+      "proof_role": "Supplementary checks only. The all-L proof and all matrices needed to reproduce it are in note:d3-full-r5-moment; no new script is a proof premise."
     }
   },
   "project_structure": {
@@ -399,7 +437,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt failed before reading TeX source because lualatex.fmt was unavailable. Diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v15 main manuscript and v20 supporting sources have not been compiled or visually checked. The root did not repeat the blocked final-source attempt; a proof-fragment check by an agent encountered the same startup failure.",
+    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt failed before reading TeX source because lualatex.fmt was unavailable. The diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v16 main manuscript and v21 supporting sources have not been compiled or visually checked. The unchanged dependency blocker was not retested in this update.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -410,22 +448,22 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "bdf0263ddc23e91503b9ca0d028d5ab0d63770430ed9952848935ff9beaf6fc6",
+        "source_sha256": "c8e83b1572bcbea19ba65d92d84a39b5f47584b6c0e0e395d775b55c3330c6bc",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "4b4f6feb62c38ddf4eedb4a9c15cf57bd07b4d033082737bd70bf4f88a7481ad",
+        "source_sha256": "a706f474897dfb8797d676e566b4021efab06f730cedfa0bc3d5748d185faafc",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "b343706671233cbe4701f93e2e859f9c4f88d9de50ad5c25ba715ae374682bd2",
+        "source_sha256": "f88368be3ed84edf22ae32bb9f88754bd38dbf5e5900bfe50c8ad05deb99b3f0",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "8689b3a5d66b40cd52e9a3f034d10712afffc6b1a7cc97983275c91e66a302b9",
+        "source_sha256": "487bada586b859ff739fb4a24549c5f4b384a77b20a3b8486373623d317c440e",
         "current_pdf_verified": false
       }
     ],

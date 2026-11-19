@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v20。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v21。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -11,6 +11,8 @@
 | Auroux–Katzarkov–Orlov, *Mirror symmetry for weighted projective planes and their noncommutative deformations*, Ann. Math. 167 (2008), 867–943; DOI 10.4007/annals.2008.167.867; arXiv:math/0404281 | [出版版](https://annals.math.princeton.edu/wp-content/uploads/annals-v167-n3-p04.pdf), §2.2、Prop.2.3/Cor.2.4、Prop.2.6、Thm.2.12、Prop.2.18/Cor.2.19 | 任意重みの対角skew polynomial族。AS次元4、添字7と例外列7項は既知。qgrは可換基準でstackのcoh。非対角・非1周期の全分類ではない。 |
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
+| Issa–Lalín, *A generalization of a theorem of Boyd and Lawton*, Canad. Math. Bull. 56 (2013), no.4, 759–768; arXiv:1203.5379v1; DOI 10.4153/CMB-2012-010-2 | [一次PDF](https://arxiv.org/pdf/1203.5379v1), Theorem 1.2 (s=1)、§4の証明。arXivのJournal referenceも確認 | m(F(t,t^k))→m(F)をEuler行列式へ適用する。正次数特殊化のHilbert逆と整数定数項1から各一変数Mahler測度が零となる段階は本文で直接証明。元のBoyd–Lawton定理を新結果とはしない。 |
+| Smyth, *A Kronecker-type theorem for complex polynomials in several variables*, Canad. Math. Bull. 24 (1981), no.4, 447–452; DOI 10.4153/CMB-1981-068-8 | [出版社一次PDF](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0008439500065693), Theorem 1、Corollary 1 (p.448)、面多項式を扱う証明 | Mahler測度1の整数多項式のextended cyclotomic因数分解は既知。本稿は必要な座標面の可除性をJensenの等号から直接証明し、Eulerの純基礎面・重み3面へ適用する。方法や数論的分類の新規性は主張しない。 |
 | Fløystad–Vatne, *Artin-Schelter regular algebras of dimension five*, arXiv:0911.5129v3 (2010), 本稿引用キー `FVfive` | [一次PDF](https://arxiv.org/pdf/0911.5129v3), Theorem 2.1（PDF p.6）、Remark 3.2（PDF pp.9–10） | 有限次元正次数付きLie代数の包絡代数がAS正則で、global/GK dimensionはLie次元に等しい。四生成元・五二次関係のHeisenberg例はAS5かつ非Koszulで、最小解消の語長は0,1,2,4,5,6。生成元数とAS次元が一致しないためQn_domの例ではない。ノートで表示、PBW、二次双対、一般の最小生成元数の式を直接確認する。既知例を本研究の新規構成としない。 |
 | He–Van Oystaeyen–Zhang, *Skew polynomial algebras with coefficients in Koszul Artin–Schelter regular algebras*, arXiv:1304.3799v2 (2013), 引用キー `HVZSkew` | [一次PDF](https://arxiv.org/pdf/1304.3799), §2、Proposition 2.2（PDF p.7） | 通常Koszul代数と既知のskew拡張B=A[z;σ]に対し、Ext(B)をA!とそのtwisted copyの自明拡大として記述する。今回のno-zz認識は、Ore表示を仮定せず有限頂点上のFrobenius対合から混合階数・自由性を強制する。既知命題を逆向きに適用せず、類似構造の比較先として引用する。 |
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
@@ -404,7 +406,7 @@ det P=(1−u¹⁰)³(1+u²⁰)と、各剰余類の二次準多項式を用い�
 
 主論文 `n4:thm:top-word-divisible-three` の3|N,3|Lは、二変数Euler行列の重み3境界の特異性、純・混合モーメント、整域最小解消の末尾階数から直接証明する。Reyes–Rogalskiの一般的な行列Hilbert成長理論と区別し、この具体的な三整除性を同文献から引用してはいない。新規性は未確認である。
 
-`nozz:prop:koszul-saturation` は重み4のzz射影消滅とKoszul性から任意nの標準混合階数と通常二段skew表示を導く。有限頂点ASの完全対合は既存のMartínez-Villa–Solbergの枠組みに基づき、四成分分解から右乗法の単射性を得る段階を直接証明する。`nozz:cor:periodic-saturation` は同じ平方項消滅、r5≡1、6の倍数でない実周期から、Koszul性なしに同じ構造を得る。He–Van Oystaeyen–Zhang Proposition 2.2との相違は上表に記載した。一般のzz補正を消してPBW変形と見なすには、別途PBWまたはHilbert一致の証明が必要である。
+`nozz:prop:koszul-saturation` は重み4のzz射影消滅とKoszul性から任意nの標準混合階数と通常二段skew表示を導く。有限頂点ASの完全対合は既存のMartínez-Villa–Solbergの枠組みに基づき、四成分分解から右乗法の単射性を得る段階を直接証明する。`nozz:lem:full-r5` は同じ平方項消滅・実周期・多項式増大の下で、商A/(V)のDiamond基底から全r5≡1を導く。AS性と有限大域次元はこの補題に不要。`nozz:cor:periodic-saturation` はさらに6の倍数でない実周期があれば、全r5≡1を独立に仮定せず、Koszul性なしに同じ構造を得る。He–Van Oystaeyen–Zhang Proposition 2.2との相違は上表に記載した。一般のzz補正を消してPBW変形と見なすには、別途PBWまたはHilbert一致の証明が必要である。
 
 研究ノート `note:matrix-generator-bound-obstruction` は、相反性・Betti正値性・行列式の単位円条件・多項式Hilbert正値性だけでは行列生成元のPerron根を大域次元で抑えられない、具体的な2×2形式例を記す。これは実際の代数ではなく、整域の成分比較には反する。
 
@@ -558,6 +560,20 @@ AS基礎代数だけを追加したindexed構造定理、任意の斉次関係�
 最初の二段の行列Golod–Shafarevich不等式、S³軌道平均、正の左ベクトルの一次補正による直接証明を主論文に記載した。
 標準的なGS原理自体の新規性は主張せず、今回の具体的な重み・周期による飽和基準の重複調査は未完である。
 AS性・Koszul性・有限大域次元・noetherian性は補題に不要。3|Lで他の剰余類まで飽和すると読み替えない。
+
+## 差次数三の局所障害と二剰余類飽和
+
+`d3:lem:boundary-kernel` は、domainによるwの左右乗法を有限周期上で比較し、各固定εで正核が厳密にker(I−S³)へ入ることを証明する。解析的選択は有理Hilbert逆行列の先頭Laurent係数から得る。単純核の摂動論は必要ない。
+
+`n4:lem:local-square-r5` の非零三次交叉テンソルと、`d3:lem:single-z-collapse` の独立語の有限区間圧縮を直接証明した。後者はAS性・周期性・多項式増大を仮定しない。これらを正核の点ごとの式へ適用する `d3:thm:two-saturated-classes` はD3の全nで少なくとも二つの法3飽和類を与え、n4の全Nへ適用される。完全な既存結果との重複調査と新規性確認は未完である。
+
+## Euler行列式のMahler測度と面因子
+
+`mahler:prop:euler-measure` と `mahler:thm:two-faces` は、語長と差次数による有限Euler行列、実周期、多項式増大から出発する。純w積の非零性は重み3面の同定に用いる。AS相反性・Koszul性・noetherian性はこの一般設定で仮定しない。
+
+既知のIssa–Lalínの特殊化極限と一変数Jensen公式を用い、detP_B(u)および(1−(uv²)^(L/g))^g、g=gcd(L,3)という二つの互いに素な大域的因子を得る。座標面の一般因数分解の背景はSmythの一次資料に確認した。具体的Euler行列への適用の新規性は未確認。面因子の重複度から核次元を推定する論法は使用しない。
+
+ノート `note:d3-full-r5-moment` はD3、L=3ℓ≥9、全r5=1の場合の三次係数を全行列の跡で計算する。r4が剰余類内で変動していても、Σ(r3−H)+Σ(r4−n)=0が得られる。これは行列式の境界特異性だけより強い必要条件であり、非Koszul対象の存在や全排除を意味しない。
 
 ## 非Koszul例と対象内での存在状況
 
