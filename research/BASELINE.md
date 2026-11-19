@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v16。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v17。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -14,9 +14,9 @@
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
 | Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
-| Rogalski–Sierra, *Some noncommutative projective surfaces of GK-dimension 4*, arXiv:1101.0737v2 (2011), 本稿引用キー `RSsurface` | [一次PDF](https://arxiv.org/pdf/1101.0737v2), Theorem 1.1、解消 (1.2)、Theorem 1.6 | 通常の連結次数付きnoetherian整域で、Koszul、GK次元・大域次元4、線型Betti型14641、H=(1−t)^−4であってもAS–Gorensteinでない例。非可算代数閉体上の代数的に独立な二パラメータで成立し、特にC上で取れる。純基礎部分の数値・整域・周期条件からAS4を認識する方法の障害であり、Q₄^dom内の反例を構成したものではない。 |
+| Rogalski–Sierra, *Some noncommutative projective surfaces of GK-dimension 4*, arXiv:1101.0737v2 (2011), 本稿引用キー `RSsurface` | [一次本文](https://arxiv.org/html/1101.0737v2)、[PDF](https://arxiv.org/pdf/1101.0737), Theorem 1.1、解消 (1.2)、Theorem 1.6、Proposition 5.4の(5.5)–(5.6)、Proposition 5.11(1) | 通常の連結次数付きnoetherian整域で、Koszul、GK次元・大域次元4、線型Betti型14641、H=(1−t)^−4であってもAS–Gorensteinでない例。非可算代数閉体上の代数的に独立な二パラメータで成立し、特にC上で取れる。一般的な数値認識法の障害である。一方、本稿の十条件同値定理によりQ₄^domの純基礎として実現しない。最上写像(0,0,z₉,z₁₀)^Tと親AS由来の階数下界からも非実現を確認できる。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
-| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), §1冒頭の次数1生成の設定、Lemma 1.1、Cor.1.2、Lemma 1.3(a),(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(a) はAS3基礎代数のautomorphism Ore拡大に適用し、n=3の第1段Cの左右noetherian性を得る。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定に用いる。両者の適用順序は下記。 |
+| Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), §1冒頭の次数1生成の設定、Lemma 1.1とそのchange-of-rings証明、Cor.1.2、Lemma 1.3(a),(c)（PDF pp.3–4） | Lemma 1.1 は連結graded・有限大域次元と次数1の正則正規元だけで商の大域次元を1下げ、noetherian性も商のdomain性も要求しない。語長1のzに適用し、交代barテンソルと合わせて全nの通常Koszul枝の混合射影を非退化にする。Cor.1.2は親domainの下でAS性を比較し、得られたOre商のwに適用して基礎AS性を得る。Lemma 1.3(a)はn=3の第1段Cのnoetherian性、同(c)は重み2正則元族からの整域判定に用いる。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
 | Lu–Palmieri–Wu–Zhang, *Regular algebras of dimension 4 and their A-infinity-Ext-algebras*, Duke Math. J. 137 (2007), 537–584; DOI 10.1215/S0012-7094-07-13734-7 | [著者PDF](https://sites.math.washington.edu/~palmieri/Papers/hiext.pdf), Lemma 1.1、Lemma 1.3、Theorem 1.9 | 最小解消のAS双対性と、noetherian・global dimension 4・GK dimension 4のconnected graded AS正則代数がdomainとなる結果。Lemma 1.3は次数1生成を要求せず、出典を [ATV2, 3.9] と明記する。graded Ore網羅定理と重み2生成元族による整域判定で、noetherian性とGK dimension 4を先に確認して適用する。 |
 | Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218; DOI 10.1016/0001-8708(78)90010-5 | [著者ページ](https://math.berkeley.edu/~gbergman/papers/updates/diamond.html), Thm.1.2, p.181 | 停止順序と全重なりの解消から順序単項式基底。今回取得した一次資料は著者の書誌・訂正ページであり、原論文全PDFは未取得。適用の四重なりは直接検算。 |
@@ -208,8 +208,8 @@ Euler行列の二つのI−uS因子を取り出し、qに欠損があれば残�
 小さいv>0に対してH_Aのu=1での極は高々2位となる。
 これは純粋部分の4位の極と矛盾する。
 飽和した関係数から正規元族zの2周期を得て、AS移動9と合わせて1周期性を得る。
-下の `n4:thm:equivalent-criteria` は、これを六条件の同値性へまとめる。
-どちらかの自動性、またはnoetherian性なしのB-AS4を証明したわけではない。
+下の `n4:thm:equivalent-criteria` は、基礎AS4性、二段Ore表示、全始点r₃=4・r₅=1を含む十条件の同値性へまとめる。
+各条件の自動性は未証明だが、標準枝におけるB-AS4と第二段Ore表示は、noetherian性を追加せずに証明した。
 
 行列Hilbert級数、Hopf不等式、固有値の摂動、非負行列の一般的手法は既知であり、
 この具体的な周期解消の障害・数値型強制の新規性の最終確認は未完である。
@@ -227,9 +227,15 @@ H_R=(1−t)^−4も従う。Theorem 1.6は、非可算代数閉体上で二つ�
 全てを用いても、一般の四生成元基礎候補BにAS4性を認定することはできない。
 n=3の認識定理を生成元数だけ変更して適用する方針は、この既知の例によって排除される。
 
-一方、これらの例がQ₄^domの純jump 1部分として実現するとは証明していない。
+これらの例はQ₄^domの純jump 1部分として実現しない。
+実現すれば、標準純粋Hilbert級数から十条件同値定理によりB-AS4が従い、矛盾する。
 従って、対象内の二段Ore命題の反例ではない。
-親代数AのAS完全対合から基礎に伝わる追加の制約を用いることが、残る構造問題である。
+
+さらにProposition 5.4の(5.5)–(5.6)で、右最小解消の最上写像は(0,0,z₉,z₁₀)^Tと明示され、
+Proposition 5.11(1)が該当パラメータでの正確性を保証する。
+片側top flatteningの階数は高々2である。
+研究ノートの親完全対合による補助計算は、標準n4対象の純粋top両階数が少なくとも3であることを与えるため、
+この階数だけからも当該族の非実現が分かる。
 
 ### 任意nでのAS基礎代数を仮定した構造定理
 
@@ -249,7 +255,7 @@ n=3では上の二周期基礎代数の認識定理によって、この追加�
 mapping cone、完全対合、PBWからのOreデータの構成は既知の方法である。
 この仮定の組合せと結論の既存文献との完全同定、新規性の最終確認は未完である。
 
-### 通常の次数付きKoszul対象での数値型と仮定の削減
+### 通常の次数付きKoszul対象での数値型と二段Ore表示
 
 `ogk:lem:generator-bound` は、通常の連結Koszul代数が有限生成射影による有限解消と多項式増大を持つとき、
 生成元数が大域次元以下であり、両者が等しければH=(1−t)^−nと二項Betti数になることを直接証明する。
@@ -262,23 +268,129 @@ AS添字n+5、標準二変数Hilbert級数、関係数(binomial(n,2),n,n,1,0)を
 noetherian性と指定Hilbert級数は不要である。
 純jump 1部分Bは大域次元nのKoszul整域でH_B=(1−t)^−n、zは正則正規元であり、第1段はB[z;σ]となる。
 全ExtのAS対合、差次数零のbar複体、差次数1のYoneda成分と上の根の議論を使う。
-これだけからBのAS性や第2段Ore表示を得たとはしない。
-
-`ogk:cor:noetherian-ore` は、さらにAの左右noetherian性を仮定すれば、
-既存の通常graded構造定理からBのAS性と二段Ore表示を与える。
-この場合、指定Hilbert級数を仮定する必要はない。
+続く `ogk:thm:ore-without-noetherian` は、同じ仮定から基礎BのAS正則性と二段Ore表示までを導く。
+第二段の構造にもnoetherian性と指定Hilbert級数は不要である。
 一般の周期的Z-代数ではHilbert級数が行列の逆行列となるため、
 スカラー根の議論をそのまま適用して1周期性やKoszul性を補うことはできない。
 
+`bar:lem:two-cycle` は、非零の一次斉次元a,bがab=ba=0を満たせば、
+交代純テンソルが全dでTor_(d,d)(k,k)の非零元を与えることを、正規化bar複体で直接証明する。
+内部語長dにd+1次bar項がないため、これらのサイクルは境界にならない。
+この一般的な障害はKoszul性を必要としない。
+
+`bar:lem:normal-square` では、wz=c zw、zv=σ(v)zの下でwv=λz²が成立すると、
+親代数の整域性による約分からσ(v)=cv、vw=λc^(−2)z²となる。
+Q=A/(z)にはv,wの両順序の零積が生じるが、語長1のzへのRogalski–Zhang Lemma 1.1の適用でQは有限大域次元となる。
+交代barテンソルと矛盾するので、この退化は存在しない。
+`bar:cor:mixed-projections` は両混合射影の単射性を与え、標準関係数から両者は同型となる。
+既知のHilbert級数と整列語の比較によりPBW基底を得て、自己同型・導分の係数を構成する。
+Q=B[w;μ]の整域性・wの正則正規性はこの後に従い、再び正規元商を用いてB-ASnを得る。
+
+ここで使う正規元商の有限大域次元は既知結果であり、Lemma 1.1の本文と証明を一次資料で再確認した。
+交代barサイクルと本対象の交換関係を組み合わせた具体的な仮定削減について、新規性の最終確認は未完である。
+一般AS基礎代数や得られたOre代数のnoetherian性を自動的な帰結とはしない。
+`ogk:cor:noetherian-ore` は、Aの左右noetherian性を追加した場合にB=A/(z,w)も左右noetherianになることを記録する。
+
 `n4:thm:equivalent-criteria` は、Q₄^domにおいて、語長Koszul性、N=6、Aの1周期性、
-純基礎Bの1周期性、Bの全行Hilbert級数が同一であること、全行H_B=(1−u)^−4の六条件を同値にする。
+純基礎Bの1周期性、Bの全行Hilbert級数が同一であること、全行H_B=(1−u)^−4、
+B-AS4、AS4基礎上の添字付き二段Ore表示、AS4基礎上の通常graded二段Ore表示への下降、
+全始点r₃=4・r₅=1の十条件を同値にする。
 全行Hilbert級数が共通のh(u)なら、p_i(u)h(u)=1からEuler多項式の全係数は始点によらず、q_iは全て1となる。
 スカラーEuler多項式の根が単位円上にあることから自己相反性が従い、
 s>=5では正の二次係数と非正の(s−2)次係数が等しくなる矛盾によってs=4へ限定する。
 これがN=6とKoszul性を与え、上の混合数値型定理がAの1周期性を与える。
-六条件のいずれかが無条件に成立することを証明したわけではない。
-`n4:cor:noetherian-periodic-ore` は、これらを満たす対象の通常の下降がさらに左右noetherianであれば、
-基礎のAS4性と二段Ore表示を与える。noetherian性の自動性は結論しない。
+通常の下降への `ogk:thm:ore-without-noetherian` の適用でB-AS4と二段Ore表示が従い、
+逆にB-AS4から一般AS-base定理を通じてBの1周期性へ戻る。
+最後の階数条件とB-AS4の同値性は `igraph:thm:normal-z-ore` による。
+十条件のいずれかが無条件に成立することを証明したわけではない。
+標準枝でのB-AS4と第二段Ore表示は別の未解決問題として残らない。
+`n4:cor:noetherian-periodic-ore` は、通常の下降がさらに左右noetherianの場合の基礎noetherian性を記録し、
+noetherian性自体の自動性は結論しない。
+
+### 二つの混合階数による任意nのindexed構造判定
+
+`igraph:thm:normal-z-ore` は、全A∈Qₙ^domについて、全始点r₃=n・r₅=1、
+純基礎Bの左右AS正則次元n、AS基礎B上の添字付き二段Ore表示を同値にする。
+B-ASでは有限生成射影による有限AS解消を要求する。
+Hilbert級数・Koszul性・noetherian性を追加せず、D=3、r₄=n、Bの1周期性、
+一般AS-base定理のシフトとHilbert因数分解、AとBのKoszul性の同値も得る。
+無条件の全次元問題は、r₃=n・r₅=1の自動性へ還元された。
+
+`igraph:lem:as-graph-ore` が、混合射影の非退化性からPBWと基礎AS性へ進む箇所を担う。
+正規商の二周期foldは、自由純部分F=T_S(V)の自己同型μを用いてQ=F[w;μ]/(R)と書ける。
+w次数jの係数イデアルはI_j=(R,μR,…,μ^jR)で、有限次元F₂内の増大列により有限段で安定する。
+よってG=H_Q(I−tT)はtの多項式行列で、有限解消のEuler行列とPG=I−tTを満たす。
+AS対合が最高係数P_J(x)=(−1)^d x^a ΠP₀(x⁻¹)^Tを与え、これは可逆である。
+従ってJ+deg_tG=1、J=1、G一定となり、I₁=I₀からμR=Rを得る。
+QのOre表示とw正則性を導いた後でB-ASを降下させ、一般AS-base定理を適用する。
+主論文に全証明を収め、研究ノート `note:normal-z-ore` に依存関係を記録した。
+
+通常の一頂点の場合は、スカラーEulerの次数加法性によってAS対合を不要にできる。
+研究ノート `note:ordinary-graph-finite-res` は、μが可逆な混合グラフ表示とk_Qの有限生成有限解消だけで、
+μR=RとOre表示を証明する。AS性・整域性・Koszul性・noetherian性・多項式増大は不要である。
+行列の場合の最高係数可逆性と、スカラーの場合の次数加法性を混同しない。
+有限安定化・Euler式・AS対合は既知の道具であり、この具体的な判定の新規性の最終確認は未完である。
+
+### Hilbert級数またはKoszul性を用いる系
+
+`ibar:thm:standard-hilbert-ore` は、A∈Qₙ^domに全行の標準二変数Hilbert級数を追加すると、
+純jump 1部分B上の添字付き二段Ore表示を与える。
+Bは1周期的なKoszul AS正則次元nの整域となり、Aも語長Koszulとなる。
+noetherian性、Koszul性、基礎AS性、Aの1周期性は追加仮定しない。
+ただし、標準Hilbert級数の自動性をこの定理から導いたとはしない。
+
+語長2の係数比較で標準関係数を得て、z正規族による2周期同型で折り畳む。
+次数零部分k²に対する次数1の正則中央元による商の二行スペクトル系列を直接証明し、
+商の単純Torが有限長となることを得る。
+退化した混合関係は商で逆向きの二つの矢の両順序の零積を作るため、
+k²上の交代barテンソルが与える無限のTorと矛盾する。
+その後にHilbert級数との比較でPBW基底と第二段Ore表示を得て、二つの正規元商からB-ASnを得る。
+これは通常の連結代数に対するRogalski–Zhangの声明をそのまま多頂点へ引用したのではなく、
+必要な半単純次数零部分への拡張を本文で証明したものである。
+
+`ibar:cor:normal-z-rank` は、標準Hilbert級数・Koszul性を仮定せず、
+全r₃=n、r₅=1からr₄=nを導く。
+bar障害による上界と、商の二周期Golod–Shafarevich行列・多項式増大による下界を組み合わせる。
+この階数の強制が一般階数判定の最初の段階を与える。
+AS混合グラフ補題を組み合わせると、同じ仮定だけでPBWと全二段Oreを得る。
+階数条件成立後の関係保存性とPBW分解は未解決箇所ではない。
+一般的なbar・スペクトル系列・Golod–Shafarevich法は既知であり、具体的な組合せの新規性は未確定である。
+
+`ibar:cor:koszul-normal-z` は、A∈Qₙ^domに語長Koszul性と全r₃=n、r₅=1を追加すれば、
+標準Hilbert級数を仮定せずにBのKoszul AS正則性、添字付き二段Ore表示、L_A=n+5、標準二変数Hilbert級数を導く。
+正規商Q=A/(z)のKoszul性は二行スペクトル系列から従う。
+Qのbar複体のw次数零部分がBのbar複体に一致するので、BのKoszul性を先に導ける。
+2周期foldのExt代数Eは、F=Ext_BについてE=F⊕Fη、Fη=ηF、η²=0となる。
+各頂点の最高w次数1のFrobenius対合がdim F=dim Fηを与え、η乗法は同型となる。
+λ_F(f)=λ_E(fη)が非退化であることからB-ASnを得て、既存のAS-base定理を適用する。
+基礎AS性・Hilbert級数・noetherian性の先取りはない。
+主論文の同系は一般階数判定を適用する短い証明とし、上のExt分解による完全な別証明は
+研究ノート `note:koszul-normal-z-frobenius` に保持する。一般階数判定はこの別証明を使わない。
+
+### 純基礎Euler条件だけを使う方法の限界
+
+研究ノート `note:n4-pure-euler-obstruction` は、s=5、N=7、L=10に対し、
+非負Betti数、q≡1、行・列の均衡と一次モーメント、単位円上の行列式の根、
+全次数での正の形式Hilbert係数、多項式増大、共通の最高Laurent係数、Hopf次元不等式を満たしながら、
+行Hilbert級数が一定でない形式数値データを与える。
+det P=(1−u¹⁰)³(1+u²⁰)と、各剰余類の二次準多項式を用いた全次数の証明をノートに記載した。
+整数再帰と有限個の係数不等式の検査は `computations/verify_n4_pure_euler.py` で再現する。
+これは計算補助の形式的数値結果であり、二次代数、最小解消、親AS6を実現したものではない。
+十条件自動性の証明では、純Eulerデータだけでなく、実際の関係・中央Ext完全対合・混合Eulerの追加構造が必要である。
+
+研究ノート `note:n4-s5-period-two-obstruction` は、s=5の一般の純基礎係数列に2周期性を追加すると、
+二頂点のdet Kに対する単位円上の根の条件とBetti非負性が矛盾することを解析的に証明する。
+これは表示した十周期列を全て排除する主張ではなく、2周期の枝についての追加の障害である。
+
+`note:n4-parent-mixed-obstruction` は、表示した十周期純モデルの親AS6が存在すると仮定した場合に、
+中央混合数値を20個の整数a_i=r₃(i)、b_i=r₄(i)へ還元する。
+二次関係の交叉からSegre上界を加え、全親Euler行列の三位以上の極が、
+残る行列束の行列式 det K(v)≡0 を要求することを示す。
+一次係数を通る表示された一つの混合延長は、二次係数−942によって厳密に排除される。
+**純モデルの全混合延長を排除したわけではない。** 全係数の同時消滅、二次代数の実現、AS完全対合の実現を別々に残す。
+整数恒等式の再現コードは `computations/verify_n4_parent_mixed.py` である。
+表示した計算は担当エージェントと主担当がそれぞれ実行し、現行入力の全恒等式を厳密に照合した。
+実行・照合状態は `research/validation.json` に記録する。
 
 ### n>=4に残る数値型・Koszul性の文献上の確認範囲
 
@@ -313,7 +425,8 @@ n=3では上記の直接証明によって数値型と基礎代数のAS3性を�
 3. `idx:lem:normal-family` と `idx:thm:domain-period-one`：重み2の正規生成元族が2周期を与え、7周期との合成で1周期を得る。Van den Bergh Lemma 3.4 によって、語長二次の graded 代数 D を復元する。
 4. `idx:lem:three-generator` と `idx:thm:domain-ore`：Rogalski–Zhang の正則正規元商を **語長次数** に適用し、D/(z) を AS 次元3へ下げる。その商の syzygy と AS 対合から第2生成元の正規性を導き、量子平面または Jordan 平面からの2段 Ore 表示を得る。商の domain 性や noetherian 性を仮定していない。左右 noetherian 性は Ore 表示から従う。
 
-この四次元 Z-domain の定理は、任意 n の graded 定理で用いる noetherian 有限生成加群の議論とは別の証明である。
+この四次元Z-domainの定理は、三次元商のAS完全対合による独立の証明である。
+任意nの通常Koszul対象についても、交代barテンソルの排除によってnoetherian性なしの構造定理を得た。
 重み次数2の正規元商が一般に大域次元を下げる、と主張しているのではない。
 語長二次表示と語長保存の1周期同型によって、z が通常次数1となる grading を確保している。
 
@@ -359,7 +472,8 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 最小生成元条件を仮定し、上表の LPWZ の domain 定理を使う。
 この仮定付き定理と、語長二次の Z-domain から Hilbert 級数・noetherian 性まで導く定理を区別する。
 任意 n の既存の語長二次 graded 定理は、noetherian 性と指定 Hilbert 級数を仮定する。
-一方、`ogk:cor:noetherian-ore` は語長Koszul性を仮定することで指定Hilbert級数の仮定を除く。
+一方、`ogk:thm:ore-without-noetherian` は語長Koszul性を仮定することで、
+指定Hilbert級数とnoetherian性の両仮定を除く。
 両定理の仮定を混同しない。
 
 全Qでの `idx:thm:outer-relation-ranks` は、重み2・5の関係数が各1であることを証明する。
@@ -383,10 +497,11 @@ n=1では1周期化の必要十分条件があり、これを満たさない最�
 n=4では最高差次数D=3と純基礎部分の解消制約を無条件に得た。
 語長Koszul性を追加した全標準型と1周期性を証明し、逆に1周期性から語長Koszul性も導いた。
 これらはBの1周期性、Bの全行Hilbert級数の一致、Bの標準Hilbert級数とも同値である。
-任意nの通常Koszul対象では、noetherian性やHilbert級数を追加せず全標準型を得る。
-一般indexed対象のKoszul性、純jump 1基礎Z-代数のAS性、
-n>=4の無条件のOre網羅性と各次元での下降条件は未解決である。
-任意nでのAS基礎代数を仮定した二段Ore定理は、この未解決範囲を切り分ける。
+さらに基礎BのAS4性、添字付き・通常の二段Ore表示、全始点r₃=4・r₅=1を含めた十条件が同値である。
+任意nの通常Koszul対象では、noetherian性やHilbert級数を追加せず全標準型・基礎AS性・二段Ore表示を得る。
+任意nの一般indexed対象でも、r₃=n・r₅=1が基礎AS性と二段Ore表示の必要十分条件である。
+n>=4では二つの階数条件の自動性が未解決であり、n=4では上の十条件の自動性と同じ問題である。
+Koszul性や標準Hilbert級数を先に解くことは必須ではない。各次元での下降条件は別に扱う。
 n=3の基礎代数とOreデータを含む同型軌道の完全分類は残る。
 n=2の全分類では、Q 全体の整域性、混合関係射影の非退化性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化が残る。
 n=2の整域性の自動性に関する具体的課題は、七つの z_i の左右正則性である。
@@ -399,8 +514,9 @@ n=2の整域性の自動性に関する具体的課題は、七つの z_i の左
 `papers/nc-p1123.tex` は、左右 noetherian、指定大域次元と Hilbert 級数を持つ
 語長二次の graded algebra について、全 n の Koszul 性・関係数を導き、
 domain を加えた部分の canonical Ore 表示を網羅する。
-商 A/(z) の domain 性を追加仮定する必要はなく、二変数 Hilbert 級数と
-noetherian 有限生成性による成長度の議論から導く。
+商A/(z)のdomain性は追加仮定せず、混合射影の非退化性とHilbert級数から得るOre表示の後に導く。
+通常Koszul対象では、交代barテンソルの排除を使う `ogk:thm:ore-without-noetherian` により、
+noetherian性と指定Hilbert級数を追加せず同じ構造結論を得る。
 一般の高次元 AS-regular algebra が常に domain であるという主張は使用しない。
 基礎代数の AS 性は、その後の正則正規元の商から得る。
 
@@ -417,3 +533,12 @@ LWW Theorem 3.3 は一般斉次Ore族と、固定最小次数で次元が無界�
 追加仮定を明記した一般 n の語長二次graded網羅定理、
 AS基礎代数だけを追加したindexed構造定理、任意の斉次関係のOre部分族の記述は区別する。
 これらの結果と既存文献との完全な同定・新規性の確定は未了である。
+
+## 重み5関係の行列GS飽和
+
+`genidx:lem:r5-gs-saturation` は、周期的な二次Z-domainの多項式行増大から、
+3∤Lなら全r5=1、3|Lなら少なくとも一つの法3剰余類上で全r5=1を導く。
+既存の単項式商による非零位置数の下界より強いが、整域性によるrank上界を使う点を区別する。
+最初の二段の行列Golod–Shafarevich不等式、S³軌道平均、正の左ベクトルの一次補正による直接証明を主論文に記載した。
+標準的なGS原理自体の新規性は主張せず、今回の具体的な重み・周期による飽和基準の重複調査は未完である。
+AS性・Koszul性・有限大域次元・noetherian性は補題に不要。3|Lで他の剰余類まで飽和すると読み替えない。

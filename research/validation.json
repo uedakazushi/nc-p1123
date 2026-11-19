@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 16,
+  "version": 17,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -77,30 +77,46 @@
       "ORDINARY-KOSZUL-GENERATOR-BOUND",
       "ORDINARY-KOSZUL-NUMERICS",
       "ORDINARY-KOSZUL-NOETHERIAN-ORE",
-      "N4-NOETHERIAN-PERIODIC-ORE"
+      "N4-NOETHERIAN-PERIODIC-ORE",
+      "BAR-TWO-CYCLE",
+      "NORMAL-SQUARE-OBSTRUCTION",
+      "ORDINARY-KOSZUL-ORE",
+      "INDEXED-STANDARD-HILBERT-ORE",
+      "INDEXED-NORMAL-Z-MIXED-RANKS",
+      "INDEXED-KOSZUL-NORMAL-Z-ORE",
+      "N4-PURE-EULER-OBSTRUCTION",
+      "N4-S5-PERIOD-TWO-OBSTRUCTION",
+      "N4-PARENT-MIXED-OBSTRUCTION",
+      "AS-GRAPH-ORE-RECOGNITION",
+      "INDEXED-NORMAL-Z-ORE",
+      "GEN-R5-GS-SATURATION"
     ],
-    "logical_review": "The retained n1/n2/n3 and general AS-base proofs remain in the current manuscript. This update adds complete analytic proofs of the periodic m>=4 pd3 obstruction, n4 top excess D3, pure-base resolution/moments, conditional 14641 numerics, full Koszul mixed numerics/period one, and the six-condition equivalence. The Euler eigenvalue square completion, Perron-Frobenius crossing, mixed matrix factorization/determinant/pole contradiction, and uniform-row reciprocity were independently audited by the root and other AI agents. The ordinary all-n Koszul scalar-root and four-strand arguments were independently checked. These are internal mathematical audits, not formal verification or external peer review; no numerical sampling is a premise.",
+    "logical_review": "The retained n1/n2/n3, AS-base and n4 numerical proofs remain valid. This update adds the alternating bar obstruction, noetherian-free ordinary Koszul Ore theorem, a ten-condition n4 equivalence, semisimple normal-linear quotient and periodic folding arguments, indexed standard-bigraded-H Ore, GS mixed-rank forcing, and Koszul-normal-z base recognition. The root and independent AI agents audited these arguments, explicitly checking B Koszulity from the zero-w bar summand before Frobenius recognition. The pure n4 Euler model is proved for all degrees by an exact recurrence/quasipolynomial certificate, not a finite-degree sample. The two-period s5 exclusion is analytic; one parent-mixed extension is excluded by an exact second-order coefficient. These are internal mathematical audits and exact computations, not formal verification, external peer review, or confirmed novelty. The strongest addition is the non-Koszul indexed normal-z criterion. Root and three independent agents checked the exact coefficient ideals I_j, finite-dimensional orbit stabilization, uniform highest bidegree, the AS transpose/permutation formula for P_J, and the justified matrix-polynomial degree comparison. This removes the PBW/base-AS gap under r3=n,r5=1 without H or Koszulity.",
     "new_reviewed_claims": [
-      "PERIODIC-PD3-OBSTRUCTION",
-      "N4-TOP-EXCESS",
-      "N4-PURE-NUMERICS",
-      "N4-KOSZUL-BASE-NUMERICS",
-      "N4-KOSZUL-NUMERICS-PERIOD",
+      "BAR-TWO-CYCLE",
+      "NORMAL-SQUARE-OBSTRUCTION",
+      "ORDINARY-KOSZUL-ORE",
+      "INDEXED-STANDARD-HILBERT-ORE",
+      "INDEXED-NORMAL-Z-MIXED-RANKS",
+      "INDEXED-KOSZUL-NORMAL-Z-ORE",
+      "N4-PURE-EULER-OBSTRUCTION",
+      "N4-S5-PERIOD-TWO-OBSTRUCTION",
+      "N4-PARENT-MIXED-OBSTRUCTION",
       "N4-EQUIVALENT-CRITERIA",
-      "ORDINARY-KOSZUL-GENERATOR-BOUND",
-      "ORDINARY-KOSZUL-NUMERICS",
       "ORDINARY-KOSZUL-NOETHERIAN-ORE",
-      "N4-NOETHERIAN-PERIODIC-ORE"
+      "N4-NOETHERIAN-PERIODIC-ORE",
+      "AS-GRAPH-ORE-RECOGNITION",
+      "INDEXED-NORMAL-Z-ORE",
+      "GEN-R5-GS-SATURATION"
     ],
     "reviewed_dependencies": [
-      "GEN-AS-TRANSLATION",
-      "GEN-R5-GROWTH",
-      "GEN-NORMAL-Z-CONDITIONAL",
+      "ORDINARY-KOSZUL-NUMERICS",
       "GEN-AS-BASE-ORE",
-      "GENERAL-QUADRATIC-ORE",
-      "THREE-LIGHT-BASE-NUMERICS"
+      "GEN-NORMAL-Z-CONDITIONAL",
+      "N4-KOSZUL-NUMERICS-PERIOD",
+      "N4-PURE-NUMERICS"
     ],
-    "scope": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). Unconditional exhaustion is proved for n=1,2,3; n2,n3 descend to ordinary two-step Ore algebras. For n4, top excess D=L-N=3 is proved without extra hypotheses. Word-Koszulity, N6, A period one, pure-base B period one, source-independent B Hilbert rows, and standard B Hilbert rows are equivalent; under these conditions all numerical data are standard. Their automaticity and B-AS4 remain open. For all n, B-ASn with finite two-sided resolutions implies indexed Ore. Ordinary graded word-Koszul objects have standard numerics and first Ore; adding noetherianity gives the second Ore stage. Unconditional indexed exhaustion remains open for n>=4.",
+    "scope": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). The main all-n reduction now proves B-ASn if and only if every r3(i)=n,r5(i)=1; those two rank conditions imply the full indexed two-step Ore structure without H, Koszulity, noetherianity or initial B-AS. Thus only their automaticity remains for unconditional indexed exhaustion. This automaticity is proved for n=1,2,3; n2,n3 also descend to ordinary Ore. At n4, D=L-N=3 is unconditional and ten conditions are equivalent, including Koszulity, N6, A/B period one, uniform/standard B Hilbert rows, B-AS4, indexed/ordinary Ore, and r3=4,r5=1. Their automaticity remains open. Ordinary graded word-Koszul objects admit full two-step Ore without initial H or noetherianity. Standard bigraded row Hilbert series imply the indexed structure and Koszulity for every n. A formal n4 pure-Euler model passes all-degree positivity/growth/Hopf constraints; it is not a realized algebra. Unconditional indexed exhaustion remains open for n>=4. Additionally, r5 is forced everywhere when the AS period L is not divisible by three, and on at least one mod-three class otherwise.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -177,10 +193,21 @@
       "For n4 N6, p_i=2+q_i+q_(i-1),r_i=5+q_(i-1); P_B=F(F^2-u^2 Delta S^2)F. Any missing q makes a nonnegative G spectral radius cross one inside (0,1), contradicting polynomial growth.",
       "N4 mixed AS complement shifts are c_(i+5),b_(i+5),a_(i+6); row and first-moment identities give b_i=a_(i+5),c_i=a_i+a_(i+1)-2. Exact P=F K F and adj((I-S)^2)=9J imply det K(1,v)=-9(sum alpha_i)v+O(v^2).",
       "A nonzero mixed defect gives a Hilbert pole of order at most two for fixed small positive v, contrary to coefficientwise domination of the pure-base pole of order four. Thus all standard ranks/H and periods two/nine give period one.",
-      "N4 uniform pure Hilbert rows imply identical scalar Euler polynomials, q_i=1 and positive common r. Unit roots and reciprocity contradict r=-p_(s-2)<=0 for s>=5. Intrinsic B is preserved by bare A period-one maps, so the six criteria are genuinely equivalent.",
+      "N4 uniform pure Hilbert rows imply identical scalar Euler polynomials, q_i=1 and positive common r. Unit roots and reciprocity contradict r=-p_(s-2)<=0 for s>=5. Intrinsic B is preserved by bare A period-one maps, giving the first six of the ten equivalent criteria.",
       "For ordinary finite Koszul polynomial-growth algebras, root products force top Betti one and generator number <= global dimension; equality forces all roots one. Applied to pure B and A, domain relation projections and AS complementary strands force all standard bigraded numerics.",
-      "The ordinary Koszul theorem proves only the first Ore stage without further assumptions. Second Ore uses the earlier theorem with explicit left/right noetherianity. The n4 periodic noetherian corollary keeps this assumption.",
-      "Rogalski-Sierra Theorem1.1/(1.2) and Theorem1.6 provide known non-AS four-generator noetherian Koszul domains with linear 14641 resolution and standard H, also over C. Their realization inside the current parent AS6 target is not claimed."
+      "Alternating bar tensors are nonzero over k or a product of vertex fields, and have no incoming boundary in their diagonal word degree.",
+      "Normal-square cancellation occurs in the original domain, not in its quotient; nonzero v,w survive the quotient because their jumps differ from z.",
+      "Rogalski-Zhang Lemma1.1/Corollary1.2 applies in word degree one without noetherianity. The finite semisimple extension is proved via the two-row spectral sequence and minimum internal degree, not an unjustified degeneration claim.",
+      "The finite-fold quotient preserves jump grading and unfolds finite simple resolutions/AS shifts; separability of the degree-zero algebra gives a finite minimal bimodule resolution for all unital modules.",
+      "Indexed standard-H theorem assumes the full two-variable row Hilbert series. The normal-z mixed-rank theorem has no H/Koszul assumption and does not alone claim non-Koszul PBW.",
+      "For the Koszul normal-z theorem, the w-count-zero normalized bar summand identifies Ext_B and proves B Koszul before transferring the Frobenius form. The top w-count is uniformly one; eta multiplication is an isomorphism.",
+      "The n4 pure-Euler certificate uses a cofactor-degree bound and a 40-residue quadratic formula to prove positivity and Hopf inequalities for all degrees. It does not construct an algebra.",
+      "The parent-mixed coefficient -942 excludes the displayed mixed arrays only. Remaining mixed extensions and actual realization remain open.",
+      "The exact w^j coefficient ideal is I_j=F(R+mu R+...+mu^j R)F; mu(R)=R is not assumed in this step. Stabilization takes place in finite-dimensional F2.",
+      "The highest Q bidegree has J=(L_A-N_A-1)/2 and a=N_A-1-J, uniform over the folded vertices. Nonnegative bar bidegrees and AS duality imply J>=1.",
+      "P_J=(-1)^d*x^a*Pi*P_0(x^-1)^T is invertible over Q((x)); therefore P_J G_N cannot vanish. The equation P G=I-tT forces J1 and G constant. This is not an invalid determinant or arbitrary-matrix degree argument.",
+      "Equal Hilbert matrices for the nested coefficient ideals imply equality in every finite component; the degree-two comparison gives mu(R)=R. Returning to the original cover gives a regular normal jump-three family and the second AS quotient.",
+      "The new periodic R5 saturation proof was independently checked by the root and two agents. The explicit positive-weight curve respects b^2=ac and convergence; the Poisson correction of an orbit-constant positive left vector avoids any unjustified analytic perturbation of a multiple zero eigenvalue. Only one saturated mod-three class is concluded when 3 divides L."
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
@@ -195,7 +222,8 @@
       "Van den Bergh, arXiv:0807.3753v3, Definition 4.1.1 and Theorem 4.2.2: the ordinary three-dimensional quadratic type has three adjacent-jump generators, so that period-one theorem does not apply to primitive jumps (1,2,3).",
       "Kabbaj, arXiv:2501.11346v1, Corollary 2.5, Definition 3.2, Theorems 3.4, 3.9, 3.10: checked as a scope comparison, not used to infer arbitrary-n indexed Koszulity.",
       "Iyudu-Shkarin, arXiv:1806.06844v1, Theorem 1.11, Remark 1.15, section 12.1, printed page 78: over an algebraically closed field of characteristic not 2 or 3, ordinary quadratic H=(1-t)^(-3) domains are exactly AS3 algebras. Used for ordinary graded comparison only; not a premise of the direct two-period recognition theorem.",
-      "Rogalski-Sierra, Some noncommutative projective surfaces of GK-dimension 4, arXiv:1101.0737v2, Theorem 1.1 and resolution (1.2), Theorem 1.6: known noetherian Koszul domains of global dimension four with standard 14641 linear resolution but not AS-Gorenstein, over an uncountable algebraically closed field including C."
+      "Rogalski-Sierra, Some noncommutative projective surfaces of GK-dimension 4, arXiv:1101.0737v2, Theorem 1.1 and resolution (1.2), Theorem 1.6: known noetherian Koszul domains of global dimension four with standard 14641 linear resolution but not AS-Gorenstein, over an uncountable algebraically closed field including C.",
+      "Rogalski-Zhang, Regular algebras of dimension 4 with 3 generators, arXiv:1101.1998v2, Lemma1.1 and Corollary1.2: finite-global-dimension and AS regularity pass across a regular normal degree-one quotient; no noetherian hypothesis. The proof is applied to word grading and adapted in-text to finite semisimple degree zero."
     ],
     "formalized": false,
     "peer_reviewed": false,
@@ -215,15 +243,19 @@
       "Unconditional indexed two-step Ore exhaustion for n>=4",
       "A blanket noetherianity statement for every arbitrary-dimensional AS base",
       "A period-two counterexample for each fixed n>=4; no such n3 example exists in the target",
-      "Automatic validity of the six equivalent n4 conditions",
       "Pure-base AS4 from domain/Koszul/14641/standard Hilbert/periodicity alone",
-      "Realization of Rogalski-Sierra examples as pure bases of Q4dom",
-      "Second Ore for all ordinary Koszul objects without noetherianity or a separate B-AS proof"
+      "Automatic validity of the ten equivalent n4 conditions",
+      "A realized algebra/domain/AS parent for the formal n4 pure-Euler model",
+      "Exclusion of every mixed extension of that formal model",
+      "Standard weighted univariate Hilbert series alone as the hypothesis of the indexed standard-H theorem",
+      "Automaticity of r3=n,r5=1 for all original indexed objects when n>=4",
+      "An indexed finite-resolution-only mixed-graph theorem without AS duality or an invertible highest Euler coefficient",
+      "All r5=1 in the 3|L branch from the first-order GS argument alone"
     ],
-    "literature_followup": "The n4 obstruction, periodic numerical criteria and ordinary Koszul numerics have complete current proofs but their novelty is not finally verified. Rogalski-Sierra arXiv1101.0737v2 was checked in primary text as an obstruction to generic AS4 recognition, not as a counterexample to the weighted parent problem. Retain the primary Iyudu-Shkarin ordinary AS3 comparison and Rogalski-Zhang word-graded noetherian use for n3; those earlier results remain valid. No broad claim that all AS bases are noetherian is made."
+    "literature_followup": "The normal-linear quotient dependency was checked in primary Rogalski-Zhang text, with its exact word-degree-one and regularity hypotheses. The new bar-based structure criteria and n4 equivalence have written proofs and internal audits but novelty has not been finally verified. The known RS examples obstruct generic pure numerical AS recognition and are now proved nonrealizable as Q4dom pure bases. Existing primary-source comparisons for n1/n2/n3 remain valid. The general graph-Ore recognition and normal-z iff base-AS criterion also require novelty comparison; a proof and internal audits do not establish novelty. The concrete R5 periodic GS saturation criterion also has unconfirmed novelty."
   },
   "exact_computation": {
-    "current_analytic_results": "The new n4 results and ordinary all-n Koszul numerics are analytic/algebraic proofs with complete displayed matrices and identities. They do not depend on finite enumeration, parameter sampling or an additional numerical certificate. The retained n2 890-array proof and earlier n3 symbolic checks remain unchanged.",
+    "current_analytic_results": "Bar obstruction, ordinary/indexed Ore theorems, GS rank forcing, Koszul normal-z recognition and the two-period s5 exclusion are algebraic/analytic proofs, independent of numerical sampling. The n4 formal obstruction and one mixed extension use the exact finite certificates described below, with proofs of their all-degree or coefficient implications in notes. The general non-Koszul graph-Ore and normal-z criterion uses no finite enumeration or parameter sampling.",
     "current_symbolic_audit": {
       "executed": true,
       "scope": "Exact n3 mixed inverse Hilbert factorization and the full exceptional 7-by-7 Euler determinant, independently checked in the root session.",
@@ -266,19 +298,46 @@
         "survivors_agree": true
       },
       "current_update_rerun": false,
-      "scope": "The unchanged exact 890-array n2 proof asset is retained. Current n3/n4 and conditional general-n results do not depend on a new enumeration."
+      "scope": "The unchanged exact 890-array n2 proof asset is retained. The new Ore structure theorems do not depend on a new enumeration; the separate formal n4 obstruction has its own exact certificate."
     },
     "reproduction_commands": [
       "python3 computations/verify_mixed_ranks.py",
       "python3 computations/weighted_baseline.py",
-      "python3 computations/verify_skew_ore.py"
+      "python3 computations/verify_skew_ore.py",
+      "python3 computations/verify_n4_pure_euler.py",
+      "python3 computations/verify_n4_parent_mixed.py"
     ],
-    "unchanged_scripts_not_rerun": "All retained computation scripts and certificates are unchanged in this update."
+    "unchanged_scripts_not_rerun": "The retained n2 enumeration/baseline/skew-Ore scripts and certificates were unchanged and not rerun. The two new n4 certificate scripts were executed by the root.",
+    "n4_pure_euler_formal_certificate": {
+      "script": "computations/verify_n4_pure_euler.py",
+      "executed_by_root": true,
+      "result": "passed",
+      "arithmetic": "Python standard-library exact integers; no floating point or parameter sampling",
+      "fixed_data": "s5,N7,L10,q=1; all input arrays are inside the script and in the note",
+      "determinant": "(1-u^10)^3(1+u^20)",
+      "all_degree_reduction": "Cofactors have degree at most 45; (1-u^40)^3/det P has degree 70, so the numerator degree is at most 115. The first 120 coefficients determine the quadratic formula on every residue class.",
+      "coefficient_formula": "h_i(40m+a)=38016*binom(m,2)+B_(i,a)*m+C_(i,a), min B=22620, min C=1",
+      "hopf_cases": 16000,
+      "scope": "Pure formal Euler data only; no algebra or AS realization is asserted."
+    },
+    "n4_parent_mixed_certificate": {
+      "script": "computations/verify_n4_parent_mixed.py",
+      "executed_by_root": true,
+      "result": "passed",
+      "arithmetic": "Python standard-library exact integers",
+      "second_determinant_coefficient": -942,
+      "scope": "Excludes one displayed mixed extension of the formal pure model; does not exclude all possible extensions."
+    }
   },
   "project_structure": {
     "status": "passed",
     "command": "python3 scripts/check_project.py",
-    "scope": "Current files, local TeX labels/citations/environments, claim proof targets and resume inputs; not a mathematical or typesetting check."
+    "scope": "Current files, local TeX labels/citations/environments, claim proof targets and resume inputs; not a mathematical or typesetting check.",
+    "additional_checks": [
+      "git diff --check",
+      "Claim dependency references and absence of dependency cycles",
+      "Exactly ten entries in n4 equivalent-criteria theorem"
+    ]
   },
   "typesetting": {
     "status": "blocked_missing_lualatex_japanese_dependencies",
@@ -286,7 +345,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt exited 12 before reading TeX source because lualatex.fmt was unavailable. Local-format diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v11 main manuscript and v16 supporting sources have not been compiled or visually checked; the blocked attempt was not repeated for this update.",
+    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt failed before reading TeX source because lualatex.fmt was unavailable. Diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v12 main manuscript and v17 supporting sources have not been compiled or visually checked. The root did not repeat the blocked final-source attempt; a proof-fragment check by an agent encountered the same startup failure.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -297,22 +356,22 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "4935137946cdff92cd56c44afc594ef12cdde430c5b5816036140a4860b693e6",
+        "source_sha256": "514bcc5a502e6450a98182d569e2464a66faa2d6a7ba37c2c0c4c2f5ef4bcb09",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "18f70bcdd50f9bae47f57a088af6c03ce08f32f8f5f84dc90b3bee644fcad2da",
+        "source_sha256": "2fc210adda309bbf38e09aeed61ba09032e8faf1ffed5104285b6abd01746bec",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "d816b8b1782e054cdc38b7d2806be3ecec36fcb60753b598d67ad62e9ec1a0e8",
+        "source_sha256": "32491196dd3282d2d3ca0dbce2278ac31f979dc71b4ad5d5108392a8d7be6cbe",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "1116d170c3677ca35b52fcf425b82b7c393df21278563b16a6aec0a163600358",
+        "source_sha256": "d7bc7b57325b23ee85a076cc4f21bc9e4537c145222dcba5ac0d862ebf5526a2",
         "current_pdf_verified": false
       }
     ],

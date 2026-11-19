@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v11}
+\date{2026年11月19日\quad 統合版 v12}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -43,8 +43,10 @@ AS添字は$n+5$で、最小解消の内部次数は4本の対角線上にある
 さらに語長二次なら、任意の$n$について語長Koszul性を導ける。
 語長二次かつ整域である場合には、次数1部分が生成する$n$次元AS正則代数からの
 2段階のOre表示が全対象を尽くすことを証明する。
-正規元で割った商の二変数Hilbert級数とnoetherian性を用いて
-交換関係の射影の核を排除することが、任意次元での証明の要点である。
+さらに通常の次数付き語長Koszul整域では、指定Hilbert級数とnoetherian性を仮定せず、
+任意$n$で同じ二段表示を証明する。
+混合関係の射影が退化すると、次数1の正規元による商に互いに積が零となる非零の一次の元が残り、
+交代barテンソルが全次数のTorを与える。有限大域次元との矛盾が退化を排除する。
 一般の斉次Ore部分族についても、有限係数条件と全次数付き同型を記述する。
 最小生成元の次数だけを固定した場合には、大域次元が無界となる明示族があり、
 上記の追加仮定を次数列だけから導くことはできない。さらに$n=2$の非語長二次のgraded分類および対角Ore部分族の表示成分と添字保持同型不変量を証明する。
@@ -91,16 +93,21 @@ $n=4$では、最高Extの重みと語長の差が3であることを追加仮�
 さらに$n=4$では、語長Koszul性、1周期性、純jump 1部分の1周期性、
 同部分の行Hilbert級数が始点によらないことが同値である。
 この条件の下で、標準二変数Hilbert級数と全関係数を追加仮定なしに導く。
-同値な条件の自動性と、基礎部分のAS性・二段Ore網羅性はなお未解決である。
-通常の次数付き語長Koszul対象では、任意$n$で標準数値型と第一段Ore表示を導き、
-左右noetherian性を加えると既存の構造定理によって第二段も得られる。
+これらに基礎部分のAS正則次元4、添字付き二段Ore表示、通常の二段Ore表示への下降、
+全始点での混合階数条件$r_3=4,r_5=1$を加えた十条件が同値となる。残る問題は、十条件が元の仮定から自動的に成立するかである。
+任意$n$の添字付き対象でも、標準二変数Hilbert級数を仮定すれば、
+Koszul性・noetherian性・基礎AS性を追加せずに二段Ore表示を得る。
+さらに重み2の正規元族を与える$r_3=n,r_5=1$だけから、
+Hilbert級数・Koszul性・基礎AS性を仮定せずに二段Ore表示を導く。
+混合グラフ表示の関係軌道の有限次元性と、AS双対性によるEuler行列の最高係数の可逆性が
+第二段のPBW分解を強制する。
 任意$n$について、純jump 1部分$B$自身がAS正則次元$n$であれば、
 混合関係数・Hilbert級数・Koszul性・noetherian性をさらに仮定せず、添字付き二段Ore表示を導く。
 $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条件の網羅性は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v11\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v12\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -155,7 +162,9 @@ $\Gclass_n^{\mathrm{qd}}$は、さらに整域であり、最小生成元のあ�
 語長とは、重み1、2、3のどの生成元も長さ1として数える次数である。
 \end{definition}
 
-通常の次数付き代数に対する本稿の網羅定理は$\Gclass_n^{\mathrm{qd}}$に対するものである。
+通常の次数付き代数について、まず$\Gclass_n^{\mathrm{qd}}$の網羅定理を示す。
+さらに定理\ref{ogk:thm:ore-without-noetherian}では、語長Koszul性を仮定すれば
+指定Hilbert級数とnoetherian性が不要であることを証明する。
 任意の$n$について
 \[
 A=B[z;\sigma][w;\tau,D],\qquad
@@ -222,14 +231,42 @@ $n=4$については、系\ref{n4:cor:top-excess-three}で最高差次数$L-N=3$
 純基礎部分の標準線型解消とHilbert級数を強制し、
 定理\ref{n4:thm:koszul-numerics-period}が全混合関係数・標準Hilbert級数・1周期性を導く。
 定理\ref{n4:thm:equivalent-criteria}では、語長Koszul性、最高語長6、$A$の1周期性、
-$B$の1周期性、$B$の行Hilbert級数の始点独立性、$B$の標準Hilbert級数が同値となる。
-これらの条件が自動的に成立するか、また$B$がAS4であるかは未解決である。
-通常の次数付きの場合は、定理\ref{ogk:thm:numerics}が任意$n$で語長Koszul性から
-全標準数値型と第一段Ore表示を導く。系\ref{ogk:cor:noetherian-ore}は
-左右noetherian性を加えて二段表示を与えるが、この追加仮定の自動性は主張しない。
-四生成元の場合、標準Hilbert級数とKoszul性・整域性・大域次元4からAS4を推論する方法には、
+$B$の1周期性、$B$の行Hilbert級数の始点独立性、$B$の標準Hilbert級数に、
+$B$のAS4性、AS4基礎上の添字付き二段Ore表示、通常の二段Ore表示への下降、
+全始点での$r_3=4,r_5=1$を加えた十条件が同値となる。これらの条件の自動性は未解決である。
+
+通常の次数付き場合は、定理\ref{ogk:thm:numerics}と
+定理\ref{ogk:thm:ore-without-noetherian}が、任意$n$で語長Koszul性から
+全標準数値型、基礎AS正則性、二段Ore表示を導く。指定Hilbert級数とnoetherian性は不要である。
+射影の退化を排除する補題\ref{bar:lem:normal-square}では、
+Rogalski--Zhang\cite[Lemma 1.1, Corollary 1.2]{RZ}の次数1の正則正規元による商の定理を、
+語長次数について適用する。同文献の結果はnoetherian性を必要としない。
+商に残る二つの非零の一次の元の相互消滅から、交代barテンソルによる無限Torを構成する点が、
+本稿で必要な混合射影の非退化性を与える。
+
+正規元族による有限頂点折畳を用いると、この排除は一般の添字付き対象にも適用できる。
+定理\ref{ibar:thm:standard-hilbert-ore}は、標準\emph{二変数}Hilbert級数から
+添字付き二段Ore表示と基礎AS正則性を導く。
+系\ref{ibar:cor:normal-z-rank}は、正規元族を与える$r_3=n,r_5=1$だけから、
+Hilbert仮定・Koszul仮定なしに$r_4=n$を導く。
+定理\ref{igraph:thm:normal-z-ore}は、さらにKoszul性も仮定せず、
+二つの混合階数条件$r_3=n,r_5=1$だけから基礎AS正則性と二段Ore表示を導く。
+混合交換写像で動かした純二次関係空間は有限次元空間内で安定するため、
+商のHilbert行列には$w$次数について多項式の分子が存在する。
+AS双対性はEuler行列の最高$w$係数を可逆にするので、
+積の最高次数を比較すると、この分子が$w$次数に依存しないことが従う。
+これが純関係の保存とPBW分解を与える。
+従って元の全次元問題は、二つの混合階数条件の自動性へ還元される。
+補題\ref{genidx:lem:r5-gs-saturation}は、AS周期$L$が3で割り切れなければ
+全$r_5(i)=1$を強制する。$3\mid L$でも、少なくとも一つの法3剰余類上で全て1となる。
+Koszul性を追加した系\ref{ibar:cor:koszul-normal-z}では、標準Hilbert級数も結論となる。
+
+四生成元の場合、標準Hilbert級数とKoszul性・整域性・大域次元4からAS4を推論する一般的方法には、
 Rogalski--Sierra\cite[Theorem 1.1, (1.2)]{RSsurface}の反例がある。
-従って、基礎部分のAS性の証明には、親代数$A$の完全対合を使う必要がある。
+ただし本稿の十条件同値定理から、それらの非AS例は
+$\mathcal Q_4^{\mathrm{dom}}$の純基礎部分としては実現できない。
+上記の構造結果は親代数のAS性を使っており、純基礎の数値だけによるAS認識ではない。
+これらの具体的構造定理と先行文献の重複範囲の最終確認は未完了である。
 整域の場合の添字付き二段Ore網羅性は$n=1,2,3$で成立し、$n\geq4$が残る。
 $n=3$のOreデータの全同型軌道分類は、この構造定理とは別に未完了である。
 Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}は、
@@ -574,159 +611,15 @@ $\tau$ と $D$ は
 \end{theorem}
 
 \begin{proof}
-まず $Q=A/(z)$ の二重次数付き Hilbert 級数を求める。
-その差次数 $2$ の部分が有限生成 $B$ 加群であることを noetherian 性から導き、
-その Hilbert 級数を使って $w$ の両側の交換関係を決定する。
-
-命題~\ref{prop:quadratic-general-structure} により $z$ は正則正規元で、
-$Q=A/(z)$ は左右 noetherian、AS 正則次元 $n+1$、かつ
-$H_Q(t)=((1-t)^n(1-t^3))^{-1}$ である。
-$z$ の語長次数が $1$ なので、語長 Hilbert 級数は
-$H_Q^{\mathrm{word}}(u)=(1-u)^{-n-1}$ である。
-その語長 AS添字は Hilbert 級数の相反関係から $n+1$ であり、
-最小解消の最小性と双対性から $Q$ は語長次数について Koszul である。
-重み AS添字は同じ相反関係から $n+3$ である。
-
-$Q$ の関係式は $V$ 内の関係式と $Vw\oplus wV$ 内の関係式からなる。
-イデアル$(z)$は正の差次数の元からなるので$B\cap(z)=0$であり、
-$B$は$Q$にも埋め込まれる。
-従って $w$ の出現回数 $j$ も次数を定め、重みは語長 $a$ と
-$a+2j$ の関係にある。$F=\operatorname{Ext}_Q^*(k,k)$ についても
-内部次数を対応する Tor の正の次数で記録する。
-最上部 $F^{n+1}$ の語長は $n+1$、重みは $n+3$ なので、
-その $w$ 次数は $1$ である。Frobenius 性と bar 複体の非負次数性から、
-$F$ の $w$ 次数は $0$ または $1$ に限られる。
-$w$ 次数 $0$ の bar 複体は $B$ の bar 複体であるから
-\[
- \dim F^i_{j=0}=\dim\operatorname{Tor}^B_i(k,k)=\binom ni.
-\]
-最後の等号は $B$ の Koszul 性と $H_B(u)=(1-u)^{-n}$ による。
-Frobenius 対により
-$\dim F^i_{j=1}=\binom n{i-1}$ である。
-語長を変数 $u$、$w$ 次数を変数 $v$ で記録した最小解消の交代和は、
-従って
-\[
- H_Q(u,v)^{-1}
- =\sum_i(-1)^iu^i\left(\binom ni+v\binom n{i-1}\right)
- =(1-u)^n(1-uv).
-\]
-$M=Q_{j=1}=BwB$ と置くと、語長 Hilbert 級数は
-\begin{equation}\label{eq:one-heavy-component-hilbert}
- H_M(u)=\frac{u}{(1-u)^n}=uH_B(u).
-\end{equation}
-
-正の $w$ 次数の元がなす左イデアル
-$I=\bigoplus_{j\geq1}Q_{j}$ は $Q$ の左 noetherian 性により有限生成である。
-生成元を語長と $w$ 次数について斉次に取ると、$w$ 次数 $1$ の部分には
-$w$ 次数 $1$ の生成元と $Q_{j=0}=B$ だけが寄与する。
-従って $M$ は有限生成左 $B$ 加群である。
-各生成元を $\sum a_iwb_i$ と展開し、有限個の $b_i$ を集めれば
-\begin{equation}\label{eq:one-heavy-finite-left-generation}
- M=\sum_{i=1}^s Bwb_i
-\end{equation}
-と書ける。ここで $b_i$ は $B$ の語長斉次元とする。
-
-非零の斉次元 $a\in B$ に対して $aw=0$ と仮定する。
-$w\neq0$ なので $r=\deg a>0$ である。
-各 $wb_i$ は $a$ に左から殺されるので、
-\eqref{eq:one-heavy-finite-left-generation} は次数付き左 $B$ 加群の全射
-\[
- \bigoplus_{i=1}^s(B/Ba)(-1-\deg b_i)\longrightarrow M
-\]
-を与える。$B$ は整域であるから、右乗法 $b\mapsto ba$ は単射であり、
-$H_{B/Ba}(u)=(1-u^r)H_B(u)$ である。
-従って $0<u<1$ に対し
-\[
- uH_B(u)=H_M(u)
- \leq (1-u^r)H_B(u)\sum_{i=1}^s u^{1+\deg b_i}.
-\]
-$H_B(u)$ で割って $u\to1^-$ とすると $1\leq0$ となり矛盾する。
-従って左 $B$ 加群の写像 $B(-1)\to M$、$b\mapsto bw$、は単射である。
-その Hilbert 級数は \eqref{eq:one-heavy-component-hilbert} と一致するため、
-この写像は同型である。
-同じ議論を右 noetherian 性と右 $B$ 加群に適用すると、
-$b\mapsto wb$ も $B(-1)$ から $M$ への同型である。
-従って
-\[
- M=Bw=wB.
-\]
-
-これにより $b\in B$ に対して
-$wb=\mu(b)w$ を満たす $\mu(b)\in B$ が一意的に定まる。
-$w(bb')=(wb)b'$ と $B\to Bw$ の単射性から $\mu$ は代数準同型であり、
-$Bw=wB$ と両乗法写像の単射性から可逆である。
-従って $\mu\in\operatorname{Aut}_{\mathrm{gr}}(B)$ である。
-$Q$ は $B$ と $w$ で生成されるので、乗法は
-$B[w;\mu]\to Q$ という全射を与える。
-両辺の二重次数付き Hilbert 級数は
-$((1-u)^n(1-uv))^{-1}$ に等しいため、これは同型である。
-$B$ が整域で $\mu$ が自己同型なので、この Ore 拡大では非零の元の積の
-$w$ 最高次係数は零でない。従って $Q$ は整域であり、
-$w$ はその正則正規元である。
-$Q/(w)=B$ であり、$w$ の語長次数は $1$ なので、
-\cite[Lemma~1.1, Corollary~1.2]{RZ} を適用して
-$B$ が AS 正則次元 $n$ であることを得る。
-
-$R_4$ を $z=0$ で写した空間を
-$\overline R_4\subset Vw\oplus wV$ と書く。
-この写像の核にある関係式は $z^2$ の定数倍であるため、
-$A$ の整域性より核は零である。従って
-$\dim\overline R_4=\dim R_4=n$ である。
-$Q=B[w;\mu]$ の関係式 $wv-\mu(v)w$ を $R_4$ に持ち上げると、一意的に
-\[
- wv=\mu(v)w+L(v)z^2\qquad(v\in V)
-\]
-と書ける。ここで $L:V\to k$ は線形写像である。
-
-関係式 \eqref{eq:quadratic-all-ones-normal-form} を用いると、
-任意の語は $b_0z^iw^j$（$b_0\in B$、$i,j\geq0$）の線形結合に書ける。
-具体的には $wv$ の置換で $z^2$ の項を選ぶと $w$ の個数が減り、
-それ以外の置換では $w$ を右へ動かす。
-その後 $zv=\sigma(v)z$ で $z$ を右へ動かすので、この手順は有限回で終わる。
-従って乗法写像
-\begin{equation}\label{eq:quadratic-ordered-basis-map}
- B\otimes_k k[z]\otimes_k k[w]\longrightarrow A,
- \qquad b_0\otimes z^i\otimes w^j\longmapsto b_0z^iw^j
-\end{equation}
-は重み次数付き全射である。
-左辺の Hilbert 級数は
-$H_B(t)/((1-t^2)(1-t^3))=H_A(t)$ なので、
-各有限次元斉次成分でこの全射は同型となる。
-従って \eqref{eq:quadratic-ordered-basis-map} はベクトル空間同型である。
-特に $C=B[z;\sigma]$ が $A$ に埋め込まれ、
-$A=\bigoplus_{j\geq0}Cw^j$ である。
-$C$ は整域であり、その正則正規元 $z$ は語長次数 $1$、
-$C/(z)=B$ である。\cite[Lemma~1.1, Corollary~1.2]{RZ} により、
-$C$ も AS 正則で、その大域次元は $n+1$ である。
-
-この直和分解に従って $wa$ の $w$ 係数と定数係数を取ると、
-$a\in C$ に対する写像 $\tau,D:C\to C$ が一意的に定義される。
-生成元に関する上の関係式から $wa$ は常に $Cw+C$ に属する。
-$w(ab)=(wa)b$ の両係数を比較すれば、$\tau$ は代数準同型であり、
-$D(ab)=\tau(a)D(b)+D(a)b$ であることを得る。
-
-$wzv$ を $w(zv)$ と $(wz)v$ の順に展開すると
-\[
- c\mu\sigma(v)zw+L\sigma(v)z^3
- =c\sigma\mu(v)zw+cL(v)z^3.
-\]
-\eqref{eq:quadratic-ordered-basis-map} の一意性により
-$\mu\sigma=\sigma\mu$ および $L\sigma=cL$ となる。
-従って $\tau|_B=\mu,\tau(z)=cz$ は $C$ の自己同型であり、
-逆写像は $\mu^{-1}$ と $z\mapsto c^{-1}z$ で与えられる。
-また $r=\sum_j a_j\otimes b_j\in R_2$ に対して
-\[
- D(r)=\sum_j\bigl(\mu(a_j)L(b_j)+L(a_j)\sigma^2(b_j)\bigr)z^2=0
-\]
-である。ここでも \eqref{eq:quadratic-ordered-basis-map} を用いて
-\eqref{eq:quadratic-all-ones-conditions} の最後の式を得る。
-これで $A=C[w;\tau,D]$ が証明された。
-
-最後に、$B$ は重み次数 $1$ の成分が生成する部分代数であり、
-$A_2=B_2\oplus kz$ であるから
-$C=k\langle A_1,A_2\rangle$ である。
-従って得られた $B,C$ は表示で選んだ基底によらない標準的な部分代数である。
-
+命題\ref{prop:quadratic-general-structure}は、$A$の語長Koszul性、標準二重次数型、
+正則正規元$z$と第一段$C=B[z;\sigma]$を与える。
+従って後述の定理\ref{ogk:thm:ore-without-noetherian}を適用でき、
+二段Ore表示、$B$のAS正則性、および表示した係数条件を得る。
+同定理の証明は、重み4射影の退化を正規商のbar複体で排除し、
+整列語とHilbert級数を比較するもので、noetherian性に依存しない。
+ここでは$A$のnoetherian性を仮定しているので、商$B=A/(z,w)$も左右noetherianである。
+$B=k\langle A_1\rangle$、$A_2=B_2\oplus kz$から、
+$C=k\langle A_1,A_2\rangle$であり、これらは表示の基底によらない。
 \end{proof}
 
 \section{任意の$n$における斉次Oreデータ}\label{sec:general-ore-data}
@@ -2843,6 +2736,115 @@ $3\mid L$とし、$T$と交わらない法3剰余類を一つ取る。
 $\lceil(L/3)/2\rceil=\lceil L/6\rceil$個の位置が$S$の外にある。
 \end{proof}
 
+\begin{lemma}[重み5関係のGolod--Shafarevich飽和]
+\label{genidx:lem:r5-gs-saturation}
+$A$をprimitive jumps $(1^n,2,3)$の正連結・局所有限な語長二次
+$\mathbb Z$-整域とし、語長を保つ正の$L$周期構造と、各行の多項式増大を持つものとする。
+このとき次が成立する。
+\begin{enumerate}
+\item $3\nmid L$なら、全ての$i$で$r_5(i)=1$である。
+\item $3\mid L$なら、ある$r\in\{0,1,2\}$について、
+$i\equiv r\pmod3$となる全ての$i$で$r_5(i)=1$である。
+\end{enumerate}
+従って$A\in\mathcal Q_n^{\mathrm{dom}}$には、そのAS周期$L$を用いて適用できる。
+この補題自体にはAS性・有限大域次元・Koszul性・noetherian性を仮定しない。
+\end{lemma}
+\begin{proof}
+整域性から$r_5(i)\in\{0,1\}$および$r_6(i)=0$である。
+$L$周期で折り畳み、$S$を$S_{ij}=\delta_{j,i+1}$である巡回シフト行列とする。
+添字は法$L$で読む。$R_d=\operatorname{diag}(r_d(i))$と置く。
+$V,z,w$に与える正の重みをそれぞれ$a,b,c$とし、$b^2=ac$を課す。
+これにより、全ての語長二次関係が斉次となる。
+折畳Hilbert行列を$H(a,b,c)$と書く。
+最小解消の最初の二段と、その第2項からの核のHilbert行列を使うと、成分ごとに
+\begin{equation}\label{genidx:eq:r5-gs-inequality}
+P_2(a,b,c)H(a,b,c)\ge I,
+\end{equation}
+\[
+P_2=I-naS-bS^2-cS^3
+ +a^2R_2S^2+abR_3S^3+acR_4S^4+bcR_5S^5
+\]
+を得る。実際、左辺は$I$と上記の核のHilbert行列との和である。
+
+$0<\varepsilon<1/2$に対し
+\[
+a_\varepsilon=\frac{\varepsilon^2}{1-\varepsilon^2},\qquad
+b_\varepsilon=\varepsilon,\qquad c_\varepsilon=1-\varepsilon^2
+\]
+と置く。これは$0<a_\varepsilon,b_\varepsilon,c_\varepsilon<1$および
+$b_\varepsilon^2=a_\varepsilon c_\varepsilon$を満たす。
+$\varepsilon\to0^+$において
+\[
+P_2(a_\varepsilon,b_\varepsilon,c_\varepsilon)
+=P_0+\varepsilon P_1+O(\varepsilon^2),
+\qquad
+P_0=I-S^3,\quad P_1=-S^2+R_5S^5.
+\]
+
+$g=\gcd(3,L)\in\{1,3\}$、$m=L/g$と置く。
+$+3$の作用の軌道を$\mathcal O_r$、$r\in\mathbb Z/g\mathbb Z$と書き、
+\[
+\delta_r=\frac1m\sum_{i\in\mathcal O_r}(1-r_5(i))\ge0
+\]
+と定める。$\Pi=m^{-1}\sum_{j=0}^{m-1}S^{3j}$は各軌道内で平均を取る射影である。
+$\ker P_0=\operatorname{im}\Pi$を軌道上の定数ベクトルと同一視すると、
+$\Pi P_1\Pi$は
+\[
+M=-\operatorname{diag}(\delta_r)C^2
+\]
+となる。$C$は$g$個の軌道の巡回シフトである。
+これは$5\equiv2\pmod g$から従う。
+
+全ての$\delta_r$が正であると仮定する。
+$g=1$では$M=-\delta_0$である。
+$g=3$では、$\rho=(\delta_0\delta_1\delta_2)^{1/3}>0$と置けば、
+$M$は固有値$-\rho$に属する全成分正の左固有ベクトルを持つ。
+実際、その条件は$\alpha_{r-2}\delta_{r-2}=\rho\alpha_r$であり、
+正の初期値から定めると、$\rho^3=\delta_0\delta_1\delta_2$によって巡回的に整合する。
+$g=1$でも$\rho=\delta_0$と書く。
+この左固有ベクトルを各軌道上で一定として持ち上げ、全成分正の行ベクトルを$\ell_0$とする。
+すると
+\[
+\ell_0P_0=0,\qquad \ell_0P_1\Pi=-\rho\ell_0.
+\]
+
+行ベクトル$-\rho\ell_0-\ell_0P_1$は、各軌道内の成分和が零である。
+$P_0=I-S^3$の行空間はちょうどこのような行ベクトルからなるため、
+ある実行ベクトル$\ell_1$について
+\[
+\ell_1P_0=-\rho\ell_0-\ell_0P_1
+\]
+と書ける。従って$\ell_\varepsilon=\ell_0+\varepsilon\ell_1$は、十分小さい正の
+$\varepsilon$について全成分正であり、
+\[
+\ell_\varepsilon P_2(a_\varepsilon,b_\varepsilon,c_\varepsilon)
+=-\rho\varepsilon\ell_0+O(\varepsilon^2)<0
+\]
+が全成分で成立する。
+
+この$\varepsilon$を固定する。
+$H(a_\varepsilon,b_\varepsilon,c_\varepsilon)$の全成分は有限で非負である。
+実際、語長$q$の語の評価値は$\max(a_\varepsilon,b_\varepsilon,c_\varepsilon)^q$以下であり、
+同じ語長の全成分の次元は、jumpが$q$から$3q$の間にあることと多項式増大から
+$q$の多項式で抑えられる。
+従って\eqref{genidx:eq:r5-gs-inequality}を評価して左から$\ell_\varepsilon$を掛けると、
+\[
+0\ge\ell_\varepsilon P_2H\ge\ell_\varepsilon>0
+\]
+という矛盾を得る。
+
+従って少なくとも一つの$\delta_r$は零である。
+各$1-r_5(i)$が非負なので、その軌道上では全て$r_5(i)=1$である。
+$g=1$なら軌道は全頂点、$g=3$なら軌道は法3の剰余類であり、結論を得る。
+\end{proof}
+
+\begin{remark}
+$3\mid L$のとき、この補題は残る二つの剰余類の欠損を排除していない。
+従って、この場合の全ての$r_5(i)=1$は追加の議論なしには結論しない。
+\end{remark}
+
+
+
 \subsection{三本のjump 1生成元を持つ部分代数の数値補題}
 \begin{lemma}[短い解消と周期的整域の増大]
 \label{genidx:lem:short-domain-resolution}
@@ -3546,7 +3548,7 @@ AS移動9も語長を保つ周期であり、$\gcd(2,9)=1$から語長を保つ1
 \begin{theorem}[六次元対象のKoszul性・周期性・行Hilbert級数]
 \label{n4:thm:equivalent-criteria}
 $A\in\mathcal Q_4^{\mathrm{dom}}$とし、純jump 1部分を$B$、
-最高Extの語長を$N$とする。次の六条件は同値である。
+最高Extの語長を$N$とする。次の十条件は同値である。
 \begin{enumerate}
 \item $A$は語長Koszulである。
 \item $N=6$である。
@@ -3558,6 +3560,11 @@ H_i^B(u)=\sum_{m\ge0}\dim_k B_{i,i+m}\,u^m
 \]
 は始点$i$によらない。
 \item 全ての$i$について$H_i^B(u)=(1-u)^{-4}$である。
+\item $B$は左右AS正則次元4である。
+\item $A$は$B$上の添字付き二段Ore表示を持ち、$B$は左右AS正則次元4である。
+\item ある四生成元Koszul AS正則整域$B_0$を用いて
+$A\simeq\check{(B_0[z;\sigma][w;\tau,\partial])}$と書ける。
+\item 全ての$i$で$r_3(i)=4$、$r_5(i)=1$である。
 \end{enumerate}
 これらの条件が成立すると、$A$の1周期同型は語長を保つものに選べ、
 AS移動は9、関係数は$(6,4,4,1,0)$、全行の二変数Hilbert級数は
@@ -3565,8 +3572,8 @@ AS移動は9、関係数は$(6,4,4,1,0)$、全行の二変数Hilbert級数は
 H_i^A(u,t)=\frac1{(1-ut)^4(1-ut^2)(1-ut^3)}
 \]
 である。$B$は左右Koszulであり、その単純解消は$(1,4,6,4,1)$の線型型である。
-この同値性にはnoetherian性または$B$のAS正則性を追加仮定しない。
-また、六条件のいずれかが元の仮定だけから自動的に成立するとは主張しない。
+noetherian性は追加仮定しない。$B$のAS正則性と二段Ore表示自体が同値条件に含まれる。
+十条件のいずれかが元の仮定だけから自動的に成立するとは主張しない。
 \end{theorem}
 \begin{proof}
 第1条件と第2条件の同値性、および第1条件から第6条件は
@@ -3617,9 +3624,20 @@ r=-p_{s-2}\le0
 \]
 となって矛盾する。
 従って$s=4$、すなわち$N=6$である。
-これで六条件の同値性が得られた。
+これで最初の六条件の同値性が得られた。
 なお、全根が単位円上、次数4、一次係数$-4$であることを直接用いても
 $p(u)=(1-u)^4$となり、第6条件を確認できる。
+
+第1条件の下では、語長を保つ1周期同型で通常の次数付き代数へ下降できる。
+定理\ref{ogk:thm:ore-without-noetherian}により、この下降は四次元AS正則基礎上の
+二段Ore表示を持つ。従って第9条件が従う。
+第9条件から第8条件は付随$\mathbb Z$-代数を取ればよく、第8条件から第7条件はその仮定に含まれる。
+第7条件では、有限生成射影による有限な左右解消は
+命題\ref{n4:prop:pure-base-numerics}とその左版から既に存在する。
+従って定理\ref{genidx:thm:as-base-ore}を適用でき、$B$の1周期性、すなわち第4条件を得る。
+最後に、定理\ref{igraph:thm:normal-z-ore}により第10条件から第7条件が従い、
+一般AS-base定理により第7条件から第10条件が従う。
+これで十条件の同値性が証明された。
 \end{proof}
 
 \begin{corollary}[六次元のnoetherianな1周期部分]
@@ -3645,9 +3663,10 @@ Rogalski--Sierra\cite[Theorem 1.1, (1.2)]{RSsurface}は、複素数体上でも�
 AS--Gorensteinでない例を構成している。
 従って、そのHilbert級数も$(1-t)^{-4}$である。
 これらの付随$\mathbb Z$-代数は1周期、したがって2周期でもある。
-この既知の反例は、純基礎部分の数値型・整域性・周期性だけからAS4を導く方法を排除する。
-一方、これらが$\mathcal Q_4^{\mathrm{dom}}$の純jump 1部分として実現するとは主張していない。
-元の重み付き代数$A$のAS完全対合を用いる構造論は、別に調べる必要がある。
+この既知の反例は、一般の四生成元代数の数値型・整域性・周期性だけからAS4を導く方法を排除する。
+一方、これらの付随$\mathbb Z$-代数は、$\mathcal Q_4^{\mathrm{dom}}$の純jump 1部分には実現しない。
+もし実現すれば、その標準Hilbert級数と定理\ref{n4:thm:equivalent-criteria}からAS4が従い、矛盾する。
+ここでは親代数の語長1の正規元による商におけるbar障害が、純基礎部分の一般的な反例を排除する。
 \end{remark}
 
 \section{通常の次数付き代数でのKoszul性からの数値型}
@@ -3722,7 +3741,8 @@ zv=\sigma(v)z\quad(v\in V),\qquad wz=c zw
 \]
 と書ける。部分代数$C=k\langle V,z\rangle$は$B[z;\sigma]$である。
 
-この定理では、$B$のAS正則性および第二段Ore表示は結論に含めない。
+本定理は数値型と第一段の構成を扱う。$B$のAS正則性と第二段Ore表示は、
+定理\ref{ogk:thm:ore-without-noetherian}で同じ仮定から導く。
 \end{theorem}
 \begin{proof}
 \paragraph{全Extと差次数零部分。}
@@ -3843,30 +3863,624 @@ $C$は$bz^j$の形の元で張られる。
 $B$の関係へ帰着する。従って$C=B[z;\sigma]$である。
 \end{proof}
 
-\begin{corollary}[noetherianな通常Koszul対象の二段Ore表示]
-\label{ogk:cor:noetherian-ore}
-定理\ref{ogk:thm:numerics}の$A$がさらに左右noetherianならば、
+
+\begin{lemma}[相互に積が零となる次数1の元によるbar障害]
+\label{bar:lem:two-cycle}
+$Q=\bigoplus_{j\ge0}Q_j$を$Q_0=k$である次数付き$k$-代数とする。
+非零の$x,y\in Q_1$について$xy=yx=0$ならば、全ての$d\ge1$について
+\[
+\operatorname{Tor}^Q_d(k,k)_d\ne0.
+\]
+従って$k$の射影次元も$Q$の大域次元も無限である。
+$Q$の二次性、Koszul性、noetherian性は必要ない。
+\end{lemma}
+\begin{proof}
+$Q_+=\bigoplus_{j\ge1}Q_j$とする。
+$k\otimes_Q\operatorname{Bar}_\bullet(Q)\otimes_Q k$の鎖次数$d$の項は
+$Q_+^{\otimes d}$であり、微分は隣り合う二因子の積の交代和である。
+$x,y$を交互に並べた純テンソル
+\[
+c_d=x\otimes y\otimes x\otimes y\otimes\cdots
+\in Q_1^{\otimes d}
+\]
+は非零であり、仮定からその微分は零である。
+内部次数$d$を持つ鎖次数$d+1$の項は、各因子の次数が正なので零である。
+従って$c_d$は境界でなく、所要の非零Tor類を与える。
+\end{proof}
+
+\begin{lemma}[次数1の正規元の平方は混合射影の核を許さない]
+\label{bar:lem:normal-square}
+$A$を連結次数付き整域で、有限大域次元を持つものとする。
+$z,w\in A_1$を線型独立な非零元とし、$z$は正規元で
+\[
+wz=c zw,\qquad c\in k^\times
+\]
+とする。$z a=\nu(a)z$によって定まる次数付き自己同型を
+$\nu\in\operatorname{Aut}_{\mathrm{gr}}A$と書く。
+このとき$kv\cap kz=0$となる非零の$v\in A_1$について、
+\[
+wv\in kz^2\quad\text{または}\quad vw\in kz^2
+\]
+となることはない。
+\end{lemma}
+\begin{proof}
+$wv=\lambda z^2$と仮定する。整域性から$\lambda\ne0$である。
+正規化自己同型は$\nu(z)=z$、$\nu(w)=c^{-1}w$を満たす。
+関係式へ$\nu$を作用させ、元の関係式と比較すると
+\[
+c^{-1}w\nu(v)=\lambda z^2=wv.
+\]
+左の$w$を取り消せるので$\nu(v)=cv$であり、$z^2v=c^2vz^2$となる。
+従って
+\[
+(wv)v=\lambda z^2v=\lambda c^2vz^2=c^2v(wv),
+\]
+右の$v$を取り消して
+\[
+wv=c^2vw,\qquad vw=\lambda c^{-2}z^2
+\]
+を得る。
+
+$z$は正則正規な次数1の元なので、
+Rogalski--Zhang~\cite[Lemma~1.1]{RZ}により
+$Q=A/(z)$は有限大域次元を持つ。
+この補題はnoetherian性を仮定しない。
+$Q_1=A_1/kz$であるから、$\bar v,\bar w$はいずれも非零である。
+ところが上の二つの関係から
+\[
+\bar w\bar v=\bar v\bar w=0
+\]
+となり、補題\ref{bar:lem:two-cycle}と矛盾する。
+$vw\in kz^2$の場合は反対環に同じ議論を適用する。
+\end{proof}
+
+\begin{corollary}[重み4関係の両射影の単射性]
+\label{bar:cor:mixed-projections}
+$A$を語長次数と重み次数を持つ連結次数付き整域とし、語長1の最小生成元空間を
+$V\oplus kz\oplus kw$、重みをそれぞれ$1,2,3$とする。
+$A$は有限大域次元を持ち、$z$は正規元で、$wz=c zw$、$c\ne0$と仮定する。
+このとき二次・重み4の関係空間
+\[
+R_4\subset (w\otimes V)\oplus(V\otimes w)\oplus k(z\otimes z)
+\]
+の$w\otimes V$および$V\otimes w$への両射影は単射である。
+従って$\dim R_4=n:=\dim V$なら両射影は同型であり、
+ある可逆線型写像$\mu:V\to V$と$\ell\in V^*$によって
+\[
+R_4=\{w\otimes v-\mu(v)\otimes w-\ell(v)z\otimes z:v\in V\}
+\]
+と書ける。
+\end{corollary}
+\begin{proof}
+$V\otimes w$への射影の核にある関係は$wv-\lambda z^2$と書ける。
+非零の関係なら整域性によって$v\ne0$、$\lambda\ne0$である。
+$v,z,w$の重みが異なるので、前補題に矛盾する。
+もう一方の射影も反対環により同様である。
+\end{proof}
+
+\begin{theorem}[通常の語長Koszul対象の二段Ore表示]
+\label{ogk:thm:ore-without-noetherian}
+定理\ref{ogk:thm:numerics}の全ての仮定を満たす通常の次数付き代数$A$は、
+noetherian性を追加仮定せずに
 \[
 A=B[z;\sigma][w;\tau,\partial]
 \]
-という通常の二段Ore表示を持ち、$B$は左右noetherianなKoszul AS正則整域で、
-AS次元は$n$である。
-指定Hilbert級数を追加仮定する必要はない。
+と書ける。$B=k\langle V\rangle$はKoszul AS正則整域で大域次元$n$を持ち、
+$H_B(t)=(1-t)^{-n}$である。
+ある$\mu\in\operatorname{Aut}_{\mathrm{gr}}B$、$c\in k^\times$、$\ell\in V^*$により
+\[
+zv=\sigma(v)z,\qquad
+wv=\mu(v)w+\ell(v)z^2,\qquad
+wz=c zw,
+\]
+\[
+\tau|_B=\mu,\quad\tau(z)=cz,\quad
+\partial(v)=\ell(v)z^2,\quad\partial(z)=0
+\]
+であり、\(\partial(ab)=\tau(a)\partial(b)+\partial(a)b\)である。
+また
+\[
+\mu\sigma=\sigma\mu,\qquad \ell\sigma=c\ell,\qquad
+(\mu\otimes\ell+\ell\otimes\sigma^2)(R_2)=0
+\]
+を満たす。noetherian性そのものを本定理の結論として主張するものではない。
+\end{theorem}
+\begin{proof}
+定理\ref{ogk:thm:numerics}は標準二重Hilbert級数、$r_4=n$、
+正則正規元$z$、$wz=c zw$および$C=B[z;\sigma]$を与える。
+系\ref{bar:cor:mixed-projections}により$R_4$は表示した形であり、
+$\mu$は$V$上の可逆線型写像である。
+
+$wv$の交換では、$\ell(v)z^2$の項を選ぶと$w$の個数が減り、
+他方の項では$w$を右へ動かす。$z$も$V$の右へ動かせるので、
+全ての語は$b z^i w^j$、$b\in B$の線型結合に直せる。
+従って
+\[
+B\otimes k[z]\otimes k[w]\longrightarrow A,
+\qquad b\otimes z^i\otimes w^j\longmapsto bz^iw^j
+\]
+は二重次数付き全射である。標準Hilbert級数により各斉次成分の次元が等しいため、これは同型である。
+従って$A=\bigoplus_{j\ge0}Cw^j$である。
+
+$Q=A/(z)$では$Q=\bigoplus_{j\ge0}Bw^j$であり、$wv=\mu(v)w$である。
+$wr=0$、$r\in R_2$と正規形の一意性から$\mu^{\otimes2}(R_2)\subset R_2$となる。
+$\mu^{\otimes2}$は可逆であり$R_2$は有限次元なのでこれは等号である。
+従って$\mu$は$B$の自己同型で、$Q=B[w;\mu]$である。
+特に$Q$は整域で$w$は正則正規な語長1の元である。
+$A$のAS正則性とRogalski--Zhang~\cite[Corollary~1.2]{RZ}を
+$A\to Q$、$Q\to Q/(w)=B$へ順に適用して、$B$のAS正則性と次元$n$を得る。
+
+正規形の一意性により$wa=\tau(a)w+\partial(a)$、$a\in C$と書ける。
+結合則から$\tau$は代数準同型、$\partial$は$\tau$-導分である。
+$wzv$の二通りの展開を比較すると
+$\mu\sigma=\sigma\mu$、$\ell\sigma=c\ell$を得る。
+これらにより$\tau$は、$\tau|_B=\mu$、$\tau(z)=cz$で定まる自己同型である。
+$r\in R_2$へ$\partial$を作用させ、$z^2$の正則性を使うと最後の係数条件も従う。
+以上により第二段も自己同型型Ore拡大である。
+\end{proof}
+
+
+\begin{remark}[語長一次という条件]
+正規元$z$が次数1であることは本質的である。
+例えば$k[s,t]$の中で$v=s^2$、$z=st$、$w=t^2$と置けば
+$wv=vw=z^2$であるが、三元の通常次数は2である。
+従って量子錐型の部分代数を含むという事実だけでは有限大域次元と矛盾しない。
+上の証明が利用するのは、$z$が親代数の語長次数1の正則正規元であり、
+その商も有限大域次元を持つという追加構造である。
+\end{remark}
+
+\begin{corollary}[noetherian性と基礎代数]\label{ogk:cor:noetherian-ore}
+定理\ref{ogk:thm:ore-without-noetherian}の対象では、$A$が左右noetherianであることと、
+基礎代数$B$が左右noetherianであることは同値である。
 \end{corollary}
 \begin{proof}
-定理\ref{ogk:thm:numerics}により所要の重みHilbert級数が従う。
-従って、通常の語長二次対象の構造定理
-\ref{thm:quadratic-all-ones}を適用できる。
+$A$が左右noetherianなら、その商$B=A/(z,w)$も左右noetherianである。
+逆に$B$が左右noetherianなら、二段とも自己同型型Ore拡大なので
+Ore拡大のHilbert基底定理を二度適用する。
 \end{proof}
 
 \begin{remark}
-この系のnoetherian性は仮定であり、任意$n$で元の条件から導いた帰結ではない。
+上の同値性は、任意$n$の対象が自動的にnoetherianであるという主張ではない。
+二段Ore表示の存在自体は、定理\ref{ogk:thm:ore-without-noetherian}によりnoetherian性なしに成立する。
 また定理\ref{ogk:thm:numerics}は通常の次数付き代数についての結果である。
 一般の周期$\mathbb Z$-代数の折畳Hilbert級数は行列の逆行列となるため、
 補題\ref{ogk:lem:generator-bound}のスカラー多項式の根の議論をそのまま適用できない。
 従って、この結果を一般indexed対象の1周期性やKoszul性の証明と同一視しない。
 \end{remark}
 
+
+\section{正規元族と添字付き二段Ore表示}\label{ibar:sec:normal-z}
+
+\begin{lemma}[半単純次数零部分と次数1の正則中央元]
+\label{ibar:lem:semisimple-normal-quotient}
+$R=\bigoplus_{a\ge0}R_a$を局所有限な次数付き$k$-代数とし、
+$S=R_0\simeq k^m$とする。$z\in R_1$は中央で左右正則であるとする。
+$\operatorname{Tor}^R_i(S,S)=0$が十分大きい$i$で成立すれば、
+$T=R/(z)$についても$\operatorname{Tor}^T_i(S,S)=0$が十分大きい$i$で成立する。
+最大の非零Tor次数をそれぞれ$d_R,d_T$とすると$d_T=d_R-1$である。
+$R$の全Torが有限次元なら$T$の全Torも有限次元である。
+左右AS双対性も、ホモロジー次数を1減らして商へ移る。
+最後の主張では、$z$に第二の次数がある場合、その内部シフトも同時に減らす。
+\end{lemma}
+\begin{proof}
+$S$が半単純なのでaugmentationに関する最小次数付き射影解消が存在する。
+中央正則元の完全列
+\[
+0\longrightarrow R(-1)\xrightarrow{z}R\longrightarrow T\longrightarrow0
+\]
+から$\operatorname{Tor}^R_q(T,S)$は$q=0,1$でそれぞれ$S,S(-1)$、
+それ以外で零である。change-of-ringsスペクトル系列
+\[
+E^2_{p,q}=\operatorname{Tor}^T_p
+  (S,\operatorname{Tor}^R_q(T,S))
+\Longrightarrow\operatorname{Tor}^R_{p+q}(S,S)
+\]
+には二行しかなく、唯一可能な微分は
+\[
+\operatorname{Tor}^T_p(S,S)
+\longrightarrow\operatorname{Tor}^T_{p-2}(S,S)(-1)
+\]
+である。従って$p>d_R+1$ではこの写像は同型である。
+
+もし$S_T$が無限射影次元なら、その最小解消は途中で停止しない。
+$\alpha_p$を$\operatorname{Tor}^T_p(S,S)$の最小内部次数とすれば、
+最小性により$\alpha_p\ge\alpha_{p-2}+2$である。
+上の同型は$\alpha_p=\alpha_{p-2}+1$を与えるので矛盾する。
+従って$d_T<\infty$である。
+$(d_T,1)$の項は非零で全ての微分に関して生き残るため、
+$d_R=d_T+1$である。二行スペクトル系列の長完全列を低次数から帰納すれば、
+$R$のTorの有限次元性は$T$のTorの有限次元性を与える。
+
+AS双対性の主張は、同じ正則元の完全列に対するRees lemma
+\[
+\underline{\operatorname{Ext}}^{p}_T(M,T)
+\simeq\underline{\operatorname{Ext}}^{p+1}_R(M,R)(-1)
+\]
+を各単純$T$-加群$M$に適用して得る。
+内部シフトは採用するExt規約に合わせて読み、正のTor次数で記録すれば
+最高語長は1、第二の内部次数は$\deg z$減少する。
+左右へ同じ議論を適用する。
+$S=k^m$は分離的なので、最小双加群解消の生成空間は
+$\operatorname{Tor}^T_*(S,S)$で与えられる。
+その有限長の双加群解消は片側加群として分裂し、任意のunital加群と
+テンソル積を取れるため、全unital加群についての大域次元も$d_T$以下である。
+
+これはRogalski--Zhang~\cite[Lemma~1.1, Corollary~1.2]{RZ}の
+二行スペクトル系列とRees lemmaの証明を、半単純な次数零部分へ適用したものである。
+noetherian性は使わない。
+\end{proof}
+
+\begin{lemma}[正規元族による折畳と有限解消]
+\label{ibar:lem:folded-quotient}
+$A$を語長次数付き正連結$\mathbb Z$-代数とし、左右の単純加群は
+有限生成射影による一様有限長の解消を持つとする。
+正整数$h$に対し、語長1・jump $h$の左右正則な元族$z_i$があり、語長を保つ同型
+$\phi:A(h)\longrightarrow A$が
+\[
+z_i a=\phi(a)z_j\quad(a\in A_{i+h,j+h}),
+\qquad \phi(z_{i+h})=z_i
+\]
+を満たすとする。このとき$Q=A/(z_i\mid i\in\mathbb Z)$の全単純加群も
+有限生成射影による一様有限長の左右解消を持つ。
+$A$が左右AS次元$d$、最高語長$N$、AS移動$L$を持てば、
+$Q$は左右AS次元$d-1$、最高語長$N-1$、AS移動$L-h$を持つ。
+\end{lemma}
+\begin{proof}
+$\phi$で$h$周期構造を指定し、頂点を法$h$で同一視して折り畳む。
+得られる代数を$\widetilde A$と書く。
+これは語長次数について$(\widetilde A)_0=\bigoplus_{i=0}^{h-1}ke_i$を持ち、
+元のjumpも第二の次数として保持する。
+成分の積は、$\phi$の冪で始点を移動してから元の$A$で合成することで定める。
+元の各単純解消の成分を、この同一視に沿って直和すれば、
+$e_0,\ldots,e_{h-1}$の単純加群の最小射影解消となる。
+従って$\operatorname{Tor}^{\widetilde A}_i(S,S)$は有限次元で、十分大きい$i$で零である。
+
+$z=\sum_{i=0}^{h-1}z_i\in\widetilde A_1$は、表示した交換式により中央である。
+元の左右正則性により、折畳後も左右正則である。
+従って補題\ref{ibar:lem:semisimple-normal-quotient}を適用できる。
+$\widetilde A/(z)$は$Q$の同じ$h$周期折畳である。
+最小解消を第二次数と頂点で分解し直せば、$Q$の各単純解消を得る。
+AS双対性も各始点・終点成分に分解し直せるため、指定したシフトを得る。
+\end{proof}
+
+\begin{lemma}[添字付き混合射影の単射性]
+\label{ibar:lem:mixed-injective}
+$A$をprimitive jumps $(1^n,2,3)$の語長二次$\mathbb Z$-整域とし、
+左右の単純加群が一様有限長の解消を持つとする。
+全ての$i$について$r_3(i)=n$、$r_5(i)=1$と仮定する。
+このとき$R_4(i)$の$w_iV_{i+3}$と$V_iw_{i+1}$への両射影は単射である。
+特に$r_4(i)\le n$である。
+\end{lemma}
+\begin{proof}
+整域性と$r_3(i)=n,r_5(i)=1$から、
+\[
+z_i v=\sigma_i(v)z_{i+1},\qquad
+w_i z_{i+3}=c_i z_i w_{i+2},\qquad c_i\ne0
+\]
+となり、正規元族の同型$\phi:A(2)\to A$を得る。
+生成元上では
+\[
+\phi(v)=\sigma_i(v),\qquad
+\phi(z_{i+2})=z_i,\qquad
+\phi(w_{i+2})=c_i^{-1}w_i
+\]
+である。従って補題\ref{ibar:lem:folded-quotient}から$Q=A/(z)$の全単純の射影次元は一様有界である。
+
+$V_iw_{i+1}$への射影に非零の核があると仮定する。
+整域性から、その核の非零関係は
+\[
+w_i v=\lambda z_i z_{i+2},\qquad
+0\ne v\in V_{i+3},\quad\lambda\ne0
+\]
+と書ける。$\phi^{-2}(w_i)\in A_{i+4,i+7}$を右から掛けると、
+正規元族の交換式を二回使って
+\[
+w_i v\phi^{-2}(w_i)
+=\lambda z_i z_{i+2}\phi^{-2}(w_i)
+=\lambda w_i z_{i+3}z_{i+5}
+\]
+となる。左端の$w_i$を約分すれば
+\[
+v\phi^{-2}(w_i)=\lambda z_{i+3}z_{i+5}
+\]
+を得る。
+
+$\phi$による2周期折畳では、これらは
+\[
+wv=\lambda z^2e_{\bar i},\qquad
+vw=\lambda z^2e_{\overline{i+1}}
+\]
+である。従って$\widetilde Q=\widetilde A/(z)$には、互いに逆向きの非零の語長1の元
+$\bar w\in e_{\bar i}\widetilde Q_1e_{\overline{i+1}}$、
+$\bar v\in e_{\overline{i+1}}\widetilde Q_1e_{\bar i}$があり、両方の積が零となる。
+$S=ke_0\oplus ke_1$上の正規化bar複体において、
+これらを交互に並べた任意の長さ$d$の純テンソルは非零サイクルである。
+内部語長$d$の鎖次数$d+1$の項は零なので境界ではない。
+従って$\operatorname{Tor}^{\widetilde Q}_d(S,S)_d\ne0$が全$d$で成立し、矛盾する。
+もう一方の射影については反対$\mathbb Z$-代数へ同じ議論を適用する。
+\end{proof}
+
+\begin{lemma}[一重生成元部分の混合関係数と増大]
+\label{ibar:lem:two-period-gs}
+$Q$を2周期的な語長二次$\mathbb Z$-代数とし、各始点で
+$n$本のjump 1生成元$V_i$と1本のjump 3生成元$w_i$を持つものとする。
+関係は$V_iV_{i+1}$の中の$r_2(i)$本と、
+$w_iV_{i+3}\oplus V_iw_{i+1}$の中の$r_4(i)$本だけであるとする。
+各行が多項式増大を持ち、$r_4(i)\le n$であれば、全ての$i$で$r_4(i)=n$である。
+整域性・AS性・Koszul性はこの補題には必要ない。
+\end{lemma}
+\begin{proof}
+$x$を$V$の個数、$t$を$w$の個数とする。
+2周期折畳の二変数Hilbert行列を$H(x,t)$とする。
+$x,t\in(0,1)$で全成分は有限である。
+全jumpは1または3なので、多項式増大は語長についても多項式増大を与えるためである。
+
+最初の二段の自由表示から得る行列Golod--Shafarevich不等式は、成分ごとに
+\[
+P(x,t)H(x,t)\ge I,
+\]
+\[
+P(x,t)=
+\begin{pmatrix}
+1+r_2(0)x^2+r_4(0)xt&-(nx+t)\\
+-(nx+t)&1+r_2(1)x^2+r_4(1)xt
+\end{pmatrix}
+\]
+である。実際、最小解消の第2項からの核のHilbert行列を$K$とすると
+$PH=I+K$であり、$K$の係数は非負である。
+
+どちらか一方でも$r_4(i)<n$なら、$t=1$において
+\[
+\det P(x,1)=\bigl(r_4(0)+r_4(1)-2n\bigr)x+O(x^2)<0
+\]
+が十分小さい正の$x$で成立する。
+この$x\in(0,1)$を固定し、連続性により$t<1$を十分1に近く取れば、
+なお$\det P(x,t)<0$である。
+$P$は対称で対角成分が正、非対角成分が負なので、
+負の固有値$\lambda$に属する左固有ベクトル$\ell^\mathsf T$を全成分正に取れる。
+すると
+\[
+\ell^\mathsf T P H=\lambda\ell^\mathsf T H\le0,
+\qquad
+\ell^\mathsf T P H\ge\ell^\mathsf T>0
+\]
+となり矛盾する。従って両方とも$r_4(i)=n$である。
+\end{proof}
+
+\begin{corollary}[正規元族からの混合関係数の強制]
+\label{ibar:cor:normal-z-rank}
+$A\in\mathcal Q_n^{\mathrm{dom}}$について全ての$i$で$r_3(i)=n$、$r_5(i)=1$ならば、
+標準Hilbert級数・Koszul性を追加仮定せずに$r_4(i)=n$である。
+\end{corollary}
+\begin{proof}
+正規元族により$Q=A/(z)$は2周期的である。
+$R_4(i)$を$z=0$で写す核は$kz_i z_{i+2}$に含まれ、整域性により零である。
+従って$Q$の混合関係数は$r_4(i)$である。
+補題\ref{ibar:lem:mixed-injective}により$r_4(i)\le n$であり、
+補題\ref{ibar:lem:two-period-gs}を適用する。
+\end{proof}
+
+\begin{lemma}[AS双対性を持つ半単純基礎上の混合グラフ型代数]
+\label{igraph:lem:as-graph-ore}
+$S=\bigoplus_{i=0}^{m-1}ke_i$とし、$V$を有限次元$S$-双加群、$F=T_S(V)$とする。
+$\mu$は$F$の次数付き自己同型で、$S$の原始冪等元を置換するとする。
+$R\subset F_2$を$S$-双加群とし、
+\[
+Q=F[w;\mu]/(R),\qquad B=F/(R)
+\]
+と置く。ここで$w e_i=\mu(e_i)w$、$wv=\mu(v)w$であり、
+$(R)$は$F[w;\mu]$で生成する両側イデアルである。
+$V$の個数を$x$、$w$の個数を$t$で数える二重次数を用いる。
+
+$S_Q$が有限生成射影による有限な二重次数付き最小解消を持ち、
+$E=\operatorname{Ext}_Q^*(S,S)$には、ある$d,a,J$と頂点置換$\pi$について
+\[
+E^p_{ij;b,j'}\otimes
+E^{d-p}_{j,\pi(i);a-b,J-j'}\longrightarrow
+E^d_{i,\pi(i);a,J}\simeq k
+\]
+という完全対合があるとする。最高二重次数$(a,J)$は頂点によらないものとする。
+このとき
+\[
+J=1,\qquad \mu(R)=R,\qquad Q=B[w;\mu].
+\]
+特に$w$は左右正則である。
+Koszul性、noetherian性、整域性、指定Hilbert級数はこの補題には必要ない。
+\end{lemma}
+\begin{proof}
+\paragraph{混合グラフ表示の係数イデアル。}
+$F[w;\mu]=\bigoplus_{j\ge0}Fw^j$である。
+$Q$に課したイデアルの$w$次数$j$の係数は
+\[
+I_j=F\bigl(R+\mu(R)+\cdots+\mu^j(R)\bigr)F
+\]
+である。実際、$a w^p r b w^q=a\mu^p(r)\mu^p(b)w^{p+q}$であるから、
+この式は両包含を与える。
+従って$Q$の$w$次数$j$の部分は$(F/I_j)w^j$である。
+
+有限次元空間$F_2$の増大列
+\[
+W_j=R+\mu(R)+\cdots+\mu^j(R)
+\]
+は有限段で安定する。$W_{N+1}=W_N$となれば$\mu(W_N)\subset W_N$であり、
+$\mu$の可逆性により$\mu(W_N)=W_N$となるので、その後も安定する。
+従って$I_j=I_N$ for $j\ge N$である。
+
+\paragraph{Hilbert行列の多項式分子。}
+$T$を$w$の始点・終点の置換行列とする。
+すなわち$T_{ij}=\dim e_i(Sw)e_j$であり、$T$は可逆である。
+$H_j(x)$を$F/I_j$のHilbert行列とすると、
+\[
+H_Q(x,t)=\sum_{j\ge0}H_j(x)T^j t^j.
+\]
+従って
+\[
+G(x,t):=H_Q(x,t)(I-tT)
+=H_0(x)+\sum_{j=1}^{N}(H_j(x)-H_{j-1}(x))T^j t^j
+\]
+は$t$に関する行列多項式であり、係数は$\mathbb Z[[x]]$に属する。
+
+一方、$S_Q$の有限最小解消のEuler行列を
+\[
+P(x,t)=\sum_{p,b,j'}(-1)^p
+\bigl(\dim E^p_{ij;b,j'}\bigr)_{ij}x^b t^{j'}
+\in\operatorname{Mat}_m(\mathbb Z[x,t])
+\]
+とすれば、$P H_Q=I$である。従って
+\begin{equation}\label{igraph:eq:pg}
+P(x,t)G(x,t)=I-tT.
+\end{equation}
+
+\paragraph{AS双対性が最高係数を可逆にする。}
+$w$次数はbar複体で非負であり、最高成分との完全対合から
+$E$の全ての$w$次数は$0,\ldots,J$に入る。
+$w$の双対が非零の$E^1$にあるので$J\ge1$である。
+$t$次数零のEuler係数を$P_0(x)=P(x,0)$と書く。
+$P_0(0)=I$であるから$P_0(x)$は$\mathbb Q(x)$上可逆である。
+$\Pi_{ik}=\delta_{k,\pi(i)}$と置くと、仮定の完全対合は最高$t$係数について
+\begin{equation}\label{igraph:eq:leading-duality}
+P_J(x)=(-1)^d x^a\Pi P_0(x^{-1})^{\mathsf T}
+\end{equation}
+を与える。従って$P_J(x)$も$\mathbb Q((x))$上可逆である。
+
+$G$の$t$次数を$N'$とし、その最高係数を$G_{N'}\ne0$とする。
+式\eqref{igraph:eq:pg}を$\mathbb Q((x))[t]$上で見る。
+積の$t^{J+N'}$係数は$P_JG_{N'}$であり、$P_J$の可逆性によって非零である。
+従って
+\[
+J+N'=\deg_t(I-tT)=1.
+\]
+$J\ge1$、$N'\ge0$から、$J=1$、$N'=0$となる。
+これが、任意の行列多項式には使えない次数の加法性を本状況で正当化する箇所である。
+
+$G$が$t$に依存せず$T$が可逆なので、$H_j=H_{j-1}$が全ての$j$で成立する。
+自然全射$F/I_0\to F/I_1$は各有限次元斉次成分で次元が等しく、同型である。
+$I_1=I_0$の次数2成分を取れば$\mu(R)\subset R$であり、
+$\mu$の可逆性から等号である。従って$Q=B[w;\mu]$で、$w$は左右正則である。
+
+\end{proof}
+
+\begin{theorem}[二つの混合階数からの添字付き二段Ore表示]
+\label{igraph:thm:normal-z-ore}
+$A\in\mathcal Q_n^{\mathrm{dom}}$とし、全ての$i$について
+\[
+r_3(i)=n,\qquad r_5(i)=1
+\]
+を仮定する。このとき、指定Hilbert級数、Koszul性、noetherian性、
+純jump 1部分のAS性を追加仮定せずに、$A$は純jump 1部分$B$上の
+添字付き二段Ore拡張となる。$B$は左右AS正則次元$n$である。
+特に
+\[
+r_4(i)=n,\qquad B(1)\simeq B,\qquad
+L_A=L_B+5,\qquad N_A=L_B+2,\qquad L_A-N_A=3
+\]
+であり、$B$の通常の下降を$B_0$と書けば
+\[
+H_i^A(u,t)=\frac{H_{B_0}(ut)}{(1-ut^2)(1-ut^3)}.
+\]
+また$A$の語長Koszul性は$B$のKoszul性と同値である。
+従って一般AS-base定理と合わせると、$A\in\mathcal Q_n^{\mathrm{dom}}$について
+\[
+B\text{ が左右AS正則次元 }n
+\quad\Longleftrightarrow\quad
+r_3(i)=n,\ r_5(i)=1\text{ が全 }i\text{ で成立}
+\]
+である。左辺では有限生成射影による有限AS解消を要求する。
+\end{theorem}
+\begin{proof}
+$r_3=n,r_5=1$と整域性から、正規元族$z_i$と同型$\phi:A(2)\to A$を得る。
+補題\ref{ibar:lem:folded-quotient}により$Q=A/(z)$は
+有限生成射影による有限解消を持つ左右AS正則次元$n+1$の$\mathbb Z$-代数である。
+補題\ref{ibar:lem:mixed-injective}と系\ref{ibar:cor:normal-z-rank}により
+$r_4(i)=n$であり、$R_4(i)$の両混合射影は同型となる。
+従って$Q$の関係は純$V$関係と
+\[
+w_i v=\mu_i(v)w_{i+1},\qquad \mu_i:V_{i+3}\xrightarrow{\sim}V_i
+\]
+だけである。
+
+$\phi$による2周期折畳を取る。
+その純$V$の自由代数を$F=T_S(V)$、$S=ke_0\oplus ke_1$とし、
+$w=w_0+w_1$と書く。
+表示した混合係数は、二つの頂点を交換する$F$の自己同型$\mu$を与え、
+折畳された$Q$は$F[w;\mu]/(R)$となる。
+ここでは$\mu$が純関係$R$を保つことはまだ使っていない。
+
+$Q$の最高語長を$N_Q=N_A-1$、AS移動を$L_Q=L_A-2$とする。
+最高成分の$w$次数と$V$次数は
+\[
+J=\frac{L_Q-N_Q}{2},\qquad a=N_Q-J
+\]
+であり、いずれも始点によらない。
+元のAS完全対合は、jumpと語長を保持した折畳後にも完全対合である。
+従って補題\ref{igraph:lem:as-graph-ore}を適用でき、
+$Q=B[w;\mu]$および$w$の正則性を得る。
+被覆へ戻ると$w_i$はjump 3の正則正規元族となる。
+補題\ref{ibar:lem:folded-quotient}を$h=3$として適用し、
+$B=Q/(w)$が左右AS正則次元$n$であることを得る。
+
+これで既存の一般AS-base定理\ref{genidx:thm:as-base-ore}の仮定が成立する。
+同定理を適用して、$A$の添字付き二段Ore表示、全てのシフトとHilbert式、
+Koszul性の同値性を得る。
+\end{proof}
+
+\begin{remark}[無条件の全次元問題との区別]
+本定理は、正規元族を作るための二つの階数条件$r_3(i)=n,r_5(i)=1$を仮定している。
+これらの階数条件を任意$n$の全対象から導くことは、本定理自体の結論ではない。
+標準Hilbert級数やKoszul性を先に得る必要はなくなったが、
+二つの階数条件の自動性は別の問題として残る。
+\end{remark}
+
+
+\begin{theorem}[標準二重Hilbert級数と正規元族からの添字付きOre表示]
+\label{ibar:thm:standard-hilbert-ore}
+$A\in\mathcal Q_n^{\mathrm{dom}}$とする。
+各行の二変数Hilbert級数について
+\[
+H_i^A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)}
+\qquad(i\in\mathbb Z)
+\]
+を仮定する。$u$は語長、$t$はjumpを数える。
+このとき$A$は純jump 1部分$B$上の添字付き二段Ore拡張であり、
+$B$自身がKoszul AS正則次元$n$を持つ。
+noetherian性、Koszul性、$B$のAS性は追加仮定しない。
+特に標準二変数Hilbert級数と$r_3=n,r_5=1$を別々に仮定した場合にも適用できる。
+\end{theorem}
+\begin{proof}
+語長2の各重み成分を比較すると
+\[
+(r_2(i),r_3(i),r_4(i),r_5(i),r_6(i))
+=\left(\binom n2,n,n,1,0\right)
+\]
+である。定理\ref{igraph:thm:normal-z-ore}により、添字付き二段Ore表示と
+純部分$B$の左右AS正則次元$n$、および$B$の1周期性を得る。
+差次数零部分から全行で$H_i^B(t)=(1-t)^{-n}$である。
+$B$の通常の下降$B_0$の有限AS解消のHilbert相反関係から、AS添字は$n$となる。
+最小性は第$p$項の全シフトを$p$以上とし、AS双対性はそれらを$p$以下とする。
+従って全シフトは$p$で、$B_0$および$B$はKoszulである。
+同定理のKoszul性の同値性により$A$も語長Koszulとなる。
+\end{proof}
+
+\begin{corollary}[Koszulかつ正規元族を持つ場合のHilbert仮定の除去]
+\label{ibar:cor:koszul-normal-z}
+$A\in\mathcal Q_n^{\mathrm{dom}}$が語長Koszulであり、
+全ての$i$で$r_3(i)=n$、$r_5(i)=1$と仮定する。
+このとき標準Hilbert級数を仮定せずに、$B$はKoszul AS正則次元$n$となり、
+$A$は$B$上の添字付き二段Ore拡張となる。さらに
+\[
+L_A=n+5,\qquad
+H_i^A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)}
+\]
+である。noetherian性は仮定しない。
+\end{corollary}
+\begin{proof}
+定理\ref{igraph:thm:normal-z-ore}により、基礎$B$のAS正則性、
+添字付き二段Ore表示、$B$の1周期性を得る。
+同定理のKoszul性の同値性から$B$もKoszulであり、AS添字は$L_B=n$である。
+通常の下降$B_0$は$n$生成元・大域次元$n$のKoszul代数で多項式増大を持つため、
+補題\ref{ogk:lem:generator-bound}から$H_{B_0}(t)=(1-t)^{-n}$を得る。
+一般構造定理のシフトとHilbert因数分解に代入すれば結論となる。
+\end{proof}
 
 \section{二周期三生成元整域のAS性}
 
@@ -6481,12 +7095,16 @@ $n=4$では系\ref{n4:cor:top-excess-three}により最高差次数3を証明し
 命題\ref{n4:prop:pure-base-numerics}により基礎部分の解消とモーメント制約を得た。
 定理\ref{n4:thm:equivalent-criteria}により、$n=4$での語長Koszul性と1周期性は同値であり、
 純基礎部分の行Hilbert級数が始点によらないことも同値である。
-この条件の下では全標準数値型と第一段Ore表示まで得られる。
-同値な条件の自動性、$B$のAS正則性、および無条件の添字付き二段Ore網羅性は未証明である。
-通常の次数付き語長Koszul対象については、任意$n$で数値型を決定し、
-左右noetherian性の下で二段Ore表示を得る（定理\ref{ogk:thm:numerics}、系\ref{ogk:cor:noetherian-ore}）。
-特に四生成元の基礎部分については、標準線型解消・整域性・noetherian性だけからAS性を導けない
-既知反例\cite[Theorem 1.1, (1.2)]{RSsurface}を考慮し、親代数$A$の完全対合を用いる。
+これらに$B$のAS4性、添字付き・通常の二段Ore表示、$r_3=4,r_5=1$を加えた十条件が同値である。
+従って標準枝の基礎AS性と第二段Ore表示は解決しており、残るのは同値条件の自動性である。
+通常の次数付き語長Koszul対象については、任意$n$で、指定Hilbert級数とnoetherian性を仮定せずに
+二段Ore表示を得る（定理\ref{ogk:thm:ore-without-noetherian}）。
+添字付きの場合も、定理\ref{igraph:thm:normal-z-ore}により、
+全始点で$r_3=n,r_5=1$となることと基礎AS正則次元$n$であることは同値であり、
+この条件だけで二段Ore表示が従う。Hilbert級数・Koszul性・noetherian性は不要である。
+従って任意$n$の無条件の構造問題では、まずこの二つの混合階数の自動性を調べればよい。
+純基礎のEuler数値条件と成長だけからの認識には障害があるため、
+残る自動性には親代数の混合関係とAS双対性を用いる必要がある。
 $n\geq5$で通常の次数付き代数へ下降できる条件は、引き続き調べる必要がある。
 整域性以外にHilbert級数やnoetherian性を追加する場合は、その依存を明示する。
 

@@ -13,7 +13,7 @@ REQUIRED = (
     "computations/baseline_certificate.json", "computations/README.md", "scripts/build_bundle.py",
     "computations/verify_mixed_ranks.py", "computations/mixed_ranks_certificate.json",
     
-     "computations/verify_skew_ore.py", "requirements-symbolic.txt",
+     "computations/verify_skew_ore.py", "computations/verify_n4_pure_euler.py", "computations/verify_n4_parent_mixed.py", "requirements-symbolic.txt",
 )
 
 

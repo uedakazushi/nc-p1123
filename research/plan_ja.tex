@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月19日\quad 第16版}
+\date{2026年11月19日\quad 第17版}
 \begin{document}
 \maketitle
 
@@ -36,7 +36,12 @@ $n=3$では数値型・Koszul性・基礎部分のAS3性・添字付き二段Ore
 \textbf{無条件のindexed網羅性の未解決範囲は$n\geq4$である。}
 任意$n$で、純jump 1部分$B$自身がAS正則次元$n$なら添字付き二段Ore表示が従うため、
 一般次元で$B$のAS正則性を元の仮定から導くことが構造上の核心である。
-$n=4$では最高差次数3を無条件に証明し、Koszul性・1周期性・基礎Hilbert行の始点独立性の同値性まで得た。
+$n=4$では最高差次数3を無条件に証明し、Koszul性・1周期性・基礎Hilbert行の始点独立性に、
+基礎AS4性・二段Ore表示・$r_3=4,r_5=1$を加えた十条件の同値性を得た。
+通常の次数付きKoszul対象では、任意$n$の二段Ore表示をnoetherian性なしに証明した。
+一般の添字付き対象でも、全始点で$r_3=n,r_5=1$となることと基礎AS正則次元$n$であることが同値で、
+この条件だけで二段Ore表示が従う。Hilbert級数・Koszul性・noetherian性は不要である。
+元の問題はこの二つの混合階数条件の自動性へ還元された。
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
 再開時は本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読む。
@@ -68,7 +73,7 @@ $s=N-2\ge4$、$L=s+5$と置くと、純jump 1部分$B$の解消は
 である。主論文\texttt{n4:prop:pure-base-numerics}の階数釣合いと一次モーメント制約を使える。
 ただし、$N=6$、$L=9$、全$q_i=1$はここでの無条件の結論ではない。
 
-\subsection{六条件の同値性と標準数値型}
+\subsection{十条件の同値性と二段Ore構造}
 主論文\texttt{n4:thm:equivalent-criteria}は、次を同値とする。
 \begin{enumerate}
 \item $A$が語長Koszulである。
@@ -77,6 +82,10 @@ $s=N-2\ge4$、$L=s+5$と置くと、純jump 1部分$B$の解消は
 \item $B$が1周期的である。
 \item $B$の行Hilbert級数が始点によらない。
 \item 全行で$H_i^B(u)=(1-u)^{-4}$である。
+\item $B$が左右AS正則次元4である。
+\item $A$がそのAS4基礎$B$上の添字付き二段Ore拡張である。
+\item $A$が四生成元Koszul AS4整域上の通常の二段Ore代数の付随$\mathbb Z$-代数である。
+\item 全ての$i$で$r_3(i)=4,r_5(i)=1$である。
 \end{enumerate}
 これらの条件の下では、語長を保つ1周期同型と
 \[
@@ -91,11 +100,13 @@ Koszulの場合の基礎階数欠損は非負行列のスペクトル半径で�
 $\det K(1,v)=-9(\sum_i(4-r_3(i)))v+O(v^2)$で排除する。
 行Hilbertが一定ならEuler多項式も一定であり、根の絶対値と自己相反性が$s=4$を強制する。
 
-\textbf{六条件の自動性と$B$のAS4性は未証明である。}
-Rogalski--Sierra, arXiv:1101.0737v2, Theorem 1.1と式(1.2)には、
-noetherian整域・Koszul・大域次元4・標準線型解消でもAS--Gorensteinでない四生成元例がある。
-これは一般的な数値認識法の障害であり、この例が対象$A$の純基礎として実現するとは主張しない。
-親代数のAS対合から、$B$の最上積対合の非退化性を導く必要がある。
+\textbf{十条件の自動性は未証明であるが、Koszulの場合の$B$のAS4性と第二段Ore表示は解決した。}
+通常の下降に後述のnoetherian性を使わない二段Ore定理を適用し、逆に$B$のAS性から
+一般AS-base定理を通じて1周期性へ戻ることで、十条件がつながる。
+Rogalski--Sierra, arXiv:1101.0737v2, Theorem 1.1と式(1.2)の
+非ASな四生成元noetherian Koszul整域は、一般的な数値認識法への障害として有効である。
+しかし標準Hilbert級数を持つため、本研究の十条件定理により
+$\mathcal Q_4^{\mathrm{dom}}$の純基礎としては実現できない。
 
 \subsection{任意$n$の通常Koszul対象での補助定理}
 主論文\texttt{ogk:thm:numerics}は、最初から通常の連結次数付き整域であり、
@@ -104,9 +115,48 @@ $L=n+5$、全標準数値型、正則正規元$z$、第一段$B[z;\sigma]$を導
 スカラーEuler多項式の根から、Koszul有限増大代数では生成元数が大域次元以下であり、
 等号なら標準Hilbert級数となることを使う。
 一般indexed対象へこのスカラー論法をそのまま適用しない。
-左右noetherian性を追加すると、既存の構造定理により二段Ore表示と$B$のAS性も得る
-（\texttt{ogk:cor:noetherian-ore}）。$n=4$の六条件と下降後のnoetherian性の下での系は
-\texttt{n4:cor:noetherian-periodic-ore}にある。このnoetherian性は追加仮定である。
+主論文\texttt{ogk:thm:ore-without-noetherian}は、同じ仮定で
+$B$のAS性と第二段Ore表示まで証明する。
+射影の退化から$wv=\lambda z^2$を得ると、正規性と整域性により逆向きの積も$z^2$の倍となる。
+$A/(z)$では非零の一次の元$\bar v,\bar w$が相互に積零となり、
+交代barテンソルが全次数の非零Torを与える。
+これは語長1の正則正規元の商が有限大域次元であること
+（Rogalski--Zhang, arXiv:1101.1998v2, Lemma 1.1）に矛盾する。
+その後はHilbert比較からPBWを得て、正規元商を二度取って$B$のAS性を導く。
+任意次元でのnoetherian性の自動性は主張しない。
+系\texttt{ogk:cor:noetherian-ore}は、$A$が左右noetherianであることと$B$がそうであることの同値を記録する。
+
+\subsection{一般indexed対象への拡張と残る仮定}
+主論文\texttt{ibar:thm:standard-hilbert-ore}は、全行の
+\[
+H_i^A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)}
+\]
+から、Koszul性・noetherian性・基礎AS性を追加せずに、添字付き二段Ore表示と$B$のKoszul AS$n$性を導く。
+正規元族による有限頂点折畳で語長1の正規元による商の有限解消を証明し、
+添字付き交代barテンソルで混合射影の核を排除する。
+一変数Hilbert級数だけを仮定した結果と読み替えない。
+
+さらに\texttt{ibar:cor:normal-z-rank}は、全始点で$r_3=n,r_5=1$だけを仮定し、
+標準Hilbert級数・Koszul性なしに$r_4=n$を強制する。
+射影単射性の上界と、2頂点折畳の二変数Golod--Shafarevich不等式を組み合わせる。
+主論文\texttt{igraph:thm:normal-z-ore}は、さらにこの二つの階数条件だけから、
+非Koszulの場合も含めてPBW分解、基礎AS性、添字付き二段Ore表示を導く。
+折畳商の混合グラフ表示で、二次関係の交換写像軌道は有限段で安定する。
+Hilbert行列の分子$G$とEuler行列$P$は$PG=I-tT$を満たす。
+AS双対性が$P$の最高$t$係数を可逆にするため、次数比較で$G$は$t$に依存せず、
+交換写像が純関係を保つことが従う。この証明に指定Hilbert級数は必要ない。
+一般AS-base定理と合わせ、$B$のAS性と$r_3=n,r_5=1$が同値である。
+Koszul性もあるときは\texttt{ibar:cor:koszul-normal-z}により標準Hilbert級数が従う。
+Koszul双対を$F\oplus F\eta$と分ける別証明は、研究ノートに保持する。
+
+\subsection{純Eulerデータだけでは排除できない形式例}
+研究ノート\texttt{note:n4-pure-euler-obstruction}には、$s=5,N=7,L=10$で、
+純基礎の階数釣合い・一次モーメント・全次数Hilbert正値性・多項式増大・Hopf次元不等式を満たし、
+行Hilbert級数が始点によって異なる形式数値データを記載した。
+\path{computations/verify_n4_pure_euler.py}の厳密整数検査と有理級数の分母評価が、
+有限次数の観察を全次数の証明へつなぐ。
+これは代数、整域、AS親代数を構成した結果ではない。
+純Euler数値と成長だけの方法には限界があるため、親の混合Eulerデータと中央$E^3$対合を使う。
 
 \section{$n=3$の完全構造と任意$n$の条件付き構造定理}
 \subsection{$n=3$の数値型は追加仮定なしに確定}
@@ -309,18 +359,29 @@ supportの交わりと$3\times2$のSegre次元計算に依存し、そのまま�
 また$A$の整域性から正規商$A/(z)$の整域性を推測しない。
 
 \section{優先順位と次の具体的操作}
-\paragraph{P1：$n=4$のHilbert行一定性と基礎AS性。}
-最高差次数は3と確定したため、まず\texttt{n4:prop:pure-base-numerics}の
+\paragraph{P1：$n=4$の十条件の自動性。}
+最高差次数は3と確定したため、\texttt{n4:prop:pure-base-numerics}の
 $s=N-2$、階数列$r_i,p_{i,j},q_i$を出発点とする。
-折畳Euler行列の二次以上のLaurent条件と、AS6の中央$E^3$の自己相補性を組み合わせ、
-$B$の行Hilbert級数が始点によらないことを証明または反証する。
-これが得られれば六条件定理によりKoszul性・全標準型・1周期性が一度に従う。
-$s=4$の後は、$E^*(A)$の完全対合が差次数零部分の最高積対合に及ぼす制約を調べる。
-Rogalski--Sierraの一般的反例があるため、$14641$解消だけで$B$をAS4と判定しない。
-$A/(z)$の整域性も未証明なので、重み4関係の両射影の単射性をそこから仮定しない。
+最優先は、元の仮定から$r_3(i)=4,r_5(i)=1$を全始点で導くことである。
+これだけで十条件定理により基礎AS4性・Koszul性・二段Ore表示・1周期下降まで一度に従う。
+Hilbert行一定性や$N=6$を先に証明する必要はなく、これらは代替の十分な入口でもある。
+標準枝で第二段Oreや基礎AS性を再び独立未解決課題にしない。
 
-任意$n$では、$B$自身のAS正則性が得られれば既存の一般定理が二段Oreを構成する。
-$n\ge5$の数値型には、AS平行移動、差次数零bar複体、
+純Eulerデータだけでは、研究ノートの$s=5$形式例が全次数の正値性・成長・Hopf不等式を通過する。
+従って優先するのは、親AS6の中央$E^3$の完全対合と実際の三次テンソル交叉による制約である。
+$s=5$では混合三次・四次語長成分の階数を$r_3,r_4$から表し、
+親の混合Euler行列の特異性とテンソル交叉の上界を合わせる。
+一般$n$の新しいbar障害と混合関係数強制も使う。
+正規商の整域性を先取りせず、有限解消を通じて退化を排除する。
+新しい\texttt{genidx:lem:r5-gs-saturation}により、AS周期が$3\nmid L$なら全$r_5=1$は既に確定した。
+この場合は$r_3=n$を優先する。$3\mid L$の場合にも、一つの法3剰余類では全$r_5=1$であり、
+残る剰余類への伝播と$r_3$の飽和が課題となる。
+$n=4,N=7$の枝では$L=10$なので、最初から$q_i=r_5(i+s)=1$を全ての始点で使える。
+
+
+任意$n$でも、$B$自身のAS正則性を直接認識する代わりに、
+$r_3=n,r_5=1$を証明すればよく、その後の交換写像・PBW・基礎AS性は解決済みである。
+$n\ge5$の階数自動性には、AS平行移動、差次数零bar複体、
 $r_3\le n,r_5\le1,r_6=0$および重み5関係の成長障害を使う。
 周期的Euler行列に対するスカラー自己相反性は未証明であり、通常gradedの場合と区別する。
 
@@ -442,7 +503,8 @@ $n=2$のindexed網羅性とgraded下降も証明済みだが、その全対象�
 一般indexed網羅性は$n\geq4$で未完成である。
 $n=3$の数値型、無条件の二段Ore表示、最終代数の1周期下降、左右noetherian性、
 任意$n$の基礎AS性を仮定した構造定理は完成している。
-$n=4$の最高差次数3と六条件同値、通常Koszul対象の任意$n$の数値型も完全証明を収めた。
+$n=4$の最高差次数3と十条件同値、通常Koszul対象の任意$n$の二段Ore表示、
+さらに一般indexed対象での二つの混合階数からの二段Ore表示も完全証明を収めた。
 反例や補助定理の証明を記載したこと、内部監査、計算、形式化、第三者査読、新規性確認は別の状態とする。
 形式化・第三者査読・新規性の最終確認は未完である。
 
