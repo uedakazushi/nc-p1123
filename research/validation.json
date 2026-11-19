@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 11,
+  "version": 12,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -50,21 +50,30 @@
       "QUANTUM-QUOTIENT",
       "MIXED-RELATION-RANKS",
       "TYPE-EXHAUST",
-      "R5-ORIENTATION-OBSTRUCTION"
+      "R5-ORIENTATION-OBSTRUCTION",
+      "N1-INDEXED-ORE",
+      "N1-INDEXED-CLASSIFICATION",
+      "GEN-INDEXED-PERIOD-TWO",
+      "GEN-AS-TRANSLATION",
+      "GEN-NORMAL-Z-CONDITIONAL",
+      "ONE-HEAVY-FROBENIUS"
     ],
-    "logical_review": "The manuscript contains the broad-Q Koszul/index/seven-period proofs, analytic outer-rank theorem, computer-assisted mixed-rank theorem and Q=H=S corollary, domain structure and regularity criterion, finite Ore indexed-isomorphism criterion, and diagonal quotient. Independent AI-assisted readings checked the analytic reduction for the mixed ranks: the exact Koszul matrix, AS-dual index shift, cubic-syzygy bound, convergence, coefficientwise positivity, singularity identity and adjugate coefficient. A separate exact rational elimination reconstructed all 890 matrices directly from the Koszul Euler terms and independently reproduced the integer enumeration. Earlier retained claims have also received internal logical review. These checks are neither formal verification nor external peer review. The research-note obstruction for opposite one-sided R_5 relations was independently checked from the quotient relations and the equal-weight code words.",
+    "logical_review": "The current n=1 proof derives word-Koszulity, AS translation 6 and all relation ranks from the stated AS/domain hypotheses, forces both mixed relation coefficients by the top Frobenius tensor, and obtains PBW and indexed two-step Ore structure by the exact Euler series. Independent AI-assisted readings checked the coefficient normalization, bare indexed isomorphism classification, period-one criterion, and reverse construction with an explicit two-sided AS3 proof. The period-two counterexample is a special case, so the universal ordinary-graded descent assertion is refuted. The general AS-translation and conditional normal-z and one-heavy Frobenius lemmas were independently reviewed, with all extra hypotheses retained. Earlier n=2 results and their exact mixed-rank proof assets remain valid within their scope. These checks are neither formal verification nor external peer review.",
     "new_reviewed_claims": [
-      "MIXED-RELATION-RANKS",
-      "TYPE-EXHAUST",
-      "R5-ORIENTATION-OBSTRUCTION"
+      "N1-INDEXED-ORE",
+      "N1-INDEXED-CLASSIFICATION",
+      "GEN-INDEXED-PERIOD-TWO",
+      "GEN-AS-TRANSLATION",
+      "GEN-NORMAL-Z-CONDITIONAL",
+      "ONE-HEAVY-FROBENIUS"
     ],
     "reviewed_dependencies": [
+      "ISO-LINEAR",
       "GENERAL-KOSZUL",
-      "AS-INDEX-7",
       "PERIOD-7",
-      "OUTER-RELATION-RANKS"
+      "DOMAIN-ORE"
     ],
-    "scope": "Over the standing algebraically closed characteristic-zero field: all Q have relation dimensions (1,2,2,1,0), the standard word-linear resolutions and standard two-variable Hilbert series. Mixed-rank forcing uses an exact finite integer lemma after analytic necessary conditions. Domainness, mixed-projection nondegeneracy, period one and noetherianity are not inferred for all Q. The domain Ore theorems and finite indexed-isomorphism criterion retain their stated scope; general n retains its existing hypotheses.",
+    "scope": "Over the standing algebraically closed characteristic-zero field, all Q_1^dom have a two-step indexed Ore normal form A(c,alpha,beta), with c nonzero and d_(2m)=c^(-m)alpha, d_(2m+1)=c^(-m)beta. Bare indexed isomorphism is c equality and common nonzero scaling of (alpha,beta); period one is equivalent to alpha^2=c beta^2, including the zero pair, and otherwise the least period is two. All reverse constructions are word-Koszul, AS3, left/right noetherian domains with standard Hilbert series. Thus universal descent to one graded algebra is false already at n=1. The existing n=2 domain two-step Ore/descent theorem is retained. Indexed Ore exhaustion and the missing numerical/base-AS assertions for n>=3 are not proved. No standard-Hilbert or noetherian assumption was silently added to the main target.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -95,7 +104,17 @@
       "Exact enumeration of 890 mean-zero adjacent-bounded integer arrays leaves only delta=0 singular at u=v=1",
       "With all ranks fixed, multiplication by the constant vector and (u,v)->(ut,t) yields the stated two-variable Hilbert series for every row",
       "Current summaries and seven-window description use the proved equality Q=H=S and do not retain a hypothetical nonstandard numerical locus",
-      "Opposite one-sided R_5 relations at distances 2 and 4 create forbidden cubic syzygies; distance 3 gives a verified monomial quotient with two prefix-distinct weight-42 code words and exponential row growth. No full exclusion of one-sided degeneration is asserted."
+      "Opposite one-sided R_5 relations at distances 2 and 4 create forbidden cubic syzygies; distance 3 gives a verified monomial quotient with two prefix-distinct weight-42 code words and exponential row growth. No full exclusion of one-sided degeneration is asserted.",
+      "For n=1, the E^1/E^2 perfect pairing fixes top word length 3; domainness excludes weight-two and weight-six relations, so AS duality forces translation 6 and relation weights 3,4,5.",
+      "The two decompositions of the n=1 top Koszul tensor force both wx/xw coefficients nonzero; the exact resolution Euler recurrence yields the full standard Hilbert series, not only low-degree agreement.",
+      "General n=1 Ore compatibility is a_i c_i b_(i+2)=a_(i+3)b_i c_(i+1) and c_i d_(i+2)=a_(i+3)d_i. Normalization gives a=b=1, constant c and c d_(i+2)=d_i.",
+      "All residual word-linear basis changes preserve c and multiply the entire d sequence by one nonzero scalar. Augmentation-filtration linearization extends this existence criterion to bare indexed isomorphism.",
+      "The shift-one action is (alpha,beta)->(beta,c^(-1)alpha), giving alpha^2=c beta^2 as the exact period-one condition, including the zero pair. Shift two is always scalar-equivalent.",
+      "For the reverse construction, the sole PBW ambiguity, explicit differentials d1d2=d2d3=0 and both top tensor expansions were checked symbolically for both source parities with general parameters.",
+      "The w-count associated graded is the check algebra of k[x,z][w;tau], tau(x)=x, tau(z)=c z; it proves domainness and left/right noetherianity by leading terms and lifting finite generators.",
+      "Exact left and right Koszul resolutions and nondegenerate top pairings establish both AS conditions. The bimodule Koszul resolution bounds global dimension for all unital modules, not just simples.",
+      "The n=1 counterexample (c,alpha,beta)=(1,1,0) has alternating zz-projection ranks and cannot be check(D) for any single graded algebra D.",
+      "The general AS-translation lemma does not use Koszulity or determine L=n+5. The normal-z lemma assumes rank equality. The one-heavy lemma explicitly assumes the base B itself is Koszul ASn."
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
@@ -106,7 +125,9 @@
       "Auroux-Katzarkov-Orlov, published PDF, Proposition 2.6, known weighted diagonal family",
       "Vitoria, arXiv:1001.4400v3, degree-one setting and Theorem 2.5 / Remark 2.6, for comparison only",
       "Cooney-Grabowski, arXiv:1807.06383v4, Definition 1, Lemma 5 and Theorem 12, degree-one geometric-algebra scope, not directly applied",
-      "Reyes-Rogalski, arXiv:1808.10538v1, Proposition 2.8; matrix-Hilbert growth comparison only, not a direct application proving the weighted four-dimensional theorem"
+      "Reyes-Rogalski, arXiv:1808.10538v1, Proposition 2.8; matrix-Hilbert growth comparison only, not a direct application proving the weighted four-dimensional theorem",
+      "Van den Bergh, arXiv:0807.3753v3, Definition 4.1.1 and Theorem 4.2.2: the ordinary three-dimensional quadratic type has three adjacent-jump generators, so that period-one theorem does not apply to primitive jumps (1,2,3).",
+      "Kabbaj, arXiv:2501.11346v1, Corollary 2.5, Definition 3.2, Theorems 3.4, 3.9, 3.10: checked as a scope comparison, not used to infer arbitrary-n indexed Koszulity."
     ],
     "formalized": false,
     "peer_reviewed": false,
@@ -117,57 +138,69 @@
       "Nondegeneracy of the unique weight-two relation or nonvanishing of both coefficients of the unique weight-five relation for all Q",
       "Existence or nonexistence of exact period-seven objects in the non-domain locus",
       "Normal forms, components, specializations or full nonlinear automorphism groupoids of general Ore data",
-      "Removal of the noetherian and Hilbert hypotheses in the general-n exhaustive structure theorem",
       "Novelty confirmed by an exhaustive literature search",
-      "Period one or noetherianity for every object of Q without a domain or regularity hypothesis"
-    ]
+      "Period one or noetherianity for every object of Q without a domain or regularity hypothesis",
+      "Two-step indexed Ore exhaustion for all n>=3 under only the current AS/domain hypotheses",
+      "Automatic general-n Koszulity, AS index n+5, maximal mixed relation ranks or AS regularity of the pure jump-one base",
+      "A period-two counterexample for each fixed n>=3",
+      "A complete classification of all n or of the full secondary n=2 locus",
+      "Identification of the n=1 isomorphism-class set k^* x ({0} disjoint_union P^1) with an affine categorical quotient"
+    ],
+    "literature_followup": "Rogalski, arXiv:2307.03174v2, section 7.2, printed page 29, was checked as a survey pointer to Smith/Zhang Theorem 5.11 on standard Hilbert series implying Koszulity. The Smith primary source was not checked in this update and this result is not used to fill the missing general indexed hypotheses. Novelty of the n=1 classification has not been exhaustively checked."
   },
   "exact_computation": {
-    "new_results": "Computer-assisted proof of MIXED-RELATION-RANKS and TYPE-EXHAUST. Analytic AS/growth constraints reduce to an explicitly finite integer lemma; exhaustive exact computation proves that lemma. This does not certify AS-regularity of arbitrary relation data.",
-    "new_mathematical_computation_executed": true,
-    "commands_executed": [
-      "python3 computations/verify_mixed_ranks.py --write",
-      "python3 computations/verify_mixed_ranks.py"
-    ],
-    "script": "computations/verify_mixed_ranks.py",
-    "certificate": "computations/mixed_ranks_certificate.json",
-    "certificate_schema": "nc-p1123-mixed-ranks-v1",
-    "arithmetic": "Integer Bareiss elimination with pivoting and exact-division checks; no floating point, random sampling or omitted cyclic representatives.",
-    "counts": {
-      "range_tuples": 78125,
-      "mean_zero_tuples": 8135,
-      "adjacent_bounded_tuples": 890,
-      "zero_determinants": 1,
-      "nonzero_determinants": 889
-    },
-    "unique_survivor": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "nonzero_absolute_determinant_range": [
-      98,
-      3010
-    ],
-    "certificate_comparison": "passed",
-    "independent_audit": {
+    "current_analytic_results": "N1-INDEXED-ORE, N1-INDEXED-CLASSIFICATION and GEN-INDEXED-PERIOD-TWO have direct mathematical proofs. Their verification does not infer AS regularity from finite-degree Hilbert agreement.",
+    "current_symbolic_audit": {
       "executed": true,
-      "matrix_construction": "Directly from all terms of the seven-row Koszul Euler polynomial, independently of the collapsed C_delta formula",
-      "arithmetic": "Fraction-based rational Gaussian elimination; no call to the canonical Bareiss routine",
-      "cases": 890,
-      "all_determinants_agree": true,
-      "survivors_agree": true
+      "scope": "Sole PBW overlap, partial_1 partial_2=0 and partial_2 partial_3=0, and equality of the two top Koszul tensor expansions, for both source parities.",
+      "parameters": "c nonzero, alpha and beta arbitrary; d_(2m)=c^(-m)alpha and d_(2m+1)=c^(-m)beta.",
+      "arithmetic": "Exact symbolic Laurent-polynomial identities using SymPy; no floating point or parameter sampling. The zero-alpha and zero-beta cases follow by specialization since only powers of c occur in denominators.",
+      "result": "passed",
+      "reproduction": "The explicit relations, differential matrices and the two top tensor expansions are included in papers/nc-p1123.tex. This finite identity check is supplementary, not a computational premise of the proof."
     },
-    "retained_reproduction_commands": [
+    "retained_mixed_rank_proof": {
+      "script": "computations/verify_mixed_ranks.py",
+      "certificate": "computations/mixed_ranks_certificate.json",
+      "certificate_schema": "nc-p1123-mixed-ranks-v1",
+      "arithmetic": "Integer Bareiss elimination with pivoting and exact-division checks; no floating point, random sampling or omitted cyclic representatives.",
+      "counts": {
+        "range_tuples": 78125,
+        "mean_zero_tuples": 8135,
+        "adjacent_bounded_tuples": 890,
+        "zero_determinants": 1,
+        "nonzero_determinants": 889
+      },
+      "unique_survivor": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nonzero_absolute_determinant_range": [
+        98,
+        3010
+      ],
+      "certificate_comparison": "passed",
+      "independent_audit": {
+        "executed": true,
+        "matrix_construction": "Directly from all terms of the seven-row Koszul Euler polynomial, independently of the collapsed C_delta formula",
+        "arithmetic": "Fraction-based rational Gaussian elimination; no call to the canonical Bareiss routine",
+        "cases": 890,
+        "all_determinants_agree": true,
+        "survivors_agree": true
+      },
+      "current_update_rerun": false,
+      "scope": "The unchanged exact 890-array proof asset for the n=2 mixed-rank theorem is retained. The new n=1 and conditional general lemmas do not depend on a new enumeration."
+    },
+    "reproduction_commands": [
+      "python3 computations/verify_mixed_ranks.py",
       "python3 computations/weighted_baseline.py",
       "python3 computations/verify_skew_ore.py"
     ],
-    "retained_certificate": "computations/baseline_certificate.json",
-    "unchanged_scripts_not_rerun": "weighted_baseline.py and verify_skew_ore.py were not modified for this mixed-rank update; the new theorem has no new dependence on their calculations."
+    "unchanged_scripts_not_rerun": "All retained computation scripts and certificates are unchanged in this update."
   },
   "project_structure": {
     "status": "passed",
@@ -180,7 +213,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt exited 12 before reading TeX source because lualatex.fmt was unavailable. Local-format diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The final v6 main manuscript and v11 supporting sources have not been compiled or visually checked; the blocked attempt was not repeated for this update.",
+    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt exited 12 before reading TeX source because lualatex.fmt was unavailable. Local-format diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v7 main manuscript and v12 supporting sources have not been compiled or visually checked; the blocked attempt was not repeated for this update.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -191,22 +224,22 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "2298fa715fdf5fef503d4fc56d153bd29cadefa58b4b0168af61745830934169",
+        "source_sha256": "18b2c6d39feec3cbdee4a6080d0c77cd100d68e1bad44853629da5cf1118efdf",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "992397ee83e15c0478246afcef212584511269c56fbc04562264cb922f9d5415",
+        "source_sha256": "ce0b20657cf0a9e71f3c3839c33551085f396f27523879ee4118e69ad055f7d2",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "4d6b7d3bacb647bd6770879b3c11d1853790f1b2e289c70c59509427d2c3fb54",
+        "source_sha256": "ad5677750d9d990c24d2652e8ee2aaed740b0a8344e2f4fa060d0d83814362b5",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "945430cf4010cc6ffe73e2c54b4ae68d9f215bbe2ba8f8cc44d0017370679627",
+        "source_sha256": "20262674e84b3c7b931c98012e801cc1f61689e7ba41d71d2af8843c1a3ff854",
         "current_pdf_verified": false
       }
     ],

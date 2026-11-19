@@ -27,9 +27,9 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\qgr}{\operatorname{qgr}}
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
-\large Ore表示・$\mathbb Z$-整域の1周期性と添字保持同型}
+\large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v6}
+\date{2026年11月19日\quad 統合版 v7}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -62,11 +62,23 @@ AS添字は$n+5$で、最小解消の内部次数は4本の対角線上にある
 また整域性は、重み2の生成元族の左右正則性と同値であり、7周期で七つの添字に還元できる。
 このOre表示間の添字保持同型の存在を、一つの可逆行列と有限個の等式で判定する。
 対角量子族では三係数への正規化後に残る同一視を一つの対合で完全に記述する。
-全対象の整域性、1周期性の自動性、一般の同型軌道の幾何は未解決である。
+この四次元対象での整域性、1周期性の自動性、一般の同型軌道の幾何は未解決である。
+
+任意$n$の重み$(1^n,2,3)$の語長二次AS正則$\mathbb Z$-整域を、
+単一の次数付き二段Ore拡大の付随$\mathbb Z$-代数で尽くす主張は成立しない。
+$n=1$で、標準Hilbert級数と左右noetherian性を持つにもかかわらず、
+最小周期が2となるAS正則次元3の明示例を構成する。
+PBW基底、左右の線型解消、AS双対性および周期の障害を直接証明する。
+本例は添字に依存する二段Ore表示を持つため、通常の次数付き代数への下降と、
+$\mathbb Z$-代数上の添字付きOre表示の網羅性を区別する。
+$n=1$の全整域対象は添字付き二段Ore表示を持つことを証明し、
+正規形$(c;\alpha,\beta)$の全同型類を$c$固定・$(\alpha,\beta)$の共通スカラー倍で分類する。
+1周期性は$\alpha^2=c\beta^2$と同値であり、その他の対象は最小周期2を持つ。
+$n\geq3$での添字付きOre網羅性と1周期下降の可否は未解決である。
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v6\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v7\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -121,7 +133,7 @@ $\Gclass_n^{\mathrm{qd}}$は、さらに整域であり、最小生成元のあ�
 語長とは、重み1、2、3のどの生成元も長さ1として数える次数である。
 \end{definition}
 
-本稿の網羅定理は$\Gclass_n^{\mathrm{qd}}$に対するものである。
+通常の次数付き代数に対する本稿の網羅定理は$\Gclass_n^{\mathrm{qd}}$に対するものである。
 任意の$n$について
 \[
 A=B[z;\sigma][w;\tau,D],\qquad
@@ -145,6 +157,20 @@ Hilbert級数・noetherian性・1周期性を仮定しない広い対象$\mathca
 有限整数検査を組み合わせる。定理\ref{idx:thm:finite-isomorphism}は、さらに
 この表示間の裸の添字保持同型の存在を有限個の行列条件に帰着する。
 同型判定は全特殊値を含むが、一般の軌道の標準形・成分・特殊化の列挙とは区別する。
+
+この四次元の下降定理を、そのまま任意$n$の$\mathbb Z$-整域へ拡張することはできない。
+第\ref{genidx:sec:general-target}節では、Hilbert級数・noetherian性・1周期性を仮定しない
+一般対象$\mathcal Q_n^{\mathrm{dom}}$を定義し、
+定理\ref{genidx:thm:period-two-counterexample}で$n=1$の最小周期2の例を与える。
+この例は標準Hilbert級数と左右noetherian性も満たす。
+従ってこれらを追加しても、単一の次数付き代数への下降は一般には成立しない。
+一方、本例には添字付き二段Ore表示がある。
+定理\ref{genidx:thm:one-light-ore}は$n=1$の全整域対象でこの表示を導き、
+定理\ref{genidx:thm:one-light-classification}は全同型類と周期を決定する。
+$n\geq3$における添字付きOre網羅性、1周期性と下降の可否は未解決である。
+Van den Bergh\cite[Definition 4.1.1, Theorem 4.2.2]{VdB}の
+通常の三次元quadratic $\mathbb Z$-代数の1周期性定理は、隣接jumpだけで生成される型を扱う。
+本例のprimitive jumpsは$(1,2,3)$であり、その仮定には含まれない。
 
 \paragraph{同型問題に関する先行研究との関係。}
 Auroux--Katzarkov--Orlov\cite[\S2, Proposition 2.6]{AKO}の重み付き対角量子多項式環は
@@ -1915,8 +1941,9 @@ $A$のglobal dimension 4は次数付き解消の長さの上界でもある。
 本節の非語長二次の定理は、一般の7周期的対象を分類するものではない。
 語長二次の$\mathbb Z$-整域については、
 第\ref{idx:sec:domain}節でnoetherian性と1周期性も結論として導く。
-また、一般の語長2次AS正則$\ZZ$-代数において所定のHilbert級数が
-強制されるかという全体被覆の問題も残る。
+本稿の四次元対象$\mathcal Q$では、所定のHilbert級数も
+系\ref{idx:cor:all-standard}で強制する。
+整域性を課さない全対象の同型分類はなお未完成である。
 
 \section{具体例と中心生成元}
 \subsection{対角量子多項式環}
@@ -2208,6 +2235,471 @@ $a*b=a\theta^{\deg a}(b)$という積で二つの順序を比較すれば
 $X_a,X_b,X_{ab}$の係数数から
 非対角モジュライ成分の次元を推定することもできない。
 \end{remark}
+
+\section{任意の$n$における$\mathbb Z$-整域と下降の障害}
+\label{genidx:sec:general-target}
+
+\subsection{対象と二種類のOre表示}
+$n\geq1$とし、積の規約を$A_{ij}A_{jk}\subset A_{ik}$とする。
+次のクラスは、通常の次数付き代数に関する
+定義\ref{def:general-class}の$\Gclass_n^{\mathrm{qd}}$とは区別する。
+
+\begin{definition}\label{genidx:def:target}
+$\mathcal Q_n^{\mathrm{dom}}$は、次の条件を満たす$\mathbb Z$-代数のクラスとする。
+\begin{enumerate}
+\item $A_{ii}=k$、$A_{ij}=0$ ($i>j$) であり、各$A_{ij}$は有限次元である。
+\item $I=\bigoplus_{i<j}A_{ij}$、$W=I/I^2$について、各$i$で
+\[
+\dim W_{i,i+1}=n,\qquad
+\dim W_{i,i+2}=\dim W_{i,i+3}=1
+\]
+であり、その他の成分は零である。
+\item 添字を保つ語長斉次二次表示$A=T_{\mathbb Z}(W)/(R)$を持つ。
+\item 左右の大域次元は$n+2$であり、全ての左右単純加群は
+有限生成射影による有限解消を持つ。各行・各列の累積次元は多項式的に増大する。
+\item $P_i=e_iA$、$S_i=P_i/P_iI$、$L_i=Ae_i/IAe_i$とすると、
+ある全単射$\ell:\mathbb Z\to\mathbb Z$について
+\[
+\Ext_A^p(S_i,A)=0\quad(p\ne n+2),\qquad
+\Ext_A^{n+2}(S_i,A)\simeq L_{\ell(i)}
+\]
+であり、左側にも対応するAS双対性を要求する。
+\item 任意の合成可能な非零元$a\in A_{ij}$、$b\in A_{jk}$について$ab\ne0$である。
+\end{enumerate}
+\end{definition}
+
+この定義には、所期のHilbert級数、noetherian性、Koszul性、一定のAS添字、
+1周期性を含めない。$A(s)_{ij}=A_{i+s,j+s}$と書く。
+$A\simeq A(1)$であることと、ある通常の次数付き代数$D$について
+$A\simeq\check D$となることは同値である
+\cite[Lemma 3.4]{VdB}。
+従って
+\begin{equation}\label{genidx:eq:graded-descent-question}
+A\simeq\check{\bigl(B[z;\sigma][w;\tau,\partial]\bigr)}
+\end{equation}
+という表示は、通常の次数付き代数への1周期下降を含む強い主張である。
+
+これとは別に、添字に依存するOre表示を考えられる。
+$C$を$\mathbb Z$-代数、$d>0$、$\theta:C(d)\to C$を同型とし、線型写像
+\[
+\delta_{ij}:C_{i+d,j+d}\longrightarrow C_{i,j+d}
+\]
+が、$a\in C_{i+d,j+d}$、$b\in C_{j+d,k+d}$について
+\begin{equation}\label{genidx:eq:indexed-derivation}
+\delta_{ik}(ab)=\theta_{ij}(a)\delta_{jk}(b)+\delta_{ij}(a)b
+\end{equation}
+を満たすとする。$w_i:i\to i+d$を付加し、
+\[
+w_i a=\theta_{ij}(a)w_j+\delta_{ij}(a)
+\]
+を関係とする。乗法が
+\[
+\bigoplus_{m\geq0}
+C_{i,j-md}\,w_{j-md}w_{j-(m-1)d}\cdots w_{j-d}
+\longrightarrow A_{ij}
+\]
+という一意なPBW分解を与えるとき、これを添字付きOre拡張という。
+$m=0$の語は空語とする。
+二段表示では、まずjump 2の変数$z_i$を同様に付加して$C$を作り、
+次にjump 3の変数$w_i$を付加する。
+この表示は、それ自体では最終代数$A$の1周期性を要求しない。
+以下の例は両者の相違を具体化する。
+
+\subsection{$n=1$の添字付き二段Ore表示}
+\begin{theorem}[一つのjump 1生成元を持つ整域の網羅]
+\label{genidx:thm:one-light-ore}
+$A\in\mathcal Q_1^{\mathrm{dom}}$とする。
+$A$は語長Koszulで、AS頂点置換は$\ell(i)=i+6$であり、各行のHilbert級数は
+\[
+H_i(u,t)=\frac1{(1-ut)(1-ut^2)(1-ut^3)}
+\]
+である。最小生成元$x_i,z_i,w_i$をそれぞれjump 1、2、3に選ぶと、
+ある$a_i,b_i,c_i\in k^\times$と$d_i\in k$について
+\begin{equation}\label{genidx:eq:one-light-relations}
+\begin{aligned}
+z_i x_{i+2}&=a_i x_i z_{i+1},\\
+w_i x_{i+3}&=b_i x_i w_{i+1}+d_i z_i z_{i+2},\\
+w_i z_{i+3}&=c_i z_i w_{i+2}
+\end{aligned}
+\end{equation}
+が全関係を生成する。係数は
+\begin{align}
+a_i c_i b_{i+2}&=a_{i+3}b_i c_{i+1},\label{genidx:eq:one-light-consistency-one}\\
+c_i d_{i+2}&=a_{i+3}d_i\label{genidx:eq:one-light-consistency-two}
+\end{align}
+を満たす。
+各始点で、合成可能な添字を付けた$x^p z^q w^r$ ($p,q,r\geq0$) がPBW基底を与える。
+$B=\check{k[x]}$から$z_i$を付加して得る部分代数$C$、次いで$w_i$を付加する
+添字付き二段Ore表示が全対象を尽くす。
+\end{theorem}
+\begin{proof}
+\paragraph{AS平行移動とKoszul性。}
+$E_{ij}^p=\Ext_A^p(S_i,S_j)$と置く。
+有限生成射影による有限解消により、各$S_i$はperfectである。
+各有限次元の頂点・内部次数成分で取る線型双対を$D_k$と書くと、
+評価の双対性とAS条件から
+\[
+\begin{aligned}
+D_k\operatorname{RHom}_A(S_i,S_j)
+&\simeq\operatorname{RHom}_A
+ (S_j,D_k\operatorname{RHom}_A(S_i,A))\\
+&\simeq\operatorname{RHom}_A(S_j,S_{\ell(i)})[3]
+\end{aligned}
+\]
+を得る。従ってYoneda積による
+$E_{ij}^p\otimes E_{j,\ell(i)}^{3-p}\to E_{i,\ell(i)}^3\simeq k$
+は完全対合である。この導出はnoetherian性やKoszul性を用いない。
+各top空間のtraceを選ぶと、巡回式から積を保つNakayama同型
+$E_{ij}^p\to E_{\ell(i),\ell(j)}^p$を得る。
+$E^1$の有向グラフでは全てのjumpが正であり、全てのjump 1が存在するため、
+到達可能性は整数の大小関係に一致する。
+従って$\ell$は順序を保つ全単射であり、$\ell(i)=i+L$となる。
+
+内部語長はTorの次数を正に記録する。
+二次表示により$E^1$は語長1、$E^2$は語長2に集中する。
+$E^1$と$E^2$の完全対合から、各top $E^3$の語長は3である。
+これより最小解消は線型であり、$A$は語長Koszulである。
+
+\paragraph{関係の重み。}
+jump 1、3の非零生成元の積が零にならないので、
+重み2、6の関係空間はそれぞれ$kxx$、$kww$の中で零となる。
+二次関係の重みは従って3、4、5だけである。
+一方、$E^2$と$E^1$の完全対合により、各始点の関係は
+重み$L-1,L-2,L-3$に一つずつあり、その他にはない。
+これらの三つの重みが3、4、5に入ることから$L=6$を得る。
+従って$r_3(i)=r_4(i)=r_5(i)=1$である。
+整域性により$R_3(i)$と$R_5(i)$の両経路への射影は非零なので、
+その生成元を
+\[
+r_{3,i}=z_i\otimes x_{i+2}-a_i x_i\otimes z_{i+1},\qquad
+r_{5,i}=w_i\otimes z_{i+3}-c_i z_i\otimes w_{i+2}
+\]
+と書ける。ここで$a_i,c_i\ne0$である。
+
+\paragraph{重み4関係の両係数。}
+$R_4(i)$の生成元を
+\[
+r_{4,i}=p_i w_i\otimes x_{i+3}
+       +q_i x_i\otimes w_{i+1}+h_i z_i\otimes z_{i+2}
+\]
+と書く。最高Koszul空間$K_3(i,i+6)$の生成元$T_i$は、完全対合により
+\begin{align*}
+T_i&=u_i x_i\otimes r_{5,i+1}
+     +v_i z_i\otimes r_{4,i+2}+t_i w_i\otimes r_{3,i+3}\\
+&=u_i' r_{3,i}\otimes w_{i+3}
+     +v_i' r_{4,i}\otimes z_{i+4}+t_i' r_{5,i}\otimes x_{i+5}
+\end{align*}
+と書け、六つの係数は全て非零である。
+$xwz$と$wxz$の係数を比較すると
+\[
+u_i=v_i'q_i,\qquad -t_i a_{i+3}=v_i'p_i
+\]
+となる。従って$p_i,q_i\ne0$であり、
+$b_i=-q_i/p_i$、$d_i=-h_i/p_i$として
+\eqref{genidx:eq:one-light-relations}の第2式を得る。
+
+\paragraph{Hilbert級数とPBW基底。}
+得られた線型解消のEuler式は
+\begin{align*}
+1={}&H_i-u(tH_{i+1}+t^2H_{i+2}+t^3H_{i+3})\\
+&+u^2(t^3H_{i+3}+t^4H_{i+4}+t^5H_{i+5})-u^3t^6H_{i+6}.
+\end{align*}
+全行の定数項は1であり、重み$m$の係数はより小さい重みの係数から決まる。
+従って重みに関する帰納法により全行が一致し、表示したHilbert級数を得る。
+
+$zx,wx,wz$を\eqref{genidx:eq:one-light-relations}で右へ並べ替える。
+語長を固定して$w>z>x$の辞書式順序を使うと、各書き換えで順序が減少する。
+従って$x^p z^q w^r$が全体を張る。
+これらの語を数えた二変数級数は上のHilbert級数と等しいため、
+各有限次元成分でこの全射は同型となり、PBW基底を得る。
+
+唯一の重なり$w_i z_{i+3}x_{i+5}$の二通りの簡約を比較する。
+$x_i z_{i+1}w_{i+3}$の係数はそれぞれ
+$a_i c_i b_{i+2}$と$a_{i+3}b_i c_{i+1}$、
+$z_i z_{i+2}z_{i+4}$の係数は$c_i d_{i+2}$と$a_{i+3}d_i$である。
+PBW基底の独立性から\eqref{genidx:eq:one-light-consistency-one}、
+\eqref{genidx:eq:one-light-consistency-two}が従う。
+
+\paragraph{添字付きOreデータ。}
+$x_i$だけの部分代数は$B=\check{k[x]}$である。
+$\sigma:B(2)\to B$を
+$\sigma_{i,i+1}(x_{i+2})=a_i x_i$で定めると、これは同型である。
+PBW基底により$x,z$の部分代数$C$は、$\sigma$と導分零による第1段のOre拡張である。
+第2段について
+\[
+\theta:C(3)\to C,\qquad
+\theta_{i,i+1}(x_{i+3})=b_i x_i,\quad
+\theta_{i,i+2}(z_{i+3})=c_i z_i
+\]
+と置く。$C(3)$の関係を保つ条件は
+\eqref{genidx:eq:one-light-consistency-one}であり、
+生成元と一次元関係空間上の可逆性から$\theta$は同型である。
+さらに
+\[
+\delta_{ij}:C_{i+3,j+3}\to C_{i,j+3},\qquad
+\delta_{i,i+1}(x_{i+3})=d_i z_i z_{i+2},\quad
+\delta_{i,i+2}(z_{i+3})=0
+\]
+を\eqref{genidx:eq:indexed-derivation}の積則で延長する。
+$C(3)$の唯一の型の関係$zx-a_{i+3}xz$に適用した値は
+$(c_i d_{i+2}-a_{i+3}d_i)z_i z_{i+2}z_{i+4}=0$なので、正しく定義される。
+生成関係は\eqref{genidx:eq:one-light-relations}に一致し、
+PBW基底はOre拡張の一意な分解を与える。
+\end{proof}
+
+\subsection{$n=1$の全同型類と周期}
+$c\in k^\times$と$(\alpha,\beta)\in k^2$に対し、全整数$m$について
+\begin{equation}\label{genidx:eq:normal-d-sequence}
+d_{2m}=c^{-m}\alpha,\qquad d_{2m+1}=c^{-m}\beta
+\end{equation}
+と置く。$A(c;\alpha,\beta)$を、生成元$x_i,z_i,w_i$と関係
+\begin{equation}\label{genidx:eq:normal-one-light}
+\begin{aligned}
+z_i x_{i+2}&=x_i z_{i+1},\\
+w_i x_{i+3}&=x_i w_{i+1}+d_i z_i z_{i+2},\\
+w_i z_{i+3}&=c z_i w_{i+2}
+\end{aligned}
+\end{equation}
+で定める。
+
+\begin{theorem}[一つのjump 1生成元を持つ全整域の同型分類]
+\label{genidx:thm:one-light-classification}
+全ての$A(c;\alpha,\beta)$は$\mathcal Q_1^{\mathrm{dom}}$に属し、
+語長Koszul、AS添字6、標準Hilbert級数を持つ。
+左右の表現可能加群はnoetherianである。
+逆に全ての$A\in\mathcal Q_1^{\mathrm{dom}}$はこの形の代数と添字保持同型である。
+
+二つの正規形が添字保持同型であるための必要十分条件は
+\begin{equation}\label{genidx:eq:one-light-isomorphism}
+c'=c,\qquad (\alpha',\beta')=s(\alpha,\beta)
+\quad\text{となる }s\in k^\times\text{ が存在すること}
+\end{equation}
+である。従って各$c$について同型類の集合は
+$\{0\}\sqcup\mathbb P^1(k)$と同一視できる。
+
+全ての対象は2周期であり、1周期であるための必要十分条件は
+\begin{equation}\label{genidx:eq:one-light-period-one}
+\alpha^2=c\beta^2
+\end{equation}
+である。この条件は$(\alpha,\beta)=(0,0)$も含む。
+条件を満たさない対象の最小正周期は2である。
+\end{theorem}
+\begin{proof}
+\paragraph{任意の対象の正規化。}
+定理\ref{genidx:thm:one-light-ore}の係数$a_i,b_i,c_i,d_i$から始める。
+生成元を$x_i'=X_i x_i$、$z_i'=Z_i z_i$、$w_i'=W_i w_i$と変更すると、
+新しい係数は
+\begin{align*}
+a_i'&=a_i\frac{Z_iX_{i+2}}{X_iZ_{i+1}},&
+b_i'&=b_i\frac{W_iX_{i+3}}{X_iW_{i+1}},\\
+c_i'&=c_i\frac{W_iZ_{i+3}}{Z_iW_{i+2}},&
+d_i'&=d_i\frac{W_iX_{i+3}}{Z_iZ_{i+2}}
+\end{align*}
+となる。$X_i=1$とし、非零の$Z_0,W_0$から
+$Z_{i+1}=a_iZ_i$、$W_{i+1}=b_iW_i$を正負両方向に解くと、$a_i'=b_i'=1$となる。
+この正規化の後、\eqref{genidx:eq:one-light-consistency-one}は$c_i'=c_{i+1}'$を与える。
+その一定値を$c$と書けば、\eqref{genidx:eq:one-light-consistency-two}は
+$cd_{i+2}'=d_i'$となる。従って$\alpha=d_0'$、$\beta=d_1'$で
+\eqref{genidx:eq:normal-d-sequence}を得る。
+
+\paragraph{全パラメータのPBW基底・整域性・noetherian性。}
+逆に$c\ne0$、$\alpha,\beta\in k$を任意に取る。
+$w>z>x$の語長辞書式順序で\eqref{genidx:eq:normal-one-light}を書き換える。
+包含曖昧性はなく、唯一の重なり$w_i z_{i+3}x_{i+5}$の差は
+$(cd_{i+2}-d_i)z_i z_{i+2}z_{i+4}=0$である。
+Diamond lemma\cite{Bergman}により、各始点で$x^p z^q w^r$が基底となる。
+従って各行・各列のHilbert級数は
+$((1-ut)(1-ut^2)(1-ut^3))^{-1}$であり、正連結・局所有限で多項式増大する。
+
+$w$の個数によるフィルトレーションでは、補正項$d_i zz$は次数を下げる。
+PBW基底から付随次数代数は
+\[
+\gr A\simeq\check{\bigl(k[x,z][w;\tau]\bigr)},\qquad
+\tau(x)=x,\quad\tau(z)=cz
+\]
+である。右辺はnoetherianな整域の付随$\mathbb Z$-代数である。
+非零元の最高フィルトレーション成分の積は非零なので、$A$は$\mathbb Z$-整域となる。
+また各表現可能加群の部分加群の付随次数加群は有限生成である。
+その斉次生成元を持ち上げ、非負の$w$個数について帰納すると元の部分加群も有限生成となる。
+これを左右に適用し、左右noetherian性を得る。
+
+\paragraph{明示的な線型解消。}
+$P_j=e_jA$と置く。右単純加群$S_i$について、語長シフトを省略した複体
+\begin{multline*}
+0\longrightarrow P_{i+6}\xrightarrow{\partial_3}
+P_{i+3}\oplus P_{i+4}\oplus P_{i+5}\\
+\xrightarrow{\partial_2}P_{i+1}\oplus P_{i+2}\oplus P_{i+3}
+\xrightarrow{\partial_1}P_i\longrightarrow S_i\longrightarrow0
+\end{multline*}
+を、左乗法の行列
+\[
+\partial_1=(x_i\ z_i\ w_i),
+\]
+\[
+\partial_2=\begin{pmatrix}
+-z_{i+1}&-w_{i+1}&0\\
+x_{i+2}&-d_i z_{i+2}&-c w_{i+2}\\
+0&x_{i+3}&z_{i+3}
+\end{pmatrix},\qquad
+\partial_3=\begin{pmatrix}c w_{i+3}\\-z_{i+4}\\x_{i+5}\end{pmatrix}
+\]
+で定める。関係式と$cd_{i+2}=d_i$により$\partial_1\partial_2=\partial_2\partial_3=0$である。
+二次表示の定義から$\ker \partial_1=\operatorname{im}\partial_2$であり、整域性から$\partial_3$は単射である。
+PBW Hilbert級数のEuler式を各有限次元二次数成分で使うと、
+$\ker \partial_2$と$\operatorname{im}\partial_3$の次元が一致し、この複体は正確となる。
+左右を逆にした表示でも同じ議論が成立する。
+全ての微分成分が語長1なので、$A$は語長Koszulである。
+
+\paragraph{AS双対性と大域次元。}
+関係テンソルを
+\begin{align*}
+r_{3,i}&=z_i\otimes x_{i+2}-x_i\otimes z_{i+1},\\
+r_{4,i}&=w_i\otimes x_{i+3}-x_i\otimes w_{i+1}-d_i z_i\otimes z_{i+2},\\
+r_{5,i}&=w_i\otimes z_{i+3}-c z_i\otimes w_{i+2}
+\end{align*}
+とする。最高Koszul空間は、語長3・重み6のテンソル
+\begin{align*}
+T_i&=r_{5,i}\otimes x_{i+5}-r_{4,i}\otimes z_{i+4}
+       +c r_{3,i}\otimes w_{i+3}\\
+&=w_i\otimes r_{3,i+3}-c z_i\otimes r_{4,i+2}
+       +x_i\otimes r_{5,i+1}
+\end{align*}
+で生成される。二つの表示は$cd_{i+2}=d_i$によって一致する。
+上の線型解消から、二次双対の各行の二重次数多項式は
+\[
+1+u(t+t^2+t^3)+u^2(t^3+t^4+t^5)+u^3t^6
+\]
+である。$T_i$の両表示に現れる係数は全て非零なので、
+$E^1E^2$と$E^2E^1$のtopへの対合はともに完全である。
+$E^0E^3$と$E^3E^0$の対合も完全であり、二次双対はFrobeniusである。
+この対合で右Koszul解消の双対を6移動した左Koszul解消と同一視できるため、
+両側のAS条件と$\ell(i)=i+6$を得る。
+
+通常の大域次元についても確認する。
+$R_0=\bigoplus_i ke_i$とし、上のKoszul空間を$K_p$とすると、
+線型解消から得られる二側Koszul複体
+$A\otimes_{R_0}K_\bullet\otimes_{R_0}A\to A$は長さ3の射影解消である。
+各項と終端$A$は左右いずれの$A$加群としても射影なので、
+この有界完全列は左加群としても右加群としてもsplitする。
+従って任意の右加群を左側からテンソルしても正確であり、
+各項は表現可能右加群の直和となる。左加群についても同様である。
+これにより左右の大域次元は高々3で、非零の$E^3$が下界3を与える。
+全ての単純解消は上の有限生成射影解消であり、
+$A(c;\alpha,\beta)\in\mathcal Q_1^{\mathrm{dom}}$が従う。
+
+\paragraph{全ての添字保持同型。}
+補題\ref{idx:lem:linearization}により、同型の存在については
+生成元上の語長線型な変更だけを調べればよい。
+primitive jump 1、2、3の各空間は一次元なので、全ての線型変更は
+$x_i'=X_i x_i$、$z_i'=Z_i z_i$、$w_i'=W_i w_i$の形である。
+正規化$a_i=b_i=1$を保つ条件は
+\[
+Z_i=KX_iX_{i+1},\qquad
+W_i=HX_iX_{i+1}X_{i+2}
+\]
+となる一定の$K,H\in k^\times$が存在することである。
+上の係数変換式に代入すると
+\[
+c'=c,\qquad d_i'=(H/K^2)d_i
+\]
+を得る。逆に任意の非零スカラー$H/K^2$は実現できる。
+これで\eqref{genidx:eq:one-light-isomorphism}の必要十分性を得る。
+これは同型の存在を分類する議論であり、全ての非線型自己同型が線型だとは主張しない。
+
+\paragraph{周期。}
+1移動した代数の正規化パラメータは
+$(c;\beta,c^{-1}\alpha)$である。
+従って1周期性は、この組と$(c;\alpha,\beta)$が共通スカラー倍で一致することと同値である。
+零組なら成立し、非零組ならその条件は$\alpha^2=c\beta^2$に等しい。
+一方、2移動のパラメータは$(c;c^{-1}\alpha,c^{-1}\beta)$なので、常に元と同型である。
+従って1周期条件を満たさない場合の最小正周期は2である。
+\end{proof}
+
+\begin{remark}[1周期部分の通常の二段Ore表示]
+条件\eqref{genidx:eq:one-light-period-one}は、通常の次数付き二段Ore拡大の
+付随$\mathbb Z$-代数として表示できるための必要十分条件でもある。
+必要性は1周期性から従い、十分性は次の明示式で分かる。
+
+$(\alpha,\beta)=(0,0)$なら
+\[
+D=k[x][z][w;\tau],\qquad \tau(x)=x,\quad\tau(z)=cz
+\]
+とすれば$\check D=A(c;0,0)$である。
+非零の組が$\alpha^2=c\beta^2$を満たすなら$\alpha,\beta\ne0$であり、
+$q=\beta/\alpha$と置くと$q^2=c^{-1}$となる。この場合は
+\[
+D=k[x][z][w;\tau,\partial],\qquad
+\tau(x)=qx,\quad\tau(z)=z,\quad
+\partial(x)=\alpha z^2,\quad\partial(z)=0
+\]
+とする。$\tau$は$k[x,z]$の自己同型であり、
+$\partial$の$\tau$-導分則は関係$zx=xz$を保つ。
+$\check D$の生成元$w_i$を$q^i w_i$へ変更すると、
+$w_i x_{i+3}=x_i w_{i+1}+\alpha q^i z_i z_{i+2}$、
+$w_i z_{i+3}=q^{-2}z_i w_{i+2}$となり、正規形$A(c;\alpha,\beta)$を得る。
+いずれも$|x|=1$、$|z|=2$、$|w|=3$で、第1段は$z$の中心的なOre付加である。
+\end{remark}
+
+\begin{remark}
+各$c$についての$\{0\}\sqcup\mathbb P^1(k)$は、裸の添字保持同型類の集合の記述である。
+これをaffineな不変式商やmoduli stackと同一視してはいない。
+通常の次数付き代数へ下降する対象は、上の1周期条件で正確に選別される。
+この分類と既存の重み付き変形の文献との完全な重複調査は未完であり、
+新規性の最終確認は主張しない。
+\end{remark}
+
+\subsection{通常の次数付き代数へ下降しない明示例}
+\begin{corollary}[最小周期2の三次元整域]
+\label{genidx:thm:period-two-counterexample}
+$\epsilon_i=1$ ($i$が偶数)、$\epsilon_i=0$ ($i$が奇数) とし、
+生成元$x_i,z_i,w_i$に対して
+\begin{align}
+z_i x_{i+2}&=x_i z_{i+1},\label{genidx:eq:counter-zx}\\
+w_i x_{i+3}&=x_i w_{i+1}+\epsilon_i z_i z_{i+2},\label{genidx:eq:counter-wx}\\
+w_i z_{i+3}&=z_i w_{i+2}\label{genidx:eq:counter-wz}
+\end{align}
+で$A$を定める。この$A$は$\mathcal Q_1^{\mathrm{dom}}$に属し、
+語長Koszul、AS添字6、標準Hilbert級数、左右noetherian性を持つが、最小正周期は2である。
+従っていかなる通常の次数付き代数$D$についても$A\not\simeq\check D$であり、
+\eqref{genidx:eq:graded-descent-question}による任意$n$の網羅性は成立しない。
+\end{corollary}
+\begin{proof}
+これは$A(1;1,0)$であり、定理\ref{genidx:thm:one-light-classification}を適用する。
+1周期条件は$1=0$となって成立しないため、最小正周期は2である。
+全ての$\check D$は1周期的なので、通常の次数付き代数へ下降できない。
+
+周期の障害は関係射影からも直接見える。
+重み4関係の$k(z_i\otimes z_{i+2})$への射影の階数は、偶数$i$で1、奇数$i$で0である。
+augmentation filtrationによる線型化と、primitive jump空間が一次元であることから、
+この階数は裸の添字保持同型で不変である。
+従って奇数だけ移動した代数との同型は存在しない。
+\end{proof}
+
+\begin{remark}[三次元の通常のquadratic型との区別]
+Van den Bergh\cite[Definition 4.1.1, Theorem 4.2.2]{VdB}で扱われる
+三次元quadratic $\mathbb Z$-代数は、隣接jumpの三生成元と、
+シフト$(0);(1,1,1);(2,2,2);(3)$の最小解消を持つ型である。
+本例のprimitive jumpsは$(1,2,3)$、解消シフトは
+$(0);(1,2,3);(3,4,5);(6)$なので、その1周期性定理の仮定には含まれない。
+\end{remark}
+
+本例も添字付き二段Ore表示を持つ。
+具体的に$B=\check{k[x]}$、$C=\check{k[x,z]}$とし、
+第1段は標準的な2移動の同型と導分零を用いる。
+第2段では標準的な3移動の同型$\theta:C(3)\to C$に対し
+\[
+\delta_{ij}:C_{i+3,j+3}\to C_{i,j+3},\qquad
+\delta_{i,i+1}(x_{i+3})=\epsilon_i z_i z_{i+2},\quad
+\delta_{i,i+2}(z_{i+3})=0
+\]
+を使う。積則は\eqref{genidx:eq:indexed-derivation}であり、
+$C(3)$の関係$zx=xz$を保つことは$\epsilon_{i+2}=\epsilon_i$に一致する。
+従って本例は、添字付き二段Ore表示と、通常の次数付き代数への下降との相違を示す。
+
+以上で$n=1$の添字付き二段Ore表示と全同型類は決定された。
+$n=2$では次節の定理により、整域性の下で通常の次数付き二段Ore表示まで得られる。
+$n\geq3$で添字付き表示が全対象を尽くすか、また1周期下降がいつ可能かは未解決である。
+その検討では、Hilbert級数やnoetherian性の追加仮定を明示する。
 
 \section{重み$(1,1,2,3)$のAS正則$\mathbb Z$-代数の数値型と整域部分}\label{idx:sec:domain}
 本節では、次数付き代数への帰着を仮定せずに$\mathbb Z$-代数を扱う。
@@ -3673,7 +4165,17 @@ $c\ne0$かつ標数0なので、これは異なる二つの三つ組の同一視
 
 
 \section{分類全体に向けた問題}
-語長二次の$\mathbb Z$-整域は定理\ref{idx:thm:domain-ore}で二段Ore表示へ帰着した。
+重み$(1,1,2,3)$の語長二次$\mathbb Z$-整域は、
+定理\ref{idx:thm:domain-ore}で通常の次数付き二段Ore表示へ帰着した。
+任意$n$について同じ下降を主張すると、定理\ref{genidx:thm:period-two-counterexample}の
+$n=1$の例が反例となる。
+一方、$n=1$では定理\ref{genidx:thm:one-light-ore}と
+定理\ref{genidx:thm:one-light-classification}により、添字付きOre網羅性、全同型類と周期を決定した。
+残る一般化の課題は、$n\geq3$の$\mathcal Q_n^{\mathrm{dom}}$に対する添字付き二段Ore表示の網羅性と、
+$n\geq3$で通常の次数付き代数へ下降できるための条件を決めることである。
+整域性以外にHilbert級数やnoetherian性を追加する場合は、その依存を明示する。
+
+四次元対象について、
 対角skew Ore表示の内部には必要十分な四分岐があるが、
 裸の添字保持同型による全分類には次が残る。
 \begin{enumerate}

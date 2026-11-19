@@ -6,348 +6,282 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月19日\quad 第11版}
+\date{2026年11月19日\quad 第12版}
 \begin{document}
 \maketitle
 
-\section{最初に読む：目標・対象・達成基準}
-重み$(1,1,2,3)$の四次元quadratic AS正則$\mathbb Z$-代数を
-\textbf{添字保持同型で分類する}。基礎体は標数零の代数閉体とする。
-最小生成元空間$A_+/A_+^2$のjumpは各始点で$1,1,2,3$、
-quadraticはその生成元に関する語長二次を意味する。
-最初から1周期性、domain、noetherian、PBW、Calabi--Yau性を要求しない。
-可換基準の射影幾何は重み付き射影スタックである。
+\section{最初に読む：現在の目標と対象}
+現在の主目標は、\textbf{整域性を仮定した、任意の$n\geq1$における
+primitive jumps $(1^n,2,3)$の語長二次AS正則$\mathbb Z$-代数の構造}を明らかにすることである。
+基礎体は標数零の代数閉体を基準とする。
+正連結・局所有限、左右AS次元$n+2$、有限生成射影による単純加群の有限解消、
+各行・各列の多項式増大を保つ。
+最新の研究依頼では$\mathbb Z$-整域性を仮定してよい。
+標準Hilbert級数、noetherian性、Koszul性、1周期性まで仮定してよいという意味にはしない。
+quadraticは、重み1、2、3の最小生成元を全て語長1としたときの斉次二次性である。
 
-広いAS正則対象$\mathcal Q$、所期の重み付き多項式Hilbert級数を持つ部分$\mathcal H$、
-標準Koszul解消を持つ部分$\mathcal S$を定義上は区別するが、
-解析的な制約と厳密な有限整数計算により、現在は三者の一致を証明している。
-\[
-\mathcal Q=\mathcal H=\mathcal S,\qquad
-H(t)=\frac{1}{(1-t)^2(1-t^2)(1-t^3)}.
-\]
-全Qで語長Koszul性、AS添字7、7周期性、標準関係数$(1,2,2,1)$とHilbert級数が従う。
-関係数の強制は、AS仮定から導いた有限候補の厳密排除を含む計算補助証明である。
-低次数のHilbert一致からAS正則性を認定したのではない。
-さらに$\mathbb Z$-整域部分では、1周期性、2段Ore表示、
-左右noetherian性を結論として得た。これらを最初から仮定する必要はない。
-整域性は、選んだ語長斉次表示の七窓の重み2生成元$z_0,\ldots,z_6$が
-全次数で左右正則であることと同値である。
-純jump 1部分$B$は全Qで$\dim B_{i,i+n}=n+1$を満たす。
-残る構造上の核心は、$z_i$の正則性の自動性、関係射影の退化の可否、
-および零因子や最小周期7を持つ対象の存在である。
-整域Ore部分の裸のindexed同型存在には有限行列による必要十分条件が得られ、
-対角三係数族の全同型類も二元群の商として確定した。一般軌道の標準形と幾何はなお課題である。
-全Qの語長線型の最小解消のシフトは
-\[
-(0),\quad(1,1,2,3),\quad(2,3,3,4,4,5),\quad(4,5,6,6),\quad(7)
-\]
-となる。広い対象と整域部分の定義・構造定理は主論文\path{papers/nc-p1123.tex}の
-\texttt{idx:def:target}以下、標準型と七窓の詳細は研究用Z代数原稿
-\path{research/indexed_z_algebra.tex}の\texttt{def:standard}以下を参照する。
-
-分類の達成基準は、対象の網羅的な構造分岐、各枝の正則性の必要十分条件、
-全特殊値を含む同型判定、周期層、成分と特殊化を証明することである。
-標準型の全対象被覆は完成したが、零因子を持つ枝の存在判定と一般軌道の幾何は未完である。
-\textbf{全分類は未完成である。}
+この目標では、二段Ore表示を次の二つに分ける必要がある。
+\begin{enumerate}
+\item 単一のgraded代数$D=B[z;\sigma][w;\tau,\partial]$を用い、
+$A\simeq\check D$とする表示。この表示は$A$の1周期性を含意する。
+\item 生成元族$z_i,w_i$と添字に依存する交換写像・導分を用いる、
+$\mathbb Z$-代数上の二段indexed Ore表示。これは1周期性を要求しない。
+\end{enumerate}
+\textbf{第一の表示が任意$n$の全対象で成立するという主張は、$n=1$の反例により偽である。}
+第二の自然なindexed表示の網羅性は、$n=1,2$で証明した。
+$n=1$では裸の添字保持同型による完全分類と1周期化の必要十分条件も得た。
+\textbf{網羅性の未解決範囲は$n\geq3$である。}
+$n=2$では単一のgraded二段Ore代数へ下降する、より強い構造定理が成立している。
 
 正本は\texttt{uedakazushi/nc-p1123}の\texttt{main}。
-本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読み、
-graded代数、全Qの標準性、Z代数の整域部分の定理を\path{papers/nc-p1123.tex}、
-一般七窓の研究資料を\path{research/indexed_z_algebra.tex}、未収載の着想を\path{research/notes_ja.tex}で確認する。
-外部文献の適用範囲は\path{research/BASELINE.md}に置く。
+再開時は本方針、\path{AGENTS.md}、\path{research/STATE.json}を最初に読む。
+公表用原稿は\path{papers/nc-p1123.tex}、未収載の補助結果と障害は
+\path{research/notes_ja.tex}、$n=2$の七窓表示は\path{research/indexed_z_algebra.tex}にある。
+一次文献の適用範囲は\path{research/BASELINE.md}、実行した検証の範囲は
+\path{research/validation.json}を参照する。
 
-\section{主要な到達点と適用範囲}
-\paragraph{全対象の標準Hilbert型と計算補助証明。}
-主論文\texttt{idx:thm:mixed-relation-ranks}は、整域性を仮定せずに
-$r_3(i)=r_4(i)=2$を証明する。
-外側の関係数$r_2=r_5=1$と合わせ、
-\texttt{idx:cor:all-standard}により$\mathcal Q=\mathcal H=\mathcal S$となる。
-証明の解析的部分では、語長と差次数を記録した七周期Hilbert行列の逆を$P(u,v)$とし、
-非負性と純jump 1部分の発散から$\det P(1,v)\equiv0$を得る。
-その一次係数から$\sum_i r_3(i)=14$が従い、
-三次Koszul syzygyの次元から$r_3(i)+r_3(i+1)\leq5$を得る。
-従って$\delta_i=r_3(i)-2$は
+\section{$n=1$の完全分類と任意$n$への補助結果}
+\subsection{$n=1$のindexed二段Ore表示と完全分類}
+主論文\texttt{genidx:thm:one-light-ore}は、対象$\mathcal Q_1^{\mathrm{dom}}$の全てが
+indexed二段Ore表示を持つことを証明する。
+AS次元3と語長二次性からtopの語長3とKoszul性が従い、
+整域性から$r_2=r_6=0$、AS対合からAS添字6と$r_3=r_4=r_5=1$が得られる。
+topテンソルにより重み4関係の両混合係数が非零となり、
+EulerのHilbert級数と整列語の生成性を比較してPBW基底と二段表示を得る。
+Hilbert級数、noetherian性、Koszul性はここでの追加仮定ではない。
+
+主論文\texttt{genidx:thm:one-light-classification}によれば、生成元を正規化すると
+\begin{align*}
+z_i x_{i+2}&=x_i z_{i+1},\\
+w_i z_{i+3}&=c\,z_i w_{i+2},\\
+w_i x_{i+3}&=x_iw_{i+1}+d_i z_i z_{i+2},
+\end{align*}
 \[
-\delta_i\in\{-2,-1,0,1,2\},\qquad
-\sum_i\delta_i=0,\qquad \delta_i+\delta_{i+1}\leq1
+c\in k^\times,\qquad
+d_{2j}=c^{-j}\alpha,\qquad d_{2j+1}=c^{-j}\beta
+\quad(j\in\mathbb Z)
 \]
-を満たす890個の七配列に限られる。
-残る有限計算では必要条件$\det P(1,1)=0$を整数で厳密に評価し、
-生き残る配列が$\delta=0$だけであることを検証する。
-再現コードは\path{computations/verify_mixed_ranks.py}、
-証明書は\path{computations/mixed_ranks_certificate.json}である。
-独立の整数実装でも照合したが、証明支援系での形式化や第三者査読とは区別する。
-この有限排除は、既にAS正則であると仮定した対象の関係数を制限するものであり、
-一般候補のAS正則性を低次計算で判定するものではない。
+と書ける。逆に、全ての$(c,\alpha,\beta)\in k^\times\times k^2$が
+語長Koszul、左右noetherian、標準Hilbert級数を持つAS3 $\mathbb Z$-整域を与える。
+この逆構成のAS性は具体的な左右解消によって証明した。
 
-\paragraph{四次元$\mathbb Z$-代数の整域部分。}
-重み$(1,1,2,3)$の広い対象$\mathcal Q$で$\mathbb Z$-整域性だけを追加すると、
-標準関係数$(1,2,2,1)$と所期のHilbert級数が従う。
-重み2・語長1の生成元族の正規性から全代数の2周期性が得られ、
-AS双対性からの7周期性と合わせて1周期となる。
-従ってあるgraded代数$C$について$A\simeq\check C$となり、
-$C=B[z;\sigma][w;\tau,D]$、$B$は量子平面またはJordan平面である。
-正規商$C/(z)$の三次syzygyから第2段を導くため、noetherian性は仮定不要であり、
-Ore表示から左右noetherian性が従う。
-完全な証明は主論文\texttt{idx:thm:domain-standard}から\texttt{idx:thm:domain-ore}にある。
-この強化は$n=2$に関するもので、後述の任意$n$の仮定を除去したとはしない。
-また主論文\texttt{idx:prop:z-regular-criterion}により、
-整域性の自動性は七つの$z_i$の左右消去子が全次数で零となるかに帰着する。
-有限添字への還元であり、有限次数の検査で整域性を判定できるとは主張しない。
-
-\paragraph{整域性を使わない重み2・5の関係数の強制。}
-全$A\in\mathcal Q$について、純jump 1部分$B$のbar複体は全体の差次数
-「重み$-$語長」が零の部分であり、その単純解消は長さ2以下である。
-$r_2(i)=a_i$とすると、終点側のHilbert漸化式は
-$b_{i,n}=2b_{i,n-1}-a_{i+n-2}b_{i,n-2}$となる。
-七周期のmonodromyと二つの実際のHilbert係数列を用いて、
-全$a_i=1$か、全$i$で$B_{i,i+n}=0$ ($n\geq14$) かを証明した
-（主論文\texttt{idx:prop:degree-one-dichotomy}）。
-さらに混合関係と成長制限を用いると、有限幅の枝では七周期中の$a_i=2$はちょうど一つで、
-$a_i=0$も現れる。零関係の辺で切った各tensor chainは、二次元関係空間を高々一つしか持たない。
-代数閉体上では、その関係空間を消す非零の積型共変ベクトルを取り、
-左右の一次元関係を一つずつ消すよう延長できる。このため任意の長さの$B$成分が非零となり、
-有限幅に矛盾する。従って全Qで
+二つの正規形が裸の添字保持同型を持つための必要十分条件は、
+$c'=c$かつ$(\alpha',\beta')=s(\alpha,\beta)$となる$s\in k^\times$が存在することである。
+従って各$c$における同型類の\emph{集合}は
+$\{0\}\sqcup\mathbb P^1(k)$である。これをaffine quotientやモジュライ空間の構成と同一視しない。
+1周期となるための必要十分条件は
 \[
-r_2(i)=r_5(i)=1,\qquad \dim B_{i,i+n}=n+1
+\alpha^2=c\beta^2
 \]
-が成り立つ（主論文\texttt{idx:thm:outer-relation-ranks}）。
-非負・多項式増大のEuler数値表があっても、対応する二次代数がそのHilbert係数を持つとは限らない。
-その障害は研究ノートに残し、有限幅の枝を未解決の対象としては扱わない。
-$B$や$A$の整域性はこの定理だけでは従わない。
-混合関係数は前述の計算補助定理で別に強制する。
+であり、零対も含む。それ以外の対象の最小正周期は2である。
 
-\paragraph{整域Ore部分の裸のindexed同型の有限判定。}
-主論文\texttt{idx:thm:finite-isomorphism}は、全整域Oreデータの間の
-裸の添字保持同型の\emph{存在}に必要十分な有限条件を与える。
-基礎平面の関係を$r$、自己同型を$S=\sigma$, $M=\mu$、補正の線型形式を$L$、
-$wz=czw$の係数を$c$とし、二つ目のデータをprimeで表す。
+\subsection{整域・noetherian・標準Hilbertでも1周期化しない例}
+上の分類で$(c,\alpha,\beta)=(1,1,0)$を取る。
+各始点$i$にjump 1、2、3の生成元$x_i,z_i,w_i$を置き、
 \[
-T=MS^{-1},\qquad J=c^{-1}M^2S^{-3},\qquad
-\lambda=c/c',\qquad P_i=(T')^{-i}PT^i.
+\epsilon_i=\begin{cases}1&i\text{ が偶数},\\0&i\text{ が奇数}\end{cases}
 \]
-必要十分なのは、$P\in\mathrm{GL}_2(k)$と$\kappa\in k^\times$が存在して
-\begin{gather*}
-J'P=PJ,\qquad (P\otimes P_1)r\in k^\times r',\\
-L'P_3=\kappa L,\qquad L'P_4=\kappa\lambda L
-\end{gather*}
-となることである。無限個の頂点の変更をこの有限条件へ縮約した。
-これは入力が正しい整域Oreデータであることを前提とし、AS正則性の有限検査でも、
-全非線型自己同型群の記述でもない。残る課題はこの条件の軌道標準形・安定化群・成分・特殊化である。
-
-\paragraph{対角三係数族の完全なindexed同型。}
-$q_{01}=q_{02}=q_{03}=1$へ正規化した三係数を$(a,b,c)$とする。
-全特殊値を含め、二つの対象が同型であることは三係数の一致、または
+とし、関係を
+\begin{align*}
+z_i x_{i+2}&=x_i z_{i+1},\\
+w_i z_{i+3}&=z_i w_{i+2},\\
+w_i x_{i+3}&=x_iw_{i+1}+\epsilon_i z_i z_{i+2}
+\end{align*}
+で定める。この$A$は、語長Koszul、AS次元3、AS添字6、左右noetherianな
+$\mathbb Z$-整域であり、各行の二変数Hilbert級数は
 \[
-\iota(a,b,c)=(a^{-1},b^{-1},ca^3/b^2)
+H_i(u,t)=\frac{1}{(1-ut)(1-ut^2)(1-ut^3)}
 \]
-による一致と同値である（主論文\texttt{diag:thm:indexed-isomorphism}）。
-固定点は$a=1$, $b=\pm1$で$c$は任意の非零値となる。
-従って対角族の同型類は$(k^\times)^3/\langle\iota\rangle$という有限商であり、
-その次元は3である（\texttt{diag:cor:quotient}）。
-これは対角族の商の次元であり、全Ore部分や全ASモジュライの次元とは区別する。
+である。最小正周期は2である。
+完全な証明は主論文\texttt{genidx:thm:period-two-counterexample}にある。
 
-\paragraph{一般の最小生成元次数$(1^n,2,3)$。}
-並行して、次数1の最小生成元を$n$個とするgraded代数を調べる。
-\path{papers/nc-p1123.tex}では、左右noetherian、AS次元$n+2$、
-$H_A(t)=((1-t)^n(1-t^2)(1-t^3))^{-1}$の下で、
-AS添字$n+5$と$\operatorname{Tor}_i$の内部次数$i,\ldots,i+3$を導く。
-語長二次なら、整域性なしでも語長Koszul性と
-重み$2,3,4,5$の関係数$\binom n2,n,n,1$が従う。
-さらに整域なら、全$n$で$B[z;\sigma][w;\tau,D]$という表示が網羅的で、
-$B=k\langle A_1\rangle$はAS正則次元$n$、Hilbert級数$(1-t)^{-n}$となる。
-商$A/(z)$の二変数Hilbert級数と左右noetherian性による有限生成加群の議論が
-任意次元での網羅性を与える。
-一般の斉次Oreデータの有限係数条件、全graded同型、二次部分の同型存在判定も同稿にある。
-最小生成元次数のみでは、AS次元が$n+m+2$となる明示族があり、次元は無界である。
-この例は次元$n+2$を固定した対象の反例ではない。
+語長二次PBW表示の唯一の重なり$wzx$は$\epsilon_i=\epsilon_{i+2}$によって解消する。
+一方、重み4関係から$k(z_i z_{i+2})$への射影階数は偶数位置で1、奇数位置で0となる。
+この階数列は、augmentation filtrationによる同型の線型化を用いると、
+裸の添字保持同型でも保存される。そのため1周期同型は存在しない。
+この反例は$n=1$の完全分類の一例であり、indexed表示の網羅性と両立する。
 
-\paragraph{追加仮定付きgraded部分のOre分類。}
-複素数体上の連結・局所有限・左右noetherianな四次元AS正則graded代数について、
-最小生成元次数$(1,1,2,3)$と所期のHilbert級数を仮定すると、
-量子平面またはJordan平面からの段階的Ore拡大
-$B[z;\sigma,\delta][w;\tau,D]$で全対象を尽くせる。
-有限の係数条件、全graded同型を与える三角形変換、中心的な次数3最小生成元を持つ場合を
-\path{papers/nc-p1123.tex}で証明する。
-語長二次部分には非対角自己同型を許すチャートとgraded同型の存在判定がある。
-このgraded定理だけでは裸の添字保持同型の商を分類しない。
-非1周期対象が存在すれば、上記の整域部分の定理により必ず零因子を持つ。
+従って、標準Hilbert級数、Koszul性、noetherian性を追加しても、
+単一のgraded二段Ore代数への全$n$での下降は回復しない。
+$n=2$で得た2周期と7周期の結合を、任意$n$へ数字だけ置き換える方法も使えない。
+例えば$n=1$ではAS添字6と2周期から1周期は従わない。
 
-\paragraph{対角skew Ore表示の完全な分岐。}
-重み$(1,1,2,3)$で、三生成元の対角量子多項式環に対し対角自己同型で
-第四生成元を斉次Ore付加する語長二次の全表示を分類した。
-必要十分な四係数式と、表示パラメータ空間の次元$6,5,5,4$の四既約成分、
-全ファイバーの正則性、$zz$射影階数による対角族との非同型性を
-公表用原稿\path{papers/nc-p1123.tex}で証明する。
-この成分は表示空間の成分であり、全ASモジュライの成分ではない。
-既存の二パラメータOre族は、このチャートに含まれる。
+\subsection{任意$n$で使える確実な補助結果}
+研究ノート\texttt{note:general-as-translation}では、有限AS解消と完全対合を持つ
+語長二次対象について、AS頂点置換が$\ell(i)=i+L$という平行移動になり、
+語長を保つ$A\simeq A(L)$が得られることを証明する。
+$E^1$の矢印による到達可能性が整数の順序と一致するので、$n=1$も含む。
+二次表示の復元には$E^1,E^2$とその積で足り、全ExtのKoszul生成性を仮定しない。
+ただし、$L=n+5$や語長Koszul性まで得たとはしない。
 
-主論文と独立原稿に証明を記載した事項を以下に整理する。
-証明の記載と今回の論理監査・計算・組版・査読・新規性は別の状態である。
-\begin{longtable}{p{.27\linewidth}p{.65\linewidth}}
-\toprule
-事項 & 内容と証明位置\\
-\midrule
-\endhead
-同型の線型化 & 語長斉次二次表示の同型の存在を$A_+$進付随次数で線型化する。
-\texttt{prop:linearization}。非線型自己同型群そのものの記述ではない。\\
-一般対象の構造 & 語長二次性からKoszul性、双対性と成長からAS添字7を強制。
-関係数の計算補助証明によりQ=H=S。
-主論文\texttt{idx:thm:mixed-relation-ranks}, \texttt{idx:cor:all-standard}。\\
-一般対象の7周期 & AS双対性からYoneda積の完全対合を得て、Frobenius traceで7移動を構成。
-最小正周期は1または7。\texttt{thm:seven-period}。最小周期7なら零因子を持つ。実例は未構成。\\
-整域部分の標準型 & 整域性による関係射影の単射性と7行のEuler式から標準関係数を強制。
-主論文\texttt{idx:thm:domain-standard}。Hilbert級数は仮定せず導く。\\
-整域部分の1周期・Ore表示 & 正規元族による2周期と7周期を合わせて1周期化。
-三生成元商のsyzygyから2段Ore表示を得て、noetherian性も導く。
-主論文\texttt{idx:thm:domain-period-one}, \texttt{idx:thm:domain-ore}。\\
-整域性の七窓判定 & 選んだ語長斉次表示の重み2生成元$z_0,\ldots,z_6$の
-全次数での左右正則性と$\mathbb Z$-整域性が同値。
-主論文\texttt{idx:prop:z-regular-criterion}。低次有限判定ではない。\\
-有限七窓 & 標準traceから来る周期構造は同型類上で選択によらず、
-全Qが標準関係数の固定階数七窓へ還元される。
-\texttt{thm:finite-window}。AS/Koszul条件の有限な必要十分判定は未完成。\\
-仮定付きgraded分類 & 複素数体、noetherian、指定Hilbert級数の下でOre表示が網羅的。
-Z代数研究原稿\texttt{thm:graded-ore-summary}は独立原稿の定理を要約する。
-全三角形graded同型と語長二次部分も同稿にある。\\
-重み2・5の関係数 & 整域性なしで$r_2(i)=r_5(i)=1$、純jump 1部分の次元は$n+1$。
-二分岐\texttt{idx:prop:degree-one-dichotomy}の有限幅側を積型共変ベクトルで排除する。
-主論文\texttt{idx:thm:outer-relation-ranks}。\\
-重み3・4の関係数 & 七周期Hilbert行列の行列式、三次syzygyの制約、
-有限整数計算から全$r_3(i)=r_4(i)=2$。
-主論文\texttt{idx:thm:mixed-relation-ranks}。コードと証明書を同梱する。\\
-整域Oreの有限同型判定 & 裸のindexed同型存在を$P,\kappa$に関する四つの有限条件で特徴付ける。
-主論文\texttt{idx:thm:finite-isomorphism}。一般軌道幾何は未完成。\\
-対角族の完全同型 & 三係数$(a,b,c)$の一致または$(a^{-1},b^{-1},ca^3/b^2)$。
-全特殊値を含む。主論文\texttt{diag:thm:indexed-isomorphism}, \texttt{diag:cor:quotient}。
-二元群による有限商の次元は3。\\
-非対角族 & $[t,x]=az^2$, $[t,y]=bz^2$を持つOre族の全正則性をPBW・二次双対で証明。
-零と非零の2同型類。\texttt{thm:ore}。\\
-不変分岐 & 重み4関係の$zz$成分への射影階数$\rho_i\in\{0,1\}$は同型不変。
-非零Ore族は全対角族と非同型。\texttt{prop:rho}。
-各階数locusの全被覆は未証明。\\
-\bottomrule
-\end{longtable}
-表示空間の次元98、線型生成元変更群の次元42は検算済みだが、
-差56はモジュライ次元ではない。Koszul条件、Frobenius標準化、安定化群を別に調べる。
-整域部分は全て1周期であり、非1周期例を得たとはしない。
+研究ノート\texttt{note:general-normal-z}では、全始点で
+\[
+r_3(i)=n,\qquad r_5(i)=1
+\]
+が成立し、$z_i$が全て左右正則なら、$z_i$が正規元族をなし、
+$A(2)\simeq A$となることを証明する。
+これは$n=2$の正規元族の議論を任意$n$へ移したものである。
+整域性からは関係射影の単射性と上界$r_3(i)\leq n$, $r_5(i)\leq1$, $r_6(i)=0$が出るが、
+その上界の達成は$n=1,2$では証明したが、$n\geq3$では未証明である。
 
-\section{現在の到達点と研究方針の理由}
-広い対象$\mathcal Q$の整域部分では、標準型・1周期性・2段Ore表示が得られ、
-裸のindexed同型の存在も有限行列条件へ縮約できた。
-対角族では、その条件を全特殊値まで解き、三次元トーラスの二元群による商を得た。
-従って一般Ore部分で次に必要なのは、同型条件の探索ではなく、
-既知の条件を用いた軌道標準形と安定化群・成分・特殊化の解析である。
+研究ノート\texttt{note:one-heavy-frobenius}は、重い生成元を一つ持つ
+\emph{graded}代数に関するFrobenius対合の補助結果である。
+$Q=T(V\oplus kw)/(R\oplus S)$、$R\subseteq V\otimes V$、
+$S\subseteq Vw\oplus wV$とし、$Q$がKoszul AS次元$n+1$、
+$B=T(V)/(R)$自身がKoszul AS次元$n$で、有限解消を持つことを仮定すると、
+$Q\simeq B[w;\mu]$、$\mu\in\operatorname{Aut}_{\mathrm{gr}}(B)$を得る。
+noetherian性、指定Hilbert級数、$Q$の整域性は仮定しない。
+$B$自身のAS性などの仮定を省略したり、一般の$\mathbb Z$-代数に対する
+二段表示の網羅定理と扱ったりしない。
 
-全Qの関係数とHilbert級数は標準型に確定したため、
-非標準数値型の探索は再開課題から外す。
-一方、標準数値型であることだけから整域性や1周期性は得られない。
-$z_0,\ldots,z_6$の全次数での左右正則性が整域性と同値であり、
-最小周期7、非定数の$\rho_i$はその正則性が破れる部分に限られる。
-従って関係空間の次元から、両射影の核、三次syzygy、
-高次の消去子を制御する問題へ進む。
+\subsection{$n\geq3$への一般化に残る論理上の障害}
+$n=1$では$E^1\times E^2\to E^3$からtopの語長3を得る。
+$n=2$ではAS次元4の$E^2\times E^2\to E^4$の完全対合から、
+topの語長が4となり、語長Koszul性を得た。
+$n\geq3$では$E^2$の相補相手が$E^n$となるため、この議論はそのまま移らない。
+既存の任意$n$のgraded証明は、指定Hilbert級数からAS添字$n+5$を導いた後に
+差次数を用いてKoszul性を証明している。
+従って、Hilbert級数を仮定しないindexed対象にその数値結論を引用しない。
 
-全Qの分類という元の目標は維持し、標準型の全対象被覆、
-整域部分の有限同型判定、対角族の完成だけで全分類が終わったとはしない。
-解析的な証明の複数AIエージェントによる独立監査と、有限整数計算の独立照合は行ったが、
-形式化、第三者査読、文献上の新規性の最終確認は未完である。
+また、基底となる純jump 1部分$B$のAS正則性と、
+正規商での重み3生成元族の交換写像を別々に確立する必要がある。
+元の$A$が整域であることから、商$A/(z)$が整域であると結論しない。
+有限次のFrobenius性やHilbert一致だけで、全Koszul複体の正確性を認定しない。
 
-\section{未解決の核心と次の具体的操作}
-\paragraph{P1：整域性の自動性と零因子を持つ枝。}
-$\mathcal Q$の全対象が$\mathbb Z$-整域になるかは、
-選んだ語長斉次二次表示の重み2・語長1の生成元$z_i$について、
-$i=0,\ldots,6$で左右消去子が全次数で零かを調べればよい。
-7周期性による有限添字への還元であり、低次数での乗法単射性だけを結論の根拠にしない。
-まず重み3と5の関係射影の核が生む$v z=0$, $z v=0$, $w z=0$, $z w=0$を調べ、
-AS完全対合と多項式成長がそれらを排除するか検討する。
-低次の核を排除できても、より高い次数の消去子と最小Koszul解消の正確性を追い続ける。
-AS条件に反することを示せれば対象を縮約でき、両立するなら零因子のある枝として記述する。
-単に関係空間の階数を選んだだけの候補をAS正則と認定しない。
+\section{優先順位と次の具体的操作}
+\paragraph{P1：$n\geq3$のindexed二段Ore表示の網羅性。}
+$n=1$の完全分類と$n=2$の構造定理を出発点とし、$n\geq3$の整域対象について、
+基底$\mathbb Z$-代数$B$、jump 2と3の生成元族、添字移動を伴う交換写像と導分を構成する。
+単一のgraded代数への下降をindexed表示の定義に埋め込まない。
+$r_3=n$, $r_5=1$の強制、基底$B$のAS性、正規商の第二段という
+三つの段階に分け、仮定なしに証明できる範囲を調べる。
+特定の中間仮定を置いた定理が得られた場合は、その仮定と全対象への適用の未証明部分を明記する。
 
-この着手点への還元は、正規商のAS正則性、そこからのnoetherian性、
-noetherian AS次元4・GK次元4からの整域性という既知理論を用いる。
-最後の整域性を先に仮定して正則元を作る循環に戻らない。
+\paragraph{P2：$n\geq3$での混合関係数と基底の正則性。}
+整域性による$r_3\leq n$, $r_5\leq1$, $r_6=0$から出発する。
+AS平行移動の存在は使えるが、その具体値と語長Koszul性を先取りしない。
+最小解消の語長・重み・差次数を保って相補対合を追い、
+混合関係数の不足が多項式増大と両立するか調べる。
+標準Hilbert級数を仮定する補助問題と、仮定しない主問題を別に記録する。
+基底$B$のAS性を確立できれば\texttt{note:one-heavy-frobenius}を利用する。
 
-\paragraph{P2：標準関係空間の射影退化。}
-全Qで$(r_2,r_3,r_4,r_5)=(1,2,2,1)$が確定している。
-関係数と有限幅の純jump 1部分の排除を再び探索せず、関係射影の退化を調べる。
-$R_3\subseteq Vz\oplus zV$の両射影の核と像、
-$R_4\subseteq Vw\oplus wV\oplus zz$の射影階数を区別し、
-混合syzygyとFrobenius完全対合が許す組合せを絞る。
-一次元の$R_5\subseteq zw\oplus wz$についても両係数の非消失はまだ仮定しない。
-まずどちらかの係数が零の場合と、$R_3$のどちらかの射影階数が2未満の場合について、
-最初に生じる三次syzygyを計算し、所定のAS解消と両立するかを証明する。
-研究ノート\texttt{note:r5-orientation}では、$R_5(p)=k(zw)$と
-$R_5(m)=k(wz)$が共存するなら$m-p\notin\{2,3,4\}\pmod7$となることを証明した。
-差2、4は三次syzygy、差3はモノミアル商の指数増大で排除する。
-残る差1、5、6と、片方の向きだけの退化を次に調べる。
+\paragraph{P3：周期構造とgraded代数への下降条件。}
+$n=1$では$\alpha^2=c\beta^2$が完全な判定であり、$n=2$では全整域対象が下降する。
+$n\geq3$で正しい条件を探す。
+AS平行移動$L$と正規元族による2周期が得られれば、$\gcd(L,2)=1$のときは1周期となる。
+ただし$L=n+5$は$n\geq3$の主問題で未証明である。
+$L$が偶数の場合には、$\rho_i$などの添字保持不変量と基底変更方程式を使い、
+2周期構造が1周期へ下降する条件を調べる。
+既存の整域Oreデータの有限同型条件は、既にgraded表示を持つ対象の比較に使う。
+それを全indexed対象の1周期化に使用しない。
 
-全Qで語長Koszul性、AS添字7、7周期性は確定している。
-$r_d(i)=r_{7-d}(i+d)$と7行のEuler式を維持し、
-射影の核と全次数のKoszul解消の正確性を追う。
-元の四最小生成元条件を保ち、同じHilbert級数を持つ二生成元・三次四次関係の例を混同しない。
+\paragraph{P4：$n=2$の全分類を副課題として保持する。}
+元の四次元対象$\mathcal Q$の全分類は未完成であり、成果は全て保持する。
+現在は整域性が許されているため、その自動性を主課題の前提作業にはしない。
+副課題として、七つの$z_i$の全次数の左右正則性、混合関係射影の退化、
+最小周期7の零因子例の存在を調べる。
+逆向き片側$R_5$関係の位置差2、3、4（法7）は
+研究ノート\texttt{note:r5-orientation}で排除済みであり、残る差1、5、6と同方向だけの退化が対象となる。
+整域Ore部分の一般軌道の標準形・安定化群・成分・特殊化も保持する。
 
-\paragraph{P3：一般Ore部分の軌道標準形と幾何。}
-主論文\texttt{idx:thm:finite-isomorphism}の有限条件を使い、
-$L=0$と$L\ne0$、$J$の固有値の一致とJordan型を分けて軌道を解析する。
-$J$の共役類だけで判定せず、基礎平面の関係$r$と$L$に関する二つの条件を同時に保持する。
-一般点だけでなく例外値の安定化群と特殊化を求める。
-対角三係数の二元群商は完成済みの回帰例として用い、同型条件の導出をやり直さない。
-表示空間の四成分とmoduli成分を区別し、一般の商が幾何学的に何を表すかも明示する。
+語長二次性を外す$n\geq3$のgraded問題や、幾何学的認識はさらに副次的な課題とする。
+次数1の窓の数だけを置き換えず、各jumpの始点・終点と語長を追う。
 
-\paragraph{P4：一般七窓の正則性と非1周期性。}
-重み4関係の$zz$成分への射影階数$\rho_i$、重み2関係の二因子階数、
-重み3と5関係の両射影階数を組み合わせて零因子を持つ候補を分岐する。
-$\rho_{i+7}=\rho_i$だが、添字平行移動による巡回置換を同型関係として加えない。
-最小周期7または非定数$\rho$の探索を、整域である周期Ore係数族で行わない。
-それらは既に1周期化できることが分かっている。
+\section{保持する主要な結果と適用範囲}
+\subsection{$n=2$の全対象と整域部分}
+ここで$\mathcal Q$は、整域性を課さない重み$(1,1,2,3)$・AS次元4の従来の対象である。
+全$\mathcal Q$について、語長Koszul性、AS添字7、7周期性、標準関係数とHilbert級数を証明した。
+\[
+\mathcal Q=\mathcal H=\mathcal S,\qquad
+H_i(u,t)=\frac{1}{(1-ut)^2(1-ut^2)(1-ut^3)}.
+\]
+語長線型の最小解消の重みシフトは
+\[
+(0);\ (1,1,2,3);\ (2,3,3,4,4,5);\ (4,5,6,6);\ (7)
+\]
+である。これを任意$n$について証明したと読み替えない。
 
-必要な実装は語長$0,\ldots,5$の二次双対を重み別に計算し、
-相補積の完全性を調べた後、元代数のKoszul複体の正確性を独立に検査するものである。
-有限双対のFrobenius性だけではAS正則性を認定しない。
-既知の対角族と初期Ore族を回帰例にし、非1周期候補は基底変更で定数化できないことも証明する。
+外側の関係数$r_2=r_5=1$は解析的に強制した。
+混合関係数$r_3=r_4=2$は七周期Hilbert行列の成長から必要条件を導き、
+890個の整数列の行列式を厳密に検査する計算補助証明である。
+証明は主論文\texttt{idx:thm:outer-relation-ranks},
+\texttt{idx:thm:mixed-relation-ranks}, \texttt{idx:cor:all-standard}にある。
+コード\path{computations/verify_mixed_ranks.py}と
+証明書\path{computations/mixed_ranks_certificate.json}を保持する。
 
-\paragraph{P5：幾何的認識と一般次数列。}
-degree 1 del Pezzoの反標準環・重み6の超曲面、$E_8$量子化との接続では、
-四最小生成元と語長二次の条件が保たれるかを最初に検査する。
-この条件を失うRees代数は比較対象として研究ノートに置く。
+$\mathcal Q$の整域部分では、1周期性と
+\[
+A\simeq\check{\bigl(B[z;\sigma][w;\tau,\partial]\bigr)}
+\]
+を証明した。$B$は量子平面またはJordan平面で、noetherian性も結論である。
+証明は\texttt{idx:thm:domain-standard}から\texttt{idx:thm:domain-ore}にある。
+全$\mathcal Q$について整域性は、選んだ表示の$z_0,\ldots,z_6$が
+全次数で左右正則であることと同値である（\texttt{idx:prop:z-regular-criterion}）。
+有限添字の判定であり、有限次数での検査とは区別する。
 
-任意$n$の一般化は、語長二次・整域・左右noetherian・指定Hilbert級数という
-従来の仮定の下で完了したOre表示を基準とする。
-語長二次性を外す補助課題では$n=3$、次元5を調べる。
-$r_2=3$, $r_3-r_5=2$だけでは$r_4$が決まらないため、
-augmentation filtrationの初期関係と付随次数代数のAS正則性を検証する。
-この補助課題を、主目標である四次元indexed分類の未解決部分の代わりにはしない。
+\subsection{同型判定と七窓}
+既存の整域Oreデータについて、$S=\sigma|_V$, $M=\mu|_V$、
+$T=MS^{-1}$、$J=c^{-1}M^2S^{-3}$、$\lambda=c/c'$、$P_i=T'^{-i}PT^i$と置く。
+裸の添字保持同型の存在は、$P\in\mathrm{GL}_2(k)$、$\kappa\ne0$で
+\[
+J'P=PJ,\quad(P\otimes P_1)r\in k^\times r',\quad
+L'P_3=\kappa L,\quad L'P_4=\kappa\lambda L
+\]
+を満たすことと同値である（\texttt{idx:thm:finite-isomorphism}）。
+任意$n$の既存の二段Ore族にも、基底関係空間を対応させる形で適用できる。
+AS正則性の有限検査でも、全非線型自己同型群の記述でもない。
 
-\section{公表原稿と再現可能性}
-一般の次数列についての構造定理、有限係数条件、同型軌道および反例族は
-\path{papers/nc-p1123.tex}に置く。任意$n$の網羅定理のために独立した証明を要するので、
-四次元の結果も同一公表論文に統合した。元の四次元$\mathbb Z$-代数の対象・仮定は変更しない。
+正規化した対角三係数族の全同型は、一致または
+\[
+(a,b,c)\longmapsto(a^{-1},b^{-1},ca^3/b^2)
+\]
+による一致であり、全特殊値を含む。
+固定点は$a=1$, $b=\pm1$である。
+対角族の同型類の有限商の次元は3となる
+（\texttt{diag:thm:indexed-isomorphism}, \texttt{diag:cor:quotient}）。
+全ASモジュライの成分・次元と同一視しない。
 
-段階的Ore表示による仮定付きgraded分類の証明は
-\path{papers/nc-p1123.tex}に置く。
-対角部分の表示空間の成分分解は\path{papers/nc-p1123.tex}に置く。
-これらと既存のOre結果の文献上の重複は一次資料で引き続き精査する。
-全Qの標準型への帰着、整域部分の$\mathbb Z$-代数構造定理、
-純jump 1部分の二分岐と関係数強制の証明、
-裸のindexed同型の有限行列条件、対角族の完全な二元群商、
-および必要なAS双対性・周期性の証明も、\path{papers/nc-p1123.tex}に統合する。
-未完成の一般$\mathbb Z$-代数分類については\path{research/indexed_z_algebra.tex}に、同型の線型化、有限七窓、二つの基準族、不変分岐を保持する。
-独立した新しい中心定理が得られるまでは論文を細分化しない。
-既知のAKO族や一般Ore手法は明示的に引用し、独自の分類成果と区別する。
-初期の命題の新規性の最終確認は未了であり、現段階を投稿可能な完成稿とはしない。
+$n=2$の全対象は固定階数の七窓表示に入り、表示空間の次元は98、
+線型基底変更群の次元は42である。差56をモジュライ次元とはしない。
+七窓内のAS/Koszul locus、軌道、零因子を持つ枝の幾何は未決である。
+既知の対角族、非零導分を持つ初期Ore族、射影階数$\rho_i$は回帰例・不変量として保持する。
 
-\path{computations/weighted_baseline.py}は外部Python依存を持たず、
-Hilbert数値、全重なり、対角twistを形式的に検算する。
-\path{computations/verify_mixed_ranks.py}と
-\path{computations/mixed_ranks_certificate.json}は、
-全Qの混合関係数を強制する有限整数計算を再現する。
-リポジトリ直下で\texttt{python3 computations/verify\_mixed\_ranks.py}を実行すると、
-890候補の行列式を再計算し、保持した証明書との一致を検査する。
-この証明に必要なコードと証明書は、容易に再生成できる補助出力とは区別して保持する。
-\path{scripts/check_project.py}は構造だけを検査する。
-再現コマンドとLuaLaTeX設定はREADMEに集約する。
-文献PDF、大量の検索結果、キャッシュ、旧原稿、作業実況は一式へ収録しない。
+\subsection{任意$n$の既存graded定理}
+複素数体上の連結・局所有限・左右noetherianなgraded AS正則整域について、
+大域次元$n+2$、最小生成元次数$(1^n,2,3)$、語長二次性および
+\[
+H_A(t)=\frac{1}{(1-t)^n(1-t^2)(1-t^3)}
+\]
+を仮定すれば、二段Ore表示は網羅的であり、基底$B$はAS次元$n$の整域となる。
+これは主論文\texttt{thm:general-quadratic-classification}の定理である。
+この定理の仮定は、その定理を使う範囲では保持する。
+最新のindexed主問題でnoetherian性やHilbert級数が許可されたという意味ではない。
+
+同稿は一般の斉次Oreデータの有限係数条件、全graded同型、
+語長二次部分の同型存在条件も含む。
+$n=2$では語長二次性を仮定しないnoetherian・指定Hilbertのgraded分類もある。
+最小生成元次数だけを固定すると大域次元が$n+m+2$となる明示族も保持する。
+この次元無界の例は、大域次元$n+2$を固定した主問題の反例ではない。
+またSklyanin基底を用いる例は、二段Oreの基底まで多項式型に分解できるという主張と区別する。
+
+\section{達成基準・公表原稿・再現}
+現在の任意$n$の課題では、反例が否定する範囲、正しいindexed表示の定義、
+その必要十分条件または明示した仮定の下の網羅定理、graded代数への下降条件を区別して確立する。
+$n=1$のindexed網羅性・完全分類・下降条件は証明済みである。
+$n=2$のindexed網羅性とgraded下降も証明済みだが、その全対象の完全分類は未完成である。
+一般indexed網羅性は$n\geq3$で未完成である。
+反例や補助定理の証明を記載したこと、内部監査、計算、形式化、第三者査読、新規性確認は別の状態とする。
+形式化・第三者査読・新規性の最終確認は未完である。
+
+公表用原稿は\path{papers/nc-p1123.tex}に統合する。
+研究ノートに置いた補助結果は、証明と適用仮定を保ち、完成した一般定理へ格上げしない。
+文献PDF、検索結果の大量出力、キャッシュ、旧原稿、作業実況を一式へ収録しない。
+
+\path{computations/weighted_baseline.py}は基準族のHilbert数値、重なり、対角twistを検算する。
+\path{computations/verify_mixed_ranks.py}は$n=2$の890候補を再計算して証明書と照合する。
+この計算を任意$n$の証明として使用しない。
+\path{scripts/check_project.py}はファイル、参照、主張の所在を検査するもので、数学的証明や組版ではない。
+再現コマンドとLuaLaTeX設定はREADME、実際の検証状態は\path{research/validation.json}に置く。
 
 \section{常設の研究原則と保存許可}
 本節は本研究固有の優先順位とは独立した継続規則である。

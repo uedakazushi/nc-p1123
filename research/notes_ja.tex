@@ -8,12 +8,264 @@
 \newcommand{\Ext}{\operatorname{Ext}}
 \title{nc-p1123研究ノート\\\large 数値型・不変量・幾何との接続}
 \author{}
-\date{2026年11月19日\quad 第11版}
+\date{2026年11月19日\quad 第12版}
 \begin{document}
 \maketitle
 本ノートは現在有効な着想と障害を置く。作業日誌ではない。
 主結果の証明は公表用統合原稿\path{papers/nc-p1123.tex}とZ代数研究原稿\path{research/indexed_z_algebra.tex}にあり、ここでは重複しない。未収載の補助結果には必要な証明を付ける。
 研究の目標と再開順序は\path{research/plan_ja.tex}を先に読む。
+
+\section{任意$n$の$\mathbb Z$-整域への拡張}
+\label{note:general-indexed-current}
+現在の優先課題は、整域性を仮定した、primitive jumps $(1^n,2,3)$、
+AS次元$n+2$、語長斉次二次の$\mathbb Z$-代数への二段Ore構造の拡張である。
+正連結・局所有限、左右の有限AS解消、多項式的な行・列の増大を保ち、
+Hilbert級数、noetherian性、Koszul性、1周期性を新たな無条件の仮定にしない。
+以下では$n\geq1$とする。jump 1の最小生成元空間を$V_i$、
+jump 2、3の選んだ生成元を$z_i,w_i$とし、全最小生成元の族を$W$と書く。
+
+\paragraph{二つの異なる構造命題。}
+一つのgraded代数$D=B[z;\sigma][w;\tau,\partial]$の付随代数として
+$A\simeq\check D$と書く命題は、$A$の1周期性を含む。
+これに対して、二段indexed Ore表示は、基礎$\mathbb Z$-代数に
+jump 2とjump 3の生成元族を順次付加し、交換写像と導分を添字付きで記述する命題である。
+後者の係数は添字によって変わり得るので、1周期性を含まない。
+任意$n$で前者を結論することは、次の反例により不可能である。
+後者の全対象への網羅性は$n=1,2$で証明済みである。
+$n=1$では以下の正規形と裸の添字保持同型類まで決定した。
+$n\geq3$での網羅性は未証明である。
+
+\paragraph{$n=1$の全対象のindexed Ore表示と分類。}
+主論文\texttt{genidx:thm:one-light-ore}により、
+重み$(1,2,3)$、AS次元3の語長二次$\mathbb Z$-整域は、
+Hilbert級数やnoetherian性を追加仮定せず、全て次の正規形に入る。
+\[
+z_i x_{i+2}=x_i z_{i+1},\qquad
+w_i z_{i+3}=c z_i w_{i+2},\qquad
+w_i x_{i+3}=x_i w_{i+1}+d_i z_i z_{i+2},
+\]
+ここで$c\in k^\times$、$\alpha,\beta\in k$、
+\[
+d_{2m}=c^{-m}\alpha,\qquad d_{2m+1}=c^{-m}\beta
+\qquad(m\in\mathbb Z)
+\]
+である。従って$c d_{i+2}=d_i$となる。
+逆に全てのこのデータは、語長Koszul、AS添字6、左右noetherian、
+標準二変数Hilbert級数を持つAS正則$\mathbb Z$-整域を与える。
+これらは添字付き二段Ore拡張である。
+
+主論文\texttt{genidx:thm:one-light-classification}により、
+二つの正規形の裸の添字保持同型は
+\[
+c'=c,\qquad (\alpha',\beta')=\lambda(\alpha,\beta)
+\quad\text{となる }\lambda\in k^\times\text{ が存在すること}
+\]
+と同値である。零の組は零の組とだけ同型になる。
+従って同型類の\emph{集合}は
+\[
+k^\times\times\bigl(\{0\}\sqcup\mathbb P^1(k)\bigr)
+\]
+と記述できる。各$c$に対する1周期性の条件は
+\[
+\alpha^2=c\beta^2
+\]
+であり、$(\alpha,\beta)=(0,0)$も含む。それ以外の対象の最小正周期は2である。
+1移動は$(\alpha,\beta)\mapsto(\beta,c^{-1}\alpha)$を誘導し、
+2移動は組全体の$c^{-1}$倍なので、この判定は上の同型条件と整合する。
+
+\paragraph{商の幾何についての注意。}
+上記は同型類の集合の記述であり、$k^2$上の共通スカラー作用の
+通常のaffine categorical quotientと同一視しない。
+各非零スカラー軌道の閉包は零を含み、この作用の不変多項式は定数だけなので、
+affine商は$\mathbb P^1$に対応する非零同型類を区別しない。
+相対族、安定化群、非線型自己同型を含むmoduli stackは、この集合分類とは別の問題である。
+正規化と同型判定の完全な証明は主論文に置く。
+
+\paragraph{$n=1$の整域反例と現在の結論。}
+主論文\path{papers/nc-p1123.tex}の
+\texttt{genidx:thm:period-two-counterexample}は、
+$\epsilon_i=1$（$i$が偶数）、$\epsilon_i=0$（$i$が奇数）を持つ
+重み$(1,2,3)$の語長二次$\mathbb Z$-代数を構成する。
+この代数は左右noetherianなAS正則$\mathbb Z$-整域で、AS次元3、
+語長Koszul、標準二変数Hilbert級数
+\[
+H_i(u,t)=\frac{1}{(1-ut)(1-ut^2)(1-ut^3)}
+\]
+を持つが、最小正周期は2である。
+従っていかなる単一のgraded代数$D$の$\check D$とも同型ではない。
+一方、例そのものは添字付き導分を持つ二段indexed Ore構成である。
+PBW基底、整域性、明示的な左右解消、AS対合、noetherian性、
+非1周期性の完全な証明は主論文に置き、ここには重複しない。
+
+この反例は$n=2$の1周期・二段Ore定理を否定しない。
+また、$n\geq3$の各固定次元について同種の反例が存在することを主張しない。
+$n\geq3$では、無条件の数値型の強制とindexed Ore網羅性が未解決である。
+任意$n$を扱う前向きな補助結果は、以下のAS平行移動、関係数を仮定した重み2正規元族、
+および基礎代数のAS性を仮定した一重生成元補題である。
+
+\paragraph{任意$n$へ移せない推論。}
+AS次元3では$E^1\otimes E^2$の完全対合からtopの語長が3となり、
+AS次元4では$E^2\otimes E^2$の完全対合からtopの語長が4となる。
+AS次元$n+2$で$n\geq3$の場合、これらの同じ低次対合はtopを決定しないため、
+語長二次性だけからKoszul性を既に得たとはしない。
+また、標準Hilbert級数を仮定したgraded定理のAS添字$n+5$の導出を、
+そのHilbert仮定のないindexed対象へそのまま適用してはいけない。
+以下の補題でAS平行移動量を$L$と書いても、$L=n+5$を意味しない。
+重み3、5の関係数$r_3(i)=n,r_5(i)=1$の無条件の強制も、
+任意$n$で証明したとはしない。$n=1,2$について得た強制を、$n\geq3$へ黙って移さない。
+
+\subsection{AS平行移動と二次表示}
+\label{note:general-as-translation}
+\paragraph{主張。}
+$n\geq1$とし、$A$をprimitive jumps $(1^n,2,3)$の正連結・局所有限な
+語長斉次二次$\mathbb Z$-代数とする。
+同じ有限大域次元の左右AS解消とYoneda完全対合を仮定する。
+このときAS頂点置換は$\ell(i)=i+L$という平行移動であり、
+語長を保つ同型$A\simeq A(L)$が存在する。
+ここでは$L$の具体値もKoszul性も結論しない。
+
+\paragraph{証明。}
+各top Extに非零traceを選ぶと、完全対合からExt圏のNakayama同型
+$N:E_{ij}^p\longrightarrow E_{\ell(i),\ell(j)}^p$が得られ、Yoneda積を保つ。
+特に$N$は$E^1$の矢印の有無を保つ。
+$E^1$の有向グラフでは全ての矢印が正のjumpを持ち、全てのjump 1の矢印が存在するので、
+矢印列による到達可能性は整数の大小関係と一致する。
+従って$\ell$は整数の順序を保つ全単射であり、$\ell(i)=i+L$となる。
+
+第$i$top Extの語長を$N_i$とする。
+非零の$E^1_{i,i+1}$とその完全対合相手を取り、traceの巡回式を適用する。
+その相手の語長は$N_i-1$で、Nakayama像も$E^1$に属するため語長1である。
+従って$N_{i+1}=N_i$となる。
+全ての$N_i$が等しいので、同じtrace式は$N$が全Extの語長を保つことを示す。
+
+二次表示のため、$E^2$は語長2に集中し、積
+$E^1\otimes E^1\to E^2$は関係埋込み$R\hookrightarrow W\otimes W$の双対である。
+従って$E^1$上の$N$の逆双対は$R$を平行移動した関係空間へ写し、
+二次テンソル代数の商の同型$A\simeq A(L)$を与える。
+ここでは$E$全体が$E^1$で生成されることを使わない。
+\hfill$\square$
+
+
+\subsection{関係数を仮定した重み2正規元族}
+\label{note:general-normal-z}
+\paragraph{主張。}
+$n\geq1$とし、$A$をprimitive jumps $(1^n,2,3)$の語長斉次二次
+$\mathbb Z$-代数とする。
+$r_3(i)=n$, $r_5(i)=1$が全$i$で成立し、重み2・語長1生成元$z_i$が
+全て左右正則であるとする。
+このとき可逆線型写像$\sigma_i:V_{i+2}\to V_i$と$c_i\in k^\times$により
+\[
+z_i v=\sigma_i(v)z_{i+1},\qquad
+w_i z_{i+3}=c_i z_i w_{i+2}
+\]
+と書け、語長を保つ同型$A(2)\simeq A$が存在する。
+
+\paragraph{証明。}
+$R_3(i)$の$V_i z_{i+1}$と$z_iV_{i+2}$への射影は、正則性から両方単射である。
+始域と終域の次元が全て$n$なので両方同型であり、$\sigma_i$を得る。
+同様に$R_5(i)$の二つの一次元経路への射影はともに非零なので$c_i\ne0$を得る。
+生成元上で
+\[
+v\mapsto\sigma_i(v),\qquad z_{i+2}\mapsto z_i,
+\qquad w_{i+2}\mapsto c_i^{-1}w_i
+\]
+と定め、テンソル代数の写像$\phi$へ延長する。
+$i+2$から$j+2$への任意の経路式$a$について、生成元交換式を反復すると
+$z_i\bar a=\overline{\phi(a)}z_j$となる。
+$\bar a=0$なら右端の$z_j$の正則性から$\overline{\phi(a)}=0$であり、
+$\phi$は商へ降りる。
+逆に$\phi(\bar a)=0$なら左端の$z_i$の正則性から$\bar a=0$となる。
+よって単射であり、生成元上で全射なので所要の同型を得る。
+\hfill$\square$
+
+
+
+二つの補題から、$r_3(i)=n,r_5(i)=1$が得られた整域対象については
+$L$周期と2周期が存在する。
+周期の集合は移動・合成・逆によって$\mathbb Z$の部分群なので、
+$\gcd(L,2)=1$なら1周期性が従う。
+しかし$L$が偶数の場合、この議論は1周期性を与えない。
+特に$L=n+5$まで導けたとしても、$n$が奇数の場合にはこの障害が残る。
+前述の$n=1$反例では$L=6$であり、2周期を1周期へ短縮できないことが実際に起こる。
+
+\subsection{基礎代数のAS性を仮定した一重生成元補題}
+\label{note:one-heavy-frobenius}
+次の補題は任意の次元に適用でき、noetherian性や商の整域性を必要としない。
+ただし、基礎代数のAS正則性を別に証明する必要がある。
+これは一頂点のgraded代数についての補題であり、一般のindexed対象への適用には、
+対応する添字付き議論または適切な下降を別途用意する。
+
+\paragraph{主張。}
+$Q=T(V\oplus kw)/(R\oplus S)$を語長二次代数とし、
+$R\subset V\otimes V$、$S\subset(V\otimes kw)\oplus(kw\otimes V)$とする。
+$V$の$w$次数を0、$w$の$w$次数を1と置く。
+$Q$が語長KoszulかつAS正則次元$n+1$であり、
+$B=T(V)/(R)=Q_{w\text{-次数}=0}$が語長KoszulかつAS正則次元$n$であると仮定する。
+このときある$\mu\in\operatorname{Aut}_{\mathrm{gr}}B$により
+\[
+Q\cong B[w;\mu]
+\]
+となる。基礎体上の有限生成の最小解消を仮定するが、
+$Q$または$B$のnoetherian性は仮定しない。
+
+\paragraph{証明。}
+$E=Q^!$、$F=B^!$と置く。Koszul性によりこれらはYoneda代数であり、
+AS正則性によりそれぞれ最高語長$n+1$、$n$の有限次元Frobenius代数である。
+内部次数は対応するTorの次数を正に記録する。
+$w$次数零のbar複体を取ると、$E$の$w$次数零部分は$F$である。
+$\eta=w^*\in E^1$の$w$次数は1である。
+
+$E$の最高成分の$w$次数を$e$とする。
+$F^n\ne0$と$E^1$との完全対合により$e\in\{0,1\}$であり、
+$\eta$との完全対合および次数の非負性により$e\geq1$である。
+従って$e=1$であり、全ての$E$の$w$次数は0または1となる。
+その$w$次数1の部分を$J$と書く。
+完全対合は
+\[
+F^n\eta\ne0,\qquad \eta F^n\ne0
+\]
+を与える。$0\ne f\in F^i$に対し、$F$自身のFrobenius性から
+$gf\in F^n\setminus\{0\}$となる$g\in F^{n-i}$を選べる。
+従って$f\eta=0$なら$(gf)\eta=0$となり矛盾する。
+同様に$\eta f=0$も不可能である。
+
+また二つのFrobenius対合により
+\[
+\dim J^i=\dim F^{n+1-i}=\dim F^{i-1}.
+\]
+従って右乗法と左乗法は同型を与え、
+\[
+J=F\eta=\eta F.
+\]
+特に$E$の語長2・$w$次数1部分に対して
+$V^*\eta$および$\eta V^*$からの写像はともに同型である。
+二次双対を取ると、$S$の$Vw$および$wV$への射影はともに同型となる。
+従って可逆線型写像$\mu:V\to V$を用いて
+\[
+S=\{w\otimes v-\mu(v)\otimes w:v\in V\}
+\]
+と書ける。
+
+語長を$u$、$w$次数を$v$で数える。
+上の次元等式とKoszulのEuler等式から
+\[
+H_Q(u,v)^{-1}
+=\sum_i(-u)^i\bigl(\dim F^i+v\dim F^{i-1}\bigr)
+=(1-uv)H_B(u)^{-1}.
+\]
+交換関係で$w$を右へ動かすと、$B\otimes_k k[w]\to Q$は全射となる。
+その二変数Hilbert級数は一致するため、各有限次元成分で同型である。
+従って$w$の右乗法は単射であり、
+$wR=\mu^{\otimes2}(R)w=0$から$\mu^{\otimes2}(R)\subseteq R$を得る。
+可逆性と有限次元性により等号となり、$\mu$は$B$の自己同型を誘導する。
+これで所要のOre表示が得られ、$w$の左乗法の単射性も従う。
+
+\paragraph{未解決箇所との関係。}
+この証明は、$F=B^!$のFrobenius性を明示的に使う。
+$B$の有限大域次元、標準Hilbert級数、整域性が分かっただけで
+この性質を既に得たとはしない。
+従って一般の$\mathbb Z$-代数の二段Ore網羅定理に適用するには、
+その基礎代数のAS性を別途導く必要がある。
 
 \section{語長と重みを混同しないための基準}
 最小生成元を$x,y,z,t$、重みを$1,1,2,3$とする。
@@ -35,7 +287,7 @@ Lu--Palmieri--Wu--Zhangの二生成元・三次四次関係の四次元AS正則�
 四生成元の所期のクラスに入ると誤判定しない。
 本文と一次文献の参照箇所は\path{research/BASELINE.md}に記載する。
 
-\section{一般対象の数値型に関する還元}
+\section{四次元対象$\mathcal Q$の数値型に関する還元}
 Z代数研究原稿\texttt{prop:general-koszul}で、語長二次のAS次元4という条件から語長Koszul性を示した。
 $E^2$と$E^2$の完全対合がtopの語長を4にし、$E^3$も語長3に集中する。
 最小生成元のjump 1成分だけが二次元なので、Nakayama対応は添字の一定平行移動になる。
@@ -417,14 +669,15 @@ s(a,b,c)=(a^{-1},b^{-1},ca^3/b^2)
 これは対角族の商についての結論であり、全ASモジュライの成分やstackを同定していない。
 有限判定と対角商の個別結果について、文献上の新規性の最終確認は未了である。
 
-\section{一般の次数列$(1^n,2,3)$}
+\section{追加仮定付きgraded定理：次数列$(1^n,2,3)$}
 \path{papers/nc-p1123.tex}で、左右noetherian・AS次元$n+2$・指定Hilbert級数の下の
 数値拘束と、語長二次・整域部分の全$n$のOre網羅性を証明した。
 生成元の次数だけを固定した明示族$A_{n,m}$は次元$n+m+2$を持ち、
 最小次数から大域次元を決められないことを示す。
 次元$n+2$を固定した場合への反例ではない。
 
-任意$n$の網羅性の核心は、正規元$z$で割った商$Q$で、
+左右noetherian性と指定Hilbert級数を仮定したgraded網羅定理の核心は、
+正規元$z$で割った商$Q$で、
 $w$の出現回数1の部分$M=BwB$を調べることである。
 双対性による$H_M(u)=uH_B(u)$と、
 左右noetherian性による$M$の有限生成性を組み合わせると、
@@ -436,7 +689,8 @@ $Bw=wB$と両側の乗法の単射性を得る。
 語長二次性を外した場合は、$n=3$でさえ最小関係の重み別の本数を
 Euler式から全て決めることはできない。
 $r_2=3$, $r_3-r_5=2$で、$r_4$の寄与はホモロジー次数2と3で相殺される。
-この一般化の補助課題は、固定した次元5・指定Hilbert級数の下でのaugmentation filtrationである。
+この語長二次性を外す補助課題は、固定した次元5・指定Hilbert級数の下でのaugmentation filtrationである。
+現在優先するindexed構造問題とは仮定と目標を区別する。
 付随次数代数が二次AS正則になることは未証明であり、
 これを先に確認してから一般化の網羅定理を適用する。
 証明のないPBW変形への還元を仮定しない。

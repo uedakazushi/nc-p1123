@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v11。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v12。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -12,7 +12,7 @@
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
-| Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、§4.1 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。語長保存の周期同型を使うため二重次数を保持できる。隣の Lemma 3.5 の degree 1 生成条件や、三次元 quadric 分類の仮定と混同しない。 |
+| Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
 | Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), Lemma 1.1、Cor.1.2、Lemma 1.3(c)（PDF pp.3–4） | Lemma 1.1 は連結 graded 代数の有限 global dimension と degree 1 の正則正規元を仮定し、商の次元を1下げる。Cor.1.2 は親代数を domain として AS 正則性を比較する。どちらも noetherian 性を仮定しない。適用する次数は語長であり、重み2の z も語長1。Lemma 1.3(c) は重み2生成元族の正則性から整域性を導く判定の直接依存であり、適用順序は下記。 |
 | Liu–Wang–Wu, *Twisted Calabi–Yau property of Ore extensions*, JNCG 8 (2014), 587–609; DOI 10.4171/JNCG/165; arXiv:1205.0893 | [出版版](https://ems.press/content/serial-article-files/30578), Thm.3.3、§1.2、§1.3、Remark 2.2、Prop.4.1 | 自己同型によるOre拡大のtwisted CY性、connected graded版のAS正則性との対応、正次数の拡大変数、noetherian/domain保存。一般graded Ore分類の逆構成に用い、多項式成長はPBW基底から別に確認する。一般的な構成法を新規性としない。 |
@@ -64,6 +64,60 @@ Cooney–Grabowski, *Automorphism groupoids in noncommutative projective geometr
 具体的な有限判定式と対角商の完全な先行結果照合は継続中であり、新規性の確定を意味しない。
 
 ## 整域 Z-代数の構造定理と直接依存
+
+### n=1の完全構造と、任意nの下降に対する反例
+
+`genidx:thm:one-light-ore` と `genidx:thm:one-light-classification` は、
+primitive jumps (1,2,3) の全AS3語長二次Z-整域について、添字付き二段Ore表示と
+裸の添字保持同型を決定する。AS対合から語長Koszul性、AS添字6と関係数を強制し、
+top syzygyで混合関係の両係数の非消失を得る。
+正規形は zx=xz, wz=c zw, wx=xw+d_i zz、
+d_(2m)=c^(-m) alpha, d_(2m+1)=c^(-m) beta である。
+同型はc一致と(alpha,beta)の同時非零スカラー倍であり、
+alpha^2=c beta^2 が1周期性の必要十分条件、他は最小周期2となる。
+逆構成のPBW・左右AS3・整域・noetherian性も一般c,dについて直接証明する。
+この同型類集合をaffine categorical quotientと同一視しない。
+既存の重み付きZ-代数の分類とこの具体的な正規形との重複の最終確認は未完である。
+
+`genidx:thm:period-two-counterexample` は、n=1、primitive jumps (1,2,3)、AS次元3の
+語長二次Z-整域で、標準二変数Hilbert級数・語長Koszul性・左右noetherian性を持ちながら
+最小正周期が2となる例を与える。係数 epsilon_i を偶数で1、奇数で0とし、
+zx=xz, wz=zw, w_i x_(i+3)=x_i w_(i+1)+epsilon_i z_i z_(i+2) とする。
+唯一のPBW重なりは wzx で、epsilon_(i+2)=epsilon_i により解消する。
+主論文は右単純解消の全行列とtop tensorの両表示を明示し、左右AS条件と大域次元を直接証明する。
+w個数の付随次数が可換重み付き多項式Z-代数であることから整域性・noetherian性を得る。
+
+この例が否定するのは、全nの対象を単一のgraded代数 D の check(D) で表示する主張である。
+Van den Bergh Lemma3.4 の1周期性との同値を用いる。
+同論文Theorem4.2.2の通常三次元quadratic型は三本ともjump 1であり、
+上のweighted word-quadratic型と異なることを一次PDFのDefinition4.1.1から確認した。
+本例自体は2周期の添字付きOre表示を持つ。任意nの添字付きOre表示の網羅性を反証したとはしない。
+この具体例や周期障害と、既存の重み付き・quiver・正規拡大の構成との完全な同定は未確認である。
+
+研究ノートの一般AS平行移動はExtのNakayama同型と矢印グラフの順序から導く。
+一般の重み2正規元族は r_3=n, r_5=1 とzの左右正則性を仮定する。
+一重生成元のOre補題は基礎代数 B のAS正則性を明示的に仮定し、Frobenius双対の乗法で証明する。
+いずれも、AS次元n+2・語長二次・整域だけから全ての前提が自動的に従うとの主張ではない。
+
+### n>=3に残るKoszul性の文献上の確認範囲
+
+Abdourrahmane Kabbaj, *On GK Dimension and Generator Bounds for a Class of Graded Algebras*,
+[arXiv:2501.11346v1](https://arxiv.org/html/2501.11346v1) のCorollary 2.5、
+Definition 3.2、Theorems 3.4, 3.9, 3.10の本文を確認した。
+対象は通常の次数1生成の連結局所有限graded代数である。
+Corollary 2.5はKoszul AS性とGKdim>=d-1から標準Hilbert級数を結論し、
+Theorem 3.4はAS次元6以下のquadratic代数のmonotonic性を与える。
+Theorems 3.9, 3.10はmonotonic性に加えGKdim=dまたは指定Hilbert型を仮定する生成元数の上界である。
+これらを「二次・整域・生成元数=大域次元だけで任意次元のKoszul性が従う」という定理として使わない。
+
+Daniel Rogalski, *Artin-Schelter Regular Algebras*,
+[arXiv:2307.03174v2](https://arxiv.org/pdf/2307.03174), §7、本文p.29は、
+標準Hilbert級数を持つAS正則代数のKoszul性に関するSmith論文内のZhangの定理への案内である。
+これはsurveyによる所在情報であり、Smithの原資料を今回確認したという意味ではない。
+今回確認した資料だけから、一般indexed対象の不足しているKoszul性やHilbert仮定を補うことはできない。
+この限定した確認を、文献全体に該当定理が存在しないという主張にはしない。
+
+### n=2の網羅的な正の結果
 
 公表論文 `papers/nc-p1123.tex` の `idx:def:target` は、各頂点の最小生成元 jump が
 (1,1,2,3) で語長二次の広い四次元 AS 正則対象 Q を定義する。
@@ -136,8 +190,9 @@ Zhang twist の同一視を与え、degree 1 生成を要求しないことを�
 必要な数値型をAS条件から絞ることと、候補のAS正則性を有限次数で認定することは異なる。
 新規性の最終確認、形式化、外部査読は未完了である。
 
-未解決なのは、Q 全体の整域性、混合関係射影の非退化性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化である。
-整域性の次の具体的課題は、七つの z_i の左右正則性である。
+任意nの整域については、添字付き二段Ore表示の網羅性、混合関係数の強制、基礎Z-代数のAS性が未解決である。
+n=2の全分類では、Q 全体の整域性、混合関係射影の非退化性、非整域対象の存在と分類、一般の同型軌道の幾何・成分・特殊化が残る。
+n=2の整域性の自動性に関する具体的課題は、七つの z_i の左右正則性である。
 最小語長の零化元を仮定し、最小解消・AS対合・関係射影と syzygy から排除できるかを調べる。
 最小周期7または非定数の射影階数が現れるとすれば、ある z_i の左右正則性が破れる部分に限られる。
 対角族の同型判定と二同型類の基準族・射影階数分岐についても、既存の重み付き/Ore 族との完全な先行結果照合は未了である。
