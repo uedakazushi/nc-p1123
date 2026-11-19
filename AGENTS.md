@@ -1,15 +1,16 @@
 # nc-p1123 研究指示
 
-2026-11-19 / v23。最初に `research/plan_ja.tex` を読む。
+2026-11-20 / v24。最初に `research/plan_ja.tex` を読む。
 主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
 
 ## 公表準備の構成
 
-- 主論文は `papers/nc-p1123.tex`、公表準備稿 v23。要旨と序論の後、次数付き準備・一般indexed構造・低次元・同型・非語長二次四次元・高次元の六部で読む。
+- 主論文は `papers/nc-p1123.tex`、公表準備稿 v24。要旨と序論の後、次数付き準備・一般indexed構造・低次元・同型・非語長二次四次元・高次元の六部で読む。
 - 一般AS双対性と語長保存AS周期の共通補題は `genidx:lem:as-translation`。全Extの一次生成性を使わない。ノートの同名内容は本文を参照する。
-- 二周期三生成元認識定理と証明を一続きに保つ。別の一般次元結果を証明の途中へ挿入しない。
+- 周期Hilbert行列の共通極は `hilbert:lem:common-pole`。隣接生成、Hilbert次元の周期性、有限右Euler逆を明記する。代数周期・AS性・左右解消は不要。
+- n3の主依存は純数値型→AのKoszul性→一般 `knd:thm:koszul-ore`→B-AS3/Ore。二周期三生成元認識は独立の定理と別証明として保持し、定理と証明を一続きに保つ。混合階数の直接証明はノート `note:n3-direct-mixed-ranks` に全文を保持する。
 - 序論の `intro:thm:recognition`、`intro:thm:koszul` は本文の定理を案内する再掲であり、新たな未検証定理ではない。既存の定理ラベルを維持する。
 - 主張の新規性の最終確認、第三者査読、n>=4非Koszulの自動性は未完了である。内部検証や組版成功と区別する。
 
@@ -22,12 +23,12 @@
 - n=1の完全分類は `genidx:thm:one-light-classification`。正規形はzx=xz、wz=c zw、w_i x_(i+3)=x_i w_(i+1)+d_i z_i z_(i+2)、c∈k*、d_(2j)=c^(-j) alpha、d_(2j+1)=c^(-j) beta。裸の添字保持同型はc'=cかつ(alpha',beta')=s(alpha,beta)、s∈k*と同値。各cの同型類の集合は{0}⊔P^1であり、affine quotientの構成とは主張しない。全パラメータの逆構成は具体的左右解消によりAS3、word-Koszul、domain、noetherian、標準Hilbertを満たす。period 1 iff alpha^2=c beta^2（零対も含む）、他は最小周期2。上の反例は(c,alpha,beta)=(1,1,0)という特殊例である。
 - 研究ノート `note:general-as-translation`：AS頂点置換は任意nで平行移動i->i+Lとなり、A≅A(L)を二次表示から復元できる。Koszul性は不要。到達可能性による整数の順序を使うためn=1も含む。L=n+5やKoszul性の自動性はこの補題の結論ではない。
 - 研究ノート `note:general-normal-z`：r_3(i)=n、r_5(i)=1が全始点で成立し全z_iが左右正則なら、正規元族からA(2)≅Aを得る。domainからの上界r_3<=n、r_5<=1、r_6=0と、上界の達成を区別する。上界の達成はn=1,2,3で証明済み、n>=4では無条件に未証明である。
-- 主論文 `genidx:thm:five-dimensional-numerics`：n=3の全対象でN=5、L=8、ranks(3,3,3,1,0)、語長Koszul、標準二変数Hilbert、normal-z、A(2)≅Aを追加仮定なしに証明した。純jump1部分Bは左右1331線型解消、H_B=(1-t)^-3、domain、2periodを持ち、下記の認識定理によりAS3も証明済み。証明は最高差次数D=3、folded HilbertのcJ主部・一次係数、唯一のs9/L14例外のdet=(1-u^7)^2(1-64u^7)、混合関係数の行級数比較で完結する。
+- 主論文 `genidx:thm:five-dimensional-numerics`：n=3の全対象でN=5、L=8、ranks(3,3,3,1,0)、語長Koszul、標準二変数Hilbert、normal-z、A(2)≅Aを追加仮定なしに証明した。純jump1部分Bは左右1331線型解消、H_B=(1-t)^-3、domain、2periodを持ち、一般Koszul認識によりAS3性も従う。証明は最高差次数D=3、folded HilbertのcJ主部・一次係数、唯一のs9/L14例外のdet=(1-u^7)^2(1-64u^7)からKoszul性を強制し、一般Koszul認識へ進む。混合関係数の行級数比較による独立の証明はノートに保持する。
 - 主論文 `genidx:thm:as-base-ore`：任意nで純jump1 B自身がAS_n（有限生成射影による有限左右AS解消）ならindexed二段Oreを証明した。B-AS以外にKoszul/noetherian/Hilbert/mixed ranksは不要。r3=r4=n、r5=1、B1period、L_A=L_B+5、N_A=L_B+2、H_A=H_B(ut)/((1-ut^2)(1-ut^3))が従う。A word-Koszul iff B Koszul。B-AS自動性はn>=4では未証明なので無条件all-n exhaustionと報告しない。
 - 主論文 `igraph:thm:normal-z-ore`：全Q_n^domで「全始点r3=n,r5=1」⇔「B-ASn」⇔「AS基礎B上のindexed二段Ore」。H/Koszul/noetherian/B-ASの先取り不要。`igraph:lem:as-graph-ore` は、fold2のQ=T_S(V)[w;μ]/(R)で係数イデアルI_j=(R,μR,…,μ^jR)が有限安定化することと、AS双対性で最高w Euler係数P_Jが可逆になることを使う。P G=I−tTからJ+deg_tG=1、J1、G一定、μR=R、w正則、B-ASnとなる。D3、B1period、一般AS-baseの全式も結論。元の全次元問題は二つの階数条件の自動性へ還元され、Koszul/H自動性を先に証明する必要はない。
 - 主論文 `genidx:lem:one-heavy-as` は非Koszul・indexed一重生成元版。Q AS_(n+1)かつpure B AS_nからQ=B[w;mu]を得る。noetherian/Hilbert/Q-domain不要。notes `note:one-heavy-frobenius` は適用範囲と証明先を参照する。
 - 主論文 `p2base:thm:as3`：2periodic（三次元ベクトル空間のHilbert周期だけでなく代数同型）quadratic Z-domain、全行H=(1-t)^-3ならAS3・AS移動3。Koszul性や1331解消は二次表示/Hilbert/domainから導く。2vertex foldの非零射分数圏へ忠実埋込みし、rank22 top tensorをX,Y⊂division ringの交代積で扱う。異なるsupportではdimXY=dimYX=6からrational f,hの合成がMöbiusとなりdimXY<=5矛盾。同じsupportではk(t)上の極因子次数O(m)からdimB_0,2m=O(m)となり標準HSに矛盾。非退化topから左右Frobenius/AS、Koszul双加群解消から全unital modulesのgldim3を得る。ordinary分類には依存しない。
-- 主論文 `genidx:thm:three-light-ore`：全Q3domに無条件のindexed二段Ore表示。数値型定理→Bの2period/Hstandard→p2base認識→一般AS-base定理で証明。Bは2periodとAS3periodから1period。下記の下降定理によりA自身も1period。n3のB-AS/Ore/下降を未解決に戻さない。
+- 主論文 `genidx:thm:three-light-ore`：全Q3domに無条件のindexed二段Ore表示。主証明は数値型定理→A wordKoszul→一般Koszul認識でB-AS3/Oreを得る。Bの2period/Hstandard→p2base認識→一般AS-baseという別証明も保持する。Bは2periodとAS3periodから1period。下記の下降定理によりA自身も1period。n3のB-AS/Ore/下降を未解決に戻さない。
 - 主論文 `genidx:prop:three-light-derivation-support`：n3のL_i零集合は空か全体。AS3 baseの関係の左右全支持とdelta(R)=0から隣接Lの消滅が同値。全零枝ではwが正規元族でA3period、既存A2periodと合わせA1period。全非零枝も下記の移動作用素の延長で下降を証明済み。n1偶奇ゼロ反例の単純拡張は不可。
 - 主論文 `genidx:thm:three-light-descent`：全Q3domはA1periodで通常graded二段Oreへ下降。共通frame zv=S(v)z、w_i v=S(v)w_(i+1)+ell_i(v)zz、wz=zw。E=span ell_iにT ell_i=ell_(i+1)、T^2=S*を定め、dimE=0,1,3は直接、dimE=2は相反固有値/Jordan1の場合分けでSと可換するB0自己同型Pへ延長。R'= (id tensor P)R、sigma'=SP^-2、tau'|V=SP^-3、delta(v)=(ell_0 P^-3)(v)z^2、delta(z)=0。B'は共通frameのB0のZhang twistでありgraded同型と同一視しない。語長次数で第1段へRZ Lemma1.3(a)、第2段へautomorphism Ore Hilbert基底定理を適用し左右noetherian性も結論。全軌道分類は未完。
 - Iyudu–Shkarin arXiv1806.06844v1 Theorem1.11/Remark1.15/§12.1のordinary quadratic H=(1-t)^-3 domain⇒AS3は既知比較先。現行の2period認識証明はこの分類なしに直接進む。具体的定理の新規性最終確認は未完。

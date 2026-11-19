@@ -1,6 +1,6 @@
 # nc-p1123 — 重み (1^n,2,3) のAS正則代数
 
-**2026-11-19 / 公表準備稿 v23。** 主論文は [papers/nc-p1123.tex](papers/nc-p1123.tex)。日本語 LuaLaTeX、著者欄は空欄。
+**2026-11-20 / 公表準備稿 v24。** 主論文は [papers/nc-p1123.tex](papers/nc-p1123.tex)。日本語 LuaLaTeX、著者欄は空欄。
 
 研究を再開するときは [研究方針](research/plan_ja.tex) を最初に読む。本文外の有効な補題・例・障害は [研究ノート](research/notes_ja.tex)、七窓表示の詳細は [添字付き研究資料](research/indexed_z_algebra.tex) にある。
 
@@ -21,7 +21,7 @@
 | 任意 n、語長Koszul | 全混合階数、標準二変数Hilbert級数、添字付き二段Ore。偶数 n は1周期下降 | knd:thm:koszul-ore |
 | n=1、追加条件なし | 全添字保持同型類と周期を決定。最小周期2の整域が存在 | genidx:thm:one-light-classification |
 | n=2、追加条件なし | Koszul性、1周期下降、量子平面／Jordan平面上の二段Ore、左右noetherian性 | idx:thm:domain-ore |
-| n=3、追加条件なし | 数値型、二周期基礎のAS3認識、最終代数の1周期下降、左右noetherian性 | p2base:thm:as3, genidx:thm:three-light-descent |
+| n=3、追加条件なし | 数値型からKoszul性を強制し、一般定理で基礎AS3・Oreを認識。最終代数の1周期下降、左右noetherian性 | genidx:thm:five-dimensional-numerics, genidx:thm:three-light-descent |
 | n=4、追加条件なし | L−N=3、3がN,Lを割る。Koszul性・周期・基礎AS4性等の十条件が同値 | n4:thm:top-word-divisible-three, n4:thm:equivalent-criteria |
 
 n=1 の正規形は zx=xz, wz=c zw, w_i x_(i+3)=x_i w_(i+1)+d_i z_i z_(i+2)、d_(2j)=c^(-j) alpha, d_(2j+1)=c^(-j) beta。裸の添字保持同型は c の一致と (alpha,beta) の共通非零スカラー倍で分類される。1周期性は alpha^2=c beta^2 と同値であり、零対を含む。他の対象の最小周期は2。この結果は「全対象が一つの通常graded代数から来る」という全次元の主張を否定するが、添字付きOre網羅性とは両立する。
@@ -43,7 +43,7 @@ n=2 では整域性を仮定しない広い対象 Q も扱い、標準関係数�
 
 第I部の G_n は noetherian性と指定一変数Hilbert級数を仮定する。第V部はこの通常graded設定の n=2 について語長二次性を外す。一般indexed対象の仮定と混同しない。
 
-共通AS補題は genidx:lem:as-translation。全Extを一次生成と仮定せず、完全対合・AS平行移動・最高語長の一定性・二次表示からの周期復元を証明する。二周期三生成元認識定理は定理文と証明を一続きに配置する。
+共通AS補題は genidx:lem:as-translation。全Extを一次生成と仮定せず、完全対合・AS平行移動・最高語長の一定性・二次表示からの周期復元を証明する。周期Hilbert行列の共通極と一次モーメントは hilbert:lem:common-pole にまとめる。n=3 の主依存は数値型から一般Koszul定理へ進む。親代数を要しない二周期三生成元認識定理も独立結果として保持し、定理文と証明を一続きに配置する。直接の混合階数証明は研究ノート note:n3-direct-mixed-ranks に収める。
 
 ## 未解決問題と主張の確実性
 
@@ -69,6 +69,7 @@ python3 computations/verify_n4_pure_euler.py
 python3 computations/verify_n4_parent_mixed.py
 python3 -m pip install -r requirements-symbolic.txt
 python3 computations/verify_skew_ore.py
+python3 computations/verify_euler_identities.py
 ```
 
 check_project.py はファイル・ラベル・引用・主張参照の検査であり、数学的証明や組版の代用ではない。計算の役割と入力は [computations/README.md](computations/README.md) に記載する。

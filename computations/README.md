@@ -1,8 +1,28 @@
 # 現行の厳密計算
 
-2026-11-19 / v5。証明書は現行版だけを保持する。
+2026-11-20 / v6。証明書は現行版だけを保持する。
 
-Python 3 の標準ライブラリだけを使う。
+整数検査は Python 3 の標準ライブラリだけを使う。
+記号計算の二本 `verify_skew_ore.py`、`verify_euler_identities.py` は
+`requirements-symbolic.txt` の SymPy を使う。
+
+## 数値型の証明に現れる恒等式の補助検算
+
+```bash
+python3 -m pip install -r requirements-symbolic.txt
+python3 computations/verify_euler_identities.py
+```
+
+全変数を記号のまま扱い、次を厳密に照合する。
+
+- ノート `note:n3-direct-mixed-ranks` の五次元スカラーEuler式の因数分解。
+- 本文 `genidx:lem:three-light-base-numerics` の七行Euler行列を直接構成した行列式
+  `(1-u^7)^2(1-64*u^7)`。
+- 本文 `n4:thm:top-word-divisible-three` の s=5 二頂点行列の `P=FKF` と行列式、および s=6 分母の u=1/2 での値 `-3/64`。
+- 本文 `n4:lem:periodic-pd3-obstruction` のFourier因数分解と二次変動の平方完成。
+
+これは本文に完全な代数的・解析的証明を記載した恒等式の補助検算である。
+浮動小数点・パラメータ標本は使わず、AS正則性、全Hilbert係数の非負性、代数の存在を計算から認定しない。
 
 ## n=4 の純基礎Euler条件の方法上の限界
 

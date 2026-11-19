@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v23。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-20 / v24。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -17,7 +17,7 @@
 | He–Van Oystaeyen–Zhang, *Skew polynomial algebras with coefficients in Koszul Artin–Schelter regular algebras*, J. Algebra 390 (2013), 231–249; DOI 10.1016/j.jalgebra.2013.05.023; arXiv:1304.3799v2, 引用キー `HVZSkew` | [一次PDF](https://arxiv.org/pdf/1304.3799), §2、Proposition 2.2（PDF p.7） | 通常Koszul代数と既知のskew拡張B=A[z;σ]に対し、Ext(B)をA!とそのtwisted copyの自明拡大として記述する。今回のno-zz認識は、Ore表示を仮定せず有限頂点上のFrobenius対合から混合階数・自由性を強制する。既知命題を逆向きに適用せず、類似構造の比較先として引用する。 |
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, J. Algebra 539 (2019), 201–259; DOI 10.1016/j.jalgebra.2019.07.029; arXiv:1808.10538v1 | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
-| Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。分類表全件と各証明の独立再検証を実施したとはしない。 |
+| Iyudu–Shkarin, *Classification of quadratic and cubic PBW algebras on three generators*, arXiv:1806.06844v1 (2018), 本稿引用キー `ISclass` | [一次本文](https://arxiv.org/html/1806.06844v1), §1の基礎体とクラスΩの定義、Theorem1.11の分類声明、Remark1.15、§12.1 | 代数閉体・標数≠2,3上の通常の次数1生成二次代数で、H=(1−t)^−3ならdomainとAS正則次元3が同値である。本稿の二周期Z-代数の認識定理に対する既知の一頂点基準として比較する。`p2base:thm:as3` とn=3の無条件Ore定理の証明はこの分類に依存せず、非1周期Z-代数へ分類を直接適用しない。§12.1は分類表に依存しない証明への期待にも言及する。分類表全件と各証明の独立再検証を実施したとはしない。出版版は未特定であり、arXiv v1の書誌を維持する。 |
 | Rogalski–Sierra, *Some noncommutative projective surfaces of GK-dimension 4*, arXiv:1101.0737v2 (2011), 本稿引用キー `RSsurface` | [一次本文](https://arxiv.org/html/1101.0737v2)、[PDF](https://arxiv.org/pdf/1101.0737), Theorem 1.1、解消 (1.2)、Theorem 1.6、Proposition 5.4の(5.5)–(5.6)、Proposition 5.11(1) | 通常の連結次数付きnoetherian整域で、Koszul、GK次元・大域次元4、線型Betti型14641、H=(1−t)^−4であってもAS–Gorensteinでない例。非可算代数閉体上の代数的に独立な二パラメータで成立し、特にC上で取れる。一般的な数値認識法の障害である。一方、本稿の十条件同値定理によりQ₄^domの純基礎として実現しない。最上写像(0,0,z₉,z₁₀)^Tと親AS由来の階数下界からも非実現を確認できる。 |
 | Martínez-Villa–Solberg, *Artin–Schelter regular algebras and categories*, JPAA 215 (2011), 546–565; DOI 10.1016/j.jpaa.2010.06.006 | [arXiv:0902.1119](https://arxiv.org/pdf/0902.1119), Def.5.7、Lemma6.1(b)、Thm.6.2(a),(b) とその証明 | 有限生成射影解消と AS 双対性から得る Hom–Tor 双対、接続準同型との両立、Yoneda 積による完全対合を確認。全単純加群を取ると AS 添字の全単射が必要な安定性を与える。語長 Koszul 性と7移動は本稿の仮定から別途証明し、一般原理そのものを新規性としない。 |
 | Rogalski–Zhang, *Regular algebras of dimension 4 with 3 generators*, arXiv:1101.1998v2 (2011) | [本文](https://arxiv.org/pdf/1101.1998), §1冒頭の次数1生成の設定、Lemma 1.1とそのchange-of-rings証明、Cor.1.2、Lemma 1.3(a),(c)（PDF pp.3–4） | Lemma 1.1 は連結graded・有限大域次元と次数1の正則正規元だけで商の大域次元を1下げ、noetherian性も商のdomain性も要求しない。語長1のzに適用し、交代barテンソルと合わせて全nの通常Koszul枝の混合射影を非退化にする。Cor.1.2は親domainの下でAS性を比較し、得られたOre商のwに適用して基礎AS性を得る。Lemma 1.3(a)はn=3の第1段Cのnoetherian性、同(c)は重み2正則元族からの整域判定に用いる。 |
@@ -33,6 +33,17 @@
 - [Reyes–Rogalski](https://www.sciencedirect.com/science/article/pii/S0021869319304338): J. Algebra 539 (2019), 201–259。
 - [He–Van Oystaeyen–Zhang](https://www.sciencedirect.com/science/article/pii/S0021869313003086): J. Algebra 390 (2013), 231–249。
 - [Carvalho–Lopes–Matczuk](https://www.tandfonline.com/doi/full/10.1080/00927872.2010.489532): Comm. Algebra 39 (2011), no.8, 2838–2848、DOI 10.1080/00927872.2010.489532。Definition 1.1、Theorem 2.2(a),(b) を参照する。同定には genuine double extension の仮定を要し、任意の混合表示へそのまま適用しない。
+
+## 認識定理と分数圏・PBW理論の比較
+
+| 文献・確認箇所 | 確認した範囲と本稿との関係 |
+| --- | --- |
+| Presotto, *Symmetric noncommutative birational transformations*, J. Noncommut. Geom. 12 (2018), 733–778; Proposition 2.11。[一次本文](https://ems.press/content/serial-article-files/30740)、[DOI](https://doi.org/10.4171/JNCG/290) | Z-domainの各行e_iRがuniformなら右分数圏を持つ。本稿 `p2base:lem:fraction-frame` の局所化の枠組みはこの既知理論と共通する。二周期foldで全交代積を一つの分数斜体へ保ち、退化三次syzygyを排除するAS3認識そのものを述べる結果ではない。 |
+| Cassidy–Shelton, *PBW-deformation theory and regular central extensions*, J. Reine Angew. Math. 610 (2007), 1–12; Theorems 1.5, 3.6。[一次本文](https://arxiv.org/pdf/math/0603375)、[出版情報](https://doi.org/10.1515/CRELLE.2007.065) | 通常の次数1生成有限表示代数Aの中心拡大Dについて、有限complexity c(A)の下で中心元z∈D₁の正則性をD_≤c(A)上の単射性で判定する。持ち上げた解消による行列整合条件も与える。本稿 `igraph:lem:as-graph-ore` は、有限AS解消から純関係の保存μR=Rを導く段階を担う。 |
+| Ardizzoni–Saracco–Ştefan, *PBW-deformations of graded rings*, Israel J. Math. 249 (2022), 769–856; Theorems 3.14, 5.5。[著者最終稿](https://paolo.saracco.web.ulb.be/Material/2022-07-02_PBW_AcceptedManuscript.pdf)、[出版情報](https://doi.org/10.1007/s11856-022-2325-3) | 中心拡大とPBWの判定は一般基礎環にも拡張されている。したがって先行PBW理論を一頂点に限定してはいけない。ここでも低次数の正則性、指定ホモロジー消滅またはJacobi条件を検査し、AS最高係数からμR=Rを強制する本稿の判定を直接与えない。 |
+| Ait Mohamed–El-Baz, *Dual reflection groups of graded Ore extensions*, arXiv:2611.15830v1 (2026); Theorem A、§3。[一次本文](https://arxiv.org/html/2611.15830v1) | noetherian connected graded R、次数付き自己同型σ、斉次σ導分δについて、既にOre拡大であるS=R[t;σ,δ]のAS-Gorenstein／AS-regular性からRの対応する性質を降下させる。本稿の関係保存・PBW表示の認識を代替しない。2026-11-11提出のpreprintであり、声明・仮定と証明の依存を確認した範囲で比較し、本稿の証明依存には加えない。 |
+
+今回の確認では、`p2base:thm:as3` の二周期・全行Hilbert・domain仮定、または `igraph:lem:as-graph-ore` の有限頂点・有限AS解消の仮定だけから同じ結論を導く先行定理は特定できなかった。これは新規性の確定ではなく、上記箇所を照合した結果である。各文献の全証明の独立監査は実施していない。AS3認識の通常一頂点の場合の結論は `ISclass` の既知分類に含まれ、分類表を使わない本稿の証明と区別する。
 
 ## 混同を避ける比較先
 
@@ -151,8 +162,9 @@ domain・twisted potential・AS3の対応を与える重要な比較先である
 Ore局所化、Segre多様体による階数判定、有理写像の次数、P¹上の有効因子の次元公式、
 Koszul双対は既知の道具であり、この組合せによる二周期認識の完全な先行結果照合と新規性確認は未完である。
 
-`genidx:thm:three-light-ore` は、n=3の数値型によって純jump 1部分Bに上の認識定理を適用し、
-BのAS3性と `genidx:thm:as-base-ore` から、全てのA∈Q₃^domのindexed二段Ore表示を導く。
+`genidx:thm:three-light-ore` の主証明は、n=3の数値型からAの語長Koszul性を得て、
+一般定理 `knd:thm:koszul-ore` によってBのAS3性とindexed二段Ore表示を導く。
+上の二周期認識定理も純jump 1部分Bに適用でき、`genidx:thm:as-base-ore` と組み合わせた別証明を与える。
 Bには2周期とAS移動3があるので1周期でもある。
 
 `genidx:thm:three-light-descent` は、さらにn=3の全対象A自身の1周期性を証明し、

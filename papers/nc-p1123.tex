@@ -32,7 +32,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 公表準備稿 v23}
+\date{2026年11月20日\quad 公表準備稿 v24}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -55,7 +55,7 @@ $n\ge4$の非Koszul対象での混合関係数の自動性は未解決である�
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、公表準備稿 v23\\
+現行原稿：2026年11月20日（Asia/Tokyo）、公表準備稿 v24\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -203,11 +203,14 @@ $n=2$では、整域性を外したクラス$\mathcal Q$についても
 対角族では全パラメータの同一視を一つの対合で記述するが、
 一般Oreデータの軌道の標準形やモジュライ空間全体を分類したとはしない。
 
-$n=3$で重要なのは、二周期三生成元二次整域の全行のHilbert級数が
-$(1-t)^{-3}$ならAS正則次元3となる認識定理\ref{p2base:thm:as3}である。
-これにより基礎のAS性と1周期性を得た後、
-導分係数の移動作用素を基礎代数の自己同型へ延長し、最終代数の1周期下降を証明する。
+$n=3$では、純jump 1部分の数値型から$A$のKoszul性を導き、
+定理\ref{intro:thm:koszul}によって基礎のAS性と添字付き二段Ore表示を得る。
+続いて導分係数の移動作用素を基礎代数の自己同型へ延長し、
+最終代数の1周期下降を証明する。
 二周期性とAS移動8だけから、この下降を結論することはできない。
+これとは独立に、親代数の存在を仮定しない認識定理\ref{p2base:thm:as3}も証明する。
+二周期三生成元二次整域の全行のHilbert級数が$(1-t)^{-3}$ならAS正則次元3となり、
+上の基礎代数に対しても別の認識経路を与える。
 
 $n\ge4$の非Koszul対象で$r_3(i)=n,r_5(i)=1$が自動的に成立するかは未解決である。
 $n=4$では、これは定理\ref{n4:thm:equivalent-criteria}の十条件の自動性と同値であり、
@@ -230,6 +233,16 @@ Ore拡大による正則性の保存\cite[Theorem 3.3]{LWW}は逆構成を保証
 本稿の構造定理は、重みと語長の両方を使って混合関係の階数とPBW分解を強制し、
 低次元での網羅性と一般次元の判定条件を与えるものである。
 
+中心拡大の正則性とPBW性を有限次数の条件で判定する一般論は、
+Cassidy--Shelton\cite[Theorems 1.5, 3.6]{CSPBW}および、
+一般の基礎環を扱うArdizzoni--Saracco--\c{S}tefan
+\cite[Theorems 3.14, 5.5]{ASSPBW}による。
+前者は有限complexityの下で中心元の低次数での単射性を用い、
+後者は射影性の仮定の下で低次数の正則性と所定のホモロジー消滅、またはJacobi条件を用いる。
+本稿の補題\ref{igraph:lem:as-graph-ore}では、自由純部分の自己同型による
+混合関係を出発点とし、有限解消とAS対合から純関係の保存を導く。
+これによりOre表示と拡大変数の正則性を得る。
+
 1周期の$\mathbb Z$-代数から通常の次数付き代数を復元する一般論は
 Van den Bergh\cite[Lemma 3.4]{VdB}による。
 Sierra\cite[Theorem 1.2 = Corollary 4.4]{Sierra}は、次数1生成を仮定せず、
@@ -242,11 +255,15 @@ Iyudu--Shkarin\cite[Theorem 1.11, Remark 1.15, \S12.1]{ISclass}は、
 標数が2、3でない代数閉体上の通常の三生成元二次代数について、
 $H(t)=(1-t)^{-3}$の下で整域性とAS正則次元3が同値であることを与える。
 本稿の二周期認識定理は、1周期性を仮定しない$\mathbb Z$-代数を直接扱う。
+同文献の\S12.1は、通常の次数付き場合の整域性とtwisted potential性の同値を
+分類表から導き、分類表を用いない証明の可能性にも言及している。
+本稿の証明は退化した三次syzygyを分数斜体内の積と増大で排除するため、
+通常の次数付き特殊場合にも分類表を介さない証明を与える。
+この特殊場合の結論自体は上記の既知結果である。
+分数圏の一般的な枠組みはPresotto\cite[Proposition 2.11]{Presotto}と共通し、
+本稿では二周期foldにおける全交代積を一つの分数斜体内で扱う。
 また行列Hilbert級数の極と成長の関係はReyes--Rogalski\cite[Proposition 2.8]{RRgrowth}の一般理論が比較先であり、
 本稿では重み付きEuler行列の具体的な階数制約と境界因子を求める。
-これらの一般的方法は既知であり、本稿の個別の構造定理と先行研究との重複範囲の最終確認は未完了である。
-
-
 本稿で用いるAS対合・正規元商・Ore拡張・twistの一般原理は既知の結果である。
 これらの適用範囲を各証明で明記する。
 本稿固有の主張は、上の重みと原始生成元数の下での混合階数の強制、
@@ -1333,6 +1350,76 @@ $\nu$は全ての$E^p$の語長を保つことも分かる。
 $A$が整域なら、$R_3(i)\subset V_i z_{i+1}\oplus z_iV_{i+2}$の両射影は単射である。
 従って$r_3(i)\le n$である。同様に$r_5(i)\le1$、$r_6(i)=0$である。
 これらは上界であり、上界の達成は後の定理で証明する。
+
+\subsection{周期的Hilbert行列の共通極}
+\begin{lemma}[隣接生成整域のHilbert比較]\label{hilbert:lem:common-pole}
+$B$を代数閉体上の正連結・局所有限な$\mathbb Z$-整域とし、
+隣接成分$B_{i,i+1}$だけで生成され、全ての$i$で$\dim B_{i,i+1}=m\ge2$とする。
+二添字の次元$\dim B_{ij}$が同時移動$(i,j)\mapsto(i+L,j+L)$で不変であり、
+全行が多項式増大すると仮定する。法$L$で折り畳んだHilbert行列を
+\[
+ H_{ij}(u)=
+ \sum_{\substack{d\ge0\\i+d\equiv j\pmod L}}\dim B_{i,i+d}\,u^d
+ \qquad(0\le i,j<L)
+\]
+とする。ある$P(u)\in\operatorname{Mat}_L(\mathbb Z[u])$が
+$P(0)=I$、$P(u)H(u)=I$を満たすなら、
+整数$p\ge2$、実数$h>0$、実行列$K$が存在して
+\begin{equation}\label{hilbert:eq:common-pole}
+ H(u)=h(1-u)^{-p}J+(1-u)^{-p+1}K
+       +O((1-u)^{-p+2})
+ \qquad(u\to1^-)
+\end{equation}
+となる。ここで$J$は全成分が1の行列である。さらに
+\begin{equation}\label{hilbert:eq:first-moments}
+ P(1)J=JP(1)=0,\qquad JP'(1)J=0
+\end{equation}
+が成立する。
+この補題では、AS性、Koszul性、左右両方の解消、
+または代数同型としての$L$周期性を仮定しない。
+\end{lemma}
+\begin{proof}
+多項式増大から全成分は$|u|<1$で絶対収束する。
+$P(0)=I$なので形式逆行列は一意であり、$H=P^{-1}$と$HP=I$を得る。
+特に各成分は有理関数である。
+
+整域性により、任意の長さに非零経路があり、その左右乗法は単射である。
+各$0\le d<L$について、左乗法とHilbert次元の周期性から
+\[
+ u^dH_{i+d,j}(u)\le H_{ij}(u),\qquad
+ u^{L-d}H_{ij}(u)\le H_{i+d,j}(u)
+\]
+を得る。右乗法からも
+\[
+ u^dH_{ij}(u)\le H_{i,j+d}(u),\qquad
+ u^{L-d}H_{i,j+d}(u)\le H_{ij}(u)
+\]
+を得る。添字を法$L$で読むと、全成分は$0<u<1$で正であり、
+任意の二成分の比は$u\to1^-$で1に収束する。
+この比較は固定した非零経路による単射だけを使い、各周期間の代数同型を必要としない。
+
+極の位数の下界も示す。有限次元部分空間$U,V$の乗法が
+非零元の積を零にしないとき、その核の射影化はSegre多様体
+$\mathbb P(U)\times\mathbb P(V)\subset\mathbb P(U\otimes V)$と交わらない。
+射影次元定理から、乗法の像について
+\[
+ \dim UV\ge\dim U+\dim V-1
+\]
+を得る。隣接成分に反復適用すると
+$\dim B_{i,i+d}\ge(m-1)d+1$となる。
+各剰余類でこの下界を足せば、$H_{ij}(u)$は少なくとも
+正の定数倍の$(1-u)^{-2}$で発散する。
+有理性と全成分の比の極限から、共通の極位数$p\ge2$と共通の正の最高係数$h$を得る。
+従って\eqref{hilbert:eq:common-pole}が成立する。
+
+$PH=HP=I$の最高Laurent係数を比べると$P(1)J=JP(1)=0$である。
+$p\ge2$なので次の負べき係数も零であり、
+\[
+ P(1)K-hP'(1)J=0
+\]
+となる。左から$J$を掛ければ$JP'(1)J=0$を得る。
+\end{proof}
+
 \section{通常の次数付き代数でのKoszul性からの数値型}
 \label{ogk:sec:numerics}
 
@@ -4294,8 +4381,8 @@ $\check D\simeq\check D'$であることは$D,D'$がZhang twistで結ばれる�
 \subsection{三本のjump 1生成元を持つ部分代数の数値補題}
 \begin{lemma}[短い解消と周期的整域の増大]
 \label{genidx:lem:short-domain-resolution}
-$B$を、各頂点で$m\geq3$本のjump 1生成元を持つ、正連結・局所有限な
-語長二次$\mathbb Z$-整域とする。ある正整数$L$について語長を保つ$L$周期同型を持ち、
+$B$を、隣接成分$B_{i,i+1}$だけで生成される正連結・局所有限な
+二次$\mathbb Z$-整域とし、全ての$i$で$\dim B_{i,i+1}=m\geq3$とする。ある正整数$L$について語長を保つ$L$周期同型を持ち、
 各行が多項式増大するなら、全ての単純加群の射影次元が2以下となることはない。
 \end{lemma}
 \begin{proof}
@@ -4318,8 +4405,8 @@ $m\geq3$では$u=1/(m-1)<1$に極を持ち、多項式増大と矛盾する。
 
 \begin{lemma}[三生成元の純jump 1解消の数値型]
 \label{genidx:lem:three-light-base-numerics}
-$B$をjump 1の三生成元を各始点に持つ正連結・局所有限な
-$\mathbb Z$-整域とし、各行は多項式増大するとする。
+$B$を隣接成分$B_{i,i+1}$だけで生成される正連結・局所有限な
+$\mathbb Z$-整域とし、全ての$i$で$\dim B_{i,i+1}=3$、各行は多項式増大するとする。
 ある整数$s\geq3$について$L=s+5$と置く。
 $B$の二添字Hilbert次元は$L$周期的であり、各右単純加群は
 \[
@@ -4349,42 +4436,14 @@ P(u)=I-3uS+u^2RS^2-u^sQS^s
 $P(0)=I$なので$H(u)P(u)=I$も成り立つ。
 特に全成分は有理関数であり、多項式増大から$0<u<1$で収束する。
 
-\par\smallskip\noindent\textbf{最高Laurent係数は全て等しい。}\quad
-整域性により、長さ$d$の非零経路による左乗法・右乗法はそれぞれ単射である。
-任意の$0\leq d<L$について、左乗法と$L$周期性から
+\par\smallskip\noindent\textbf{共通極と零次・一次の行列恒等式。}\quad
+補題\ref{hilbert:lem:common-pole}を$m=3$に適用すると、
+$H$の全成分は$u=1$で同じ位数$p\ge2$の極と同じ正の最高Laurent係数を持ち、
 \[
-u^dH_{i+d,j}(u)\leq H_{ij}(u),\qquad
-u^{L-d}H_{ij}(u)\leq H_{i+d,j}(u)
+P(1)J=JP(1)=0,\qquad JP'(1)J=0
 \]
-を得る。添字は法$L$で読む。
-右乗法についても同様に
-\[
-u^dH_{ij}(u)\leq H_{i,j+d}(u),\qquad
-u^{L-d}H_{i,j+d}(u)\leq H_{ij}(u)
-\]
-を得る。従って$u\to1-$で全ての$H_{ij}$の比は1へ収束する。
-
-各有限次元成分の乗法は非零元の積を零にしない双線型写像である。
-代数閉体上で、乗法の核の射影化は分解可能テンソルのSegre多様体と交わらない。
-射影次元定理によりその余次元は$\dim U+\dim V-1$以上であり、
-Hopfの不等式$\dim UV\geq\dim U+\dim V-1$を得る。これを反復すると、
-\[
-\dim B_{i,i+m}\geq 2m+1
-\]
-となる。従って各$H_{ij}$は$u=1$で少なくとも二位の極を持つ。
-有理性と全成分の比較から、ある整数$p\geq2$、実数$h>0$および行列$K$について
-\[
-H(u)=h(1-u)^{-p}J+(1-u)^{-p+1}K+
-O((1-u)^{-p+2}),
-\]
-と書ける。$J$は全成分が1の行列である。
-
-\par\smallskip\noindent\textbf{零次・一次の行列恒等式。}\quad
-$PH=HP=I$の最高Laurent係数から
-\[
-P(1)J=JP(1)=0
-\]
-を得る。行和と列和を取ると、それぞれ
+となる。ここではHilbert次元の周期性だけで十分であり、$B$の代数周期を仮定する必要はない。
+行和と列和を取ると、それぞれ
 \[
 r_i=2+q_i,\qquad r_{j-2}=2+q_{j-s}
 \]
@@ -4398,10 +4457,7 @@ g=\gcd(s-2,L)=\gcd(s-2,7)\in\{1,7\}
 \]
 を周期とする。
 
-次のLaurent係数は
-$P(1)K-hP'(1)J=0$である。
-左から$J$を掛け、$JP(1)=0$を使うと$JP'(1)J=0$を得る。
-全成分の和を計算すれば
+一次の恒等式$JP'(1)J=0$において全成分の和を計算すれば
 \[
 0=-3L+2\sum_i r_i-s\sum_iq_i
 =L-(s-2)\sum_iq_i.
@@ -4478,23 +4534,10 @@ p&\text{第$p$項のシフト}\\\hline
 \end{theorem}
 \begin{proof}
 \par\smallskip\noindent\textbf{AS平行移動と最高語長。}\quad
-$E_{ij}^p=\Ext_A^p(S_i,S_j)$と置く。
-定理\ref{genidx:thm:one-light-ore}で使った有限射影解消の評価双対性を、
-AS次元5に適用すると、Yoneda完全対合
-$E_{ij}^p\otimes E_{j,\ell(i)}^{5-p}\to k$を得る。
-各top Extにtraceを選べば、巡回式により積を保つNakayama同型
-$E_{ij}^p\to E_{\ell(i),\ell(j)}^p$が存在する。
-$E^1$の矢印による到達可能性が整数の順序と一致するため、
-$\ell(i)=i+L$という一定平行移動となる。
-
-第$i$top Extの語長を$N_i$とする。
-$E^1_{i,i+1}$とその完全対合相手にtraceの巡回式を適用すると、
-相補成分の語長は$N_i-1$、Nakayama像の$E^1$の語長は1なので、
-$N_{i+1}=N_i$を得る。その一定値を$N$とする。
-同じ巡回式と完全対合からNakayama同型は全Extの語長を保つ。
-二次表示では$E^1E^1\to E^2$が関係埋込み$R\hookrightarrow W\otimes W$の双対なので、
-$E^1$上の逆双対から語長を保つ周期同型$A\simeq A(L)$を復元できる。
-これは全Extが$E^1$で生成されることを仮定しない。
+補題\ref{genidx:lem:as-translation}により、AS頂点置換は$i\mapsto i+L$であり、
+最高Extの語長は始点によらない整数$N$である。
+語長を保つ$L$周期同型と、語長・重みを保つYoneda完全対合も同補題から得られる。
+$E^p_{ij}=\Ext_A^p(S_i,S_j)$と置く。
 
 語長二次性とAS対合により、Extの語長は
 \[
@@ -4544,62 +4587,25 @@ $B$の解消は$(1,3,3,1)$の語長線型解消なので、
 Euler式と語長についての帰納法から$H_i^B(u)=(1-u)^{-3}$となる。
 この段階で、$B$のAS--Gorenstein性を数値だけから結論してはいない。
 
-\par\smallskip\noindent\textbf{二つの混合関係数。}\quad
-$a_i=r_3(i)$、$b_i=r_4(i)$と置き、語長を$u$、差次数を$v$で数える行級数を$H_i(u,v)$とする。
-AS対合と上で得た数値型から、Euler式は
-\begin{align*}
-1={}&H_i-u(3H_{i+1}+vH_{i+2}+v^2H_{i+3})\\
-&+u^2(3H_{i+2}+a_i vH_{i+3}+b_i v^2H_{i+4}+v^3H_{i+5})\\
-&-u^3(H_{i+3}+b_{i+4}vH_{i+4}+a_{i+5}v^2H_{i+5}+3v^3H_{i+6})\\
-&+u^4(vH_{i+5}+v^2H_{i+6}+3v^3H_{i+7})-u^5v^3H_{i+8}.
-\end{align*}
-固定した$0<v<1$について、多項式増大から全級数は$0<u<1$で収束する。
-$H_i(u,v)\geq H_i^B(u)=(1-u)^{-3}$であり、jump 1生成元の左乗法から
-$H_i(u,v)\geq uH_{i+1}(u,v)$である。
-8周期性により$u\uparrow1$で全行の比が1に収束するので、
-Euler式を$H_i$で割って極限を取ると
-\[
-v(a_i-b_{i+4})+v^2(b_i-a_{i+5})=0
-\]
-となる。全ての$0<v<1$で成立することから
-$a_i=b_{i+4}$、$b_i=a_{i+5}$を得る。
-従って$a_i=a_{i+9}=a_{i+1}$であり、全ての$a_i,b_i$は同じ定数$a$となる。
-重み3関係の両射影の単射性から$a\leq3$である。
+\par\smallskip\noindent\textbf{一般Koszul定理の適用。}\quad
+以上で$A\in\mathcal Q_3^{\mathrm{dom}}$の語長Koszul性が得られたので、
+定理\ref{knd:thm:koszul-ore}を適用できる。
+全ての$r_3(i)=r_4(i)=3$、標準二変数Hilbert級数、および添字付き二段Ore表示が従う。
+その正規元族$z_i$が語長を保つ同型$A(2)\simeq A$を与える。
+関係数とAS完全対合から、解消の残りのシフトも表示した表のとおりとなる。
+一般Koszul定理の証明は、本節の数値型や次節の二周期認識定理に依存しない。
 
-行Euler式の係数が全て一定となったので、語長の帰納法で全行は一致し、
-$H_i(u,v)=1/p(u,v)$となる。ここで
-\begin{align*}
-p(u,v)={}&1-u(3+v+v^2)+u^2(3+av+av^2+v^3)\\
-&-u^3(1+av+av^2+3v^3)+u^4(v+v^2+3v^3)-u^5v^3\\
-={}&(1-u)^3(1-uv)(1-uv^2)+(a-3)u^2(1-u)(v+v^2).
-\end{align*}
-$a<3$なら、固定した$0<v<1$で$u<1$を十分1に近付けると$p(u,v)<0$となり、
-正の有限値$H_i(u,v)=1/p(u,v)$に矛盾する。
-従って$a=3$であり、$(u,v)\mapsto(ut,t)$により所要の重みHilbert級数を得る。
-左解消のシフトもAS双対性から同じ表となり、列についても同じ級数を得る。
-
-\par\smallskip\noindent\textbf{正規元族と二周期性。}\quad
-重み3関係の両射影は整域性により単射で、次元は全て3なので同型である。
-従って可逆な線型写像$\sigma_i:V_{i+2}\to V_i$により
-$z_i v=\sigma_i(v)z_{i+1}$と書ける。
-また$r_5(i)=1$と整域性から$w_i z_{i+3}=c_i z_i w_{i+2}$、$c_i\ne0$である。
-生成元上で
-\[
-\phi:A(2)\longrightarrow A,\qquad
-v\mapsto\sigma_i(v),\quad z_{i+2}\mapsto z_i,\quad w_{i+2}\mapsto c_i^{-1}w_i
-\]
-と置く。テンソル代数上で交換式を反復すると、
-$i+2$から$j+2$への任意の経路式$a$について$z_i\bar a=\overline{\phi(a)}z_j$である。
-右端の$z_j$で約分すれば$\phi$は関係を保ち、左端の$z_i$で約分すれば単射である。
-生成元上で全射なので同型となり、所要の2周期性を得る。
+二変数の行Euler式から$r_3=r_4=3$を直接導く別証明は、
+研究ノート\path{research/notes_ja.tex}の\texttt{note:n3-direct-mixed-ranks}に収める。
 \end{proof}
 
 \begin{remark}[数値型から構造定理への依存]
 定理\ref{genidx:thm:five-dimensional-numerics}は、$n=3$でのKoszul性、AS添字、
 全関係数、Hilbert級数、および2周期性を追加仮定なしに確定する。
-基礎部分代数$B$のAS双対性は、続く定理\ref{p2base:thm:as3}の退化syzygyの排除で証明する。
-第二段のOre交換写像の可逆性は定理\ref{genidx:thm:as-base-ore}から従い、
-定理\ref{genidx:thm:three-light-ore}で$n=3$の二段Ore網羅性を得る。
+このKoszul性から定理\ref{knd:thm:koszul-ore}を通じて基礎部分$B$のAS性と二段Ore表示を得る。
+定理\ref{genidx:thm:three-light-ore}は、この結論を$n=3$の交換式として書き下す。
+続く定理\ref{p2base:thm:as3}は、親代数$A$の存在を仮定しない独立の認識定理であり、
+基礎$B$のAS性に対する別の証明も与える。
 $n\geq4$では同じ数値型の自動性も未証明である。
 個別結果の文献上の新規性の最終確認は未完了である。
 \end{remark}
@@ -4917,18 +4923,17 @@ $A$自身の1周期性と通常の次数付き二段Ore表示への下降は、
 定理\ref{genidx:thm:three-light-descent}で証明する。
 \end{theorem}
 \begin{proof}
-定理\ref{genidx:thm:five-dimensional-numerics}により、$A$の数値型、語長Koszul性、
-AS移動8と2周期性が得られる。
-純jump 1部分は差次数零部分なので、
-$B=T_{\mathbb Z}(V)/(R_2)$は二次$\mathbb Z$-整域であり、
-\[
-\dim B_{i,i+m}=\binom{m+2}{2}
-\]
-である。$z$族から得た$A(2)\simeq A$は純jump 1部分を保つため、$B(2)\simeq B$でもある。
-従って定理\ref{p2base:thm:as3}を適用でき、$B$の左右AS正則次元3を得る。
-同定理の証明は、有限生成射影による左右の$(1,3,3,1)$線型解消も与える。
-定理\ref{genidx:thm:as-base-ore}を$n=3$に適用すると、所要の二段表示、
-交換写像の可逆性、PBW基底、および$B$の1周期性が全て従う。
+定理\ref{genidx:thm:five-dimensional-numerics}により$A$は語長Koszulである。
+定理\ref{knd:thm:koszul-ore}を$n=3$に適用すると、$B$のKoszul AS正則性、
+二段Ore表示、全混合関係数および標準Hilbert級数を得る。
+交換写像の可逆性とPBW基底は、このOre表示の結論に含まれる。
+さらに定理\ref{genidx:thm:as-base-ore}により$B$は1周期的である。
+重みと語長から許される交換式の項を書き出せば、定理の表示を得る。
+
+基礎のAS性には別の認識経路もある。
+数値型定理から$B$は二次整域、$H_B(u)=(1-u)^{-3}$、$B(2)\simeq B$を満たすので、
+定理\ref{p2base:thm:as3}によっても$B$の左右AS正則次元3を得る。
+この場合も定理\ref{genidx:thm:as-base-ore}から同じ二段表示が従う。
 \end{proof}
 
 \begin{proposition}[導分補正の零集合と零補正部分の下降]
@@ -7623,13 +7628,15 @@ $A\in\mathcal Q_4^{\mathrm{dom}}$で全$r_5(i)=1$ならば、
 この場合$\det P_B(u)$は$u^{12}$の7次多項式で、定数項1、最高係数$-1$を持つ。
 \end{corollary}
 
+\clearpage
 \section{六次元対象の最高差次数と最高語長}\label{n4:sec:top-degrees}
 \subsection{四本以上の隣接生成元と短い解消}
 
 \begin{lemma}[四本以上の隣接生成元と長さ三以下の解消]
 \label{n4:lem:periodic-pd3-obstruction}
-$B$を、代数閉体上の正連結・局所有限な二次$\mathbb Z$-整域とする。
-各始点のjump 1生成空間の次元を$m\ge4$とし、ある$L>0$について
+$B$を、代数閉体上の正連結・局所有限な二次$\mathbb Z$-整域とし、
+隣接成分$B_{i,i+1}$だけで生成されるとする。
+全ての$i$で$\dim B_{i,i+1}=m\ge4$とし、ある$L>0$について
 $B(L)\simeq B$であると仮定する。全行が多項式増大し、全右単純加群が
 有限生成射影による長さ三以下の最小解消を持つならば、矛盾する。
 したがって、この条件の下で全単純加群の射影次元を三以下にはできない。
@@ -7653,20 +7660,9 @@ P(u)=I-muS+u^2RS^2-\sum_{s\ge3}u^sQ_sS^s
 $P(u)H(u)=I$を満たす。$P(0)=I$なので形式逆行列の一意性から
 $H(u)P(u)=I$も成り立つ。この後者は左解消を別に仮定せずに得られる。
 
-整域性による左右乗法の単射と周期性から、$u\to1-$で全ての$H_{ij}(u)$の比は1へ収束する。
-またHopfの双線型写像の次元不等式により
-\[
-\dim B_{i,i+d}\ge (m-1)d+1.
-\]
-したがって各$H_{ij}$は$u=1$で少なくとも二位の極を持つ。
-有理性を併せると、ある$p\ge2$、$h>0$、行列$K$に対して
-\[
-H(u)=h(1-u)^{-p}J+(1-u)^{-p+1}K+O((1-u)^{-p+2})
-\]
-となる。$J$は全成分が1の行列である。
-最高係数から$P(1)J=JP(1)=0$を得る。
-この成分比較と極の評価は、補題\ref{genidx:lem:three-light-base-numerics}の証明と同じく、
-左右の非零経路の乗法を使うものであり、$m=3$には依存しない。
+補題\ref{hilbert:lem:common-pole}により、全成分の最高Laurent係数は
+同じ正の実数であり、共通の極位数は2以上である。
+従って$P(1)J=JP(1)=0$を得る。この適用には右解消からのEuler式だけで十分である。
 
 $\ell=s-2\ge1$、$a_{i,\ell}=q_{i,\ell+2}$、
 $q_i=\sum_{\ell\ge1}a_{i,\ell}$と置く。
@@ -7716,8 +7712,14 @@ M(u)v(u)=\lambda(u)v(u),\qquad
 \lambda(1)=0,\quad v(1)=\boldsymbol1,\quad
 \boldsymbol1^{\mathsf T}v(u)=L
 \]
-を取れる。$M(u)^{-1}=(uS)^2H(u)$は少なくとも二位の極を持つので、
-単純零固有値以外の成分が有界であることから$\lambda'(1)=0$である。
+を取れる。$M(u)^{-1}=(uS)^2H(u)$は少なくとも二位の極を持つ。
+単純零固有値に対応する解析的スペクトル射影を$\Pi(u)$と書けば
+\[
+ M(u)^{-1}=\lambda(u)^{-1}\Pi(u)+G(u),\qquad
+ \Pi(1)=L^{-1}J,
+\]
+となり、$G(u)$は$u=1$の近傍で解析的である。
+従って$\lambda(u)$は少なくとも二位の零点を持ち、$\lambda'(1)=0$である。
 $\boldsymbol1^{\mathsf T}M'(1)\boldsymbol1=0$を計算すると
 \begin{equation}\label{n4:eq:pd3-first-moment}
 \sum_{i,\ell}\ell a_{i,\ell}=(m-2)L
@@ -8734,11 +8736,35 @@ $\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
 候補890列の行列式を整数演算で再計算し、
 \path{computations/mixed_ranks_certificate.json}と照合する。
 その有限検査は定理\ref{idx:thm:mixed-relation-ranks}の証明の一部である。
+五・六次元の数値型の証明に現れるEuler行列式、因数分解、平方完成は、
+\path{computations/verify_euler_identities.py}でも記号のまま検算できる。
+これは本文と研究ノートの代数的・解析的証明に対する補助検算であり、
+代数の存在やAS正則性を計算から認定するものではない。
 
 \begingroup
 \small
 \begin{thebibliography}{99}
 \interlinepenalty=10000
+\bibitem{CSPBW}
+T.~Cassidy and B.~Shelton,
+\emph{PBW-deformation theory and regular central extensions},
+J. Reine Angew. Math. \textbf{610} (2007), 1--12.
+\href{https://doi.org/10.1515/CRELLE.2007.065}{doi:10.1515/CRELLE.2007.065}.
+\url{https://arxiv.org/pdf/math/0603375}.
+比較箇所：Theorems 1.5, 3.6（arXiv:math/0603375v2）。
+\bibitem{ASSPBW}
+A.~Ardizzoni, P.~Saracco and D.~\c{S}tefan,
+\emph{PBW-deformations of graded rings},
+Israel J. Math. \textbf{249} (2022), 769--856.
+\href{https://doi.org/10.1007/s11856-022-2325-3}{doi:10.1007/s11856-022-2325-3}.
+\url{https://paolo.saracco.web.ulb.be/Material/2022-07-02_PBW_AcceptedManuscript.pdf}.
+比較箇所：Theorems 3.14, 5.5（著者最終稿の番号）。
+\bibitem{Presotto}
+D.~Presotto, \emph{Symmetric noncommutative birational transformations},
+J. Noncommut. Geom. \textbf{12} (2018), 733--778.
+\href{https://doi.org/10.4171/JNCG/290}{doi:10.4171/JNCG/290}.
+\url{https://ems.press/content/serial-article-files/30740}.
+比較箇所：Proposition 2.11（$\mathbb Z$-整域の右分数圏）。
 \bibitem{IssaLalin2013}
 Z.~Issa and M.~Lal\'in,
 \emph{A generalization of a theorem of Boyd and Lawton},

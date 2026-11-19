@@ -1,12 +1,12 @@
 {
-  "date": "2026-11-19",
-  "version": 23,
+  "date": "2026-11-20",
+  "version": 24,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
     "research_plan": true,
     "research_notes": true,
-    "source_bundle_complete": true
+    "source_inventory_complete": true
   },
   "mathematics": {
     "proofs_written": [
@@ -111,13 +111,23 @@
       "D3-FULL-R5-MOMENT",
       "N4-CUBIC-CORNER-BOUNDS",
       "EULER-JUMP-CONGRUENCE",
-      "D3-FULL-R5-EULER-FACTORIZATION"
+      "D3-FULL-R5-EULER-FACTORIZATION",
+      "PERIODIC-HILBERT-COMMON-POLE",
+      "N3-DIRECT-MIXED-RANKS"
     ],
     "claim_status_and_proof_locations": "research/STATE.json; complete proofs in the current paper and notes. A written proof is distinct from the bounded current review below.",
     "publication_revision_audit": {
-      "date": "2026-11-19",
-      "status": "completed_internal_reading_no_definite_error_identified",
+      "date": "2026-11-20",
+      "status": "completed_internal_reading_with_explicit_generation_hypotheses",
       "scope": [
+        "Common Hilbert-pole lemma: adjacent generation, Hilbert-dimension periodicity, two-sided component comparison, finite right Euler inverse, rationality and p>=2.",
+        "n3 short-resolution and pure-base numerical forcing, exceptional seven-row determinant, extraction of word Koszulity, and the new route through the arbitrary-n Koszul theorem.",
+        "The full direct n3 mixed-rank proof retained in the notes, with its independent hypotheses and explicit final Hilbert series.",
+        "n4 projective-dimension obstruction, D3 conclusion, pure numerical constraints and divisibility of N by three; analytic spectral projection and second variation.",
+        "r5 Golod-Shafarevich saturation and orbit-average argument.",
+        "Mahler-measure proof, coordinate-face divisibility and the full D3/all-r5 Euler determinant factorization for arbitrary n, including multiplicities, signs, noncommuting product order and middle coefficients."
+      ],
+      "retained_internal_checks": [
         "General mixed-rank/Ore recognition and arbitrary-n Koszul proofs with direct normal-quotient/bar dependencies.",
         "n=1 normal forms, inverse constructions, isomorphisms, periods and explicit reflected-opposite formula.",
         "Two-period three-generator AS recognition and n=3 descent/derivation extension.",
@@ -125,11 +135,16 @@
         "Ten-condition n=4 equivalence: dependency structure, taking the numerical input lemmas as premises.",
         "New common AS lemma, introduction summaries and six-part reordering."
       ],
-      "limits": [
-        "Not a fresh complete audit of every n=3/n=4 numerical lemma or high-dimensional Euler determinant proof.",
-        "Not formal verification, external peer review or a completed novelty investigation."
+      "findings": [
+        "Adjacent-component generation is now explicit in the three short/pure-resolution lemmas. Their actual applications already satisfy it.",
+        "No conclusion-changing error was identified in the stated audited ranges. This records internal reading, not a proof of global correctness.",
+        "The two-period AS3 recognition theorem is retained as an independent theorem and alternate route; it is not a premise of the main n3 proof."
       ],
-      "retained_existing_main_labels": 282
+      "limits": [
+        "Not a fresh exhaustive independent audit of every proof. The boundary-kernel/local-saturation and all isomorphism arguments have not all been rechecked in this revision.",
+        "Not formal verification, external peer review, or a completed novelty investigation."
+      ],
+      "retained_existing_main_labels": 306
     },
     "scope": "All word-Koszul Qn_dom objects have full indexed Ore for every n; the original nonKoszul problem remains open for n>=4. Every Q4dom has D3 and 3|N,3|L. Every D3 object with 3|L has at least two whole saturated r5 classes, with the proved pointwise r4 constraints. For arbitrary n with D3 and all r5=1, detP=detPB det(I-uvS^2) det(I-uv^2S^3), without 3|L, Koszul, noetherian, H or B-AS assumptions. The first unresolved n4 word is N9/L12; neither the determinant factorization nor the local bounds settle its existence or exclude it. Nozz implies full r5 at every period, and a period not divisible by six gives full ordinary skew Ore. No nonKoszul target example has been constructed or identified in the primary sources checked; residual possibilities are hypothetical.",
     "formalized": false,
@@ -171,17 +186,25 @@
         "Van den Bergh: Lemma 3.4, Definition 4.1.1, Theorem 4.2.2",
         "Sierra: Theorem 1.2 / Corollary 4.4",
         "Liu-Wang-Wu: Ore-extension theorem and connected graded scope",
-        "Iyudu-Shkarin: Theorem 1.11 and ordinary three-generator scope",
         "He-Van Oystaeyen-Zhang: Proposition 2.2",
-        "Carvalho-Lopes-Matczuk: Definition 1.1, Theorem 2.2(a),(b)"
+        "Carvalho-Lopes-Matczuk: Definition 1.1, Theorem 2.2(a),(b)",
+        "Iyudu-Shkarin: Theorem 1.11, Remark 1.15 and section 12.1, including the classification-free proof question in the ordinary case.",
+        "Presotto: Proposition 2.11 on right fraction categories of Z-domains with uniform rows.",
+        "Cassidy-Shelton: Theorems 1.5 and 3.6 on central extensions and finite-complexity PBW criteria.",
+        "Ardizzoni-Saracco-Stefan: Theorems 3.14 and 5.5, including general base rings and projectivity/homology hypotheses.",
+        "Issa-Lalin: published Theorems 1.1 and 1.2; the s=1 specialization of Theorem 1.2 used in the manuscript.",
+        "Ait Mohamed-El-Baz, arXiv:2611.15830v1: Theorem A and section 3. Comparison only; noetherian connected graded base and a pre-existing genuine Ore extension."
       ],
       "publication_metadata_updated": [
         "Floystad-Vatne",
         "He-Van Oystaeyen-Zhang",
         "Reyes-Rogalski",
-        "Carvalho-Lopes-Matczuk"
+        "Carvalho-Lopes-Matczuk",
+        "Cassidy-Shelton",
+        "Ardizzoni-Saracco-Stefan",
+        "Presotto"
       ],
-      "limits": "No exhaustive novelty determination. ATV2 original proof and full classification-table comparison remain unverified as specified in BASELINE. The publication summaries state the assumptions of known results and separate them from the manuscript conclusions."
+      "limits": "No exhaustive novelty determination. No publication version of ISclass was identified; its verified arXiv v1 metadata is retained. ATV2 original proof and the complete classification-table comparison remain unverified as specified in BASELINE. The compared external proofs were not all independently audited. The 2026 Ore-descent preprint is a comparison in BASELINE, not a proof dependency."
     }
   },
   "exact_computation": {
@@ -189,23 +212,7 @@
     "python_version": "3.12.14",
     "commands": [
       {
-        "command": "python3 computations/verify_mixed_ranks.py",
-        "exit_code": 0
-      },
-      {
-        "command": "python3 computations/weighted_baseline.py",
-        "exit_code": 0
-      },
-      {
-        "command": "python3 computations/verify_skew_ore.py",
-        "exit_code": 0
-      },
-      {
-        "command": "python3 computations/verify_n4_pure_euler.py",
-        "exit_code": 0
-      },
-      {
-        "command": "python3 computations/verify_n4_parent_mixed.py",
+        "command": "python3 computations/verify_euler_identities.py",
         "exit_code": 0
       }
     ],
@@ -235,20 +242,25 @@
         3010
       ],
       "certificate_comparison": "passed",
-      "current_update_rerun": true,
-      "scope": "The canonical 890-array proof was rerun with exact integer arithmetic and matched the retained certificate. No new independent implementation was executed in this publication revision."
+      "current_update_rerun": false,
+      "scope": "The canonical 890-array certificate and its source are unchanged. No fresh rerun or new independent implementation was executed in this revision.",
+      "verification_status": "previously_verified_result_retained_for_unchanged_source"
     },
     "weighted_baseline": {
       "script": "computations/weighted_baseline.py",
       "certificate": "computations/baseline_certificate.json",
       "result": "passed",
-      "scope": "Hilbert/Euler, PBW and twisting baseline identities; retained certificate comparison."
+      "scope": "Hilbert/Euler, PBW and twisting baseline identities; retained certificate comparison.",
+      "current_update_rerun": false,
+      "verification_status": "previously_verified_result_retained_for_unchanged_source"
     },
     "skew_ore": {
       "script": "computations/verify_skew_ore.py",
       "result": "passed",
       "arithmetic": "SymPy exact symbolic arithmetic",
-      "scope": "Four rewriting overlaps and the four displayed parameter components of dimensions 6,5,5,4; does not classify all moduli."
+      "scope": "Four rewriting overlaps and the four displayed parameter components of dimensions 6,5,5,4; does not classify all moduli.",
+      "current_update_rerun": false,
+      "verification_status": "previously_verified_result_retained_for_unchanged_source"
     },
     "n4_pure_euler_formal_certificate": {
       "script": "computations/verify_n4_pure_euler.py",
@@ -260,7 +272,9 @@
       "all_degree_reduction": "Cofactors have degree at most 45; (1-u^40)^3/det P has degree 70, so the numerator degree is at most 115. The first 120 coefficients determine the quadratic formula on every residue class.",
       "coefficient_formula": "h_i(40m+a)=38016*binom(m,2)+B_(i,a)*m+C_(i,a), min B=22620, min C=1",
       "hopf_cases": 16000,
-      "scope": "Pure formal Euler data only; no algebra or AS realization is asserted."
+      "scope": "Pure formal Euler data only; no algebra or AS realization is asserted.",
+      "current_update_rerun": false,
+      "verification_status": "previously_verified_result_retained_for_unchanged_source"
     },
     "n4_parent_mixed_certificate": {
       "script": "computations/verify_n4_parent_mixed.py",
@@ -268,114 +282,164 @@
       "result": "passed",
       "arithmetic": "Python standard-library exact integers",
       "second_determinant_coefficient": -942,
-      "scope": "Excludes one displayed mixed extension of the formal pure model; does not exclude all possible extensions."
+      "scope": "Excludes one displayed mixed extension of the formal pure model; does not exclude all possible extensions.",
+      "current_update_rerun": false,
+      "verification_status": "previously_verified_result_retained_for_unchanged_source"
     },
-    "proof_role": "The 890-array calculation is a premise of the general n2 mixed-rank proof. The formal n4 calculations have only the scopes specified in their notes; they do not construct an algebra. Other principal structure theorems have written algebraic/analytic proofs. No unexecuted supplementary symbolic checks are reported as current verification."
+    "proof_role": "The retained 890-array certificate is a premise of the general n2 mixed-rank proof. The formal n4 calculations have only the scopes specified in their notes and do not construct an algebra. The new Euler identity script supplements written algebraic/analytic proofs. Execution and source-preserving retention are recorded separately.",
+    "execution_scope": "Only verify_euler_identities.py was executed for this revision. The five previously verified scripts and their inputs/certificates are unchanged in content; their verification status is retained, without claiming a fresh rerun.",
+    "retained_verified_assets": {
+      "verified_source_commit": "1f211e86f2a49aac13cc30b9838aaf2b85ddac0f",
+      "content_unchanged": true,
+      "files": [
+        {
+          "path": "computations/verify_mixed_ranks.py",
+          "sha256": "2673d6523ecca8baed0cbc2fbdd93ea1eaa3eefccff35c478d6be5a0fc8bb41d"
+        },
+        {
+          "path": "computations/weighted_baseline.py",
+          "sha256": "a45de808e821193a796c734ca53cc25b3ab81b752ee34dc255cfd7908668dc3f"
+        },
+        {
+          "path": "computations/verify_skew_ore.py",
+          "sha256": "d9ed086154201a122c1fbf6438c084cb4c70b740ebf78e3376b5b20fabeac9b6"
+        },
+        {
+          "path": "computations/verify_n4_pure_euler.py",
+          "sha256": "de5b5c58f0e181e57b3f63989a187df9d275ce869cc6c09426a713ba5104e7cd"
+        },
+        {
+          "path": "computations/verify_n4_parent_mixed.py",
+          "sha256": "071e2c8e1994e2f784f853fe1b1d3fc6bab6645bd8a7e42fbe8956df0d8123a6"
+        },
+        {
+          "path": "computations/mixed_ranks_certificate.json",
+          "sha256": "2603e279535b5d1ef98918ec70a0ca20b24521dc84392ba15ffa979a4b6cd184"
+        },
+        {
+          "path": "computations/baseline_certificate.json",
+          "sha256": "e3ce69cc9369aad89ad72f6cded665bcd890e81d0cd9c699844f02ad77c218bb"
+        }
+      ]
+    },
+    "supplementary_euler_identities": {
+      "script": "computations/verify_euler_identities.py",
+      "executed_by_root": true,
+      "result": "passed",
+      "arithmetic": "SymPy 1.14.0, exact symbolic integers and rationals; no floating point or sampling",
+      "scope": [
+        "n3 complete scalar Euler factorization",
+        "n3 full seven-row Euler determinant constructed directly from shifts and ranks",
+        "n4 s5 two-vertex matrix factorization and determinant",
+        "n4 s6 scalar denominator at u=1/2 equals -3/64",
+        "Fourier factorization and second-variation square completion"
+      ],
+      "limits": "Supplementary identity checks only. The analytic growth arguments are proved in the paper; this script does not certify AS regularity, algebra existence or positivity of every Hilbert coefficient."
+    }
   },
   "project_structure": {
     "status": "passed",
     "command": "python3 scripts/check_project.py",
     "scope": "Required files, local TeX labels/citations/environments, empty author fields, claim proof targets, version agreement, Markdown links and resume inputs. Not a mathematical proof check.",
     "git_diff_check": "passed",
-    "original_main_labels_retained": 282,
-    "current_main_labels": 306
+    "original_main_labels_retained": 306,
+    "current_main_labels": 309,
+    "dependency_graph": {
+      "claim_count": 104,
+      "missing_dependencies": 0,
+      "cycles": 0,
+      "scope": "Declared claim dependencies only; absence of graph cycles does not certify every proof dependency."
+    }
   },
   "typesetting": {
-    "status": "passed_with_font_warnings",
+    "status": "passed_with_nonblocking_font_preset_and_size_warnings",
     "pdf_generated": true,
     "final_sources_compiled": true,
+    "layout_review_executed": true,
     "engine": "LuaLaTeX / latexmk; LuaTeX-ja and HaranoAji fonts",
     "commands": [
       "latexmk",
       "latexmk research/plan_ja.tex research/notes_ja.tex research/indexed_z_algebra.tex"
     ],
-    "documents": {
+    "outputs": {
       "papers/nc-p1123.tex": {
-        "source_sha256": "7324bf35b65b8ca9f9591f654ae7eac5317e1a7173a324ff03c7095c60feb854",
         "pdf": "nc-p1123.pdf",
-        "pdf_sha256": "6d1d5add1ae5b4a2ba63d6bec7ffdaac0873a9b2da0fdabbbfbc6929ce47d911",
         "pages": 129,
-        "exit_code": 0,
-        "overfull_boxes": 0,
-        "underfull_boxes": 0,
+        "bytes": 1286020,
+        "sha256": "aa2db31a03f65b568083fbaf9f7182847aeef4b0e8351dd9f29ec9fe75a65d41",
+        "unresolved_references_or_citations": 0,
         "missing_characters": 0,
-        "undefined_control_sequences": 0,
-        "undefined_references_or_citations": false,
-        "multiply_defined_labels": false,
-        "pdf_string_warnings": 0,
-        "selected_visual_review_pdf_pages": [
-          1,
-          2,
-          3,
-          4,
-          6,
-          21,
-          22,
-          69,
-          70,
-          128,
-          129
-        ]
+        "overfull_boxes": 0,
+        "underfull_boxes": 0
       },
       "research/plan_ja.tex": {
-        "source_sha256": "af552652e0fc57ddbaec9e68a9b0f4fc663608aeadc371df6898e855672741db",
         "pdf": "plan_ja.pdf",
-        "pdf_sha256": "667529ea0d61760c119221cd75d7143cc8aa65b7be17cc0cc57935dd5989a179",
         "pages": 14,
-        "exit_code": 0,
-        "overfull_boxes": 0,
-        "underfull_boxes": 0,
+        "bytes": 400800,
+        "sha256": "70ecc35daee83f7302fabc4b9ef18660b7cd91faafc6eaf05c60dfdd549aa02d",
+        "unresolved_references_or_citations": 0,
         "missing_characters": 0,
-        "undefined_control_sequences": 0,
-        "undefined_references_or_citations": false,
-        "multiply_defined_labels": false,
-        "pdf_string_warnings": 0,
-        "selected_visual_review_pdf_pages": [
-          1,
-          2
-        ]
+        "overfull_boxes": 0,
+        "underfull_boxes": 0
       },
       "research/notes_ja.tex": {
-        "source_sha256": "03305e9c4af76c77b05d937532d736dce39890a94500f6285b5d37bbf75f5074",
         "pdf": "notes_ja.pdf",
-        "pdf_sha256": "94ba91b650cafb088528d946c2e23deda99c30b4e531b9bf5e3e1903e4e773f4",
-        "pages": 40,
-        "exit_code": 0,
-        "overfull_boxes": 0,
-        "underfull_boxes": 0,
+        "pages": 41,
+        "bytes": 673416,
+        "sha256": "2524b3ba685a94e75b63c23604d78270098a48a2ed87ceb16bac8cf16e711fd0",
+        "unresolved_references_or_citations": 0,
         "missing_characters": 0,
-        "undefined_control_sequences": 0,
-        "undefined_references_or_citations": false,
-        "multiply_defined_labels": false,
-        "pdf_string_warnings": 0,
-        "selected_visual_review_pdf_pages": [
-          8,
-          20
-        ]
+        "overfull_boxes": 0,
+        "underfull_boxes": 0
       },
       "research/indexed_z_algebra.tex": {
-        "source_sha256": "445df5abab305a9b76b19084155e3fdf30dcf647ab9658fe93a5cdec17d0570f",
         "pdf": "indexed_z_algebra.pdf",
-        "pdf_sha256": "e2d03870b83ce912917f6ca46294708baab7f1a9a153f6d83e5c6a5e595fe4da",
         "pages": 16,
-        "exit_code": 0,
-        "overfull_boxes": 0,
-        "underfull_boxes": 0,
+        "bytes": 457261,
+        "sha256": "444894b5635f8fd4b4ee5c6063e5b8d7d869b7ab3c131cafe06463422a63589c",
+        "unresolved_references_or_citations": 0,
         "missing_characters": 0,
-        "undefined_control_sequences": 0,
-        "undefined_references_or_citations": false,
-        "multiply_defined_labels": false,
-        "pdf_string_warnings": 0,
-        "selected_visual_review_pdf_pages": [
-          1,
-          5
-        ]
+        "overfull_boxes": 0,
+        "underfull_boxes": 0
       }
     },
-    "layout_review_executed": true,
-    "layout_review_scope": "Selected pages were rendered with pdftoppm and visually reviewed. Scope includes title, table of contents, notation/scope tables, common AS proof, two-period recognition, references and the corrected support-document locations. This is not a claim of visual review of every page.",
-    "remaining_warnings": "LuaTeX-ja font scaling/addjfontfeature messages, Japanese italic font fallback to upright, and small mathematical font size substitutions. No missing glyphs or visible defects were found on the selected pages.",
-    "reproduction": "Use the dependencies and commands in README.md. The temporary user-level TeX installation used for this run is not a project dependency or a bundle asset."
+    "layout_review": {
+      "scope": "Selected changed pages, not a fresh visual review of all 200 PDF pages. Main title/contents/introduction, common Hilbert lemma, n3 numerical theorem, n4 obstruction and numerical argument, moved notes proof, plan opening and bibliography were inspected as rendered images.",
+      "main_physical_pages_unchanged_after_last_layout_adjustment": [
+        1,
+        3,
+        6,
+        7,
+        22,
+        23,
+        24,
+        65,
+        66,
+        67,
+        68
+      ],
+      "final_main_physical_pages_rechecked": [
+        112,
+        113,
+        128,
+        129
+      ],
+      "notes_physical_pages": [
+        4,
+        5
+      ],
+      "plan_physical_pages": [
+        1
+      ],
+      "resolved_issue": "Section 33 now begins on a new page (printed page 109), keeping the obstruction lemma hypotheses together. The corrected opening and final bibliography were visually rechecked.",
+      "indexed_working_manuscript": "Compiled; no content/layout change other than the date/version."
+    },
+    "remaining_warnings": [
+      "LuaTeX-ja preset scaling and ignored addjfontfeatures for a Japanese font family.",
+      "Unavailable Japanese italic shapes retain the regular Japanese face; this is font information, not an unresolved reference.",
+      "Small mathematics font-size substitutions (requested 4.5 pt) and the pre-existing deprecated rm command. No missing characters or overfull/underfull boxes."
+    ],
+    "scope": "The four final sources compiled successfully. Layout and reference checks do not establish mathematical correctness."
   },
   "storage": {
     "canonical_repository": "uedakazushi/nc-p1123",
