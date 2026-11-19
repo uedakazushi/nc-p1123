@@ -6,7 +6,7 @@
 \usepackage{xurl}
 \title{nc-p1123研究方針と再開手順}
 \author{}
-\date{2026年11月20日\quad 第24版}
+\date{2026年11月20日\quad 第25版}
 \begin{document}
 \maketitle
 
@@ -46,6 +46,33 @@ $n=3$の主証明は、純部分の数値型から$A$のKoszul性を導き、
 原稿中の証明記載、今回の内部検証、計算、組版、新規性の確認は
 \path{research/validation.json}に区別して記す。
 研究として次に着手すべき数学的課題は、後述の$n=4,N=9,L=12$での階数自動性である。
+
+\section{AS添字$n+5$を仮定するgraded構造問題}
+\textbf{目標（未解決）}：通常の連結次数付き、左右noetherianなAS正則整域で、
+最小生成元次数$(1^n,2,3)$、大域次元$n+2$、AS添字$n+5$だけから、
+$B=k\langle A_1\rangle$上の通常の二段Ore表示を導く。
+語長二次性・標準Hilbert級数・Koszul性は仮定しない。
+これは\texttt{nc-p1112}の一段Ore構造定理の自然な対応問題である。
+既存の\texttt{thm:general-quadratic-classification}は
+語長二次性と標準Hilbert級数等を追加するので、この目標を解決しない。
+
+\textbf{証明済みの新たな制約}：主論文\texttt{lem:index-four-strands}により、
+AS添字$n+5$だけで全最小解消の第$i$項の重みshiftは$i,\ldots,i+3$に限られ、
+特に最小関係の重みは2から5だけである。
+\textbf{構成した障害例}：主論文\texttt{prop:nonquadratic-ore-family}の
+$A_n=k[x_1,\ldots,x_n][z;\partial][w]$、
+$\partial(x_1)=x_1^3,\ \partial(x_j)=0\ (j>1)$は、
+全$n$で標準Hilbert級数・AS添字$n+5$・左右noetherian性・整域性を持ち、
+二段Ore拡大ではあるが、語長二次表示は不可能である。
+従って「AS添字から語長二次性を強制して既存のKoszul定理を使う」
+という証明方針は成立しない。この例は二段Ore構造予想の反例ではない。
+
+\textbf{次の着手}：重み5以下の非二次最小関係を許したまま、
+$A/(A_1)$の2、3の生成元に関する関係・Torの有限性から
+重み2生成元の交換写像が可逆となる条件を抽出する。
+一段目のOre表示を得た後に重み3生成元の交換写像とPBW性を調べる。
+上記の非二次Ore例を各補題の回帰例とし、二次関係への還元を暗黙に仮定しない。
+AS添字の強制と二段Ore網羅性の証明を混同しない。
 
 \section{最初に読む：現在の目標と対象}
 現在の主目標は、\textbf{整域性を仮定した、任意の$n\geq1$における

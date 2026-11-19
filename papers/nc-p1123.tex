@@ -118,6 +118,12 @@ AS移動$L$と最高語長$N$が始点によらないことは
 補題\ref{genidx:lem:as-translation}の結論である。
 一般の二次対象では全Extを二次双対と同一視せず、Koszul性を得た後に限って同一視する。
 
+AS添字$n+5$のみから語長二次性を導くことはできない。
+実際、任意$n$で標準Hilbert級数も満たす非二次の二段Ore例が存在する
+（命題\ref{prop:nonquadratic-ore-family}）。
+従ってAS添字だけを仮定する一般構造予想には、
+Koszul定理へ帰着する以外の認識法が必要である。
+
 \subsection{中心となる構造定理}
 次の定理が、一般次元の認識問題を二つの関係数へ還元する。
 添字付きOre表示の定義には、整列語による一意なPBW分解を含める。
@@ -378,6 +384,25 @@ AS--Gorenstein条件が成立する。
 局所有限性と有限GK成長も保たれる。
 \end{proof}
 
+\begin{lemma}[AS添字による四本幅の解消]\label{lem:index-four-strands}
+$A$を連結局所有限な左右noetherian AS正則次数付き代数とし、
+$\gldim A=n+2$、$\operatorname{ASind}A=n+5$とする。
+最小生成元の次数は$(1^n,2,3)$とする。
+このとき全ての$i,j$について
+\[
+\Tor_i^A(k,k)_j=0\qquad(j<i\ \text{または}\ j>i+3).
+\]
+特に最小関係式の重みは$2,3,4,5$のいずれかに限られる。
+ここでは標準Hilbert級数も語長二次性も仮定しない。
+\end{lemma}
+\begin{proof}
+最小自由解消の第$i$項の各生成次数$j$は、連結性と最小性により
+$j\ge i$を満たす。AS--Gorenstein双対性
+\eqref{eq:betti-duality}により、第$d-i$項には次数$\ell-j$が現れる。
+したがって$\ell-j\ge d-i$であり、
+$j\le\ell-d+i=i+3$となる。$i=2$の場合が最小関係式についての主張である。
+\end{proof}
+
 \begin{proposition}\label{prop:four-strands}
 $A\in\Gclass_n$、$d=n+2$とする。このとき
 \[
@@ -399,6 +424,56 @@ $j\leq\ell-(d-i)=i+3$を得る。
 $\dim A_2=\binom{n+1}{2}+1$となる。
 その差は$\binom n2$であり、重み2より低い関係式がないので
 全て最小関係式である。
+\end{proof}
+
+\begin{proposition}[標準Hilbert級数とAS添字は語長二次性を強制しない]\label{prop:nonquadratic-ore-family}
+任意の$n\ge1$に対して、次の条件を全て満たす連結次数付き代数$A_n$が存在する。
+\[
+\begin{gathered}
+\gldim A_n=n+2,\qquad \operatorname{ASind}A_n=n+5,\\
+Q(A_n)\text{ の次数}=(1^n,2,3),\qquad
+H_{A_n}(t)=\frac1{(1-t)^n(1-t^2)(1-t^3)}.
+\end{gathered}
+\]
+$A_n$は両側noetherianなAS正則整域であり、通常の二段Ore拡大であるが、
+重み付き最小生成元のいかなる斉次持上げについても語長二次の表示を持たない。
+\end{proposition}
+\begin{proof}
+$B=k[x_1,\ldots,x_n]$、$\deg x_j=1$とし、
+次数$2$の導分$\partial:B\to B$を
+\[
+\partial(x_1)=x_1^3,\qquad \partial(x_j)=0\quad(j>1)
+\]
+で定める。$\deg z=2$、$\deg w=3$とし、
+\[
+A_n=B[z;\partial][w],\qquad
+zx_1-x_1z=x_1^3,\quad zx_j=x_jz\ (j>1),\quad w\text{ は中心}
+\]
+と置く。Ore拡大のPBW基底から、この代数は整域であり、上記の
+Hilbert級数と最小生成元次数を持つ。
+両側noetherian性はOre拡大のHilbert基底定理から従う。
+AS正則性と大域次元$n+2$は、次数付きOre拡大によるtwisted
+Calabi--Yau性の保存\cite[Theorem 3.3]{LWW}と、
+連結次数付きの場合のAS正則性との対応から従う。
+AS添字はHilbert級数の相反式と補題\ref{lem:duality-regrading}より$n+5$である。
+
+語長二次表示が存在しないことを示す。次数$1$の生成元空間は$V=B_1$である。
+次数$2$の原始生成元の任意の斉次持上げは
+$z'=az+q(x_1,\ldots,x_n)$（$a\ne0$、$q\in B_2$）の形を取る。
+$B$が可換なので、任意の$v\in V$について
+\[
+[z',v]=a\,\partial(v).
+\]
+この写像$V\to B_3$の階数は$1$である。
+重み$3$で語長$2$の関係式は
+$z'v$と$vz'$の線型結合である。PBW基底に従って
+$z'v=vz'+a\partial(v)$と整理すると、
+その関係空間は$\ker(\partial|_V)$に同型で、次元$n-1$である。
+一方、$B$の交換関係を除いた重み$3$の最小関係空間は
+$z'v-vz'-a\partial(v)$（$v\in V$）で張られ、次元$n$である。
+したがって、少なくとも一つの最小関係式は語長$3$の項を必要とする。
+次数$3$の原始生成元$w$の持上げはこの重み$3$の二次関係に関与しない。
+ゆえに斉次な最小生成元をどのように選んでも語長二次表示は存在しない。
 \end{proof}
 
 数値的拘束だけでは、一般の関係数を全て復元できない。
