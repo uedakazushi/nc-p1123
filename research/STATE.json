@@ -1,7 +1,7 @@
 {
   "project": "nc-p1123",
   "date": "2026-11-19",
-  "version": 19,
+  "version": 20,
   "classification_complete": false,
   "target": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). The main all-n reduction now proves B-ASn if and only if every r3(i)=n,r5(i)=1; those two rank conditions imply the full indexed two-step Ore structure without H, Koszulity, noetherianity or initial B-AS. Thus only their automaticity remains for unconditional indexed exhaustion. This automaticity is proved for n=1,2,3; n2,n3 also descend to ordinary Ore. At n4, D=L-N=3 is unconditional and ten conditions are equivalent, including Koszulity, N6, A/B period one, uniform/standard B Hilbert rows, B-AS4, indexed/ordinary Ore, and r3=4,r5=1. Their automaticity remains open. Ordinary graded word-Koszul objects admit full two-step Ore without initial H or noetherianity. Standard bigraded row Hilbert series imply the indexed structure and Koszulity for every n. A formal n4 pure-Euler model passes all-degree positivity/growth/Hopf constraints; it is not a realized algebra. Unconditional indexed exhaustion remains open for n>=4. Additionally, r5 is forced everywhere when the AS period L is not divisible by three, and on at least one mod-three class otherwise.",
   "scope": {
@@ -63,7 +63,8 @@
     "koszul_dual_quotient_support": "For any word-Koszul Qn_dom, its finite folded Ext algebra E has the heavy dual zeta normal in the sense E zeta=zeta E. Domain mixed projections yield eta X subset X eta+S zeta^2 S and the reverse inclusion. With eta^2=0, E/(zeta)=Fbar+Fbar eta has excess support only 0 and 2. No nozz, r5 saturation, H, noetherian or period-one assumption. This does not assert a normalizing automorphism for the zero-divisor zeta.",
     "indexed_koszul_ore": "Every word-Koszul Qn_dom, for arbitrary n>=1, has all r3=r4=n,r5=1, a Koszul ASn pure base B, full indexed two-step Ore structure, D3,N=n+2,L=n+5 and standard bigraded row Hilbert series. No additional H/noetherian/nozz/period-one/mixed-rank hypothesis. GS gives r5 not identically zero and D>=3. The AS complement of any pure element annihilating zeta lies in zeta E, proving F->F zeta injective and r3=n. If eta zeta=0, its complement is killed by the quotient support unless D4. At D4, F^(d-2) pairs with E^2_e4=R6*=0, hence vanishes, so the quotient component (d-1,2)=Fbar^(d-2) eta is zero as well; the complement again lies in zeta E and gives a contradiction. Thus all r5=1 and the existing rank criterion applies. No exceptional Koszul dimension remains. Unrestricted non-Koszul objects are not settled.",
     "indexed_koszul_even_descent": "For every word-Koszul Qn_dom with n even, normal-z period two and odd AS period L=n+5 combine to give actual word-preserving period one and ordinary graded two-step Ore descent over a Koszul ASn domain. No noetherian assumption. Universal odd-n descent is not concluded and is false at n1.",
-    "four_light_nine_boundary": "For Q4dom with N9/L12/s7, define delta_r=1-average_class r5, gamma_r=average_class r4-4, alpha_r=average_class(r3-p_6). At least one delta is zero. Exactly one saturated class r forces gamma_r,gamma_(r+1)>=0. Exactly two saturated classes r,r+1, with delta_(r-1)>0 and gamma_(r+1)!=0, force gamma_r,gamma_(r-1)>=0 and delta_(r-1) alpha_r+gamma_r gamma_(r-1)=0. If all classes are saturated, gamma0 gamma1 gamma2=0. The proof uses the actual heavy-boundary Euler, positive left/right kernels from domain Hilbert comparison, and low-order solvability; selected vectors annihilate the relevant first-order Schur corrections. These are necessary averaged conditions, not N9 exclusion or pointwise rank saturation. An explicit formal 3x3 polynomial pencil shows boundary singularity and positive kernels alone cannot force all three gamma to vanish."
+    "four_light_nine_boundary": "For Q4dom with N9/L12/s7, define delta_r=1-average_class r5, gamma_r=average_class r4-4, alpha_r=average_class(r3-p_6). At least one delta is zero. Exactly one saturated class r forces gamma_r,gamma_(r+1)>=0. Exactly two saturated classes r,r+1, with delta_(r-1)>0 and gamma_(r+1)!=0, force gamma_r,gamma_(r-1)>=0 and delta_(r-1) alpha_r+gamma_r gamma_(r-1)=0. If all classes are saturated, gamma0 gamma1 gamma2=0. The proof uses the actual heavy-boundary Euler, positive left/right kernels from domain Hilbert comparison, and low-order solvability; selected vectors annihilate the relevant first-order Schur corrections. These are necessary averaged conditions, not N9 exclusion or pointwise rank saturation. An explicit formal 3x3 polynomial pencil shows boundary singularity and positive kernels alone cannot force all three gamma to vanish.",
+    "nonkoszul_examples_and_existence": "No nonKoszul example satisfying all Qn_dom hypotheses has been constructed, and none was found in the primary sources checked in this update; this is not a complete nonexistence or literature-exhaustion result. At n4, N9,12,... are unexcluded top-word possibilities, not realized families. The classical quadratic Heisenberg U(h2) is a noetherian domain, AS5 with four minimal generators, H=(1-t)^-4(1-t^2)^-1 and minimal shifts 0,1,2,4,5,6 (Floystad-Vatne arXiv0911.5129v3 Theorem2.1/Remark3.2). It is nonKoszul but misses generatorcount=ASdim. Its quadratic dual has H=1+4t+5t^2 while full Ext has higher generators. For any finite-dimensional positively graded Lie g, augmentation indecomposables are g/[g,g], so ASdim-minus-minimalgen equals dim[g,g]; only abelian enveloping algebras satisfy equality. These are known-example and elementary comparison statements, not a new target counterexample."
   },
   "claims": [
     {
@@ -1016,6 +1017,28 @@
       "novelty": "not_finally_verified",
       "external_peer_review": false,
       "formalized": false
+    },
+    {
+      "id": "NONKOSZUL-KNOWN-EXAMPLE-COMPARISON",
+      "status": "known_example_primary_source_verified_with_elementary_comparison_proved",
+      "proof": "research/notes_ja.tex#note:nonkoszul-existence",
+      "scope": "No nonKoszul example satisfying all Qn_dom hypotheses has been constructed, and none was found in the primary sources checked in this update; this is not a complete nonexistence or literature-exhaustion result. At n4, N9,12,... are unexcluded top-word possibilities, not realized families. The classical quadratic Heisenberg U(h2) is a noetherian domain, AS5 with four minimal generators, H=(1-t)^-4(1-t^2)^-1 and minimal shifts 0,1,2,4,5,6 (Floystad-Vatne arXiv0911.5129v3 Theorem2.1/Remark3.2). It is nonKoszul but misses generatorcount=ASdim. Its quadratic dual has H=1+4t+5t^2 while full Ext has higher generators. For any finite-dimensional positively graded Lie g, augmentation indecomposables are g/[g,g], so ASdim-minus-minimalgen equals dim[g,g]; only abelian enveloping algebras satisfy equality. These are known-example and elementary comparison statements, not a new target counterexample.",
+      "depends_on": [],
+      "novelty": "known_example_and_elementary_observations_not_claimed_new",
+      "external_peer_review": false,
+      "formalized": false
+    },
+    {
+      "id": "N4-MIDDLE-EXT-OBSTRUCTION",
+      "status": "proved_in_research_note_by_degree_support",
+      "proof": "research/notes_ja.tex#note:n4-middle-ext-obstruction",
+      "scope": "Conditional on Q4dom with N9: E3 internal words4 and5 annihilate E1 and E2 on both sides yet are paired with each other into E6 word9. Every E3 word>3 survives the quotient by the two-sided ideal generated by zeta, since degree-three elements in that ideal have word3. If either word4/5 middle component is nonzero, the AS pairing of top excess3 forces a surviving odd-excess component in E/(zeta). This is a support consequence, not existence of these components or an N9 exclusion.",
+      "depends_on": [
+        "N4-TOP-EXCESS"
+      ],
+      "novelty": "elementary_support_observation_not_claimed_new",
+      "external_peer_review": false,
+      "formalized": false
     }
   ],
   "open_problems": [
@@ -1098,7 +1121,7 @@
       "research/BASELINE.md",
       "research/STATE.json"
     ],
-    "obstacle": "The remaining unrestricted problem is non-Koszul. Its Ext algebra need not be generated in degree one, so the quotient-support proof of INDEXED-KOSZUL-ORE cannot be silently extended. At n4, N9/L12 has a three-dimensional heavy-boundary kernel. Averaged conditions are proved for one/two/three saturated classes, but the two-class degenerate branch and higher coefficients remain; boundary singularity plus positive kernels alone are insufficient. No nonstandard AS-domain example has been constructed.",
+    "obstacle": "The remaining unrestricted problem is non-Koszul. Its Ext algebra need not be generated in degree one, so the quotient-support proof of INDEXED-KOSZUL-ORE cannot be silently extended. At n4, N9/L12 has a three-dimensional heavy-boundary kernel. Averaged conditions are proved for one/two/three saturated classes, but the two-class degenerate branch and higher coefficients remain; boundary singularity plus positive kernels alone are insufficient. No nonstandard AS-domain example has been constructed. The known Heisenberg quadratic nonKoszul AS5 example has four minimal generators and is outside Qn_dom; the Lie enveloping construction cannot repair this count unless the Lie algebra is abelian. See NONKOSZUL-KNOWN-EXAMPLE-COMPARISON.",
     "do_not_repeat": "Do not reopen solved n1 classification, n2 domain Ore, n3 numerics/base-AS/Ore/descent/noetherianity, n4 D3/ten-condition equivalence, or ordinary all-n Koszul second Ore. The n1 period-two example refutes universal ordinary descent only. Do not add H/Koszul/noetherian/period assumptions silently. A normal quotient need not be a domain; bar obstruction uses finite Tor instead. Generic pure 14641 data do not imply AS4, but RS non-AS examples cannot be Q4dom pure bases. The n4 formal model is not an algebra or a counterexample. Keep all proof/certificate assets; novelty and external review remain unverified. Do not reopen the non-Koszul normal-z PBW/base-AS problem: INDEXED-NORMAL-Z-ORE settles it. The matrix argument uses an invertible highest Euler coefficient from AS duality; do not claim degree additivity for arbitrary polynomial matrices or omit uniform top bidegree. Do not reopen N7/N8 or any N not divisible by three in Q4dom, or the AS-parent extensions of the N7 formal pure model. The new nozz statements have an explicit extra hypothesis, not part of the unrestricted target. INDEXED-KOSZUL-ORE now solves the word-Koszul case for all n; no D4 or sixfold-dimensional Koszul exception remains. Original quadraticity alone is weaker, so non-Koszul rank automaticity remains open."
   },
   "publication_manuscript": "papers/nc-p1123.tex",

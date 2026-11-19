@@ -1,6 +1,6 @@
 # nc-p1123 研究指示
 
-2026-11-19 / v13。最初に `research/plan_ja.tex` を読む。
+2026-11-19 / v14。最初に `research/plan_ja.tex` を読む。
 主論文は `papers/nc-p1123.tex`、本文外の有効な知識は `research/notes_ja.tex`。
 現在の証明位置・未解決事項・次の具体的操作は `research/STATE.json`、
 一次文献の確認範囲は `research/BASELINE.md`、検証状態は `research/validation.json`。
@@ -60,6 +60,8 @@
 - 元のn=2全分類の成果・未解決問題は副課題として保持する。加重射影空間の可換基準ではスタックを用い、coarse Projと同一視しない。
 
 - `genidx:lem:r5-gs-saturation`：語長保存L周期を持つ正連結局所有限二次Z-domainと多項式行増大だけで、3∤Lなら全r5=1、3|Lなら少なくとも一つのmod3class上で全r5=1。AS/Koszul/有限大域次元/noetherian不要。P2=I−S³+ε(−S²+R5S⁵)+O(ε²)とPH>=I、軌道平均の負固有値/正左ベクトル補正で証明。n4で3∤Lと仮定した全q_i=1は、三整除性定理の背理法で使用済みである。3|Lの残る二classやr3=nは未解決。
+
+- notes `note:nonkoszul-existence`：Qn_dom内の非Koszul実例は未構成、今回確認した一次文献にも未発見。n4のN9,12,…は未排除候補であって存在族ではない。既知のHeisenberg U(h2)は四生成元・二次・AS5・非Koszulの整域（FV arXiv0911.5129v3 Thm2.1, Remark3.2）。本対象のgeneratorcount=ASdimから外れる。一般U(g)でもASdim−minimalgen=dim[g,g]であり非可換包絡例は同数条件を満たさない。中心cを追加のprimitive generatorと数えたり、C!のみに全ExtのFrobenius性を適用したりしない。既知例と初等的な適用範囲確認であり新規例ではない。
 
 ## 継続の優先順位
 

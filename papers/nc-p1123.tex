@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v14}
+\date{2026年11月19日\quad 統合版 v15}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -118,7 +118,7 @@ $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v14\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v15\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -282,6 +282,16 @@ $\zeta$を消す元のAS補元が同じイデアルへ入り、完全対合と�
 差次数だけで残る最高差次数4の場合も、$F^{n}$と$E^2_{e=4}=R_6^*=0$の相補対合を使って排除する。
 従ってKoszulな添字付き対象の任意次元の網羅性は、指定Hilbert級数やnoetherian性なしに成立する。
 偶数$n$では一周期下降も従う（系\ref{knd:cor:even-descent}）。
+
+非Koszulな対象の存在については、証明の未完成と実例の存在を区別する必要がある。
+本稿の$\mathcal Q_n^{\mathrm{dom}}$に属する非Koszul例は、現在までに構成していない。
+$n=4$で残る$N=9,12,15,\ldots$も、まだ排除できていない最高語長であり、存在族の主張ではない。
+一般の二次AS正則整域には、五次元Heisenberg Lie代数の包絡代数という非Koszul例がある
+（Fl\o ystad--Vatne\cite[Theorem 2.1, Remark 3.2]{FVfive}）。
+しかしこの例は最小生成元が4個、AS次元が5であり、
+本稿の「各始点の最小生成元数とAS次元がともに$n+2$」という条件を満たさない。
+二次性だけからKoszul性を一般に推論することも、この既知例を本稿の反例とみなすこともできない。
+
 重み4関係に$zz$項がない場合、命題\ref{nozz:prop:koszul-saturation}はKoszul性から
 三重次数付きFrobenius対合を用いて全混合階数を強制する。
 補題\ref{nozz:lem:one-heavy-gs}と系\ref{nozz:cor:periodic-saturation}は、
@@ -7758,6 +7768,13 @@ $\ZZ[q,p,r,s,u,v,a,b]$上の形式的な二次書換えによって
 \begingroup
 \small
 \begin{thebibliography}{9}
+\bibitem{FVfive}
+G.~Fl\o ystad and J.~E.~Vatne,
+\emph{Artin-Schelter regular algebras of dimension five},
+arXiv:0911.5129v3 (2010).
+\url{https://arxiv.org/pdf/0911.5129v3}.
+比較箇所：Theorem 2.1（有限次元正次数付きLie代数の包絡代数のAS性）、
+Remark 3.2（四生成元の二次非Koszul AS5例と最小解消）。
 \bibitem{HVZSkew}
 J.-W.~He, F.~Van Oystaeyen and Y.~Zhang,
 \emph{Skew polynomial algebras with coefficients in Koszul Artin--Schelter regular algebras},

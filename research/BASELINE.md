@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v19。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v20。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -11,6 +11,7 @@
 | Auroux–Katzarkov–Orlov, *Mirror symmetry for weighted projective planes and their noncommutative deformations*, Ann. Math. 167 (2008), 867–943; DOI 10.4007/annals.2008.167.867; arXiv:math/0404281 | [出版版](https://annals.math.princeton.edu/wp-content/uploads/annals-v167-n3-p04.pdf), §2.2、Prop.2.3/Cor.2.4、Prop.2.6、Thm.2.12、Prop.2.18/Cor.2.19 | 任意重みの対角skew polynomial族。AS次元4、添字7と例外列7項は既知。qgrは可換基準でstackのcoh。非対角・非1周期の全分類ではない。 |
 | Sierra, *G-algebras, twistings, and equivalences of graded categories*, Algebr. Represent. Theory 14 (2011), 377–390; DOI 10.1007/s10468-009-9193-y | [arXiv:math/0608791v3](https://arxiv.org/pdf/math/0608791), Thm.1.2 = Cor.4.4、§2 | degree1生成を要求せず、Zhang twistとassociated Z-algebra同型の対応。graded同型をそのままindexed同型に読み替えない。 |
 | Vitória, *Equivalences for noncommutative projective spaces*, arXiv:1001.4400v3 (2011) | [本文](https://arxiv.org/pdf/1001.4400), §1、Theorem 2.5、Remark 2.6と証明冒頭 | 全生成元が次数1のskew polynomial環についてgraded Morita同値を係数のスカラー変更・置換で分類する比較先。本稿は重み (1,1,2,3) の添字を保持するため、同定式の指数と許容変更を直接証明する。通常次数での同定を重み付き同定へ読み替えない。 |
+| Fløystad–Vatne, *Artin-Schelter regular algebras of dimension five*, arXiv:0911.5129v3 (2010), 本稿引用キー `FVfive` | [一次PDF](https://arxiv.org/pdf/0911.5129v3), Theorem 2.1（PDF p.6）、Remark 3.2（PDF pp.9–10） | 有限次元正次数付きLie代数の包絡代数がAS正則で、global/GK dimensionはLie次元に等しい。四生成元・五二次関係のHeisenberg例はAS5かつ非Koszulで、最小解消の語長は0,1,2,4,5,6。生成元数とAS次元が一致しないためQn_domの例ではない。ノートで表示、PBW、二次双対、一般の最小生成元数の式を直接確認する。既知例を本研究の新規構成としない。 |
 | He–Van Oystaeyen–Zhang, *Skew polynomial algebras with coefficients in Koszul Artin–Schelter regular algebras*, arXiv:1304.3799v2 (2013), 引用キー `HVZSkew` | [一次PDF](https://arxiv.org/pdf/1304.3799), §2、Proposition 2.2（PDF p.7） | 通常Koszul代数と既知のskew拡張B=A[z;σ]に対し、Ext(B)をA!とそのtwisted copyの自明拡大として記述する。今回のno-zz認識は、Ore表示を仮定せず有限頂点上のFrobenius対合から混合階数・自由性を強制する。既知命題を逆向きに適用せず、類似構造の比較先として引用する。 |
 | Reyes–Rogalski, *Growth of graded twisted Calabi–Yau algebras*, arXiv:1808.10538v1 (2018) | [本文](https://arxiv.org/pdf/1808.10538), Lemma 2.7、Proposition 2.8とその証明 | 行列Hilbert級数の極と成長の一般理論の比較先。本稿の混合関係数の証明では、二変数のうち差次数変数を固定した正係数比較から行列式恒等式を直接導く。一般的な行列Hilbert級数の手法を新規性としない。 |
 | Van den Bergh, *Non-commutative quadrics*, IMRN 2011, no.17, 3983–4026; DOI 10.1093/imrn/rnq234 | [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753), §3、Prop.3.3、Lemma3.4、Definition4.1.1、Theorem4.2.2 | 1周期同型から graded 代数を復元する Lemma 3.4 は degree 1 生成を要求しない。Theorem4.2.2 の三次元quadratic全1周期は、Definition4.1.1の解消型 (0);(1,1,1);(2,2,2);(3) に対するもの。本稿の重み(1,2,3)の語長二次・最小周期2の例には適用されない。語長と添字差を混同しない。 |
@@ -557,3 +558,9 @@ AS基礎代数だけを追加したindexed構造定理、任意の斉次関係�
 最初の二段の行列Golod–Shafarevich不等式、S³軌道平均、正の左ベクトルの一次補正による直接証明を主論文に記載した。
 標準的なGS原理自体の新規性は主張せず、今回の具体的な重み・周期による飽和基準の重複調査は未完である。
 AS性・Koszul性・有限大域次元・noetherian性は補題に不要。3|Lで他の剰余類まで飽和すると読み替えない。
+
+## 非Koszul例と対象内での存在状況
+
+`research/notes_ja.tex#note:nonkoszul-existence` はFløystad–Vatneの既知例を具体的に記載する。四生成元を次数1としたH=(1−t)^−4(1−t²)^−1、最小解消の非線型な第三項、二次双対Λ⁎(k⁴)/(ω)のH=1+4t+5t²と全Extの違いを確認した。包絡代数の一般公式 U(g)_+/U(g)_+²≅g/[g,g] も平方零代数への普遍写像で証明し、ASdim−minimalgen=dim[g,g]を得る。独立変数の付加ではこの差を解消できない。
+
+Qn_domの全仮定、特に各始点の最小生成元数=AS次元=n+2を満たす非Koszul例は、現行研究では未構成であり、今回確認した一次資料にも見いだしていない。これは文献不存在の確定ではない。n4のN9,12,…および一般非Koszul残余を、存在が証明された族として報告しない。一般connected graded AS正則代数のHilbert級数やGK次元についての未解決予想を仮定して、indexed対象の非存在を結論しない。
