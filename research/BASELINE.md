@@ -1,6 +1,6 @@
 # 一次文献・外部依存の現行索引
 
-2026-11-19 / v18。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
+2026-11-19 / v19。読んだ箇所と適用範囲を区別する。外部PDFは同梱しない。
 指定対象の完全な添字保持同型分類を与える文献は、現在の確認範囲では見つかっていない。
 これは文献不存在や新規性の確定を意味しない。
 
@@ -392,6 +392,12 @@ det P=(1−u¹⁰)³(1+u²⁰)と、各剰余類の二次準多項式を用い�
 整数恒等式の再現コードは `computations/verify_n4_parent_mixed.py` である。
 表示した計算は担当エージェントと主担当がそれぞれ実行し、現行入力の全恒等式を厳密に照合した。
 実行・照合状態は `research/validation.json` に記録する。
+
+### 一般Koszul対象の任意次元の混合階数認識
+
+主論文 `knd:lem:dual-quotient-support` と `knd:thm:koszul-ore` は、一般indexedのwordKoszul Qn_domで任意nの全r3=n,r5=1を証明する。H/noetherian/nozz/period1を先取りしない。整域性からdual ζの二側正規性と E/(ζ)=Fbar+Fbarη を得る。AS補元のexcessでr3と大半のr5欠損を排除し、D4についてもF^(d−2)とE²_e4=R6*=0の対合で商の該当homological成分を消す。一般のFrobenius Ext原理はMartínez-Villa–Solberg等の既知のものを使い、この具体的な商支持と補元消去を直接証明する。HVZ Proposition 2.2は既知の通常skew拡張のExtを計算する向きであり、本認識を直接与える命題ではない。新規性の最終照合は未完。
+
+これにより全Koszul枝は解決し、元の一般構造問題は非Koszul対象に残る。非KoszulでExtを一次生成と見なしたり、dualの正規性から原代数の周期を直接主張したりしない。
 
 ### 最高語長の三整除性と平方項消滅条件
 

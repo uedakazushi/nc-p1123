@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "version": 18,
+  "version": 19,
   "generated": {
     "main_manuscript": true,
     "indexed_working_manuscript": true,
@@ -91,13 +91,12 @@
       "INDEXED-NORMAL-Z-ORE",
       "GEN-R5-GS-SATURATION"
     ],
-    "logical_review": "Current new proofs were written and audited independently by the root and two specialist AI agents. The N4 three-divisibility proof was checked for weighted Laurent component comparison, Hopf pole lower bound, convergence and divergence at the heavy-w boundary, simple-kernel perturbation, all-s moment inequalities, domain/minimal-exactness tail bound and numerical-period Hilbert reduction. The nozz proofs were checked for triple grading, finite folded Frobenius pairing, the surjection/dimension argument proving injectivity, each local mixed rank, generalized one-heavy GS and descent of quotient presentations/periods. The explicit formal matrix obstruction was checked algebraically. These are internal mathematical audits, not formalization, external peer review or verified novelty. Existing exact certificates remain retained with their verified scope; no new theorem depends on an enumeration.",
+    "logical_review": "The root and two specialist AI agents independently audited the full arbitrary-n indexed Koszul theorem. They checked dual mixed-projection surjectivity, ideal normality of zeta, support {0,2} of E/(zeta), both local AS complement arguments, and the crucial D4 vanishing F^(d-2)=0 from its partner E^2_e4=R6*=0. This excludes every formerly apparent Koszul exception without a matrix generator-bound assumption. The N9 three-class necessary conditions were independently audited for positive boundary kernels, exact saturated rows, vanishing of the relevant Schur corrections and the explicit nondegeneracy requirement. Current N4 three-divisibility and nozz proofs retain their completed internal audits. These are mathematical/internal AI audits, not formalization, external peer review or verified novelty.",
     "new_reviewed_claims": [
-      "N4-TOP-WORD-DIVISIBLE-THREE",
-      "NOZZ-KOSZUL-SATURATION",
-      "ONE-HEAVY-PERIODIC-GS",
-      "NOZZ-PERIODIC-SATURATION",
-      "MATRIX-GENERATOR-BOUND-OBSTRUCTION"
+      "KOSZUL-DUAL-QUOTIENT-SUPPORT",
+      "INDEXED-KOSZUL-ORE",
+      "INDEXED-KOSZUL-EVEN-DESCENT",
+      "N4-N9-BOUNDARY-CONDITIONS"
     ],
     "reviewed_dependencies": [
       "ORDINARY-KOSZUL-NUMERICS",
@@ -106,7 +105,7 @@
       "N4-KOSZUL-NUMERICS-PERIOD",
       "N4-PURE-NUMERICS"
     ],
-    "scope": "For arbitrary n>=1, determine indexed two-step Ore structure of word-quadratic AS-regular Z-domains with primitive jumps (1^n,2,3). The main all-n reduction now proves B-ASn if and only if every r3(i)=n,r5(i)=1; those two rank conditions imply the full indexed two-step Ore structure without H, Koszulity, noetherianity or initial B-AS. Thus only their automaticity remains for unconditional indexed exhaustion. This automaticity is proved for n=1,2,3; n2,n3 also descend to ordinary Ore. At n4, D=L-N=3 is unconditional and ten conditions are equivalent, including Koszulity, N6, A/B period one, uniform/standard B Hilbert rows, B-AS4, indexed/ordinary Ore, and r3=4,r5=1. Their automaticity remains open. Ordinary graded word-Koszul objects admit full two-step Ore without initial H or noetherianity. Standard bigraded row Hilbert series imply the indexed structure and Koszulity for every n. A formal n4 pure-Euler model passes all-degree positivity/growth/Hopf constraints; it is not a realized algebra. Unconditional indexed exhaustion remains open for n>=4. Additionally, r5 is forced everywhere when the AS period L is not divisible by three, and on at least one mod-three class otherwise. Every Q4dom object has 3 dividing N and L=N+3. No initial Koszul, Hilbert, noetherian or period-one assumption. If 3 does not divide L, R5 GS gives all r5=1. Nonzero w powers force det P(eps^2,eps^-1)=0; its simple-kernel coefficients give sum r4=4L and sum r3=sum p_(s-1). Pure/mixed moments force third pure Tor into word s-1. Domain cancellation and minimal exactness give each tail rank p_i>=2, so s<=6. The s5 and s6 numerical Euler matrices have positive roots inside the unit disk, contradicting polynomial growth. Hence the only unresolved non-Koszul top words are N=9,12,15,...; first N9/L12/s7. This is an analytic proof with no enumeration. The N7 ten-period formal model has no AS-domain parent extension. For any Qn_dom, add word-Koszulity and zero projection of every R4 to zz for the fixed word grading. Then all r3=r4=n,r5=1, B Koszul ASn, standard bigraded Hilbert and L=n+5 hold. Both z and w are regular normal families, giving actual periods 2 and 3 and hence period one; A descends to an ordinary two-step skew polynomial algebra B0[z;sigma][w;tau]. Finite folded Frobenius duality yields E=F+Fzeta+Feta+Fzetaeta as a direct sum of multidegrees, equal dimensions of F and E11, and injective right multiplication by zetaeta and etazeta. This forces the ranks without assuming them. No initial H, noetherian or period-one assumption. The no-zz hypothesis is additional, invariant under fixed-word/jump-preserving generator basis changes only. For any Qn_dom with zero R4-to-zz projections, all r5=1 and an actual word-preserving period L not divisible by six, all r3=r4=n and full indexed Ore over an ASn base follow without Koszulity. One-heavy GS applied successively to A/(w) and A/(z) gives normal z and w, periods two and three, and ordinary two-step skew descent. If 3 does not divide L, the all-r5 hypothesis is also unnecessary by GEN-R5-GS-SATURATION. No assertion of standard Hilbert, Koszulity or noetherianity in this non-Koszul result. Unconditional indexed exhaustion remains unresolved for n>=4.",
+    "scope": "For arbitrary n, all word-Koszul Qn_dom objects have full indexed two-step Ore, Koszul ASn pure base, standard bigraded H and L=n+5 without H/noetherian/nozz/period-one assumptions. Even n also gives ordinary descent. The original word-quadratic problem without Koszulity remains open for n>=4, exactly at automaticity of r3=n,r5=1. At n4, D3 and 3|N,3|L are unconditional; the first non-Koszul remainder is N9/L12, with proved averaged three-class boundary conditions. The ten-condition n4 equivalence, lower-dimensional full results, general normal-z criterion, nozz conditions and formal obstruction assets remain valid.",
     "checked": [
       "Yoneda perfect pairings from finite resolutions and AS duality",
       "Word-Koszulity, constant AS index, exclusion of indices 6,8,9,10, and word-preserving seven-periodicity",
@@ -201,7 +200,10 @@
       "The N4 top-word theorem covers every N not divisible by three, not merely a fixed N7 formal model. Its remaining non-Koszul words are N=9,12,15,... .",
       "Nozz is explicitly additional and invariant only for the fixed word grading and jump-preserving basis changes. Koszulity is required in the Frobenius recognition result; the second periodic result replaces it by all r5=1 and an actual period not divisible by six.",
       "General pure tail lower bounds sum_j p_ij>=2q_i and r2_i>=3+q_i follow from cancellation and minimal exactness even without word concentration.",
-      "The formal matrix generator-bound obstruction is not an algebra and fails domain component comparison; it is not a counterexample to the target theorem."
+      "The formal matrix generator-bound obstruction is not an algebra and fails domain component comparison; it is not a counterexample to the target theorem.",
+      "The Koszul recognition uses only E zeta=zeta E, not an unproved normalizing automorphism for the dual zero-divisor.",
+      "In the last D4 case the AS complement of eta has homological degree d-1 and excess 2, while its quotient component is Fbar^(d-2) eta. AS pairing with E^2_e4=0 proves this component vanishes.",
+      "The N9 exact-two-saturated-class equality requires gamma_(r+1)!=0. No condition is extrapolated to the degenerate branch or from an average to individual ranks."
     ],
     "primary_sources_checked": [
       "Martinez-Villa-Solberg, arXiv:0902.1119, Lemma 6.1(b), Theorem 6.2",
@@ -246,9 +248,9 @@
       "An indexed finite-resolution-only mixed-graph theorem without AS duality or an invertible highest Euler coefficient",
       "All r5=1 in the 3|L branch from the first-order GS argument alone",
       "Exclusion of N=9,12,15,... in Q4dom",
-      "Unconditional removal of zz corrections or of the nozz theorem hypotheses"
+      "Removal of all extra structural hypotheses for unrestricted non-Koszul targets"
     ],
-    "literature_followup": "Primary HVZ arXiv:1304.3799v2 Proposition 2.2 was checked: a known ordinary Koszul skew extension has Ext a twisted trivial extension. It does not directly prove the converse finite-vertex nozz rank recognition used here. Reyes-Rogalski remains the primary matrix-Hilbert growth comparison; the specific heavy-w three-divisibility proof is written directly. Prior source checks are retained. Final novelty comparison, external review and formalization remain unfinished."
+    "literature_followup": "Finite-vertex Frobenius Ext is covered by the retained MVS primary-source comparison. HVZ arXiv1304.3799v2 Proposition2.2 computes the Ext of an already known ordinary Koszul skew extension; the current theorem instead recognizes arbitrary indexed Koszul objects using quotient support and AS complements. The theorem is proved directly. Specific novelty of this recognition, N4 three-divisibility and N9 necessary conditions remains unconfirmed; no external review or formalization is claimed."
   },
   "exact_computation": {
     "current_analytic_results": "Bar obstruction, ordinary/indexed Ore theorems, GS rank forcing, Koszul normal-z recognition and the two-period s5 exclusion are algebraic/analytic proofs, independent of numerical sampling. The n4 formal obstruction and one mixed extension use the exact finite certificates described below, with proofs of their all-degree or coefficient implications in notes. The general non-Koszul graph-Ore and normal-z criterion uses no finite enumeration or parameter sampling.",
@@ -330,7 +332,8 @@
       "scope": [
         "N4 s5 two-vertex factorization and determinant",
         "N4 s6 denominator value at one half equals -3/64",
-        "Explicit formal matrix-generator-bound inverse"
+        "Explicit formal matrix-generator-bound inverse",
+        "Formal three-class pencil determinant and its exact positive left/right kernel identities"
       ],
       "proof_role": "Independent checks of displayed symbolic identities; the three-divisibility and nozz theorems have analytic proofs and do not depend on a finite search."
     }
@@ -351,7 +354,7 @@
     "pdf_generated": false,
     "engine_detected": "LuaHBTeX 1.18.0 (TeX Live 2025/dev/Debian); latexmk 4.86",
     "command": "latexmk -lualatex -interaction=nonstopmode -halt-on-error -outdir=build/paper papers/nc-p1123.tex",
-    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt failed before reading TeX source because lualatex.fmt was unavailable. Diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v13 main manuscript and v18 supporting sources have not been compiled or visually checked. The root did not repeat the blocked final-source attempt; a proof-fragment check by an agent encountered the same startup failure.",
+    "diagnosis": "A prior actual latexmk/LuaLaTeX attempt failed before reading TeX source because lualatex.fmt was unavailable. Diagnosis also established missing luaotfload-main.lua, ltjsarticle.cls, LuaTeX-ja/preset and HaranoAji fonts. No current PDF exists. The current v14 main manuscript and v19 supporting sources have not been compiled or visually checked. The root did not repeat the blocked final-source attempt; a proof-fragment check by an agent encountered the same startup failure.",
     "required_dependencies": [
       "LuaLaTeX with luaotfload",
       "LuaTeX-ja including ltjsarticle and luatexja-preset",
@@ -362,22 +365,22 @@
     "sources": [
       {
         "source": "papers/nc-p1123.tex",
-        "source_sha256": "d39ed287c4af407a05309ed3d3930b7f18fc605b028bf5e715fbec8d9d309236",
+        "source_sha256": "d5b7af3ba16306f4ce1036189e5c8b151093bc7df194059c077adb57cfced990",
         "current_pdf_verified": false
       },
       {
         "source": "research/indexed_z_algebra.tex",
-        "source_sha256": "23258aa1eee4083249ee02f03c6bf3cae67bbc7196fec9df3d13981e461c23ed",
+        "source_sha256": "59ad57199ab9d9e88ffc8361f547b7d1ec265de6f9b38a671c33bb2f41dff893",
         "current_pdf_verified": false
       },
       {
         "source": "research/plan_ja.tex",
-        "source_sha256": "91c01628d76bee66e8a9fbcd60308e0cd58b9abd4e7ad7314c50dd0081149809",
+        "source_sha256": "7794fd91ef2a3c3ee0df32bb3cad276be4a9d76fc31aca9c4e9d3396e8f8b805",
         "current_pdf_verified": false
       },
       {
         "source": "research/notes_ja.tex",
-        "source_sha256": "6ef53e94e83cdbc0db1c9f819edb1c9eedf31200f1701f66e029613677ec9d45",
+        "source_sha256": "c836be40e91f846cc04112578064762fa990e72d49b6a1af9aef15b97679664c",
         "current_pdf_verified": false
       }
     ],

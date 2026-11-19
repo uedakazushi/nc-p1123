@@ -29,7 +29,7 @@
 \title{最小生成元次数$(1^n,2,3)$のAS正則代数\\
 \large Ore表示・重み付き$\mathbb Z$-代数の周期と添字保持同型}
 \author{}
-\date{2026年11月19日\quad 統合版 v13}
+\date{2026年11月19日\quad 統合版 v14}
 \begin{document}
 \hypersetup{pageanchor=false}
 \begin{titlepage}
@@ -106,6 +106,11 @@ Hilbert級数・Koszul性・基礎AS性を仮定せずに二段Ore表示を導�
 第二段のPBW分解を強制する。
 任意$n$について、純jump 1部分$B$自身がAS正則次元$n$であれば、
 混合関係数・Hilbert級数・Koszul性・noetherian性をさらに仮定せず、添字付き二段Ore表示を導く。
+一般の語長Koszul対象でも、任意$n$で全$r_3=n,r_5=1$を証明する。
+双対の正規元の商は差次数0と2だけに台を持ち、消去子のAS補元を排除できる。
+唯一の差次数4の可能性も、相補的なホモロジー次数の零性から排除される。
+従って、指定Hilbert級数・noetherian性・$zz$射影の消滅を仮定せず、
+任意$n$の語長Koszul対象に二段indexed Ore表示と標準Hilbert級数を得る。
 $R_4$の$zz$射影が零の場合は、語長Koszul性から任意$n$の混合階数飽和を証明し、
 通常の二段skew polynomial代数への下降を得る。
 同じ平方項消滅条件の下では、全$r_5=1$と6の倍数でない実周期から、Koszul性なしにも同じ構造が従う。
@@ -113,7 +118,7 @@ $n=1,2,3$の整域対象で二段Ore網羅性が成立し、$n\geq4$での無条
 \end{abstract}
 \vfill
 \begin{center}
-現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v13\\
+現行原稿：2026年11月19日（Asia/Tokyo）、統合版 v14\\
 組版ファイル：\texttt{\jobname.pdf}
 \end{center}
 \end{titlepage}
@@ -271,6 +276,12 @@ AS双対性はEuler行列の最高$w$係数を可逆にするので、
 補題\ref{genidx:lem:r5-gs-saturation}は、AS周期$L$が3で割り切れなければ
 全$r_5(i)=1$を強制する。$3\mid L$でも、少なくとも一つの法3剰余類上で全て1となる。
 Koszul性を追加した系\ref{ibar:cor:koszul-normal-z}では、標準Hilbert級数も結論となる。
+定理\ref{knd:thm:koszul-ore}は、一般の語長Koszul対象で任意$n$の全$r_3=n,r_5=1$を強制する。
+双対の正規元$\zeta$による商は差次数0と2だけに台を持つため、
+$\zeta$を消す元のAS補元が同じイデアルへ入り、完全対合と矛盾する。
+差次数だけで残る最高差次数4の場合も、$F^{n}$と$E^2_{e=4}=R_6^*=0$の相補対合を使って排除する。
+従ってKoszulな添字付き対象の任意次元の網羅性は、指定Hilbert級数やnoetherian性なしに成立する。
+偶数$n$では一周期下降も従う（系\ref{knd:cor:even-descent}）。
 重み4関係に$zz$項がない場合、命題\ref{nozz:prop:koszul-saturation}はKoszul性から
 三重次数付きFrobenius対合を用いて全混合階数を強制する。
 補題\ref{nozz:lem:one-heavy-gs}と系\ref{nozz:cor:periodic-saturation}は、
@@ -4713,6 +4724,146 @@ $B(2)\simeq B$とする。さらに、
 noetherian性、Koszul性、1周期性はいずれも仮定しない。
 \end{theorem}
 
+\subsection{正規な双対生成元の商による混合階数飽和}
+
+\begin{lemma}[双対商の差次数]
+\label{knd:lem:dual-quotient-support}
+$A\in\mathcal Q_n^{\mathrm{dom}}$ は語長Koszulであるとする。
+AS周期 $L$ で折り畳んだ有限次元Koszul双対を $E$ とし、
+次数零部分を$S=\bigoplus_i ke_i$、純jump 1の双対生成空間を $X$、重い双対生成元を
+$\zeta=\sum_i\zeta_i$, $\eta=\sum_i\eta_i$ とする。
+差次数 $e=\mathrm{jump}-\mathrm{word}$ を用いると、
+$X,\zeta,\eta$ の差次数はそれぞれ $0,1,2$ である。
+このとき $\zeta$ は $E$ の正規元であり、商 $\bar E=E/(\zeta)$ は
+差次数0と2だけに台を持つ。
+この結論には $R_4$ の $zz$ 射影の消滅も、全 $r_5=1$ も要求しない。
+\end{lemma}
+
+\begin{proof}
+整域性から $R_3(i)$ の $Vz,zV$ 両射影は単射である。
+双対の乗法へ移れば、$X\zeta$ と $\zeta X$ は同じ二次成分全体を張る。
+また $r_5(i)\in\{0,1\}$ であり、非零の重み5関係では $zw,wz$ の両係数が非零である。
+従って各頂点で $\zeta\eta$ と $\eta\zeta$ は非零スカラー倍か、両方とも零である。
+$E$ は $X,\zeta,\eta$ で生成されるので、$E\zeta=\zeta E$ を得る。
+
+重み4関係について、射影
+\[
+ R_4(i)\longrightarrow V_iw_{i+1}\oplus kz_iz_{i+2},
+ \qquad
+ R_4(i)\longrightarrow w_iV_{i+3}\oplus kz_iz_{i+2}
+\]
+はともに単射である。各核の非零元は、それぞれ $w_iv=0$ または $vw_{i+1}=0$
+という整域性に反する関係を与えるからである。
+双対化によって
+\[
+ \eta X\subset X\eta+S\zeta^2S,
+ \qquad X\eta\subset\eta X+S\zeta^2S
+\]
+を得る。ここで頂点を挿入した局所積の空間の和として読む。
+商 $\bar E$ では $\bar\eta\bar X=\bar X\bar\eta$ が成り立つ。
+さらに $R_6=0$ より $\eta^2=0$ である。
+$\bar F$ を $\bar X$ で生成される部分代数とすれば、
+\[
+ \bar E=\bar F+\bar F\bar\eta
+\]
+であり、差次数は0または2しか現れない。
+\end{proof}
+
+\begin{theorem}[一般Koszul対象の混合階数と二段Ore表示]
+\label{knd:thm:koszul-ore}
+全ての語長Koszul対象 $A\in\mathcal Q_n^{\mathrm{dom}}$ について、
+全ての $i$ で
+\[
+ r_3(i)=r_4(i)=n,\qquad r_5(i)=1
+\]
+が成立する。従って任意 $n$ で二段indexed Ore表示が存在し、
+純jump 1部分 $B$ はKoszul AS正則次元 $n$ である。
+さらに
+\[
+ D=3,\qquad N=n+2,\qquad L=n+5,\qquad
+ H_i^A(u,t)=\frac1{(1-ut)^n(1-ut^2)(1-ut^3)}
+\]
+を得る。
+noetherian性、指定Hilbert級数、$R_4$ の $zz$ 射影の消滅、1周期性、
+全 $r_5=1$ は追加仮定しない。
+\end{theorem}
+
+\begin{proof}
+$d=n+2$ と置く。Koszul性から最高語長も $d$ である。
+既存の重み5関係のGS飽和補題により、少なくとも一つの $r_5(i)$ は非零である。
+従って $E^2$ に差次数3の非零成分が存在する。
+AS完全対合と差次数の非負性から、最高差次数は $D\ge3$ である。
+
+もし $r_3(i)<n$ なら、$X_i=e_iE^1e_{i+1}$ における乗法
+\[
+ X_i\longrightarrow R_3(i)^*,\qquad x\longmapsto x\zeta_{i+1}
+\]
+の核に非零の $x$ が存在する。
+AS完全対合により、ある $y\in e_{i+1}E^{d-1}e_{i+L}$ が
+$xy\ne0$ を満たす。$x$ の差次数は0なので、$y$ の差次数は $D$ である。
+前補題より $D\ge3$ の成分は商 $E/(\zeta)$ では零であり、
+正規性も使うと
+\[
+ y\in e_{i+1}(\zeta E)e_{i+L}
+   =\zeta_{i+1}\,e_{i+3}Ee_{i+L}.
+\]
+従って $xy=0$ となり矛盾する。これで $r_3(i)=n$ を得る。
+同じ論法は、$X$で生成される純部分$F\subset E$の任意の非零な斉次元にも適用できる。
+従って右乗法$F\to F\zeta$は全ホモロジー次数で単射である。
+
+次に $r_5(i)=0$ と仮定する。このとき
+$\eta_i\zeta_{i+3}=0$ である。
+AS完全対合による $\eta_i$ の右補元 $v\in E^{d-1}$ は差次数 $D-2$ を持ち、
+$\eta_i v\ne0$ である。
+もし $D\ne4$ なら、$D\ge3$ より $D-2\notin\{0,2\}$ であるから、
+前補題によって $v\in\zeta E$ となる。
+従って $\eta_iv=0$ となり矛盾する。
+
+残る $D=4$ の場合も、商のホモロジー次数を用いれば排除できる。
+$F\subset E$ を $X$ で生成される純差次数零部分とする。
+AS完全対合において、$F^{d-2}=E^{d-2}_{e=0}$ の相手は
+$E^2_{e=4}$ である。しかし $E^2_{e=4}$ は二つの $\eta$ の積で張られ、
+$R_6=0$ により $\eta^2=0$ なので、この成分は零である。
+従って
+\[
+ F^{d-2}=0.
+\]
+一方、前補題の $\bar E=\bar F+\bar F\bar\eta$ により
+\[
+ \bar E^{d-1}_{e=2}=\bar F^{d-2}\bar\eta=0.
+\]
+従って、今の場合にも右補元 $v\in E^{d-1}_{e=2}$ は $(\zeta)=\zeta E$ に属する。
+その始点は $i+3$ なので $v=\zeta_{i+3}v'$ と書け、
+$\eta_i v=\eta_i\zeta_{i+3}v'=0$ となって矛盾する。
+これで $D=4$ を含め、全ての $r_5(i)=1$ を得る。
+
+全 $r_3=n,r_5=1$ から、定理\ref{igraph:thm:normal-z-ore}を適用できる。
+$r_4=n$、$B$ のAS正則性、二段indexed Ore表示を得る。
+系\ref{ibar:cor:koszul-normal-z}により、
+標準二重Hilbert級数と $D=3,L=n+5$ も従う。
+\end{proof}
+
+\begin{remark}[証明で使う正規性と一般問題の範囲]
+ここで双対生成元について使った正規性は $E\zeta=\zeta E$ という
+二側イデアルの等式だけである。零因子 $\zeta$ に対する正規化自己同型の存在や、
+その正規性から直接 $A$ の2周期性が従うとは主張していない。
+元の代数の2周期性は、全混合階数を確定した後に、整域性による打消しを用いて得る。
+また、この証明は全Extがホモロジー次数1で生成されることを本質的に用いる。
+従って非Koszul対象における二段indexed Ore表示の自動性は、本定理では未解決である。
+一般の通常graded二段Ore表示への下降も、本定理の結論ではない。
+\end{remark}
+
+\begin{corollary}[偶数$n$での通常の次数付き下降]
+\label{knd:cor:even-descent}
+定理\ref{knd:thm:koszul-ore}の仮定の下で、$n$が偶数なら$A$自身が語長を保って一周期的であり、
+通常の次数付きKoszul AS正則整域$B_0$上の二段Ore代数の付随$\mathbb Z$-代数へ下降する。
+\end{corollary}
+\begin{proof}
+全$r_3=n,r_5=1$から正規元族$z_i$による二周期を得る。
+一方、AS周期$L=n+5$は奇数である。二つの周期同型とその逆を合成すれば一周期となる。
+語長を保つ下降へ定理\ref{ogk:thm:ore-without-noetherian}を適用すればよい。
+\end{proof}
+
 \subsection{重み4関係の平方項が消える場合}
 
 以下では $A\in\mathcal Q_n^{\mathrm{dom}}$ とし、原稿の記法
@@ -7562,6 +7713,9 @@ $n=4$では系\ref{n4:cor:top-excess-three}により最高差次数3を証明し
 全始点で$r_3=n,r_5=1$となることと基礎AS正則次元$n$であることは同値であり、
 この条件だけで二段Ore表示が従う。Hilbert級数・Koszul性・noetherian性は不要である。
 従って任意$n$の無条件の構造問題では、まずこの二つの混合階数の自動性を調べればよい。
+語長Koszulの場合は定理\ref{knd:thm:koszul-ore}が任意$n$で全構造を与える。
+従って混合階数の未解決部分は非Koszul対象に限定される。
+元の問題ではKoszul性を仮定していないため、この限定は全対象の解決とは異なる。
 純基礎のEuler数値条件と成長だけからの認識には障害があるため、
 残る自動性には親代数の混合関係とAS双対性を用いる必要がある。
 $n\geq5$で通常の次数付き代数へ下降できる条件は、引き続き調べる必要がある。
